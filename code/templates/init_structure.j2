@@ -1,0 +1,71 @@
+You are a professional Java developer. I will provide you with a Java class with its context and a test class template. Your task is to generate a test class framework for this class based on the template. You don't need to generate test cases, just complete the functions in the template.
+
+Please analyze the following information and help me complete the test class template:
+
+1. The target class and its constructor parameters
+2. Field declarations and their types
+3. Dependencies and external resources used by the class
+
+Requirements:
+1. Complete the setupBeforeAll(), setupBeforeEach(), teardownAfterEach(), and teardownAfterAll() methods
+2. Initialize necessary fields and dependencies
+3. Handle any required cleanup
+4. Ensure the generated code has no syntax errors
+
+Please provide the completed test class template with proper field declarations and setup/teardown methods.
+
+@input{focused method}
+```java
+{{ focused_method }}
+```
+
+@input{target class}
+```java
+{{  target_class }}
+```
+
+@input{context information}
+
+{% if len(context_dict) > 0 }
+@input{context information}
+{% for key, value in context_dict.items() %}
+{{ key }}: 
+```Java
+{{ value }}
+```
+{% endfor %}
+{% endif %}
+
+@input{test class template}
+```java
+package {{ package_name }};
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.*;
+import static org.mockito.Mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
+// Add other imports if necessary
+
+@ExtendWith(MockitoExtension.class)
+class {{ class_name }} {
+    @BeforeAll
+    static void setupBeforeAll() {
+    }
+
+    @BeforeEach
+    void setupBeforeEach() {
+    }
+
+    @AfterEach
+    void teardownAfterEach() {
+    }
+
+    @AfterAll
+    static void teardownAfterAll() {
+    }
+}
+```
+
+@output{initial test class}: completed by you

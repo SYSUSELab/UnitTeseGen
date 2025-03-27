@@ -1,0 +1,32 @@
+package {{package_name}};
+
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import static org.junit.jupiter.api.Assertions.*;
+import org.mockito.*;
+import static org.mockito.Mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
+// Add other imports if necessary
+
+
+@ExtendWith(MockitoExtension.class)
+class {{Class_name}} Test {
+    @BeforeAll
+    static void setupBeforeAll() {
+    }
+
+    @BeforeEach
+    void setupBeforeEach() {
+    }
+
+    @Test
+    // set test function here
+
+    @AfterEach
+    void teardownAfterEach() {
+    }
+
+    @AfterAll
+    static void teardownAfterAll() {
+    }
+}
