@@ -22,7 +22,6 @@ class ASTParser:
         while not bfs_queue.empty():
             node = bfs_queue.get()
             if node.type == type:
-                print("get node")
                 node_list.append(node)
             else:
                 for child in node.children:

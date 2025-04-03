@@ -1,5 +1,4 @@
 import os
-
 import subprocess
 
 from bs4 import BeautifulSoup
@@ -9,22 +8,25 @@ import utils
 class ProjrctTestRunner:
     project_info: dict
     cd_cmd: list
+    testclass_path: str
+    report_path: str
 
-    def __init__(self, project_info, dep_fd, rpt_path):
+    def __init__(self, project_info, dep_fd, tc_path, rpt_path):
         self.project_info = project_info
         self.cd_cmd = ['cd', project_info["project-url"], '&&']
         self.dependency_fd = dep_fd
+        self.testclass_path = tc_path.replace("<project>",project_info["project-name"])
         self.report_path = rpt_path.replace("<project>",project_info["project-name"])
 
         if not os.path.exists(self.report_path):
-            os.mkdir(self.report_path)
-            os.mkdir(f"{self.report_path}/jacoco-report-html")
-            os.mkdir(f"{self.report_path}/jacoco-report-csv")
+            os.makedirs(f"{self.report_path}/jacoco-report-html")
+            os.makedirs(f"{self.report_path}/jacoco-report-csv")
 
 
     def run_project_test(self, compile_test=True):
         # TODO: improve this parameter
         project_name = self.project_info["project-name"]
+        project_url = self.project_info["project-url"]
         # if compile_test:
         #     print(f"Compiling test classes in: {project_name}")
         #     compile_cmd = ['mvn', 'compiler:testCompile']
@@ -38,6 +40,8 @@ class ProjrctTestRunner:
             test_class = tobject["test-class"]
             test_path = tobject["test-path"]
             testid = tobject["id"]
+            class_path = f"{self.testclass_path}/{test_path.split('/')[-1]}"
+            utils.copy_file(class_path, f"{project_url}/{test_path}")
             if not self.compile_test(test_path):
                 failed_tests[testid] = "compile error"
                 continue
@@ -141,15 +145,13 @@ class CoverageExtractor:
         return coverage
 
 
-def test_coverage(datset_dir, dependency_dir, report_path):
+def test_coverage(datset_dir, dependency_dir, testclass_path, report_path):
     dataset_info = utils.load_json(f"{datset_dir}/dataset_info.json")
-    if not os.path.exists(report_path):
-        os.mkdir(report_path)
     for pj_name, info in dataset_info.items():
         project_path = f"{datset_dir}/{info['project-url']}"
         info["project-url"] = project_path
         # run converage test & generate report
-        runner = ProjrctTestRunner(info, dependency_dir, report_path)
+        runner = ProjrctTestRunner(info, dependency_dir, testclass_path, report_path)
         failed_tests = runner.run_project_test()
         # extract coverage
         extractor = CoverageExtractor(info, report_path)
@@ -159,7 +161,7 @@ def test_coverage(datset_dir, dependency_dir, report_path):
         utils.write_json(coverage_file, coverage_data)
     return
 
-
+# test
 if __name__ == "__main__":
     # import settings as ST
     # dataset_dir = f"{ST.ROOT_PATH}/{ST.DATASET_PATH}"

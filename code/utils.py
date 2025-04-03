@@ -1,17 +1,19 @@
+import os
 import csv
 import json
 import pickle
+import shutil
 import xml.etree.ElementTree as ET
 from lxml import etree
 
 def load_json(json_file):
-    with open(json_file,'r',errors='ignore') as jf:
+    with open(json_file, 'r', errors='ignore') as jf:
         data = json.load(jf)
     return data
 
 
 def load_text(file):
-    with open(file, 'r',encoding='utf-8') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         text = f.read()
     return text
 
@@ -24,8 +26,15 @@ def read_csv(filename, with_title=False):
     return data
 
 
-def write_json(file,data,encoding='utf-8'):
-    with open(file, 'w') as f:
+def check_path(path):
+    destination_dir = os.path.dirname(path)
+    if destination_dir and not os.path.exists(destination_dir):
+        os.makedirs(destination_dir)
+    return
+
+
+def write_json(file, data):
+    with open(file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
     return
 
@@ -36,7 +45,7 @@ def write_text(file,text):
     return
 
 
-def write_csv(file,data,header:list|None):
+def write_csv(file, data, header:list|None):
     with open(file, 'w', newline='') as f:
         writer = csv.writer(f)
         if header: writer.writerow(header)
@@ -45,7 +54,7 @@ def write_csv(file,data,header:list|None):
 
 
 def read_XML(file):
-    with open(file,'r',encoding='utf-8') as f:
+    with open(file,'r', encoding='utf-8') as f:
         tree = ET.parse(f)
     return tree
 
@@ -72,7 +81,18 @@ def read_pickle(file):
     return data
 
 
-def write_pickle(file,data):
+def write_pickle(file, data):
     with open(file, 'wb') as f:
         pickle.dump(data, f)
     return
+
+
+def copy_file(source_file, target_path, ignore_error=False):
+    print(f"Copying {source_file} to {target_path}")
+    check_path(target_path)
+    try:
+        shutil.copy2(source_file, target_path)
+    except Exception as e:
+        print(e)
+        if ignore_error: return
+        else: raise RuntimeError("Error occurred while copying the file.")

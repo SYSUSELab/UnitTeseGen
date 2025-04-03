@@ -6,16 +6,18 @@ Environment for our experiments:
 - Java: 21.0.5 2024-10-15 LTS
 - Python: 3.13.0
 
-**Note:** If you don't use a higher version of the Java Runtime Environment than us, please repackage the jar file in `code/java`. Take folder `project-info-extract` as example:
+**Note:** If you use a lower version of the Java Runtime Environment than us, please repackage the jar file in `code/java`. Taking folder `project-info-extract` as example:
 
 ```sh
 cd code/java/project-info-extract
-jar -cvfe ../project-info-extract.jar App -C target . -C lib .
+jar -cvfe ../project-info-extract.jar Test -C target . -C lib .
 # this also work
 jar cfm ../project-info-extract.jar MANIFEST.MF -C target . -C lib .
 ```
 
 ## (demo) Running
+1. compelete settings in `code/settings.py`.
+2. run the following commands:
 ```sh
 cd code
 # prepare datasets

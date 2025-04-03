@@ -23,19 +23,13 @@ Please provide the completed test class template with proper field declarations 
 ```java
 {{  target_class }}
 ```
-
-@input{context information}
-
-{% if len(context_dict) > 0 }
+{% if context_dict | length > 0 %}
 @input{context information}
 {% for key, value in context_dict.items() %}
 {{ key }}: 
-```Java
 {{ value }}
-```
 {% endfor %}
 {% endif %}
-
 @input{test class template}
 ```java
 package {{ package_name }};

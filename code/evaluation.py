@@ -29,10 +29,11 @@ procedure:
 '''
 def run(operation):
     dataset_dir = f"{ST.ROOT_PATH}/{ST.DATASET_PATH}"
+    test_class_path = f"{ST.ROOT_PATH}/{ST.TESTCLASSS_PATH}"
     report_path = f"{ST.ROOT_PATH}/{ST.REPORT_PATH}"
     dependency_path = f"{ST.ROOT_PATH}/{ST.DEPENDENCY_PATH}"
     if operation == 'coverage':
-        test_coverage(dataset_dir, dependency_path, report_path)
+        test_coverage(dataset_dir, dependency_path, test_class_path, report_path)
 
 
 if __name__ == "__main__":

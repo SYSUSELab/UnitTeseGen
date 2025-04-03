@@ -1,9 +1,10 @@
+import os
 import logging
 import argparse
 
 import utils
 import settings as ST
-import procedure.workspace_prepariton as WSP
+import procedure.workspace_preparation as WSP
 import procedure.generate_prompt as GP
 from tools.llm_api import LLMCaller
 from tools.code_analysis import ASTParser
@@ -34,8 +35,11 @@ def generate_testclass_framework(dataset_dir:str, prompt_path:str, gen_path:str)
         # project_path = f"{dataset_dir}/{pj_info["project-url"]}"
         project_prompt = prompt_path.replace("<project>", pj_name) 
         gen_folder = gen_path.replace("<project>", pj_name)
-        for test_info in pj_info["fucused-methods"]:
-            prompt = utils.load_text(f"{project_prompt}/{test_info["id"]}/init_prompt.txt")
+        if not os.path.exists(gen_folder):
+            os.makedirs(gen_folder)
+        for test_info in pj_info["focused-methods"]:
+            id = test_info["id"]
+            prompt = utils.load_text(f"{project_prompt}/{id}/init_prompt.txt")
             code = llm_caller.get_response(prompt)
             class_name = test_info["test-class"].split('.')[-1]
             save_path = f"{gen_folder}/{class_name}.java"
@@ -63,7 +67,7 @@ def insert_test_case(init_class:str, insert_code:str):
         lines = lines[:last_import_idx+1] + additional_imports + lines[last_import_idx+1:]
     # insert test case
     add_test_case = insert_ast.get_test_cases()
-    lines = lines[:-1] + add_test_case + lines[-1:] + lines[-1]
+    lines = lines[:-1] + add_test_case + [lines[-1]]
     added_class = '\n'.join(lines)
     return added_class
 
@@ -75,12 +79,13 @@ def generate_testcase(dataset_dir:str, prompt_path:str, prompt_list:list, gen_pa
     for pj_name, pj_info in dataset_info.items():
         project_prompt = prompt_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
-        for test_info in pj_info["fucused-methods"]:
+        for test_info in pj_info["focused-methods"]:
             class_name = test_info["test-class"].split('.')[-1]
+            id = test_info["id"]
             save_path = f"{gen_folder}/{class_name}.java"
             init_class = utils.load_text(f"{gen_folder}/{class_name}.java")
             for prompt_name in prompt_list:
-                prompt = utils.load_text(f"{project_prompt}/{test_info["id"]}/{prompt_name}.txt")
+                prompt = utils.load_text(f"{project_prompt}/{id}/{prompt_name}_prompt.txt")
                 prompt = prompt.replace('<initial_class>', init_class)
                 code = llm_caller.get_response(prompt)
                 init_class = insert_test_case(init_class, code)
@@ -102,17 +107,22 @@ def run(args):
     4. package & save test class
         - 5.1 code repair (?)
     '''
-    
-    dataset_abs = f"{ST.ROOT_PATH}/{ST.DATASET_PATH}"
+    root_path = ST.ROOT_PATH
+    dataset_path = ST.DATASET_PATH
+    dataset_abs = f"{root_path}/{dataset_path}"
+    code_info_path = ST.CODE_INFO_PATH
+    prompt_path = ST.PROMPT_PATH
+    prompt_list = ST.PROMPT_LIST
     # 1. prepare workspace
     if args.prepare_workspace:
+        # todo: add preprocess
         WSP.prepare_workspace(dataset_abs)
     # 2. setup & teardown generation
-    GP.generate_init_prompts(ST.DATASET_PATH, ST.PROMPT_PATH)
-    GP.generate_test_case_prompts(ST.DATASET_PATH, ST.PROMPT_PATH, ST.PROMPT_LIST)
+    GP.generate_init_prompts(dataset_path, code_info_path, prompt_path)
+    GP.generate_test_case_prompts(dataset_path, code_info_path, prompt_path, prompt_list)
     # 3. test function generation
-    generate_testclass_framework(ST.DATASET_PATH, ST.PROMPT_PATH, ST.TESTCLASSS_PATH)
-    generate_testcase(ST.DATASET_PATH, ST.PROMPT_PATH, ST.PROMPT_LIST, ST.TESTCLASSS_PATH)
+    generate_testclass_framework(dataset_path, prompt_path, ST.TESTCLASSS_PATH)
+    generate_testcase(dataset_path, prompt_path, prompt_list, ST.TESTCLASSS_PATH)
     return
 
 

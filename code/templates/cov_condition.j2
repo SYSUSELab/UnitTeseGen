@@ -3,7 +3,8 @@ You are a professional Java software testing expert. I need you to help me gener
 I will provide you with:
 1. The focused method needs testing
 2. Basic information of target class to which the focus method belongs
-3. The context information for generate tests
+3. The existing test class structure
+4. The context information for generate tests
 
 Please generate unit test code that meets these requirements:
 
@@ -34,20 +35,16 @@ Please generate unit test code that meets these requirements:
 ```Java
 {{ target_class }}
 ```
-
 @input{existing test class}
 ```Java
-{{ existing_test_class }}
+<initial_class>
 ```
 
-{% if len(context_dict) > 0 }
+{% if context_dict | length > 0 %}
 @input{context information}
 {% for key, value in context_dict.items() %}
 {{ key }}: 
-```Java
 {{ value }}
-```
 {% endfor %}
 {% endif %}
-
 @output{test class}: complete by you

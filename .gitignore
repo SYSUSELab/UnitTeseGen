@@ -1,3 +1,7 @@
+dataset/projects
+evaluation/
+myscript
+
 # IDE
 .vscode/
 .idea/
