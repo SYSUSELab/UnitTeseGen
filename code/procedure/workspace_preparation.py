@@ -2,7 +2,6 @@ import os
 import subprocess
 import utils
 
-
 class WorkSpacePreparation:
     workspace = "./"
     def __init__(self, workspace):

@@ -12,7 +12,6 @@ class ASTParser:
         self.lines = source_code.splitlines()
         byte_code = source_code.encode('utf8')
         self.tree = self.parser.parse(byte_code, encoding='utf8')
-        
         return
     
     def _traverse_get(self, type):
@@ -50,7 +49,8 @@ class ASTParser:
             start_line = node.start_point[0]
             imports.append(self.lines[start_line])
         return imports
-    
+
+
     def get_additional_imports(self, existing_imports):
         imports = self._get_imports()
         additional_imports = []
@@ -58,6 +58,7 @@ class ASTParser:
             if imp.strip() not in existing_imports:
                 additional_imports.append(imp)
         return additional_imports
+
 
     def get_test_cases(self):
         test_cases = []
@@ -74,12 +75,12 @@ if __name__ == '__main__':
     import java.io.IOException;
     public class MyClass {
         @Test
-        public void test1() {
+        public void test1(int a) {
             // test code
         }
 
         @Test
-        public void test2() {
+        public void test2(Token token) {
             // test code
         }
 

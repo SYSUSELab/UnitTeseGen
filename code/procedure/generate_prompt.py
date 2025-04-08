@@ -60,8 +60,8 @@ def generate_init_prompts(dataset_dir, code_info_path, prompt_path:str):
             }
             prompt = generator.generate_singal('init', content)
             # save prompt
-            prompt_path = f"{prompt_dir}/init_prompt.txt"
-            utils.write_text(prompt_path, prompt)
+            result_path = f"{prompt_dir}/init_prompt.md"
+            utils.write_text(result_path, prompt)
 
 
 def generate_test_case_prompts(dataset_dir, code_info_path, prompt_path:str, gen_prompt_list:list):
@@ -90,6 +90,6 @@ def generate_test_case_prompts(dataset_dir, code_info_path, prompt_path:str, gen
             prompt_list = generator.generate_group(content)
             # save prompt
             for tmp_name, prompt in prompt_list.items():
-                prompt_path = f"{prompt_dir}/{tmp_name}_prompt.txt"
-                utils.write_text(prompt_path, prompt)
+                result_path = f"{prompt_dir}/{tmp_name}_prompt.md"
+                utils.write_text(result_path, prompt)
     return

@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 from lxml import etree
 
 def load_json(json_file):
-    with open(json_file, 'r', errors='ignore') as jf:
+    with open(json_file, 'r', errors='ignore', encoding='utf-8') as jf:
         data = json.load(jf)
     return data
 

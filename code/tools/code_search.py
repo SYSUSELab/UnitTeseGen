@@ -8,6 +8,7 @@ class CodeSearcher:
 
     def __init__(self, project_path: str, code_info_path: str):
         self.project_path = project_path
+        print(f"Loading code info from {code_info_path}")
         self.code_info = utils.load_json(code_info_path)
 
 
@@ -32,12 +33,12 @@ class CodeSearcher:
         method_info = next(
             (m_info for method, m_infos in class_info["methods"].items()
              if method_name.startswith(method)
-             for m_info in m_infos if m_info["signature"] == method_name),
+             for m_info in m_infos if m_info["signature"].endswith(method_name)),
             None
         )
         return method_info
 
-
+    # todo: compress overlong context
     def collect_construct_context(self, class_name, class_url):
         '''
         content in construct context:
@@ -52,27 +53,41 @@ class CodeSearcher:
         
         context = {}
         constructor_body = ""
+        # get the constructor info
         for constructor in class_info["constructors"]:
-            # get the constructor boy
-            constructor_body += constructor["body"] + "\n"
+            ptext = []
+            for param in constructor["parameters"]:
+                ptype = param["variable_type"]
+                pname = param["variable_name"]
+                pinfo = self._get_class_info(ptype)
+                if pinfo is not None:
+                    # todo: add more info for paramater
+                    ptext.append(f"{ptype} {pname} ") #: {pinfo['javadoc']}")
+                else:
+                    ptext.append(f"{ptype} {pname}")
+            constructor_body += f"params: {'\n'.join(ptext)}\nbody:\n```java\n" + constructor["body"] + "\n```"
         context[f"constructors for class `{class_name}`"] = f"```java\n{constructor_body}\n```"
+        # get existing test class
         test_url = class_url.replace("main","test").replace(".java", "Test.java")
         test_class = self._get_test_classes(test_url)
         if test_class is not None:
             context["existing test class"] = f"```java\n{test_class}\n```"
+        # get api document
         if "javadoc" in class_info:
-            context["api document"] = class_info["javadoc"]
+            context[f"api document of class {class_name}"] = class_info["javadoc"]
         # more context can be added here
         return context
 
+
+    # todo: compress overlong context
     def collect_usage_context(self, class_name, method_name:str):
         '''
         content in usage context:
-        - External variables and methods called in the focus method
-        - Code context for calling focus methods
-        - Parameter & Return Value in the focus method, expecially classes defined in the project
+        - External variables (unimplemented) and methods called in the focus method
+        - Code context for calling focus methods (unimplemented)
+        - Parameter & Return Value (unimplemented) in the focus method, expecially classes defined in the project
         - API documents (optional)
-        - Code summary (optional)
+        - Code summary (optional) (unimplemented)
         '''
         # get the class info and method info
         class_info = self._get_class_info(class_name)
@@ -83,8 +98,12 @@ class CodeSearcher:
             raise ValueError(f"Method `{method_name}` not found in class `{class_name}`")
         # collect the context
         context = {}
+        # api documents
         if "javadoc" in class_info:
-            context["api document"] = class_info["javadoc"]
+            context[f"api document of class {class_name}"] = class_info["javadoc"]
+        if "javadoc" in method_info:
+            context[f"api document of method {method_name}"] = method_info["javadoc"]
+        # parameters in focus method
         ptext = []
         for param in method_info["parameters"]:
             ptype = param["variable_type"]
@@ -97,6 +116,13 @@ class CodeSearcher:
                 ptext.append(f"{ptype} {pname}")
         if len(ptext) > 0:
             context["parameters"] = '\n'.join(ptext)
+        # calling methods in focus method
+        cmtexts = []
+        for cmethod in method_info["call_methods"]:
+            method_name = cmethod["signature"]
+            return_type = cmethod["return_type"]
+            cmtexts.append(f"method: {method_name}, return: {return_type}")
+        context["calling methods"] = '\n'.join(cmtexts)
         # add more context here
         return context
 

@@ -48,12 +48,14 @@ class ProjrctTestRunner:
             if not self.run_singal_unit_test(test_class):
                 failed_tests[testid] = "execution error"
                 continue
+            # todo: add test pass rate
             if not self.generate_report_single(testid):
                 failed_tests[testid] = "report error"
         return failed_tests
 
     def compile_test(self, class_path):
         compile_cmd = ["javac","-cp","@dependencies.txt","-d","target/test-classes",class_path]
+        print(" ".join(compile_cmd))
         script = self.cd_cmd + compile_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True)
         if result.returncode!= 0:
@@ -65,11 +67,12 @@ class ProjrctTestRunner:
         print(f"Running single unit test, testclass: {testclass}")
         test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
         java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
-        test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--select-class', testclass]
+        test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
         script = self.cd_cmd + test_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True)
         if result.returncode != 0:
-            print(f"error occured in execute test class {testclass}, info:\n{result.stderr}")
+            print("return code: ", result.returncode)
+            print(f"error occured in execute test class {testclass}, info:\n{result.stderr}\n{result.stdout}")
             return False
         return True
 
@@ -78,7 +81,8 @@ class ProjrctTestRunner:
         jacoco_cli = f"{self.dependency_fd}/jacococli.jar"
         html_report = f"{self.report_path}/jacoco-report-html/{testid}/"
         csv_report = f"{self.report_path}/jacoco-report-csv/{testid}.csv"
-        report_cmd = ['java', '-jar', jacoco_cli, "report", "target/jacoco.exec", "--classfiles", "target/classes", "--html", html_report, "--csv", csv_report]
+        # report_cmd = ['java', '-jar', jacoco_cli, "report", "target/jacoco.exec", "--classfiles", "target/classes", "--html", html_report, "--csv", csv_report]
+        report_cmd = ['java', '-jar', jacoco_cli, "report", "target/jacoco.exec", '--classfiles', 'target/classes', '--sourcefiles', 'src/main/java', "--html", html_report, "--csv", csv_report]
         script = self.cd_cmd + report_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True)
 

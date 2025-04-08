@@ -3,16 +3,21 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.Node;
+import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.ConstructorDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.resolution.TypeSolver;
+import com.github.javaparser.resolution.declarations.ResolvedMethodDeclaration;
 import com.github.javaparser.resolution.types.ResolvedType;
 import com.github.javaparser.symbolsolver.JavaSymbolSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.CombinedTypeSolver;
 import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeSolver;
+
+import infostructure.CallMethodInfo;
+import infostructure.VariableInfo;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -76,7 +81,7 @@ public class JavaExtractor {
         // get imports
         List<String> imports = new ArrayList<>();
         for (ImportDeclaration imp_node : cu.getImports()) {
-            imports.add(imp_node.getNameAsString());
+            imports.add(imp_node.toString());
             // System.out.println(imp_node.getNameAsString());
         }
         return imports;
@@ -97,15 +102,41 @@ public class JavaExtractor {
         return null;
     }
 
-    protected String resolveQualifiedName(MethodCallExpr method_call) {
-        String qualified_name = "";
+    protected CallMethodInfo resolveQualifiedName(MethodCallExpr method_call) {
+        String qualified_name = method_call.getNameAsString();;
+        List <VariableInfo> args = new ArrayList<VariableInfo>();
+        String return_type = "unresolved";
+        ResolvedMethodDeclaration rsv_method = null;
+        NodeList<Expression> arguments = method_call.getArguments();
+        int arg_count = arguments.size();
         try {
-            qualified_name = method_call.resolve().getQualifiedName();
+            rsv_method = method_call.resolve();
+            qualified_name = rsv_method.getQualifiedSignature();
+            return_type = rsv_method.getReturnType().describe();
+            int rsv_arg_count = rsv_method.getNumberOfParams();
+            for (int i = 0; i < arg_count; i++) {
+                String arg_type;
+                if (i >= rsv_arg_count) {
+                    arg_type = rsv_method.getParam(rsv_arg_count-1).describeType();
+                }
+                else{
+                    arg_type = rsv_method.getParam(i).describeType();
+                }
+                String arg_name = arguments.get(i).toString();
+                VariableInfo arg_info = new VariableInfo(arg_name, arg_type);
+                args.add(arg_info);
+            }
         } catch (Exception e) {
-            qualified_name = method_call.getNameAsString();
+            for (int i = 0; i < arg_count; i++) {
+                String arg_type = "unresolved";
+                String arg_name = arguments.get(i).toString();
+                VariableInfo arg_info = new VariableInfo(arg_name, arg_type); 
+                args.add(arg_info);
+            }
             System.out.println("Error: " + e.getMessage());
         }
-        return qualified_name;
+        CallMethodInfo method_call_info = new CallMethodInfo(qualified_name, args, return_type);
+        return method_call_info;
     }
 
     protected String resolveType(Expression expr, String simple) {

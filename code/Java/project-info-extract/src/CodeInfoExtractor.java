@@ -15,7 +15,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import infostructure.*;
 
@@ -49,8 +51,6 @@ public class CodeInfoExtractor extends JavaExtractor {
         List<ConstructorDeclaration> constructors = class_dec.getConstructors();
         JsonArray constructor_list = new JsonArray();
         for (ConstructorDeclaration constructor : constructors) {
-            // String constructorName = constructor.getNameAsString();
-            // String constructorType = constructor.getDeclarationAsString();
             String signature = constructor.getSignature().toString();
             String body = constructor.getDeclarationAsString() + "\n" + constructor.getBody().toString();
             List<VariableInfo> parameters = new ArrayList<VariableInfo>();
@@ -74,7 +74,7 @@ public class CodeInfoExtractor extends JavaExtractor {
         JsonObject method_list = new JsonObject();
         for (MethodDeclaration method : method_nodes) {
             String method_name = method.getNameAsString();
-            String signature = method.getSignature().toString();
+            String signature = method.getDeclarationAsString(true, false, false);
             // String body = method.getDeclarationAsString() + "\n" +
             // method.getBody().get().toString();
             List<VariableInfo> parameters = new ArrayList<VariableInfo>();
@@ -85,25 +85,14 @@ public class CodeInfoExtractor extends JavaExtractor {
                 parameters.add(param_info);
             });
 
-            // 查找调用的方法
+            // get method call
             List<MethodCallExpr> methodCalls = method.findAll(MethodCallExpr.class);
-            List<CallMethodInfo> method_call_list = new ArrayList<CallMethodInfo>();
+            Set<CallMethodInfo> method_call_list = new HashSet<CallMethodInfo>();
             for (MethodCallExpr methodCall : methodCalls) {
-                String call_method_name = resolveQualifiedName(methodCall);
-                List<VariableInfo> args = new ArrayList<VariableInfo>();
-                methodCall.getArguments().forEach(arg -> {
-                    String arg_name = arg.toString();
-                    String type = resolveType(arg, "unresolved");
-                    // String type = "";
-                    VariableInfo arg_info = new VariableInfo(arg_name, type);
-                    args.add(arg_info);
-                    // String argType = resolveType();
-                });
-                CallMethodInfo method_call_info = new CallMethodInfo(call_method_name, args);
-                // CallMethodInfo method_call_info = new CallMethodInfo(call_method_name, args);
+                CallMethodInfo method_call_info = resolveQualifiedName(methodCall);
                 method_call_list.add(method_call_info);
             }
-            JsonObject method_info = this.gson.toJsonTree(new MethodInfo(signature, parameters, method_call_list))
+            JsonObject method_info = this.gson.toJsonTree(new MethodInfo(signature, parameters, method_call_list.toArray(new CallMethodInfo[0])))
                     .getAsJsonObject();
             String methoddoc = extractJavadoc(method);
             if (methoddoc != null)
@@ -181,7 +170,11 @@ public class CodeInfoExtractor extends JavaExtractor {
                 });
         // get information from test files
         JsonObject test_json = new JsonObject();
-        Files.walk(test_dir)
+        
+        if (Files.exists(test_dir)) {
+            JavaParserTypeSolver test_solver = new JavaParserTypeSolver(test_dir);
+            addTypeSolver(test_solver);
+            Files.walk(test_dir)
                 .filter(Files::isRegularFile)
                 .filter(JavaExtractor::isJavaFile).forEach(file -> {
                     if (isJavaFile(file)) {
@@ -195,6 +188,7 @@ public class CodeInfoExtractor extends JavaExtractor {
                         }
                     }
                 });
+        }
 
         return new JsonObject[] { source_json, test_json };
     }

@@ -42,8 +42,13 @@ public class PreProcessor {
         projectJson.addProperty("project", projectName);
 
         Path source_folder = sourceDir.resolve("src/main/java");
-        Path test_folder = sourceDir.resolve("src/test/java");
+        Path test_folder = sourceDir.resolve("src/test-original/java");
         Path jar_folder = sourceDir.resolve("libs");
+        if (projectName.equals("gson")){
+            source_folder = sourceDir.resolve("gson/src/main/java/");
+            test_folder = sourceDir.resolve("gson/src/test-original/java");
+            jar_folder = sourceDir.resolve("gson/libs");
+        }
 
         CodeInfoExtractor codeInfoExtractor = new CodeInfoExtractor();
         try{

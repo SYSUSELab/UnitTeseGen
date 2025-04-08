@@ -1,6 +1,7 @@
 dataset/projects
 evaluation/
-myscript
+myscript.bat
+note.md
 
 # IDE
 .vscode/

@@ -12,16 +12,16 @@ from tools.code_analysis import ASTParser
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-L','--log_level', type=str, default='info', help='log level: info, debug, warning, error, critical')
-    parser.add_argument('-W', '--prepare_workspace', type=bool, default=False, help='prepare workspace: True/False')
+    parser.add_argument('-W', '--prepare_workspace', action='store_true', help='prepare workspace: True/False')
     # parser.add_argument('--operation',type=str, default='precision', help='evaluation operation: ?')
 
     args = parser.parse_args()
     log_level = {
-    'info': logging.INFO,
-    'debug': logging.DEBUG,
-    'warning': logging.WARNING,
-    'error': logging.ERROR,
-    'critical': logging.CRITICAL
+        'info': logging.INFO,
+        'debug': logging.DEBUG,
+        'warning': logging.WARNING,
+        'error': logging.ERROR,
+        'critical': logging.CRITICAL
     }
     args.log_level = log_level[args.log_level]
     return args
@@ -39,7 +39,7 @@ def generate_testclass_framework(dataset_dir:str, prompt_path:str, gen_path:str)
             os.makedirs(gen_folder)
         for test_info in pj_info["focused-methods"]:
             id = test_info["id"]
-            prompt = utils.load_text(f"{project_prompt}/{id}/init_prompt.txt")
+            prompt = utils.load_text(f"{project_prompt}/{id}/init_prompt.md")
             code = llm_caller.get_response(prompt)
             class_name = test_info["test-class"].split('.')[-1]
             save_path = f"{gen_folder}/{class_name}.java"
@@ -85,7 +85,7 @@ def generate_testcase(dataset_dir:str, prompt_path:str, prompt_list:list, gen_pa
             save_path = f"{gen_folder}/{class_name}.java"
             init_class = utils.load_text(f"{gen_folder}/{class_name}.java")
             for prompt_name in prompt_list:
-                prompt = utils.load_text(f"{project_prompt}/{id}/{prompt_name}_prompt.txt")
+                prompt = utils.load_text(f"{project_prompt}/{id}/{prompt_name}_prompt.md")
                 prompt = prompt.replace('<initial_class>', init_class)
                 code = llm_caller.get_response(prompt)
                 init_class = insert_test_case(init_class, code)
