@@ -16,7 +16,7 @@ jar cfm ../project-info-extract.jar MANIFEST.MF -C target . -C lib .
 ```
 
 ## (demo) Running
-1. compelete settings in `code/settings.py`.
+1. rename `code/settings.py.template` to `code/settings.py` and compelete settings.
 2. run the following commands:
 ```sh
 cd code
