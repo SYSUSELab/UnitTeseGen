@@ -70,10 +70,15 @@ class ProjrctTestRunner:
         test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
         script = self.cd_cmd + test_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True)
+        test_info = result.stdout
         if result.returncode != 0:
             print("return code: ", result.returncode)
-            print(f"error occured in execute test class {testclass}, info:\n{result.stderr}\n{result.stdout}")
+            print(f"error occured in execute test class {testclass}, info:\n{result.stderr}\n{test_info}")
+            if test_info.find("Test run finished")!=-1:
+                return True
             return False
+        else:
+            print(f"test info: {test_info}")
         return True
 
     def generate_report_single(self, testid):

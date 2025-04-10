@@ -1,6 +1,6 @@
 # File path settings
 # TODO: clear private infomation before commit
-ROOT_PATH = "D:/Study/myevaluation/UnitTeseGen/code" # absolute path
+ROOT_PATH = "Path/to/Unit-Test-Generation/code" # absolute path
 DEPENDENCY_PATH = "./dependencies"
 DATASET_PATH = "../dataset/projects"
 CODE_INFO_PATH = "../dataset/project_index/json"
@@ -11,8 +11,8 @@ REPORT_PATH = "../evaluation/<project>/reports"
 MODEL = "deepseek-v3-0324"
 API_ACCOUNTS = [
     {   
-        "base_url":"https://api.agicto.cn/v1",
-        "api_key":"sk-1tvIzrm9vSkSpPYykTi1ODvUIfbNfW7986AkQ5T3SjvtZ8IJ",
+        "base_url":"",
+        "api_key":"xxx",
     }
 ]
 # prompt selection
