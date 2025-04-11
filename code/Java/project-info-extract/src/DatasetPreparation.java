@@ -66,16 +66,17 @@ public class DatasetPreparation {
                     }
                 }
                 for (MethodDeclaration method : class_dec.getMethods()){
-                    // String decl = method.getDeclarationAsString() + ";";
-                    // method_sigs.add(decl);
                     String decl = method.getDeclarationAsString(true, true, false);
                     method_sigs.add(decl);
                     if (decl.contains(method_name)) {
+                        if (method.isPrivate()){
+                            System.out.println("error: private method " + method_name + " is not allowed.");
+                        }
                         method_body = method.getDeclarationAsString() + method.getBody().map(mb -> mb.toString()).orElse(""); 
                     }
                 }
                 String class_info = packageName
-                    + String.join("", imports)+ "\n" 
+                    + String.join("\n", imports)+ "\n" 
                     + declaration + " {\n    " 
                     + String.join("\n    ", fields) + "\n    " 
                     + String.join(";\n    ", method_sigs) + "\n}";
@@ -92,9 +93,6 @@ public class DatasetPreparation {
         String[] firstPart = presplit[0].split("\\.");
         firstPart[firstPart.length - 1] = firstPart[firstPart.length - 1] + "(" + presplit[1];
         String[] msplit = firstPart;
-        // String[] msplit = new String[firstPart.length + secondPart.length];
-        // System.arraycopy(firstPart, 0, msplit, 0, firstPart.length);
-        // System.arraycopy(secondPart, 0, msplit, firstPart.length, secondPart.length);
         int mlength = msplit.length;
         String method_name = msplit[mlength - 1];
         String className = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-1));
@@ -105,18 +103,10 @@ public class DatasetPreparation {
             testId = testId + "_" + count;
             idSet.put(testId, count+1);
         } else {
-            idSet.put(testId, 1);
+            idSet.put(testId, 2);
         }
         String packageName = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-2));
-        String testClass;
-        if (classSet.containsKey(className)) {
-            int count = classSet.get(className);
-            testClass = String.join(".", Arrays.copyOfRange(msplit,0, mlength-1)) + "_" + count + "_Test";
-            classSet.put(className, count + 1);
-        } else {
-            classSet.put(className, 1);
-            testClass = String.join(".", Arrays.copyOfRange(msplit,0, mlength-1)) + "Test";
-        }
+        String testClass = packageName + "." + testId + "_Test";
         String sourcePath = "src/main/java/" + className.replace(".", "/") + ".java";
         String testPath = "src/test/java/" + testClass.replace(".", "/") + ".java";
         
@@ -171,12 +161,7 @@ public class DatasetPreparation {
             projectInfo.add("focused_methods", focused_methods);
             datasetInfo.add(projectName, projectInfo);
         }
-        
-        // transform to json & write to file
-        // JsonObject datasetInfoJson = new JsonObject();
-        // for (Map.Entry<String, JsonObject> entry : datasetInfo.entrySet()) {
-        //     datasetInfoJson.add(entry.getKey(), entry.getValue());
-        // }
+
         String outputFile = Paths.get(output_file).toString();
         writeJson(outputFile, datasetInfo);
     }

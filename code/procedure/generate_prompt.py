@@ -1,6 +1,8 @@
 import os
 import jinja2
-import utils
+import logging
+
+import tools.io_utils as utils
 from tools.code_search import CodeSearcher
 
 
@@ -31,11 +33,15 @@ class PromptGenerator:
         return prompts
 
 
-def generate_init_prompts(dataset_dir, code_info_path, prompt_path:str):
+def generate_init_prompts(file_structure, dataset_info:dict):
+    dataset_dir = file_structure.DATASET_PATH
+    code_info_path = file_structure.CODE_INFO_PATH
+    prompt_path = file_structure.PROMPT_PATH
     generator = PromptGenerator('./templates', [])
-    dataset_dir = f"{dataset_dir}/dataset_info.json"
-    dataset_info = utils.load_json(dataset_dir)
+    logger = logging.getLogger(__name__)
+
     for pj_name, pj_info in dataset_info.items():
+        logger.info(f"Construct init prompts for project {pj_name}...")
         project_url = pj_info["project-url"]
         project_path = f"{dataset_dir}/{project_url}"
         project_info = f"{code_info_path}/{pj_name}.json"
@@ -64,12 +70,17 @@ def generate_init_prompts(dataset_dir, code_info_path, prompt_path:str):
             utils.write_text(result_path, prompt)
 
 
-def generate_test_case_prompts(dataset_dir, code_info_path, prompt_path:str, gen_prompt_list:list):
+def generate_test_case_prompts(file_structure, task_setting, dataset_info:dict):
+    # dataset_dir, code_info_path, prompt_path:str, gen_prompt_list:list
+    dataset_dir = file_structure.DATASET_PATH
+    code_info_path = file_structure.CODE_INFO_PATH
+    prompt_path = file_structure.PROMPT_PATH
+    gen_prompt_list = task_setting.PROMPT_LIST
     generator = PromptGenerator('./templates', gen_prompt_list)
-    dataset_dir = f"{dataset_dir}/dataset_info.json"
-    ds_info = utils.load_json(dataset_dir)
+    logger = logging.getLogger(__name__)
     
-    for pj_name, pj_info in ds_info.items():
+    for pj_name, pj_info in dataset_info.items():
+        logger.info(f"Construct test case prompts for project {pj_name}...")
         project_url = pj_info["project-url"]
         project_path = f"{dataset_dir}/{project_url}"
         project_info = f"{code_info_path}/{pj_name}.json"

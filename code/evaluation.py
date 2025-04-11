@@ -1,9 +1,10 @@
-import os
+import logging
 import argparse
 
-import utils
-import settings as ST
+
+import tools.io_utils as utils
 from evaluations.coverage_test import test_coverage
+from settings import FileStructure as FS, TaskSettings as TS
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -28,16 +29,15 @@ procedure:
 2. extract: pass rate, coverage, .....
 '''
 def run(operation):
-    dataset_dir = f"{ST.ROOT_PATH}/{ST.DATASET_PATH}"
-    test_class_path = f"{ST.ROOT_PATH}/{ST.TESTCLASSS_PATH}"
-    report_path = f"{ST.ROOT_PATH}/{ST.REPORT_PATH}"
-    dependency_path = f"{ST.ROOT_PATH}/{ST.DEPENDENCY_PATH}"
+    dataset_path = FS.DATASET_PATH
+    dataset_info = utils.load_json(f"{dataset_path}/dataset_info.json")
+
     if operation == 'coverage':
-        test_coverage(dataset_dir, dependency_path, test_class_path, report_path)
+        test_coverage(FS, TS, dataset_info)
 
 
 if __name__ == "__main__":
     args = get_args()
-    # logging.basicConfig(level=args.log_level)
+    logging.basicConfig(level=args.log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     run(args.operation)
     

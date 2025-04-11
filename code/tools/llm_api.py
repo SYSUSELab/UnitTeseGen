@@ -1,8 +1,9 @@
 import re
+import logging
 from openai import OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
-import settings as ST
+from settings import LLMSettings as ST
 
 class LLMCaller:
     account_num = 0
@@ -20,6 +21,8 @@ class LLMCaller:
         self.gpt = OpenAI(api_key=account["api_key"],base_url=account["base_url"])
         if self.system_prompt:
             self.base_message.append({"role": "system", "content": self.system_prompt})
+        self.logger = logging.getLogger(__name__)
+        self.logger.info(f"LLM API initialized, model name: {self.model}.")
         pass
 
     def change_account(self):

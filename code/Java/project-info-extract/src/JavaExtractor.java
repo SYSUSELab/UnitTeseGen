@@ -81,8 +81,7 @@ public class JavaExtractor {
         // get imports
         List<String> imports = new ArrayList<>();
         for (ImportDeclaration imp_node : cu.getImports()) {
-            imports.add(imp_node.toString());
-            // System.out.println(imp_node.getNameAsString());
+            imports.add(imp_node.toString().trim());
         }
         return imports;
     }

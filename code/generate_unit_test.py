@@ -1,18 +1,18 @@
 import os
+import time
 import logging
 import argparse
 
-import utils
-import settings as ST
-import procedure.workspace_preparation as WSP
+import tools.io_utils as utils
 import procedure.generate_prompt as GP
+from settings import FileStructure as FS, TaskSettings as TS
 from tools.llm_api import LLMCaller
 from tools.code_analysis import ASTParser
 
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-L','--log_level', type=str, default='info', help='log level: info, debug, warning, error, critical')
-    parser.add_argument('-W', '--prepare_workspace', action='store_true', help='prepare workspace: True/False')
+    parser.add_argument('-P', '--prepare', action='store_true', help='prepare workspace: True/False')
     # parser.add_argument('--operation',type=str, default='precision', help='evaluation operation: ?')
 
     args = parser.parse_args()
@@ -27,12 +27,14 @@ def get_args():
     return args
 
 
-def generate_testclass_framework(dataset_dir:str, prompt_path:str, gen_path:str):
-    dataset_dir = f"{dataset_dir}/dataset_info.json"
-    dataset_info = utils.load_json(dataset_dir)
+def generate_testclass_framework(dataset_info: dict):
+    prompt_path = FS.PROMPT_PATH
+    gen_path = FS.TESTCLASSS_PATH
     llm_caller = LLMCaller()
+    logger = logging.getLogger(__name__)
+
     for pj_name, pj_info in dataset_info.items():
-        # project_path = f"{dataset_dir}/{pj_info["project-url"]}"
+        logger.info(f"Generating test class framework for project {pj_name}...")
         project_prompt = prompt_path.replace("<project>", pj_name) 
         gen_folder = gen_path.replace("<project>", pj_name)
         if not os.path.exists(gen_folder):
@@ -48,8 +50,7 @@ def generate_testclass_framework(dataset_dir:str, prompt_path:str, gen_path:str)
 
 
 def insert_test_case(init_class:str, insert_code:str):
-    # 去掉 initclass 和 insrtcode 末尾不含字符只有空格和换行符的行
-    init_class = init_class.rstrip()
+    init_class = init_class.strip()
     insert_code = insert_code.lstrip()
     lines = init_class.splitlines()
     insert_ast = ASTParser(insert_code)
@@ -72,11 +73,15 @@ def insert_test_case(init_class:str, insert_code:str):
     return added_class
 
 
-def generate_testcase(dataset_dir:str, prompt_path:str, prompt_list:list, gen_path:str):
-    dataset_dir = f"{dataset_dir}/dataset_info.json"
-    dataset_info = utils.load_json(dataset_dir)
+def generate_testcase(dataset_info: dict):
+    prompt_path = FS.PROMPT_PATH
+    gen_path = FS.TESTCLASSS_PATH
+    prompt_list = TS.PROMPT_LIST
     llm_caller = LLMCaller()
+    logger = logging.getLogger(__name__)
+
     for pj_name, pj_info in dataset_info.items():
+        logger.info(f"Generating test cases for project {pj_name}...")
         project_prompt = prompt_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
         for test_info in pj_info["focused-methods"]:
@@ -93,40 +98,35 @@ def generate_testcase(dataset_dir:str, prompt_path:str, prompt_list:list, gen_pa
     return
 
 
-def run(args):
+# todo: a complete procedure for singal case in dataset
+def run():
     '''
     procedure:
-    1. workspace preparation
-    2. setup & teerdowm generation
-        - ~~ 2.1 context collection: code search / static analysis ~~
+    1. setup & teerdowm generation
+        - 2.1 context collection: code search / static analysis
         - 2.2 prompt combination
         - 2.3 testclass structure generation
-    3. test function generation
-        - 4.1 prompt combination
-        - 4.2 generate test function
-    4. package & save test class
-        - 5.1 code repair (?)
+    2. test function generation
+        - 3.1 prompt combination
+        - 3.2 generate test function
+    3. package & save test class
+        - 4.1 code repair (?)
     '''
-    root_path = ST.ROOT_PATH
-    dataset_path = ST.DATASET_PATH
-    dataset_abs = f"{root_path}/{dataset_path}"
-    code_info_path = ST.CODE_INFO_PATH
-    prompt_path = ST.PROMPT_PATH
-    prompt_list = ST.PROMPT_LIST
-    # 1. prepare workspace
-    if args.prepare_workspace:
-        # todo: add preprocess
-        WSP.prepare_workspace(dataset_abs)
-    # 2. setup & teardown generation
-    GP.generate_init_prompts(dataset_path, code_info_path, prompt_path)
-    GP.generate_test_case_prompts(dataset_path, code_info_path, prompt_path, prompt_list)
-    # 3. test function generation
-    generate_testclass_framework(dataset_path, prompt_path, ST.TESTCLASSS_PATH)
-    generate_testcase(dataset_path, prompt_path, prompt_list, ST.TESTCLASSS_PATH)
+    dataset_path = FS.DATASET_PATH
+    dataset_info = utils.load_json(f"{dataset_path}/dataset_info.json")
+    
+    start_time = time.time()
+    GP.generate_init_prompts(FS, dataset_info)
+    GP.generate_test_case_prompts(FS, TS, dataset_info)
+    generate_testclass_framework(dataset_info)
+    generate_testcase(dataset_info)
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed time: {elapsed_time:.2f} seconds")
     return
 
 
 if __name__ == '__main__':
     args = get_args()
-    logging.basicConfig(level=args.log_level)
-    run(args)
+    logging.basicConfig(level=args.log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    run()

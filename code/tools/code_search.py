@@ -1,5 +1,7 @@
 import os
-import utils
+import logging
+
+import tools.io_utils as utils
 
 
 class CodeSearcher:
@@ -8,7 +10,8 @@ class CodeSearcher:
 
     def __init__(self, project_path: str, code_info_path: str):
         self.project_path = project_path
-        print(f"Loading code info from {code_info_path}")
+        self.logger = logging.getLogger(__name__)
+        self.logger.info(f"Loading code info from {code_info_path}")
         self.code_info = utils.load_json(code_info_path)
 
 
@@ -52,7 +55,7 @@ class CodeSearcher:
             raise ValueError(f"Class `{class_name}` not found in code info")
         
         context = {}
-        constructor_body = ""
+        constructor_info = ""
         # get the constructor info
         for constructor in class_info["constructors"]:
             ptext = []
@@ -65,8 +68,8 @@ class CodeSearcher:
                     ptext.append(f"{ptype} {pname} ") #: {pinfo['javadoc']}")
                 else:
                     ptext.append(f"{ptype} {pname}")
-            constructor_body += f"params: {'\n'.join(ptext)}\nbody:\n```java\n" + constructor["body"] + "\n```"
-        context[f"constructors for class `{class_name}`"] = f"```java\n{constructor_body}\n```"
+            constructor_info += f"params: {'\n'.join(ptext)}\nbody:\n```java\n" + constructor["body"] + "\n```"
+        context[f"constructors for class `{class_name}`"] = f"{constructor_info}"
         # get existing test class
         test_url = class_url.replace("main","test").replace(".java", "Test.java")
         test_class = self._get_test_classes(test_url)
