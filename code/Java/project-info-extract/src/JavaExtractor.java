@@ -88,13 +88,16 @@ public class JavaExtractor {
 
     protected String extractJavadoc(Node node) {
         final String javadoc;
-        if (node instanceof ClassOrInterfaceDeclaration classDecl) {
+        if (node instanceof ClassOrInterfaceDeclaration) {
+            ClassOrInterfaceDeclaration classDecl = (ClassOrInterfaceDeclaration) node;
             javadoc = classDecl.getJavadocComment().map(text -> text.getContent()).orElse(null);
             return javadoc;
-        } else if (node instanceof MethodDeclaration methodDecl) {
+        } else if (node instanceof MethodDeclaration) {
+            MethodDeclaration methodDecl = (MethodDeclaration) node;
             javadoc = methodDecl.getJavadocComment().map(text -> text.getContent()).orElse(null);
             return javadoc;
-        } else if (node instanceof ConstructorDeclaration consDecl) {
+        } else if (node instanceof ConstructorDeclaration) {
+            ConstructorDeclaration consDecl = (ConstructorDeclaration) node;
             javadoc = consDecl.getJavadocComment().map(text -> text.getContent()).orElse(null);
             return javadoc;
         }

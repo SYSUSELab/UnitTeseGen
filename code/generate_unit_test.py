@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import time
 import logging
 import argparse
@@ -14,7 +15,6 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-L','--log_level', type=str, default='info', help='log level: info, debug, warning, error, critical')
     parser.add_argument('-F','--log_file', help="storage file of output info", default=None)
-    parser.add_argument('-P', '--prepare', action='store_true', help='prepare workspace: True/False')
 
     args = parser.parse_args()
     log_level = {
@@ -31,10 +31,13 @@ def get_args():
 def generate_testclass_framework(dataset_info: dict):
     prompt_path = FS.PROMPT_PATH
     gen_path = FS.TESTCLASSS_PATH
+    projects = TS.PROJECTS
+    select = True if len(projects)>0 else False
     llm_caller = LLMCaller()
     logger = logging.getLogger(__name__)
 
     for pj_name, pj_info in dataset_info.items():
+        if select and pj_name not in projects: continue
         logger.info(f"Generating test class framework for project {pj_name}...")
         project_prompt = prompt_path.replace("<project>", pj_name) 
         gen_folder = gen_path.replace("<project>", pj_name)
@@ -54,10 +57,13 @@ def generate_testcase(dataset_info: dict):
     prompt_path = FS.PROMPT_PATH
     gen_path = FS.TESTCLASSS_PATH
     prompt_list = TS.PROMPT_LIST
+    projects = TS.PROJECTS
+    select = True if len(projects)>0 else False
     llm_caller = LLMCaller()
     logger = logging.getLogger(__name__)
 
     for pj_name, pj_info in dataset_info.items():
+        if select and pj_name not in projects: continue
         logger.info(f"Generating test cases for project {pj_name}...")
         project_prompt = prompt_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
@@ -70,7 +76,9 @@ def generate_testcase(dataset_info: dict):
                 prompt = utils.load_text(f"{project_prompt}/{id}/{prompt_name}_prompt.md")
                 prompt = prompt.replace('<initial_class>', init_class)
                 code = llm_caller.get_response(prompt)
+                logger.debug("get response")
                 init_class = insert_test_case(init_class, code)
+                logger.debug("insert test case")
             utils.write_text(save_path, code)
     return
 
@@ -83,7 +91,8 @@ def check_class_name(init_class:str, tcname:str):
 def insert_test_case(init_class:str, insert_code:str):
     init_class = init_class.strip()
     insert_code = insert_code.lstrip()
-    insert_ast = ASTParser().parse(insert_code)
+    insert_ast = ASTParser()
+    insert_ast.parse(insert_code)
     lines = init_class.splitlines()
     # insert import lines
     last_import_idx = -1
@@ -121,8 +130,8 @@ def run():
     
     logger.info("Running: Generate unit test...")
     start_time = time.time()
-    GP.generate_init_prompts(FS, dataset_info)
-    GP.generate_test_case_prompts(FS, TS, dataset_info)
+    # GP.generate_init_prompts(FS, dataset_info)
+    # GP.generate_test_case_prompts(FS, TS, dataset_info)
     generate_testclass_framework(dataset_info)
     generate_testcase(dataset_info)
     end_time = time.time()
@@ -138,6 +147,8 @@ if __name__ == '__main__':
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             level=args.log_level,
             filename=args.log_file)
+        sys.stdout = utils.StreamToLogger(logging.getLogger("STDOUT"), logging.INFO)
+        sys.stderr = utils.StreamToLogger(logging.getLogger("STDERR"), logging.ERROR)
     else:
         logging.basicConfig(
             level=args.log_level, 

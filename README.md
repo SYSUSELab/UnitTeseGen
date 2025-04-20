@@ -3,7 +3,7 @@ Automatically generate unit tests using LLM and context in the project
 
 ## Preparation
 Environment for our experiments:
-- Java: 21.0.5 2024-10-15 LTS
+- Java: openjdk 11.0.26 2025-01-21
 - Python: 3.13.0
 
 **Note:** If you use a lower version of the Java Runtime Environment than us, please repackage the jar file in `code/java`. Taking folder `project-info-extract` as example:

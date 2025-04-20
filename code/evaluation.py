@@ -1,3 +1,4 @@
+import sys
 import logging
 import argparse
 
@@ -43,6 +44,8 @@ if __name__ == "__main__":
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             level=args.log_level,
             filename=args.log_file)
+        sys.stdout = utils.StreamToLogger(logging.getLogger("STDOUT"), logging.INFO)
+        sys.stderr = utils.StreamToLogger(logging.getLogger("STDERR"), logging.ERROR)
     else:
         logging.basicConfig(
             level=args.log_level, 

@@ -72,7 +72,7 @@ class ProjrctTestRunner:
         script = self.cd_cmd + test_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True)
         test_info = result.stdout
-        if result.returncode == 2:
+        if result.returncode == 2 or result.returncode == 0:
             self.logger.info(f"test execution info: {test_info}")
             test_cases, passed_cases = self.get_pass_rate(test_info)
             self.test_result[data_id]["test_cases"] = test_cases
@@ -119,7 +119,36 @@ class CoverageExtractor:
         self.report_path = rpt_path.replace("<project>",project_info["project-name"])
         self.astparser = ASTParser()
         self.logger = logging.getLogger(__name__)
-        
+
+    def sig_compare(sig_list_a, sig_list_jacoco):
+        if len(sig_list_a) != len(sig_list_jacoco):
+            return False
+        if len(sig_list_a) == 0:  # length guaranteed to be the same
+            return True
+        if sig_list_a[0] != sig_list_jacoco[0]:
+            return False
+        for item_a, item_jacoco in zip(sig_list_a[1:], sig_list_jacoco[1:]):
+            if item_jacoco == 'Object':
+                continue
+            elif item_a != item_jacoco:
+                return False
+        return True
+
+    def check_method_name(self, method_name, target):
+        target = re.sub(r"<[^>]*>", "", target, flags=re.DOTALL)
+        method_parts = method_name.replace("(", "( ").replace(")", " )").split()
+        target_parts = target.replace("(", "( ").replace(")", " )").split()
+        if len(method_parts) != len(target_parts):
+            return False
+        if method_parts[0] != target_parts[0]:
+            return False
+        for item_m, item_t in zip(method_parts[1:-1], target_parts[1:-1]):
+            if item_m == "Object" or item_m == "Object,": continue
+            if "." in item_m: item_m = item_m.split(".")[-1]
+            if "." in item_t: item_t = item_t.split(".")[-1]
+            elif item_m != item_t:
+                return False
+        return True
 
     def extract_single_coverage(self, testid, package, classname, method):
         # extract coverage
@@ -138,17 +167,13 @@ class CoverageExtractor:
                 method_name = tds[0].span.string
             except AttributeError:
                 method_name = tds[0].a.string
-            method_name = method_name.replace("(", "( ")
-            method_parts = [ part.split(".")[-1] if "." in part else part
-                for part in method_name.split()
-            ]
-            method_name = " ".join(method_parts).replace("( ", "(")
-            if method_name != method: continue
-            instruction_cov = float(tds[2].string.replace("%", ""))/100
-            branch_cov = float(tds[4].string.replace("%", ""))/100
-            coverage_score = {"inst_cov": instruction_cov, "bran_cov": branch_cov}
-            break
+            if self.check_method_name(method_name, method):
+                instruction_cov = float(tds[2].string.replace("%", ""))/100
+                branch_cov = float(tds[4].string.replace("%", ""))/100
+                coverage_score = {"inst_cov": instruction_cov, "bran_cov": branch_cov}
+                break
         return coverage_score
+
 
     def generate_project_summary(self, test_result:dict):
         """
@@ -215,10 +240,11 @@ class CoverageExtractor:
                     pass_num += passed_cases
             else:
                 compile_num += test_cases
-                pass_num += test_cases
-                cov_num += 1
-                inst_cov += item["inst_cov"]
-                bran_cov += item["bran_cov"]
+                pass_num += passed_cases
+                if "inst_cov" in item and item["inst_cov"] != "<missing>":
+                    cov_num += 1
+                    inst_cov += item["inst_cov"]
+                    bran_cov += item["bran_cov"]
         summary.update({
             "compile_pass_rate": compile_num/case_num if case_num > 0 else 0,
             "execution_pass_rate": pass_num/case_num if case_num > 0 else 0,
@@ -235,9 +261,12 @@ def test_coverage(fstruct, task_setting, dataset_info: dict):
     report_path = f"{root_path}/{fstruct.REPORT_PATH}"
     dependency_dir = f"{root_path}/{fstruct.DEPENDENCY_PATH}"
     compile_test = task_setting.COMPILE_TEST
+    projects = task_setting.PROJECTS
+    select = True if len(projects)>0 else False
     logger = logging.getLogger(__name__)
 
     for pj_name, info in dataset_info.items():
+        if select and pj_name not in projects: continue
         project_path = f"{dataset_dir}/{info['project-url']}"
         info["project-url"] = project_path
         # run converage test & generate report

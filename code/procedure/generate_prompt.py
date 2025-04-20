@@ -59,6 +59,7 @@ def generate_init_prompts(file_structure, dataset_info:dict):
             test_class_name =  test_info["test-class"].split('.')[-1]
             content = {
                 "focused_method": test_info["focused-method"],
+                # todo: fit class with every focused method, don't be TOO SLOW!
                 "target_class": test_info["class-info"],
                 "package_name": test_info["package"],
                 "class_name": test_class_name,

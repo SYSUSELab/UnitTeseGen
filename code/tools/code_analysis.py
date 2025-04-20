@@ -46,7 +46,7 @@ class ASTParser:
             # get function body
             start_line = node.start_point[0]
             end_line = node.end_point[0]
-            if self.lines[start_line-1].startswith('@'):
+            while self.lines[start_line-1].lstrip().startswith('@'):
                 start_line -= 1
             function_code = '\n'.join(self.lines[start_line:end_line+1])
             functions.append(function_code)
@@ -67,9 +67,14 @@ class ASTParser:
 
     def get_test_cases(self) -> list:
         test_cases = []
+        exclude_annotations = ['@BeforeEach', '@AfterEach', '@BeforeAll', '@AfterAll']
         functions = self._get_functions()
         for func in functions:
-            if func.find('@Test') != -1:
+            flag = True
+            for annotation in exclude_annotations:
+                if func.find(annotation) != -1:
+                    flag = False
+            if flag:
                 test_cases.append(func)
         return test_cases
 
@@ -95,6 +100,7 @@ if __name__ == '__main__':
         }
     }
     '''
-    # ast = ASTParser(source_code)
+    # ast = ASTParser()
+    # ast.parse(source_code)
     # print(ast.get_test_cases())
     # print(ast.get_additional_imports(set()))

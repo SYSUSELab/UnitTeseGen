@@ -41,22 +41,19 @@ public class DatasetPreparation {
             e.printStackTrace();
         }
     }
-    private static String[] getClassInfo(CompilationUnit cu, String class_name, String method_name) {        
-        
+    private static String[] getClassInfo(CompilationUnit cu, String class_name, String method_name) {
         List<String> imports = extractor.getImports(cu);
         String packageName = cu.getPackageDeclaration().map(pd -> pd.toString().trim()).orElse("");
         for (ClassOrInterfaceDeclaration class_dec: cu.findAll(ClassOrInterfaceDeclaration.class)) {
             if (class_dec.getNameAsString().equals(class_name)) {
-                // get class info: package, import, class_name, fields, method_sig
                 String method_body = "";
+                // get class info: package, import, class_name, fields, method_sig
                 class_dec.removeJavaDocComment();
                 String declaration = class_dec.toString().split("\\{")[0].trim();
                 List<String> fields = new ArrayList<>();
                 for( FieldDeclaration field : class_dec.getFields() ) {
-                    if (!field.isPrivate()){
-                        while(field.removeJavaDocComment()){;}
-                        fields.add(field.toString()); 
-                    }
+                    while(field.removeJavaDocComment()){;}
+                    fields.add(field.toString());
                 }
                 List<String> method_sigs = new ArrayList<>();
                 for(ConstructorDeclaration constructor : class_dec.getConstructors()) {
@@ -70,13 +67,13 @@ public class DatasetPreparation {
                 for (MethodDeclaration method : class_dec.getMethods()){
                     String decl = method.getDeclarationAsString(true, true, false);
                     if (method.isPrivate()){
-                        if (decl.contains(method_name)) {
+                        if (decl.contains(method_name) && method_name.startsWith(method.getNameAsString())) {
                             System.out.println("error: private method " + method_name + "in class " + class_name +" is not allowed.");
                             return null;
                         }
                     } else {
                         method_sigs.add(decl);
-                        if (decl.contains(method_name)) {
+                        if (decl.contains(method_name) && method_name.startsWith(method.getNameAsString())) {
                             method_body = method.getDeclarationAsString() + method.getBody().map(mb -> mb.toString()).orElse("");
                         }
                     }
@@ -85,7 +82,7 @@ public class DatasetPreparation {
                     + String.join("\n", imports)+ "\n" 
                     + declaration + " {\n    " 
                     + String.join("\n    ", fields) + "\n    " 
-                    + String.join(";\n    ", method_sigs) + "\n}";
+                    + String.join(";\n    ", method_sigs) + ";\n}";
                 // System.out.println("class_info: " + class_info);
                 // System.out.println("method_body: " + method_body);
                 return new String[] {method_body, class_info};
