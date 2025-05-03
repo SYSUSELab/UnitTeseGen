@@ -58,14 +58,14 @@ class LLMCaller:
         code = max(matches, key=len) if len(matches)>0 else ""
         return code
     
-    def get_response(self, prompt:str) -> str:
+    def get_response(self, prompt:str) -> list:
         try:
             output = self.generation(prompt)
             response = self.handle_output(output)
-            return response
+                return [response, output]
         except Exception as e:
             # self.logger.error(f"Error: {e}")
-            return ""
+            return ["",""]
         
 # test
 if __name__ == '__main__':

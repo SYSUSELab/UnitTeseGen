@@ -94,10 +94,12 @@ def copy_file(source_file, target_path, ignore_error=False):
     except Exception as e:
         print(e)
         if ignore_error: return
-        else: raise RuntimeError("Error occurred while copying the file.")
+        else: raise RuntimeError(f"Error occurred while copying the file {source_file} to {target_path}")
 
 class StreamToLogger:
-    """将标准输出/错误重定向到 logging"""
+    """
+    represents a file-like stream object that redirects writes to a logger instance.
+    """
     def __init__(self, logger, log_level=logging.INFO):
         self.logger = logger
         self.log_level = log_level
@@ -108,4 +110,4 @@ class StreamToLogger:
             self.logger.log(self.log_level, line.rstrip())
 
     def flush(self):
-        pass  # 兼容文件接口
+        pass

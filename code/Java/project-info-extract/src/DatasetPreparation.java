@@ -18,11 +18,16 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
+import extractor.JavaParserExtractor;
+
 import com.google.gson.JsonElement;
+
+@Deprecated
 public class DatasetPreparation {
-    static Map<String, Integer> idSet = new HashMap<String, Integer>();;
+    static Map<String, Integer> idSet = new HashMap<String, Integer>();
     static Map<String, Integer> classSet = new HashMap<>();
-    static JavaExtractor extractor = new JavaExtractor();
+    static JavaParserExtractor extractor = new JavaParserExtractor();
     static String dataset_dir;
 
     public static void main(String[] args) {
@@ -41,21 +46,35 @@ public class DatasetPreparation {
             e.printStackTrace();
         }
     }
-    private static String[] getClassInfo(CompilationUnit cu, String class_name, String method_name) {
-        List<String> imports = extractor.getImports(cu);
+    private static String getInnerClassCode(ClassOrInterfaceDeclaration class_dec){
+        // get class info: package, import, class_name, fields, method_sig
+        return "";
+    }
+    private static String[] getClassCode(CompilationUnit cu, String class_fqn, String method_name) {
         String packageName = cu.getPackageDeclaration().map(pd -> pd.toString().trim()).orElse("");
+        List<String> imports = extractor.getImports(cu);
+        String class_declaration = "";
+        List<String> fields = new ArrayList<>();
+        List<String> method_sigs = new ArrayList<>();
+        List<String> inner_class = new ArrayList<>();
+        // MethodDeclaration fmethod = null;
+        String class_info = "";
+        String method_body = "";
+        
         for (ClassOrInterfaceDeclaration class_dec: cu.findAll(ClassOrInterfaceDeclaration.class)) {
-            if (class_dec.getNameAsString().equals(class_name)) {
-                String method_body = "";
+            String full_name = class_dec.getFullyQualifiedName().map(fn -> fn)
+                    .orElse(packageName + "." + class_dec.getNameAsString());
+            if (full_name.equals(class_fqn)) {
                 // get class info: package, import, class_name, fields, method_sig
                 class_dec.removeJavaDocComment();
-                String declaration = class_dec.toString().split("\\{")[0].trim();
-                List<String> fields = new ArrayList<>();
+                class_declaration = class_dec.toString().split("\\{")[0].trim();
                 for( FieldDeclaration field : class_dec.getFields() ) {
-                    while(field.removeJavaDocComment()){;}
-                    fields.add(field.toString());
+                    if(field.isPublic()){
+                        while(field.removeJavaDocComment()){;}
+                        fields.add(field.toString());
+                    }
                 }
-                List<String> method_sigs = new ArrayList<>();
+                
                 for(ConstructorDeclaration constructor : class_dec.getConstructors()) {
                     String decl = constructor.getDeclarationAsString();
                     method_sigs.add(decl);
@@ -66,9 +85,10 @@ public class DatasetPreparation {
                 }
                 for (MethodDeclaration method : class_dec.getMethods()){
                     String decl = method.getDeclarationAsString(true, true, false);
+                    method.getAnnotations();
                     if (method.isPrivate()){
                         if (decl.contains(method_name) && method_name.startsWith(method.getNameAsString())) {
-                            System.out.println("error: private method " + method_name + "in class " + class_name +" is not allowed.");
+                            System.out.println("error: private method " + method_name + "in class " + class_fqn +" is not allowed.");
                             return null;
                         }
                     } else {
@@ -78,17 +98,19 @@ public class DatasetPreparation {
                         }
                     }
                 }
-                String class_info = packageName + "\n"
-                    + String.join("\n", imports)+ "\n" 
-                    + declaration + " {\n    " 
-                    + String.join("\n    ", fields) + "\n    " 
-                    + String.join(";\n    ", method_sigs) + ";\n}";
-                // System.out.println("class_info: " + class_info);
-                // System.out.println("method_body: " + method_body);
-                return new String[] {method_body, class_info};
+                
+            } else if (full_name.startsWith(class_fqn)){
+                inner_class.add(getInnerClassCode(class_dec));
             }
         };
-        return new String[] {"", ""};
+        class_info = packageName + "\n"
+                + String.join("\n", imports)+ "\n" 
+                + class_declaration + " {\n    " 
+                + String.join("\n    ", fields) + "\n    " 
+                + String.join(";\n    ", method_sigs) + ";\n}";
+        // System.out.println("class_info: " + class_info);
+        // System.out.println("method_body: " + method_body);
+        return new String[] {method_body, class_info};
     }
 
     private static JsonObject getMethodInfo(String project_url, String method_full_name) {
@@ -98,37 +120,37 @@ public class DatasetPreparation {
         String[] msplit = firstPart;
         int mlength = msplit.length;
         String method_name = msplit[mlength - 1];
-        String className = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-1));
+        String class_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-1));
         
-        String testId = msplit[mlength - 2] + "_" + method_name.split("\\(")[0];
-        if (idSet.containsKey(testId)) {
-            int count = idSet.get(testId);
-            testId = testId + "_" + count;
-            idSet.put(testId, count+1);
+        String test_id = msplit[mlength - 2] + "_" + method_name.split("\\(")[0];
+        if (idSet.containsKey(test_id)) {
+            int count = idSet.get(test_id);
+            test_id = test_id + "_" + count;
+            idSet.put(test_id, count+1);
         } else {
-            idSet.put(testId, 2);
+            idSet.put(test_id, 2);
         }
-        String packageName = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-2));
-        String testClass = packageName + "." + testId + "_Test";
-        String sourcePath = "src/main/java/" + className.replace(".", "/") + ".java";
-        String testPath = "src/test/java/" + testClass.replace(".", "/") + ".java";
+        String package_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-2));
+        String test_class = package_name + "." + test_id + "_Test";
+        String sourcePath = "src/main/java/" + class_name.replace(".", "/") + ".java";
+        String testPath = "src/test/java/" + test_class.replace(".", "/") + ".java";
         
         JsonObject methodInfo = new JsonObject();
-        methodInfo.addProperty("id", testId);
-        methodInfo.addProperty("package", packageName);
-        methodInfo.addProperty("class", className);
-        methodInfo.addProperty("test-class", testClass);
+        methodInfo.addProperty("id", test_id);
+        methodInfo.addProperty("package", package_name);
+        methodInfo.addProperty("class", class_name);
+        methodInfo.addProperty("test-class", test_class);
         methodInfo.addProperty("method-name", method_name);
         methodInfo.addProperty("source-path", sourcePath);
         methodInfo.addProperty("test-path", testPath);
 
         // get function body
         // get class info: package, import, class_name, fields, method_sig
-        String simple = msplit[mlength-2];
+        // String simple = msplit[mlength-2];
         try {
             Path class_path = Paths.get(dataset_dir + "/" + project_url + "/" + sourcePath);
             CompilationUnit cu = extractor.parseJavaFile(class_path);
-            String[] info = getClassInfo(cu, simple, method_name);
+            String[] info = getClassCode(cu, class_name, method_name);
             if(info==null) return null;
             methodInfo.addProperty("focused-method", info[0]);
             methodInfo.addProperty("class-info", info[1]);

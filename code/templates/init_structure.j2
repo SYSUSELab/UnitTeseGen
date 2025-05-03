@@ -14,15 +14,12 @@ Requirements:
 
 Please provide the completed test class template with proper field declarations and setup/teardown methods.
 
-@input{focused method}
-```java
-{{ focused_method }}
+@input{focused method and target class}
+Here is the code of focal method, `{{method_name}}`, with the focal class `{{ class_name }}`:
+```Java
+{{ class_code }}
 ```
 
-@input{target class}
-```java
-{{  target_class }}
-```
 {% if context_dict | length > 0 %}
 @input{context information}
 {% for key, value in context_dict.items() %}

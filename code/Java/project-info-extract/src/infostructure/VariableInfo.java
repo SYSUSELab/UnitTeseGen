@@ -1,11 +1,11 @@
 package infostructure;
 
 public class VariableInfo {
-    public String variable_name;
-    public String variable_type;
+    public String name;
+    public String type;
     public VariableInfo(String variableName, String vairableType) {
-        this.variable_name = variableName;
-        this.variable_type = vairableType;
+        this.name = variableName;
+        this.type = vairableType;
     }
 
     @Override
@@ -13,12 +13,12 @@ public class VariableInfo {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         VariableInfo that = (VariableInfo) obj;
-        return variable_name.equals(that.variable_name) && 
-            variable_type.equals(that.variable_type);
+        return name.equals(that.name) && 
+            type.equals(that.type);
     }
 
     @Override
     public int hashCode() {
-        return (variable_name+variable_type).hashCode();
+        return (name+type).hashCode();
     }
 }

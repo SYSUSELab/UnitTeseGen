@@ -27,15 +27,12 @@ Please generate unit test code that meets these requirements:
 - Validate both expected outputs 
 - **Don't directly access private methods and fields in test classes**
 
-@input{focused method}
+@input{focused method and target class}
+Here is the code of focal method, `{{method_name}}`, with the focal class `{{ class_name }}`:
 ```Java
-{{ focused_method }}
+{{ class_code }}
 ```
 
-@input{target class}
-```Java
-{{ target_class }}
-```
 @input{existing test class}
 ```Java
 <initial_class>

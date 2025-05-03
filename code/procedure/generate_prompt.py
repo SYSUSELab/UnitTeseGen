@@ -58,9 +58,9 @@ def generate_init_prompts(file_structure, dataset_info:dict):
             # generate prompt
             test_class_name =  test_info["test-class"].split('.')[-1]
             content = {
-                "focused_method": test_info["focused-method"],
-                # todo: fit class with every focused method, don't be TOO SLOW!
-                "target_class": test_info["class-info"],
+                "method_name": test_info["focused-method"],
+                "class_name": test_info["class"].split('.')[-1],
+                "class_code": test_info["class-code"],
                 "package_name": test_info["package"],
                 "class_name": test_class_name,
                 "context_dict": construct_context,
@@ -95,8 +95,9 @@ def generate_test_case_prompts(file_structure, task_setting, dataset_info:dict):
             utils.write_json(contxet_file, usage_context)
             # generate prompt
             content = {
-                "focused_method": test_info["focused-method"],
-                "target_class": test_info["class-info"],
+                "method_name": test_info["focused-method"],
+                "class_name": test_info["class"].split('.')[-1],
+                "class_code": test_info["class-code"],
                 "context_dict": usage_context,
             }
             prompt_list = generator.generate_group(content)

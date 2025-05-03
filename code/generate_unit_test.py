@@ -32,6 +32,7 @@ def generate_testclass_framework(dataset_info: dict):
     prompt_path = FS.PROMPT_PATH
     gen_path = FS.TESTCLASSS_PATH
     projects = TS.PROJECTS
+    save_res = TS.SAVE_INTER_RESULT
     select = True if len(projects)>0 else False
     llm_caller = LLMCaller()
     logger = logging.getLogger(__name__)
@@ -46,11 +47,14 @@ def generate_testclass_framework(dataset_info: dict):
         for test_info in pj_info["focused-methods"]:
             id = test_info["id"]
             prompt = utils.load_text(f"{project_prompt}/{id}/init_prompt.md")
-            code = llm_caller.get_response(prompt)
+            code, response = llm_caller.get_response(prompt)
             class_name = test_info["test-class"].split('.')[-1]
             check_class_name(code, class_name)
-            save_path = f"{gen_folder}/{class_name}.java"
-            utils.write_text(save_path, code)
+            test_class_path = f"{gen_folder}/{class_name}.java"
+            utils.write_text(test_class_path, code)
+            if save_res:
+                response_path = f"{project_prompt}/{id}/init_response.md"
+                utils.write_text(response_path, response)
     return
 
 def generate_testcase(dataset_info: dict):
@@ -58,6 +62,7 @@ def generate_testcase(dataset_info: dict):
     gen_path = FS.TESTCLASSS_PATH
     prompt_list = TS.PROMPT_LIST
     projects = TS.PROJECTS
+    save_res = TS.SAVE_INTER_RESULT
     select = True if len(projects)>0 else False
     llm_caller = LLMCaller()
     logger = logging.getLogger(__name__)
@@ -75,11 +80,14 @@ def generate_testcase(dataset_info: dict):
             for prompt_name in prompt_list:
                 prompt = utils.load_text(f"{project_prompt}/{id}/{prompt_name}_prompt.md")
                 prompt = prompt.replace('<initial_class>', init_class)
-                code = llm_caller.get_response(prompt)
+                code, response = llm_caller.get_response(prompt)
                 logger.debug("get response")
                 init_class = insert_test_case(init_class, code)
                 logger.debug("insert test case")
             utils.write_text(save_path, code)
+            if save_res:
+                response_path = f"{project_prompt}/{id}/{prompt_name}_response.md"
+                utils.write_text(response_path, response)
     return
 
 def check_class_name(init_class:str, tcname:str):

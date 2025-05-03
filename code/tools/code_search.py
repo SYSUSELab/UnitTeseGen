@@ -53,7 +53,7 @@ class CodeSearcher:
         class_info = self._get_class_info(class_name)
         if class_info is None:
             raise ValueError(f"Class `{class_name}` not found in code info")
-        
+
         context = {}
         constructor_info = []
         # get the constructor info
