@@ -30,6 +30,7 @@ def get_args():
 
 def generate_testclass_framework(dataset_info: dict):
     prompt_path = FS.PROMPT_PATH
+    response_path = FS.RESPONSE_PATH
     gen_path = FS.TESTCLASSS_PATH
     projects = TS.PROJECTS
     save_res = TS.SAVE_INTER_RESULT
@@ -40,7 +41,8 @@ def generate_testclass_framework(dataset_info: dict):
     for pj_name, pj_info in dataset_info.items():
         if select and pj_name not in projects: continue
         logger.info(f"Generating test class framework for project {pj_name}...")
-        project_prompt = prompt_path.replace("<project>", pj_name) 
+        project_prompt = prompt_path.replace("<project>", pj_name)
+        project_response = response_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
         if not os.path.exists(gen_folder):
             os.makedirs(gen_folder)
@@ -53,12 +55,13 @@ def generate_testclass_framework(dataset_info: dict):
             test_class_path = f"{gen_folder}/{class_name}.java"
             utils.write_text(test_class_path, code)
             if save_res:
-                response_path = f"{project_prompt}/{id}/init_response.md"
+                response_path = f"{project_response}/{id}/init_response.md"
                 utils.write_text(response_path, response)
     return
 
 def generate_testcase(dataset_info: dict):
     prompt_path = FS.PROMPT_PATH
+    response_path = FS.RESPONSE_PATH
     gen_path = FS.TESTCLASSS_PATH
     prompt_list = TS.PROMPT_LIST
     projects = TS.PROJECTS
@@ -71,6 +74,7 @@ def generate_testcase(dataset_info: dict):
         if select and pj_name not in projects: continue
         logger.info(f"Generating test cases for project {pj_name}...")
         project_prompt = prompt_path.replace("<project>", pj_name)
+        project_response = response_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
         for test_info in pj_info["focused-methods"]:
             class_name = test_info["test-class"].split('.')[-1]
@@ -86,7 +90,7 @@ def generate_testcase(dataset_info: dict):
                 logger.debug("insert test case")
             utils.write_text(save_path, code)
             if save_res:
-                response_path = f"{project_prompt}/{id}/{prompt_name}_response.md"
+                response_path = f"{project_response}/{id}/{prompt_name}_response.md"
                 utils.write_text(response_path, response)
     return
 
