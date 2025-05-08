@@ -2,7 +2,7 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.SortedDocValuesField;
+import org.apache.lucene.document.SortedSetDocValuesField;
 import org.apache.lucene.document.StoredField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.index.IndexWriter;
@@ -43,9 +43,6 @@ public class IndexBuilder {
         String mode = args[0];
         Path code_path = Paths.get(args[1]);
         Path index_path = Paths.get(args[2]);
-        if (!Files.isDirectory(code_path)){
-            throw new IllegalArgumentException("project root should be a directory!");
-        }
         if (!Files.exists(index_path)) {
             try {
                 Files.createDirectories(index_path); 
@@ -59,6 +56,9 @@ public class IndexBuilder {
             IndexBuilder builder = new IndexBuilder(code_path, index_path);
             builder.startSingle();
         } else if (mode.equals("group")) {
+            if (!Files.isDirectory(code_path)){
+                throw new IllegalArgumentException("project root should be a directory!");
+            }
             IndexBuilder builder = new IndexBuilder(code_path, index_path);
             builder.startGroup();
         } else {
@@ -93,24 +93,26 @@ public class IndexBuilder {
             JsonObject class_info = class_entry.getValue().getAsJsonObject();
             String file = class_info.get("file").getAsString();
             JsonObject methods = class_info.get("methods").getAsJsonObject();
-
-            for (Map.Entry<String, JsonElement> method_entry : methods.entrySet()) {
-                JsonObject method_info = method_entry.getValue().getAsJsonObject();
-                String method_sig = method_info.get("signature").getAsString();
-                int start = method_info.get("start_line").getAsInt();
-                int end = method_info.get("end_line").getAsInt();
-                JsonArray call_func = method_info.get("calls").getAsJsonArray();
-                JsonArray call_field = method_info.get("fields").getAsJsonArray();
-                String[] call_func_str = new String[call_func.size()];
-                String[] call_field_str = new String[call_field.size()];
-                for (int i = 0; i < call_func.size(); i++) {
-                    call_func_str[i] = call_func.get(i).getAsString();
-                }
-                for (int i = 0; i < call_field.size(); i++) {
-                    call_field_str[i] = call_field.get(i).getAsString();
-                }
-                addDocument(class_fqn, method_sig, file, start, end, call_func_str, call_field_str);
-            }
+            // 遍历所有方法信息并获取方法详情
+            methods.entrySet().forEach(method_entry -> {
+                method_entry.getValue().getAsJsonArray().forEach(info -> {
+                    JsonObject method_info = info.getAsJsonObject();
+                    String method_sig = method_info.get("signature").getAsString();
+                    int start = method_info.get("start_line").getAsInt();
+                    int end = method_info.get("end_line").getAsInt();
+                    JsonArray call_func = method_info.get("call_methods").getAsJsonArray();
+                    JsonArray call_field = method_info.get("external_fields").getAsJsonArray();
+                    String[] call_func_str = new String[call_func.size()];
+                    String[] call_field_str = new String[call_field.size()];
+                    for (int i = 0; i < call_func.size(); i++) {
+                        call_func_str[i] = call_func.get(i).getAsJsonObject().get("signature").getAsString();
+                    }
+                    for (int i = 0; i < call_field.size(); i++) {
+                        call_field_str[i] = call_field.get(i).getAsJsonObject().get("name").getAsString();
+                    }
+                    addDocument(class_fqn, method_sig, file, start, end, call_func_str, call_field_str);
+                });
+            });
         }
         return;
     }
@@ -137,11 +139,11 @@ public class IndexBuilder {
         document.add(new StoredField("end", end));
         for(String func : call_func){
             document.add(new StringField("cfuncs", func, Field.Store.YES));
-            document.add(new SortedDocValuesField("cfunc_dv", new BytesRef(func)));
+            document.add(new SortedSetDocValuesField("cfunc_dv", new BytesRef(func)));
         }
         for(String field : call_field){
             document.add(new StringField("cfields", field, Field.Store.YES));
-            document.add(new SortedDocValuesField("cfield_dv", new BytesRef(field)));
+            document.add(new SortedSetDocValuesField("cfield_dv", new BytesRef(field)));
         }
 
         try {

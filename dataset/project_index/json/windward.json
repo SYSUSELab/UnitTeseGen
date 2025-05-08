@@ -5,7 +5,7 @@
       "constructors": [
         {
           "start_line": 59,
-          "end_line": 60,
+          "end_line": 62,
           "call_methods": [],
           "external_fields": [],
           "signature": "AbstractRouterGroup(M)",
@@ -18,7 +18,7 @@
         },
         {
           "start_line": 63,
-          "end_line": 64,
+          "end_line": 67,
           "call_methods": [],
           "external_fields": [
             {
@@ -54,7 +54,7 @@
         },
         {
           "start_line": 53,
-          "end_line": 54,
+          "end_line": 55,
           "name": "routers",
           "type": "java.util.Map<java.lang.String, java.util.Map<java.lang.String, ? super java.lang.Object>>"
         },
@@ -81,7 +81,7 @@
         "setGroupPath": [
           {
             "start_line": 68,
-            "end_line": 69,
+            "end_line": 74,
             "call_methods": [
               {
                 "signature": "java.lang.String.startsWith(String)",
@@ -117,7 +117,7 @@
         "end": [
           {
             "start_line": 75,
-            "end_line": 76,
+            "end_line": 79,
             "call_methods": [],
             "external_fields": [
               {
@@ -133,7 +133,7 @@
         "get": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 84,
             "call_methods": [
               {
                 "signature": "http",
@@ -175,7 +175,7 @@
           },
           {
             "start_line": 85,
-            "end_line": 86,
+            "end_line": 89,
             "call_methods": [
               {
                 "signature": "http",
@@ -217,7 +217,7 @@
           },
           {
             "start_line": 90,
-            "end_line": 91,
+            "end_line": 95,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -261,7 +261,7 @@
         "put": [
           {
             "start_line": 96,
-            "end_line": 97,
+            "end_line": 100,
             "call_methods": [
               {
                 "signature": "http",
@@ -303,7 +303,7 @@
           },
           {
             "start_line": 101,
-            "end_line": 102,
+            "end_line": 105,
             "call_methods": [
               {
                 "signature": "http",
@@ -345,7 +345,7 @@
           },
           {
             "start_line": 106,
-            "end_line": 107,
+            "end_line": 111,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -389,7 +389,7 @@
         "post": [
           {
             "start_line": 112,
-            "end_line": 113,
+            "end_line": 116,
             "call_methods": [
               {
                 "signature": "http",
@@ -431,7 +431,7 @@
           },
           {
             "start_line": 117,
-            "end_line": 118,
+            "end_line": 121,
             "call_methods": [
               {
                 "signature": "http",
@@ -473,7 +473,7 @@
           },
           {
             "start_line": 122,
-            "end_line": 123,
+            "end_line": 127,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -517,7 +517,7 @@
         "delete": [
           {
             "start_line": 128,
-            "end_line": 129,
+            "end_line": 132,
             "call_methods": [
               {
                 "signature": "http",
@@ -559,7 +559,7 @@
           },
           {
             "start_line": 133,
-            "end_line": 134,
+            "end_line": 137,
             "call_methods": [
               {
                 "signature": "http",
@@ -601,7 +601,7 @@
           },
           {
             "start_line": 138,
-            "end_line": 139,
+            "end_line": 143,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -645,7 +645,7 @@
         "sse": [
           {
             "start_line": 144,
-            "end_line": 145,
+            "end_line": 149,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -689,7 +689,7 @@
         "ws": [
           {
             "start_line": 150,
-            "end_line": 151,
+            "end_line": 155,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.name()",
@@ -742,7 +742,7 @@
         "resources": [
           {
             "start_line": 156,
-            "end_line": 157,
+            "end_line": 175,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.WindwardException.WindwardException(String)",
@@ -838,7 +838,7 @@
         "http": [
           {
             "start_line": 176,
-            "end_line": 177,
+            "end_line": 181,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.name()",
@@ -888,7 +888,7 @@
           },
           {
             "start_line": 182,
-            "end_line": 183,
+            "end_line": 188,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.name()",
@@ -938,7 +938,7 @@
           },
           {
             "start_line": 189,
-            "end_line": 190,
+            "end_line": 195,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.name()",
@@ -990,7 +990,7 @@
         "matchRouter": [
           {
             "start_line": 196,
-            "end_line": 197,
+            "end_line": 262,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -1293,7 +1293,7 @@
         "registerRouter": [
           {
             "start_line": 263,
-            "end_line": 264,
+            "end_line": 289,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -1505,7 +1505,7 @@
         "checkPlaceholder": [
           {
             "start_line": 290,
-            "end_line": 291,
+            "end_line": 303,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -1599,14 +1599,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\AbstractRouterGroup.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.AbstractHttpWindwardContext": {
       "constructors": [
         {
           "start_line": 36,
-          "end_line": 37,
+          "end_line": 40,
           "call_methods": [],
           "external_fields": [],
           "signature": "AbstractHttpWindwardContext(WindwardRequest, WindwardResponse)",
@@ -1627,7 +1627,7 @@
         "readJson": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 46,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.getRequestBody()",
@@ -1667,7 +1667,7 @@
           },
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 52,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.readJson(String, Type)",
@@ -1709,7 +1709,7 @@
         "bindJson": [
           {
             "start_line": 54,
-            "end_line": 55,
+            "end_line": 58,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.getRequestBody()",
@@ -1757,7 +1757,7 @@
           },
           {
             "start_line": 60,
-            "end_line": 61,
+            "end_line": 64,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.bindJson(String, Type, Class<?>...)",
@@ -1807,7 +1807,7 @@
         "redirect": [
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.HttpStatus.value()",
@@ -1847,7 +1847,7 @@
           },
           {
             "start_line": 72,
-            "end_line": 73,
+            "end_line": 82,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.WindwardException.WindwardException(String)",
@@ -1946,7 +1946,7 @@
         "html": [
           {
             "start_line": 84,
-            "end_line": 85,
+            "end_line": 118,
             "call_methods": [
               {
                 "signature": "java.lang.String.substring(int)",
@@ -2148,14 +2148,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\AbstractHttpWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.AbstractWindwardContext": {
       "constructors": [
         {
           "start_line": 33,
-          "end_line": 34,
+          "end_line": 38,
           "call_methods": [],
           "external_fields": [
             {
@@ -2204,7 +2204,7 @@
         "getRequestParameter": [
           {
             "start_line": 40,
-            "end_line": 41,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "java.util.List.isEmpty()",
@@ -2257,7 +2257,7 @@
         "getRequestParameters": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "java.util.Map.get(Object)",
@@ -2295,7 +2295,7 @@
         "getPathVariables": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 61,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.getPathVariables()",
@@ -2318,7 +2318,7 @@
         "getRequestBody": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 67,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.getRequestBody()",
@@ -2341,7 +2341,7 @@
         "windwardRequest": [
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 73,
             "call_methods": [],
             "external_fields": [
               {
@@ -2358,7 +2358,7 @@
         "close": [
           {
             "start_line": 75,
-            "end_line": 76,
+            "end_line": 80,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardResponse.close()",
@@ -2389,7 +2389,7 @@
         "isClosed": [
           {
             "start_line": 82,
-            "end_line": 83,
+            "end_line": 86,
             "call_methods": [],
             "external_fields": [
               {
@@ -2406,7 +2406,7 @@
         "writeJson": [
           {
             "start_line": 88,
-            "end_line": 89,
+            "end_line": 92,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.writeJson(int, T)",
@@ -2446,7 +2446,7 @@
           },
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 98,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.write(int, String, T)",
@@ -2495,7 +2495,7 @@
         "writeString": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 104,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.HttpStatus.value()",
@@ -2535,7 +2535,7 @@
           },
           {
             "start_line": 106,
-            "end_line": 107,
+            "end_line": 110,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.write(int, String, T)",
@@ -2584,7 +2584,7 @@
         "write": [
           {
             "start_line": 112,
-            "end_line": 113,
+            "end_line": 116,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.write(int, String, T)",
@@ -2632,7 +2632,7 @@
           },
           {
             "start_line": 118,
-            "end_line": 119,
+            "end_line": 122,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardResponse.write(int, String, T)",
@@ -2679,7 +2679,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\AbstractWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.EmptyWindwardContext": {
@@ -2689,7 +2689,7 @@
         "getRequestParameter": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 30,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2711,7 +2711,7 @@
         "getRequestParameters": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 35,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2733,7 +2733,7 @@
         "getPathVariables": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 40,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2750,7 +2750,7 @@
         "getRequestBody": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2767,7 +2767,7 @@
         "windwardRequest": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 50,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2784,7 +2784,7 @@
         "close": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2801,7 +2801,7 @@
         "isClosed": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 60,
             "call_methods": [],
             "external_fields": [
               {
@@ -2817,7 +2817,7 @@
         "write": [
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2847,7 +2847,7 @@
         "writeJson": [
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2873,7 +2873,7 @@
         "writeString": [
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 75,
             "call_methods": [
               {
                 "signature": "java.lang.UnsupportedOperationException.UnsupportedOperationException()",
@@ -2897,14 +2897,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\EmptyWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.EnhancedWindwardContext": {
       "constructors": [
         {
           "start_line": 29,
-          "end_line": 30,
+          "end_line": 33,
           "call_methods": [],
           "external_fields": [],
           "signature": "EnhancedWindwardContext(WindwardRequest, WindwardResponse)",
@@ -2925,7 +2925,7 @@
         "execute": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 39,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.EnhancedWindwardContext.doOnRequest()",
@@ -2994,7 +2994,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\EnhancedWindwardContext.java",
       "javadoc": "\n * @see org.flmelody.core.context.support.JsonWindwardContext\n * @see org.flmelody.core.context.support.ViewWindwardContext\n * @author esotericman\n "
     },
     "org.flmelody.core.context.HttpBasicWindwardContext": {
@@ -3131,14 +3131,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\context\\HttpBasicWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.ResourceWindwardContext": {
       "constructors": [
         {
           "start_line": 11,
-          "end_line": 12,
+          "end_line": 16,
           "call_methods": [],
           "external_fields": [
             {
@@ -3175,7 +3175,7 @@
         "getMatchedPath": [
           {
             "start_line": 17,
-            "end_line": 18,
+            "end_line": 20,
             "call_methods": [],
             "external_fields": [
               {
@@ -3189,14 +3189,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\ResourceWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.SimpleWindwardContext": {
       "constructors": [
         {
           "start_line": 25,
-          "end_line": 26,
+          "end_line": 28,
           "call_methods": [],
           "external_fields": [],
           "signature": "SimpleWindwardContext(WindwardRequest, WindwardResponse)",
@@ -3214,21 +3214,21 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\SimpleWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.support.HttpKind": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\context\\support\\HttpKind.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.support.JsonWindwardContext": {
       "constructors": [
         {
           "start_line": 29,
-          "end_line": 30,
+          "end_line": 32,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonWindwardContext(WindwardRequest, WindwardResponse)",
@@ -3249,7 +3249,7 @@
         "doOnRequest": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 44,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.equals(Object)",
@@ -3314,7 +3314,7 @@
         "doOnResponse": [
           {
             "start_line": 45,
-            "end_line": 46,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.writeJson(T)",
@@ -3339,14 +3339,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\support\\JsonWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.support.SseWindwardContext": {
       "constructors": [
         {
           "start_line": 26,
-          "end_line": 27,
+          "end_line": 29,
           "call_methods": [],
           "external_fields": [],
           "signature": "SseWindwardContext(WindwardRequest, WindwardResponse)",
@@ -3367,7 +3367,7 @@
         "doOnRequest": [
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 32,
             "call_methods": [],
             "external_fields": [],
             "return_type": "void",
@@ -3378,7 +3378,7 @@
         "doOnResponse": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 35,
             "call_methods": [],
             "external_fields": [],
             "return_type": "void",
@@ -3392,14 +3392,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\support\\SseWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.support.ViewWindwardContext": {
       "constructors": [
         {
           "start_line": 27,
-          "end_line": 28,
+          "end_line": 30,
           "call_methods": [],
           "external_fields": [],
           "signature": "ViewWindwardContext(WindwardRequest, WindwardResponse)",
@@ -3420,7 +3420,7 @@
         "doOnRequest": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 33,
             "call_methods": [],
             "external_fields": [],
             "return_type": "void",
@@ -3431,7 +3431,7 @@
         "doOnResponse": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 41,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.ResourceNotFoundException.ResourceNotFoundException(String)",
@@ -3480,7 +3480,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\context\\support\\ViewWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.context.WindwardContext": {
@@ -3584,7 +3584,7 @@
         "isCacheable": [
           {
             "start_line": 81,
-            "end_line": 82,
+            "end_line": 84,
             "call_methods": [],
             "external_fields": [
               {
@@ -3601,7 +3601,7 @@
         "write": [
           {
             "start_line": 92,
-            "end_line": 93,
+            "end_line": 95,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.HttpStatus.value()",
@@ -3674,7 +3674,7 @@
         "writeJson": [
           {
             "start_line": 112,
-            "end_line": 113,
+            "end_line": 115,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.WindwardContext.writeJson(int, T)",
@@ -3735,7 +3735,7 @@
         "writeString": [
           {
             "start_line": 130,
-            "end_line": 131,
+            "end_line": 133,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.WindwardContext.writeString(int, String)",
@@ -3794,7 +3794,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\context\\WindwardContext.java",
       "javadoc": "\n * Http context\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.DefaultNotFoundHandler": {
@@ -3804,7 +3804,7 @@
         "handle": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 30,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.WindwardContext.writeString(int, String)",
@@ -3850,7 +3850,7 @@
         "supported": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 35,
             "call_methods": [
               {
                 "signature": "java.lang.Class.isAssignableFrom(Class<?>)",
@@ -3882,7 +3882,7 @@
         "getOrder": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 40,
             "call_methods": [],
             "external_fields": [
               {
@@ -3896,7 +3896,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\DefaultNotFoundHandler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.DefaultRequestReader": {
@@ -3906,7 +3906,7 @@
         "readJson": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 35,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.plugin(Class<T>)",
@@ -3949,7 +3949,7 @@
           },
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.plugin(Class<T>)",
@@ -3994,7 +3994,7 @@
         "bindJson": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 51,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.plugin(Class<T>)",
@@ -4059,7 +4059,7 @@
           },
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 59,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.plugin(Class<T>)",
@@ -4124,14 +4124,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\DefaultRequestReader.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.DefaultRouterGroup": {
       "constructors": [
         {
           "start_line": 24,
-          "end_line": 25,
+          "end_line": 27,
           "call_methods": [],
           "external_fields": [],
           "signature": "DefaultRouterGroup(Windward)",
@@ -4144,7 +4144,7 @@
         },
         {
           "start_line": 28,
-          "end_line": 29,
+          "end_line": 31,
           "call_methods": [],
           "external_fields": [],
           "signature": "DefaultRouterGroup(Windward, String)",
@@ -4161,7 +4161,7 @@
         },
         {
           "start_line": 32,
-          "end_line": 33,
+          "end_line": 36,
           "call_methods": [],
           "external_fields": [
             {
@@ -4191,7 +4191,7 @@
         "isResourceGroup": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 40,
             "call_methods": [],
             "external_fields": [
               {
@@ -4205,14 +4205,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\DefaultRouterGroup.java",
       "javadoc": "\n * Default router group\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.HandlerNotFoundException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "HandlerNotFoundException(String)",
@@ -4226,14 +4226,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\HandlerNotFoundException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.JsonDeserializeException": {
       "constructors": [
         {
           "start_line": 22,
-          "end_line": 23,
+          "end_line": 25,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonDeserializeException(Throwable)",
@@ -4246,7 +4246,7 @@
         },
         {
           "start_line": 26,
-          "end_line": 27,
+          "end_line": 29,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonDeserializeException(String)",
@@ -4260,14 +4260,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\JsonDeserializeException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.JsonException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonException(Throwable)",
@@ -4280,7 +4280,7 @@
         },
         {
           "start_line": 27,
-          "end_line": 28,
+          "end_line": 30,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonException(String)",
@@ -4294,14 +4294,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\JsonException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.JsonSerializeException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonSerializeException(Throwable)",
@@ -4314,7 +4314,7 @@
         },
         {
           "start_line": 27,
-          "end_line": 28,
+          "end_line": 30,
           "call_methods": [],
           "external_fields": [],
           "signature": "JsonSerializeException(String)",
@@ -4328,21 +4328,21 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\JsonSerializeException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.NoRequestBodyException": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\NoRequestBodyException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.PluginMissException": {
       "constructors": [
         {
           "start_line": 22,
-          "end_line": 23,
+          "end_line": 25,
           "call_methods": [],
           "external_fields": [],
           "signature": "PluginMissException(Throwable)",
@@ -4355,7 +4355,7 @@
         },
         {
           "start_line": 26,
-          "end_line": 27,
+          "end_line": 29,
           "call_methods": [],
           "external_fields": [],
           "signature": "PluginMissException(String)",
@@ -4369,14 +4369,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\PluginMissException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.ResourceNotFoundException": {
       "constructors": [
         {
           "start_line": 22,
-          "end_line": 23,
+          "end_line": 25,
           "call_methods": [],
           "external_fields": [],
           "signature": "ResourceNotFoundException(String)",
@@ -4390,14 +4390,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\ResourceNotFoundException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.RouterMappingException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "RouterMappingException(String)",
@@ -4411,14 +4411,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\RouterMappingException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.ServerException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "ServerException(String)",
@@ -4432,14 +4432,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\ServerException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.ValidationException": {
       "constructors": [
         {
           "start_line": 23,
-          "end_line": 24,
+          "end_line": 26,
           "call_methods": [],
           "external_fields": [],
           "signature": "ValidationException(String)",
@@ -4453,14 +4453,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\ValidationException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.exception.WindwardException": {
       "constructors": [
         {
           "start_line": 22,
-          "end_line": 23,
+          "end_line": 25,
           "call_methods": [],
           "external_fields": [],
           "signature": "WindwardException(Throwable)",
@@ -4473,7 +4473,7 @@
         },
         {
           "start_line": 26,
-          "end_line": 27,
+          "end_line": 29,
           "call_methods": [],
           "external_fields": [],
           "signature": "WindwardException(String)",
@@ -4487,7 +4487,7 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\exception\\WindwardException.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.ExceptionHandler": {
@@ -4527,7 +4527,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\ExceptionHandler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.Filter": {
@@ -4551,14 +4551,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\Filter.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.FunctionMetaInfo": {
       "constructors": [
         {
           "start_line": 37,
-          "end_line": 38,
+          "end_line": 69,
           "call_methods": [
             {
               "signature": "org.flmelody.support.FunctionHelper.resolveFunction(F)",
@@ -4710,7 +4710,7 @@
         "getPath": [
           {
             "start_line": 70,
-            "end_line": 71,
+            "end_line": 73,
             "call_methods": [],
             "external_fields": [
               {
@@ -4726,7 +4726,7 @@
         "getFunction": [
           {
             "start_line": 74,
-            "end_line": 75,
+            "end_line": 77,
             "call_methods": [],
             "external_fields": [
               {
@@ -4742,7 +4742,7 @@
         "getContext": [
           {
             "start_line": 78,
-            "end_line": 79,
+            "end_line": 81,
             "call_methods": [],
             "external_fields": [
               {
@@ -4758,7 +4758,7 @@
         "getParameterType": [
           {
             "start_line": 82,
-            "end_line": 83,
+            "end_line": 85,
             "call_methods": [],
             "external_fields": [
               {
@@ -4774,7 +4774,7 @@
         "getResultType": [
           {
             "start_line": 86,
-            "end_line": 87,
+            "end_line": 89,
             "call_methods": [],
             "external_fields": [
               {
@@ -4790,7 +4790,7 @@
         "getPathVariables": [
           {
             "start_line": 90,
-            "end_line": 91,
+            "end_line": 93,
             "call_methods": [],
             "external_fields": [
               {
@@ -4806,7 +4806,7 @@
         "getFunctionDefinition": [
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 97,
             "call_methods": [],
             "external_fields": [
               {
@@ -4820,14 +4820,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\FunctionMetaInfo.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.Handler": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\Handler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.HttpHeader": {
@@ -5201,7 +5201,7 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\HttpHeader.java",
       "javadoc": "\n * Common http headers\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.HttpMethod": {
@@ -5255,6 +5255,7 @@
       "fields": [],
       "constructors": [],
       "methods": {},
+      "file": "org\\flmelody\\core\\HttpMethod.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.HttpServer": {
@@ -5273,7 +5274,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\HttpServer.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.HttpStatus": {
@@ -5351,7 +5352,7 @@
       "constructors": [
         {
           "start_line": 45,
-          "end_line": 46,
+          "end_line": 49,
           "call_methods": [],
           "external_fields": [
             {
@@ -5380,7 +5381,7 @@
         "value": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 40,
             "call_methods": [],
             "external_fields": [
               {
@@ -5396,7 +5397,7 @@
         "reasonPhrase": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 44,
             "call_methods": [],
             "external_fields": [
               {
@@ -5410,6 +5411,7 @@
           }
         ]
       },
+      "file": "org\\flmelody\\core\\HttpStatus.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.LoggingFilter": {
@@ -5426,7 +5428,7 @@
         "filter": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 32,
             "call_methods": [
               {
                 "signature": "org.slf4j.Logger.atDebug()",
@@ -5475,7 +5477,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\LoggingFilter.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.MediaType": {
@@ -5599,7 +5601,7 @@
       "constructors": [
         {
           "start_line": 49,
-          "end_line": 50,
+          "end_line": 54,
           "call_methods": [],
           "external_fields": [
             {
@@ -5636,7 +5638,7 @@
         "detectMediaType": [
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 74,
             "call_methods": [
               {
                 "signature": "java.lang.String.equals(Object)",
@@ -5703,6 +5705,7 @@
           }
         ]
       },
+      "file": "org\\flmelody\\core\\MediaType.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.handler.HttpResponseEncoder": {
@@ -5712,7 +5715,7 @@
         "encode": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "io.netty.handler.codec.http.websocketx.TextWebSocketFrame.TextWebSocketFrame(ByteBuf)",
@@ -5799,7 +5802,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\handler\\HttpResponseEncoder.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.handler.HttpServerHandler": {
@@ -5828,7 +5831,7 @@
         "channelRead0": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 118,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.handler.WebSocketHandler.WebSocketHandler()",
@@ -6082,7 +6085,7 @@
         "userEventTriggered": [
           {
             "start_line": 119,
-            "end_line": 120,
+            "end_line": 134,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ws.WebSocketWindwardContext.setWebSocketEvent(WebSocketEvent)",
@@ -6170,7 +6173,7 @@
         "exceptionCaught": [
           {
             "start_line": 135,
-            "end_line": 136,
+            "end_line": 150,
             "call_methods": [
               {
                 "signature": "io.netty.channel.ChannelOutboundInvoker.close()",
@@ -6253,7 +6256,7 @@
         "extractHandlers": [
           {
             "start_line": 151,
-            "end_line": 152,
+            "end_line": 175,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.ws.ExtensionalWebSocketPlugin.getWebSocketParsers()",
@@ -6364,7 +6367,7 @@
         "prepareHeaders": [
           {
             "start_line": 176,
-            "end_line": 177,
+            "end_line": 191,
             "call_methods": [
               {
                 "signature": "java.util.ArrayList.add(E)",
@@ -6480,7 +6483,7 @@
         "initContext": [
           {
             "start_line": 192,
-            "end_line": 193,
+            "end_line": 249,
             "call_methods": [
               {
                 "signature": "io.netty.handler.codec.http.HttpRequest.uri()",
@@ -6837,7 +6840,7 @@
         "handle": [
           {
             "start_line": 250,
-            "end_line": 251,
+            "end_line": 268,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.filters()",
@@ -6949,7 +6952,7 @@
         "execute": [
           {
             "start_line": 269,
-            "end_line": 270,
+            "end_line": 304,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.handler.HttpServerHandler.handleException(WindwardContext, Exception)",
@@ -7101,7 +7104,7 @@
         "handleException": [
           {
             "start_line": 305,
-            "end_line": 306,
+            "end_line": 321,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ExceptionHandler.supported(Exception)",
@@ -7171,7 +7174,7 @@
         "isWebsocketUpgrade": [
           {
             "start_line": 322,
-            "end_line": 323,
+            "end_line": 327,
             "call_methods": [
               {
                 "signature": "io.netty.handler.codec.http.HttpHeaders.containsValue(CharSequence, CharSequence, boolean)",
@@ -7249,7 +7252,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\handler\\HttpServerHandler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.handler.SocketTailHandler": {
@@ -7259,7 +7262,7 @@
         "userEventTriggered": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "io.netty.channel.ChannelPipeline.addBefore(String, String, ChannelHandler)",
@@ -7382,7 +7385,7 @@
         "exceptionCaught": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ws.WebSocketFireEvent.WebSocketFireEventBuilder.build()",
@@ -7446,7 +7449,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\handler\\SocketTailHandler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.handler.WebSocketHandler": {
@@ -7454,7 +7457,7 @@
       "fields": [
         {
           "start_line": 31,
-          "end_line": 32,
+          "end_line": 33,
           "name": "MULTIPLE_SUBSCRIBER",
           "type": "io.netty.util.AttributeKey<java.lang.Boolean>"
         }
@@ -7463,7 +7466,7 @@
         "channelRead": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 69,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ws.WebSocketFireEvent.WebSocketFireEventBuilder.data(Object)",
@@ -7580,14 +7583,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\handler\\WebSocketHandler.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.NettyHttpServer": {
       "constructors": [
         {
           "start_line": 44,
-          "end_line": 45,
+          "end_line": 47,
           "call_methods": [],
           "external_fields": [
             {
@@ -7622,7 +7625,7 @@
         "run": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 87,
             "call_methods": [
               {
                 "signature": "io.netty.channel.Channel.pipeline()",
@@ -7834,14 +7837,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\NettyHttpServer.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.netty.NettyResponseWriter": {
       "constructors": [
         {
           "start_line": 46,
-          "end_line": 47,
+          "end_line": 50,
           "call_methods": [],
           "external_fields": [
             {
@@ -7884,7 +7887,7 @@
         "write": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.NettyResponseWriter.write(int, String, T)",
@@ -7930,7 +7933,7 @@
           },
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 60,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.NettyResponseWriter.write(int, String, T, boolean)",
@@ -7980,7 +7983,7 @@
           },
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.NettyResponseWriter.write(int, String, Map<String, Object>, T, boolean)",
@@ -8038,7 +8041,7 @@
           },
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.NettyResponseWriter.write(int, String, Map<String, Object>, T, boolean)",
@@ -8096,7 +8099,7 @@
           },
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 107,
             "call_methods": [
               {
                 "signature": "io.netty.handler.codec.http.HttpHeaders.setInt(CharSequence, int)",
@@ -8378,7 +8381,7 @@
         "writeAndClose": [
           {
             "start_line": 108,
-            "end_line": 109,
+            "end_line": 112,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.netty.NettyResponseWriter.write(int, String, T, boolean)",
@@ -8430,7 +8433,7 @@
         "close": [
           {
             "start_line": 113,
-            "end_line": 114,
+            "end_line": 119,
             "call_methods": [
               {
                 "signature": "io.netty.channel.ChannelOutboundInvoker.writeAndFlush(Object)",
@@ -8483,7 +8486,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\netty\\NettyResponseWriter.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.Order": {
@@ -8512,7 +8515,7 @@
         "getOrder": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 34,
             "call_methods": [],
             "external_fields": [
               {
@@ -8527,7 +8530,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\Order.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.json.AutoJsonBinder": {
@@ -8547,7 +8550,7 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\json\\AutoJsonBinder.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.json.GsonPlugin": {
@@ -8564,7 +8567,7 @@
         "toJson": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "java.lang.String.valueOf(Object)",
@@ -8637,7 +8640,7 @@
         "toObject": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonDeserializeException.JsonDeserializeException(Throwable)",
@@ -8686,7 +8689,7 @@
           },
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "com.google.gson.reflect.TypeToken.get(Type)",
@@ -8745,7 +8748,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\json\\GsonPlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.json.JacksonPlugin": {
@@ -8762,7 +8765,7 @@
         "toJson": [
           {
             "start_line": 39,
-            "end_line": 40,
+            "end_line": 57,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.ObjectMapper.writeValueAsString(Object)",
@@ -8825,7 +8828,7 @@
         "toObject": [
           {
             "start_line": 59,
-            "end_line": 60,
+            "end_line": 67,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonDeserializeException.JsonDeserializeException(Throwable)",
@@ -8874,7 +8877,7 @@
           },
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 77,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonDeserializeException.JsonDeserializeException(Throwable)",
@@ -8943,7 +8946,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\json\\JacksonPlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.json.JsonPlugin": {
@@ -9008,14 +9011,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\json\\JsonPlugin.java",
       "javadoc": "\n * Base interface for serializing or deserializing json\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.Plugin": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\Plugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.PluginSlot": {
@@ -9067,7 +9070,7 @@
       "constructors": [
         {
           "start_line": 31,
-          "end_line": 32,
+          "end_line": 34,
           "call_methods": [],
           "external_fields": [
             {
@@ -9088,7 +9091,7 @@
         "slot": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "java.lang.Object.equals(Object)",
@@ -9127,13 +9130,14 @@
           }
         ]
       },
+      "file": "org\\flmelody\\core\\plugin\\PluginSlot.java",
       "javadoc": "\n * Predefine plugin slot.\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resolver.CompositePluginResolver": {
       "constructors": [
         {
           "start_line": 29,
-          "end_line": 30,
+          "end_line": 32,
           "call_methods": [],
           "external_fields": [],
           "signature": "CompositePluginResolver()",
@@ -9152,7 +9156,7 @@
         "resolve": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 37,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -9202,7 +9206,7 @@
         "registerResolver": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 41,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -9232,7 +9236,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resolver\\CompositePluginResolver.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resolver.PluginResolver": {
@@ -9260,7 +9264,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\resolver\\PluginResolver.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resolver.ViewPluginResolver": {
@@ -9270,7 +9274,7 @@
         "resolve": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 32,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.getTemplateRoot()",
@@ -9304,7 +9308,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resolver\\ViewPluginResolver.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.BaseStaticResourcePlugin": {
@@ -9327,7 +9331,7 @@
         "accept": [
           {
             "start_line": 47,
-            "end_line": 48,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.resource.StaticResource.newBuilder()",
@@ -9515,7 +9519,7 @@
         "findResource": [
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 93,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.resource.StaticResource.getFileUri()",
@@ -9693,7 +9697,7 @@
         "mappingResource": [
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 104,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -9731,14 +9735,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resource\\BaseStaticResourcePlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.FixedStaticResourcePlugin": {
       "constructors": [
         {
           "start_line": 35,
-          "end_line": 36,
+          "end_line": 38,
           "call_methods": [],
           "external_fields": [],
           "signature": "FixedStaticResourcePlugin()",
@@ -9746,7 +9750,7 @@
         },
         {
           "start_line": 39,
-          "end_line": 40,
+          "end_line": 42,
           "call_methods": [],
           "external_fields": [
             {
@@ -9781,7 +9785,7 @@
         "appendPages": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "java.util.Set.addAll(Collection<? extends E>)",
@@ -9823,7 +9827,7 @@
         "findResource": [
           {
             "start_line": 50,
-            "end_line": 51,
+            "end_line": 104,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.resource.StaticResource.getFileUri()",
@@ -10001,7 +10005,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resource\\FixedStaticResourcePlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.ResourcePlugin": {
@@ -10029,7 +10033,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\resource\\ResourcePlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.ResourcePluginProxy": {
@@ -10067,7 +10071,7 @@
         "current": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 34,
             "call_methods": [],
             "external_fields": [
               {
@@ -10083,7 +10087,7 @@
         "accept": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 48,
             "call_methods": [
               {
                 "signature": "java.util.Map.putAll(Map<? extends K, ? extends V>)",
@@ -10141,7 +10145,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resource\\ResourcePluginProxy.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.StaticResource": {
@@ -10167,7 +10171,7 @@
         "newBuilder": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 29,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.resource.StaticResource.newBuilder(StaticResource)",
@@ -10192,7 +10196,7 @@
           },
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 33,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.resource.StaticResource.StaticResourceBuilder.StaticResourceBuilder(StaticResource)",
@@ -10219,7 +10223,7 @@
         "getFileUri": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 37,
             "call_methods": [],
             "external_fields": [
               {
@@ -10233,14 +10237,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resource\\StaticResource.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.resource.StaticResource.StaticResourceBuilder": {
       "constructors": [
         {
           "start_line": 42,
-          "end_line": 43,
+          "end_line": 45,
           "call_methods": [],
           "external_fields": [
             {
@@ -10269,7 +10273,7 @@
         "fileUri": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 50,
             "call_methods": [],
             "external_fields": [
               {
@@ -10294,7 +10298,7 @@
         "build": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 54,
             "call_methods": [],
             "external_fields": [
               {
@@ -10308,7 +10312,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\resource\\StaticResource.java",
       "javadoc": " Builder for StaticResource "
     },
     "org.flmelody.core.plugin.view.AbstractViewPlugin": {
@@ -10323,7 +10327,7 @@
         },
         {
           "start_line": 32,
-          "end_line": 33,
+          "end_line": 36,
           "call_methods": [],
           "external_fields": [
             {
@@ -10366,7 +10370,7 @@
         "setTemplateLocationPrefix": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 45,
             "call_methods": [],
             "external_fields": [
               {
@@ -10387,7 +10391,7 @@
         "supportedExtension": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 50,
             "call_methods": [
               {
                 "signature": "java.lang.String.equalsIgnoreCase(String)",
@@ -10419,7 +10423,7 @@
         "resolveView": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.view.ViewPlugin.render(String, Map<String, Object>)",
@@ -10471,14 +10475,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\view\\AbstractViewPlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.view.freemarker.FreemarkerView": {
       "constructors": [
         {
           "start_line": 35,
-          "end_line": 36,
+          "end_line": 38,
           "call_methods": [],
           "external_fields": [],
           "signature": "FreemarkerView()",
@@ -10486,7 +10490,7 @@
         },
         {
           "start_line": 39,
-          "end_line": 40,
+          "end_line": 42,
           "call_methods": [],
           "external_fields": [],
           "signature": "FreemarkerView(String, String)",
@@ -10520,7 +10524,7 @@
         "render": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "freemarker.template.Configuration.getTemplate(String)",
@@ -10578,14 +10582,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\view\\freemarker\\FreemarkerView.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.view.groovy.GroovyView": {
       "constructors": [
         {
           "start_line": 31,
-          "end_line": 32,
+          "end_line": 34,
           "call_methods": [],
           "external_fields": [],
           "signature": "GroovyView()",
@@ -10593,7 +10597,7 @@
         },
         {
           "start_line": 35,
-          "end_line": 36,
+          "end_line": 39,
           "call_methods": [],
           "external_fields": [
             {
@@ -10632,7 +10636,7 @@
         "render": [
           {
             "start_line": 40,
-            "end_line": 41,
+            "end_line": 47,
             "call_methods": [
               {
                 "signature": "groovy.text.markup.MarkupTemplateEngine.createTemplate(URL)",
@@ -10711,14 +10715,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\view\\groovy\\GroovyView.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.view.thymeleaf.ThymeleafView": {
       "constructors": [
         {
           "start_line": 44,
-          "end_line": 45,
+          "end_line": 47,
           "call_methods": [],
           "external_fields": [],
           "signature": "ThymeleafView()",
@@ -10726,7 +10730,7 @@
         },
         {
           "start_line": 48,
-          "end_line": 49,
+          "end_line": 57,
           "call_methods": [
             {
               "signature": "org.thymeleaf.TemplateEngine.setTemplateResolver(ITemplateResolver)",
@@ -10792,7 +10796,7 @@
         "render": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 64,
             "call_methods": [
               {
                 "signature": "org.thymeleaf.context.Context.Context()",
@@ -10845,7 +10849,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\view\\thymeleaf\\ThymeleafView.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.view.ViewEngineDetector": {
@@ -10877,7 +10881,7 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\view\\ViewEngineDetector.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.view.ViewPlugin": {
@@ -10923,14 +10927,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\view\\ViewPlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.ws.ExtensionalWebSocketPlugin": {
       "constructors": [
         {
           "start_line": 41,
-          "end_line": 42,
+          "end_line": 44,
           "call_methods": [
             {
               "signature": "java.util.Collections.emptyList()",
@@ -10944,7 +10948,7 @@
         },
         {
           "start_line": 45,
-          "end_line": 46,
+          "end_line": 49,
           "call_methods": [],
           "external_fields": [],
           "signature": "ExtensionalWebSocketPlugin(List, List)",
@@ -10961,7 +10965,7 @@
         },
         {
           "start_line": 50,
-          "end_line": 51,
+          "end_line": 75,
           "call_methods": [
             {
               "signature": "java.util.stream.Stream.collect(Collector<? super T, A, R>)",
@@ -11075,7 +11079,7 @@
         "isMatch": [
           {
             "start_line": 76,
-            "end_line": 77,
+            "end_line": 79,
             "call_methods": [
               {
                 "signature": "org.flmelody.util.AntPathMatcher.isMatch(String, String)",
@@ -11115,7 +11119,7 @@
         "getWebSocketCodecs": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 83,
             "call_methods": [],
             "external_fields": [
               {
@@ -11131,7 +11135,7 @@
         "getWebSocketParsers": [
           {
             "start_line": 84,
-            "end_line": 85,
+            "end_line": 87,
             "call_methods": [],
             "external_fields": [
               {
@@ -11145,14 +11149,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\plugin\\ws\\ExtensionalWebSocketPlugin.java",
       "javadoc": "\n * Holder of websockets codecs or parsers. This plugin is globally scoped. Note that currently at\n * least one codec and one message parser are included for this plugin to work.\n *\n * @see WebSocketCodec\n * @see WebSocketParser\n * @author esotericman\n "
     },
     "org.flmelody.core.plugin.ws.WebSocketPlugin": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\plugin\\ws\\WebSocketPlugin.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.RequestReader": {
@@ -11248,7 +11252,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\RequestReader.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.ResponseWriter": {
@@ -11422,7 +11426,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\ResponseWriter.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.Router": {
@@ -11478,7 +11482,7 @@
           },
           {
             "start_line": 60,
-            "end_line": 61,
+            "end_line": 62,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11541,7 +11545,7 @@
           },
           {
             "start_line": 89,
-            "end_line": 90,
+            "end_line": 91,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11600,7 +11604,7 @@
           },
           {
             "start_line": 118,
-            "end_line": 119,
+            "end_line": 120,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11659,7 +11663,7 @@
           },
           {
             "start_line": 147,
-            "end_line": 148,
+            "end_line": 149,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11718,7 +11722,7 @@
           },
           {
             "start_line": 176,
-            "end_line": 177,
+            "end_line": 178,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11781,7 +11785,7 @@
         "resource": [
           {
             "start_line": 204,
-            "end_line": 205,
+            "end_line": 208,
             "call_methods": [],
             "external_fields": [],
             "return_type": "T",
@@ -11817,7 +11821,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\Router.java",
       "javadoc": "\n * @author flmelody\n "
     },
     "org.flmelody.core.RouterGroup": {
@@ -11858,21 +11862,21 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\RouterGroup.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.SseEjector": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\SseEjector.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.AbstractWindManager": {
       "constructors": [
         {
           "start_line": 32,
-          "end_line": 33,
+          "end_line": 35,
           "call_methods": [],
           "external_fields": [
             {
@@ -11913,7 +11917,7 @@
         "join": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -11945,7 +11949,7 @@
         "loadEvent": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 47,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -11977,7 +11981,7 @@
         "triggerEvent": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 56,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.wind.listener.Listener.cope(Windward, Event)",
@@ -12014,14 +12018,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\wind\\AbstractWindManager.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.DefaultWindManager": {
       "constructors": [
         {
           "start_line": 24,
-          "end_line": 25,
+          "end_line": 27,
           "call_methods": [],
           "external_fields": [],
           "signature": "DefaultWindManager(Windward)",
@@ -12035,14 +12039,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\wind\\DefaultWindManager.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.event.Event": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\wind\\event\\Event.java",
       "javadoc": "\n * Event root interface.\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.event.RouterBindEvent": {
@@ -12080,7 +12084,7 @@
         "builder": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 31,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.wind.event.RouterBindEvent.RouterBindEvent()",
@@ -12107,7 +12111,7 @@
         "getRequestUrl": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 35,
             "call_methods": [],
             "external_fields": [
               {
@@ -12123,7 +12127,7 @@
         "getClassname": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 39,
             "call_methods": [],
             "external_fields": [
               {
@@ -12139,7 +12143,7 @@
         "getMethod": [
           {
             "start_line": 40,
-            "end_line": 41,
+            "end_line": 43,
             "call_methods": [],
             "external_fields": [
               {
@@ -12153,14 +12157,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\wind\\event\\RouterBindEvent.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.event.RouterBindEvent.RouterBindEventBuilder": {
       "constructors": [
         {
           "start_line": 48,
-          "end_line": 49,
+          "end_line": 51,
           "call_methods": [],
           "external_fields": [
             {
@@ -12189,7 +12193,7 @@
         "requestUrl": [
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 56,
             "call_methods": [],
             "external_fields": [
               {
@@ -12214,7 +12218,7 @@
         "classname": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 61,
             "call_methods": [],
             "external_fields": [
               {
@@ -12239,7 +12243,7 @@
         "method": [
           {
             "start_line": 62,
-            "end_line": 63,
+            "end_line": 66,
             "call_methods": [],
             "external_fields": [
               {
@@ -12264,7 +12268,7 @@
         "build": [
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 74,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalArgumentException.IllegalArgumentException(String)",
@@ -12297,7 +12301,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\wind\\event\\RouterBindEvent.java",
       "javadoc": " Builder for RouterBindEvent "
     },
     "org.flmelody.core.wind.listener.Listener": {
@@ -12326,7 +12330,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\wind\\listener\\Listener.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.wind.WindManager": {
@@ -12380,14 +12384,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\wind\\WindManager.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.Windward": {
       "constructors": [
         {
           "start_line": 77,
-          "end_line": 78,
+          "end_line": 82,
           "call_methods": [],
           "external_fields": [
             {
@@ -12492,7 +12496,7 @@
         "setup": [
           {
             "start_line": 83,
-            "end_line": 84,
+            "end_line": 86,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.setup(int, ..)",
@@ -12521,7 +12525,7 @@
           },
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 97,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.setup(int, String, ..)",
@@ -12564,7 +12568,7 @@
           },
           {
             "start_line": 106,
-            "end_line": 107,
+            "end_line": 109,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.setup(int, String, String, String, ..)",
@@ -12614,7 +12618,7 @@
           },
           {
             "start_line": 120,
-            "end_line": 121,
+            "end_line": 135,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.prepareDefault(Windward)",
@@ -12747,7 +12751,7 @@
         "prepareDefault": [
           {
             "start_line": 137,
-            "end_line": 138,
+            "end_line": 149,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.view.thymeleaf.ThymeleafView.ThymeleafView()",
@@ -12818,7 +12822,7 @@
         "beforeStart": [
           {
             "start_line": 151,
-            "end_line": 152,
+            "end_line": 154,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.wind.WindManager.triggerEvent()",
@@ -12841,7 +12845,7 @@
         "run": [
           {
             "start_line": 160,
-            "end_line": 161,
+            "end_line": 165,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.HttpServer.run()",
@@ -12869,7 +12873,7 @@
         "group": [
           {
             "start_line": 172,
-            "end_line": 173,
+            "end_line": 178,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -12934,7 +12938,7 @@
         "resourceGroup": [
           {
             "start_line": 185,
-            "end_line": 186,
+            "end_line": 192,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -13003,7 +13007,7 @@
         "registerFilter": [
           {
             "start_line": 199,
-            "end_line": 200,
+            "end_line": 206,
             "call_methods": [
               {
                 "signature": "java.util.List.addAll(Collection<? extends E>)",
@@ -13050,7 +13054,7 @@
         "registerExceptionHandler": [
           {
             "start_line": 213,
-            "end_line": 214,
+            "end_line": 221,
             "call_methods": [
               {
                 "signature": "java.util.List.addAll(Collection<? extends E>)",
@@ -13117,7 +13121,7 @@
         "registerListener": [
           {
             "start_line": 228,
-            "end_line": 229,
+            "end_line": 237,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.wind.WindManager.join(Listener)",
@@ -13150,7 +13154,7 @@
         "registerPlugin": [
           {
             "start_line": 245,
-            "end_line": 246,
+            "end_line": 248,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.registerPlugin(Class<? extends Plugin>, Plugin)",
@@ -13189,7 +13193,7 @@
           },
           {
             "start_line": 256,
-            "end_line": 257,
+            "end_line": 268,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -13276,7 +13280,7 @@
         "publishEvent": [
           {
             "start_line": 275,
-            "end_line": 276,
+            "end_line": 284,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.wind.WindManager.loadEvent(Event)",
@@ -13309,7 +13313,7 @@
         "findRouter": [
           {
             "start_line": 293,
-            "end_line": 294,
+            "end_line": 308,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.AbstractRouterGroup.matchRouter(String, String)",
@@ -13354,7 +13358,7 @@
         "filters": [
           {
             "start_line": 314,
-            "end_line": 315,
+            "end_line": 317,
             "call_methods": [
               {
                 "signature": "java.util.Collections.unmodifiableList(List<? extends T>)",
@@ -13382,7 +13386,7 @@
         "exceptionHandlers": [
           {
             "start_line": 323,
-            "end_line": 324,
+            "end_line": 326,
             "call_methods": [
               {
                 "signature": "java.util.Collections.unmodifiableList(List<? extends T>)",
@@ -13410,7 +13414,7 @@
         "plugin": [
           {
             "start_line": 334,
-            "end_line": 335,
+            "end_line": 341,
             "call_methods": [
               {
                 "signature": "java.util.Map.containsKey(Object)",
@@ -13482,7 +13486,7 @@
         "plugins": [
           {
             "start_line": 349,
-            "end_line": 350,
+            "end_line": 359,
             "call_methods": [
               {
                 "signature": "java.util.stream.Stream.collect(Collector<? super T, A, R>)",
@@ -13565,7 +13569,7 @@
         "getContextPath": [
           {
             "start_line": 360,
-            "end_line": 361,
+            "end_line": 363,
             "call_methods": [],
             "external_fields": [
               {
@@ -13581,7 +13585,7 @@
         "getTemplateRoot": [
           {
             "start_line": 364,
-            "end_line": 365,
+            "end_line": 367,
             "call_methods": [],
             "external_fields": [
               {
@@ -13597,7 +13601,7 @@
         "getStaticResourceLocation": [
           {
             "start_line": 368,
-            "end_line": 369,
+            "end_line": 371,
             "call_methods": [],
             "external_fields": [
               {
@@ -13613,7 +13617,7 @@
         "then": [
           {
             "start_line": 372,
-            "end_line": 373,
+            "end_line": 375,
             "call_methods": [],
             "external_fields": [],
             "return_type": "org.flmelody.core.Windward",
@@ -13624,7 +13628,7 @@
         "http": [
           {
             "start_line": 377,
-            "end_line": 378,
+            "end_line": 382,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -13681,7 +13685,7 @@
           },
           {
             "start_line": 384,
-            "end_line": 385,
+            "end_line": 390,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -13738,7 +13742,7 @@
           },
           {
             "start_line": 392,
-            "end_line": 393,
+            "end_line": 398,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Router.http(HttpMethod, String, EnhancedFunction<C, ?>)",
@@ -13797,7 +13801,7 @@
         "get": [
           {
             "start_line": 400,
-            "end_line": 401,
+            "end_line": 404,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -13846,7 +13850,7 @@
           },
           {
             "start_line": 406,
-            "end_line": 407,
+            "end_line": 410,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -13895,7 +13899,7 @@
           },
           {
             "start_line": 412,
-            "end_line": 413,
+            "end_line": 418,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Router.get(String, EnhancedFunction<C, ?>)",
@@ -13946,7 +13950,7 @@
         "put": [
           {
             "start_line": 420,
-            "end_line": 421,
+            "end_line": 425,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -13995,7 +13999,7 @@
           },
           {
             "start_line": 427,
-            "end_line": 428,
+            "end_line": 431,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14044,7 +14048,7 @@
           },
           {
             "start_line": 433,
-            "end_line": 434,
+            "end_line": 439,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14095,7 +14099,7 @@
         "post": [
           {
             "start_line": 441,
-            "end_line": 442,
+            "end_line": 446,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14144,7 +14148,7 @@
           },
           {
             "start_line": 448,
-            "end_line": 449,
+            "end_line": 452,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14193,7 +14197,7 @@
           },
           {
             "start_line": 454,
-            "end_line": 455,
+            "end_line": 460,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14244,7 +14248,7 @@
         "delete": [
           {
             "start_line": 462,
-            "end_line": 463,
+            "end_line": 467,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14293,7 +14297,7 @@
           },
           {
             "start_line": 469,
-            "end_line": 470,
+            "end_line": 473,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14342,7 +14346,7 @@
           },
           {
             "start_line": 475,
-            "end_line": 476,
+            "end_line": 481,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Router.delete(String, EnhancedFunction<C, ?>)",
@@ -14393,7 +14397,7 @@
         "sse": [
           {
             "start_line": 483,
-            "end_line": 484,
+            "end_line": 489,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14444,7 +14448,7 @@
         "ws": [
           {
             "start_line": 491,
-            "end_line": 492,
+            "end_line": 496,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.group(String)",
@@ -14495,7 +14499,7 @@
         "resource": [
           {
             "start_line": 498,
-            "end_line": 499,
+            "end_line": 502,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Windward.resources(String, ..)",
@@ -14532,7 +14536,7 @@
         "resources": [
           {
             "start_line": 504,
-            "end_line": 505,
+            "end_line": 509,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.Router.resources(String, ..)",
@@ -14581,7 +14585,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\Windward.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.WindwardRequest": {
@@ -14649,7 +14653,7 @@
         "newBuild": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 41,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardRequest.WindwardRequestBuilder.WindwardRequestBuilder(WindwardRequest)",
@@ -14676,7 +14680,7 @@
         "getMethod": [
           {
             "start_line": 49,
-            "end_line": 50,
+            "end_line": 52,
             "call_methods": [],
             "external_fields": [
               {
@@ -14693,7 +14697,7 @@
         "getHeader": [
           {
             "start_line": 59,
-            "end_line": 60,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "java.util.Map.containsKey(Object)",
@@ -14741,7 +14745,7 @@
         "getHeaders": [
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 74,
             "call_methods": [],
             "external_fields": [
               {
@@ -14758,7 +14762,7 @@
         "getUri": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 83,
             "call_methods": [],
             "external_fields": [
               {
@@ -14775,7 +14779,7 @@
         "getQuerystring": [
           {
             "start_line": 89,
-            "end_line": 90,
+            "end_line": 92,
             "call_methods": [],
             "external_fields": [
               {
@@ -14792,7 +14796,7 @@
         "getPathVariables": [
           {
             "start_line": 98,
-            "end_line": 99,
+            "end_line": 101,
             "call_methods": [],
             "external_fields": [
               {
@@ -14809,7 +14813,7 @@
         "getRequestBody": [
           {
             "start_line": 107,
-            "end_line": 108,
+            "end_line": 110,
             "call_methods": [],
             "external_fields": [
               {
@@ -14826,7 +14830,7 @@
         "readJson": [
           {
             "start_line": 112,
-            "end_line": 113,
+            "end_line": 116,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.RequestReader.readJson(String, Class<I>)",
@@ -14865,7 +14869,7 @@
           },
           {
             "start_line": 118,
-            "end_line": 119,
+            "end_line": 122,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.RequestReader.readJson(String, Type)",
@@ -14906,7 +14910,7 @@
         "bindJson": [
           {
             "start_line": 124,
-            "end_line": 125,
+            "end_line": 128,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.RequestReader.bindJson(String, Class<I>, Class<?>...)",
@@ -14953,7 +14957,7 @@
           },
           {
             "start_line": 130,
-            "end_line": 131,
+            "end_line": 134,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.RequestReader.bindJson(String, Type, Class<?>...)",
@@ -15000,14 +15004,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\WindwardRequest.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.WindwardRequest.WindwardRequestBuilder": {
       "constructors": [
         {
           "start_line": 139,
-          "end_line": 140,
+          "end_line": 142,
           "call_methods": [],
           "external_fields": [
             {
@@ -15036,7 +15040,7 @@
         "method": [
           {
             "start_line": 143,
-            "end_line": 144,
+            "end_line": 147,
             "call_methods": [],
             "external_fields": [
               {
@@ -15061,7 +15065,7 @@
         "uri": [
           {
             "start_line": 148,
-            "end_line": 149,
+            "end_line": 152,
             "call_methods": [],
             "external_fields": [
               {
@@ -15086,7 +15090,7 @@
         "keepAlive": [
           {
             "start_line": 153,
-            "end_line": 154,
+            "end_line": 157,
             "call_methods": [],
             "external_fields": [
               {
@@ -15111,7 +15115,7 @@
         "headers": [
           {
             "start_line": 158,
-            "end_line": 159,
+            "end_line": 162,
             "call_methods": [
               {
                 "signature": "java.util.Map.putAll(Map<? extends K, ? extends V>)",
@@ -15147,7 +15151,7 @@
         "querystring": [
           {
             "start_line": 163,
-            "end_line": 164,
+            "end_line": 167,
             "call_methods": [
               {
                 "signature": "java.util.Map.putAll(Map<? extends K, ? extends V>)",
@@ -15183,7 +15187,7 @@
         "pathVariables": [
           {
             "start_line": 168,
-            "end_line": 169,
+            "end_line": 172,
             "call_methods": [
               {
                 "signature": "java.util.Map.putAll(Map<? extends K, ? extends V>)",
@@ -15219,7 +15223,7 @@
         "requestBody": [
           {
             "start_line": 173,
-            "end_line": 174,
+            "end_line": 177,
             "call_methods": [],
             "external_fields": [
               {
@@ -15244,7 +15248,7 @@
         "build": [
           {
             "start_line": 178,
-            "end_line": 179,
+            "end_line": 181,
             "call_methods": [],
             "external_fields": [
               {
@@ -15258,7 +15262,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\WindwardRequest.java",
       "javadoc": " Builder for WindwardRequest "
     },
     "org.flmelody.core.WindwardResponse": {
@@ -15284,7 +15288,7 @@
         "write": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 36,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ResponseWriter.write(int, T)",
@@ -15323,7 +15327,7 @@
           },
           {
             "start_line": 45,
-            "end_line": 46,
+            "end_line": 48,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ResponseWriter.write(int, String, T)",
@@ -15370,7 +15374,7 @@
           },
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 61,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ResponseWriter.write(int, String, Map<String, Object>, T)",
@@ -15427,7 +15431,7 @@
         "close": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 66,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ResponseWriter.close()",
@@ -15450,7 +15454,7 @@
         "newBuilder": [
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardResponse.WindwardResponseBuild.WindwardResponseBuild(WindwardResponse)",
@@ -15475,14 +15479,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\WindwardResponse.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.WindwardResponse.WindwardResponseBuild": {
       "constructors": [
         {
           "start_line": 77,
-          "end_line": 78,
+          "end_line": 80,
           "call_methods": [],
           "external_fields": [
             {
@@ -15511,7 +15515,7 @@
         "responseWriter": [
           {
             "start_line": 81,
-            "end_line": 82,
+            "end_line": 85,
             "call_methods": [],
             "external_fields": [
               {
@@ -15536,7 +15540,7 @@
         "build": [
           {
             "start_line": 86,
-            "end_line": 87,
+            "end_line": 89,
             "call_methods": [],
             "external_fields": [
               {
@@ -15550,28 +15554,28 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\WindwardResponse.java",
       "javadoc": " Builder for WindwardResponse "
     },
     "org.flmelody.core.ws.codec.WebSocketCodec": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\core\\ws\\codec\\WebSocketCodec.java",
       "javadoc": "\n * Do not use this interface directly; you should always use its subclasses. If you must use it,\n * make sure it conforms to Netty's codec specification.\n *\n * @see WebSocketDecoder\n * @see WebSocketEncoder\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.codec.WebSocketDecoder": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\codec\\WebSocketDecoder.java",
       "javadoc": "\n * Inherit this class to implement custom decoding.\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.codec.WebSocketEncoder": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\codec\\WebSocketEncoder.java",
       "javadoc": "\n * Inherit this class to implement custom coding.\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.WebSocketEvent": {
@@ -15600,6 +15604,7 @@
       "fields": [],
       "constructors": [],
       "methods": {},
+      "file": "org\\flmelody\\core\\ws\\WebSocketEvent.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.WebSocketFireEvent": {
@@ -15631,7 +15636,7 @@
         "getEvent": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 29,
             "call_methods": [],
             "external_fields": [
               {
@@ -15647,7 +15652,7 @@
         "getData": [
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 33,
             "call_methods": [],
             "external_fields": [
               {
@@ -15663,7 +15668,7 @@
         "builder": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 39,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ws.WebSocketFireEvent.WebSocketFireEventBuilder.WebSocketFireEventBuilder(WebSocketFireEvent)",
@@ -15688,14 +15693,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\WebSocketFireEvent.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.WebSocketFireEvent.WebSocketFireEventBuilder": {
       "constructors": [
         {
           "start_line": 44,
-          "end_line": 45,
+          "end_line": 47,
           "call_methods": [],
           "external_fields": [
             {
@@ -15724,7 +15729,7 @@
         "build": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 51,
             "call_methods": [],
             "external_fields": [
               {
@@ -15740,7 +15745,7 @@
         "reset": [
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 57,
             "call_methods": [],
             "external_fields": [
               {
@@ -15764,7 +15769,7 @@
         "event": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 62,
             "call_methods": [],
             "external_fields": [
               {
@@ -15789,7 +15794,7 @@
         "data": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 67,
             "call_methods": [],
             "external_fields": [
               {
@@ -15812,21 +15817,21 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\WebSocketFireEvent.java",
       "javadoc": " "
     },
     "org.flmelody.core.ws.WebSocketParser": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\WebSocketParser.java",
       "javadoc": "\n * Inherit this class to implement custom format message parsing.\n *\n * @author esotericman\n "
     },
     "org.flmelody.core.ws.WebSocketWindwardContext": {
       "constructors": [
         {
           "start_line": 36,
-          "end_line": 37,
+          "end_line": 40,
           "call_methods": [],
           "external_fields": [],
           "signature": "WebSocketWindwardContext(WindwardRequest, WindwardResponse)",
@@ -15878,7 +15883,7 @@
         "setWebSocketEvent": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.ws.WebSocketWindwardContext.upgradeContext()",
@@ -15905,7 +15910,7 @@
         "setWebSocketData": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 49,
             "call_methods": [],
             "external_fields": [
               {
@@ -15926,7 +15931,7 @@
         "setHttpResponse": [
           {
             "start_line": 50,
-            "end_line": 51,
+            "end_line": 53,
             "call_methods": [],
             "external_fields": [
               {
@@ -15947,7 +15952,7 @@
         "getWebSocketEvent": [
           {
             "start_line": 54,
-            "end_line": 55,
+            "end_line": 57,
             "call_methods": [],
             "external_fields": [
               {
@@ -15963,7 +15968,7 @@
         "getWebSocketData": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 61,
             "call_methods": [],
             "external_fields": [
               {
@@ -15979,7 +15984,7 @@
         "isUpgradedContext": [
           {
             "start_line": 62,
-            "end_line": 63,
+            "end_line": 65,
             "call_methods": [],
             "external_fields": [
               {
@@ -15995,7 +16000,7 @@
         "upgradeContext": [
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.equals(Object)",
@@ -16034,7 +16039,7 @@
         "write": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 79,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.context.AbstractWindwardContext.write(int, String, T)",
@@ -16082,7 +16087,7 @@
         "writeBinaryData": [
           {
             "start_line": 86,
-            "end_line": 87,
+            "end_line": 91,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.WindwardResponse.write(int, String, T)",
@@ -16145,7 +16150,7 @@
         "processCheck": [
           {
             "start_line": 113,
-            "end_line": 114,
+            "end_line": 120,
             "call_methods": [
               {
                 "signature": "org.slf4j.spi.LoggingEventBuilder.log(String)",
@@ -16186,7 +16191,7 @@
         "isCacheable": [
           {
             "start_line": 121,
-            "end_line": 122,
+            "end_line": 125,
             "call_methods": [],
             "external_fields": [
               {
@@ -16200,21 +16205,21 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\ws\\WebSocketWindwardContext.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.support.EnhancedFunction": {
       "constructors": [],
       "fields": [],
       "methods": {},
-      "is_interface": true,
+      "file": "org\\flmelody\\support\\EnhancedFunction.java",
       "javadoc": "\n * Represents a function that accepts one argument and produces a result.\n *\n * <p>This is a <a href=\"package-summary.html\">functional interface</a> whose functional method is\n * {@link #apply(Object)}.\n *\n * @param <T> the type of the input to the function\n * @param <R> the type of the result of the function\n * @author esotericman\n "
     },
     "org.flmelody.support.FunctionDefinition": {
       "constructors": [
         {
           "start_line": 32,
-          "end_line": 33,
+          "end_line": 34,
           "call_methods": [],
           "external_fields": [],
           "signature": "FunctionDefinition()",
@@ -16257,7 +16262,7 @@
         "empty": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 38,
             "call_methods": [],
             "external_fields": [
               {
@@ -16273,7 +16278,7 @@
         "builder": [
           {
             "start_line": 39,
-            "end_line": 40,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "org.flmelody.support.FunctionDefinition.FunctionDefinition()",
@@ -16300,7 +16305,7 @@
         "getClassname": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 46,
             "call_methods": [],
             "external_fields": [
               {
@@ -16316,7 +16321,7 @@
         "getMethod": [
           {
             "start_line": 47,
-            "end_line": 48,
+            "end_line": 50,
             "call_methods": [],
             "external_fields": [
               {
@@ -16332,7 +16337,7 @@
         "getParameterTypes": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "java.util.Collections.unmodifiableList(List<? extends T>)",
@@ -16359,7 +16364,7 @@
         "getReturnType": [
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 58,
             "call_methods": [],
             "external_fields": [
               {
@@ -16373,14 +16378,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\support\\FunctionDefinition.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.support.FunctionDefinition.FunctionDefinitionBuilder": {
       "constructors": [
         {
           "start_line": 63,
-          "end_line": 64,
+          "end_line": 66,
           "call_methods": [],
           "external_fields": [
             {
@@ -16409,7 +16414,7 @@
         "classname": [
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 71,
             "call_methods": [],
             "external_fields": [
               {
@@ -16434,7 +16439,7 @@
         "method": [
           {
             "start_line": 72,
-            "end_line": 73,
+            "end_line": 76,
             "call_methods": [],
             "external_fields": [
               {
@@ -16459,7 +16464,7 @@
         "parameterType": [
           {
             "start_line": 77,
-            "end_line": 78,
+            "end_line": 81,
             "call_methods": [
               {
                 "signature": "java.util.List.add(E)",
@@ -16495,7 +16500,7 @@
         "returnType": [
           {
             "start_line": 82,
-            "end_line": 83,
+            "end_line": 86,
             "call_methods": [],
             "external_fields": [
               {
@@ -16520,7 +16525,7 @@
         "build": [
           {
             "start_line": 87,
-            "end_line": 88,
+            "end_line": 90,
             "call_methods": [],
             "external_fields": [
               {
@@ -16534,14 +16539,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\support\\FunctionDefinition.java",
       "javadoc": " Builder for FunctionDefinition "
     },
     "org.flmelody.support.FunctionHelper": {
       "constructors": [
         {
           "start_line": 28,
-          "end_line": 29,
+          "end_line": 31,
           "call_methods": [],
           "external_fields": [],
           "signature": "FunctionHelper()",
@@ -16553,7 +16558,7 @@
         "resolveFunction": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 41,
             "call_methods": [
               {
                 "signature": "org.flmelody.support.FunctionHelper.findFunctionSmartly(F)",
@@ -16581,7 +16586,7 @@
         "findFunctionSmartly": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "org.flmelody.support.FunctionHelper.findLambdaFunction(F)",
@@ -16643,7 +16648,7 @@
         "findRegularFunction": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 67,
             "call_methods": [
               {
                 "signature": "org.flmelody.support.FunctionDefinition.FunctionDefinitionBuilder.returnType(Class<?>)",
@@ -16745,7 +16750,7 @@
         "findLambdaFunction": [
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 97,
             "call_methods": [
               {
                 "signature": "java.lang.String.replace(CharSequence, CharSequence)",
@@ -16918,7 +16923,7 @@
         "getSerializedLambda": [
           {
             "start_line": 98,
-            "end_line": 99,
+            "end_line": 101,
             "call_methods": [
               {
                 "signature": "org.flmelody.support.FunctionHelper.writeReplace(F)",
@@ -16945,7 +16950,7 @@
         "writeReplace": [
           {
             "start_line": 102,
-            "end_line": 103,
+            "end_line": 111,
             "call_methods": [
               {
                 "signature": "java.lang.Class.getDeclaredMethod(String, Class<?>...)",
@@ -17009,14 +17014,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\support\\FunctionHelper.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.AntPathMatcher": {
       "constructors": [
         {
           "start_line": 33,
-          "end_line": 34,
+          "end_line": 40,
           "call_methods": [],
           "external_fields": [
             {
@@ -17111,7 +17116,7 @@
         "isMatch": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 79,
             "call_methods": [
               {
                 "signature": "java.lang.String.charAt(int)",
@@ -17231,7 +17236,7 @@
         "doubleAsteriskMatch": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 89,
             "call_methods": [
               {
                 "signature": "java.lang.String.charAt(int)",
@@ -17296,7 +17301,7 @@
         "newBuild": [
           {
             "start_line": 90,
-            "end_line": 91,
+            "end_line": 93,
             "call_methods": [
               {
                 "signature": "org.flmelody.util.AntPathMatcher.Builder.Builder()",
@@ -17313,7 +17318,7 @@
         "skipBlanks": [
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 103,
             "call_methods": [
               {
                 "signature": "java.lang.String.charAt(int)",
@@ -17359,7 +17364,7 @@
         "compareChar": [
           {
             "start_line": 104,
-            "end_line": 105,
+            "end_line": 113,
             "call_methods": [],
             "external_fields": [
               {
@@ -17386,7 +17391,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\AntPathMatcher.java",
       "javadoc": "\n * Path matcher implementation for Ant-style path patterns. This implementation matches URLs using\n * the following rules:\n *\n * <p>'?' - matches one character '*' - matches zero or more characters '**' - matches zero or more\n * directories in a path.\n *\n * <p>The instances of this class can be configured via its {@link Builder} to: (1) Use a custom\n * path separator. The default is '/' character (2) Ignore character case during comparison. The\n * default is {@code false} (3) Match start. Determines whether the pattern at least matches as far\n * as the given base path goes, assuming that a full path may then match as well. The default is\n * {@code false}.\n *\n * <p>Specify whether to trim tokenized paths. The default is {@code false} The custom path\n * separator &amp; ignoring character case options were inspired by Spring's AntPathMatcher.\n *\n * @author original author\n * @see <a href=\"https://github.com/azagniotov/ant-style-path-matcher\">azagniotov</a>\n "
     },
     "org.flmelody.util.AntPathMatcher.Builder": {
@@ -17430,7 +17435,7 @@
         "withPathSeparator": [
           {
             "start_line": 124,
-            "end_line": 125,
+            "end_line": 128,
             "call_methods": [],
             "external_fields": [
               {
@@ -17451,7 +17456,7 @@
         "withIgnoreCase": [
           {
             "start_line": 129,
-            "end_line": 130,
+            "end_line": 133,
             "call_methods": [],
             "external_fields": [
               {
@@ -17467,7 +17472,7 @@
         "withMatchStart": [
           {
             "start_line": 134,
-            "end_line": 135,
+            "end_line": 138,
             "call_methods": [],
             "external_fields": [
               {
@@ -17483,7 +17488,7 @@
         "withTrimTokens": [
           {
             "start_line": 139,
-            "end_line": 140,
+            "end_line": 143,
             "call_methods": [],
             "external_fields": [
               {
@@ -17499,7 +17504,7 @@
         "build": [
           {
             "start_line": 144,
-            "end_line": 145,
+            "end_line": 147,
             "call_methods": [
               {
                 "signature": "org.flmelody.util.AntPathMatcher.AntPathMatcher(char, boolean, boolean, boolean)",
@@ -17548,7 +17553,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\AntPathMatcher.java",
       "javadoc": " Builder for AntPathMatcher "
     },
     "org.flmelody.util.GsonUtil": {
@@ -17574,7 +17579,7 @@
         "toJson": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonSerializeException.JsonSerializeException(Throwable)",
@@ -17617,7 +17622,7 @@
         "toObject": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonDeserializeException.JsonDeserializeException(Throwable)",
@@ -17666,7 +17671,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\GsonUtil.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.JacksonUtil": {
@@ -17692,7 +17697,7 @@
         "toJson": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 51,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.ObjectMapper.writeValueAsString(Object)",
@@ -17735,7 +17740,7 @@
         "toObject": [
           {
             "start_line": 60,
-            "end_line": 61,
+            "end_line": 67,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.exception.JsonDeserializeException.JsonDeserializeException(Throwable)",
@@ -17786,7 +17791,7 @@
         "toMap": [
           {
             "start_line": 68,
-            "end_line": 69,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.ObjectMapper.convertValue(Object, Class<T>)",
@@ -17820,7 +17825,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\JacksonUtil.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.UrlUtil": {
@@ -17846,7 +17851,7 @@
         "buildUrl": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.append(String)",
@@ -17939,7 +17944,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\UrlUtil.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.ValidationUtil": {
@@ -17956,7 +17961,7 @@
       "fields": [
         {
           "start_line": 33,
-          "end_line": 34,
+          "end_line": 35,
           "name": "validatorFactory",
           "type": "jakarta.validation.ValidatorFactory"
         }
@@ -17965,7 +17970,7 @@
         "validate": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 53,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.json.JsonPlugin.toObject(String, Class<O>)",
@@ -18021,7 +18026,7 @@
           },
           {
             "start_line": 64,
-            "end_line": 65,
+            "end_line": 68,
             "call_methods": [
               {
                 "signature": "org.flmelody.core.plugin.json.JsonPlugin.toObject(I, Type)",
@@ -18077,7 +18082,7 @@
           },
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 85,
             "call_methods": [
               {
                 "signature": "jakarta.validation.ValidatorFactory.getValidator()",
@@ -18166,7 +18171,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\ValidationUtil.java",
       "javadoc": "\n * @author esotericman\n "
     }
   },
@@ -18178,7 +18183,7 @@
         "getTest": [
           {
             "start_line": 11,
-            "end_line": 12,
+            "end_line": 20,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.name()",
@@ -18271,7 +18276,7 @@
         "postTest": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 31,
             "call_methods": [
               {
                 "signature": "post",
@@ -18362,7 +18367,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\core\\DefaultRouterGroupTest.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.AntPathMatcherTest": {
@@ -18372,7 +18377,7 @@
         "routerTest": [
           {
             "start_line": 11,
-            "end_line": 12,
+            "end_line": 26,
             "call_methods": [
               {
                 "signature": "org.flmelody.util.AntPathMatcher.Builder.Builder()",
@@ -18446,7 +18451,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\AntPathMatcherTest.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.JacksonUtilTest": {
@@ -18463,7 +18468,7 @@
         "setUp": [
           {
             "start_line": 19,
-            "end_line": 20,
+            "end_line": 23,
             "call_methods": [
               {
                 "signature": "org.mockito.Mockito.mock(Class<T>)",
@@ -18490,7 +18495,7 @@
         "toJsonTest": [
           {
             "start_line": 24,
-            "end_line": 25,
+            "end_line": 33,
             "call_methods": [
               {
                 "signature": "org.mockito.MockedStatic.when(Verification)",
@@ -18561,7 +18566,7 @@
         "toJsonTestException": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "org.mockito.MockedStatic.when(Verification)",
@@ -18627,7 +18632,7 @@
         "toObjectTest": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "org.mockito.MockedStatic.when(Verification)",
@@ -18702,7 +18707,7 @@
         "toObjectTestException": [
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 64,
             "call_methods": [
               {
                 "signature": "org.mockito.MockedStatic.when(Verification)",
@@ -18770,7 +18775,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\JacksonUtilTest.java",
       "javadoc": "\n * @author esotericman\n "
     },
     "org.flmelody.util.JacksonUtilTest.User": {
@@ -18790,7 +18795,7 @@
         }
       ],
       "methods": {},
-      "is_interface": false
+      "file": "org\\flmelody\\util\\JacksonUtilTest.java"
     },
     "org.flmelody.util.UrlUtilTest": {
       "constructors": [],
@@ -18799,7 +18804,7 @@
         "buildUrlTest": [
           {
             "start_line": 11,
-            "end_line": 12,
+            "end_line": 32,
             "call_methods": [
               {
                 "signature": "org.junit.jupiter.api.Assertions.assertEquals(Object, Object)",
@@ -18841,7 +18846,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "org\\flmelody\\util\\UrlUtilTest.java",
       "javadoc": "\n * @author esotericman\n "
     }
   }

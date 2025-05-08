@@ -265,7 +265,7 @@ public class JavaParserExtractor {
     protected int[] getPosition(Node node) {
         int start_line = node.getBegin().map(pos->pos.line-1).orElse(-1);
         int end_line = node.getEnd().map(pos->pos.line).orElse(-1);
-        if (start_line >= 0 || end_line == -1) {
+        if (start_line >= 0 && end_line == -1) {
             end_line = start_line + 1;
         }
         return new int[]{start_line, end_line};

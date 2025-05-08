@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class JaccardSimilarityQuery extends Query {
-    private final String dvField; // "calls_dv" or "fields_dv"
+    private final String dvField; // "cfunc_dv" or "cfield_dv"
     private final long[] queryOrds; // Ordinals of terms in C(q) from the dictionary (must be sorted)
     private final int querySize; // C(q).size()
     private final float boostWeight; // w_c or w_f
@@ -59,14 +59,24 @@ public class JaccardSimilarityQuery extends Query {
             return Explanation.match(score, "Jaccard similarity score for field " + dvField);
         }
 
+        /**
+         * for a newer version of Lucene, we can use ScorerSupplier instead of Scorer
+         */
         @Override
         public ScorerSupplier scorerSupplier(LeafReaderContext context) throws IOException {
             SortedSetDocValues dv = context.reader().getSortedSetDocValues(dvField);
             if (dv == null)
                 return null; // 如果某个 segment 根本没这个 field，跳过
-
             return new JaccardScorerSupplier(this, dv, queryOrds, querySize, weight);
         }
+
+        @Override
+        public Scorer scorer(LeafReaderContext ctx) throws IOException {
+            SortedSetDocValues dv = ctx.reader().getSortedSetDocValues(dvField);
+            if (dv == null) return null;         // 如果某个 segment 根本没这个 field，跳过
+            return new JaccardScorer(this, dv, queryOrds, querySize, weight);
+        }
+
     }
 
     @Override

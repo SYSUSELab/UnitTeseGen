@@ -17,7 +17,7 @@
         "matchRules": [
           {
             "start_line": 20,
-            "end_line": 21,
+            "end_line": 23,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ACFinder.find(ACTask)",
@@ -63,7 +63,7 @@
         "find": [
           {
             "start_line": 24,
-            "end_line": 25,
+            "end_line": 36,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ArrayMembership.ArrayMembership()",
@@ -122,7 +122,7 @@
         "tryStep": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 63,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ArrayMembership.checkArrayConsistency(ArrayMembership, ArrayMembership)",
@@ -252,7 +252,7 @@
         "tryMustNotExistMatch": [
           {
             "start_line": 64,
-            "end_line": 65,
+            "end_line": 75,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.hasKeyTransitions()",
@@ -327,7 +327,7 @@
         "moveFrom": [
           {
             "start_line": 77,
-            "end_line": 78,
+            "end_line": 99,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ACFinder.tryStep(ACTask, ACStep)",
@@ -415,7 +415,7 @@
         "addNameState": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 106,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ACFinder.moveFrom(NameState, int, ACTask, ArrayMembership)",
@@ -474,14 +474,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ACFinder.java",
       "javadoc": "\n * Matches rules to events as does Finder, but in an array-consistent fashion, thus the AC prefix on the class name.\n "
     },
     "software.amazon.event.ruler.ACStep": {
       "constructors": [
         {
           "start_line": 10,
-          "end_line": 11,
+          "end_line": 15,
           "call_methods": [],
           "external_fields": [
             {
@@ -535,14 +535,14 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ACStep.java",
       "javadoc": "\n * Represents a suggestion of a state/token combo from which there might be a transition, in an array-consistent fashion.\n "
     },
     "software.amazon.event.ruler.ACTask": {
       "constructors": [
         {
           "start_line": 21,
-          "end_line": 22,
+          "end_line": 26,
           "call_methods": [
             {
               "signature": "java.util.List.size()",
@@ -607,7 +607,7 @@
         "startState": [
           {
             "start_line": 27,
-            "end_line": 28,
+            "end_line": 30,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.GenericMachine.getStartState()",
@@ -629,7 +629,7 @@
         "getMatchedRules": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 34,
             "call_methods": [
               {
                 "signature": "java.util.ArrayList.ArrayList(Collection<? extends E>)",
@@ -656,7 +656,7 @@
         "collectRules": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 38,
             "call_methods": [
               {
                 "signature": "java.util.AbstractCollection.addAll(Collection<? extends E>)",
@@ -691,14 +691,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ACTask.java",
       "javadoc": "\n * Represents the state of an Array-Consistent rule-finding project.\n "
     },
     "software.amazon.event.ruler.AnythingBut": {
       "constructors": [
         {
           "start_line": 18,
-          "end_line": 19,
+          "end_line": 23,
           "call_methods": [
             {
               "signature": "java.util.Collections.unmodifiableSet(Set<? extends T>)",
@@ -756,7 +756,7 @@
         "anythingButMatch": [
           {
             "start_line": 24,
-            "end_line": 25,
+            "end_line": 27,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.AnythingBut.AnythingBut(Set<String>, boolean)",
@@ -791,7 +791,7 @@
         "getValues": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 31,
             "call_methods": [],
             "external_fields": [
               {
@@ -807,7 +807,7 @@
         "isNumeric": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 35,
             "call_methods": [],
             "external_fields": [
               {
@@ -823,7 +823,7 @@
         "equals": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 52,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -878,7 +878,7 @@
         "hashCode": [
           {
             "start_line": 53,
-            "end_line": 54,
+            "end_line": 60,
             "call_methods": [
               {
                 "signature": "java.util.Set.hashCode()",
@@ -909,7 +909,7 @@
         "toString": [
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.toString()",
@@ -933,14 +933,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\AnythingBut.java",
       "javadoc": "\n * Represents denylist like rule: any value matches if it's *not* in the anything-but list.\n * It supports lists whose members must be all strings or all numbers.\n * Numbers are treated as strings created with ComparableNumber.generate.\n "
     },
     "software.amazon.event.ruler.AnythingButEqualsIgnoreCase": {
       "constructors": [
         {
           "start_line": 15,
-          "end_line": 16,
+          "end_line": 19,
           "call_methods": [
             {
               "signature": "java.util.Collections.unmodifiableSet(Set<? extends T>)",
@@ -984,7 +984,7 @@
         "getValues": [
           {
             "start_line": 20,
-            "end_line": 21,
+            "end_line": 23,
             "call_methods": [],
             "external_fields": [
               {
@@ -1000,7 +1000,7 @@
         "equals": [
           {
             "start_line": 24,
-            "end_line": 25,
+            "end_line": 40,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -1051,7 +1051,7 @@
         "hashCode": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 47,
             "call_methods": [
               {
                 "signature": "java.util.Set.hashCode()",
@@ -1078,7 +1078,7 @@
         "toString": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 52,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.toString()",
@@ -1098,14 +1098,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\AnythingButEqualsIgnoreCase.java",
       "javadoc": "\n * Represents denylist like rule: any value matches if it's *not* in the anything-but/ignore-case list.\n * It supports lists whose members must be all strings.\n * Matching is case-insensitive\n "
     },
     "software.amazon.event.ruler.ArrayMembership": {
       "constructors": [
         {
           "start_line": 11,
-          "end_line": 12,
+          "end_line": 14,
           "call_methods": [],
           "external_fields": [],
           "signature": "ArrayMembership()",
@@ -1113,7 +1113,7 @@
         },
         {
           "start_line": 15,
-          "end_line": 16,
+          "end_line": 22,
           "call_methods": [
             {
               "signature": "software.amazon.event.ruler.IntIntMap.clone()",
@@ -1154,7 +1154,7 @@
         "putMembership": [
           {
             "start_line": 23,
-            "end_line": 24,
+            "end_line": 30,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.remove(int)",
@@ -1208,7 +1208,7 @@
         "deleteMembership": [
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 33,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.remove(int)",
@@ -1240,7 +1240,7 @@
         "getMembership": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 36,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.get(int)",
@@ -1272,7 +1272,7 @@
         "isEmpty": [
           {
             "start_line": 36,
-            "end_line": 37,
+            "end_line": 39,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.isEmpty()",
@@ -1294,7 +1294,7 @@
         "size": [
           {
             "start_line": 39,
-            "end_line": 40,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.size()",
@@ -1316,7 +1316,7 @@
         "toString": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 51,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.append(String)",
@@ -1388,7 +1388,7 @@
         "checkArrayConsistency": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 100,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ArrayMembership.getMembership(int)",
@@ -1471,7 +1471,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ArrayMembership.java",
       "javadoc": "\n * Represents which JSON arrays within an Event structure a particular field appears within, and at which position.\n *  The arrays are identified using integers.\n "
     },
     "software.amazon.event.ruler.ByteMachine": {
@@ -1479,7 +1479,7 @@
       "fields": [
         {
           "start_line": 43,
-          "end_line": 44,
+          "end_line": 45,
           "name": "SHORTCUT_MATCH_TYPES",
           "type": "java.util.Set<software.amazon.event.ruler.MatchType>"
         },
@@ -1524,7 +1524,7 @@
         "transitionOn": [
           {
             "start_line": 83,
-            "end_line": 84,
+            "end_line": 112,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ComparableNumber.generate(double)",
@@ -1647,7 +1647,7 @@
         "isEmpty": [
           {
             "start_line": 113,
-            "end_line": 114,
+            "end_line": 122,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasNoTransitions()",
@@ -1695,7 +1695,7 @@
         "deletePattern": [
           {
             "start_line": 124,
-            "end_line": 125,
+            "end_line": 156,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.deleteMatchPattern(ValuePatterns)",
@@ -1826,7 +1826,7 @@
         "deleteExistencePattern": [
           {
             "start_line": 157,
-            "end_line": 158,
+            "end_line": 161,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.DefaultParser.getParser()",
@@ -1898,7 +1898,7 @@
         "deleteAnythingButPattern": [
           {
             "start_line": 162,
-            "end_line": 163,
+            "end_line": 166,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -1981,7 +1981,7 @@
         "deleteAnythingButEqualsIgnoreCasePattern": [
           {
             "start_line": 167,
-            "end_line": 168,
+            "end_line": 171,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -2064,7 +2064,7 @@
         "deleteMatchPattern": [
           {
             "start_line": 172,
-            "end_line": 173,
+            "end_line": 183,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.DefaultParser.getParser()",
@@ -2155,7 +2155,7 @@
         "deleteMatchStep": [
           {
             "start_line": 184,
-            "end_line": 185,
+            "end_line": 215,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasNoTransitions()",
@@ -2324,7 +2324,7 @@
         "deleteMatchStepForWildcard": [
           {
             "start_line": 227,
-            "end_line": 228,
+            "end_line": 273,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.deleteMatches(InputCharacter, ByteTransition, Patterns)",
@@ -2489,7 +2489,7 @@
         "deleteRangePattern": [
           {
             "start_line": 275,
-            "end_line": 276,
+            "end_line": 415,
             "call_methods": [
               {
                 "signature": "java.util.ArrayDeque.ArrayDeque(int)",
@@ -2662,7 +2662,7 @@
         "checkAndDeleteStateAlongTraversedPath": [
           {
             "start_line": 416,
-            "end_line": 417,
+            "end_line": 445,
             "call_methods": [
               {
                 "signature": "java.util.ArrayDeque.pollFirst()",
@@ -2765,7 +2765,7 @@
         "doTransitionOn": [
           {
             "start_line": 446,
-            "end_line": 447,
+            "end_line": 547,
             "call_methods": [
               {
                 "signature": "java.util.stream.Stream.collect(Collector<? super T, A, R>)",
@@ -3052,7 +3052,7 @@
         "addExistenceMatch": [
           {
             "start_line": 548,
-            "end_line": 549,
+            "end_line": 569,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(ByteTransition, byte)",
@@ -3149,7 +3149,7 @@
         "addSuffixMatch": [
           {
             "start_line": 570,
-            "end_line": 571,
+            "end_line": 595,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(ByteTransition, byte)",
@@ -3249,7 +3249,7 @@
         "attemptAddShortcutTransitionMatch": [
           {
             "start_line": 609,
-            "end_line": 610,
+            "end_line": 625,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ShortcutTransition.getMatch()",
@@ -3329,7 +3329,7 @@
         "addPattern": [
           {
             "start_line": 627,
-            "end_line": 628,
+            "end_line": 656,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.addRangePattern(Range)",
@@ -3460,7 +3460,7 @@
         "addExistencePattern": [
           {
             "start_line": 657,
-            "end_line": 658,
+            "end_line": 660,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.addMatchValue(Patterns, String, NameState)",
@@ -3500,7 +3500,7 @@
         "addAnythingButPattern": [
           {
             "start_line": 661,
-            "end_line": 662,
+            "end_line": 677,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.AnythingBut.getValues()",
@@ -3540,7 +3540,7 @@
         "addAnythingButEqualsIgnoreCasePattern": [
           {
             "start_line": 678,
-            "end_line": 679,
+            "end_line": 694,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.addMatchValue(Patterns, String, NameState)",
@@ -3580,7 +3580,7 @@
         "addMatchValue": [
           {
             "start_line": 695,
-            "end_line": 696,
+            "end_line": 724,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
@@ -3719,7 +3719,7 @@
         "canReuseNextByteState": [
           {
             "start_line": 725,
-            "end_line": 726,
+            "end_line": 769,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasIndeterminatePrefix()",
@@ -3786,7 +3786,7 @@
         "doMultipleTransitionsConvergeForInputByte": [
           {
             "start_line": 780,
-            "end_line": 781,
+            "end_line": 806,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.isNextCharacterFirstByteOfMultiByte(InputCharacter[], int)",
@@ -3918,7 +3918,7 @@
         "isNextCharacterFirstByteOfMultiByte": [
           {
             "start_line": 807,
-            "end_line": 808,
+            "end_line": 813,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputByte.cast(InputCharacter)",
@@ -3959,7 +3959,7 @@
         "extractNextJavaCharacterFromInputCharacters": [
           {
             "start_line": 814,
-            "end_line": 815,
+            "end_line": 826,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputByte.cast(InputCharacter)",
@@ -4030,7 +4030,7 @@
         "findPattern": [
           {
             "start_line": 827,
-            "end_line": 828,
+            "end_line": 854,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
@@ -4188,7 +4188,7 @@
         "findAnythingButPattern": [
           {
             "start_line": 855,
-            "end_line": 856,
+            "end_line": 870,
             "call_methods": [
               {
                 "signature": "java.util.Iterator.next()",
@@ -4288,7 +4288,7 @@
         "findAnythingButEqualsIgnoreCasePattern": [
           {
             "start_line": 871,
-            "end_line": 872,
+            "end_line": 886,
             "call_methods": [
               {
                 "signature": "java.util.Iterator.next()",
@@ -4388,7 +4388,7 @@
         "findMatchPattern": [
           {
             "start_line": 887,
-            "end_line": 888,
+            "end_line": 890,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.DefaultParser.getParser()",
@@ -4446,7 +4446,7 @@
           },
           {
             "start_line": 891,
-            "end_line": 892,
+            "end_line": 943,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(SingleByteTransition, InputCharacter)",
@@ -4564,7 +4564,7 @@
         "findRangePattern": [
           {
             "start_line": 946,
-            "end_line": 947,
+            "end_line": 1084,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.findMatchForRangePattern(byte, ByteTransition, Patterns)",
@@ -4684,7 +4684,7 @@
         "addRangePattern": [
           {
             "start_line": 1088,
-            "end_line": 1089,
+            "end_line": 1240,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.insertMatchForRangePattern(byte, ByteState, NameState, Patterns)",
@@ -4797,7 +4797,7 @@
         "extendShortcutTransition": [
           {
             "start_line": 1244,
-            "end_line": 1245,
+            "end_line": 1274,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)",
@@ -4975,7 +4975,7 @@
         "findOrMakeNextByteStateForRangePattern": [
           {
             "start_line": 1275,
-            "end_line": 1276,
+            "end_line": 1289,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasIndeterminatePrefix()",
@@ -5091,7 +5091,7 @@
         "findOrMakeNextByteState": [
           {
             "start_line": 1292,
-            "end_line": 1293,
+            "end_line": 1313,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
@@ -5234,7 +5234,7 @@
         "findNextByteStateForRangePattern": [
           {
             "start_line": 1314,
-            "end_line": 1315,
+            "end_line": 1322,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(ByteTransition, byte)",
@@ -5274,7 +5274,7 @@
         "addMatchPattern": [
           {
             "start_line": 1324,
-            "end_line": 1325,
+            "end_line": 1327,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.pattern()",
@@ -5314,7 +5314,7 @@
         "addEndOfMatch": [
           {
             "start_line": 1332,
-            "end_line": 1333,
+            "end_line": 1474,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ShortcutTransition.setMatch(ByteMatch)",
@@ -5696,7 +5696,7 @@
         "insertMatchForRangePattern": [
           {
             "start_line": 1475,
-            "end_line": 1476,
+            "end_line": 1479,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.DefaultParser.getParser()",
@@ -5770,7 +5770,7 @@
         "insertMatch": [
           {
             "start_line": 1480,
-            "end_line": 1481,
+            "end_line": 1526,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransitionHavingNextByteState(SingleByteTransition, SingleByteTransition, InputCharacter)",
@@ -5970,7 +5970,7 @@
         "getTransitionHavingNextByteState": [
           {
             "start_line": 1535,
-            "end_line": 1536,
+            "end_line": 1544,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(SingleByteTransition, InputCharacter)",
@@ -6020,7 +6020,7 @@
         "addMatchReferences": [
           {
             "start_line": 1545,
-            "end_line": 1546,
+            "end_line": 1588,
             "call_methods": [
               {
                 "signature": "java.util.concurrent.atomic.AtomicInteger.incrementAndGet()",
@@ -6151,7 +6151,7 @@
         "findMatchForRangePattern": [
           {
             "start_line": 1589,
-            "end_line": 1590,
+            "end_line": 1599,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.findMatch(Set<ByteMatch>, Patterns)",
@@ -6214,7 +6214,7 @@
         "deleteMatches": [
           {
             "start_line": 1608,
-            "end_line": 1609,
+            "end_line": 1620,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.getTransition(SingleByteTransition, InputCharacter)",
@@ -6286,7 +6286,7 @@
         "deleteMatch": [
           {
             "start_line": 1631,
-            "end_line": 1632,
+            "end_line": 1646,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)",
@@ -6368,7 +6368,7 @@
         "updateMatchReferences": [
           {
             "start_line": 1647,
-            "end_line": 1648,
+            "end_line": 1690,
             "call_methods": [
               {
                 "signature": "java.util.Set.remove(Object)",
@@ -6499,7 +6499,7 @@
         "getTransition": [
           {
             "start_line": 1691,
-            "end_line": 1692,
+            "end_line": 1695,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.getTransition(byte)",
@@ -6533,7 +6533,7 @@
           },
           {
             "start_line": 1696,
-            "end_line": 1697,
+            "end_line": 1708,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputCharacter.getType()",
@@ -6645,7 +6645,7 @@
         "getTransitionForMultiBytes": [
           {
             "start_line": 1709,
-            "end_line": 1710,
+            "end_line": 1736,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -6741,7 +6741,7 @@
         "addTransitionNextState": [
           {
             "start_line": 1737,
-            "end_line": 1738,
+            "end_line": 1763,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.setMatch(ByteMatch)",
@@ -6878,7 +6878,7 @@
         "addTransitionNextStateForWildcard": [
           {
             "start_line": 1795,
-            "end_line": 1796,
+            "end_line": 1805,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.setIndeterminatePrefix(boolean)",
@@ -6920,7 +6920,7 @@
         "putTransitionNextState": [
           {
             "start_line": 1806,
-            "end_line": 1807,
+            "end_line": 1817,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.isEmpty()",
@@ -7005,7 +7005,7 @@
         "putTransitionMatch": [
           {
             "start_line": 1821,
-            "end_line": 1822,
+            "end_line": 1833,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.SingleByteTransition.setMatch(ByteMatch)",
@@ -7091,7 +7091,7 @@
         "removeTransition": [
           {
             "start_line": 1834,
-            "end_line": 1835,
+            "end_line": 1843,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputByte.cast(InputCharacter)",
@@ -7203,7 +7203,7 @@
         "removeTransitionForMultiByteSet": [
           {
             "start_line": 1844,
-            "end_line": 1845,
+            "end_line": 1850,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputMultiByteSet.getMultiBytes()",
@@ -7260,7 +7260,7 @@
         "removeTransitionForBytes": [
           {
             "start_line": 1851,
-            "end_line": 1852,
+            "end_line": 1867,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasNoTransitions()",
@@ -7364,7 +7364,7 @@
         "addTransition": [
           {
             "start_line": 1868,
-            "end_line": 1869,
+            "end_line": 1877,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputByte.cast(InputCharacter)",
@@ -7476,7 +7476,7 @@
         "addTransitionForMultiByteSet": [
           {
             "start_line": 1878,
-            "end_line": 1879,
+            "end_line": 1892,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.setIndeterminatePrefix(boolean)",
@@ -7545,7 +7545,7 @@
         "findMatch": [
           {
             "start_line": 1893,
-            "end_line": 1894,
+            "end_line": 1901,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.equals(Object)",
@@ -7581,7 +7581,7 @@
         "isByte": [
           {
             "start_line": 1902,
-            "end_line": 1903,
+            "end_line": 1905,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputCharacter.getType()",
@@ -7608,7 +7608,7 @@
         "isWildcard": [
           {
             "start_line": 1906,
-            "end_line": 1907,
+            "end_line": 1909,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputCharacter.getType()",
@@ -7635,7 +7635,7 @@
         "isMultiByteSet": [
           {
             "start_line": 1910,
-            "end_line": 1911,
+            "end_line": 1913,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputCharacter.getType()",
@@ -7662,7 +7662,7 @@
         "evaluateComplexity": [
           {
             "start_line": 1914,
-            "end_line": 1915,
+            "end_line": 1917,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.MachineComplexityEvaluator.evaluate(ByteState)",
@@ -7698,7 +7698,7 @@
         "gatherObjects": [
           {
             "start_line": 1918,
-            "end_line": 1919,
+            "end_line": 1927,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.gatherObjects(Set<Object>)",
@@ -7764,7 +7764,7 @@
         "toString": [
           {
             "start_line": 1978,
-            "end_line": 1979,
+            "end_line": 1988,
             "call_methods": [],
             "external_fields": [
               {
@@ -7794,7 +7794,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ByteMachine.java",
       "javadoc": "\n * Represents a UTF8-byte-level state machine that matches a Ruler state machine's field values.\n * Each state is a map keyed by utf8 byte. getTransition(byte) yields a Target, which can contain either or\n *  both of the next ByteState, and the first of a chain of Matches, which indicate a match to some pattern.\n "
     },
     "software.amazon.event.ruler.ByteMachine.EmptyByteTransition": {
@@ -7811,7 +7811,7 @@
         "getNextByteState": [
           {
             "start_line": 1932,
-            "end_line": 1933,
+            "end_line": 1936,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteState",
@@ -7822,7 +7822,7 @@
         "setNextByteState": [
           {
             "start_line": 1937,
-            "end_line": 1938,
+            "end_line": 1941,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -7838,7 +7838,7 @@
         "getTransition": [
           {
             "start_line": 1942,
-            "end_line": 1943,
+            "end_line": 1946,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -7854,7 +7854,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 1947,
-            "end_line": 1948,
+            "end_line": 1951,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -7865,7 +7865,7 @@
         "getTransitions": [
           {
             "start_line": 1952,
-            "end_line": 1953,
+            "end_line": 1956,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -7882,7 +7882,7 @@
         "getMatch": [
           {
             "start_line": 1957,
-            "end_line": 1958,
+            "end_line": 1961,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteMatch",
@@ -7893,7 +7893,7 @@
         "getShortcuts": [
           {
             "start_line": 1962,
-            "end_line": 1963,
+            "end_line": 1966,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -7910,7 +7910,7 @@
         "setMatch": [
           {
             "start_line": 1967,
-            "end_line": 1968,
+            "end_line": 1971,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -7926,7 +7926,7 @@
         "gatherObjects": [
           {
             "start_line": 1972,
-            "end_line": 1973,
+            "end_line": 1976,
             "call_methods": [
               {
                 "signature": "java.util.Set.add(E)",
@@ -7951,13 +7951,13 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\ByteMachine.java"
     },
     "software.amazon.event.ruler.ByteMap": {
       "constructors": [
         {
           "start_line": 26,
-          "end_line": 27,
+          "end_line": 29,
           "call_methods": [
             {
               "signature": "java.util.Map.put(K, V)",
@@ -7991,7 +7991,7 @@
         "putTransition": [
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 33,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.updateTransition(byte, SingleByteTransition, Operation)",
@@ -8035,7 +8035,7 @@
         "putTransitionForAllBytes": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 39,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -8076,7 +8076,7 @@
         "addTransition": [
           {
             "start_line": 40,
-            "end_line": 41,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.updateTransition(byte, SingleByteTransition, Operation)",
@@ -8120,7 +8120,7 @@
         "addTransitionForAllBytes": [
           {
             "start_line": 44,
-            "end_line": 45,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.expand(ByteTransition)",
@@ -8217,7 +8217,7 @@
         "removeTransition": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 59,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.updateTransition(byte, SingleByteTransition, Operation)",
@@ -8261,7 +8261,7 @@
         "removeTransitionForAllBytes": [
           {
             "start_line": 60,
-            "end_line": 61,
+            "end_line": 71,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.expand(ByteTransition)",
@@ -8358,7 +8358,7 @@
         "updateTransition": [
           {
             "start_line": 85,
-            "end_line": 86,
+            "end_line": 125,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -8549,7 +8549,7 @@
         "mergeAdjacentInMapIfNeeded": [
           {
             "start_line": 131,
-            "end_line": 132,
+            "end_line": 141,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.expand(ByteTransition)",
@@ -8632,7 +8632,7 @@
         "isEmpty": [
           {
             "start_line": 142,
-            "end_line": 143,
+            "end_line": 145,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.numberOfTransitions()",
@@ -8649,7 +8649,7 @@
         "numberOfTransitions": [
           {
             "start_line": 146,
-            "end_line": 147,
+            "end_line": 149,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getSingleByteTransitions()",
@@ -8671,7 +8671,7 @@
         "hasTransition": [
           {
             "start_line": 150,
-            "end_line": 151,
+            "end_line": 153,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getSingleByteTransitions()",
@@ -8703,7 +8703,7 @@
         "getTransition": [
           {
             "start_line": 154,
-            "end_line": 155,
+            "end_line": 157,
             "call_methods": [
               {
                 "signature": "java.util.Map.Entry.getValue()",
@@ -8740,7 +8740,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 164,
-            "end_line": 165,
+            "end_line": 186,
             "call_methods": [
               {
                 "signature": "java.util.Iterator.next()",
@@ -8831,7 +8831,7 @@
         "getTransitions": [
           {
             "start_line": 192,
-            "end_line": 193,
+            "end_line": 201,
             "call_methods": [
               {
                 "signature": "java.util.SortedMap.values()",
@@ -8879,7 +8879,7 @@
         "getCeilings": [
           {
             "start_line": 207,
-            "end_line": 208,
+            "end_line": 210,
             "call_methods": [
               {
                 "signature": "java.util.SortedMap.keySet()",
@@ -8902,7 +8902,7 @@
         "getSingleByteTransitions": [
           {
             "start_line": 216,
-            "end_line": 217,
+            "end_line": 225,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.expand(ByteTransition)",
@@ -8950,7 +8950,7 @@
         "expand": [
           {
             "start_line": 226,
-            "end_line": 227,
+            "end_line": 232,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.expand()",
@@ -8977,7 +8977,7 @@
         "getMap": [
           {
             "start_line": 234,
-            "end_line": 235,
+            "end_line": 237,
             "call_methods": [],
             "external_fields": [
               {
@@ -8993,7 +8993,7 @@
         "toString": [
           {
             "start_line": 238,
-            "end_line": 239,
+            "end_line": 263,
             "call_methods": [
               {
                 "signature": "java.lang.AbstractStringBuilder.append(String)",
@@ -9133,7 +9133,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ByteMap.java",
       "javadoc": "\n * Maps byte values to ByteTransitions. Designed to perform well given the constraints that most ByteStates will have a\n * very small number of transitions, and that for support of wildcards and regexes, we need to efficiently represent the\n * condition where wide ranges of byte values (including *all* of them) will transition to a common next ByteState.\n "
     },
     "software.amazon.event.ruler.ByteMap.Operation": {
@@ -9156,13 +9156,14 @@
       ],
       "fields": [],
       "constructors": [],
-      "methods": {}
+      "methods": {},
+      "file": "software\\amazon\\event\\ruler\\ByteMap.java"
     },
     "software.amazon.event.ruler.ByteMatch": {
       "constructors": [
         {
           "start_line": 13,
-          "end_line": 14,
+          "end_line": 17,
           "call_methods": [],
           "external_fields": [
             {
@@ -9205,7 +9206,7 @@
         "getNextByteState": [
           {
             "start_line": 18,
-            "end_line": 19,
+            "end_line": 22,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteState",
@@ -9216,7 +9217,7 @@
         "setNextByteState": [
           {
             "start_line": 23,
-            "end_line": 24,
+            "end_line": 27,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CompositeByteTransition.CompositeByteTransition(ByteState, ByteMatch)",
@@ -9247,7 +9248,7 @@
         "getTransition": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 32,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -9263,7 +9264,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 37,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -9274,7 +9275,7 @@
         "getTransitions": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -9291,7 +9292,7 @@
         "getMatch": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 47,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteMatch",
@@ -9302,7 +9303,7 @@
         "setMatch": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 52,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -9318,7 +9319,7 @@
         "getShortcuts": [
           {
             "start_line": 53,
-            "end_line": 54,
+            "end_line": 57,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -9335,7 +9336,7 @@
         "getPattern": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 61,
             "call_methods": [],
             "external_fields": [
               {
@@ -9367,7 +9368,7 @@
         "isMatchTrans": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 67,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -9378,7 +9379,7 @@
         "gatherObjects": [
           {
             "start_line": 68,
-            "end_line": 69,
+            "end_line": 75,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.gatherObjects(Set<Object>)",
@@ -9430,7 +9431,7 @@
         "toString": [
           {
             "start_line": 76,
-            "end_line": 77,
+            "end_line": 80,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.pattern()",
@@ -9459,7 +9460,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ByteMatch.java",
       "javadoc": "\n * Represents a place in a ByteMachine where we have to do something in addition to just transitioning to another step.\n "
     },
     "software.amazon.event.ruler.ByteState": {
@@ -9482,7 +9483,7 @@
         "getNextByteState": [
           {
             "start_line": 23,
-            "end_line": 24,
+            "end_line": 26,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteState",
@@ -9493,7 +9494,7 @@
         "setNextByteState": [
           {
             "start_line": 27,
-            "end_line": 28,
+            "end_line": 31,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -9509,7 +9510,7 @@
         "getMatch": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 36,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteMatch",
@@ -9520,7 +9521,7 @@
         "setMatch": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 41,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CompositeByteTransition.CompositeByteTransition(ByteState, ByteMatch)",
@@ -9551,7 +9552,7 @@
         "getShortcuts": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 46,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -9568,7 +9569,7 @@
         "hasNoTransitions": [
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.isEmpty()",
@@ -9591,7 +9592,7 @@
         "getTransition": [
           {
             "start_line": 64,
-            "end_line": 65,
+            "end_line": 68,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getTransition(byte)",
@@ -9624,7 +9625,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 73,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getTransitionForAllBytes()",
@@ -9646,7 +9647,7 @@
         "getTransitions": [
           {
             "start_line": 74,
-            "end_line": 75,
+            "end_line": 78,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getTransitions()",
@@ -9668,7 +9669,7 @@
         "putTransition": [
           {
             "start_line": 86,
-            "end_line": 87,
+            "end_line": 89,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.putTransition(byte, SingleByteTransition)",
@@ -9709,7 +9710,7 @@
         "putTransitionForAllBytes": [
           {
             "start_line": 96,
-            "end_line": 97,
+            "end_line": 99,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.putTransitionForAllBytes(SingleByteTransition)",
@@ -9742,7 +9743,7 @@
         "addTransition": [
           {
             "start_line": 107,
-            "end_line": 108,
+            "end_line": 110,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.addTransition(byte, SingleByteTransition)",
@@ -9783,7 +9784,7 @@
         "addTransitionForAllBytes": [
           {
             "start_line": 117,
-            "end_line": 118,
+            "end_line": 120,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.addTransitionForAllBytes(SingleByteTransition)",
@@ -9816,7 +9817,7 @@
         "removeTransition": [
           {
             "start_line": 126,
-            "end_line": 127,
+            "end_line": 129,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.removeTransition(byte, SingleByteTransition)",
@@ -9857,7 +9858,7 @@
         "removeTransitionForAllBytes": [
           {
             "start_line": 135,
-            "end_line": 136,
+            "end_line": 138,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.removeTransitionForAllBytes(SingleByteTransition)",
@@ -9890,7 +9891,7 @@
         "hasIndeterminatePrefix": [
           {
             "start_line": 139,
-            "end_line": 140,
+            "end_line": 143,
             "call_methods": [],
             "external_fields": [
               {
@@ -9906,7 +9907,7 @@
         "setIndeterminatePrefix": [
           {
             "start_line": 144,
-            "end_line": 145,
+            "end_line": 147,
             "call_methods": [],
             "external_fields": [
               {
@@ -9927,7 +9928,7 @@
         "hasOnlySelfReferentialTransition": [
           {
             "start_line": 153,
-            "end_line": 154,
+            "end_line": 156,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.numberOfTransitions()",
@@ -9960,7 +9961,7 @@
         "getCeilings": [
           {
             "start_line": 162,
-            "end_line": 163,
+            "end_line": 165,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMap.getCeilings()",
@@ -9983,7 +9984,7 @@
         "toString": [
           {
             "start_line": 166,
-            "end_line": 167,
+            "end_line": 170,
             "call_methods": [],
             "external_fields": [
               {
@@ -9997,7 +9998,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ByteState.java",
       "javadoc": "\n * Represents a state in a state machine and maps utf-8 bytes to transitions. One byte can have many transitions,\n * meaning this is an NFA state as opposed to a DFA state.\n "
     },
     "software.amazon.event.ruler.ByteTransition": {
@@ -10113,7 +10114,7 @@
         "isShortcutTrans": [
           {
             "start_line": 76,
-            "end_line": 77,
+            "end_line": 79,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -10125,7 +10126,7 @@
         "isMatchTrans": [
           {
             "start_line": 86,
-            "end_line": 87,
+            "end_line": 89,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -10137,7 +10138,7 @@
         "isEmpty": [
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 97,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.getMatches()",
@@ -10165,7 +10166,7 @@
         "hasIndeterminatePrefix": [
           {
             "start_line": 104,
-            "end_line": 105,
+            "end_line": 107,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -10177,7 +10178,7 @@
         "gatherObjects": [
           {
             "start_line": 108,
-            "end_line": 109,
+            "end_line": 120,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.getTransitions()",
@@ -10244,7 +10245,7 @@
         "clone": [
           {
             "start_line": 121,
-            "end_line": 122,
+            "end_line": 129,
             "call_methods": [
               {
                 "signature": "java.lang.Object.clone()",
@@ -10259,7 +10260,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ByteTransition.java",
       "javadoc": "\n * Represents a transition (on a particular byte value) from a state to a state.\n "
     },
     "software.amazon.event.ruler.CIDR": {
@@ -10285,7 +10286,7 @@
         "isIPv4OrIPv6": [
           {
             "start_line": 17,
-            "end_line": 18,
+            "end_line": 20,
             "call_methods": [
               {
                 "signature": "java.util.regex.Matcher.matches()",
@@ -10326,7 +10327,7 @@
         "ipToBytes": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 38,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CIDR.barf(String)",
@@ -10383,7 +10384,7 @@
         "ipToString": [
           {
             "start_line": 45,
-            "end_line": 46,
+            "end_line": 48,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CIDR.toHexDigits(byte[])",
@@ -10440,7 +10441,7 @@
         "ipToStringIfPossible": [
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CIDR.isIPv4OrIPv6(String)",
@@ -10478,7 +10479,7 @@
         "ipToRangeIfPossible": [
           {
             "start_line": 72,
-            "end_line": 73,
+            "end_line": 102,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CIDR.toHexDigits(byte[])",
@@ -10570,7 +10571,7 @@
         "toHexDigits": [
           {
             "start_line": 103,
-            "end_line": 104,
+            "end_line": 113,
             "call_methods": [],
             "external_fields": [
               {
@@ -10595,7 +10596,7 @@
         "cidr": [
           {
             "start_line": 114,
-            "end_line": 115,
+            "end_line": 146,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CIDR.barf(String)",
@@ -10707,7 +10708,7 @@
         "computeTopBytes": [
           {
             "start_line": 147,
-            "end_line": 148,
+            "end_line": 168,
             "call_methods": [],
             "external_fields": [
               {
@@ -10736,7 +10737,7 @@
         "barf": [
           {
             "start_line": 169,
-            "end_line": 170,
+            "end_line": 172,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalArgumentException.IllegalArgumentException(String)",
@@ -10761,14 +10762,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\CIDR.java",
       "javadoc": "\n * Supports matching on IPv4 and IPv6 CIDR patterns, as compressed into a string range match.\n "
     },
     "software.amazon.event.ruler.ComparableNumber": {
       "constructors": [
         {
           "start_line": 43,
-          "end_line": 44,
+          "end_line": 45,
           "call_methods": [],
           "external_fields": [],
           "signature": "ComparableNumber()",
@@ -10817,7 +10818,7 @@
         "generate": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 53,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalArgumentException.IllegalArgumentException(String)",
@@ -10863,7 +10864,7 @@
         "byteToHexChars": [
           {
             "start_line": 59,
-            "end_line": 60,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "java.lang.String.charAt(int)",
@@ -10908,7 +10909,7 @@
         "longToByteBuffer": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 78,
             "call_methods": [
               {
                 "signature": "java.nio.ByteBuffer.array()",
@@ -10955,7 +10956,7 @@
         "toHexStringSkippingFirstByte": [
           {
             "start_line": 79,
-            "end_line": 80,
+            "end_line": 90,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ComparableNumber.byteToHexChars(byte)",
@@ -11005,14 +11006,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ComparableNumber.java",
       "javadoc": "\n * Represents a number, turned into a comparable string\n *  Numbers are allowed in the range -50**9 .. +50**9, inclusive\n *  Comparisons are precise to 6 digits to the right of the decimal point\n *  They are all treated as floating point\n *  They are turned into strings by:\n *  1. Add 10**9 (so no negatives), then multiply by 10**6 to remove the decimal point\n *  2. Format to a 14 char string left padded with 0 because hex string converted from 5e9*1e6=10e15 has 14 characters.\n *  Note: We use Hex because of a) it can save 3 bytes memory per number than decimal b) it aligned IP address radix.\n *  If needed, we can consider to use 32 or 64 radix description to save more memory,e.g. the string length will be 10\n *  for 32 radix, and 9 for 64 radix.\n *\n *  Note:\n *  The number is parsed to be java double to support number with decimal fraction, the max range supported is from\n *  -5e9 to 5e9 with precision of 6 digits to the right of decimal point.\n *  There is well known issue that double number will lose the precision while calculation among double and other data\n *  types, the higher the number, the lower the accuracy that can be maintained.\n *  For example: 0.30d - 0.10d = 0.19999999999999998 instead of 0.2d, and if extend to 1e10, the test result shows only\n *  5 digits of precision from right of decimal point can be guaranteed with existing implementation.\n *  The current max number 5e9 is selected with a balance between keeping the committed 6 digits of precision from right\n *  of decimal point and the memory cost (each number is parsed into a 14 characters HEX string).\n *\n *  CAVEAT:\n *  When there is need to further enlarging the max number, PLEASE BE VERY CAREFUL TO RESERVE THE NUMBER PRECISION AND\n *  TAKEN THE MEMORY COST INTO CONSIDERATION, BigDecimal shall be used to ensure the precision of double calculation ...\n "
     },
     "software.amazon.event.ruler.CompositeByteTransition": {
       "constructors": [
         {
           "start_line": 27,
-          "end_line": 28,
+          "end_line": 31,
           "call_methods": [],
           "external_fields": [
             {
@@ -11056,7 +11057,7 @@
         "getNextByteState": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 36,
             "call_methods": [],
             "external_fields": [
               {
@@ -11072,7 +11073,7 @@
         "setNextByteState": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 46,
             "call_methods": [],
             "external_fields": [
               {
@@ -11097,7 +11098,7 @@
         "getTransition": [
           {
             "start_line": 47,
-            "end_line": 48,
+            "end_line": 51,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -11113,7 +11114,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 56,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -11124,7 +11125,7 @@
         "getTransitions": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 61,
             "call_methods": [],
             "external_fields": [
               {
@@ -11140,7 +11141,7 @@
         "getMatch": [
           {
             "start_line": 62,
-            "end_line": 63,
+            "end_line": 66,
             "call_methods": [],
             "external_fields": [
               {
@@ -11156,7 +11157,7 @@
         "setMatch": [
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 76,
             "call_methods": [],
             "external_fields": [
               {
@@ -11181,7 +11182,7 @@
         "getShortcuts": [
           {
             "start_line": 77,
-            "end_line": 78,
+            "end_line": 81,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -11198,7 +11199,7 @@
         "hasIndeterminatePrefix": [
           {
             "start_line": 82,
-            "end_line": 83,
+            "end_line": 86,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasIndeterminatePrefix()",
@@ -11220,7 +11221,7 @@
         "isMatchTrans": [
           {
             "start_line": 87,
-            "end_line": 88,
+            "end_line": 91,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -11229,14 +11230,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\CompositeByteTransition.java",
       "javadoc": "\n * Represents a composite transition that has a next state and a match.\n "
     },
     "software.amazon.event.ruler.CompoundByteTransition": {
       "constructors": [
         {
           "start_line": 35,
-          "end_line": 36,
+          "end_line": 63,
           "call_methods": [
             {
               "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -11351,7 +11352,7 @@
         "coalesce": [
           {
             "start_line": 64,
-            "end_line": 65,
+            "end_line": 73,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.CompoundByteTransition.CompoundByteTransition(Set<SingleByteTransition>)",
@@ -11398,7 +11399,7 @@
         "getNextByteState": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 99,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteState.hasIndeterminatePrefix()",
@@ -11431,7 +11432,7 @@
         "setNextByteState": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 104,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -11447,7 +11448,7 @@
         "expand": [
           {
             "start_line": 110,
-            "end_line": 111,
+            "end_line": 114,
             "call_methods": [],
             "external_fields": [
               {
@@ -11464,7 +11465,7 @@
         "getTransitionForNextByteStates": [
           {
             "start_line": 115,
-            "end_line": 116,
+            "end_line": 119,
             "call_methods": [],
             "external_fields": [
               {
@@ -11480,7 +11481,7 @@
         "getMatches": [
           {
             "start_line": 127,
-            "end_line": 128,
+            "end_line": 135,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.SingleByteTransition.getMatches()",
@@ -11518,7 +11519,7 @@
         "getShortcuts": [
           {
             "start_line": 136,
-            "end_line": 137,
+            "end_line": 140,
             "call_methods": [],
             "external_fields": [
               {
@@ -11534,7 +11535,7 @@
         "getTransition": [
           {
             "start_line": 147,
-            "end_line": 148,
+            "end_line": 164,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -11607,7 +11608,7 @@
         "getTransitions": [
           {
             "start_line": 165,
-            "end_line": 166,
+            "end_line": 196,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -11699,7 +11700,7 @@
         "equals": [
           {
             "start_line": 197,
-            "end_line": 198,
+            "end_line": 205,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -11740,7 +11741,7 @@
         "hashCode": [
           {
             "start_line": 206,
-            "end_line": 207,
+            "end_line": 210,
             "call_methods": [
               {
                 "signature": "java.util.Objects.hash(..)",
@@ -11767,7 +11768,7 @@
         "toString": [
           {
             "start_line": 211,
-            "end_line": 212,
+            "end_line": 215,
             "call_methods": [
               {
                 "signature": "java.lang.Object.toString()",
@@ -11787,14 +11788,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\CompoundByteTransition.java",
       "javadoc": "\n * An implementation of ByteTransition that represents having taken multiple ByteTransitions simultaneously. This is\n * useful for traversing an NFA, i.e. when a single byte could lead you down multiple different transitions.\n "
     },
     "software.amazon.event.ruler.Constants": {
       "constructors": [
         {
           "start_line": 8,
-          "end_line": 9,
+          "end_line": 11,
           "call_methods": [],
           "external_fields": [],
           "signature": "Constants()",
@@ -11912,7 +11913,7 @@
         },
         {
           "start_line": 37,
-          "end_line": 38,
+          "end_line": 41,
           "name": "HEX_DIGITS",
           "type": "byte"
         },
@@ -11924,19 +11925,19 @@
         },
         {
           "start_line": 43,
-          "end_line": 44,
+          "end_line": 64,
           "name": "RESERVED_FIELD_NAMES_IN_OR_RELATIONSHIP",
           "type": "java.util.List<java.lang.String>"
         }
       ],
       "methods": {},
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\Constants.java"
     },
     "software.amazon.event.ruler.Event": {
       "constructors": [
         {
           "start_line": 89,
-          "end_line": 90,
+          "end_line": 105,
           "call_methods": [
             {
               "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -12013,7 +12014,7 @@
         },
         {
           "start_line": 107,
-          "end_line": 108,
+          "end_line": 121,
           "call_methods": [
             {
               "signature": "java.util.TreeMap.entrySet()",
@@ -12093,7 +12094,7 @@
         "traverseObject": [
           {
             "start_line": 122,
-            "end_line": 123,
+            "end_line": 152,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -12247,7 +12248,7 @@
         "traverseArray": [
           {
             "start_line": 153,
-            "end_line": 154,
+            "end_line": 180,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -12385,7 +12386,7 @@
         "flatten": [
           {
             "start_line": 186,
-            "end_line": 187,
+            "end_line": 195,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalArgumentException.IllegalArgumentException(Throwable)",
@@ -12436,7 +12437,7 @@
           },
           {
             "start_line": 201,
-            "end_line": 202,
+            "end_line": 209,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalArgumentException.IllegalArgumentException(Throwable)",
@@ -12474,7 +12475,7 @@
         "doFlatten": [
           {
             "start_line": 210,
-            "end_line": 211,
+            "end_line": 245,
             "call_methods": [
               {
                 "signature": "java.util.TreeMap.entrySet()",
@@ -12599,7 +12600,7 @@
         "loadObject": [
           {
             "start_line": 246,
-            "end_line": 247,
+            "end_line": 280,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Event.loadObject(JsonNode, Map<String, List<Value>>, Progress)",
@@ -12781,7 +12782,7 @@
         "flattenObject": [
           {
             "start_line": 281,
-            "end_line": 282,
+            "end_line": 309,
             "call_methods": [
               {
                 "signature": "java.util.Iterator.next()",
@@ -12945,7 +12946,7 @@
         "loadArray": [
           {
             "start_line": 310,
-            "end_line": 311,
+            "end_line": 342,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.JsonNode.getNodeType()",
@@ -13116,7 +13117,7 @@
         "flattenArray": [
           {
             "start_line": 343,
-            "end_line": 344,
+            "end_line": 367,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.JsonNode.getNodeType()",
@@ -13255,7 +13256,7 @@
         "addField": [
           {
             "start_line": 368,
-            "end_line": 369,
+            "end_line": 373,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Path.name()",
@@ -13337,7 +13338,7 @@
         "recordNameVal": [
           {
             "start_line": 374,
-            "end_line": 375,
+            "end_line": 380,
             "call_methods": [
               {
                 "signature": "java.util.Map.computeIfAbsent(K, Function<? super K, ? extends V>)",
@@ -13401,7 +13402,7 @@
         "pathName": [
           {
             "start_line": 381,
-            "end_line": 382,
+            "end_line": 388,
             "call_methods": [
               {
                 "signature": "java.util.StringJoiner.add(CharSequence)",
@@ -13443,7 +13444,7 @@
         "ignoreCurrentStep": [
           {
             "start_line": 389,
-            "end_line": 390,
+            "end_line": 397,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getCurrentToken()",
@@ -13500,7 +13501,7 @@
         "advanceToClosingToken": [
           {
             "start_line": 398,
-            "end_line": 399,
+            "end_line": 409,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -13528,13 +13529,13 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\Event.java"
     },
     "software.amazon.event.ruler.Event.Progress": {
       "constructors": [
         {
           "start_line": 65,
-          "end_line": 66,
+          "end_line": 68,
           "call_methods": [],
           "external_fields": [],
           "signature": "Progress(GenericMachine)",
@@ -13573,14 +13574,14 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Event.java",
       "javadoc": "\n     * represents the current state of an Event-constructor project\n     "
     },
     "software.amazon.event.ruler.Event.Value": {
       "constructors": [
         {
           "start_line": 76,
-          "end_line": 77,
+          "end_line": 80,
           "call_methods": [],
           "external_fields": [
             {
@@ -13620,14 +13621,14 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Event.java",
       "javadoc": "\n     * represents a field value during Event construction\n     "
     },
     "software.amazon.event.ruler.Field": {
       "constructors": [
         {
           "start_line": 14,
-          "end_line": 15,
+          "end_line": 19,
           "call_methods": [],
           "external_fields": [
             {
@@ -13681,7 +13682,7 @@
         }
       ],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Field.java",
       "javadoc": "\n * Represents the name and value of a data field in an event that Ruler will match.\n *\n * Both name and value are represented as strings.  Also provided for each field is information about its position\n *  in any arrays the event may contain. This is used to guard against a rule matching a set of fields which are in\n *  peer elements of an array, a situation which it turns out is perceived by users as a bug.\n "
     },
     "software.amazon.event.ruler.Finder": {
@@ -13700,7 +13701,7 @@
         "rulesForEvent": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 44,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.find(Task)",
@@ -13744,7 +13745,7 @@
           },
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.find(Task)",
@@ -13790,7 +13791,7 @@
         "find": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.tryStep(Task)",
@@ -13855,7 +13856,7 @@
         "moveFrom": [
           {
             "start_line": 74,
-            "end_line": 75,
+            "end_line": 98,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Step.Step(int, NameState)",
@@ -13941,7 +13942,7 @@
         "tryStep": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 105,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.tryValueMatching(Task, Step)",
@@ -13977,7 +13978,7 @@
         "tryValueMatching": [
           {
             "start_line": 106,
-            "end_line": 107,
+            "end_line": 128,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Task.isFieldUsed(String)",
@@ -14063,7 +14064,7 @@
         "tryNameMatching": [
           {
             "start_line": 129,
-            "end_line": 130,
+            "end_line": 140,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.hasKeyTransitions()",
@@ -14126,7 +14127,7 @@
         "addNameState": [
           {
             "start_line": 141,
-            "end_line": 142,
+            "end_line": 147,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Task.collectRules(NameState)",
@@ -14177,7 +14178,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Finder.java",
       "javadoc": "\n *  Uses a state machine created by software.amazon.event.ruler.Machine to process tokens\n *   representing key-value pairs in an event, and return any matching Rules.\n "
     },
     "software.amazon.event.ruler.GenericMachine": {
@@ -14215,7 +14216,7 @@
         "rulesForJSONEvent": [
           {
             "start_line": 60,
-            "end_line": 61,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ACFinder.matchRules(Event, GenericMachine<?>)",
@@ -14259,7 +14260,7 @@
           },
           {
             "start_line": 65,
-            "end_line": 66,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ACFinder.matchRules(Event, GenericMachine<?>)",
@@ -14303,48 +14304,8 @@
         ],
         "rulesForEvent": [
           {
-            "start_line": 78,
-            "end_line": 79,
-            "call_methods": [
-              {
-                "signature": "software.amazon.event.ruler.Finder.rulesForEvent(List<String>, GenericMachine<?>)",
-                "arguments": [
-                  {
-                    "name": "Event.flatten(jsonEvent)",
-                    "type": "java.util.List<java.lang.String>"
-                  },
-                  {
-                    "name": "this",
-                    "type": "software.amazon.event.ruler.GenericMachine<?>"
-                  }
-                ],
-                "return_type": "java.util.List<java.lang.Object>"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Event.flatten(String)",
-                "arguments": [
-                  {
-                    "name": "jsonEvent",
-                    "type": "java.lang.String"
-                  }
-                ],
-                "return_type": "java.util.List<java.lang.String>"
-              }
-            ],
-            "external_fields": [],
-            "return_type": "java.util.List<T>",
-            "signature": "public List<T> rulesForEvent(String)",
-            "parameters": [
-              {
-                "name": "jsonEvent",
-                "type": "java.lang.String"
-              }
-            ],
-            "javadoc": "\n     * Return any rules that match the fields in the event.\n     *\n     * @param jsonEvent The JSON representation of the event\n     * @return list of rule names that match. The list may be empty but never null.\n     * @deprecated The rulesForJSONEvent version provides array-consistent matching, which is probably what your users want.\n     "
-          },
-          {
             "start_line": 90,
-            "end_line": 91,
+            "end_line": 94,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.rulesForEvent(List<String>, GenericMachine<?>)",
@@ -14373,48 +14334,8 @@
             "javadoc": "\n     * Return any rules that match the fields in the event.\n     *\n     * @param event the fields are those from the JSON expression of the event, sorted by key.\n     * @return list of rule names that match. The list may be empty but never null.\n     "
           },
           {
-            "start_line": 102,
-            "end_line": 103,
-            "call_methods": [
-              {
-                "signature": "software.amazon.event.ruler.Event.flatten(JsonNode)",
-                "arguments": [
-                  {
-                    "name": "eventRoot",
-                    "type": "com.fasterxml.jackson.databind.JsonNode"
-                  }
-                ],
-                "return_type": "java.util.List<java.lang.String>"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Finder.rulesForEvent(List<String>, GenericMachine<?>)",
-                "arguments": [
-                  {
-                    "name": "Event.flatten(eventRoot)",
-                    "type": "java.util.List<java.lang.String>"
-                  },
-                  {
-                    "name": "this",
-                    "type": "software.amazon.event.ruler.GenericMachine<?>"
-                  }
-                ],
-                "return_type": "java.util.List<java.lang.Object>"
-              }
-            ],
-            "external_fields": [],
-            "return_type": "java.util.List<T>",
-            "signature": "public List<T> rulesForEvent(JsonNode)",
-            "parameters": [
-              {
-                "name": "eventRoot",
-                "type": "com.fasterxml.jackson.databind.JsonNode"
-              }
-            ],
-            "javadoc": "\n     * Return any rules that match the fields in the parsed Json event.\n     *\n     * @param eventRoot the root node of the parsed JSON.\n     * @return list of rule names that match. The list may be empty but never null.\n     * @deprecated The rulesForJSONEvent version provides array-consistent matching, which is probably what your users want.\n     "
-          },
-          {
             "start_line": 114,
-            "end_line": 115,
+            "end_line": 118,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Finder.rulesForEvent(String[], GenericMachine<?>)",
@@ -14446,7 +14367,7 @@
         "getStartState": [
           {
             "start_line": 124,
-            "end_line": 125,
+            "end_line": 127,
             "call_methods": [],
             "external_fields": [
               {
@@ -14463,7 +14384,7 @@
         "isFieldStepUsed": [
           {
             "start_line": 134,
-            "end_line": 135,
+            "end_line": 151,
             "call_methods": [
               {
                 "signature": "java.lang.String.split(String)",
@@ -14536,7 +14457,7 @@
         "addRule": [
           {
             "start_line": 166,
-            "end_line": 167,
+            "end_line": 174,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -14634,7 +14555,7 @@
           },
           {
             "start_line": 333,
-            "end_line": 334,
+            "end_line": 340,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -14698,7 +14619,7 @@
           },
           {
             "start_line": 348,
-            "end_line": 349,
+            "end_line": 355,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -14762,7 +14683,7 @@
           },
           {
             "start_line": 363,
-            "end_line": 364,
+            "end_line": 370,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -14826,7 +14747,7 @@
           },
           {
             "start_line": 378,
-            "end_line": 379,
+            "end_line": 385,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -14892,7 +14813,7 @@
         "addPatternRule": [
           {
             "start_line": 183,
-            "end_line": 184,
+            "end_line": 204,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -15078,7 +14999,7 @@
         "deletePatternRule": [
           {
             "start_line": 229,
-            "end_line": 230,
+            "end_line": 243,
             "call_methods": [
               {
                 "signature": "java.util.Map.size()",
@@ -15195,7 +15116,7 @@
         "deleteRule": [
           {
             "start_line": 244,
-            "end_line": 245,
+            "end_line": 252,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -15292,7 +15213,7 @@
           },
           {
             "start_line": 393,
-            "end_line": 394,
+            "end_line": 400,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -15356,7 +15277,7 @@
           },
           {
             "start_line": 408,
-            "end_line": 409,
+            "end_line": 415,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -15420,7 +15341,7 @@
           },
           {
             "start_line": 423,
-            "end_line": 424,
+            "end_line": 430,
             "call_methods": [
               {
                 "signature": "java.lang.Iterable.forEach(Consumer<? super T>)",
@@ -15486,7 +15407,7 @@
         "deleteStep": [
           {
             "start_line": 253,
-            "end_line": 254,
+            "end_line": 303,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.hasRule(Object)",
@@ -15680,7 +15601,7 @@
         "checkAndDeleteNameState": [
           {
             "start_line": 304,
-            "end_line": 305,
+            "end_line": 325,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.isEmpty()",
@@ -15794,7 +15715,7 @@
         "addStep": [
           {
             "start_line": 431,
-            "end_line": 432,
+            "end_line": 477,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMachine.ByteMachine()",
@@ -16018,7 +15939,7 @@
         "hasValuePatterns": [
           {
             "start_line": 478,
-            "end_line": 479,
+            "end_line": 481,
             "call_methods": [
               {
                 "signature": "java.util.Collection.stream()",
@@ -16060,7 +15981,7 @@
         "hasKeyPatterns": [
           {
             "start_line": 482,
-            "end_line": 483,
+            "end_line": 485,
             "call_methods": [
               {
                 "signature": "java.util.Collection.stream()",
@@ -16092,7 +16013,7 @@
         "isNamePattern": [
           {
             "start_line": 486,
-            "end_line": 487,
+            "end_line": 489,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.type()",
@@ -16119,7 +16040,7 @@
         "addIntoUsedFields": [
           {
             "start_line": 490,
-            "end_line": 491,
+            "end_line": 495,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.GenericMachine.recordFieldStep(String)",
@@ -16146,7 +16067,7 @@
         "checkAndDeleteUsedFields": [
           {
             "start_line": 496,
-            "end_line": 497,
+            "end_line": 501,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.GenericMachine.eraseFieldStep(String)",
@@ -16173,7 +16094,7 @@
         "isEmpty": [
           {
             "start_line": 502,
-            "end_line": 503,
+            "end_line": 505,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.isEmpty()",
@@ -16204,7 +16125,7 @@
         "createNameMatcher": [
           {
             "start_line": 506,
-            "end_line": 507,
+            "end_line": 511,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.SingleStateNameMatcher.SingleStateNameMatcher()",
@@ -16221,7 +16142,7 @@
         "recordFieldStep": [
           {
             "start_line": 513,
-            "end_line": 514,
+            "end_line": 519,
             "call_methods": [
               {
                 "signature": "java.lang.String.split(String)",
@@ -16267,7 +16188,7 @@
         "eraseFieldStep": [
           {
             "start_line": 520,
-            "end_line": 521,
+            "end_line": 526,
             "call_methods": [
               {
                 "signature": "java.lang.String.split(String)",
@@ -16313,7 +16234,7 @@
         "evaluateComplexity": [
           {
             "start_line": 527,
-            "end_line": 528,
+            "end_line": 530,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.evaluateComplexity(MachineComplexityEvaluator)",
@@ -16345,7 +16266,7 @@
         "approximateObjectCount": [
           {
             "start_line": 546,
-            "end_line": 547,
+            "end_line": 551,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.gatherObjects(Set<Object>)",
@@ -16383,7 +16304,7 @@
         "toString": [
           {
             "start_line": 552,
-            "end_line": 553,
+            "end_line": 559,
             "call_methods": [],
             "external_fields": [
               {
@@ -16401,7 +16322,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\GenericMachine.java",
       "javadoc": "\n *  Represents a state machine used to match name/value patterns to rules.\n *  The machine is thread safe. The concurrency strategy is:\n *  Multi-thread access assumed, single-thread update enforced by synchronized on\n *  addRule/deleteRule.\n *  ConcurrentHashMap and ConcurrentSkipListSet are used so that writer and readers can be in tables\n *  simultaneously. So all changes the writer made could be synced to and viable by all readers (in other threads).\n *  Though it may  generate a half-built rule to rulesForEvent() e.g. when a long rule is adding and\n *  in the middle of adding, some event is coming to query machine, it won't generate side impact with rulesForEvent\n *  because each step of routing will check next State and transition map before moving forward.\n *\n *  T is a type representing a Rule name, it should be an immutable class.\n "
     },
     "software.amazon.event.ruler.input.ByteParser": {
@@ -16426,14 +16347,14 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "software\\amazon\\event\\ruler\\input\\ByteParser.java",
       "javadoc": "\n * Transforms UTF-8 formatted bytes into InputCharacter\n *\n * @see InputCharacter\n *\n "
     },
     "software.amazon.event.ruler.input.DefaultParser": {
       "constructors": [
         {
           "start_line": 42,
-          "end_line": 43,
+          "end_line": 45,
           "call_methods": [],
           "external_fields": [],
           "signature": "DefaultParser()",
@@ -16441,7 +16362,7 @@
         },
         {
           "start_line": 46,
-          "end_line": 47,
+          "end_line": 51,
           "call_methods": [],
           "external_fields": [
             {
@@ -16612,7 +16533,7 @@
         "getParser": [
           {
             "start_line": 52,
-            "end_line": 53,
+            "end_line": 55,
             "call_methods": [],
             "external_fields": [
               {
@@ -16628,7 +16549,7 @@
         "parse": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 74,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.EqualsIgnoreCaseParser.parse(String)",
@@ -16738,7 +16659,7 @@
           },
           {
             "start_line": 75,
-            "end_line": 76,
+            "end_line": 79,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputByte.InputByte(byte)",
@@ -16763,7 +16684,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\DefaultParser.java",
       "javadoc": "\n * Parses the value for a rule into InputCharacters that are used to add the rule to the Machine. Most characters from a\n * rule's value will be treated by their byte representation, but certain characters, such as for wildcards or regexes,\n * need to be represented differently so the Machine understands their special meaning.\n "
     },
     "software.amazon.event.ruler.input.EqualsIgnoreCaseParser": {
@@ -16782,7 +16703,7 @@
         "parse": [
           {
             "start_line": 19,
-            "end_line": 20,
+            "end_line": 32,
             "call_methods": [
               {
                 "signature": "java.lang.String.toLowerCase(Locale)",
@@ -16891,14 +16812,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\EqualsIgnoreCaseParser.java",
       "javadoc": "\n * A parser to be used specifically for equals-ignore-case rules.\n *\n * Note that there are actually characters whose upper-case/lower-case UTF-8 representations differ in number of bytes.\n * One example where length differs by 1: ⱥ, Ⱥ\n * One example where length differs by 4: ΰ, Ϋ́\n * To deal with differing byte lengths per Java character, we will parse each Java character into an InputMultiByteSet.\n "
     },
     "software.amazon.event.ruler.input.InputByte": {
       "constructors": [
         {
           "start_line": 13,
-          "end_line": 14,
+          "end_line": 16,
           "call_methods": [],
           "external_fields": [
             {
@@ -16927,7 +16848,7 @@
         "cast": [
           {
             "start_line": 17,
-            "end_line": 18,
+            "end_line": 20,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.input.InputByte",
@@ -16943,7 +16864,7 @@
         "getByte": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 24,
             "call_methods": [],
             "external_fields": [
               {
@@ -16959,7 +16880,7 @@
         "getType": [
           {
             "start_line": 25,
-            "end_line": 26,
+            "end_line": 29,
             "call_methods": [],
             "external_fields": [
               {
@@ -16975,7 +16896,7 @@
         "equals": [
           {
             "start_line": 30,
-            "end_line": 31,
+            "end_line": 37,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -17002,7 +16923,7 @@
         "hashCode": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "java.lang.Byte.hashCode()",
@@ -17034,7 +16955,7 @@
         "toString": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 47,
             "call_methods": [
               {
                 "signature": "java.lang.String.String(byte[], Charset)",
@@ -17068,7 +16989,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\InputByte.java",
       "javadoc": "\n * An InputCharacter that represents a single byte.\n "
     },
     "software.amazon.event.ruler.input.InputCharacter": {
@@ -17087,7 +17008,7 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\input\\InputCharacter.java"
     },
     "software.amazon.event.ruler.input.InputCharacterType": {
       "constants": [
@@ -17110,13 +17031,14 @@
       "fields": [],
       "constructors": [],
       "methods": {},
+      "file": "software\\amazon\\event\\ruler\\input\\InputCharacterType.java",
       "javadoc": "\n * The different types of InputCharacters, created from a rule, that will be used to add the rule to a ByteMachine.\n "
     },
     "software.amazon.event.ruler.input.InputMultiByteSet": {
       "constructors": [
         {
           "start_line": 15,
-          "end_line": 16,
+          "end_line": 18,
           "call_methods": [
             {
               "signature": "java.util.Collections.unmodifiableSet(Set<? extends T>)",
@@ -17156,7 +17078,7 @@
         "cast": [
           {
             "start_line": 19,
-            "end_line": 20,
+            "end_line": 22,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.input.InputMultiByteSet",
@@ -17172,7 +17094,7 @@
         "getMultiBytes": [
           {
             "start_line": 23,
-            "end_line": 24,
+            "end_line": 26,
             "call_methods": [],
             "external_fields": [
               {
@@ -17188,7 +17110,7 @@
         "getType": [
           {
             "start_line": 27,
-            "end_line": 28,
+            "end_line": 31,
             "call_methods": [],
             "external_fields": [
               {
@@ -17204,7 +17126,7 @@
         "equals": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 40,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputMultiByteSet.getMultiBytes()",
@@ -17241,7 +17163,7 @@
         "hashCode": [
           {
             "start_line": 41,
-            "end_line": 42,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputMultiByteSet.getMultiBytes()",
@@ -17268,7 +17190,7 @@
         "toString": [
           {
             "start_line": 46,
-            "end_line": 47,
+            "end_line": 50,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.InputMultiByteSet.getMultiBytes()",
@@ -17288,7 +17210,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\InputMultiByteSet.java",
       "javadoc": "\n * An InputCharacter that represents a set of MultiBytes.\n "
     },
     "software.amazon.event.ruler.input.InputWildcard": {
@@ -17307,7 +17229,7 @@
         "getType": [
           {
             "start_line": 11,
-            "end_line": 12,
+            "end_line": 15,
             "call_methods": [],
             "external_fields": [
               {
@@ -17323,7 +17245,7 @@
         "equals": [
           {
             "start_line": 16,
-            "end_line": 17,
+            "end_line": 20,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -17345,7 +17267,7 @@
         "hashCode": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 25,
             "call_methods": [
               {
                 "signature": "java.lang.Object.hashCode()",
@@ -17362,7 +17284,7 @@
         "toString": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 30,
             "call_methods": [],
             "external_fields": [],
             "return_type": "java.lang.String",
@@ -17371,7 +17293,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\InputWildcard.java",
       "javadoc": "\n * An InputCharacter that represents a wildcard.\n "
     },
     "software.amazon.event.ruler.input.MatchTypeParser": {
@@ -17400,13 +17322,13 @@
           }
         ]
       },
-      "is_interface": true
+      "file": "software\\amazon\\event\\ruler\\input\\MatchTypeParser.java"
     },
     "software.amazon.event.ruler.input.MultiByte": {
       "constructors": [
         {
           "start_line": 21,
-          "end_line": 22,
+          "end_line": 27,
           "call_methods": [],
           "external_fields": [
             {
@@ -17469,7 +17391,7 @@
         "getBytes": [
           {
             "start_line": 28,
-            "end_line": 29,
+            "end_line": 31,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.copyOf(byte[], int)",
@@ -17504,7 +17426,7 @@
         "singular": [
           {
             "start_line": 32,
-            "end_line": 33,
+            "end_line": 38,
             "call_methods": [
               {
                 "signature": "java.lang.IllegalStateException.IllegalStateException(String)",
@@ -17535,7 +17457,7 @@
         "is": [
           {
             "start_line": 39,
-            "end_line": 40,
+            "end_line": 42,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.equals(byte[], byte[])",
@@ -17571,7 +17493,7 @@
         "isNumeric": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 46,
             "call_methods": [],
             "external_fields": [
               {
@@ -17599,7 +17521,7 @@
         "isLessThan": [
           {
             "start_line": 47,
-            "end_line": 48,
+            "end_line": 50,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.MultiByte.isLessThan(MultiByte, boolean)",
@@ -17628,7 +17550,7 @@
           },
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 78,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.MultiByte.getBytes()",
@@ -17663,7 +17585,7 @@
         "isLessThanOrEqualTo": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.MultiByte.isLessThan(MultiByte, boolean)",
@@ -17694,7 +17616,7 @@
         "isGreaterThan": [
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 58,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.MultiByte.isLessThanOrEqualTo(MultiByte)",
@@ -17721,7 +17643,7 @@
         "isGreaterThanOrEqualTo": [
           {
             "start_line": 59,
-            "end_line": 60,
+            "end_line": 62,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.input.MultiByte.isLessThan(MultiByte)",
@@ -17748,7 +17670,7 @@
         "equals": [
           {
             "start_line": 80,
-            "end_line": 81,
+            "end_line": 88,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.equals(byte[], byte[])",
@@ -17789,7 +17711,7 @@
         "hashCode": [
           {
             "start_line": 89,
-            "end_line": 90,
+            "end_line": 93,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.hashCode(byte[])",
@@ -17816,7 +17738,7 @@
         "toString": [
           {
             "start_line": 94,
-            "end_line": 95,
+            "end_line": 98,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.toString(byte[])",
@@ -17841,14 +17763,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\MultiByte.java",
       "javadoc": "\n * A grouping of multiple bytes. This can be used to represent a character that has a UTF-8 representation requiring\n * multiple bytes.\n "
     },
     "software.amazon.event.ruler.input.ParseException": {
       "constructors": [
         {
           "start_line": 7,
-          "end_line": 8,
+          "end_line": 10,
           "call_methods": [],
           "external_fields": [],
           "signature": "ParseException(String)",
@@ -17862,7 +17784,7 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\ParseException.java",
       "javadoc": "\n * A RuntimeException that indicates an error parsing a rule's value.\n "
     },
     "software.amazon.event.ruler.input.StringValueParser": {
@@ -17887,7 +17809,7 @@
           }
         ]
       },
-      "is_interface": true
+      "file": "software\\amazon\\event\\ruler\\input\\StringValueParser.java"
     },
     "software.amazon.event.ruler.input.SuffixParser": {
       "constructors": [
@@ -17905,7 +17827,7 @@
         "parse": [
           {
             "start_line": 14,
-            "end_line": 15,
+            "end_line": 25,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.reverse()",
@@ -17969,7 +17891,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\SuffixParser.java",
       "javadoc": "\n * A parser to be used specifically for suffix rules.\n *\n * This undoes the `reverse()` from {@code software.amazon.event.ruler.Patterns} intentionally\n * to ensure we can correctly reverse utf-8 characters with 2+ bytes like '大' and '雨'.\n "
     },
     "software.amazon.event.ruler.input.WildcardParser": {
@@ -17988,7 +17910,7 @@
         "parse": [
           {
             "start_line": 16,
-            "end_line": 17,
+            "end_line": 43,
             "call_methods": [
               {
                 "signature": "java.util.ArrayList.ArrayList(int)",
@@ -18085,14 +18007,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\input\\WildcardParser.java",
       "javadoc": "\n * A parser to be used specifically for wildcard rules.\n "
     },
     "software.amazon.event.ruler.IntIntMap": {
       "constructors": [
         {
           "start_line": 53,
-          "end_line": 54,
+          "end_line": 56,
           "call_methods": [],
           "external_fields": [],
           "signature": "IntIntMap()",
@@ -18100,7 +18022,7 @@
         },
         {
           "start_line": 57,
-          "end_line": 58,
+          "end_line": 60,
           "call_methods": [],
           "external_fields": [],
           "signature": "IntIntMap(int)",
@@ -18113,7 +18035,7 @@
         },
         {
           "start_line": 61,
-          "end_line": 62,
+          "end_line": 76,
           "call_methods": [
             {
               "signature": "java.lang.Integer.bitCount(int)",
@@ -18229,7 +18151,7 @@
         "get": [
           {
             "start_line": 84,
-            "end_line": 85,
+            "end_line": 100,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.getNextIndex(int)",
@@ -18284,7 +18206,7 @@
         "put": [
           {
             "start_line": 115,
-            "end_line": 116,
+            "end_line": 146,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.rehash(int)",
@@ -18375,7 +18297,7 @@
         "remove": [
           {
             "start_line": 156,
-            "end_line": 157,
+            "end_line": 174,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.getNextIndex(int)",
@@ -18444,7 +18366,7 @@
         "size": [
           {
             "start_line": 180,
-            "end_line": 181,
+            "end_line": 183,
             "call_methods": [],
             "external_fields": [
               {
@@ -18461,7 +18383,7 @@
         "isEmpty": [
           {
             "start_line": 184,
-            "end_line": 185,
+            "end_line": 187,
             "call_methods": [],
             "external_fields": [
               {
@@ -18477,7 +18399,7 @@
         "entries": [
           {
             "start_line": 188,
-            "end_line": 189,
+            "end_line": 198,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.EntryIterator.EntryIterator()",
@@ -18485,9 +18407,9 @@
                 "return_type": "software.amazon.event.ruler.IntIntMap.EntryIterator"
               },
               {
-                "signature": "software.amazon.event.ruler.IntIntMap.Anonymous-d1038128-1c73-4160-99c3-b004633d1b33.Anonymous-d1038128-1c73-4160-99c3-b004633d1b33()",
+                "signature": "software.amazon.event.ruler.IntIntMap.Anonymous-3a9ffeae-2fe8-4816-ac57-a735f4e00d63.Anonymous-3a9ffeae-2fe8-4816-ac57-a735f4e00d63()",
                 "arguments": [],
-                "return_type": "software.amazon.event.ruler.IntIntMap.Anonymous-d1038128-1c73-4160-99c3-b004633d1b33"
+                "return_type": "software.amazon.event.ruler.IntIntMap.Anonymous-3a9ffeae-2fe8-4816-ac57-a735f4e00d63"
               }
             ],
             "external_fields": [],
@@ -18499,7 +18421,7 @@
         "clone": [
           {
             "start_line": 199,
-            "end_line": 200,
+            "end_line": 211,
             "call_methods": [
               {
                 "signature": "java.lang.Object.clone()",
@@ -18531,7 +18453,7 @@
         "shiftKeys": [
           {
             "start_line": 215,
-            "end_line": 216,
+            "end_line": 251,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.getStartIndex(int)",
@@ -18576,7 +18498,7 @@
         "rehash": [
           {
             "start_line": 252,
-            "end_line": 253,
+            "end_line": 270,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.makeTable(int)",
@@ -18650,7 +18572,7 @@
         "makeTable": [
           {
             "start_line": 271,
-            "end_line": 272,
+            "end_line": 276,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.fill(long[], long)",
@@ -18686,7 +18608,7 @@
         "getStartIndex": [
           {
             "start_line": 277,
-            "end_line": 278,
+            "end_line": 280,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.phiMix(int)",
@@ -18718,7 +18640,7 @@
         "getNextIndex": [
           {
             "start_line": 281,
-            "end_line": 282,
+            "end_line": 284,
             "call_methods": [],
             "external_fields": [
               {
@@ -18739,7 +18661,7 @@
         "phiMix": [
           {
             "start_line": 291,
-            "end_line": 292,
+            "end_line": 295,
             "call_methods": [],
             "external_fields": [
               {
@@ -18759,14 +18681,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\IntIntMap.java",
       "javadoc": "\n * A fast primitive int-int map implementation. Keys and values may only be positive.\n "
     },
     "software.amazon.event.ruler.IntIntMap.Entry": {
       "constructors": [
         {
           "start_line": 300,
-          "end_line": 301,
+          "end_line": 304,
           "call_methods": [],
           "external_fields": [
             {
@@ -18809,7 +18731,7 @@
         "getKey": [
           {
             "start_line": 305,
-            "end_line": 306,
+            "end_line": 308,
             "call_methods": [],
             "external_fields": [
               {
@@ -18825,7 +18747,7 @@
         "getValue": [
           {
             "start_line": 309,
-            "end_line": 310,
+            "end_line": 312,
             "call_methods": [],
             "external_fields": [
               {
@@ -18839,7 +18761,7 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\IntIntMap.java"
     },
     "software.amazon.event.ruler.IntIntMap.EntryIterator": {
       "constructors": [],
@@ -18861,7 +18783,7 @@
         "hasNext": [
           {
             "start_line": 320,
-            "end_line": 321,
+            "end_line": 324,
             "call_methods": [],
             "external_fields": [
               {
@@ -18881,7 +18803,7 @@
         "next": [
           {
             "start_line": 325,
-            "end_line": 326,
+            "end_line": 334,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.IntIntMap.EntryIterator.findNextIndex(int)",
@@ -18939,7 +18861,7 @@
         "findNextIndex": [
           {
             "start_line": 335,
-            "end_line": 336,
+            "end_line": 344,
             "call_methods": [],
             "external_fields": [
               {
@@ -18970,7 +18892,7 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\IntIntMap.java"
     },
     "software.amazon.event.ruler.JsonRuleCompiler": {
       "constructors": [
@@ -18995,7 +18917,7 @@
         "check": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(Reader)",
@@ -19041,7 +18963,7 @@
           },
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 74,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(String)",
@@ -19086,7 +19008,7 @@
           },
           {
             "start_line": 75,
-            "end_line": 76,
+            "end_line": 83,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.JsonRuleCompiler.doCompile(JsonParser)",
@@ -19131,7 +19053,7 @@
           },
           {
             "start_line": 84,
-            "end_line": 85,
+            "end_line": 92,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(InputStream)",
@@ -19178,7 +19100,7 @@
         "compile": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 104,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(Reader)",
@@ -19219,7 +19141,7 @@
           },
           {
             "start_line": 105,
-            "end_line": 106,
+            "end_line": 109,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(String)",
@@ -19259,7 +19181,7 @@
           },
           {
             "start_line": 110,
-            "end_line": 111,
+            "end_line": 114,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.JsonRuleCompiler.doCompile(JsonParser)",
@@ -19299,7 +19221,7 @@
           },
           {
             "start_line": 115,
-            "end_line": 116,
+            "end_line": 119,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(InputStream)",
@@ -19341,7 +19263,7 @@
         "doCompile": [
           {
             "start_line": 120,
-            "end_line": 121,
+            "end_line": 130,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -19419,7 +19341,7 @@
         "parseObject": [
           {
             "start_line": 131,
-            "end_line": 132,
+            "end_line": 170,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -19604,7 +19526,7 @@
         "parseObjectInsideOrRelationship": [
           {
             "start_line": 171,
-            "end_line": 172,
+            "end_line": 215,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -19803,7 +19725,7 @@
         "parseIntoOrRelationship": [
           {
             "start_line": 239,
-            "end_line": 240,
+            "end_line": 271,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -19936,7 +19858,7 @@
         "deepCopyRules": [
           {
             "start_line": 273,
-            "end_line": 274,
+            "end_line": 276,
             "call_methods": [
               {
                 "signature": "java.util.stream.Stream.collect(Collector<? super T, A, R>)",
@@ -19993,7 +19915,7 @@
         "writeRules": [
           {
             "start_line": 277,
-            "end_line": 278,
+            "end_line": 340,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -20173,7 +20095,7 @@
         "processMatchExpression": [
           {
             "start_line": 346,
-            "end_line": 347,
+            "end_line": 506,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.JsonRuleCompiler.processExistsExpression(JsonParser)",
@@ -20457,7 +20379,7 @@
         "processAnythingButListMatchExpression": [
           {
             "start_line": 507,
-            "end_line": 508,
+            "end_line": 538,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -20564,7 +20486,7 @@
         "processAnythingButEqualsIgnoreCaseListMatchExpression": [
           {
             "start_line": 539,
-            "end_line": 540,
+            "end_line": 559,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -20644,7 +20566,7 @@
         "processAnythingButMatchExpression": [
           {
             "start_line": 560,
-            "end_line": 561,
+            "end_line": 578,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getDoubleValue()",
@@ -20741,7 +20663,7 @@
         "processAnythingButEqualsIgnoreCaseMatchExpression": [
           {
             "start_line": 579,
-            "end_line": 580,
+            "end_line": 591,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getText()",
@@ -20811,7 +20733,7 @@
         "processNumericMatchExpression": [
           {
             "start_line": 592,
-            "end_line": 593,
+            "end_line": 660,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.greaterThanOrEqualTo(double)",
@@ -20988,7 +20910,7 @@
         "completeNumericRange": [
           {
             "start_line": 661,
-            "end_line": 662,
+            "end_line": 685,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -21100,7 +21022,7 @@
         "processExistsExpression": [
           {
             "start_line": 686,
-            "end_line": 687,
+            "end_line": 705,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -21159,7 +21081,7 @@
         "tooManyElements": [
           {
             "start_line": 706,
-            "end_line": 707,
+            "end_line": 709,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.JsonRuleCompiler.barf(JsonParser, String)",
@@ -21190,7 +21112,7 @@
         "barf": [
           {
             "start_line": 710,
-            "end_line": 711,
+            "end_line": 713,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getCurrentLocation()",
@@ -21232,14 +21154,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\JsonRuleCompiler.java",
       "javadoc": "\n * Represents a updated compiler comparing to RuleCompiler class, it parses a rule described by a JSON string into\n * a list of Map which is composed of field Patterns, each Map represents one dedicated match branch in the rule.\n * By default, fields in the rule will be interpreted as \"And\" relationship implicitly and will result into one Map with\n * fields of Patterns, but once it comes across the \"$or\" relationship which is explicitly decorated by \"$or\" primitive\n * array, for each object in \"$or\" array, this Compiler will fork a new Map to include all fields of patterns in\n * that \"or\" branch, and when it goes over all branches in \"$or\" relationship, it will end up with the list of Map\n * and each Map represents a match branch composed of fields of patterns.\n * i.e.: a rule which describe the effect of (\"source\" AND (\"metricName\" OR (\"metricType AND \"namespace\") OR \"scope\"))\n * its JSON format String is:\n *   {\n *     \"source\": [ \"aws.cloudwatch\" ],\n *     \"$or\": [\n *       { \"metricName\": [ \"CPUUtilization\", \"ReadLatency\" ] },\n *       {\n *         \"metricType\": [ \"MetricType\" ] ,\n *         \"namespace\": [ \"AWS/EC2\", \"AWS/ES\" ]\n *       },\n *       { \"scope\": [ \"Service\" ] }\n *     ]\n *   }\n * It will be parsed to a list of match branches composed by a Map of fields patterns, e.g. for above rule, there will\n * result 3 match branches:\n * [\n *   {source=[\\\"aws.cloudwatch\\\"], metricName=[\\\"CPUUtilization\\\",\\\"ReadLatency\\\"]},\n *   {namespace=[\\\"AWS/EC2\\\", \\\"AWS/ES\\\"], metricType=[\\\"MetricType\\\"], source=[\\\"aws.cloudwatch\\\"]},\n *   {source=[\\\"aws.cloudwatch\\\"], scope=[\\\"Service\\\"]}\n * ]\n "
     },
     "software.amazon.event.ruler.Machine": {
       "constructors": [
         {
           "start_line": 15,
-          "end_line": 16,
+          "end_line": 17,
           "call_methods": [],
           "external_fields": [],
           "signature": "Machine()",
@@ -21248,14 +21170,14 @@
       ],
       "fields": [],
       "methods": {},
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Machine.java",
       "javadoc": "\n *  Represents a state machine used to match name/value patterns to rules.\n *  The machine is thread safe. The concurrency strategy is:\n *  Multi-thread access assumed, single-thread update enforced by synchronized on\n *  addRule/deleteRule.\n *  ConcurrentHashMap and ConcurrentSkipListSet are used so that writer and readers can be in tables\n *  simultaneously. So all changes the writer made could be synced to and viable by all readers (in other threads).\n *  Though it may  generate a half-built rule to rulesForEvent() e.g. when a long rule is adding and\n *  in the middle of adding, some event is coming to query machine, it won't generate side impact with rulesForEvent\n *  because each step of routing will check next State and transition map before moving forward.\n "
     },
     "software.amazon.event.ruler.MachineComplexityEvaluator": {
       "constructors": [
         {
           "start_line": 22,
-          "end_line": 23,
+          "end_line": 25,
           "call_methods": [],
           "external_fields": [
             {
@@ -21284,7 +21206,7 @@
         "getMaxComplexity": [
           {
             "start_line": 26,
-            "end_line": 27,
+            "end_line": 29,
             "call_methods": [],
             "external_fields": [
               {
@@ -21300,7 +21222,7 @@
         "evaluate": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 111,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.MachineComplexityEvaluator.getMatchesAccessibleFromEachTransition(ByteState)",
@@ -21487,7 +21409,7 @@
         "getMatchesAccessibleFromEachTransition": [
           {
             "start_line": 120,
-            "end_line": 121,
+            "end_line": 173,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -21629,7 +21551,7 @@
         "getWildcardPatterns": [
           {
             "start_line": 174,
-            "end_line": 175,
+            "end_line": 183,
             "call_methods": [
               {
                 "signature": "java.util.Set.add(E)",
@@ -21674,7 +21596,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\MachineComplexityEvaluator.java",
       "javadoc": "\n * Evaluates the complexity of machines.\n "
     },
     "software.amazon.event.ruler.MatchType": {
@@ -21748,6 +21670,7 @@
       "fields": [],
       "constructors": [],
       "methods": {},
+      "file": "software\\amazon\\event\\ruler\\MatchType.java",
       "javadoc": "\n * The types of value matches that Ruler supports\n "
     },
     "software.amazon.event.ruler.NameMatcher": {
@@ -21834,7 +21757,7 @@
           }
         ]
       },
-      "is_interface": true,
+      "file": "software\\amazon\\event\\ruler\\NameMatcher.java",
       "javadoc": "\n * Matches the Keys in the flattened event with the { [ \"exists\" : false ] } pattern.\n * and returns the next state if the <b>key does not exist</b> in the event.\n *\n * In the future, when we support multiple patterns, the matcher will return a set of\n * name states matched instead of a single name state.\n *\n * @param <R> generic state type\n "
     },
     "software.amazon.event.ruler.NameState": {
@@ -21863,7 +21786,7 @@
         "getTransitionOn": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 36,
             "call_methods": [
               {
                 "signature": "java.util.Map.get(Object)",
@@ -21895,7 +21818,7 @@
         "getRules": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 40,
             "call_methods": [],
             "external_fields": [
               {
@@ -21911,7 +21834,7 @@
         "hasRule": [
           {
             "start_line": 42,
-            "end_line": 43,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "java.util.Set.contains(Object)",
@@ -21943,7 +21866,7 @@
         "deleteRule": [
           {
             "start_line": 45,
-            "end_line": 46,
+            "end_line": 48,
             "call_methods": [
               {
                 "signature": "java.util.Set.remove(Object)",
@@ -21975,7 +21898,7 @@
         "removeTransition": [
           {
             "start_line": 49,
-            "end_line": 50,
+            "end_line": 52,
             "call_methods": [
               {
                 "signature": "java.util.Map.remove(Object)",
@@ -22007,7 +21930,7 @@
         "removeKeyTransition": [
           {
             "start_line": 53,
-            "end_line": 54,
+            "end_line": 56,
             "call_methods": [
               {
                 "signature": "java.util.Map.remove(Object)",
@@ -22039,7 +21962,7 @@
         "isEmpty": [
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 60,
             "call_methods": [
               {
                 "signature": "java.util.Map.isEmpty()",
@@ -22074,7 +21997,7 @@
         "addRule": [
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 64,
             "call_methods": [
               {
                 "signature": "java.util.Set.add(E)",
@@ -22106,7 +22029,7 @@
         "addTransition": [
           {
             "start_line": 65,
-            "end_line": 66,
+            "end_line": 68,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -22146,7 +22069,7 @@
         "addKeyTransition": [
           {
             "start_line": 69,
-            "end_line": 70,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "java.util.Map.put(K, V)",
@@ -22186,7 +22109,7 @@
         "getKeyTransitionOn": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 76,
             "call_methods": [
               {
                 "signature": "java.util.Map.get(Object)",
@@ -22218,7 +22141,7 @@
         "hasKeyTransitions": [
           {
             "start_line": 77,
-            "end_line": 78,
+            "end_line": 80,
             "call_methods": [
               {
                 "signature": "java.util.Map.isEmpty()",
@@ -22240,7 +22163,7 @@
         "getNameTransitions": [
           {
             "start_line": 81,
-            "end_line": 82,
+            "end_line": 108,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameMatcher.getNextState()",
@@ -22329,7 +22252,7 @@
           },
           {
             "start_line": 109,
-            "end_line": 110,
+            "end_line": 141,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ArrayMembership.checkArrayConsistency(ArrayMembership, ArrayMembership)",
@@ -22446,7 +22369,7 @@
         "evaluateComplexity": [
           {
             "start_line": 142,
-            "end_line": 143,
+            "end_line": 153,
             "call_methods": [
               {
                 "signature": "java.util.Map.values()",
@@ -22502,7 +22425,7 @@
         "gatherObjects": [
           {
             "start_line": 154,
-            "end_line": 155,
+            "end_line": 166,
             "call_methods": [
               {
                 "signature": "java.util.Map.entrySet()",
@@ -22602,7 +22525,7 @@
         "toString": [
           {
             "start_line": 167,
-            "end_line": 168,
+            "end_line": 175,
             "call_methods": [],
             "external_fields": [
               {
@@ -22624,7 +22547,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\NameState.java",
       "javadoc": "\n * Represents a state in the machine.\n *\n * The \"valueTransitions\" map is keyed by field name and yields a ByteMachine\n * that is used to match values.\n *\n * The \"keyTransitions\" map is keyed by field name and yields a NameMatcher\n * that is used to match keys for [ { exists: false } ].\n "
     },
     "software.amazon.event.ruler.Path": {
@@ -22653,7 +22576,7 @@
         "push": [
           {
             "start_line": 19,
-            "end_line": 20,
+            "end_line": 23,
             "call_methods": [
               {
                 "signature": "java.util.Deque.add(E)",
@@ -22689,7 +22612,7 @@
         "pop": [
           {
             "start_line": 23,
-            "end_line": 24,
+            "end_line": 29,
             "call_methods": [
               {
                 "signature": "java.util.Deque.removeLast()",
@@ -22715,7 +22638,7 @@
         "name": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 52,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.StringBuilder()",
@@ -22780,7 +22703,7 @@
         "extendedName": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Path.name()",
@@ -22811,13 +22734,13 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\Path.java"
     },
     "software.amazon.event.ruler.Patterns": {
       "constructors": [
         {
           "start_line": 27,
-          "end_line": 28,
+          "end_line": 30,
           "call_methods": [],
           "external_fields": [
             {
@@ -22849,21 +22772,10 @@
         }
       ],
       "methods": {
-        "pattern": [
-          {
-            "start_line": 24,
-            "end_line": 25,
-            "call_methods": [],
-            "external_fields": [],
-            "return_type": "java.lang.String",
-            "signature": "public String pattern()",
-            "parameters": []
-          }
-        ],
         "type": [
           {
             "start_line": 31,
-            "end_line": 32,
+            "end_line": 34,
             "call_methods": [],
             "external_fields": [
               {
@@ -22879,7 +22791,7 @@
         "exactMatch": [
           {
             "start_line": 35,
-            "end_line": 36,
+            "end_line": 38,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.ValuePatterns(MatchType, String)",
@@ -22915,7 +22827,7 @@
         "prefixMatch": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 46,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.ValuePatterns(MatchType, String)",
@@ -22951,7 +22863,7 @@
         "suffixMatch": [
           {
             "start_line": 47,
-            "end_line": 48,
+            "end_line": 50,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.reverse()",
@@ -23007,7 +22919,7 @@
         "anythingButMatch": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 54,
             "call_methods": [
               {
                 "signature": "java.util.Collections.singleton(T)",
@@ -23046,7 +22958,7 @@
           },
           {
             "start_line": 55,
-            "end_line": 56,
+            "end_line": 58,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ComparableNumber.generate(double)",
@@ -23095,7 +23007,7 @@
           },
           {
             "start_line": 59,
-            "end_line": 60,
+            "end_line": 62,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.AnythingBut.AnythingBut(Set<String>, boolean)",
@@ -23126,7 +23038,7 @@
         "anythingButIgnoreCaseMatch": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 66,
             "call_methods": [
               {
                 "signature": "java.util.Collections.singleton(T)",
@@ -23161,7 +23073,7 @@
           },
           {
             "start_line": 67,
-            "end_line": 68,
+            "end_line": 70,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.AnythingButEqualsIgnoreCase.AnythingButEqualsIgnoreCase(Set<String>)",
@@ -23188,7 +23100,7 @@
         "anythingButNumberMatch": [
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 78,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ComparableNumber.generate(double)",
@@ -23254,7 +23166,7 @@
         "anythingButPrefix": [
           {
             "start_line": 79,
-            "end_line": 80,
+            "end_line": 82,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.ValuePatterns(MatchType, String)",
@@ -23290,7 +23202,7 @@
         "anythingButSuffix": [
           {
             "start_line": 83,
-            "end_line": 84,
+            "end_line": 86,
             "call_methods": [
               {
                 "signature": "java.lang.StringBuilder.reverse()",
@@ -23346,7 +23258,7 @@
         "numericEquals": [
           {
             "start_line": 87,
-            "end_line": 88,
+            "end_line": 90,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ComparableNumber.generate(double)",
@@ -23392,7 +23304,7 @@
         "existencePatterns": [
           {
             "start_line": 91,
-            "end_line": 92,
+            "end_line": 94,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.Patterns(MatchType)",
@@ -23419,7 +23331,7 @@
         "absencePatterns": [
           {
             "start_line": 95,
-            "end_line": 96,
+            "end_line": 98,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.Patterns(MatchType)",
@@ -23446,7 +23358,7 @@
         "equalsIgnoreCaseMatch": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 103,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.ValuePatterns(MatchType, String)",
@@ -23482,7 +23394,7 @@
         "wildcardMatch": [
           {
             "start_line": 104,
-            "end_line": 105,
+            "end_line": 107,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ValuePatterns.ValuePatterns(MatchType, String)",
@@ -23518,7 +23430,7 @@
         "clone": [
           {
             "start_line": 108,
-            "end_line": 109,
+            "end_line": 116,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.Patterns(MatchType)",
@@ -23550,7 +23462,7 @@
         "equals": [
           {
             "start_line": 117,
-            "end_line": 118,
+            "end_line": 130,
             "call_methods": [
               {
                 "signature": "java.lang.Object.equals(Object)",
@@ -23587,7 +23499,7 @@
         "hashCode": [
           {
             "start_line": 131,
-            "end_line": 132,
+            "end_line": 135,
             "call_methods": [
               {
                 "signature": "java.lang.Enum.hashCode()",
@@ -23609,7 +23521,7 @@
         "toString": [
           {
             "start_line": 136,
-            "end_line": 137,
+            "end_line": 140,
             "call_methods": [],
             "external_fields": [
               {
@@ -23623,14 +23535,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Patterns.java",
       "javadoc": "\n * The Patterns deal pre-processing of rules for the eventual matching against events.\n * It has subclasses for different match types (like ValuePatterns, Ranges, AnythingBut, etc).\n * This class also acts as the factory for to build patterns which is useful if you have\n * key value pairs and would like to build your rules for them directly instead of using the fancy\n * JSON query language (and its compiler). Once you build rules, you can add them via `Machine.addRule()`.\n *\n * NOTE: The subclasses have additional builders that are only needed by JSON rule compilier and are\n * left out of here intentionally for now.\n "
     },
     "software.amazon.event.ruler.Range": {
       "constructors": [
         {
           "start_line": 24,
-          "end_line": 25,
+          "end_line": 35,
           "call_methods": [
             {
               "signature": "software.amazon.event.ruler.ComparableNumber.generate(double)",
@@ -23701,7 +23613,7 @@
         },
         {
           "start_line": 36,
-          "end_line": 37,
+          "end_line": 44,
           "call_methods": [],
           "external_fields": [
             {
@@ -23755,7 +23667,7 @@
         },
         {
           "start_line": 45,
-          "end_line": 46,
+          "end_line": 53,
           "call_methods": [
             {
               "signature": "java.lang.Object.clone()",
@@ -23840,7 +23752,7 @@
         "lessThan": [
           {
             "start_line": 54,
-            "end_line": 55,
+            "end_line": 57,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(double, boolean, double, boolean)",
@@ -23884,7 +23796,7 @@
         "lessThanOrEqualTo": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 61,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(double, boolean, double, boolean)",
@@ -23928,7 +23840,7 @@
         "greaterThan": [
           {
             "start_line": 62,
-            "end_line": 63,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(double, boolean, double, boolean)",
@@ -23972,7 +23884,7 @@
         "greaterThanOrEqualTo": [
           {
             "start_line": 66,
-            "end_line": 67,
+            "end_line": 69,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(double, boolean, double, boolean)",
@@ -24016,7 +23928,7 @@
         "between": [
           {
             "start_line": 70,
-            "end_line": 71,
+            "end_line": 73,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(double, boolean, double, boolean)",
@@ -24067,7 +23979,7 @@
         "deepCopy": [
           {
             "start_line": 74,
-            "end_line": 75,
+            "end_line": 77,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.Range(Range)",
@@ -24094,7 +24006,7 @@
         "digitSequence": [
           {
             "start_line": 87,
-            "end_line": 88,
+            "end_line": 108,
             "call_methods": [
               {
                 "signature": "java.lang.System.arraycopy(Object, int, Object, int, int)",
@@ -24169,7 +24081,7 @@
         "getHexByteIndex": [
           {
             "start_line": 109,
-            "end_line": 110,
+            "end_line": 117,
             "call_methods": [],
             "external_fields": [
               {
@@ -24190,7 +24102,7 @@
         "clone": [
           {
             "start_line": 118,
-            "end_line": 119,
+            "end_line": 123,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.deepCopy(Range)",
@@ -24217,7 +24129,7 @@
         "equals": [
           {
             "start_line": 124,
-            "end_line": 125,
+            "end_line": 143,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.equals(byte[], byte[])",
@@ -24290,7 +24202,7 @@
         "hashCode": [
           {
             "start_line": 144,
-            "end_line": 145,
+            "end_line": 153,
             "call_methods": [
               {
                 "signature": "java.util.Arrays.hashCode(byte[])",
@@ -24344,7 +24256,7 @@
         "toString": [
           {
             "start_line": 154,
-            "end_line": 155,
+            "end_line": 158,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.toString()",
@@ -24394,14 +24306,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Range.java",
       "javadoc": "\n * Represents a range of numeric values to match against.\n * \"Numeric\" means that the character repertoire is \"digits\"; initially, either 0-9 or 0-9a-f. In the current\n *  implementation, the number of digits in the top and bottom of the range is the same.\n "
     },
     "software.amazon.event.ruler.RuleCompiler": {
       "constructors": [
         {
           "start_line": 34,
-          "end_line": 35,
+          "end_line": 37,
           "call_methods": [],
           "external_fields": [],
           "signature": "RuleCompiler()",
@@ -24420,7 +24332,7 @@
         "check": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 51,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(Reader)",
@@ -24466,7 +24378,7 @@
           },
           {
             "start_line": 57,
-            "end_line": 58,
+            "end_line": 65,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(String)",
@@ -24512,7 +24424,7 @@
           },
           {
             "start_line": 71,
-            "end_line": 72,
+            "end_line": 79,
             "call_methods": [
               {
                 "signature": "java.lang.Throwable.getLocalizedMessage()",
@@ -24558,7 +24470,7 @@
           },
           {
             "start_line": 85,
-            "end_line": 86,
+            "end_line": 93,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(InputStream)",
@@ -24606,7 +24518,7 @@
         "compile": [
           {
             "start_line": 101,
-            "end_line": 102,
+            "end_line": 104,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(Reader)",
@@ -24647,7 +24559,7 @@
           },
           {
             "start_line": 112,
-            "end_line": 113,
+            "end_line": 115,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(String)",
@@ -24688,7 +24600,7 @@
           },
           {
             "start_line": 123,
-            "end_line": 124,
+            "end_line": 126,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.RuleCompiler.doCompile(JsonParser)",
@@ -24729,7 +24641,7 @@
           },
           {
             "start_line": 134,
-            "end_line": 135,
+            "end_line": 137,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(InputStream)",
@@ -24772,7 +24684,7 @@
         "doCompile": [
           {
             "start_line": 138,
-            "end_line": 139,
+            "end_line": 148,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -24850,7 +24762,7 @@
         "parseObject": [
           {
             "start_line": 149,
-            "end_line": 150,
+            "end_line": 180,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -24999,7 +24911,7 @@
         "writeRules": [
           {
             "start_line": 181,
-            "end_line": 182,
+            "end_line": 238,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -25164,7 +25076,7 @@
         "processMatchExpression": [
           {
             "start_line": 244,
-            "end_line": 245,
+            "end_line": 405,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.RuleCompiler.processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)",
@@ -25448,7 +25360,7 @@
         "processAnythingButListMatchExpression": [
           {
             "start_line": 406,
-            "end_line": 407,
+            "end_line": 437,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -25555,7 +25467,7 @@
         "processAnythingButEqualsIgnoreCaseListMatchExpression": [
           {
             "start_line": 438,
-            "end_line": 439,
+            "end_line": 458,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -25635,7 +25547,7 @@
         "processAnythingButMatchExpression": [
           {
             "start_line": 460,
-            "end_line": 461,
+            "end_line": 478,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getDoubleValue()",
@@ -25732,7 +25644,7 @@
         "processAnythingButEqualsIgnoreCaseMatchExpression": [
           {
             "start_line": 479,
-            "end_line": 480,
+            "end_line": 491,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getText()",
@@ -25802,7 +25714,7 @@
         "processNumericMatchExpression": [
           {
             "start_line": 492,
-            "end_line": 493,
+            "end_line": 558,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Range.greaterThanOrEqualTo(double)",
@@ -25979,7 +25891,7 @@
         "completeNumericRange": [
           {
             "start_line": 559,
-            "end_line": 560,
+            "end_line": 583,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -26091,7 +26003,7 @@
         "processExistsExpression": [
           {
             "start_line": 584,
-            "end_line": 585,
+            "end_line": 603,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -26150,7 +26062,7 @@
         "tooManyElements": [
           {
             "start_line": 604,
-            "end_line": 605,
+            "end_line": 607,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.RuleCompiler.barf(JsonParser, String)",
@@ -26181,7 +26093,7 @@
         "barf": [
           {
             "start_line": 607,
-            "end_line": 608,
+            "end_line": 610,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.getCurrentLocation()",
@@ -26223,7 +26135,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\RuleCompiler.java",
       "javadoc": "\n * Compiles Rules, expressed in JSON, for use in Ruler.\n * There are two flavors of compilation:\n * 1. Compile a JSON-based Rule into Map of String to List of Patterns which can be used in rulesForEvent,\n *    and has a \"check\" variant that just checks rules for syntactic accuracy\n * 2. Starting in ListBasedRuleCompiler, does the same thing but expresses field names as List ofString\n *    rather than \".\"-separated strings for use in the Ruler class, which does not use state machines and\n *    needs to step into the event field by field.\n *\n * Is public so clients can call the check() method to syntax-check filters\n "
     },
     "software.amazon.event.ruler.RuleCompiler.ListBasedRuleCompiler": {
@@ -26240,7 +26152,7 @@
         "flattenRule": [
           {
             "start_line": 636,
-            "end_line": 637,
+            "end_line": 639,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonFactory.createParser(String)",
@@ -26283,7 +26195,7 @@
         "doFlattenRule": [
           {
             "start_line": 640,
-            "end_line": 641,
+            "end_line": 650,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -26361,7 +26273,7 @@
         "parseRuleObject": [
           {
             "start_line": 651,
-            "end_line": 652,
+            "end_line": 682,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -26514,7 +26426,7 @@
         "writeRules": [
           {
             "start_line": 683,
-            "end_line": 684,
+            "end_line": 725,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.core.JsonParser.nextToken()",
@@ -26669,7 +26581,7 @@
         "rulePathname": [
           {
             "start_line": 726,
-            "end_line": 727,
+            "end_line": 731,
             "call_methods": [
               {
                 "signature": "java.util.ArrayList.ArrayList(Collection<? extends E>)",
@@ -26708,7 +26620,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\RuleCompiler.java",
       "javadoc": "\n     * This is a rule parser which will parse rule of JSON format into a map of string list to Patterns list structure\n     * which is suitable to be used by Ruler.matches.\n     * The only difference in output between ListBasedRuleCompiler.flattenRule and Filter.compile is type and format of\n     * Map.key.\n     * For example, if input rule is below JSON string:\n     * {\n     *     \"detail\" : {\n     *         \"state\" : [ \"initializing\" ]\n     *     }\n     * }\n     * The key of output MAP by ListBasedRuleCompiler.flattenRule will be a list like: [\"detail\",\"state\"].\n     * The key of output MAP by Filter.compile will be a String: \"detail.state\".\n     "
     },
     "software.amazon.event.ruler.Ruler": {
@@ -26734,7 +26646,7 @@
         "matchesRule": [
           {
             "start_line": 39,
-            "end_line": 40,
+            "end_line": 44,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.GenericMachine.rulesForJSONEvent(String)",
@@ -26787,73 +26699,124 @@
             "javadoc": "\n     * Return true if an event matches the provided rule. This is a thin wrapper around\n     * rule machine and `rulesForJSONEvent` method.\n     *\n     * @param event The event, in JSON form\n     * @param rule The rule, in JSON form\n     * @return true or false depending on whether the rule matches the event\n     "
           }
         ],
-        "matches": [
+        "matchesAllFields": [
           {
-            "start_line": 59,
-            "end_line": 60,
+            "start_line": 66,
+            "end_line": 75,
             "call_methods": [
               {
-                "signature": "software.amazon.event.ruler.RuleCompiler.ListBasedRuleCompiler.flattenRule(String)",
-                "arguments": [
-                  {
-                    "name": "rule",
-                    "type": "java.lang.String"
-                  }
-                ],
-                "return_type": "java.util.Map<java.util.List<java.lang.String>, java.util.List<software.amazon.event.ruler.Patterns>>"
+                "signature": "java.util.Map.entrySet()",
+                "arguments": [],
+                "return_type": "java.util.Set<java.util.Map.Entry<K, V>>"
               },
               {
-                "signature": "software.amazon.event.ruler.Ruler.matchesAllFields(JsonNode, Map<List<String>, List<Patterns>>)",
+                "signature": "java.util.Map.Entry.getValue()",
+                "arguments": [],
+                "return_type": "V"
+              },
+              {
+                "signature": "software.amazon.event.ruler.Ruler.matchesOneOf(JsonNode, List<Patterns>)",
                 "arguments": [
                   {
-                    "name": "eventRoot",
+                    "name": "fieldValue",
                     "type": "com.fasterxml.jackson.databind.JsonNode"
                   },
                   {
-                    "name": "ruleMap",
-                    "type": "java.util.Map<java.util.List<java.lang.String>, java.util.List<software.amazon.event.ruler.Patterns>>"
+                    "name": "entry.getValue()",
+                    "type": "java.util.List<software.amazon.event.ruler.Patterns>"
                   }
                 ],
                 "return_type": "boolean"
               },
               {
-                "signature": "com.fasterxml.jackson.databind.ObjectMapper.readTree(String)",
+                "signature": "java.util.Map.Entry.getKey()",
+                "arguments": [],
+                "return_type": "K"
+              },
+              {
+                "signature": "software.amazon.event.ruler.Ruler.tryToRetrievePath(JsonNode, List<String>)",
                 "arguments": [
                   {
                     "name": "event",
-                    "type": "java.lang.String"
+                    "type": "com.fasterxml.jackson.databind.JsonNode"
+                  },
+                  {
+                    "name": "entry.getKey()",
+                    "type": "java.util.List<java.lang.String>"
                   }
                 ],
                 "return_type": "com.fasterxml.jackson.databind.JsonNode"
               }
             ],
-            "external_fields": [
-              {
-                "name": "ListBasedRuleCompiler",
-                "type": "unresolved"
-              },
-              {
-                "name": "software.amazon.event.ruler.Ruler.OBJECT_MAPPER",
-                "type": "com.fasterxml.jackson.databind.ObjectMapper"
-              }
-            ],
+            "external_fields": [],
             "return_type": "boolean",
-            "signature": "public static boolean matches(String, String)",
+            "signature": "private static boolean matchesAllFields(JsonNode, Map<List<String>, List<Patterns>>)",
             "parameters": [
               {
                 "name": "event",
-                "type": "java.lang.String"
+                "type": "com.fasterxml.jackson.databind.JsonNode"
               },
               {
                 "name": "rule",
-                "type": "java.lang.String"
+                "type": "java.util.Map<java.util.List<java.lang.String>, java.util.List<software.amazon.event.ruler.Patterns>>"
+              }
+            ]
+          }
+        ],
+        "matchesOneOf": [
+          {
+            "start_line": 77,
+            "end_line": 99,
+            "call_methods": [
+              {
+                "signature": "com.fasterxml.jackson.databind.JsonNode.isArray()",
+                "arguments": [],
+                "return_type": "boolean"
+              },
+              {
+                "signature": "software.amazon.event.ruler.Ruler.matches(JsonNode, Patterns)",
+                "arguments": [
+                  {
+                    "name": "element",
+                    "type": "com.fasterxml.jackson.databind.JsonNode"
+                  },
+                  {
+                    "name": "pattern",
+                    "type": "software.amazon.event.ruler.Patterns"
+                  }
+                ],
+                "return_type": "boolean"
+              },
+              {
+                "signature": "software.amazon.event.ruler.Patterns.type()",
+                "arguments": [],
+                "return_type": "software.amazon.event.ruler.MatchType"
               }
             ],
-            "javadoc": "\n     * Return true if an event matches the provided rule.\n     * <p>\n     * This method is deprecated. You should use `Ruler.match` instead in all but one cases:\n     * this method will return false for ` {\"detail\" : { \"state\": { \"state\": \"running\" } } }` with\n     * `{ \"detail\" : { \"state.state\": \"running\" } }` while `Ruler.matchesRule(...)` will return true. When this gap\n     * has been addressed, we will remove this method as it doesn't handle many of the new matchers\n     * and is not able to perform array consistency checks like rest of Ruler. This method also is\n     * slower.\n     *\n     * @param event The event, in JSON form\n     * @param rule The rule, in JSON form\n     * @return true or false depending on whether the rule matches the event\n     "
-          },
+            "external_fields": [
+              {
+                "name": "software.amazon.event.ruler.MatchType.ABSENT",
+                "type": "software.amazon.event.ruler.MatchType"
+              }
+            ],
+            "return_type": "boolean",
+            "signature": "private static boolean matchesOneOf(JsonNode, List<Patterns>)",
+            "parameters": [
+              {
+                "name": "val",
+                "type": "com.fasterxml.jackson.databind.JsonNode"
+              },
+              {
+                "name": "patterns",
+                "type": "java.util.List<software.amazon.event.ruler.Patterns>"
+              }
+            ]
+          }
+        ],
+        "matches": [
           {
             "start_line": 100,
-            "end_line": 101,
+            "end_line": 179,
             "call_methods": [
               {
                 "signature": "java.util.Collection.stream()",
@@ -27107,124 +27070,10 @@
             ]
           }
         ],
-        "matchesAllFields": [
-          {
-            "start_line": 66,
-            "end_line": 67,
-            "call_methods": [
-              {
-                "signature": "java.util.Map.entrySet()",
-                "arguments": [],
-                "return_type": "java.util.Set<java.util.Map.Entry<K, V>>"
-              },
-              {
-                "signature": "java.util.Map.Entry.getValue()",
-                "arguments": [],
-                "return_type": "V"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Ruler.matchesOneOf(JsonNode, List<Patterns>)",
-                "arguments": [
-                  {
-                    "name": "fieldValue",
-                    "type": "com.fasterxml.jackson.databind.JsonNode"
-                  },
-                  {
-                    "name": "entry.getValue()",
-                    "type": "java.util.List<software.amazon.event.ruler.Patterns>"
-                  }
-                ],
-                "return_type": "boolean"
-              },
-              {
-                "signature": "java.util.Map.Entry.getKey()",
-                "arguments": [],
-                "return_type": "K"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Ruler.tryToRetrievePath(JsonNode, List<String>)",
-                "arguments": [
-                  {
-                    "name": "event",
-                    "type": "com.fasterxml.jackson.databind.JsonNode"
-                  },
-                  {
-                    "name": "entry.getKey()",
-                    "type": "java.util.List<java.lang.String>"
-                  }
-                ],
-                "return_type": "com.fasterxml.jackson.databind.JsonNode"
-              }
-            ],
-            "external_fields": [],
-            "return_type": "boolean",
-            "signature": "private static boolean matchesAllFields(JsonNode, Map<List<String>, List<Patterns>>)",
-            "parameters": [
-              {
-                "name": "event",
-                "type": "com.fasterxml.jackson.databind.JsonNode"
-              },
-              {
-                "name": "rule",
-                "type": "java.util.Map<java.util.List<java.lang.String>, java.util.List<software.amazon.event.ruler.Patterns>>"
-              }
-            ]
-          }
-        ],
-        "matchesOneOf": [
-          {
-            "start_line": 77,
-            "end_line": 78,
-            "call_methods": [
-              {
-                "signature": "com.fasterxml.jackson.databind.JsonNode.isArray()",
-                "arguments": [],
-                "return_type": "boolean"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Ruler.matches(JsonNode, Patterns)",
-                "arguments": [
-                  {
-                    "name": "element",
-                    "type": "com.fasterxml.jackson.databind.JsonNode"
-                  },
-                  {
-                    "name": "pattern",
-                    "type": "software.amazon.event.ruler.Patterns"
-                  }
-                ],
-                "return_type": "boolean"
-              },
-              {
-                "signature": "software.amazon.event.ruler.Patterns.type()",
-                "arguments": [],
-                "return_type": "software.amazon.event.ruler.MatchType"
-              }
-            ],
-            "external_fields": [
-              {
-                "name": "software.amazon.event.ruler.MatchType.ABSENT",
-                "type": "software.amazon.event.ruler.MatchType"
-              }
-            ],
-            "return_type": "boolean",
-            "signature": "private static boolean matchesOneOf(JsonNode, List<Patterns>)",
-            "parameters": [
-              {
-                "name": "val",
-                "type": "com.fasterxml.jackson.databind.JsonNode"
-              },
-              {
-                "name": "patterns",
-                "type": "java.util.List<software.amazon.event.ruler.Patterns>"
-              }
-            ]
-          }
-        ],
         "tryToRetrievePath": [
           {
             "start_line": 180,
-            "end_line": 181,
+            "end_line": 189,
             "call_methods": [
               {
                 "signature": "com.fasterxml.jackson.databind.JsonNode.get(String)",
@@ -27260,7 +27109,7 @@
         "compare": [
           {
             "start_line": 190,
-            "end_line": 191,
+            "end_line": 199,
             "call_methods": [],
             "external_fields": [
               {
@@ -27283,7 +27132,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Ruler.java",
       "javadoc": "\n * The core idea of Ruler is to match rules to events at a rate that's independent of the number of rules.  This is\n *  achieved by compiling the rules into an automaton, at some up-front cost for compilation and memory use. There\n *  are some users who are unable to persist the compiled automaton but still like the \"Event Pattern\" idiom and want\n *  to match events with those semantics.\n * The memory cost is proportional to the product of the number of possible values provided in the rule and can\n *  grow surprisingly large\n * This class matches a single rule to a single event without any precompilation, using brute-force techniques, but\n *  with no up-front compute or memory cost.\n "
     },
     "software.amazon.event.ruler.ShortcutTransition": {
@@ -27300,7 +27149,7 @@
         "getNextByteState": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 47,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteState",
@@ -27311,7 +27160,7 @@
         "setNextByteState": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 52,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.SingleByteTransition",
@@ -27327,7 +27176,7 @@
         "getTransition": [
           {
             "start_line": 53,
-            "end_line": 54,
+            "end_line": 57,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -27343,7 +27192,7 @@
         "getTransitionForAllBytes": [
           {
             "start_line": 58,
-            "end_line": 59,
+            "end_line": 62,
             "call_methods": [],
             "external_fields": [],
             "return_type": "software.amazon.event.ruler.ByteTransition",
@@ -27354,7 +27203,7 @@
         "getTransitions": [
           {
             "start_line": 63,
-            "end_line": 64,
+            "end_line": 67,
             "call_methods": [],
             "external_fields": [
               {
@@ -27370,7 +27219,7 @@
         "getMatch": [
           {
             "start_line": 68,
-            "end_line": 69,
+            "end_line": 72,
             "call_methods": [],
             "external_fields": [
               {
@@ -27386,7 +27235,7 @@
         "setMatch": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 78,
             "call_methods": [],
             "external_fields": [
               {
@@ -27407,7 +27256,7 @@
         "getShortcuts": [
           {
             "start_line": 79,
-            "end_line": 80,
+            "end_line": 83,
             "call_methods": [
               {
                 "signature": "java.util.Collections.singleton(T)",
@@ -27429,7 +27278,7 @@
         "isShortcutTrans": [
           {
             "start_line": 84,
-            "end_line": 85,
+            "end_line": 88,
             "call_methods": [],
             "external_fields": [],
             "return_type": "boolean",
@@ -27438,7 +27287,7 @@
           }
         ]
       },
-      "is_interface": false
+      "file": "software\\amazon\\event\\ruler\\ShortcutTransition.java"
     },
     "software.amazon.event.ruler.SingleByteTransition": {
       "constructors": [],
@@ -27488,7 +27337,7 @@
         "getMatches": [
           {
             "start_line": 37,
-            "end_line": 38,
+            "end_line": 45,
             "call_methods": [
               {
                 "signature": "java.util.Collections.emptySet()",
@@ -27520,7 +27369,7 @@
         "expand": [
           {
             "start_line": 51,
-            "end_line": 52,
+            "end_line": 55,
             "call_methods": [
               {
                 "signature": "java.util.Collections.singleton(T)",
@@ -27543,7 +27392,7 @@
         "getTransitionForNextByteStates": [
           {
             "start_line": 56,
-            "end_line": 57,
+            "end_line": 60,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteTransition.getNextByteState()",
@@ -27560,7 +27409,7 @@
         "gatherObjects": [
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 78,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.ByteMatch.gatherObjects(Set<Object>)",
@@ -27630,7 +27479,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\SingleByteTransition.java",
       "javadoc": "\n * This class represents a singular ByteTransition. This is in contrast to a compound ByteTransition that represents\n * having taken multiple distinct transitions simultaneously (i.e. for NFA traversal).\n "
     },
     "software.amazon.event.ruler.SingleStateNameMatcher": {
@@ -27647,7 +27496,7 @@
         "isEmpty": [
           {
             "start_line": 19,
-            "end_line": 20,
+            "end_line": 23,
             "call_methods": [],
             "external_fields": [
               {
@@ -27663,7 +27512,7 @@
         "addPattern": [
           {
             "start_line": 24,
-            "end_line": 25,
+            "end_line": 32,
             "call_methods": [
               {
                 "signature": "java.util.function.Supplier.get()",
@@ -27694,7 +27543,7 @@
         "deletePattern": [
           {
             "start_line": 33,
-            "end_line": 34,
+            "end_line": 37,
             "call_methods": [],
             "external_fields": [
               {
@@ -27715,7 +27564,7 @@
         "findPattern": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 42,
             "call_methods": [],
             "external_fields": [
               {
@@ -27736,7 +27585,7 @@
         "getNextState": [
           {
             "start_line": 43,
-            "end_line": 44,
+            "end_line": 47,
             "call_methods": [],
             "external_fields": [
               {
@@ -27750,14 +27599,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\SingleStateNameMatcher.java",
       "javadoc": "\n * Implements the { [ \"exists\" : false] } pattern by performing a binary search\n * of the key in the event keys.\n "
     },
     "software.amazon.event.ruler.Step": {
       "constructors": [
         {
           "start_line": 16,
-          "end_line": 17,
+          "end_line": 20,
           "call_methods": [],
           "external_fields": [
             {
@@ -27800,7 +27649,7 @@
         "equals": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 33,
             "call_methods": [
               {
                 "signature": "java.lang.Object.getClass()",
@@ -27845,7 +27694,7 @@
         "hashCode": [
           {
             "start_line": 34,
-            "end_line": 35,
+            "end_line": 38,
             "call_methods": [
               {
                 "signature": "java.util.Objects.hash(..)",
@@ -27878,14 +27727,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Step.java",
       "javadoc": "\n * Represents a suggestion of a state/token combo from which there might be a transition.  The event token\n *  indexed is always the key of a key/value combination\n "
     },
     "software.amazon.event.ruler.Task": {
       "constructors": [
         {
           "start_line": 39,
-          "end_line": 40,
+          "end_line": 42,
           "call_methods": [
             {
               "signature": "java.util.List.toArray(T[])",
@@ -27913,7 +27762,7 @@
         },
         {
           "start_line": 43,
-          "end_line": 44,
+          "end_line": 47,
           "call_methods": [],
           "external_fields": [
             {
@@ -27980,7 +27829,7 @@
         "startState": [
           {
             "start_line": 48,
-            "end_line": 49,
+            "end_line": 51,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.GenericMachine.getStartState()",
@@ -28002,7 +27851,7 @@
         "isFieldUsed": [
           {
             "start_line": 53,
-            "end_line": 54,
+            "end_line": 60,
             "call_methods": [
               {
                 "signature": "java.lang.String.split(String)",
@@ -28074,7 +27923,7 @@
         "nextStep": [
           {
             "start_line": 61,
-            "end_line": 62,
+            "end_line": 64,
             "call_methods": [
               {
                 "signature": "java.util.Queue.remove()",
@@ -28096,7 +27945,7 @@
         "addStep": [
           {
             "start_line": 65,
-            "end_line": 66,
+            "end_line": 72,
             "call_methods": [
               {
                 "signature": "java.util.Queue.add(E)",
@@ -28142,7 +27991,7 @@
         "stepsRemain": [
           {
             "start_line": 73,
-            "end_line": 74,
+            "end_line": 76,
             "call_methods": [
               {
                 "signature": "java.util.Collection.isEmpty()",
@@ -28164,7 +28013,7 @@
         "getMatchedRules": [
           {
             "start_line": 77,
-            "end_line": 78,
+            "end_line": 80,
             "call_methods": [
               {
                 "signature": "java.util.ArrayList.ArrayList(Collection<? extends E>)",
@@ -28191,7 +28040,7 @@
         "collectRules": [
           {
             "start_line": 81,
-            "end_line": 82,
+            "end_line": 84,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.NameState.getRules()",
@@ -28226,14 +28075,14 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\Task.java",
       "javadoc": "\n * Represents the state of a rule-finding project.\n "
     },
     "software.amazon.event.ruler.ValuePatterns": {
       "constructors": [
         {
           "start_line": 12,
-          "end_line": 13,
+          "end_line": 16,
           "call_methods": [],
           "external_fields": [
             {
@@ -28266,7 +28115,7 @@
         "pattern": [
           {
             "start_line": 17,
-            "end_line": 18,
+            "end_line": 20,
             "call_methods": [],
             "external_fields": [
               {
@@ -28282,7 +28131,7 @@
         "equals": [
           {
             "start_line": 21,
-            "end_line": 22,
+            "end_line": 37,
             "call_methods": [
               {
                 "signature": "java.lang.Object.equals(Object)",
@@ -28343,7 +28192,7 @@
         "hashCode": [
           {
             "start_line": 38,
-            "end_line": 39,
+            "end_line": 44,
             "call_methods": [
               {
                 "signature": "java.lang.String.hashCode()",
@@ -28370,7 +28219,7 @@
         "toString": [
           {
             "start_line": 45,
-            "end_line": 46,
+            "end_line": 49,
             "call_methods": [
               {
                 "signature": "software.amazon.event.ruler.Patterns.toString()",
@@ -28390,7 +28239,7 @@
           }
         ]
       },
-      "is_interface": false,
+      "file": "software\\amazon\\event\\ruler\\ValuePatterns.java",
       "javadoc": "\n * The ValuePatterns deal with matching a single value. The single value\n * is specified with the variable pattern.\n "
     }
   },

@@ -87,6 +87,6 @@ if __name__ == '__main__':
         logging.basicConfig(
             level=args.log_level, 
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    jpype.startJVM(jpype.getDefaultJVMPath(), '-Xmx4g', "-Djava.class.path=./Java/project-info-extract.jar")
+    jpype.startJVM(jpype.getDefaultJVMPath(), '-Xmx4g', "-Djava.class.path=./Java/project-info-extract.jar;./Java/project-index-builder.jar")
     run(args)
     jpype.shutdownJVM()

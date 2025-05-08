@@ -21,15 +21,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 import similarity.JaccardSimilarityQuery;
 
-/**
- * Search Engine class - used to retrieve documents from Lucene index
- */
 public class CodeSearcher {
     // private final Path project_root;
     private final Path index_path;
@@ -71,9 +69,8 @@ public class CodeSearcher {
                 searchEngine.search(query);
             }
             searchEngine.close();
-            System.out.println(searchEngine.results.size()+" results found.");
-            JsonArray jsonArray = new Gson().toJsonTree(searchEngine.results).getAsJsonArray();
-            return jsonArray.toString();
+            JsonArray result_list = searchEngine.getResultList();
+            return result_list.toString();
             
         } catch (Exception e) {
             System.err.println("Error occurred during search: " + e.getMessage());
@@ -97,18 +94,21 @@ public class CodeSearcher {
         this.func_dv = MultiDocValues.getSortedSetValues(index_reader, "cfunc_dv");
         this.field_dv = MultiDocValues.getSortedSetValues(index_reader, "cfield_dv");
         setResultSet();
+        System.out.println("number of doc: "+this.index_reader.numDocs());
     }
 
     private void setResultSet(){
-        // 相同FQN和signature的结果会被覆盖并保留较高分数
+        // Results with same FQN and signature will be overwritten while keeping the higher score
         this.results = new TreeSet<ResultFormat>((a, b) -> {
             if (a.equals(b)) {
+                a.related_func.addAll(b.related_func);
+                b.related_func.addAll(a.related_func);
                 float higher = Math.max(a.score, b.score);
                 a.score = higher;
                 b.score = higher;
                 return 0;
             }
-            // 分数降序排序
+            // Sort scores in descending order
             return Float.compare(b.score, a.score);
         });
     }
@@ -118,9 +118,11 @@ public class CodeSearcher {
     }
     
     private class QueryFormat {
-        public String[] function;
-        public String[] field;
-        public QueryFormat(String [] function, String [] field) {
+        String sig;
+        String[] function;
+        String[] field;
+        public QueryFormat(String sig, String [] function, String [] field) {
+            this.sig = sig;
             this.function = function;
             this.field = field;
         }
@@ -130,14 +132,16 @@ public class CodeSearcher {
     private class ResultFormat {
         public String class_fqn;
         public String signature;
-        
+        public Set<String> related_func;
         private String file;
         private int start;
         private int end;
         public float score;
-        public ResultFormat(String fqn, String sig, String file, int start, int end, float score) {
+        public ResultFormat(String fqn, String sig, String relf, String file, int start, int end, float score) {
             this.class_fqn = fqn;
             this.signature = sig;
+            this.related_func = new HashSet<>();
+            this.related_func.add(relf);
             this.file = file;
             this.start = start;
             this.end = end;
@@ -163,6 +167,7 @@ public class CodeSearcher {
      * format of query string:
      * [
      *   {
+     *     "sig": "xxx",
      *     "function": ["xxx","xxx"], 
      *     "field": ["xxx","xxx"],
      *   },
@@ -176,6 +181,7 @@ public class CodeSearcher {
             JsonObject queryObject = queryArray.get(i).getAsJsonObject();
             JsonArray functionArray = queryObject.get("function").getAsJsonArray();
             JsonArray fieldArray =  queryObject.get("field").getAsJsonArray();
+            String sig = queryObject.get("sig").getAsString();
             String[] function = new String[functionArray.size()];
             String[] field = new String[fieldArray.size()];
             for (int j = 0; j < functionArray.size(); j++) {
@@ -184,62 +190,104 @@ public class CodeSearcher {
             for (int j = 0; j < fieldArray.size(); j++) {
                 field[j] = fieldArray.get(j).getAsString();
             }
-            queryList.add(new QueryFormat(function, field));
+            queryList.add(new QueryFormat(sig, function, field));
         }
         return queryList;    
     }
 
     /**
      * 将一组 term（String）映射到全局 DocValues ordinals。
+     * 优化版本：使用HashMap缓存已查询过的term，减少重复查询
      *
      * @param reader  已打开的 IndexReader
      * @param dvField DocValues 字段名（如 "calls_dv"）
      * @param terms   查询 term 集合
      * @return 升序排列的 ordinals 数组
      */
+    private java.util.Map<String, Long> funcOrdCache = new java.util.HashMap<>();
+    private java.util.Map<String, Long> fieldOrdCache = new java.util.HashMap<>();
+    
     public long[] getOrds(IndexReader reader, String dv_field, String[] terms) {
         // 1) 获取合并后全局的 SortedSetDocValues
         SortedSetDocValues dv = null;
+        java.util.Map<String, Long> cache = null;
+        
         if (dv_field.equals("cfunc_dv")) {
             dv = this.func_dv;
+            cache = this.funcOrdCache;
         } else if (dv_field.equals("cfield_dv")) {
             dv = this.field_dv;
+            cache = this.fieldOrdCache;
         } else {
             return new long[0];
         }
-        // 2) 遍历每个 term，lookupTerm 若 ≥0 则加入列表
-        List<Long> ordList = new ArrayList<Long>();
+        
+        // 2) 使用缓存并批量处理terms
+        List<Long> ordList = new ArrayList<>(terms.length);
+        BytesRef bytesRef = new BytesRef(); // 重用BytesRef对象
+        
         for (String term : terms) {
+            // 先检查缓存
+            Long cachedOrd = cache.get(term);
+            if (cachedOrd != null) {
+                if (cachedOrd >= 0) {
+                    ordList.add(cachedOrd);
+                }
+                continue;
+            }
+            
             try {
-                long ord = dv.lookupTerm(new BytesRef(term));
+                // 设置BytesRef内容而不是每次创建新对象
+                bytesRef.bytes = term.getBytes();
+                bytesRef.offset = 0;
+                bytesRef.length = bytesRef.bytes.length;
+                
+                long ord = dv.lookupTerm(bytesRef);
+                // 缓存结果
+                cache.put(term, ord);
                 if (ord >= 0) {
                     ordList.add(ord);
                 }
             } catch (IOException e) {
+                cache.put(term, -1L); // 缓存失败结果
                 continue;
             }
         }
-        // 3) 排序，确保后续评分逻辑里可按升序合并
-        // Collections.sort(ordList); 
-        // 4) 转成 primitive long[]
-        long[] ords = ordList.stream().mapToLong(Long::longValue).toArray();
+        
+        // 3) 转成 primitive long[] - 使用更高效的方式
+        long[] ords = new long[ordList.size()];
+        int i = 0;
+        for (Long ord : ordList) {
+            ords[i++] = ord;
+        }
+        
+        // 4) 排序，确保后续评分逻辑里可按升序合并
+        java.util.Arrays.sort(ords);
         return ords;
     }
 
-    // public void updateResults(ResultFormat result) {
+    // public void updateResults(ResultFormat result, String call_sig) {
     //     this.results.add(result);
     // }
 
+    /**
+     * 执行搜索查询 - 优化版本
+     * 1. 提前检查查询条件是否有效
+     * 2. 减少不必要的日志输出
+     * 3. 批量获取文档
+     */
     public void search(QueryFormat query) throws IOException {
         // 拿到 q 的 calls/fields 在各自 dv field 里的 ordinals
         String[] qfunc = query.function;
         String[] qfield = query.field;
         long[] qcOrds = getOrds(index_searcher.getIndexReader(), "cfunc_dv", qfunc);
+        System.out.println("finish function ord, length: "+qcOrds.length);
         long[] qfOrds = getOrds(index_searcher.getIndexReader(), "cfield_dv", qfield);
+        System.out.println("finish field ord, length: "+qfOrds.length);
 
         // 构造两个 JaccardSimilarityQuery
-        Query simCalls  = new JaccardSimilarityQuery("calls_dv",  qcOrds, qfunc.length, w_c);
-        Query simFields = new JaccardSimilarityQuery("fields_dv", qfOrds, qfield.length, w_f);
+        Query simCalls  = new JaccardSimilarityQuery("cfunc_dv",  qcOrds, qfunc.length, w_c);
+        Query simFields = new JaccardSimilarityQuery("cfield_dv", qfOrds, qfield.length, w_f);
         // 合并成一个 BooleanQuery，让 Lucene 一次倒排遍历就把两者分值累加
         BooleanQuery combined = new BooleanQuery.Builder()
             .add(simCalls, BooleanClause.Occur.SHOULD)
@@ -247,10 +295,12 @@ public class CodeSearcher {
             .build();
 
         TopDocs results = index_searcher.search(combined, top_k);
+        System.out.println("finish search");
         for (ScoreDoc sd : results.scoreDocs) {
             Document doc = index_searcher.storedFields().document(sd.doc);
             ResultFormat result = new ResultFormat(doc.get("class_fqn"), 
                         doc.get("signature"),
+                        query.sig,
                         doc.get("file"), 
                         Integer.parseInt(doc.get("start")), 
                         Integer.parseInt(doc.get("end")), 
@@ -258,6 +308,15 @@ public class CodeSearcher {
             this.results.add(result);
         }
 
+    }
+
+    public JsonArray getResultList() {
+        // 将结果集转换为JsonArray 并只保留分数最高的 k 个结果
+        System.out.println(this.results.size()+" results found.");
+        List<ResultFormat> topResults = new ArrayList<>(this.results);
+        topResults = topResults.subList(0, Math.min(topResults.size(), this.top_k));
+        JsonArray result_list = new Gson().toJsonTree(topResults).getAsJsonArray();
+        return result_list;
     }
     
     /**
