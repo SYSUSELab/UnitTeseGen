@@ -54,7 +54,7 @@ public class IndexBuilder {
         }
         if (mode.equals("single")) {
             IndexBuilder builder = new IndexBuilder(code_path, index_path);
-            builder.startSingle();
+            builder.startSingle(code_path, index_path);
         } else if (mode.equals("group")) {
             if (!Files.isDirectory(code_path)){
                 throw new IllegalArgumentException("project root should be a directory!");
@@ -169,24 +169,33 @@ public class IndexBuilder {
         }
     }
 
-    public void startSingle() {
+    public void startSingle(Path code, Path index) {
         this.analyzer = new StandardAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
         config.setOpenMode(OpenMode.CREATE);
         try {
-            this.directory = FSDirectory.open(index_path);
+            this.directory = FSDirectory.open(index);
             this.index_writer = new IndexWriter(directory, config);
-            ParseSourceCodeInfo(code_info_path);
+            ParseSourceCodeInfo(code);
             close();
         } catch (IOException e) {
-            System.out.println("Failed to open directory: " + index_path);
+            System.out.println("Failed to open directory: " + index);
             System.out.println(e.getMessage());
-            System.exit(1);
         }
+        return;
     }
 
     public void startGroup() {
-        throw new UnsupportedOperationException("Not implemented");
+        try {
+            Files.list(code_info_path).forEach(file_path -> {
+                if (file_path.endsWith(".json")) {
+                    String project_name = file_path.getFileName().toString().split("\\.")[0];
+                    startSingle(file_path, index_path.resolve(project_name));
+                }
+            });
+        } catch (IOException e) {
+            System.out.println("Failed to list directory: " + code_info_path);
+        }
     }
     
     /**

@@ -69,6 +69,8 @@ def run(args):
         logger.info("Constructing project index ...")
         ProjectPreprocessor = jpype.JClass("PreProcessor")
         ProjectPreprocessor.main([dataset_abs, f"{code_info_path}/json"])
+        IndexBuilder = jpype.JClass("IndexBuilder")
+        IndexBuilder.main(["group", f"{code_info_path}/json", f"{code_info_path}/lucene"])
     
     logger.info("preparation completed.")
     return

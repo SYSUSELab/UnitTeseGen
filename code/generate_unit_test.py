@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import time
+import jpype
 import logging
 import argparse
 
@@ -142,8 +143,8 @@ def run():
     
     logger.info("Running: Generate unit test...")
     start_time = time.time()
-    # GP.generate_init_prompts(FS, dataset_info)
-    # GP.generate_test_case_prompts(FS, TS, dataset_info)
+    GP.generate_init_prompts(FS, dataset_info)
+    GP.generate_test_case_prompts(FS, TS, dataset_info)
     generate_testclass_framework(dataset_info)
     generate_testcase(dataset_info)
     end_time = time.time()
@@ -165,4 +166,6 @@ if __name__ == '__main__':
         logging.basicConfig(
             level=args.log_level, 
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    jpype.startJVM(jpype.getDefaultJVMPath(), '-Xmx4g', "-Djava.class.path=./Java/project-index-builder.jar")
     run()
+    jpype.shutdownJVM()

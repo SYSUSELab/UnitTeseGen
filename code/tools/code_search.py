@@ -1,12 +1,16 @@
+from copy import deepcopy
 import os
+import re
 import logging
+from turtle import position
 
 import tools.io_utils as utils
-
+from code_analysis import SnippetReader
 
 class CodeSearcher:
     project_path: str
     code_info: dict
+    snippet_reader: SnippetReader
 
     def __init__(self, project_path: str, code_info_path: str):
         self.project_path = project_path
@@ -14,10 +18,10 @@ class CodeSearcher:
         self.logger.info(f"Loading code info from {code_info_path}")
         self.code_info = utils.load_json(code_info_path)
 
-
+    # todo: will be replaced by _get_class_info
     def _get_test_classes(self, class_url: str):
         """
-        搜索Java项目中指定类的测试类
+        find the test class for the given class
         """
         test_source = f"{self.project_path}/{class_url}".replace("test/", "test-original/")
         content = None
@@ -25,9 +29,11 @@ class CodeSearcher:
             content = utils.load_text(test_source)
         return content
 
-    def _get_class_info(self, class_name: str) -> dict:
-        return self.code_info["source"].get(class_name, None)
-
+    def _get_class_info(self, class_name: str, istest=False) -> dict:
+        if istest:
+            return self.code_info["test"].get(class_name, None)
+        else:
+            return self.code_info["source"].get(class_name, None)
 
     def _get_method_info(self, class_info: str, method_name: str) -> dict:
         '''
@@ -41,45 +47,89 @@ class CodeSearcher:
         )
         return method_info
 
+    def _extract_snippet(self, context:dict):
+        full_context = {}
+        for key, value in context.items():
+            finds = re.findall(r"(<position:\[(.*)\]>)", value, re.DOTALL)
+            if len(finds) > 0:
+                for find in finds:
+                    pivot = find[0]
+                    position = find[1].split(", ")
+                    file_path = position[0]
+                    start_line = int(position[1])
+                    end_line = int(position[2])
+                    snippet = self.snippet_reader.read_lines(file_path, start_line, end_line)
+                    value.replace(pivot, f"{'\n'.join(snippet)}")
+                full_context[key] = value
+            else:
+                full_context[key] = value
+        return full_context
+
     # todo: compress overlong context
-    def collect_construct_context(self, class_name, class_url):
+    def collect_construct_context(self, class_name, method_name:str, class_url):
         '''
         content in construct context:
-        - Class constructor
-        - Parameter in constructor, expecially classes defined in the project
         - API documents (optional)
+        - Class constructor
+        - Parameter in constructor, expecially classes defined in the project        
         - Existing test class (optional)
         '''
         class_info = self._get_class_info(class_name)
         if class_info is None:
             raise ValueError(f"Class `{class_name}` not found in code info")
+        method_info = self._get_method_info(class_info, method_name)
+        if method_info is None:
+            raise ValueError(f"Method `{method_name}` not found in class `{class_name}`")
 
+        self.snippet_reader = SnippetReader(self.project_path)
+        source_path = class_info["file"]
         context = {}
-        constructor_info = []
+        pclass = {}
+        # get api document
+        if "javadoc" in class_info:
+            context[f"api document of class {class_name}"] = class_info["javadoc"]
         # get the constructor info
+        constructor_info = []
         for constructor in class_info["constructors"]:
             ptext = []
             for param in constructor["parameters"]:
-                ptype = param["variable_type"]
-                pname = param["variable_name"]
+                ptype = param["type"]
+                pname = param["name"]
                 pinfo = self._get_class_info(ptype)
                 if pinfo is not None:
-                    # todo: add more info for paramater
-                    ptext.append(f"{ptype} {pname} ") #: {pinfo['javadoc']}")
-                else:
-                    ptext.append(f"{ptype} {pname}")
-            constructor_info.append(f"params: {'\n'.join(ptext)}\nbody:\n```java\n" + constructor["body"] + "\n```")
+                    pclass[ptype] = pinfo
+                    ptext.append(f"{ptype} {pname} ")
+            body_pos = [source_path,constructor["start_line"],constructor["end_line"]]
+            constructor_info.append(f"params: {'\n'.join(ptext)}\nbody:\n```java\n<position:{body_pos}>\n```")
         if len(constructor_info) > 0:
-            context[f"constructors for class `{class_name}`"] = f"{constructor_info}"
+            context[f"constructors for class `{class_name}`"] = '\n'.join(constructor_info)
+        # parameter in constructor & focus method
+        parameter_info = []
+        for param in method_info["parameters"]:
+            ptype = param["type"]
+            pname = param["name"]
+            pinfo = self._get_class_info(ptype)
+            if pinfo is not None:
+                pclass[ptype] = pinfo
+        for param, pinfo in pclass.items():
+            pcontext = "class `{param}`:\n"
+            if "javadoc" in pinfo:
+                pcontext += f"api document : {pinfo['javadoc']}\n"
+            pcontext += f"constructor:\n```java\n"
+            for constructor in pinfo["constructors"]:
+                body_pos = [pinfo["file"],constructor["start_line"],constructor["end_line"]]
+                pcontext += f"<position:{body_pos}>\n"
+            pcontext += f"```"
+            parameter_info.append(pcontext)
+        if len(parameter_info) > 0:
+            context[f"parameters in constructors and focal method"] = '\n'.join(parameter_info)
         # get existing test class
         test_url = class_url.replace("main","test").replace(".java", "Test.java")
         test_class = self._get_test_classes(test_url)
         if test_class is not None:
             context["existing test class"] = f"```java\n{test_class}\n```"
-        # get api document
-        if "javadoc" in class_info:
-            context[f"api document of class {class_name}"] = class_info["javadoc"]
         # more context can be added here
+        context = self._extract_snippet(context)
         return context
 
 
@@ -102,6 +152,17 @@ class CodeSearcher:
             raise ValueError(f"Method `{method_name}` not found in class `{class_name}`")
         # collect the context
         context = {}
+        depclass = {}
+        def update_depclass(class_name, key, value):
+            if class_name not in depclass:
+                depclass[class_name] = {key:value}
+            elif key not in depclass[class_name]:
+                depclass[class_name][key] = value
+            elif  isinstance(depclass[class_name][key],set):
+                depclass[class_name][key].append(value)
+            else:
+                depclass[class_name].update({key:value})
+        
         # api documents
         if "javadoc" in class_info:
             context[f"api document of class {class_name}"] = class_info["javadoc"]
@@ -110,24 +171,31 @@ class CodeSearcher:
         # parameters in focus method
         ptext = []
         for param in method_info["parameters"]:
-            ptype = param["variable_type"]
-            pname = param["variable_name"]
+            ptype = param["type"]
             pinfo = self._get_class_info(ptype)
             if pinfo is not None:
-                # todo: add more info for paramater
-                ptext.append(f"{ptype} {pname} ") #: {pinfo['javadoc']}")
-            else:
-                ptext.append(f"{ptype} {pname}")
-        if len(ptext) > 0: context["parameters"] = '\n'.join(ptext)
+                update_depclass(ptype, {"APIdoc":pinfo["javadoc"]})
+            pass
         # return type in focus method
         return_type:str = method_info["return_type"]
         if return_type!="void" and not return_type.startswith("java"):
             context["return type"] = return_type
         # calling methods in focus method
-        cmtexts = []
         for cmethod in method_info["call_methods"]:
-            method_name = cmethod["signature"]
+            method_sig = cmethod["signature"].split(".")
+            class_name = '.'.join(method_sig[:-1])
+            method_name = method_sig.split(".")[-1]
+            cinfo = self._get_class_info(class_name)
+            if cinfo is not None:
+                update_depclass(class_name, {"APIdoc":cinfo["javadoc"]})
+                minfo = self._get_method_info(cinfo, method_name)
+                if minfo is not None:
+                    update_depclass(class_name, {"dep_func":minfo["javadoc"]+minfo["signature"]})
+
+            if len(class_name) == 0: continue
+            class_name = class_name[0]
             return_type = cmethod["return_type"]
+            # any other infomation?
             cmtexts.append(f"method: {method_name}, return: {return_type}")
         if len(cmtexts) > 0: context["calling methods"] = '\n'.join(cmtexts)
         # add more context here
@@ -144,16 +212,16 @@ class CodeSearcher:
     #     results = []
     #     return results
 
-    # def search_method_usage(self, target_method: str) -> List[Dict]:
-    #     """
-    #     Search the usage of the specified method name in the Java project and extract the context.
-    #     Args:
-    #         target_method: Method to search for.
-    #     Returns:
-    #         A list containing method usage information. Each element is a dictionary containing file path, line number, and context.
-    #     """
-    #     results = []
-    #     return results
+    def search_method_usage(self, target_method: str) -> list[dict]:
+        """
+        Search the usage of the specified method name in the Java project and extract the context.
+        Args:
+            target_method: Method to search for.
+        Returns:
+            A list containing method usage information. Each element is a dictionary containing file path, line number, and context.
+        """
+        results = []
+        return results
 
 
 if __name__ == "__main__":

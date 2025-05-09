@@ -3,6 +3,30 @@ import tree_sitter_java as ts_java
 from queue import Queue
 from tree_sitter import Language, Parser
 
+import io_utils
+
+class SnippetReader:
+    project_path: str
+    cache = {}
+    def __init__(self, pj_path):
+        self.project_path = pj_path
+        pass
+
+    def read_lines(self, file_path, start_line, end_line):
+        if start_line < 0 or start_line is None: start_line = 0
+        if end_line < start_line: end_line = start_line + 1
+        if self.cache.get(file_path) is None:
+            content:str = io_utils.load_text(f"{self.project_path}/{file_path}")
+            lines = content.splitlines()
+            end_line = min(end_line, len(lines)-1)
+            self.cache[file_path] = lines
+            return lines[start_line:end_line]
+        else:
+            lines = self.cache[file_path]
+            end_line = min(end_line, len(lines)-1)
+            return lines[start_line:end_line]
+
+
 class ASTParser:
     source_code: str
     parser: Parser
