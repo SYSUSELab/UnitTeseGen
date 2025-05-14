@@ -13,17 +13,14 @@ class ASTParser:
         self.parser = Parser(Language(ts_java.language()))
         return
 
-    # def __init__(self, source_code):
-    #     self.parser = Parser(Language(ts_java.language()))
-    #     self.parse(source_code)
-    #     return
-    
+
     def parse(self, source_code):
         self.source_code = source_code
         self.lines = source_code.splitlines()
-        byte_code = source_code.encode('utf8')
+        byte_code = source_code.encode('utf-8')
         self.tree = self.parser.parse(byte_code, encoding='utf8')
         return
+
 
     def _traverse_get(self, type):
         node_list = []
@@ -37,6 +34,7 @@ class ASTParser:
                 for child in node.children:
                     bfs_queue.put(child)
         return node_list
+
 
     def _get_functions(self):
         functions = []
@@ -56,13 +54,41 @@ class ASTParser:
         return re.findall(r'import .*;', self.source_code, re.MULTILINE)
 
 
-    def get_additional_imports(self, existing_imports):
-        imports = self._get_imports()
-        additional_imports = []
-        for imp in imports:
-            if imp not in existing_imports:
-                additional_imports.append(imp)
-        return additional_imports
+    # def get_additional_imports(self, existing_imports):
+    #     imports = self._get_imports()
+    #     additional_imports = []
+    #     for imp in imports:
+    #         if imp not in existing_imports:
+    #             additional_imports.append(imp)
+    #     return additional_imports
+
+    def get_test_case_position(self):
+        function_nodes = self._traverse_get('method_declaration')
+        test_case_positions = [[],[]]
+        exclude_annotations = ['@BeforeEach', '@AfterEach', '@BeforeAll', '@AfterAll']
+        for node in function_nodes:
+            start_line = node.start_point[0]
+            end_line = node.end_point[0]
+            while self.lines[start_line-1].lstrip().startswith('@'):
+                start_line -= 1
+            func_code = '\n'.join(self.lines[start_line:end_line+1])
+            flag = True
+            for annotation in exclude_annotations:
+                if func_code.find(annotation) > -1:
+                    flag = False
+            if flag:
+                test_case_positions[0].append(start_line)
+                test_case_positions[1].append(end_line)
+        return test_case_positions
+    
+
+    def comment_code(self, comment_lines):
+        for line in comment_lines:
+            self.lines[line] = '//' + self.lines[line]
+        return
+
+    def get_code(self):
+        return '\n'.join(self.lines)
 
 
     def get_test_cases(self) -> list:

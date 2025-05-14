@@ -1,37 +1,9 @@
 import os
-import jinja2
 import logging
 
 import tools.io_utils as utils
 from tools.code_search import CodeSearcher
-
-
-class PromptGenerator:
-    env: jinja2.Environment
-    templates: dict
-    case_gen_list: list
-
-    def __init__(self, template_root, cglist):
-        # load templates
-        self.env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_root)) # any other options?
-        self.templates = {}
-        template_list = os.listdir(template_root)
-        for template in template_list:
-            template_name = template.split('_')[0]
-            self.templates[template_name] = self.env.get_template(template)
-        self.case_gen_list = cglist
-
-    def generate_singal(self, tmp_name, content) -> str:
-        return self.templates[tmp_name].render(content)
-
-    def generate_group(self, content) -> dict:
-        prompts = {}
-        for tmp_name in self.templates:
-            if tmp_name not in self.case_gen_list: continue
-            prompt = self.templates[tmp_name].render(content)
-            prompts[tmp_name] = prompt
-        return prompts
-
+from tools.prompt_generator import PromptGenerator
 
 def generate_init_prompts(file_structure, task_setting, dataset_info:dict):
     dataset_dir = file_structure.DATASET_PATH

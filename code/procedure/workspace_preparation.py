@@ -1,6 +1,8 @@
 import os
 import shutil
 import subprocess
+
+from jinja2.utils import pass_context
 import tools.io_utils as utils
 
 class WorkSpacePreparation:
@@ -55,6 +57,7 @@ class WorkSpacePreparation:
             shutil.rmtree(test_dir)
         return
 
+
 def prepare_workspace(dataset_abs:str):
     prepare = WorkSpacePreparation(dataset_abs)
     dataset_file = f"{dataset_abs}/dataset_info.json"
@@ -65,11 +68,10 @@ def prepare_workspace(dataset_abs:str):
 
 # test
 if __name__ == '__main__':
-    import settings as ST
-    prepare = WorkSpacePreparation(f"{ST.ROOT_PATH}/{ST.DATASET_PATH}")
-    dataset_dir = f"{ST.DATASET_PATH}/dataset_info.json"
-    ds_info = utils.load_json(dataset_dir)
-    prepare.prepare_work_space(ds_info)
-    prepare.clean_workspace(ds_info)
-    
-    
+    # import settings as ST
+    # prepare = WorkSpacePreparation(f"{ST.ROOT_PATH}/{ST.DATASET_PATH}")
+    # dataset_dir = f"{ST.DATASET_PATH}/dataset_info.json"
+    # ds_info = utils.load_json(dataset_dir)
+    # prepare.prepare_work_space(ds_info)
+    # prepare.clean_workspace(ds_info)
+    pass

@@ -6,7 +6,6 @@ import logging
 
 import tools.io_utils as utils
 
-
 class SnippetReader:
     project_path: str
     cache = {}

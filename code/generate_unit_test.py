@@ -44,11 +44,11 @@ def generate_testclass_framework(dataset_info: dict):
 
     def process_init_response(llm_caller:LLMCaller, test_info, project_prompt, project_response, gen_folder):
         id = test_info["id"]
+        class_name = test_info["test-class"].split('.')[-1]
+        test_class_path = f"{gen_folder}/{class_name}.java"
         prompt = utils.load_text(f"{project_prompt}/{id}/init_prompt.md")
         code, response = llm_caller.get_response(prompt)
-        class_name = test_info["test-class"].split('.')[-1]
         Post.check_class_name(code, class_name)
-        test_class_path = f"{gen_folder}/{class_name}.java"
         with file_lock:
             utils.write_text(test_class_path, code)
             if save_res:
@@ -173,11 +173,11 @@ def run():
     logger = logging.getLogger(__name__)
     start_time = time.time()
 
-    prompt_gen_start = time.time()
-    GenPrompt.generate_init_prompts(FS, TS, dataset_info)
-    GenPrompt.generate_test_case_prompts(FS, TS, dataset_info)
-    prompt_gen_end = time.time()
-    logger.info(f"time for generate prompts: {prompt_gen_end - prompt_gen_start:.2f} seconds")
+    # prompt_gen_start = time.time()
+    # GenPrompt.generate_init_prompts(FS, TS, dataset_info)
+    # GenPrompt.generate_test_case_prompts(FS, TS, dataset_info)
+    # prompt_gen_end = time.time()
+    # logger.info(f"time for generate prompts: {prompt_gen_end - prompt_gen_start:.2f} seconds")
 
     framework_start = time.time()
     generate_testclass_framework(dataset_info)
@@ -188,6 +188,11 @@ def run():
     generate_testcase(dataset_info)
     testcase_end = time.time()
     logger.info(f"time for generate test cases: {testcase_end - testcase_start:.2f} seconds")
+
+    post_start = time.time()
+    Post.verify_test_classes(FS, TS, dataset_info)
+    post_end = time.time()
+    logger.info(f"time for post process: {post_end - post_start:.2f} seconds")
     
     end_time = time.time()
     elapsed_time = end_time - start_time

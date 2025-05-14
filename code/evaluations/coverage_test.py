@@ -53,7 +53,7 @@ class ProjrctTestRunner:
         compile_cmd = ["javac","-cp","@dependencies.txt","-d","target/test-classes",class_path]
         self.logger.info(" ".join(compile_cmd))
         script = self.cd_cmd + compile_cmd
-        result = subprocess.run(script, capture_output=True, text=True, shell=True)
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
         if result.returncode!= 0:
             self.logger.error(f"error occured in compile test class, info:\n{result.stderr}")
             return False
@@ -70,7 +70,7 @@ class ProjrctTestRunner:
         java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
         test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
         script = self.cd_cmd + test_cmd
-        result = subprocess.run(script, capture_output=True, text=True, shell=True)
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
         test_info = result.stdout
         if result.returncode == 2 or result.returncode == 0:
             self.logger.info(f"test execution info: {test_info}")
@@ -151,14 +151,13 @@ class CoverageExtractor:
         return True
 
     def extract_single_coverage(self, testid, package, classname, method):
-        # extract coverage
         self.logger.info(f"Extracting coverage for class: {classname}, method: {method}")
         coverage_score = None
         html_path = f"{self.report_path}/jacoco-report-html/{testid}/{package}/{classname}.html"
         if not os.path.exists(html_path):
             self.logger.exception(f"report file not found: {html_path}")
             return coverage_score
-        
+        # extract coverage
         with open(html_path, "r") as file:
             soup = BeautifulSoup(file, 'lxml-xml')
         for tr in soup.find_all(name='tbody')[0].find_all(name='tr', recursive=False):
@@ -225,13 +224,14 @@ class CoverageExtractor:
         case_num = 0
         compile_num = 0
         pass_num = 0
-        cov_num = 0
+        cov_num  = 0
         inst_cov = 0.0
         bran_cov = 0.0
         for _, item in summary.items():
             test_cases = item.get("test_cases", 0)
             passed_cases = item.get("passed_cases", 0)
             case_num += test_cases
+            cov_num += 1
             if "error_type" in item:
                 error_type = self.error_type[item["error_type"]]
                 if error_type > 1:
@@ -242,7 +242,6 @@ class CoverageExtractor:
                 compile_num += test_cases
                 pass_num += passed_cases
                 if "inst_cov" in item and item["inst_cov"] != "<missing>":
-                    cov_num += 1
                     inst_cov += item["inst_cov"]
                     bran_cov += item["bran_cov"]
         summary.update({
@@ -272,7 +271,7 @@ def test_coverage(fstruct, task_setting, dataset_info: dict):
         # run converage test & generate report
         runner = ProjrctTestRunner(info, dependency_dir, testclass_path, report_path)
         test_result = runner.run_project_test(compile_test)
-        print(test_result)
+        logger.info(test_result)
         # extract coverage
         extractor = CoverageExtractor(info, report_path)
         coverage_data = extractor.generate_project_summary(test_result)

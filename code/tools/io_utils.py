@@ -14,7 +14,7 @@ def load_json(json_file):
 
 
 def load_text(file):
-    with open(file, 'r', encoding='utf-8') as f:
+    with open(file, 'r', encoding='utf-8', errors='ignore') as f:
         text = f.read()
     return text
 
