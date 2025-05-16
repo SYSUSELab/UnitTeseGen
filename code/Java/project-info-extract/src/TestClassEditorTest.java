@@ -42,23 +42,23 @@ public class TestClassEditorTest {
             "}\n";
         
         String classToAdd2 = 
-            "import org.junit.Test;\n" +
-            "import static org.junit.Assert.*;\n" +
-            "import java.util.Arrays;\n" +
-            "import java.util.List;\n\n" +
-            "public class StringUtilTest {\n" +
+            // "import org.junit.Test;\n" +
+            // "import static org.junit.Assert.*;\n" +
+            // "import java.util.Arrays;\n" +
+            // "import java.util.List;\n\n" +
+            // "public class StringUtilTest {\n" +
             "    @Test\n" +
             "    public void testConcat() {\n" +
             "        List<String> parts = Arrays.asList(\"Hello,World\".split(\",\"));\n" +
             "        assertEquals(\"HelloWorld\", \"Hello\" + \"World\");\n" +
-            "    }\n" +
-            "    @Test\n" +
-            "    public void testSplit() {\n" +
-            "        List<String> parts = Arrays.asList(\"Hello,World\".split(\",\"));\n" +
-            "        assertEquals(2, parts.size());\n" +
-            "        assertEquals(\"Hello\", parts.get(0));\n" +
-            "        assertEquals(\"World\", parts.get(1));\n" +
-            "    }\n" +
+            // "    }\n" +
+            // "    @Test\n" +
+            // "    public void testSplit() {\n" +
+            // "        List<String> parts = Arrays.asList(\"Hello,World\".split(\",\"));\n" +
+            // "        assertEquals(2, parts.size());\n" +
+            // "        assertEquals(\"Hello\", parts.get(0));\n" +
+            // "        assertEquals(\"World\", parts.get(1));\n" +
+            // "    }\n" +
             "}\n";
         
         String result2  = TestClassEditor.main(new String[]{existingClass2, classToAdd2});

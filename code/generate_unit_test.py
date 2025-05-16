@@ -62,8 +62,7 @@ def generate_testclass_framework(dataset_info: dict):
         project_prompt = prompt_path.replace("<project>", pj_name)
         project_response = response_path.replace("<project>", pj_name)
         gen_folder = gen_path.replace("<project>", pj_name)
-        if not os.path.exists(gen_folder):
-            os.makedirs(gen_folder)
+        if not os.path.exists(gen_folder): os.makedirs(gen_folder)
         logger.debug(f"max workers: {mworkers}")
         with concurrent.futures.ThreadPoolExecutor(max_workers=mworkers) as executor:
             futures = []
@@ -173,11 +172,11 @@ def run():
     logger = logging.getLogger(__name__)
     start_time = time.time()
 
-    # prompt_gen_start = time.time()
-    # GenPrompt.generate_init_prompts(FS, TS, dataset_info)
-    # GenPrompt.generate_test_case_prompts(FS, TS, dataset_info)
-    # prompt_gen_end = time.time()
-    # logger.info(f"time for generate prompts: {prompt_gen_end - prompt_gen_start:.2f} seconds")
+    prompt_gen_start = time.time()
+    GenPrompt.generate_init_prompts(FS, TS, dataset_info)
+    GenPrompt.generate_test_case_prompts(FS, TS, dataset_info)
+    prompt_gen_end = time.time()
+    logger.info(f"time for generate prompts: {prompt_gen_end - prompt_gen_start:.2f} seconds")
 
     framework_start = time.time()
     generate_testclass_framework(dataset_info)

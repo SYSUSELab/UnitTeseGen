@@ -1,11 +1,19 @@
 import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParseResult;
+import com.github.javaparser.ParseStart;
+import com.github.javaparser.Provider;
+import com.github.javaparser.Providers;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
+import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.stmt.Statement;
+import com.github.javaparser.printer.YamlPrinter;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class TestClassEditor {
@@ -31,28 +39,31 @@ public class TestClassEditor {
      */
     public String mergeTestClasses(String exist_class, String add_class) {
         try {
-            // 解析两个测试类
             CompilationUnit existCU = parser.parse(exist_class).getResult().orElse(null);
             CompilationUnit addCU = parser.parse(add_class).getResult().orElse(null);
             if (existCU == null ) {
                 System.err.println("can't parse existing class or add class");
                 return "";
             }
-            if (addCU == null) {
-                System.err.println("can't parse add class");
+
+            ClassOrInterfaceDeclaration addClassDecl = getClassDeclaration(addCU);
+            if(addCU.getTypes().isEmpty()){ // try to parse incomplete code 
+                System.err.println("can't parse add code as class");
                 return exist_class;
+                // addCU = dealInCompeleteCode(add_class);
+                // addClassDecl = getClassDeclaration(addCU);
+                // if(addClassDecl==null || addClassDecl.getChildNodes().isEmpty()) {
+                //     System.err.println("can't find method in add class");
+                //     return exist_class;
+                // }
             }
-            
-            // 获取两个类的声明
+            // YamlPrinter printer = new YamlPrinter(true);
+            // System.err.println(printer.output(addCU));
+            // get class declaration
             ClassOrInterfaceDeclaration existClassDecl = getClassDeclaration(existCU);
             if (existClassDecl == null) {
                 System.err.println("can't find class declaration in existing class");
                 return add_class;
-            }
-            ClassOrInterfaceDeclaration addClassDecl = getClassDeclaration(addCU);
-            if (addClassDecl == null) {
-                System.err.println("can't find class declaration in add class");
-                return exist_class;
             }
             // merge imports
             mergeImports(existCU, addCU);
@@ -65,6 +76,39 @@ public class TestClassEditor {
             e.printStackTrace();
             return exist_class;
         }
+    }
+
+    private CompilationUnit dealInCompeleteCode (String add_code){
+        CompilationUnit addCU = new CompilationUnit();
+        ClassOrInterfaceDeclaration addClassDecl = new ClassOrInterfaceDeclaration();
+        // get all imports and methods from add_code
+        Provider provider = Providers.provider(add_code);
+
+        boolean flag = false;
+        do {
+            flag = false;
+            ImportDeclaration importDecl = parser.parse(ParseStart.IMPORT_DECLARATION, provider).getResult().orElse(null);
+            if (importDecl != null) {
+                addCU.addImport(importDecl);
+                flag = true;
+                String stmt = importDecl.toString();
+                add_code = add_code.substring(add_code.indexOf(stmt)+stmt.length());
+                provider = Providers.provider(add_code);
+            }
+                
+            MethodDeclaration methodDecl = parser.parse(ParseStart.METHOD_DECLARATION, provider).getResult().orElse(null);
+            if (methodDecl != null) {
+                addClassDecl.addMember(methodDecl.clone());
+                flag = true;
+                String body = methodDecl.getBody().get().toString();
+                add_code = add_code.substring(add_code.indexOf(body)+body.length());
+                provider = Providers.provider(add_code);
+            }
+            
+        } while(flag);
+        addClassDecl.setName("TempTestClass");
+        addCU.addType(addClassDecl);
+        return addCU;
     }
     
     /**

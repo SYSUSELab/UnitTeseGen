@@ -64,7 +64,7 @@ class LLMCaller:
             response = self.handle_output(output)
             return [response, output]
         except Exception as e:
-            # self.logger.error(f"Error: {e}")
+            self.logger.error(f"Error occured while calling llm api: {e}")
             return ["",""]
         
 # test

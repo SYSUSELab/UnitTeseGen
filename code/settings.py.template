@@ -8,6 +8,7 @@ class FileStructure:
     CODE_INFO_PATH = "../dataset/project_index"
     # "<project>" will be replaced by the project name in the execution process
     PROMPT_PATH = "../evaluation/<project>/context+prompts"
+    FIX_PATH = "../evaluation/repair_singal/<project>/fix"
     RESPONSE_PATH = "../evaluation/<project>/responses"
     TESTCLASSS_PATH = "../evaluation/<project>/test_classes"
     REPORT_PATH = "../evaluation/<project>/reports"
@@ -37,3 +38,10 @@ class TaskSettings:
     MAX_WORKERS = 8
     # top k for similarity search
     SIM_TOP_K = "10"
+
+class BecnchMark:
+    """
+    Benchmark results
+    """
+    BASELINE_PATH = "../evaluation/baseline"
+    HITS_RESULTS = ""
