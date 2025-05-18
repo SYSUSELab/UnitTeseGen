@@ -23,7 +23,7 @@ def generate_init_prompts(file_structure, task_setting, dataset_info:dict):
         project_info = f"{code_info_path}/json/{pj_name}.json"
         project_index = f"{code_info_path}/lucene/{pj_name}"
         searcher = CodeSearcher(project_path, project_info, project_index, top_k)
-        for test_info in pj_info["focused-methods"]:
+        for test_info in pj_info["focal-methods"]:
             id = test_info["id"]
             prompt_dir = f"{prompt_path}/{id}".replace("<project>", pj_name)
             if not os.path.exists(prompt_dir):
@@ -68,7 +68,7 @@ def generate_test_case_prompts(file_structure, task_setting, dataset_info:dict):
         project_info = f"{code_info_path}/json/{pj_name}.json"
         project_index = f"{code_info_path}/lucene/{pj_name}"
         searcher = CodeSearcher(project_path, project_info, project_index, top_k)
-        for test_info in pj_info["focused-methods"]:
+        for test_info in pj_info["focal-methods"]:
             id = test_info["id"]
             prompt_dir = f"{prompt_path}/{id}".replace("<project>", pj_name)
             # get context

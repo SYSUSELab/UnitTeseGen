@@ -25,14 +25,15 @@ def insert_test_case(init_class:str, insert_code:str):
 
 
 class CodeRepairer:
-    max_tries = 3
+    max_tries: int
     url: str
     cd_cmd: list
     llm_caller: LLMCaller
     prompt_gen: PromptGenerator
     logger: logging.Logger
 
-    def __init__(self, project_url, tc_path:str):
+    def __init__(self, project_url, tc_path:str, fix_tries:int):
+        self.max_tries = fix_tries
         self.url = project_url
         self.cd_cmd = ['cd', project_url, '&&']
         self.testclass_path = tc_path
@@ -156,11 +157,10 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
     If there are compilation errors, fix the test cases through compilation feedback.
     '''
     dataset_dir = file_structure.DATASET_PATH
-    # prompt_path = file_structure.PROMPT_PATH
-    # response_path = file_structure.RESPONSE_PATH
     fix_path = file_structure.FIX_PATH
     testclass_path = file_structure.TESTCLASSS_PATH
     projects = task_setting.PROJECTS
+    fix_tries = task_setting.FIX_TRIES
     select = True if len(projects)>0 else False
     logger = logging.getLogger(__name__)
 
@@ -169,11 +169,10 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
         logger.info(f"verify process test classes in {pj_name}...")
         project_path = f"{dataset_dir}/{pj_info['project-url']}"
         project_fix = fix_path.replace("<project>",pj_name)
-        # project_prompt = prompt_path.replace("<project>", pj_name)
-        # project_response = response_path.replace("<project>", pj_name)
         project_testclass = testclass_path.replace("<project>",pj_name)
-        code_repair = CodeRepairer(project_path, project_testclass)
-        for ts_info in pj_info["focused-methods"]:
+        code_repair = CodeRepairer(project_path, project_testclass, fix_tries)
+
+        for ts_info in pj_info["focal-methods"]:
             id = ts_info["id"]
             prompt_path = f"{project_fix}/{id}/repair_prompt"
             response_path = f"{project_fix}/{id}/repair_response"
