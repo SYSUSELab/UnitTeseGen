@@ -4,8 +4,6 @@ import logging
 from openai import NOT_GIVEN, OpenAI
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
-from settings import LLMSettings as ST
-
 class LLMCaller:
     account_num = 0
     cur_account_num = 0
@@ -15,6 +13,7 @@ class LLMCaller:
     base_message = []
     
     def __init__(self) -> None:
+        from settings import LLMSettings as ST
         self.model = ST.MODEL
         self.accounts = ST.API_ACCOUNTS
         self.account_num = len(ST.API_ACCOUNTS)
@@ -38,13 +37,13 @@ class LLMCaller:
 
     @retry(wait=wait_random_exponential(min=1, max=30), stop=stop_after_attempt(3))
     def _generation(self, prompt:str, 
-                response_format:dict=NOT_GIVEN) -> str:
+                rps_format:dict=NOT_GIVEN) -> str:
         messages = self.base_message.copy()
         messages.append({"role": "user", "content": prompt})
         response = self.gpt.chat.completions.create(
             model=self.model,
             messages=messages,
-            response_format = response_format,
+            response_format = rps_format,
             # add more parameters
         )
         if response.choices[0].message.content:
@@ -68,32 +67,41 @@ class LLMCaller:
             code = self._filter_code(response)
             return [code, response]
         except Exception as e:
-            self.logger.error(f"Error occured while calling llm api: {e}")
+            self.logger.error(f"Error occured while get code from llm api: {e}")
             return ["",""]
 
     # split json object from response
     def _handle_json_response(self, response):
-        result = re.sub(r'//.*', '', response)
-        json_str = result.replace("\'", '\"')
+        # self.logger.debug(f"Response: {response}")
+        json_str = re.sub(r'//.*', '', response)
+        json_pattern = r"```(?:[jJ]son)?\n+([\s\S]*?)\n```"
+        matches = re.findall(json_pattern, json_str, re.DOTALL)
+        if len(matches)>0:
+            json_str = max(matches, key=len)
         obj = json.loads(json_str)
+        self.logger.debug(f"Json object: {obj}")
         return obj
     
     # get response in json format
-    def get_response_json(self, prompt:str) -> list:
+    def get_response_json(self, prompt:str):
+        json_data = None
+        response = ""
         try:
-            response_format = { "type": "json_object" }
+            response_format = { 'type': 'json_object' }
             response = self._generation(prompt, response_format)
-            json_data = self._handle_json_response(response)
-            return json_data
+            json_data = self._handle_json_response(response)    
         except Exception as e:
-            self.logger.error(f"Error occured while calling llm api: {e}")
-            return None
+            self.logger.error(f"Error occured while get json object from llm api: {e}")
+        return [json_data, response]
 
 
 # test
 if __name__ == '__main__':
+    import sys
+    import os
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     llm = LLMCaller()
     s = """
     """
-    matches = llm.handle_output(s)
+    matches = llm.handle_json_response(s)
     print(matches)

@@ -65,8 +65,7 @@ def generate_testclass_framework(file_structure, task_setting, dataset_info: dic
                     id = future.result()
                     logger.info(f"Completed test class framework generation for {id}")
                 except Exception as e:
-                    logger.error(f"Error processing test framework for {id}: {e}")
-
+                    logger.error(f"Error processing test framework for: {e}")
     return
 
 
@@ -133,32 +132,63 @@ def generate_testcase_code(file_structure, task_setting, dataset_info: dict):
                     id = future.result()
                     logger.info(f"Completed test case generation for {id}")
                 except Exception as e:
-                    logger.error(f"Error processing test framework for {id}: {e}")
+                    logger.error(f"Error processing test case: {e}")
     return
 
 
-def merge_testcases(exist_cases:dict, new_cases:dict):
-    
+
+'''
+format of output cases:
+[
+    {
+        "group": "test name",
+        "cases": [
+            {
+                "input": [
+                    {
+                        "parameter": "param name",
+                        "value": "param value"
+                    }
+                ],
+                "expected": "expected exception or behavior",
+                "description": "test scenario description"
+            }
+        ]
+    }
+]
+'''
+def merge_testcases(exist_cases:list, new_cases:list):
+    if new_cases is None or len(new_cases)==0: return exist_cases
+    for new_group in new_cases:
+        group_name = new_group.get("group")
+        if group_name is None: continue
+        exist_group = None
+        for eg in exist_cases:
+            if eg["group"] == group_name:
+                exist_group = eg
+                break
+        
+        if exist_group is None:
+            exist_cases.append(new_group)
+        else:
+            for new_case in new_group.get("cases",[]):
+                case_exists = False
+                for exist_case in exist_group["cases"]:
+                    if len(new_case["input"]) == len(exist_case["input"]):
+                        all_params_match = True
+                        for new_input, exist_input in zip(new_case["input"], exist_case["input"]):
+                            if new_input["parameter"] != exist_input["parameter"] or \
+                               new_input["value"] != exist_input["value"]:
+                                all_params_match = False
+                                break
+                        if all_params_match:
+                            case_exists = True
+                            break
+                if not case_exists:
+                    exist_group["cases"].append(new_case)
     return exist_cases
 
-# format of output cases:
-# [
-#     {
-#         "group": "<function_name>",
-#         "cases": [
-#             {
-#                 "input": [
-#                     {
-#                         "parameter": "<parameter_name>",
-#                         "value": "<parameter_value>",
-#                     }
-#                 ],
-#                 "expected": "<expected_value>",
-#                 "description": "<description>"
-#             }
-#         ],
-#     }
-# ]
+
 def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
     prompt_path = file_structure.PROMPT_PATH
     response_path = file_structure.RESPONSE_PATH
@@ -173,11 +203,6 @@ def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
     logger = logging.getLogger(__name__)
     file_lock = Lock()
     llm_callers = [LLMCaller() for _ in range(mworkers)]
-    # check prompt list
-    for pt in prompt_list:
-        if not pt.endswith("4case"): pt += "4case"
-    if "gencode" not in prompt_list:
-        prompt_list.append("gencode")
 
     def process_case_response(llm_caller:LLMCaller, test_info, project_prompt, project_response, gen_folder):
         id = test_info["id"]
@@ -187,20 +212,31 @@ def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
         cases_json = []
         for prompt_name in prompt_list:
             prompt = io_utils.load_text(f"{prompt_folder}/{prompt_name}_prompt.md")
+            prompt.replace('<cases_json>', str(cases_json))
             case_data, response = llm_caller.get_response_json(prompt)
             logger.debug("finish get response")
-            cases_json = merge_testcases(cases_json, case_data)
+            try:
+                cases_json = merge_testcases(cases_json, case_data)
+            except Exception as e:
+                logger.warning(f"Error while adding test cases for {id}: {e}")
             logger.debug("finish insert test case")
+            if save_res:
+                with file_lock:
+                    io_utils.write_text(f"{response_folder}/{prompt_name}_response.md", response)
         with file_lock:
-            io_utils.write_text(f"{response_folder}/cases.json", cases_json)
+            io_utils.write_json(f"{response_folder}/cases.json", cases_json)
         # generate test code based on test cases
         class_name = test_info["test-class"].split('.')[-1]
         save_path = f"{gen_folder}/{class_name}.java"
         init_class = io_utils.load_text(save_path)
-        #########
-        # prompt = prompt.replace('<initial_class>', init_class)
-        # with file_lock:
-        #     io_utils.write_text(save_path, init_class)
+        prompt = io_utils.load_text(f"{prompt_folder}/gencode_prompt.md")
+        prompt = prompt.replace('<initial_class>', init_class).replace('<cases_json>', str(cases_json))
+        code, response = llm_caller.get_response_code(prompt)
+        init_class = insert_test_case(init_class, code)
+        with file_lock:
+            io_utils.write_text(save_path, init_class)
+            if save_res:
+                io_utils.write_text(f"{response_folder}/gencode_response.md", response)
         return id
 
     for pj_name, pj_info in dataset_info.items():
@@ -216,7 +252,12 @@ def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
             for test_info in pj_info["focal-methods"]:
                 if case_select and test_info["id"] not in case_list: continue
                 future = executor.submit(
-                    
+                    process_case_response,
+                    llm_callers[api_count],
+                    test_info,
+                    project_prompt,
+                    project_response,
+                    gen_folder
                 )
                 futures.append(future)
                 api_count = (api_count+1) % mworkers
@@ -226,5 +267,5 @@ def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
                     id = future.result()
                     logger.info(f"Completed test case generation for {id}")
                 except Exception as e:
-                    logger.error(f"Error processing test framework for {id}: {e}")
+                    logger.error(f"Error processing test case: {e}")
     return

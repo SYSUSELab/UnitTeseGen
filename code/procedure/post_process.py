@@ -95,7 +95,7 @@ class CodeRepairer:
             "compilation_feedback": feedback
         }
         prompt = self.prompt_gen.generate_singal("repair", context)
-        code, response = self.llm_caller.get_response(prompt)
+        code, response = self.llm_caller.get_response_code(prompt)
         io_utils.write_text(prompt_path, prompt)
         io_utils.write_text(response_path, response)
         return code
@@ -160,12 +160,14 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
     fix_path = file_structure.FIX_PATH
     testclass_path = file_structure.TESTCLASSS_PATH
     projects = task_setting.PROJECTS
+    case_list = task_setting.CASES_LIST
     fix_tries = task_setting.FIX_TRIES
-    select = True if len(projects)>0 else False
+    project_select = True if len(projects)>0 else False
+    case_select = True if len(case_list)>0 else False
     logger = logging.getLogger(__name__)
 
     for pj_name, pj_info in dataset_info.items():
-        if select and pj_name not in projects: continue
+        if project_select and pj_name not in projects: continue
         logger.info(f"verify process test classes in {pj_name}...")
         project_path = f"{dataset_dir}/{pj_info['project-url']}"
         project_fix = fix_path.replace("<project>",pj_name)
@@ -174,6 +176,7 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
 
         for ts_info in pj_info["focal-methods"]:
             id = ts_info["id"]
+            if case_select and id not in case_list: continue
             prompt_path = f"{project_fix}/{id}/repair_prompt"
             response_path = f"{project_fix}/{id}/repair_response"
             code_repair.check_test_class(ts_info, prompt_path, response_path)

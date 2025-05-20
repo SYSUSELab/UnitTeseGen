@@ -44,9 +44,21 @@ def run():
         - 4.1 code repair (?)
     '''
     dataset_path = FS.DATASET_PATH
+    case_then_code = TS.CASE_THEN_CODE
+    prompt_list = TS.PROMPT_LIST
     dataset_info = utils.load_json(f"{dataset_path}/dataset_info.json")
     logger = logging.getLogger(__name__)
     start_time = time.time()
+    # check prompt list
+    if case_then_code:
+        for i in range(len(prompt_list)):
+            pname = prompt_list[i]
+            if not pname.endswith("4case") and pname!="gencode": 
+                prompt_list[i] += "4case"
+        if "gencode" not in prompt_list:
+            prompt_list.append("gencode")
+        TS.PROMPT_LIST = prompt_list
+        logger.info(f"prompt list: {TS.PROMPT_LIST}")
 
     prompt_gen_start = time.time()
     GenPrompt.generate_init_prompts(FS, TS, dataset_info)
@@ -60,14 +72,17 @@ def run():
     logger.info(f"time for generate test class framework: {framework_end - framework_start:.2f} seconds")
 
     testcase_start = time.time()
-    GenCode.generate_testcase_code(FS, TS, dataset_info)
+    if case_then_code:
+        GenCode.generate_case_then_code(FS, TS, dataset_info)
+    else:
+        GenCode.generate_testcase_code(FS, TS, dataset_info)
     testcase_end = time.time()
     logger.info(f"time for generate test cases: {testcase_end - testcase_start:.2f} seconds")
 
-    post_start = time.time()
-    Post.verify_test_classes(FS, TS, dataset_info)
-    post_end = time.time()
-    logger.info(f"time for post process: {post_end - post_start:.2f} seconds")
+    # post_start = time.time()
+    # Post.verify_test_classes(FS, TS, dataset_info)
+    # post_end = time.time()
+    # logger.info(f"time for post process: {post_end - post_start:.2f} seconds")
     
     end_time = time.time()
     elapsed_time = end_time - start_time
