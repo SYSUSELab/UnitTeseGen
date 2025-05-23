@@ -222,7 +222,7 @@ def generate_case_then_code(file_structure, task_setting, dataset_info: dict):
             try:
                 cases_json = merge_testcases(cases_json, case_data)
             except Exception as e:
-                logger.warning(f"Error while adding test cases for {id}: {e}")
+                logger.warning(f"Error while adding test cases for {id} from prompt {prompt_name}: {e}")
             logger.debug("finish insert test case")
             if save_res:
                 with file_lock:

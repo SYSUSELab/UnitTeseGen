@@ -101,8 +101,10 @@ class CodeSearcher:
             "rel_func": ["apidoc(?) + sig + annotation + body(?)"]
         }
         """
-        class_dict = {}
-        def __init__(self): pass
+        class_dict:dict
+        def __init__(self):
+            self.class_dict = {}
+            pass
         def update_str(self, class_name, key, value):
             if class_name not in self.class_dict:
                 self.class_dict[class_name] = {key:value}

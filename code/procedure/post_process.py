@@ -31,6 +31,7 @@ class CodeRepairer:
     llm_caller: LLMCaller
     prompt_gen: PromptGenerator
     logger: logging.Logger
+    class_editor: jpype.JClass
 
     def __init__(self, project_url, tc_path:str, fix_tries:int):
         self.max_tries = fix_tries
@@ -41,13 +42,14 @@ class CodeRepairer:
         self.llm_caller = LLMCaller()
         self.prompt_gen = PromptGenerator('./templates', [])
         self.logger = logging.getLogger(__name__)
+        self.class_editor = jpype.JClass("TestClassEditor")
 
 
     def compile_test(self, class_path):
         compile_cmd = ["javac","-cp","@dependencies.txt","-d","target/test-classes",class_path]
         script = self.cd_cmd + compile_cmd
         self.logger.info(" ".join(compile_cmd))
-        result = subprocess.run(script, capture_output=True, text=True, shell=True)
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8")
         if result.returncode!= 0:
             self.logger.error(f"error occured in compile test class, info:\n{result.stderr}")
             return (False, result.stderr)
@@ -96,10 +98,12 @@ class CodeRepairer:
         }
         prompt = self.prompt_gen.generate_singal("repair", context)
         code, response = self.llm_caller.get_response_code(prompt)
+        code = str(self.class_editor.main([test_class, code, "true"]))
         io_utils.write_text(prompt_path, prompt)
         io_utils.write_text(response_path, response)
         return code
-    
+
+
     def clean_error_cases(self, error_infos:list, code:str):
         '''
         Clean the error cases from the test class.
@@ -114,6 +118,7 @@ class CodeRepairer:
                 if line >=start[i] and line<=end[i]:
                     fulL_lines.update(range(start[i], end[i]+1))
                     break
+        self.logger.info(f"clean error cases in lines {fulL_lines}")
         parser.comment_code(fulL_lines)
         # TODO: delete error test cases
         return parser.get_code()

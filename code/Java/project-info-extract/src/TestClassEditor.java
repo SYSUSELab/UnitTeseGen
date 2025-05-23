@@ -18,6 +18,7 @@ import java.util.Set;
 
 public class TestClassEditor {
     JavaParser parser;
+    boolean force_upodate = false;
 
     public static String main(String[] args) {
         if (args.length < 2) {
@@ -26,7 +27,11 @@ public class TestClassEditor {
         String existingClass = args[0];
         String addClass = args[1];
 
-        TestClassEditor editor = new TestClassEditor();
+        TestClassEditor editor = new TestClassEditor();        
+        if (args.length >= 3) {
+            String force = args[2];
+            if (force.equals("true")) editor.force_upodate = true;
+        }
         String result = editor.mergeTestClasses(existingClass, addClass);
         return result;
     }
@@ -181,7 +186,7 @@ public class TestClassEditor {
     /**
      * add new test methods to exist class
      */
-    private void addNewTestMethods(ClassOrInterfaceDeclaration existClassDecl,                             ClassOrInterfaceDeclaration addClassDecl) {
+    private void addNewTestMethods(ClassOrInterfaceDeclaration existClassDecl, ClassOrInterfaceDeclaration addClassDecl) {
         // Get the method names in the existing class for checking duplicates
         Set<String> existingMethodNames = getMethodNames(existClassDecl);
         // Iterate over all methods in the class to be added
@@ -197,13 +202,17 @@ public class TestClassEditor {
                 MethodDeclaration clonedMethod = method.clone();
                 existClassDecl.addMember(clonedMethod);
             } else {
-                // Compare the length of the method body, and replace if the method body to be added is longer
+                // update method body
                 MethodDeclaration existingMethod = getMethodByName(existClassDecl, methodName);
-                if (existingMethod != null && method.getBody().isPresent()){
-                    int exist_length = existingMethod.getBody().isPresent() ? existingMethod.getBody().get().toString().length() : 0;
-                    int add_length = method.getBody().get().toString().length();
-                    if (add_length > exist_length) {
+                if (existingMethod != null && method.getBody().isPresent()) {
+                    if (force_upodate){
                         existingMethod.setBody(method.getBody().get().clone());
+                    } else { // Compare the length of the method body, and replace if the method body to be added is longer
+                        int exist_length = existingMethod.getBody().isPresent() ? existingMethod.getBody().get().toString().length() : 0;
+                        int add_length = method.getBody().get().toString().length();
+                        if (add_length > exist_length) {
+                            existingMethod.setBody(method.getBody().get().clone());
+                        }
                     }
                 }
             }

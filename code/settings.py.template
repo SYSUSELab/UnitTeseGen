@@ -6,6 +6,7 @@ class FileStructure:
     DEPENDENCY_PATH = "./dependencies"
     DATASET_PATH = "../dataset/projects"
     CODE_INFO_PATH = "../dataset/project_index"
+    BASELINE_PATH = "../evaluation/baseline"
     # "<project>" will be replaced by the project name in the execution process
     PROMPT_PATH = "../evaluation/<project>/context+prompts"
     FIX_PATH = "../evaluation/repair_singal/<project>/fix"

@@ -84,7 +84,7 @@ class ASTParser:
 
     def comment_code(self, comment_lines):
         for line in comment_lines:
-            self.lines[line] = '//' + self.lines[line]
+            self.lines[line] = '// ' + self.lines[line]
         return
 
     def get_code(self):
