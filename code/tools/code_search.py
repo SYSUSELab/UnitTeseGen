@@ -86,8 +86,8 @@ class CodeSearcher:
                     file_path = position[0]
                     start_line = int(position[1])
                     end_line = int(position[2])
-                    snippet = self.snippet_reader.read_lines(file_path, start_line, end_line)
-                    new_value = new_value.replace(pivot, f"{'\n'.join(snippet)}")
+                    snippet = '\n'.join(self.snippet_reader.read_lines(file_path, start_line, end_line))
+                    new_value = new_value.replace(pivot, snippet)
                 full_context[key] = new_value
             else:
                 full_context[key] = value
@@ -174,7 +174,8 @@ class CodeSearcher:
             start_line = constructor["start_line"]
             end_line = constructor["end_line"]
             body_pos = f"<position:[{source_path}, {start_line}, {end_line}]>"
-            constructor_info.append(f"params: {'\n'.join(ptext)}\nbody:\n```java\n{body_pos}\n```")
+            param_text = '\n'.join(ptext)
+            constructor_info.append(f"params: {param_text}\nbody:\n```java\n{body_pos}\n```")
         if len(constructor_info) > 0:
             context[f"constructors for class `{class_name}`"] = '\n'.join(constructor_info)
         # parameter in constructor & focus method
@@ -294,7 +295,7 @@ class CodeSearcher:
             minfo = self._get_method_info(cinfo, method_sig)
             api_doc = minfo.get("javadoc")
             return_type = minfo["return_type"]
-            cmtext = f"method `{method_sig}` returns `{return_type}`, related with `{"`, `".join(caller)}`"
+            cmtext = f"method `{method_sig}` returns `{return_type}`, related with `{'`, `'.join(caller)}`"
             if api_doc is not None: cmtext += f", api document: {api_doc}"
             depclass.update_list(class_fqn, "rel_func", cmtext)
         context["dependent classes"] = str(depclass)

@@ -28,7 +28,7 @@ def generate_testclass_framework(file_structure, task_setting, dataset_info: dic
         test_class_path = f"{gen_folder}/{class_name}.java"
         prompt = io_utils.load_text(f"{project_prompt}/{id}/init_prompt.md")
         code, response = llm_caller.get_response_code(prompt)
-        check_class_name(code, class_name)
+        code = check_class_name(code, class_name)
         with file_lock:
             io_utils.write_text(test_class_path, code)
             if save_res:

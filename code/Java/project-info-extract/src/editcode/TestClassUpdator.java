@@ -1,22 +1,19 @@
+package editcode;
+
 import com.github.javaparser.JavaParser;
-import com.github.javaparser.ParseResult;
 import com.github.javaparser.ParseStart;
 import com.github.javaparser.Provider;
 import com.github.javaparser.Providers;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
-import com.github.javaparser.ast.body.BodyDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
-import com.github.javaparser.ast.stmt.Statement;
-import com.github.javaparser.printer.YamlPrinter;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class TestClassEditor {
+public class TestClassUpdator {
     JavaParser parser;
     boolean force_upodate = false;
 
@@ -27,18 +24,20 @@ public class TestClassEditor {
         String existingClass = args[0];
         String addClass = args[1];
 
-        TestClassEditor editor = new TestClassEditor();        
+        TestClassUpdator editor = new TestClassUpdator();
         if (args.length >= 3) {
             String force = args[2];
-            if (force.equals("true")) editor.force_upodate = true;
+            if (force.equals("true"))
+                editor.force_upodate = true;
         }
         String result = editor.mergeTestClasses(existingClass, addClass);
         return result;
     }
 
-    public TestClassEditor() {
+    public TestClassUpdator() {
         parser = new JavaParser();
     }
+
     /**
      * merge test methods from add_class to exist_class
      */
@@ -46,24 +45,22 @@ public class TestClassEditor {
         try {
             CompilationUnit existCU = parser.parse(exist_class).getResult().orElse(null);
             CompilationUnit addCU = parser.parse(add_class).getResult().orElse(null);
-            if (existCU == null ) {
+            if (existCU == null) {
                 System.err.println("can't parse existing class or add class");
                 return "";
             }
 
             ClassOrInterfaceDeclaration addClassDecl = getClassDeclaration(addCU);
-            if(addCU==null || addCU.getTypes().isEmpty()){ // try to parse incomplete code 
+            if (addCU == null || addCU.getTypes().isEmpty()) { // try to parse incomplete code
                 System.err.println("can't parse add code as class");
                 return exist_class;
                 // addCU = dealInCompeleteCode(add_class);
                 // addClassDecl = getClassDeclaration(addCU);
                 // if(addClassDecl==null || addClassDecl.getChildNodes().isEmpty()) {
-                //     System.err.println("can't find method in add class");
-                //     return exist_class;
+                // System.err.println("can't find method in add class");
+                // return exist_class;
                 // }
             }
-            // YamlPrinter printer = new YamlPrinter(true);
-            // System.err.println(printer.output(addCU));
             // get class declaration
             ClassOrInterfaceDeclaration existClassDecl = getClassDeclaration(existCU);
             if (existClassDecl == null) {
@@ -83,44 +80,11 @@ public class TestClassEditor {
         }
     }
 
-    private CompilationUnit dealInCompeleteCode (String add_code){
-        CompilationUnit addCU = new CompilationUnit();
-        ClassOrInterfaceDeclaration addClassDecl = new ClassOrInterfaceDeclaration();
-        // get all imports and methods from add_code
-        Provider provider = Providers.provider(add_code);
-
-        boolean flag = false;
-        do {
-            flag = false;
-            ImportDeclaration importDecl = parser.parse(ParseStart.IMPORT_DECLARATION, provider).getResult().orElse(null);
-            if (importDecl != null) {
-                addCU.addImport(importDecl);
-                flag = true;
-                String stmt = importDecl.toString();
-                add_code = add_code.substring(add_code.indexOf(stmt)+stmt.length());
-                provider = Providers.provider(add_code);
-            }
-                
-            MethodDeclaration methodDecl = parser.parse(ParseStart.METHOD_DECLARATION, provider).getResult().orElse(null);
-            if (methodDecl != null) {
-                addClassDecl.addMember(methodDecl.clone());
-                flag = true;
-                String body = methodDecl.getBody().get().toString();
-                add_code = add_code.substring(add_code.indexOf(body)+body.length());
-                provider = Providers.provider(add_code);
-            }
-            
-        } while(flag);
-        addClassDecl.setName("TempTestClass");
-        addCU.addType(addClassDecl);
-        return addCU;
-    }
-    
     /**
      * get class declaration
      */
-    private ClassOrInterfaceDeclaration getClassDeclaration(CompilationUnit cu) {
-        if (cu==null || cu.getTypes().isEmpty()) {
+    protected ClassOrInterfaceDeclaration getClassDeclaration(CompilationUnit cu) {
+        if (cu == null || cu.getTypes().isEmpty()) {
             return null;
         }
         return cu.getTypes().stream()
@@ -129,7 +93,42 @@ public class TestClassEditor {
                 .findFirst()
                 .orElse(null);
     }
-    
+
+    private CompilationUnit dealInCompeleteCode(String add_code) {
+        CompilationUnit addCU = new CompilationUnit();
+        ClassOrInterfaceDeclaration addClassDecl = new ClassOrInterfaceDeclaration();
+        // get all imports and methods from add_code
+        Provider provider = Providers.provider(add_code);
+
+        boolean flag = false;
+        do {
+            flag = false;
+            ImportDeclaration importDecl = parser.parse(ParseStart.IMPORT_DECLARATION, provider).getResult()
+                    .orElse(null);
+            if (importDecl != null) {
+                addCU.addImport(importDecl);
+                flag = true;
+                String stmt = importDecl.toString();
+                add_code = add_code.substring(add_code.indexOf(stmt) + stmt.length());
+                provider = Providers.provider(add_code);
+            }
+
+            MethodDeclaration methodDecl = parser.parse(ParseStart.METHOD_DECLARATION, provider).getResult()
+                    .orElse(null);
+            if (methodDecl != null) {
+                addClassDecl.addMember(methodDecl.clone());
+                flag = true;
+                String body = methodDecl.getBody().get().toString();
+                add_code = add_code.substring(add_code.indexOf(body) + body.length());
+                provider = Providers.provider(add_code);
+            }
+
+        } while (flag);
+        addClassDecl.setName("TempTestClass");
+        addCU.addType(addClassDecl);
+        return addCU;
+    }
+
     /**
      * merge imports from two CompilationUnit
      */
@@ -162,7 +161,7 @@ public class TestClassEditor {
             }
         }
     }
-    
+
     /**
      * get all method names in class
      */
@@ -182,11 +181,12 @@ public class TestClassEditor {
         }
         return null;
     }
-    
+
     /**
      * add new test methods to exist class
      */
-    private void addNewTestMethods(ClassOrInterfaceDeclaration existClassDecl, ClassOrInterfaceDeclaration addClassDecl) {
+    private void addNewTestMethods(ClassOrInterfaceDeclaration existClassDecl,
+            ClassOrInterfaceDeclaration addClassDecl) {
         // Get the method names in the existing class for checking duplicates
         Set<String> existingMethodNames = getMethodNames(existClassDecl);
         // Iterate over all methods in the class to be added
@@ -194,7 +194,7 @@ public class TestClassEditor {
             String methodName = method.getNameAsString();
             // // Check if the method is a test method
             // if (method.getAnnotationByName("Test").isEmpty()) {
-            //     continue;
+            // continue;
             // }
             // If the method does not exist in the existing class, add it
             if (!existingMethodNames.contains(methodName)) {
@@ -205,10 +205,13 @@ public class TestClassEditor {
                 // update method body
                 MethodDeclaration existingMethod = getMethodByName(existClassDecl, methodName);
                 if (existingMethod != null && method.getBody().isPresent()) {
-                    if (force_upodate){
+                    if (force_upodate) {
                         existingMethod.setBody(method.getBody().get().clone());
-                    } else { // Compare the length of the method body, and replace if the method body to be added is longer
-                        int exist_length = existingMethod.getBody().isPresent() ? existingMethod.getBody().get().toString().length() : 0;
+                    } else { // Compare the length of the method body, and replace if the method body to be
+                             // added is longer
+                        int exist_length = existingMethod.getBody().isPresent()
+                                ? existingMethod.getBody().get().toString().length()
+                                : 0;
                         int add_length = method.getBody().get().toString().length();
                         if (add_length > exist_length) {
                             existingMethod.setBody(method.getBody().get().clone());

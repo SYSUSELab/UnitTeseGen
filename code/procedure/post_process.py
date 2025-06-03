@@ -1,4 +1,5 @@
 import re
+import copy
 import jpype
 import logging
 import subprocess
@@ -9,11 +10,15 @@ from tools.code_analysis import ASTParser
 from tools.prompt_generator import PromptGenerator
 
 
-def check_class_name(init_class:str, tcname:str):
-    class_name = re.findall(r'class (\w*)(<.*>)?( extends [\w]+)?', init_class)[0][0]
+def check_class_name(init_class:str, tcname:str, pcname:str):
+    class_name = re.findall(r'class ([\w$]*)(<.*>)?( extends [\w]+)?', init_class)[0][0]
+    new_class = copy.copy(init_class)
     if class_name != tcname:
-        init_class = init_class.replace(class_name, tcname)
-    return
+        new_class = new_class.replace(class_name, tcname)
+    package_name = re.findall(r'package\s+([\w\.]+);', init_class)[0]
+    if package_name != pcname:
+        new_class = new_class.replace(package_name, pcname)
+    return new_class
 
 
 def insert_test_case(init_class:str, insert_code:str):
@@ -40,8 +45,8 @@ class CodeRepairer:
         self.testclass_path = tc_path
         self.temp_path = f"{self.testclass_path}/temp/"
         self.llm_caller = LLMCaller()
-        # self.class_editor = jpype.JClass("TestClassEditor")
-        # self.prompt_gen = PromptGenerator('./templates', [])
+        self.class_editor = jpype.JClass("TestClassEditor")
+        self.prompt_gen = PromptGenerator('./templates', [])
         self.logger = logging.getLogger(__name__)
 
 
@@ -68,7 +73,6 @@ class CodeRepairer:
         for error in errors:
             if str(error).find(": error: ")==-1: continue
             splits = error.split(": error: ")
-            print("splits: ",splits)
             try:
                 line = int(splits[0]) - 1
                 msg = splits[1]
@@ -84,6 +88,9 @@ class CodeRepairer:
         '''
         Use the compilation feedback and corresponding test cases as input
         Repair the test cases through rules.
+        0. check package name and class name
+        1. fix wrong/missing import statements
+        2. fix private method access
         '''
         return
 
@@ -140,16 +147,16 @@ class CodeRepairer:
         count = 0
         fixed_code = io_utils.load_text(class_path)
         context = io_utils.load_json(context_path)
-        # while not cflag and count<self.max_tries:
-        #     temp = f"{self.temp_path}/{class_name}".replace(".java", f"_{count}.java")
-        #     io_utils.write_text(temp, fixed_code)
-        #     self.logger.info(f"try to repair test class {class_path}...")
-        #     prompt = f"{prompt_path}_{count}.md"
-        #     response = f"{response_path}_{count}.md"
-        #     fixed_code = self.repair_by_LLM(fixed_code, feedback, prompt, response, context)
-        #     io_utils.write_text(target_path, fixed_code)
-        #     cflag, feedback = self.compile_test(test_path)
-        #     count += 1
+        while not cflag and count<self.max_tries:
+            temp = f"{self.temp_path}/{class_name}".replace(".java", f"_{count}.java")
+            io_utils.write_text(temp, fixed_code)
+            self.logger.info(f"try to repair test class {class_path}...")
+            prompt = f"{prompt_path}_{count}.md"
+            response = f"{response_path}_{count}.md"
+            fixed_code = self.repair_by_LLM(fixed_code, feedback, prompt, response, context)
+            io_utils.write_text(target_path, fixed_code)
+            cflag, feedback = self.compile_test(test_path)
+            count += 1
         
         # while cflag==False:
         if cflag==False:

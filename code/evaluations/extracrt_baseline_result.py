@@ -1,10 +1,13 @@
 import os
 import re
+import queue
+import shutil
 import logging
-from unittest import result
+import subprocess
 from bs4 import BeautifulSoup
 
 import tools.io_utils as io_utils
+from procedure.post_process import check_class_name
 from evaluations.coverage_test import ProjrctTestRunner, CoverageExtractor
 
 
@@ -154,6 +157,160 @@ def extract_coverage_ChatUniTest(result_folder, dataset_info, fstruct, task_sett
     return
 
 
+class HITSRunner(ProjrctTestRunner):
+    def __init__(self, project_info, dependency_dir, testclass_path, report_path):
+        super().__init__(project_info, dependency_dir, testclass_path, report_path)
+        self.check_report_path()
+    
+    def check_report_path(self):
+        io_utils.check_path(self.report_path)
+        test_objects = self.project_info["focal-methods"]
+        report_csv = f"{self.report_path}/jacoco-report-csv/"
+        io_utils.check_path(report_csv)
+        for tobject in test_objects:
+            testid = tobject["id"]
+            report_html = f"{self.report_path}/jacoco-report-html/{testid}/"
+            io_utils.check_path(report_html)
+
+    def check_testclass_name(self):
+        # 遍历 testclass_path下的所有文件
+        dir_list = queue.Queue()
+        dir_list.put(self.testclass_path)
+        while not dir_list.empty():
+            current_dir = dir_list.get()
+            paths = os.listdir(current_dir)
+            for path in paths:
+                full_path = os.path.join(current_dir, path)
+                if os.path.isdir(full_path):
+                    dir_list.put(full_path)
+                elif path.endswith(".java") and "slice" in path:
+                    self.logger.info(f"Checking class name in {full_path}")
+                    class_name = path.replace(".java", "")
+                    if class_name is None:
+                        self.logger.error(f"Invalid class name in {file_path}")
+                        continue
+                    file_path = os.path.join(current_dir, path)
+                    code = io_utils.load_text(file_path)
+                    code = check_class_name(code, class_name)
+                    io_utils.write_text(file_path, code)
+
+
+    def run_project_test(self, compile_test=True):
+        project_name = self.project_info["project-name"]
+        project_url = self.project_info["project-url"]
+        test_objects = self.project_info["focal-methods"]
+        self.test_result = {}
+        
+        # copy test classes to the project directory
+        test_dir = f"{project_url}/src/test/java/"
+        if os.path.exists(test_dir):
+            shutil.rmtree(test_dir, ignore_errors=False)
+        io_utils.copy_dir(self.testclass_path, test_dir)
+        self.logger.info(f"Running tests for project: {project_name}")
+
+        for tobject in test_objects:
+            # test_class = tobject["test-class"]
+            test_path = tobject["test-path"]
+            testid = tobject["id"]
+            method = tobject["method-name"]
+            package = tobject["package"]
+            test_folder = "/".join(test_path.split("/")[:-1])
+
+            matched_files = []
+            if os.path.exists(f"{project_url}/{test_folder}"):
+                for file in os.listdir(f"{project_url}/{test_folder}"):
+                    if file.startswith(testid): #and file.find("slice")==-1:
+                        class_path = f"{project_url}/{test_folder}/{file}"
+                        matched_files.append(class_path)
+
+            data_id = f"{tobject['class']}#{method}"
+            self.test_result[data_id] = {}
+            if len(matched_files) == 0:
+                self.test_result[data_id]["error_type"] = "compile error"
+                self.test_result[data_id]["test_cases"] = 1
+                self.test_result[data_id]["passed_cases"] = 0
+                self.test_result[data_id]["note"] = "test class not found"
+                continue
+            compiled_files = self.compile_test_group(matched_files)
+            if len(compiled_files) == 0:
+                self.test_result[data_id]["error_type"] = "compile error"
+                self.test_result[data_id]["test_cases"] = len(matched_files)
+                self.test_result[data_id]["passed_cases"] = 0
+                continue
+            if not self.run_test_group(package, testid, data_id):
+                self.test_result[data_id]["error_type"] = "execution error"
+                self.test_result[data_id]["test_cases"] = len(matched_files)
+                continue
+            if not self.generate_report_single(testid):
+                self.test_result[data_id]["error_type"] = "report error"
+        return self.test_result
+    
+    def compile_test_group(self, class_path):
+        sucess = []
+        for file in class_path:
+            if super().compile_test(file):
+                sucess.append(file)
+        return sucess
+
+    def run_test_group(self, package, testid, data_id):
+        """
+        Run a group of tests in the specified test class.
+        """
+        test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
+        java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
+        testid = testid.replace("$", "\\$")
+        test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-package', package, '--include-classname', f".*{testid}.*"]
+        script = self.cd_cmd + test_cmd
+        self.logger.info(' '.join(test_cmd))
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
+        test_info = result.stdout
+        if result.returncode == 0:
+            self.logger.info(f"test execution info: {test_info}")
+            test_cases, passed_cases = self.get_pass_rate(test_info)
+            self.test_result[data_id]["test_cases"] = test_cases
+            self.test_result[data_id]["passed_cases"] = passed_cases
+            return True
+        elif test_info.find("Test run finished")!=-1:
+            self.logger.warning(f"return code: {result.returncode}")
+            self.logger.warning(f"test case failed in {testid}, info:\n{result.stderr}\n{test_info}")
+            test_cases, passed_cases = self.get_pass_rate(test_info)
+            self.test_result[data_id]["test_cases"] = test_cases
+            self.test_result[data_id]["passed_cases"] = passed_cases
+            if test_cases == 0: return False
+            return True
+        else:
+            self.logger.error(f"error occured in execute test class {testid}, info:\n{result.stderr}\n{test_info}")
+            return False
+
+def run_HITS_coverage(fstruct, task_setting, result_folder, dataset_info):
+    root_path = os.getcwd().replace("\\", "/")
+    dataset_dir = f"{root_path}/{fstruct.DATASET_PATH}"
+    testclass_path = f"{result_folder}/<project>/test-classes/"
+    report_path = f"{root_path}/{result_folder}/<project>/reports/"
+    dependency_dir = f"{root_path}/{fstruct.DEPENDENCY_PATH}"
+    compile_test = task_setting.COMPILE_TEST
+    projects = task_setting.PROJECTS
+    select = True if len(projects)>0 else False
+    logger = logging.getLogger(__name__)
+
+    for pj_name, info in dataset_info.items():
+        if select and pj_name not in projects: continue
+        project_path = f"{dataset_dir}/{info['project-url']}"
+        info["project-url"] = project_path
+        # run converage test & generate report
+        runner = HITSRunner(info, dependency_dir, testclass_path, report_path)
+        runner.check_testclass_name()
+        test_result = runner.run_project_test(compile_test)
+        logger.info(test_result)
+        # extract coverage
+        extractor = CoverageExtractor(info, report_path)
+        coverage_data = extractor.generate_project_summary(test_result)
+        logger.info(f"report data:\n{coverage_data}")
+        coverage_file = f"{report_path}/summary.json".replace("<project>", pj_name)
+        io_utils.write_json(coverage_file, coverage_data)
+    return
+
+
 def exract_baseline_coverage(file_structure, task_setting, benchmark, dataset_info):
     dataset_path = file_structure.DATASET_PATH
     baseline_path = benchmark.BASELINE_PATH
@@ -163,10 +320,14 @@ def exract_baseline_coverage(file_structure, task_setting, benchmark, dataset_in
     # extract HITS coverage
     if "HITS" in selected_baselines:
         logger.info("Extracting HITS coverage...")
-        dataset_meta = io_utils.load_json(f"{dataset_path}/dataset_meta.json")
-        HITS_result = "../../../paper-repetition/HITS-rep/playground_check_official"
-        HITS_save = f"{baseline_path}/HITS"
-        extract_coverage_HITS(HITS_result, dataset_info, dataset_meta, HITS_save)
+        # dataset_meta = io_utils.load_json(f"{dataset_path}/dataset_meta.json")
+        # HITS_result = "../../../paper-repetition/HITS-rep/playground_check_official"
+        # HITS_save = f"{baseline_path}/HITS"
+        # extract_coverage_HITS(HITS_result, dataset_info, dataset_meta, HITS_save)
+
+        # run HITS coverage test
+        HITS_result = f"{baseline_path}/HITS"
+        run_HITS_coverage(file_structure, task_setting, HITS_result, dataset_info)
     
     # extract ChatUniTest coverage
     if "ChatUniTest" in selected_baselines:

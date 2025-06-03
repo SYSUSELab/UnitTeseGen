@@ -60,6 +60,7 @@ def set_file_structure():
             utils.check_path(report_html)
     pass
 
+
 def run(args):
     logger = logging.getLogger(__name__)
     root_path = os.getcwd().replace("\\", "/")
@@ -72,10 +73,10 @@ def run(args):
         # WSP.prepare_workspace(dataset_abs)
         logger.info("Setting file structure...")
         set_file_structure()
-    if args.dataset:
-        logger.info("Preparing dataset_info.json ...")
-        DatasetProcessor = jpype.JClass("DatasetPreparation")
-        DatasetProcessor.main([dataset_abs])
+    # if args.dataset:
+    #     logger.info("Preparing dataset_info.json ...")
+    #     DatasetProcessor = jpype.JClass("DatasetPrepare")
+    #     DatasetProcessor.main([dataset_abs])
     if args.project_index:
         logger.info("Constructing project index ...")
         ProjectPreprocessor = jpype.JClass("PreProcessor")

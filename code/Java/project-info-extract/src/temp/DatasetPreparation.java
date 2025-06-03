@@ -1,3 +1,5 @@
+package temp;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,6 +27,7 @@ import com.google.gson.JsonElement;
 
 /**
  * DatasetPreparation
+ * 
  * @deprecated use DatasetPrepare instead
  */
 @Deprecated
@@ -50,10 +53,12 @@ public class DatasetPreparation {
             e.printStackTrace();
         }
     }
-    private static String getInnerClassCode(ClassOrInterfaceDeclaration class_dec){
+
+    private static String getInnerClassCode(ClassOrInterfaceDeclaration class_dec) {
         // get class info: package, import, class_name, fields, method_sig
         return "";
     }
+
     private static String[] getClassCode(CompilationUnit cu, String class_fqn, String method_name) {
         String packageName = cu.getPackageDeclaration().map(pd -> pd.toString().trim()).orElse("");
         List<String> imports = extractor.getImports(cu);
@@ -64,22 +69,24 @@ public class DatasetPreparation {
         // MethodDeclaration fmethod = null;
         String class_info = "";
         String method_body = "";
-        
-        for (ClassOrInterfaceDeclaration class_dec: cu.findAll(ClassOrInterfaceDeclaration.class)) {
+
+        for (ClassOrInterfaceDeclaration class_dec : cu.findAll(ClassOrInterfaceDeclaration.class)) {
             String full_name = class_dec.getFullyQualifiedName().map(fn -> fn)
                     .orElse(packageName + "." + class_dec.getNameAsString());
             if (full_name.equals(class_fqn)) {
                 // get class info: package, import, class_name, fields, method_sig
                 class_dec.removeJavaDocComment();
                 class_declaration = class_dec.toString().split("\\{")[0].trim();
-                for( FieldDeclaration field : class_dec.getFields() ) {
-                    if(field.isPublic()){
-                        while(field.removeJavaDocComment()){;}
+                for (FieldDeclaration field : class_dec.getFields()) {
+                    if (field.isPublic()) {
+                        while (field.removeJavaDocComment()) {
+                            ;
+                        }
                         fields.add(field.toString());
                     }
                 }
-                
-                for(ConstructorDeclaration constructor : class_dec.getConstructors()) {
+
+                for (ConstructorDeclaration constructor : class_dec.getConstructors()) {
                     String decl = constructor.getDeclarationAsString();
                     method_sigs.add(decl);
                     String sig = constructor.getSignature().toString();
@@ -87,34 +94,37 @@ public class DatasetPreparation {
                         method_body = constructor.getBody().toString();
                     }
                 }
-                for (MethodDeclaration method : class_dec.getMethods()){
+                for (MethodDeclaration method : class_dec.getMethods()) {
                     String decl = method.getDeclarationAsString(true, true, false);
                     method.getAnnotations();
-                    if (method.isPrivate()){
+                    if (method.isPrivate()) {
                         if (decl.contains(method_name) && method_name.startsWith(method.getNameAsString())) {
-                            System.out.println("error: private method " + method_name + "in class " + class_fqn +" is not allowed.");
+                            System.out.println("error: private method " + method_name + "in class " + class_fqn
+                                    + " is not allowed.");
                             return null;
                         }
                     } else {
                         method_sigs.add(decl);
                         if (decl.contains(method_name) && method_name.startsWith(method.getNameAsString())) {
-                            method_body = method.getDeclarationAsString() + method.getBody().map(mb -> mb.toString()).orElse("");
+                            method_body = method.getDeclarationAsString()
+                                    + method.getBody().map(mb -> mb.toString()).orElse("");
                         }
                     }
                 }
-                
-            } else if (full_name.startsWith(class_fqn)){
+
+            } else if (full_name.startsWith(class_fqn)) {
                 inner_class.add(getInnerClassCode(class_dec));
             }
-        };
+        }
+        ;
         class_info = packageName + "\n"
-                + String.join("\n", imports)+ "\n" 
-                + class_declaration + " {\n    " 
-                + String.join("\n    ", fields) + "\n    " 
+                + String.join("\n", imports) + "\n"
+                + class_declaration + " {\n    "
+                + String.join("\n    ", fields) + "\n    "
                 + String.join(";\n    ", method_sigs) + ";\n}";
         // System.out.println("class_info: " + class_info);
         // System.out.println("method_body: " + method_body);
-        return new String[] {method_body, class_info};
+        return new String[] { method_body, class_info };
     }
 
     private static JsonObject getMethodInfo(String project_url, String method_full_name) {
@@ -124,21 +134,21 @@ public class DatasetPreparation {
         String[] msplit = firstPart;
         int mlength = msplit.length;
         String method_name = msplit[mlength - 1];
-        String class_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-1));
-        
+        String class_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength - 1));
+
         String test_id = msplit[mlength - 2] + "_" + method_name.split("\\(")[0];
         if (idSet.containsKey(test_id)) {
             int count = idSet.get(test_id);
             test_id = test_id + "_" + count;
-            idSet.put(test_id, count+1);
+            idSet.put(test_id, count + 1);
         } else {
             idSet.put(test_id, 2);
         }
-        String package_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength-2));
+        String package_name = String.join(".", Arrays.copyOfRange(msplit, 0, mlength - 2));
         String test_class = package_name + "." + test_id + "_Test";
         String sourcePath = "src/main/java/" + class_name.replace(".", "/") + ".java";
         String testPath = "src/test/java/" + test_class.replace(".", "/") + ".java";
-        
+
         JsonObject methodInfo = new JsonObject();
         methodInfo.addProperty("id", test_id);
         methodInfo.addProperty("package", package_name);
@@ -155,20 +165,22 @@ public class DatasetPreparation {
             Path class_path = Paths.get(dataset_dir + "/" + project_url + "/" + sourcePath);
             CompilationUnit cu = extractor.parseJavaFile(class_path);
             String[] info = getClassCode(cu, class_name, method_name);
-            if(info==null) return null;
+            if (info == null)
+                return null;
             methodInfo.addProperty("focal-method", info[0]);
             methodInfo.addProperty("class-info", info[1]);
         } catch (Exception e) {
-            System.out.println("Error while parsing file: "+e.getMessage());
+            System.out.println("Error while parsing file: " + e.getMessage());
             methodInfo.addProperty("focal-method", "");
-            methodInfo.addProperty("class-info", "");        }
+            methodInfo.addProperty("class-info", "");
+        }
         return methodInfo;
     }
 
     public static void prepareDataset(String dataset_dir, String meta_file, String output_file) throws IOException {
         JsonArray metaData = loadJson(meta_file).getAsJsonArray();
         JsonObject datasetInfo = new JsonObject();
-        
+
         for (int i = 0; i < metaData.size(); i++) {
             JsonObject mdata = metaData.get(i).getAsJsonObject();
             JsonObject projectInfo = new JsonObject();
@@ -180,15 +192,16 @@ public class DatasetPreparation {
             JsonArray focal_methods = new JsonArray();
             idSet.clear();
             classSet.clear();
-            
+
             JsonObject methodsObj = mdata.getAsJsonObject("method_name_to_idx");
             for (Map.Entry<String, JsonElement> entry : methodsObj.entrySet()) {
                 String methodNameToIdx = entry.getKey();
                 JsonObject methodInfo = getMethodInfo(projectUrl, methodNameToIdx);
-                if (methodInfo == null) continue;
+                if (methodInfo == null)
+                    continue;
                 focal_methods.add(methodInfo);
             }
-            
+
             projectInfo.add("focal-methods", focal_methods);
             datasetInfo.add(projectName, projectInfo);
         }
@@ -205,7 +218,7 @@ public class DatasetPreparation {
             return new Gson().fromJson(reader, JsonElement.class);
         }
     }
-    
+
     /**
      * write data to json file
      */

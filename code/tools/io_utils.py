@@ -86,6 +86,19 @@ def check_path(path):
         os.makedirs(destination_dir)
     return
 
+
+# Copy a directory with files inside it to a target path
+def copy_dir(source_dir, target_path, ignore_error=False):
+    print(f"Copying {source_dir} to {target_path}")
+    check_path(target_path)
+    try:
+        shutil.copytree(source_dir, target_path, dirs_exist_ok=True)
+    except Exception as e:
+        print(e)
+        if ignore_error: return
+        else: raise FileNotFoundError(f"Error occurred while copying the directory {source_dir} to {target_path}")
+
+
 def copy_file(source_file, target_path, ignore_error=False):
     # print(f"Copying {source_file} to {target_path}")
     check_path(target_path)
