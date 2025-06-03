@@ -21,23 +21,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
 import infostructure.*;
 
-public class CodeInfoExtractor extends JavaParserExtractor {
+public class CodeInfoExtractor extends JavaParserExtractor implements BaseImportDict {
     Gson gson;
     String full_class_name;
-    Dictionary<String, List<String>> import_dict;
 
     public CodeInfoExtractor() {
         super();
         this.gson = new Gson();
-        this.import_dict = new Hashtable<String, List<String>>();
+        initImportDict();
     }
 
     private JsonObject extractConstuctorInfo(ConstructorDeclaration constructor) {
@@ -245,6 +242,8 @@ public class CodeInfoExtractor extends JavaParserExtractor {
         CompilationUnit cu = parseJavaFile(javaFile);
         if (cu == null)
             return null;
+        // add import dictionary
+        addImportDict(cu);
         // get class information
         JsonObject codeInfo = new JsonObject();
         String package_name = cu.getPackageDeclaration().map(pd -> pd.getNameAsString()).orElse("");
@@ -293,7 +292,6 @@ public class CodeInfoExtractor extends JavaParserExtractor {
                     }
                 });
         // get information from source files
-        // todo: add import directory
         JsonObject source_json = new JsonObject();
         Files.walk(source_dir)
                 .filter(Files::isRegularFile)
@@ -326,7 +324,8 @@ public class CodeInfoExtractor extends JavaParserExtractor {
                         }
                     });
         }
-
-        return new JsonObject[] { source_json, test_json };
+        // construct import dictionary
+        JsonObject import_dict_json = constructImportDict();
+        return new JsonObject[] { source_json, test_json, import_dict_json };
     }
 }

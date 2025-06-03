@@ -76036,5 +76036,4103 @@
       },
       "file": "org\\jdom2\\input\\sax\\TestTextBuffer.java"
     }
+  },
+  "import_dict": {
+    "AccessController": [
+      "import java.security.AccessController;"
+    ],
+    "UnmodifiableQueue": [
+      "import org.apache.commons.collections4.queue.UnmodifiableQueue;"
+    ],
+    "Configuration": [
+      "import io.dropwizard.Configuration;"
+    ],
+    "JwtUtils": [
+      "import com.apple.spark.util.JwtUtils;"
+    ],
+    "ThreadLocalRandom": [
+      "import java.util.concurrent.ThreadLocalRandom;"
+    ],
+    "SubmissionSummary": [
+      "import com.apple.spark.api.SubmissionSummary;"
+    ],
+    "LinkedHashSet": [
+      "import java.util.LinkedHashSet;"
+    ],
+    "when": [
+      "import static org.mockito.Mockito.when;"
+    ],
+    "TransformedSplitMap": [
+      "import org.apache.commons.collections4.splitmap.TransformedSplitMap;"
+    ],
+    "IntStream": [
+      "import java.util.stream.IntStream;"
+    ],
+    "PredicatedSet": [
+      "import org.apache.commons.collections4.set.PredicatedSet;"
+    ],
+    "KubernetesClusterAndNamespace": [
+      "import com.apple.spark.util.KubernetesClusterAndNamespace;"
+    ],
+    "DEFAULT_DATE_PATTERN": [
+      "import static com.google.gson.Gson.DEFAULT_DATE_PATTERN;"
+    ],
+    "StringTokenizer": [
+      "import java.util.StringTokenizer;"
+    ],
+    "PriorityQueue": [
+      "import java.util.PriorityQueue;"
+    ],
+    "StringDecoder": [
+      "import org.apache.commons.codec.StringDecoder;"
+    ],
+    "HealthCheck": [
+      "import com.codahale.metrics.health.HealthCheck;"
+    ],
+    "JDOMSource": [
+      "import org.jdom2.transform.JDOMSource;"
+    ],
+    "MyParameterizedType": [
+      "import com.google.gson.ParameterizedTypeFixtures.MyParameterizedType;"
+    ],
+    "JWTVerifier": [
+      "import com.auth0.jwt.interfaces.JWTVerifier;"
+    ],
+    "SystemProperty": [
+      "import org.jdom2.internal.SystemProperty;"
+    ],
+    "CollectionTypeAdapterFactory": [
+      "import com.google.gson.internal.bind.CollectionTypeAdapterFactory;"
+    ],
+    "EnZAIdNumber": [
+      "import net.datafaker.idnumbers.EnZAIdNumber;"
+    ],
+    "TypeToken": [
+      "import com.google.gson.reflect.TypeToken;"
+    ],
+    "BatchSchedulerConfiguration": [
+      "import com.apple.spark.operator.BatchSchedulerConfiguration;"
+    ],
+    "CsvPreference": [
+      "import org.supercsv.prefs.CsvPreference;"
+    ],
+    "LexicalHandler": [
+      "import org.xml.sax.ext.LexicalHandler;"
+    ],
+    "getVolumes": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getVolumes;"
+    ],
+    "Consumes": [
+      "import javax.ws.rs.Consumes;"
+    ],
+    "Fork": [
+      "import org.openjdk.jmh.annotations.Fork;"
+    ],
+    "UserUnauthorizedHandler": [
+      "import com.apple.spark.security.UserUnauthorizedHandler;"
+    ],
+    "Consumer": [
+      "import java.util.function.Consumer;"
+    ],
+    "IOException": [
+      "import java.io.IOException;"
+    ],
+    "PermutationIterator": [
+      "import org.apache.commons.collections4.iterators.PermutationIterator;"
+    ],
+    "BenchmarkMode": [
+      "import org.openjdk.jmh.annotations.BenchmarkMode;"
+    ],
+    "NavigableSet": [
+      "import java.util.NavigableSet;"
+    ],
+    "ReferenceStrength": [
+      "import org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceStrength;"
+    ],
+    "AbstractXPathCompiled": [
+      "import org.jdom2.xpath.util.AbstractXPathCompiled;"
+    ],
+    "CollectionBag": [
+      "import org.apache.commons.collections4.bag.CollectionBag;"
+    ],
+    "assumeTrue": [
+      "import static org.junit.jupiter.api.Assumptions.assumeTrue;",
+      "import static org.junit.Assume.assumeTrue;"
+    ],
+    "AbstractBagTest": [
+      "import org.apache.commons.collections4.bag.AbstractBagTest;"
+    ],
+    "XMLConstants": [
+      "import javax.xml.XMLConstants;"
+    ],
+    "CSVRecord": [
+      "import org.apache.commons.csv.CSVRecord;"
+    ],
+    "TAB": [
+      "import static org.apache.commons.csv.Constants.TAB;"
+    ],
+    "DeleteSubmissionResponse": [
+      "import com.apple.spark.api.DeleteSubmissionResponse;"
+    ],
+    "CharsetEncoder": [
+      "import java.nio.charset.CharsetEncoder;"
+    ],
+    "RetentionPolicy": [
+      "import java.lang.annotation.RetentionPolicy;"
+    ],
+    "FakeValuesService": [
+      "import net.datafaker.service.FakeValuesService;"
+    ],
+    "JDOMResult": [
+      "import org.jdom2.transform.JDOMResult;"
+    ],
+    "helpers": [
+      "import org.xml.sax.helpers.*;"
+    ],
+    "XMLReader": [
+      "import org.xml.sax.XMLReader;"
+    ],
+    "DOMOutputter": [
+      "import org.jdom2.output.DOMOutputter;"
+    ],
+    "BitSet": [
+      "import java.util.BitSet;"
+    ],
+    "hasType": [
+      "import static org.apache.commons.csv.TokenMatchers.hasType;"
+    ],
+    "SAXNotRecognizedException": [
+      "import org.xml.sax.SAXNotRecognizedException;"
+    ],
+    "AtomicLong": [
+      "import java.util.concurrent.atomic.AtomicLong;"
+    ],
+    "FileUtils": [
+      "import org.apache.commons.io.FileUtils;"
+    ],
+    "TransformedNavigableSet": [
+      "import org.apache.commons.collections4.set.TransformedNavigableSet;"
+    ],
+    "UnmodifiableOrderedMapIterator": [
+      "import org.apache.commons.collections4.iterators.UnmodifiableOrderedMapIterator;"
+    ],
+    "NodeListIterator": [
+      "import org.apache.commons.collections4.iterators.NodeListIterator;"
+    ],
+    "Until": [
+      "import com.google.gson.annotations.Until;"
+    ],
+    "CommandLineParser": [
+      "import org.apache.commons.cli.CommandLineParser;"
+    ],
+    "HttpUtils": [
+      "import com.apple.spark.util.HttpUtils;"
+    ],
+    "FunctorException": [
+      "import org.apache.commons.collections4.FunctorException;"
+    ],
+    "ProcessingInstruction": [
+      "import org.jdom2.ProcessingInstruction;"
+    ],
+    "ConcurrentMap": [
+      "import java.util.concurrent.ConcurrentMap;"
+    ],
+    "isReady": [
+      "import static org.apache.commons.csv.TokenMatchers.isReady;"
+    ],
+    "InetAddress": [
+      "import java.net.InetAddress;"
+    ],
+    "JsonInclude": [
+      "import com.fasterxml.jackson.annotation.JsonInclude;"
+    ],
+    "EndAwareInputStream": [
+      "import com.apple.spark.util.EndAwareInputStream;"
+    ],
+    "GET": [
+      "import javax.ws.rs.GET;"
+    ],
+    "PipedWriter": [
+      "import java.io.PipedWriter;"
+    ],
+    "Food": [
+      "import net.datafaker.providers.food.Food;"
+    ],
+    "Stream": [
+      "import java.util.stream.Stream;"
+    ],
+    "DRIVER_MEM_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_MEM_DEFAULT;"
+    ],
+    "EmptyIterator": [
+      "import org.apache.commons.collections4.iterators.EmptyIterator;"
+    ],
+    "RandomAccess": [
+      "import java.util.RandomAccess;"
+    ],
+    "Regions": [
+      "import com.amazonaws.regions.Regions;"
+    ],
+    "AfterEach": [
+      "import org.junit.jupiter.api.AfterEach;"
+    ],
+    "Executors": [
+      "import java.util.concurrent.Executors;"
+    ],
+    "Field": [
+      "import java.lang.reflect.Field;"
+    ],
+    "TestInfo": [
+      "import org.junit.jupiter.api.TestInfo;"
+    ],
+    "BufferedInputStream": [
+      "import java.io.BufferedInputStream;"
+    ],
+    "SharedIndexInformer": [
+      "import io.fabric8.kubernetes.client.informers.SharedIndexInformer;"
+    ],
+    "Unmodifiable": [
+      "import org.apache.commons.collections4.Unmodifiable;"
+    ],
+    "TestInstance": [
+      "import org.junit.jupiter.api.TestInstance;"
+    ],
+    "anyOf": [
+      "import static org.assertj.core.api.Assertions.anyOf;"
+    ],
+    "ObjectArrayIterator": [
+      "import org.apache.commons.collections4.iterators.ObjectArrayIterator;"
+    ],
+    "ParseException": [
+      "import org.apache.commons.cli.ParseException;",
+      "import java.text.ParseException;"
+    ],
+    "Charset": [
+      "import java.nio.charset.Charset;"
+    ],
+    "ExecutionException": [
+      "import java.util.concurrent.ExecutionException;"
+    ],
+    "fail": [
+      "import static org.junit.jupiter.api.Assertions.fail;",
+      "import static org.junit.Assert.fail;",
+      "import static org.assertj.core.api.Assertions.fail;"
+    ],
+    "URISyntaxException": [
+      "import java.net.URISyntaxException;"
+    ],
+    "rotateLeft": [
+      "import static java.lang.Integer.rotateLeft;"
+    ],
+    "UUID": [
+      "import java.util.UUID;"
+    ],
+    "Properties": [
+      "import java.util.Properties;"
+    ],
+    "UPPER_CAMEL_CASE_WITH_SPACES": [
+      "import static com.google.gson.FieldNamingPolicy.UPPER_CAMEL_CASE_WITH_SPACES;"
+    ],
+    "SerializationDelegatingTypeAdapter": [
+      "import com.google.gson.internal.bind.SerializationDelegatingTypeAdapter;"
+    ],
+    "FactoryUtils": [
+      "import org.apache.commons.collections4.FactoryUtils;"
+    ],
+    "BooleanComparator": [
+      "import org.apache.commons.collections4.comparators.BooleanComparator;"
+    ],
+    "getYuniKornSchedulerConfig": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getYuniKornSchedulerConfig;"
+    ],
+    "Enumeration": [
+      "import java.util.Enumeration;"
+    ],
+    "AllPredicate": [
+      "import org.apache.commons.collections4.functors.AllPredicate;"
+    ],
+    "EditScript": [
+      "import org.apache.commons.collections4.sequence.EditScript;"
+    ],
+    "UnmodifiableList": [
+      "import org.apache.commons.collections4.list.UnmodifiableList;"
+    ],
+    "UnauthorizedHandler": [
+      "import io.dropwizard.auth.UnauthorizedHandler;"
+    ],
+    "StatsdMeterRegistry": [
+      "import io.micrometer.statsd.StatsdMeterRegistry;"
+    ],
+    "Beer": [
+      "import net.datafaker.providers.food.Beer;"
+    ],
+    "DRIVER_CPU_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_CPU_BUFFER_RATIO;"
+    ],
+    "EntityResolver": [
+      "import org.xml.sax.EntityResolver;"
+    ],
+    "FilterInputStream": [
+      "import java.io.FilterInputStream;"
+    ],
+    "JavadocComment": [
+      "import com.github.javaparser.ast.comments.JavadocComment;"
+    ],
+    "StAXEventOutputter": [
+      "import org.jdom2.output.StAXEventOutputter;"
+    ],
+    "SAX_FEATURE_EXTERNAL_ENT": [
+      "import static org.jdom2.JDOMConstants.SAX_FEATURE_EXTERNAL_ENT;"
+    ],
+    "GetObjectRequest": [
+      "import com.amazonaws.services.s3.model.GetObjectRequest;"
+    ],
+    "AbstractOrderedMapTest": [
+      "import org.apache.commons.collections4.map.AbstractOrderedMapTest;"
+    ],
+    "EventList": [
+      "import io.fabric8.kubernetes.api.model.EventList;"
+    ],
+    "Clock": [
+      "import io.micrometer.core.instrument.Clock;"
+    ],
+    "StringWriter": [
+      "import java.io.StringWriter;"
+    ],
+    "EnumeratedDistribution": [
+      "import org.apache.commons.math3.distribution.EnumeratedDistribution;"
+    ],
+    "UnmodifiableSortedBag": [
+      "import org.apache.commons.collections4.bag.UnmodifiableSortedBag;"
+    ],
+    "PLACEHOLDER_TIMEOUT_IN_SECONDS": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.PLACEHOLDER_TIMEOUT_IN_SECONDS;"
+    ],
+    "ListUtils": [
+      "import org.apache.commons.collections4.ListUtils;"
+    ],
+    "ArrayOfObjects": [
+      "import com.google.gson.common.TestTypes.ArrayOfObjects;"
+    ],
+    "DefaultJDOMFactory": [
+      "import org.jdom2.DefaultJDOMFactory;"
+    ],
+    "ClassWithSerializedNameFields": [
+      "import com.google.gson.common.TestTypes.ClassWithSerializedNameFields;"
+    ],
+    "asList": [
+      "import static java.util.Arrays.asList;"
+    ],
+    "KeyValue": [
+      "import org.apache.commons.collections4.KeyValue;"
+    ],
+    "Characters": [
+      "import javax.xml.stream.events.Characters;"
+    ],
+    "Clob": [
+      "import java.sql.Clob;"
+    ],
+    "DANGLING_NAME": [
+      "import static com.google.gson.stream.JsonScope.DANGLING_NAME;"
+    ],
+    "StAXStreamOutputter": [
+      "import org.jdom2.output.StAXStreamOutputter;"
+    ],
+    "replay": [
+      "import static org.easymock.EasyMock.replay;"
+    ],
+    "HealthcheckResponse": [
+      "import com.apple.spark.api.HealthcheckResponse;"
+    ],
+    "Gson": [
+      "import com.google.gson.Gson;"
+    ],
+    "FalsePredicate": [
+      "import org.apache.commons.collections4.functors.FalsePredicate;"
+    ],
+    "JsonElement": [
+      "import com.google.gson.JsonElement;"
+    ],
+    "JsonAdapter": [
+      "import com.google.gson.annotations.JsonAdapter;"
+    ],
+    "UnmodifiableCollection": [
+      "import org.apache.commons.collections4.collection.UnmodifiableCollection;"
+    ],
+    "TestStringListGenerator": [
+      "import com.google.common.collect.testing.TestStringListGenerator;"
+    ],
+    "IdNumberGeneratorPtBrUtil": [
+      "import net.datafaker.idnumbers.pt.br.IdNumberGeneratorPtBrUtil;"
+    ],
+    "CommentsCollection": [
+      "import com.github.javaparser.ast.comments.CommentsCollection;"
+    ],
+    "ArrayList": [
+      "import java.util.ArrayList;"
+    ],
+    "Manifest": [
+      "import java.util.jar.Manifest;"
+    ],
+    "PtNifIdNumber": [
+      "import net.datafaker.idnumbers.PtNifIdNumber;"
+    ],
+    "Type": [
+      "import java.lang.reflect.Type;",
+      "import net.datafaker.idnumbers.NricNumber.Type;"
+    ],
+    "Authenticator": [
+      "import io.dropwizard.auth.Authenticator;"
+    ],
+    "DEFAULT_NUMBER_TO_NUMBER_STRATEGY": [
+      "import static com.google.gson.Gson.DEFAULT_NUMBER_TO_NUMBER_STRATEGY;"
+    ],
+    "ZoneOffset": [
+      "import java.time.ZoneOffset;"
+    ],
+    "UnmodifiableListIterator": [
+      "import org.apache.commons.collections4.iterators.UnmodifiableListIterator;"
+    ],
+    "Hashtable": [
+      "import java.util.Hashtable;"
+    ],
+    "ImmutableMap": [
+      "import com.google.common.collect.ImmutableMap;"
+    ],
+    "ClassWithNoFields": [
+      "import com.google.gson.common.TestTypes.ClassWithNoFields;"
+    ],
+    "SortedBidiMap": [
+      "import org.apache.commons.collections4.SortedBidiMap;"
+    ],
+    "SAXHandler": [
+      "import org.jdom2.input.sax.SAXHandler;"
+    ],
+    "UserNameAuthFilter": [
+      "import com.apple.spark.security.UserNameAuthFilter;"
+    ],
+    "NullPredicate": [
+      "import org.apache.commons.collections4.functors.NullPredicate;"
+    ],
+    "equalPredicate": [
+      "import static org.apache.commons.collections4.functors.EqualPredicate.equalPredicate;"
+    ],
+    "getProxyUser": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getProxyUser;"
+    ],
+    "ListOrderedMap": [
+      "import org.apache.commons.collections4.map.ListOrderedMap;"
+    ],
+    "InstantiateTransformer": [
+      "import org.apache.commons.collections4.functors.InstantiateTransformer;"
+    ],
+    "FileOutputStream": [
+      "import java.io.FileOutputStream;"
+    ],
+    "ConstantTransformer": [
+      "import org.apache.commons.collections4.functors.ConstantTransformer;"
+    ],
+    "UnmodifiableMultiSet": [
+      "import org.apache.commons.collections4.multiset.UnmodifiableMultiSet;"
+    ],
+    "CSVFormat": [
+      "import org.apache.commons.csv.CSVFormat;"
+    ],
+    "ChronoUnit": [
+      "import java.time.temporal.ChronoUnit;"
+    ],
+    "withModifier": [
+      "import static org.reflections.ReflectionUtils.withModifier;"
+    ],
+    "XMLReaders": [
+      "import org.jdom2.input.sax.XMLReaders;"
+    ],
+    "SqlDialect": [
+      "import net.datafaker.transformations.sql.SqlDialect;"
+    ],
+    "MappedByteBuffer": [
+      "import java.nio.MappedByteBuffer;"
+    ],
+    "AbstractSetTest": [
+      "import org.apache.commons.collections4.set.AbstractSetTest;"
+    ],
+    "DOMAdapter": [
+      "import org.jdom2.adapters.DOMAdapter;"
+    ],
+    "State": [
+      "import org.openjdk.jmh.annotations.State;"
+    ],
+    "LinkedList": [
+      "import java.util.LinkedList;"
+    ],
+    "OrderedMap": [
+      "import org.apache.commons.collections4.OrderedMap;"
+    ],
+    "YUNIKORN_ROOT_QUEUE": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_ROOT_QUEUE;"
+    ],
+    "IntPredicate": [
+      "import java.util.function.IntPredicate;"
+    ],
+    "DTDParser": [
+      "import org.jdom2.input.stax.DTDParser;"
+    ],
+    "Scanner": [
+      "import java.util.Scanner;"
+    ],
+    "CSVParser": [
+      "import org.apache.commons.csv.CSVParser;"
+    ],
+    "StreamSupport": [
+      "import java.util.stream.StreamSupport;"
+    ],
+    "HostPathVolumeSource": [
+      "import com.apple.spark.operator.HostPathVolumeSource;"
+    ],
+    "assertThatThrownBy": [
+      "import static org.assertj.core.api.Assertions.assertThatThrownBy;"
+    ],
+    "AbstractListIteratorTest": [
+      "import org.apache.commons.collections4.iterators.AbstractListIteratorTest;"
+    ],
+    "Normalizer": [
+      "import java.text.Normalizer;"
+    ],
+    "InputStreamReader": [
+      "import java.io.InputStreamReader;"
+    ],
+    "FileInputStream": [
+      "import java.io.FileInputStream;"
+    ],
+    "SP": [
+      "import static org.apache.commons.csv.Constants.SP;"
+    ],
+    "GsonBuilder": [
+      "import com.google.gson.GsonBuilder;"
+    ],
+    "Assertions": [
+      "import org.junit.jupiter.api.Assertions;",
+      "import static org.junit.jupiter.api.Assertions.*;"
+    ],
+    "FixedSizeList": [
+      "import org.apache.commons.collections4.list.FixedSizeList;"
+    ],
+    "Calendar": [
+      "import java.util.Calendar;"
+    ],
+    "JsonObject": [
+      "import com.google.gson.JsonObject;"
+    ],
+    "InstanceCreator": [
+      "import com.google.gson.InstanceCreator;"
+    ],
+    "Yaml": [
+      "import org.yaml.snakeyaml.Yaml;"
+    ],
+    "DefaultAWSCredentialsProviderChain": [
+      "import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;"
+    ],
+    "ext": [
+      "import org.xml.sax.ext.*;"
+    ],
+    "ExceptionFactory": [
+      "import org.apache.commons.collections4.functors.ExceptionFactory;"
+    ],
+    "Handler": [
+      "import java.util.logging.Handler;"
+    ],
+    "Time": [
+      "import java.sql.Time;"
+    ],
+    "StatsdFlavor": [
+      "import io.micrometer.statsd.StatsdFlavor;"
+    ],
+    "DEFAULT_DB_NAME": [
+      "import static com.apple.spark.core.Constants.DEFAULT_DB_NAME;"
+    ],
+    "BinaryEncoder": [
+      "import org.apache.commons.codec.BinaryEncoder;"
+    ],
+    "MoreAsserts": [
+      "import com.google.gson.common.MoreAsserts;"
+    ],
+    "UniqueFilterIterator": [
+      "import org.apache.commons.collections4.iterators.UniqueFilterIterator;"
+    ],
+    "INSTANCE": [
+      "import static org.apache.commons.collections4.functors.TruePredicate.INSTANCE;"
+    ],
+    "Environment": [
+      "import io.dropwizard.setup.Environment;"
+    ],
+    "JsonIgnoreProperties": [
+      "import com.fasterxml.jackson.annotation.JsonIgnoreProperties;"
+    ],
+    "UnmodifiableMultiValuedMap": [
+      "import org.apache.commons.collections4.multimap.UnmodifiableMultiValuedMap;"
+    ],
+    "Charsets": [
+      "import org.apache.commons.io.Charsets;"
+    ],
+    "Retention": [
+      "import java.lang.annotation.Retention;"
+    ],
+    "Coffee": [
+      "import net.datafaker.providers.food.Coffee;"
+    ],
+    "XMLReaderSAX2Factory": [
+      "import org.jdom2.input.sax.XMLReaderSAX2Factory;"
+    ],
+    "TransformedBag": [
+      "import org.apache.commons.collections4.bag.TransformedBag;"
+    ],
+    "SUBMITTED_STATE": [
+      "import static com.apple.spark.core.SparkConstants.SUBMITTED_STATE;"
+    ],
+    "After": [
+      "import org.junit.After;"
+    ],
+    "BiConsumer": [
+      "import java.util.function.BiConsumer;"
+    ],
+    "SimpleResultSet": [
+      "import org.h2.tools.SimpleResultSet;"
+    ],
+    "ReentrantLock": [
+      "import java.util.concurrent.locks.ReentrantLock;"
+    ],
+    "DBConnection": [
+      "import com.apple.spark.core.DBConnection;"
+    ],
+    "Counter": [
+      "import io.micrometer.core.instrument.Counter;"
+    ],
+    "Ignore": [
+      "import org.junit.Ignore;"
+    ],
+    "SAXException": [
+      "import org.xml.sax.SAXException;"
+    ],
+    "CompositeCollection": [
+      "import org.apache.commons.collections4.collection.CompositeCollection;"
+    ],
+    "DocumentBuilderFactory": [
+      "import javax.xml.parsers.DocumentBuilderFactory;"
+    ],
+    "Assert": [
+      "import org.testng.Assert;",
+      "import org.junit.Assert;"
+    ],
+    "UnsupportedCharsetException": [
+      "import java.nio.charset.UnsupportedCharsetException;"
+    ],
+    "JsonStreamParser": [
+      "import com.google.gson.JsonStreamParser;"
+    ],
+    "withParametersCount": [
+      "import static org.reflections.ReflectionUtils.withParametersCount;"
+    ],
+    "BPGHealthCheck": [
+      "import com.apple.spark.health.BPGHealthCheck;"
+    ],
+    "PipedReader": [
+      "import java.io.PipedReader;"
+    ],
+    "PrintWriter": [
+      "import java.io.PrintWriter;"
+    ],
+    "EXECUTOR_MEM_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_MEM_BUFFER_RATIO;"
+    ],
+    "Encoder": [
+      "import org.apache.commons.codec.Encoder;"
+    ],
+    "allPredicate": [
+      "import static org.apache.commons.collections4.functors.AllPredicate.allPredicate;"
+    ],
+    "Meter": [
+      "import com.codahale.metrics.Meter;"
+    ],
+    "DefaultHandler": [
+      "import org.xml.sax.helpers.DefaultHandler;"
+    ],
+    "JsonReaderInternalAccess": [
+      "import com.google.gson.internal.JsonReaderInternalAccess;"
+    ],
+    "MONITOR_KILLED_APPS": [
+      "import static com.apple.spark.core.Constants.MONITOR_KILLED_APPS;"
+    ],
+    "ARRAY": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.ARRAY;"
+    ],
+    "Strings": [
+      "import com.google.common.base.Strings;"
+    ],
+    "LoopingListIterator": [
+      "import org.apache.commons.collections4.iterators.LoopingListIterator;"
+    ],
+    "ByteArrayOutputStream": [
+      "import java.io.ByteArrayOutputStream;"
+    ],
+    "FakerContext": [
+      "import net.datafaker.service.FakerContext;"
+    ],
+    "AbstractMultiSetTest": [
+      "import org.apache.commons.collections4.multiset.AbstractMultiSetTest;"
+    ],
+    "Flushable": [
+      "import java.io.Flushable;"
+    ],
+    "HttpClient": [
+      "import java.net.http.HttpClient;"
+    ],
+    "ConcurrentModificationException": [
+      "import java.util.ConcurrentModificationException;"
+    ],
+    "CacheBuilder": [
+      "import com.google.common.cache.CacheBuilder;"
+    ],
+    "Upload": [
+      "import com.amazonaws.services.s3.transfer.Upload;"
+    ],
+    "DIGITS": [
+      "import static net.datafaker.providers.base.Text.DIGITS;"
+    ],
+    "FileSystems": [
+      "import java.nio.file.FileSystems;"
+    ],
+    "EXECUTOR_CORE_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_CORE_DEFAULT;"
+    ],
+    "UnknownHostException": [
+      "import java.net.UnknownHostException;"
+    ],
+    "IExpectationSetters": [
+      "import org.easymock.IExpectationSetters;"
+    ],
+    "Random": [
+      "import java.util.Random;"
+    ],
+    "GetMySubmissionsResponse": [
+      "import com.apple.spark.api.GetMySubmissionsResponse;"
+    ],
+    "TruePredicate": [
+      "import org.apache.commons.collections4.functors.TruePredicate;"
+    ],
+    "StatsdConfig": [
+      "import io.micrometer.statsd.StatsdConfig;"
+    ],
+    "JsonWriter": [
+      "import com.google.gson.stream.JsonWriter;"
+    ],
+    "Statement": [
+      "import java.sql.Statement;"
+    ],
+    "XmlTransformer": [
+      "import net.datafaker.transformations.XmlTransformer;"
+    ],
+    "assertTrue": [
+      "import static org.junit.Assert.assertTrue;",
+      "import static org.junit.jupiter.api.Assertions.assertTrue;"
+    ],
+    "Instant": [
+      "import java.time.Instant;"
+    ],
+    "NAME": [
+      "import static com.google.gson.stream.JsonToken.NAME;"
+    ],
+    "ListOrderedSet": [
+      "import org.apache.commons.collections4.set.ListOrderedSet;"
+    ],
+    "Base": [
+      "import com.google.gson.common.TestTypes.Base;"
+    ],
+    "PhoneNumberUtil": [
+      "import com.google.i18n.phonenumbers.PhoneNumberUtil;"
+    ],
+    "TypeAdapter": [
+      "import com.google.gson.TypeAdapter;"
+    ],
+    "OpenAPIDefinition": [
+      "import io.swagger.v3.oas.annotations.OpenAPIDefinition;"
+    ],
+    "AbstractMapEntry": [
+      "import org.apache.commons.collections4.keyvalue.AbstractMapEntry;"
+    ],
+    "TypeSafeDiagnosingMatcher": [
+      "import org.hamcrest.TypeSafeDiagnosingMatcher;"
+    ],
+    "StringReader": [
+      "import java.io.StringReader;"
+    ],
+    "LF": [
+      "import static org.apache.commons.csv.Constants.LF;"
+    ],
+    "XMLReaderFactory": [
+      "import org.xml.sax.helpers.XMLReaderFactory;"
+    ],
+    "SignatureVerificationException": [
+      "import com.auth0.jwt.exceptions.SignatureVerificationException;"
+    ],
+    "StreamingOutput": [
+      "import javax.ws.rs.core.StreamingOutput;"
+    ],
+    "TestCase": [
+      "import junit.framework.TestCase;"
+    ],
+    "Dictionary": [
+      "import java.util.Dictionary;"
+    ],
+    "DEFAULT_LENIENT": [
+      "import static com.google.gson.Gson.DEFAULT_LENIENT;"
+    ],
+    "$Gson$Preconditions": [
+      "import com.google.gson.internal.$Gson$Preconditions;"
+    ],
+    "SAXSource": [
+      "import javax.xml.transform.sax.SAXSource;"
+    ],
+    "Version": [
+      "import io.fabric8.kubernetes.model.annotation.Version;"
+    ],
+    "IncrementalHash32": [
+      "import org.apache.commons.codec.digest.MurmurHash3.IncrementalHash32;"
+    ],
+    "lazyMap": [
+      "import static org.apache.commons.collections4.map.LazyMap.lazyMap;"
+    ],
+    "FoodProviders": [
+      "import net.datafaker.providers.food.FoodProviders;"
+    ],
+    "CustomSerDe": [
+      "import com.apple.spark.util.CustomSerDe;"
+    ],
+    "KubernetesDeserializer": [
+      "import io.fabric8.kubernetes.internal.KubernetesDeserializer;"
+    ],
+    "FakeStream": [
+      "import net.datafaker.sequence.FakeStream;"
+    ],
+    "Response": [
+      "import javax.ws.rs.core.Response;"
+    ],
+    "FileChannel": [
+      "import java.nio.channels.FileChannel;"
+    ],
+    "BaseXPath": [
+      "import org.jaxen.BaseXPath;"
+    ],
+    "getSparkUIConfiguration": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getSparkUIConfiguration;"
+    ],
+    "StringEncoder": [
+      "import org.apache.commons.codec.StringEncoder;"
+    ],
+    "EMPTY": [
+      "import static org.apache.commons.csv.Constants.EMPTY;"
+    ],
+    "Buffer": [
+      "import java.nio.Buffer;"
+    ],
+    "SimpleField": [
+      "import net.datafaker.transformations.SimpleField;"
+    ],
+    "SparkApplicationSpec": [
+      "import com.apple.spark.operator.SparkApplicationSpec;"
+    ],
+    "TestFactory": [
+      "import org.junit.jupiter.api.TestFactory;"
+    ],
+    "SingleObjectIterator": [
+      "import org.jaxen.util.SingleObjectIterator;"
+    ],
+    "LineSeparator": [
+      "import org.jdom2.output.LineSeparator;"
+    ],
+    "XMLStreamException": [
+      "import javax.xml.stream.XMLStreamException;"
+    ],
+    "UNDEFINED": [
+      "import static org.apache.commons.csv.Constants.UNDEFINED;"
+    ],
+    "MediaType": [
+      "import javax.ws.rs.core.MediaType;"
+    ],
+    "CharArrayWriter": [
+      "import java.io.CharArrayWriter;"
+    ],
+    "PredicateUtils": [
+      "import org.apache.commons.collections4.PredicateUtils;"
+    ],
+    "AbstractDOMOutputProcessor": [
+      "import org.jdom2.output.support.AbstractDOMOutputProcessor;"
+    ],
+    "ElementFilter": [
+      "import org.jdom2.filter.ElementFilter;"
+    ],
+    "SimpleDateFormat": [
+      "import java.text.SimpleDateFormat;"
+    ],
+    "EntertainmentProviders": [
+      "import net.datafaker.providers.entertainment.EntertainmentProviders;"
+    ],
+    "TransformedMultiValuedMap": [
+      "import org.apache.commons.collections4.multimap.TransformedMultiValuedMap;"
+    ],
+    "TransformedCollectionTest": [
+      "import org.apache.commons.collections4.collection.TransformedCollectionTest;"
+    ],
+    "Schema": [
+      "import net.datafaker.transformations.Schema;",
+      "import io.swagger.v3.oas.annotations.media.Schema;",
+      "import javax.xml.validation.Schema;"
+    ],
+    "DEFAULT_CASING": [
+      "import static net.datafaker.transformations.sql.Casing.DEFAULT_CASING;"
+    ],
+    "withReturnType": [
+      "import static org.reflections.ReflectionUtils.withReturnType;"
+    ],
+    "anyInt": [
+      "import static org.mockito.Mockito.anyInt;"
+    ],
+    "DEFAULT_FIRST_ROW": [
+      "import static net.datafaker.transformations.sql.SqlDialect.AuxiliaryConstants.DEFAULT_FIRST_ROW;"
+    ],
+    "ChainedTransformer": [
+      "import org.apache.commons.collections4.functors.ChainedTransformer;"
+    ],
+    "LocalDate": [
+      "import java.time.LocalDate;"
+    ],
+    "Comment": [
+      "import org.jdom2.Comment;"
+    ],
+    "Annotation": [
+      "import java.lang.annotation.Annotation;"
+    ],
+    "DefaultParser": [
+      "import org.apache.commons.cli.DefaultParser;"
+    ],
+    "DeclHandler": [
+      "import org.xml.sax.ext.DeclHandler;"
+    ],
+    "MeterRegistry": [
+      "import io.micrometer.core.instrument.MeterRegistry;"
+    ],
+    "ObjectGraphIterator": [
+      "import org.apache.commons.collections4.iterators.ObjectGraphIterator;"
+    ],
+    "StandardCharsets": [
+      "import java.nio.charset.StandardCharsets;"
+    ],
+    "NodeSelectorOperator": [
+      "import com.apple.spark.operator.NodeSelectorOperator;"
+    ],
+    "ListResourceBundle": [
+      "import java.util.ListResourceBundle;"
+    ],
+    "MapIterator": [
+      "import org.apache.commons.collections4.MapIterator;"
+    ],
+    "TransformedPredicate": [
+      "import org.apache.commons.collections4.functors.TransformedPredicate;"
+    ],
+    "ByteArrayInputStream": [
+      "import java.io.ByteArrayInputStream;"
+    ],
+    "Mode": [
+      "import org.openjdk.jmh.annotations.Mode;"
+    ],
+    "validate": [
+      "import static org.apache.commons.collections4.functors.FunctorUtils.validate;"
+    ],
+    "PIPE": [
+      "import static org.apache.commons.csv.Constants.PIPE;"
+    ],
+    "DuplicateHeaderMode": [
+      "import org.apache.commons.csv.DuplicateHeaderMode;"
+    ],
+    "Locale": [
+      "import java.util.Locale;"
+    ],
+    "SynchronizedBag": [
+      "import org.apache.commons.collections4.bag.SynchronizedBag;"
+    ],
+    "NonePredicate": [
+      "import org.apache.commons.collections4.functors.NonePredicate;"
+    ],
+    "UnmodifiableBoundedCollection": [
+      "import org.apache.commons.collections4.collection.UnmodifiableBoundedCollection;"
+    ],
+    "CollatingIterator": [
+      "import org.apache.commons.collections4.iterators.CollatingIterator;"
+    ],
+    "FF": [
+      "import static org.apache.commons.csv.Constants.FF;"
+    ],
+    "XMLEventConsumer": [
+      "import javax.xml.stream.util.XMLEventConsumer;"
+    ],
+    "CollectionFeature": [
+      "import com.google.common.collect.testing.features.CollectionFeature;"
+    ],
+    "AtomicLongArray": [
+      "import java.util.concurrent.atomic.AtomicLongArray;"
+    ],
+    "DefaultDateTypeAdapter": [
+      "import com.google.gson.internal.bind.DefaultDateTypeAdapter;"
+    ],
+    "Mock": [
+      "import org.mockito.*;"
+    ],
+    "QName": [
+      "import javax.xml.namespace.QName;"
+    ],
+    "SystemUtils": [
+      "import org.apache.commons.lang3.SystemUtils;"
+    ],
+    "OpenOption": [
+      "import java.nio.file.OpenOption;"
+    ],
+    "NullIsTruePredicate": [
+      "import org.apache.commons.collections4.functors.NullIsTruePredicate;"
+    ],
+    "DriverInfo": [
+      "import com.apple.spark.operator.DriverInfo;"
+    ],
+    "ExecutorSpec": [
+      "import com.apple.spark.operator.ExecutorSpec;"
+    ],
+    "Level": [
+      "import java.util.logging.Level;"
+    ],
+    "Text": [
+      "import org.jdom2.Text;",
+      "import org.w3c.dom.Text;"
+    ],
+    "SAX_PROPERTY_LEXICAL_HANDLER": [
+      "import static org.jdom2.JDOMConstants.SAX_PROPERTY_LEXICAL_HANDLER;"
+    ],
+    "Resources": [
+      "import org.apache.commons.codec.Resources;"
+    ],
+    "Excluder": [
+      "import com.google.gson.internal.Excluder;"
+    ],
+    "EntityRef": [
+      "import org.jdom2.EntityRef;"
+    ],
+    "CellConsumer": [
+      "import org.apache.commons.collections4.bloomfilter.CellProducer.CellConsumer;"
+    ],
+    "NodeAffinity": [
+      "import com.apple.spark.operator.NodeAffinity;"
+    ],
+    "XPathFactory": [
+      "import org.jdom2.xpath.XPathFactory;"
+    ],
+    "TypeAdapters": [
+      "import com.google.gson.internal.bind.TypeAdapters;"
+    ],
+    "JsonToken": [
+      "import com.google.gson.stream.JsonToken;"
+    ],
+    "COMMA": [
+      "import static org.apache.commons.csv.Constants.COMMA;"
+    ],
+    "ArrayListValuedHashMap": [
+      "import org.apache.commons.collections4.multimap.ArrayListValuedHashMap;"
+    ],
+    "SAXParseException": [
+      "import org.xml.sax.SAXParseException;"
+    ],
+    "XMLReaderJDOMFactory": [
+      "import org.jdom2.input.sax.XMLReaderJDOMFactory;"
+    ],
+    "Matcher": [
+      "import java.util.regex.Matcher;",
+      "import org.hamcrest.Matcher;"
+    ],
+    "ValueSource": [
+      "import org.junit.jupiter.params.provider.ValueSource;"
+    ],
+    "AttributeType": [
+      "import org.jdom2.AttributeType;"
+    ],
+    "ComparableComparator": [
+      "import org.apache.commons.collections4.comparators.ComparableComparator;"
+    ],
+    "DEFAULT_OTHER_ROWS": [
+      "import static net.datafaker.transformations.sql.SqlDialect.AuxiliaryConstants.DEFAULT_OTHER_ROWS;"
+    ],
+    "HashEntry": [
+      "import org.apache.commons.collections4.map.AbstractHashedMap.HashEntry;"
+    ],
+    "CR": [
+      "import static org.apache.commons.csv.Constants.CR;"
+    ],
+    "AbstractCollection": [
+      "import java.util.AbstractCollection;"
+    ],
+    "BasicCredentials": [
+      "import io.dropwizard.auth.basic.BasicCredentials;"
+    ],
+    "Stack": [
+      "import java.util.Stack;"
+    ],
+    "CollectionSize": [
+      "import com.google.common.collect.testing.features.CollectionSize;"
+    ],
+    "MockitoExtension": [
+      "import org.mockito.junit.jupiter.MockitoExtension;"
+    ],
+    "ClassWithBaseArrayField": [
+      "import com.google.gson.common.TestTypes.ClassWithBaseArrayField;"
+    ],
+    "COMMENT": [
+      "import static org.apache.commons.csv.Constants.COMMENT;",
+      "import static org.apache.commons.csv.Token.Type.COMMENT;"
+    ],
+    "ISBNValidator": [
+      "import org.apache.commons.validator.routines.ISBNValidator;"
+    ],
+    "KubernetesHelper": [
+      "import com.apple.spark.core.KubernetesHelper;"
+    ],
+    "RowSetProvider": [
+      "import javax.sql.rowset.RowSetProvider;"
+    ],
+    "BaseProviders": [
+      "import net.datafaker.providers.base.BaseProviders;"
+    ],
+    "assertSame": [
+      "import static org.junit.jupiter.api.Assertions.assertSame;",
+      "import static org.junit.Assert.assertSame;"
+    ],
+    "AmazonS3ClientBuilder": [
+      "import com.amazonaws.services.s3.AmazonS3ClientBuilder;"
+    ],
+    "SparkApplicationResourceList": [
+      "import com.apple.spark.operator.SparkApplicationResourceList;"
+    ],
+    "ProgressListener": [
+      "import com.amazonaws.event.ProgressListener;"
+    ],
+    "client": [
+      "import io.fabric8.kubernetes.client.*;"
+    ],
+    "MultiKey": [
+      "import org.apache.commons.collections4.keyvalue.MultiKey;"
+    ],
+    "StringJoiner": [
+      "import java.util.StringJoiner;"
+    ],
+    "MyParameterizedTypeInstanceCreator": [
+      "import com.google.gson.ParameterizedTypeFixtures.MyParameterizedTypeInstanceCreator;"
+    ],
+    "INVALID": [
+      "import static org.apache.commons.csv.Token.Type.INVALID;"
+    ],
+    "ProviderRegistration": [
+      "import net.datafaker.providers.base.ProviderRegistration;"
+    ],
+    "BaseSerializer": [
+      "import com.google.gson.common.TestTypes.BaseSerializer;"
+    ],
+    "ConfigUtil": [
+      "import com.apple.spark.util.ConfigUtil;"
+    ],
+    "assertThrowsExactly": [
+      "import static org.junit.jupiter.api.Assertions.assertThrowsExactly;"
+    ],
+    "PredicatedSortedBag": [
+      "import org.apache.commons.collections4.bag.PredicatedSortedBag;"
+    ],
+    "SequencesComparator": [
+      "import org.apache.commons.collections4.sequence.SequencesComparator;"
+    ],
+    "SvSEIdNumber": [
+      "import net.datafaker.idnumbers.SvSEIdNumber;"
+    ],
+    "Secret": [
+      "import io.fabric8.kubernetes.api.model.Secret;"
+    ],
+    "AmbiguousOptionException": [
+      "import org.apache.commons.cli.AmbiguousOptionException;"
+    ],
+    "CommandLine": [
+      "import org.apache.commons.cli.CommandLine;"
+    ],
+    "JsonReader": [
+      "import com.google.gson.stream.JsonReader;"
+    ],
+    "FieldNamingPolicy": [
+      "import com.google.gson.FieldNamingPolicy;"
+    ],
+    "ResettableListIterator": [
+      "import org.apache.commons.collections4.ResettableListIterator;"
+    ],
+    "S3_PUT_TIMEOUT_MILLISECS": [
+      "import static com.apple.spark.rest.AwsConstants.S3_PUT_TIMEOUT_MILLISECS;"
+    ],
+    "OptionGroup": [
+      "import org.apache.commons.cli.OptionGroup;"
+    ],
+    "NONEMPTY_DOCUMENT": [
+      "import static com.google.gson.stream.JsonScope.NONEMPTY_DOCUMENT;"
+    ],
+    "Assumptions": [
+      "import org.junit.jupiter.api.Assumptions;"
+    ],
+    "TransformingComparator": [
+      "import org.apache.commons.collections4.comparators.TransformingComparator;"
+    ],
+    "assertNotSame": [
+      "import static org.junit.jupiter.api.Assertions.assertNotSame;",
+      "import static org.junit.Assert.assertNotSame;"
+    ],
+    "Benchmark": [
+      "import org.openjdk.jmh.annotations.Benchmark;"
+    ],
+    "ExceptionMapper": [
+      "import javax.ws.rs.ext.ExceptionMapper;"
+    ],
+    "ParsePosition": [
+      "import java.text.ParsePosition;"
+    ],
+    "JavaParser": [
+      "import com.github.javaparser.JavaParser;"
+    ],
+    "JDOMConstants": [
+      "import static org.jdom2.JDOMConstants.*;",
+      "import org.jdom2.JDOMConstants;",
+      "/*\r\n * To keep things simple, all DOM-based items are fully qualified in this code.\r\n * As such, there are no import org.w3c.dom.* statements...\r\n * This way there isless confusion about what a Document or Element is....\r\n */\r\nimport static org.jdom2.JDOMConstants.*;"
+    ],
+    "SortedBag": [
+      "import org.apache.commons.collections4.SortedBag;"
+    ],
+    "Attribute": [
+      "import org.jdom2.Attribute;"
+    ],
+    "CounterMetricContainer": [
+      "import com.apple.spark.util.CounterMetricContainer;"
+    ],
+    "CsvSource": [
+      "import org.junit.jupiter.params.provider.CsvSource;"
+    ],
+    "NullOutputStream": [
+      "import org.apache.commons.io.output.NullOutputStream;"
+    ],
+    "Vector": [
+      "import java.util.Vector;"
+    ],
+    "doReturn": [
+      "import static org.mockito.Mockito.doReturn;"
+    ],
+    "GsonBuildConfig": [
+      "import com.google.gson.internal.GsonBuildConfig;"
+    ],
+    "JsonProcessingException": [
+      "import com.fasterxml.jackson.core.JsonProcessingException;"
+    ],
+    "InputStream": [
+      "import java.io.InputStream;"
+    ],
+    "DefaultMapEntry": [
+      "import org.apache.commons.collections4.keyvalue.DefaultMapEntry;"
+    ],
+    "SAXOutputter": [
+      "import org.jdom2.output.SAXOutputter;"
+    ],
+    "DOUBLE_QUOTE_CHAR": [
+      "import static org.apache.commons.csv.Constants.DOUBLE_QUOTE_CHAR;"
+    ],
+    "UnmodifiableBag": [
+      "import org.apache.commons.collections4.bag.UnmodifiableBag;"
+    ],
+    "AbstractUntypedIteratorDecorator": [
+      "import org.apache.commons.collections4.iterators.AbstractUntypedIteratorDecorator;"
+    ],
+    "Format": [
+      "import org.jdom2.output.Format;",
+      "import net.datafaker.formats.Format;"
+    ],
+    "Connection": [
+      "import java.sql.Connection;"
+    ],
+    "ReflectionAccessFilterHelper": [
+      "import com.google.gson.internal.ReflectionAccessFilterHelper;"
+    ],
+    "CodecPolicy": [
+      "import org.apache.commons.codec.CodecPolicy;"
+    ],
+    "SAXEngine": [
+      "import org.jdom2.input.sax.SAXEngine;"
+    ],
+    "Test": [
+      "import org.junit.jupiter.api.*;",
+      "import org.junit.jupiter.api.Test;"
+    ],
+    "ResourceEventHandler": [
+      "import io.fabric8.kubernetes.client.informers.ResourceEventHandler;"
+    ],
+    "Bag": [
+      "import org.apache.commons.collections4.Bag;"
+    ],
+    "UnmodifiableMapEntry": [
+      "import org.apache.commons.collections4.keyvalue.UnmodifiableMapEntry;"
+    ],
+    "FutureTypeAdapter": [
+      "import com.google.gson.Gson.FutureTypeAdapter;"
+    ],
+    "BoundedCollection": [
+      "import org.apache.commons.collections4.BoundedCollection;"
+    ],
+    "byteStringAsGb": [
+      "import static org.apache.spark.network.util.JavaUtils.byteStringAsGb;"
+    ],
+    "dynamicTest": [
+      "import static org.junit.jupiter.api.DynamicTest.dynamicTest;"
+    ],
+    "FileWriter": [
+      "import java.io.FileWriter;"
+    ],
+    "DOMOutputProcessor": [
+      "import org.jdom2.output.support.DOMOutputProcessor;"
+    ],
+    "JDOMParseException": [
+      "import org.jdom2.input.JDOMParseException;"
+    ],
+    "assertTimeout": [
+      "import static org.junit.jupiter.api.Assertions.assertTimeout;"
+    ],
+    "LOG_API": [
+      "import static com.apple.spark.core.Constants.LOG_API;"
+    ],
+    "NumberParseException": [
+      "import com.google.i18n.phonenumbers.NumberParseException;"
+    ],
+    "CsvReader": [
+      "import com.generationjava.io.CsvReader;"
+    ],
+    "AttributesImpl": [
+      "import org.xml.sax.helpers.AttributesImpl;"
+    ],
+    "PredicatedList": [
+      "import org.apache.commons.collections4.list.PredicatedList;"
+    ],
+    "TreeBag": [
+      "import org.apache.commons.collections4.bag.TreeBag;"
+    ],
+    "BasicFileAttributes": [
+      "import java.nio.file.attribute.BasicFileAttributes;"
+    ],
+    "CharArrayReader": [
+      "import java.io.CharArrayReader;"
+    ],
+    "AuthenticationException": [
+      "import io.dropwizard.auth.AuthenticationException;"
+    ],
+    "TypeVariable": [
+      "import java.lang.reflect.TypeVariable;"
+    ],
+    "BaseFaker": [
+      "import net.datafaker.providers.base.BaseFaker;"
+    ],
+    "AbstractMapDecorator": [
+      "import org.apache.commons.collections4.map.AbstractMapDecorator;"
+    ],
+    "POST": [
+      "import javax.ws.rs.POST;"
+    ],
+    "SynchronizedCollection": [
+      "import org.apache.commons.collections4.collection.SynchronizedCollection;"
+    ],
+    "HashMultiSet": [
+      "import org.apache.commons.collections4.multiset.HashMultiSet;"
+    ],
+    "Types": [
+      "import java.sql.Types;"
+    ],
+    "TransformerClosure": [
+      "import org.apache.commons.collections4.functors.TransformerClosure;"
+    ],
+    "UnsupportedAxisException": [
+      "import org.jaxen.UnsupportedAxisException;"
+    ],
+    "ProgressEvent": [
+      "import com.amazonaws.event.ProgressEvent;"
+    ],
+    "Info": [
+      "import io.swagger.v3.oas.annotations.info.Info;"
+    ],
+    "getType": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getType;"
+    ],
+    "ZippingIterator": [
+      "import org.apache.commons.collections4.iterators.ZippingIterator;"
+    ],
+    "HeaderParam": [
+      "import javax.ws.rs.HeaderParam;"
+    ],
+    "ApplicationState": [
+      "import com.apple.spark.operator.ApplicationState;"
+    ],
+    "MULTISET": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.MULTISET;"
+    ],
+    "PredicatedCollection": [
+      "import org.apache.commons.collections4.collection.PredicatedCollection;"
+    ],
+    "LocalDateTime": [
+      "import java.time.LocalDateTime;"
+    ],
+    "ToDoubleBiFunction": [
+      "import java.util.function.ToDoubleBiFunction;"
+    ],
+    "times": [
+      "import static org.mockito.Mockito.times;"
+    ],
+    "UnmodifiableMapIterator": [
+      "import org.apache.commons.collections4.iterators.UnmodifiableMapIterator;"
+    ],
+    "LinkedTreeMap": [
+      "import com.google.gson.internal.LinkedTreeMap;"
+    ],
+    "XMLEventReader": [
+      "import javax.xml.stream.XMLEventReader;"
+    ],
+    "CircularFifoQueue": [
+      "import org.apache.commons.collections4.queue.CircularFifoQueue;"
+    ],
+    "StringUtils": [
+      "import org.apache.commons.lang3.StringUtils;",
+      "import org.apache.commons.codec.binary.StringUtils;"
+    ],
+    "LanguageSet": [
+      "import org.apache.commons.codec.language.bm.Languages.LanguageSet;"
+    ],
+    "CompositeSet": [
+      "import org.apache.commons.collections4.set.CompositeSet;"
+    ],
+    "SELECT_1_FROM_DUAL": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.SELECT_1_FROM_DUAL;"
+    ],
+    "isNullOrEmpty": [
+      "import static org.assertj.core.util.Strings.isNullOrEmpty;"
+    ],
+    "BagOfPrimitives": [
+      "import com.google.gson.common.TestTypes.BagOfPrimitives;"
+    ],
+    "getSparkConf": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getSparkConf;"
+    ],
+    "Trie": [
+      "import org.apache.commons.collections4.Trie;"
+    ],
+    "IDENTITY": [
+      "import static com.google.gson.FieldNamingPolicy.IDENTITY;"
+    ],
+    "TiedMapEntry": [
+      "import org.apache.commons.collections4.keyvalue.TiedMapEntry;"
+    ],
+    "ReferenceMap": [
+      "import org.apache.commons.collections4.map.ReferenceMap;"
+    ],
+    "ToIntBiFunction": [
+      "import java.util.function.ToIntBiFunction;"
+    ],
+    "isCNPJValid": [
+      "import static net.datafaker.idnumbers.pt.br.IdNumberGeneratorPtBrUtil.isCNPJValid;"
+    ],
+    "ByteBuffer": [
+      "import java.nio.ByteBuffer;"
+    ],
+    "EmptyStackException": [
+      "import java.util.EmptyStackException;"
+    ],
+    "DEFAULT_LOCALE": [
+      "import static net.datafaker.service.FakeValuesService.DEFAULT_LOCALE;"
+    ],
+    "FixedSizeMap": [
+      "import org.apache.commons.collections4.map.FixedSizeMap;"
+    ],
+    "FieldNamingTest": [
+      "import com.google.gson.functional.FieldNamingTest;"
+    ],
+    "GrowthList": [
+      "import org.apache.commons.collections4.list.GrowthList;"
+    ],
+    "Collection": [
+      "import java.util.Collection;"
+    ],
+    "TransformerFactory": [
+      "import javax.xml.transform.TransformerFactory;"
+    ],
+    "PredicatedBag": [
+      "import org.apache.commons.collections4.bag.PredicatedBag;"
+    ],
+    "EasyMock": [
+      "import org.easymock.EasyMock;"
+    ],
+    "BrokenInputStream": [
+      "import org.apache.commons.io.input.BrokenInputStream;"
+    ],
+    "MalformedJsonException": [
+      "import com.google.gson.stream.MalformedJsonException;"
+    ],
+    "Inet6Address": [
+      "import java.net.Inet6Address;"
+    ],
+    "Path": [
+      "import java.nio.file.Path;",
+      "import javax.ws.rs.Path;"
+    ],
+    "EmptyOrderedMapIterator": [
+      "import org.apache.commons.collections4.iterators.EmptyOrderedMapIterator;"
+    ],
+    "BEGIN_OBJECT": [
+      "import static com.google.gson.stream.JsonToken.BEGIN_OBJECT;"
+    ],
+    "ObjectArrayListIterator": [
+      "import org.apache.commons.collections4.iterators.ObjectArrayListIterator;"
+    ],
+    "SoftReference": [
+      "import java.lang.ref.SoftReference;"
+    ],
+    "NUM_EXECUTORS_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.NUM_EXECUTORS_DEFAULT;"
+    ],
+    "Phoneme": [
+      "import org.apache.commons.codec.language.bm.Rule.Phoneme;"
+    ],
+    "BEGIN_ARRAY": [
+      "import static com.google.gson.stream.JsonToken.BEGIN_ARRAY;"
+    ],
+    "UserNameBasicAuthenticator": [
+      "import com.apple.spark.security.UserNameBasicAuthenticator;"
+    ],
+    "ClassWithBaseField": [
+      "import com.google.gson.common.TestTypes.ClassWithBaseField;"
+    ],
+    "getExecutorSpec": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getExecutorSpec;"
+    ],
+    "Description": [
+      "import org.hamcrest.Description;"
+    ],
+    "Objects": [
+      "import java.util.Objects;"
+    ],
+    "RUNNING_STATE": [
+      "import static com.apple.spark.core.SparkConstants.RUNNING_STATE;"
+    ],
+    "HttpRequest": [
+      "import java.net.http.HttpRequest;"
+    ],
+    "Base64": [
+      "import java.util.Base64;",
+      "import org.apache.commons.codec.binary.Base64;"
+    ],
+    "User": [
+      "import com.apple.spark.security.User;"
+    ],
+    "LoopingIterator": [
+      "import org.apache.commons.collections4.iterators.LoopingIterator;"
+    ],
+    "ThrowableExceptionMapper": [
+      "import com.apple.spark.core.ThrowableExceptionMapper;"
+    ],
+    "EXECUTOR_CPU_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_CPU_BUFFER_RATIO;"
+    ],
+    "TestSuite": [
+      "import junit.framework.TestSuite;"
+    ],
+    "BACKSLASH": [
+      "import static org.apache.commons.csv.Constants.BACKSLASH;"
+    ],
+    "DecimalFormatSymbols": [
+      "import java.text.DecimalFormatSymbols;"
+    ],
+    "SAX_PROPERTY_LEXICAL_HANDLER_ALT": [
+      "import static org.jdom2.JDOMConstants.SAX_PROPERTY_LEXICAL_HANDLER_ALT;"
+    ],
+    "PrototypeFactory": [
+      "import org.apache.commons.collections4.functors.PrototypeFactory;"
+    ],
+    "JaxenConstants": [
+      "import org.jaxen.JaxenConstants;"
+    ],
+    "Writer": [
+      "import java.io.Writer;"
+    ],
+    "IllegalDataException": [
+      "import org.jdom2.IllegalDataException;"
+    ],
+    "reflect": [
+      "import java.lang.reflect.*;"
+    ],
+    "Inet4Address": [
+      "import java.net.Inet4Address;"
+    ],
+    "PatriciaTrie": [
+      "import org.apache.commons.collections4.trie.PatriciaTrie;"
+    ],
+    "Threads": [
+      "import org.openjdk.jmh.annotations.Threads;"
+    ],
+    "SubmitApplicationRequest": [
+      "import com.apple.spark.api.SubmitApplicationRequest;"
+    ],
+    "AtomicInteger": [
+      "import java.util.concurrent.atomic.AtomicInteger;"
+    ],
+    "Dependencies": [
+      "import com.apple.spark.operator.Dependencies;"
+    ],
+    "NodeSelectorRequirement": [
+      "import com.apple.spark.operator.NodeSelectorRequirement;"
+    ],
+    "SingletonIterator": [
+      "import org.apache.commons.collections4.iterators.SingletonIterator;"
+    ],
+    "FilterResult": [
+      "import com.google.gson.ReflectionAccessFilter.FilterResult;"
+    ],
+    "Hex": [
+      "import org.apache.commons.codec.binary.Hex;"
+    ],
+    "ApplicationGetLogRest": [
+      "import com.apple.spark.rest.ApplicationGetLogRest;"
+    ],
+    "Parameterized": [
+      "import org.junit.runners.Parameterized;"
+    ],
+    "jdom2": [
+      "import org.jdom2.*;"
+    ],
+    "DefaultKeyValue": [
+      "import org.apache.commons.collections4.keyvalue.DefaultKeyValue;"
+    ],
+    "Array": [
+      "import java.lang.reflect.Array;"
+    ],
+    "AbstractIteratorDecorator": [
+      "import org.apache.commons.collections4.iterators.AbstractIteratorDecorator;"
+    ],
+    "IllegalTargetException": [
+      "import org.jdom2.IllegalTargetException;"
+    ],
+    "Claim": [
+      "import com.auth0.jwt.interfaces.Claim;"
+    ],
+    "Warmup": [
+      "import org.openjdk.jmh.annotations.Warmup;"
+    ],
+    "AbstractSortedMapTest": [
+      "import org.apache.commons.collections4.map.AbstractSortedMapTest;"
+    ],
+    "LRUMap": [
+      "import org.apache.commons.collections4.map.LRUMap;"
+    ],
+    "AbstractMap": [
+      "import java.util.AbstractMap;"
+    ],
+    "SAXBuilder": [
+      "import org.jdom2.input.SAXBuilder;"
+    ],
+    "Closeable": [
+      "import java.io.Closeable;"
+    ],
+    "YUNIKORN_SCHEDULER": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_SCHEDULER;"
+    ],
+    "ExceptionClosure": [
+      "import org.apache.commons.collections4.functors.ExceptionClosure;"
+    ],
+    "ExclusionStrategy": [
+      "import com.google.gson.ExclusionStrategy;"
+    ],
+    "StringValueTransformer": [
+      "import org.apache.commons.collections4.functors.StringValueTransformer;"
+    ],
+    "EnumSource": [
+      "import org.junit.jupiter.params.provider.EnumSource;"
+    ],
+    "Iterator": [
+      "import java.util.Iterator;"
+    ],
+    "END_OF_STREAM": [
+      "import static org.apache.commons.csv.Constants.END_OF_STREAM;"
+    ],
+    "AbstractCollectionTest": [
+      "import org.apache.commons.collections4.collection.AbstractCollectionTest;"
+    ],
+    "InvalidObjectException": [
+      "import java.io.InvalidObjectException;"
+    ],
+    "IncrementalHash32x86": [
+      "import org.apache.commons.codec.digest.MurmurHash3.IncrementalHash32x86;"
+    ],
+    "IOUtils": [
+      "import org.apache.commons.io.IOUtils;",
+      "import org.h2.util.IOUtils;"
+    ],
+    "CloudStorageRest": [
+      "import com.apple.spark.rest.CloudStorageRest;"
+    ],
+    "NotPredicate": [
+      "import org.apache.commons.collections4.functors.NotPredicate;"
+    ],
+    "PeselNumber": [
+      "import net.datafaker.idnumbers.PeselNumber;"
+    ],
+    "assertArrayEquals": [
+      "import static org.junit.jupiter.api.Assertions.assertArrayEquals;",
+      "import static org.junit.Assert.assertArrayEquals;"
+    ],
+    "SimpleFileVisitor": [
+      "import java.nio.file.SimpleFileVisitor;"
+    ],
+    "PeekingIterator": [
+      "import org.apache.commons.collections4.iterators.PeekingIterator;"
+    ],
+    "Measurement": [
+      "import org.openjdk.jmh.annotations.Measurement;"
+    ],
+    "StartElement": [
+      "import javax.xml.stream.events.StartElement;"
+    ],
+    "SparkUIConfiguration": [
+      "import com.apple.spark.operator.SparkUIConfiguration;"
+    ],
+    "SingletonListIterator": [
+      "import org.apache.commons.collections4.iterators.SingletonListIterator;"
+    ],
+    "JsonParser": [
+      "import com.google.gson.JsonParser;"
+    ],
+    "UnmodifiableNavigableSet": [
+      "import org.apache.commons.collections4.set.UnmodifiableNavigableSet;"
+    ],
+    "ApplicationSubmissionRest": [
+      "import com.apple.spark.rest.ApplicationSubmissionRest;"
+    ],
+    "BidiMap": [
+      "import org.apache.commons.collections4.BidiMap;"
+    ],
+    "Function": [
+      "import java.util.function.Function;"
+    ],
+    "Feature": [
+      "import com.google.common.collect.testing.features.Feature;"
+    ],
+    "SAXTarget": [
+      "import org.jdom2.output.support.SAXTarget;"
+    ],
+    "SchemaFactory": [
+      "import javax.xml.validation.SchemaFactory;"
+    ],
+    "IDN": [
+      "import java.net.IDN;"
+    ],
+    "AccessibleObject": [
+      "import java.lang.reflect.AccessibleObject;"
+    ],
+    "ThrowingRunnable": [
+      "import org.junit.function.ThrowingRunnable;"
+    ],
+    "ListIteratorWrapper": [
+      "import org.apache.commons.collections4.iterators.ListIteratorWrapper;"
+    ],
+    "Builder": [
+      "import org.apache.commons.csv.CSVFormat.Builder;"
+    ],
+    "FakeResolver": [
+      "import net.datafaker.annotations.FakeResolver;"
+    ],
+    "MissingArgumentException": [
+      "import org.apache.commons.cli.MissingArgumentException;"
+    ],
+    "BufferedWriter": [
+      "import java.io.BufferedWriter;"
+    ],
+    "CustomResource": [
+      "import io.fabric8.kubernetes.client.CustomResource;"
+    ],
+    "Pattern": [
+      "import java.util.regex.Pattern;"
+    ],
+    "TreeList": [
+      "import org.apache.commons.collections4.list.TreeList;"
+    ],
+    "StreamSource": [
+      "import javax.xml.transform.stream.StreamSource;"
+    ],
+    "EnFile": [
+      "import net.datafaker.service.files.EnFile;"
+    ],
+    "FileReader": [
+      "import java.io.FileReader;"
+    ],
+    "NullIsExceptionPredicate": [
+      "import org.apache.commons.collections4.functors.NullIsExceptionPredicate;"
+    ],
+    "OutputStreamWriter": [
+      "import java.io.OutputStreamWriter;"
+    ],
+    "AbstractSAXOutputProcessor": [
+      "import org.jdom2.output.support.AbstractSAXOutputProcessor;"
+    ],
+    "SerializedName": [
+      "import com.google.gson.annotations.SerializedName;"
+    ],
+    "CompletableFuture": [
+      "import java.util.concurrent.CompletableFuture;"
+    ],
+    "NodeSelectorTerm": [
+      "import com.apple.spark.operator.NodeSelectorTerm;"
+    ],
+    "MockitoAnnotations": [
+      "import org.mockito.MockitoAnnotations;"
+    ],
+    "HEALTH_CHECK_API": [
+      "import static com.apple.spark.core.Constants.HEALTH_CHECK_API;"
+    ],
+    "AbstractListTest": [
+      "import org.apache.commons.collections4.list.AbstractListTest;"
+    ],
+    "JsonPrimitive": [
+      "import com.google.gson.JsonPrimitive;"
+    ],
+    "WildcardType": [
+      "import java.lang.reflect.WildcardType;"
+    ],
+    "SERVICE_ABBR": [
+      "import static com.apple.spark.core.Constants.SERVICE_ABBR;"
+    ],
+    "BeforeMethod": [
+      "import org.testng.annotations.BeforeMethod;"
+    ],
+    "nullPredicate": [
+      "import static org.apache.commons.collections4.functors.NullPredicate.nullPredicate;"
+    ],
+    "Condition": [
+      "import org.assertj.core.api.Condition;"
+    ],
+    "EntrySetMapIterator": [
+      "import org.apache.commons.collections4.iterators.EntrySetMapIterator;"
+    ],
+    "transform": [
+      "import javax.xml.transform.*;"
+    ],
+    "ObjectTypeAdapter": [
+      "import com.google.gson.internal.bind.ObjectTypeAdapter;"
+    ],
+    "Collectors": [
+      "import java.util.stream.Collectors;"
+    ],
+    "TransformedSortedMap": [
+      "import org.apache.commons.collections4.map.TransformedSortedMap;"
+    ],
+    "BulkTest": [
+      "import org.apache.commons.collections4.BulkTest;"
+    ],
+    "HashMap": [
+      "import java.util.HashMap;"
+    ],
+    "XMLFilter": [
+      "import org.xml.sax.XMLFilter;"
+    ],
+    "SecretKeySpec": [
+      "import javax.crypto.spec.SecretKeySpec;"
+    ],
+    "Deque": [
+      "import java.util.Deque;"
+    ],
+    "AtomicReference": [
+      "import java.util.concurrent.atomic.AtomicReference;"
+    ],
+    "Key": [
+      "import java.security.Key;"
+    ],
+    "OrPredicate": [
+      "import org.apache.commons.collections4.functors.OrPredicate;"
+    ],
+    "BaseNCodec": [
+      "import org.apache.commons.codec.binary.BaseNCodec;"
+    ],
+    "VideoGameProviders": [
+      "import net.datafaker.providers.videogame.VideoGameProviders;"
+    ],
+    "BoundedMap": [
+      "import org.apache.commons.collections4.BoundedMap;"
+    ],
+    "OptionBuilder": [
+      "import org.apache.commons.cli.OptionBuilder;"
+    ],
+    "AbstractXMLOutputProcessor": [
+      "import org.jdom2.output.support.AbstractXMLOutputProcessor;"
+    ],
+    "JDOMFactory": [
+      "import org.jdom2.JDOMFactory;"
+    ],
+    "CSVParserBuilder": [
+      "import com.opencsv.CSVParserBuilder;"
+    ],
+    "PredicatedMultiSet": [
+      "import org.apache.commons.collections4.multiset.PredicatedMultiSet;"
+    ],
+    "FactoryTransformer": [
+      "import org.apache.commons.collections4.functors.FactoryTransformer;"
+    ],
+    "DateUtils": [
+      "import org.apache.commons.lang3.time.DateUtils;"
+    ],
+    "ToNumberPolicy": [
+      "import com.google.gson.ToNumberPolicy;"
+    ],
+    "AuthFilter": [
+      "import io.dropwizard.auth.AuthFilter;"
+    ],
+    "BagOfPrimitiveWrappers": [
+      "import com.google.gson.common.TestTypes.BagOfPrimitiveWrappers;"
+    ],
+    "Java17ReflectionHelperTest": [
+      "import com.google.gson.internal.reflect.Java17ReflectionHelperTest;"
+    ],
+    "Documented": [
+      "import java.lang.annotation.Documented;"
+    ],
+    "MapTestSuiteBuilder": [
+      "import com.google.common.collect.testing.MapTestSuiteBuilder;"
+    ],
+    "Source": [
+      "import javax.xml.transform.Source;"
+    ],
+    "Pair": [
+      "import org.apache.commons.math3.util.Pair;",
+      "import org.apache.commons.lang3.tuple.Pair;"
+    ],
+    "assumeNotNull": [
+      "import static org.junit.Assume.assumeNotNull;"
+    ],
+    "NumberTypeAdapter": [
+      "import com.google.gson.internal.bind.NumberTypeAdapter;"
+    ],
+    "QueueTokenVerifier": [
+      "import com.apple.spark.core.QueueTokenVerifier;"
+    ],
+    "LoggingMeterRegistry": [
+      "import io.micrometer.core.instrument.logging.LoggingMeterRegistry;"
+    ],
+    "SubTypes": [
+      "import static org.reflections.scanners.Scanners.SubTypes;"
+    ],
+    "ConstantFactory": [
+      "import org.apache.commons.collections4.functors.ConstantFactory;"
+    ],
+    "DNS_CONFIG_OPTION_NDOTS_NAME": [
+      "import static com.apple.spark.core.Constants.DNS_CONFIG_OPTION_NDOTS_NAME;"
+    ],
+    "UserPrincipal": [
+      "import java.nio.file.attribute.UserPrincipal;"
+    ],
+    "Volume": [
+      "import com.apple.spark.operator.Volume;"
+    ],
+    "DigestUtils": [
+      "import org.apache.commons.codec.digest.DigestUtils;"
+    ],
+    "AbstractSet": [
+      "import java.util.AbstractSet;"
+    ],
+    "createMock": [
+      "import static org.easymock.EasyMock.createMock;"
+    ],
+    "DecimalFormat": [
+      "import java.text.DecimalFormat;"
+    ],
+    "DefaultValue": [
+      "import javax.ws.rs.DefaultValue;"
+    ],
+    "NS_PREFIX_DEFAULT": [
+      "import static org.jdom2.JDOMConstants.NS_PREFIX_DEFAULT;"
+    ],
+    "Timer": [
+      "import io.micrometer.core.instrument.Timer;",
+      "import java.util.Timer;"
+    ],
+    "Result": [
+      "import javax.xml.transform.Result;"
+    ],
+    "SubSerializer": [
+      "import com.google.gson.common.TestTypes.SubSerializer;"
+    ],
+    "FieldNamingStrategy": [
+      "import com.google.gson.FieldNamingStrategy;"
+    ],
+    "filter": [
+      "import org.jdom2.filter.*;"
+    ],
+    "Timed": [
+      "import com.codahale.metrics.annotation.Timed;"
+    ],
+    "ClassWithBaseCollectionField": [
+      "import com.google.gson.common.TestTypes.ClassWithBaseCollectionField;"
+    ],
+    "ExceptionUtils": [
+      "import com.apple.spark.util.ExceptionUtils;"
+    ],
+    "Reader": [
+      "import java.io.Reader;"
+    ],
+    "DualHashBidiMap": [
+      "import org.apache.commons.collections4.bidimap.DualHashBidiMap;"
+    ],
+    "ROW": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.ROW;"
+    ],
+    "Modifier": [
+      "import java.lang.reflect.Modifier;"
+    ],
+    "GenericDeclaration": [
+      "import java.lang.reflect.GenericDeclaration;"
+    ],
+    "Maps": [
+      "import com.google.common.collect.Maps;"
+    ],
+    "FixedSizeSortedMap": [
+      "import org.apache.commons.collections4.map.FixedSizeSortedMap;"
+    ],
+    "Context": [
+      "import org.apache.commons.codec.binary.BaseNCodec.Context;"
+    ],
+    "SqlTypesSupport": [
+      "import com.google.gson.internal.sql.SqlTypesSupport;"
+    ],
+    "UploadS3Response": [
+      "import com.apple.spark.api.UploadS3Response;"
+    ],
+    "GregorianCalendar": [
+      "import java.util.GregorianCalendar;"
+    ],
+    "Entry": [
+      "import java.util.Map.Entry;"
+    ],
+    "Duration": [
+      "import java.time.Duration;"
+    ],
+    "LazilyParsedNumber": [
+      "import com.google.gson.internal.LazilyParsedNumber;"
+    ],
+    "assertThat": [
+      "import static org.hamcrest.MatcherAssert.assertThat;",
+      "import static org.assertj.core.api.AssertionsForClassTypes.assertThat;",
+      "import static org.assertj.core.api.Assertions.assertThat;"
+    ],
+    "PathParam": [
+      "import javax.ws.rs.PathParam;"
+    ],
+    "NONEMPTY_OBJECT": [
+      "import static com.google.gson.stream.JsonScope.NONEMPTY_OBJECT;"
+    ],
+    "RateLimiter": [
+      "import com.google.common.util.concurrent.RateLimiter;"
+    ],
+    "RepeatedTest": [
+      "import org.junit.jupiter.api.RepeatedTest;"
+    ],
+    "AbstractStringEncoderTest": [
+      "import org.apache.commons.codec.AbstractStringEncoderTest;"
+    ],
+    "GetSubmissionStatusResponse": [
+      "import com.apple.spark.api.GetSubmissionStatusResponse;"
+    ],
+    "EncoderException": [
+      "import org.apache.commons.codec.EncoderException;"
+    ],
+    "MapTypeAdapterFactory": [
+      "import com.google.gson.internal.bind.MapTypeAdapterFactory;"
+    ],
+    "CollectionUtils": [
+      "import org.apache.commons.collections4.CollectionUtils;"
+    ],
+    "JavaVersion": [
+      "import com.google.gson.internal.JavaVersion;",
+      "import org.apache.commons.lang3.JavaVersion;"
+    ],
+    "EMPTY_DOCUMENT": [
+      "import static com.google.gson.stream.JsonScope.EMPTY_DOCUMENT;"
+    ],
+    "Attributes": [
+      "import org.xml.sax.Attributes;"
+    ],
+    "Checksum": [
+      "import java.util.zip.Checksum;"
+    ],
+    "HashedMap": [
+      "import org.apache.commons.collections4.map.HashedMap;"
+    ],
+    "TimeUnit": [
+      "import java.util.concurrent.TimeUnit;"
+    ],
+    "allOf": [
+      "import static org.assertj.core.api.Assertions.allOf;",
+      "import static org.hamcrest.core.AllOf.allOf;"
+    ],
+    "SAXPathException": [
+      "import org.jaxen.saxpath.SAXPathException;"
+    ],
+    "Collections": [
+      "import java.util.Collections;"
+    ],
+    "IterableSortedMap": [
+      "import org.apache.commons.collections4.IterableSortedMap;"
+    ],
+    "SharedMetricRegistries": [
+      "import com.codahale.metrics.SharedMetricRegistries;"
+    ],
+    "truePredicate": [
+      "import static org.apache.commons.collections4.functors.TruePredicate.truePredicate;"
+    ],
+    "Disabled": [
+      "import org.junit.jupiter.api.Disabled;"
+    ],
+    "CsvTransformer": [
+      "import net.datafaker.transformations.CsvTransformer;"
+    ],
+    "Factory": [
+      "import org.apache.commons.collections4.Factory;"
+    ],
+    "ConcurrentLinkedQueue": [
+      "import java.util.concurrent.ConcurrentLinkedQueue;"
+    ],
+    "ManagementFactory": [
+      "import java.lang.management.ManagementFactory;"
+    ],
+    "AbstractSortedMapDecorator": [
+      "import org.apache.commons.collections4.map.AbstractSortedMapDecorator;"
+    ],
+    "CORE_LIMIT_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.CORE_LIMIT_RATIO;"
+    ],
+    "ArrayBlockingQueue": [
+      "import java.util.concurrent.ArrayBlockingQueue;"
+    ],
+    "RandomAccessFileMode": [
+      "import org.apache.commons.io.RandomAccessFileMode;"
+    ],
+    "OpenApiResource": [
+      "import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;"
+    ],
+    "SportProviders": [
+      "import net.datafaker.providers.sport.SportProviders;"
+    ],
+    "TransformedSortedSet": [
+      "import org.apache.commons.collections4.set.TransformedSortedSet;"
+    ],
+    "IdNumbers": [
+      "import net.datafaker.idnumbers.IdNumbers;"
+    ],
+    "AbstractOrderedMapIteratorTest": [
+      "import org.apache.commons.collections4.iterators.AbstractOrderedMapIteratorTest;"
+    ],
+    "URL": [
+      "import java.net.URL;"
+    ],
+    "UPPER_CASE_WITH_UNDERSCORES": [
+      "import static com.google.gson.FieldNamingPolicy.UPPER_CASE_WITH_UNDERSCORES;"
+    ],
+    "HashSet": [
+      "import java.util.HashSet;"
+    ],
+    "URI": [
+      "import java.net.URI;"
+    ],
+    "BasicCredentialAuthFilter": [
+      "import io.dropwizard.auth.basic.BasicCredentialAuthFilter;"
+    ],
+    "Address": [
+      "import net.datafaker.providers.base.Address;"
+    ],
+    "EmailValidator": [
+      "import org.apache.commons.validator.routines.EmailValidator;"
+    ],
+    "SparkCluster": [
+      "import static com.apple.spark.AppConfig.SparkCluster;",
+      "import com.apple.spark.AppConfig.SparkCluster;"
+    ],
+    "DEFAULT_SPECIALIZE_FLOAT_VALUES": [
+      "import static com.google.gson.Gson.DEFAULT_SPECIALIZE_FLOAT_VALUES;"
+    ],
+    "NricNumber": [
+      "import net.datafaker.idnumbers.NricNumber;"
+    ],
+    "EnIdNumber": [
+      "import net.datafaker.idnumbers.EnIdNumber;"
+    ],
+    "assertNull": [
+      "import static org.junit.Assert.assertNull;",
+      "import static org.junit.jupiter.api.Assertions.assertNull;"
+    ],
+    "MethodSource": [
+      "org.junit.jupiter.params.provider.MethodSource"
+    ],
+    "YAMLGenerator": [
+      "import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;"
+    ],
+    "BeforeEach": [
+      "import org.junit.jupiter.api.BeforeEach;"
+    ],
+    "AnyPredicate": [
+      "import org.apache.commons.collections4.functors.AnyPredicate;"
+    ],
+    "SetMutator": [
+      "import org.apache.commons.collections4.set.CompositeSet.SetMutator;"
+    ],
+    "AmazonS3": [
+      "import com.amazonaws.services.s3.AmazonS3;"
+    ],
+    "BufferedReader": [
+      "import java.io.BufferedReader;"
+    ],
+    "TransferManagerBuilder": [
+      "import com.amazonaws.services.s3.transfer.TransferManagerBuilder;"
+    ],
+    "ISO_INSTANT": [
+      "import static java.time.format.DateTimeFormatter.ISO_INSTANT;"
+    ],
+    "INTO": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.INTO;"
+    ],
+    "ListFeature": [
+      "import com.google.common.collect.testing.features.ListFeature;"
+    ],
+    "Node": [
+      "import org.w3c.dom.Node;"
+    ],
+    "ArrayCopy": [
+      "import org.jdom2.internal.ArrayCopy;"
+    ],
+    "ChainedClosure": [
+      "import org.apache.commons.collections4.functors.ChainedClosure;"
+    ],
+    "AtomicIntegerArray": [
+      "import java.util.concurrent.atomic.AtomicIntegerArray;"
+    ],
+    "Element": [
+      "import org.w3c.dom.Element;",
+      "import org.jdom2.Element;"
+    ],
+    "EXECUTOR_MEM_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_MEM_DEFAULT;"
+    ],
+    "DRIVER_MEM_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_MEM_BUFFER_RATIO;"
+    ],
+    "assertNotNull": [
+      "import static org.junit.jupiter.api.Assertions.assertNotNull;",
+      "import static org.junit.Assert.assertNotNull;"
+    ],
+    "BiFunction": [
+      "import java.util.function.BiFunction;"
+    ],
+    "ReferenceEntry": [
+      "import org.apache.commons.collections4.map.AbstractReferenceMap.ReferenceEntry;"
+    ],
+    "CompositeField": [
+      "import net.datafaker.transformations.CompositeField;"
+    ],
+    "FakeSequence": [
+      "import net.datafaker.sequence.FakeSequence;"
+    ],
+    "Nested": [
+      "import com.google.gson.common.TestTypes.Nested;",
+      "import org.junit.jupiter.api.Nested;"
+    ],
+    "WeakHashMap": [
+      "import java.util.WeakHashMap;"
+    ],
+    "singletonList": [
+      "import static java.util.Collections.singletonList;"
+    ],
+    "CommandVisitor": [
+      "import org.apache.commons.collections4.sequence.CommandVisitor;"
+    ],
+    "IllegalCharsetNameException": [
+      "import java.nio.charset.IllegalCharsetNameException;"
+    ],
+    "NumberFormat": [
+      "import java.text.NumberFormat;"
+    ],
+    "NullSource": [
+      "import org.junit.jupiter.params.provider.NullSource;"
+    ],
+    "MultiValueMap": [
+      "import org.apache.commons.collections4.map.MultiValueMap;"
+    ],
+    "DocumentBuilder": [
+      "import javax.xml.parsers.DocumentBuilder;"
+    ],
+    "NS_PREFIX_XML": [
+      "import static org.jdom2.JDOMConstants.NS_PREFIX_XML;"
+    ],
+    "DataProvider": [
+      "import org.testng.annotations.DataProvider;"
+    ],
+    "UploadResult": [
+      "import com.amazonaws.services.s3.transfer.model.UploadResult;"
+    ],
+    "ChainedAuthFilter": [
+      "import io.dropwizard.auth.chained.ChainedAuthFilter;"
+    ],
+    "CRC32": [
+      "import java.util.zip.CRC32;"
+    ],
+    "WeakReference": [
+      "import java.lang.ref.WeakReference;"
+    ],
+    "SAXHandlerFactory": [
+      "import org.jdom2.input.sax.SAXHandlerFactory;"
+    ],
+    "EOF": [
+      "import static org.apache.commons.codec.binary.BaseNCodec.EOF;",
+      "import static org.apache.commons.csv.Token.Type.EOF;"
+    ],
+    "EMPTY_ARRAY": [
+      "import static com.google.gson.stream.JsonScope.EMPTY_ARRAY;"
+    ],
+    "PutObjectRequest": [
+      "import com.amazonaws.services.s3.model.PutObjectRequest;"
+    ],
+    "Attributes2": [
+      "import org.xml.sax.ext.Attributes2;"
+    ],
+    "IfClosure": [
+      "import org.apache.commons.collections4.functors.IfClosure;"
+    ],
+    "ToNumberStrategy": [
+      "import com.google.gson.ToNumberStrategy;"
+    ],
+    "ObjectInputStream": [
+      "import java.io.ObjectInputStream;"
+    ],
+    "VALUE": [
+      "import static org.apache.commons.collections4.bidimap.TreeBidiMap.DataElement.VALUE;"
+    ],
+    "STRING": [
+      "import static com.google.gson.stream.JsonToken.STRING;"
+    ],
+    "ReflectPermission": [
+      "import java.lang.reflect.ReflectPermission;"
+    ],
+    "JsonParseException": [
+      "import com.google.gson.JsonParseException;"
+    ],
+    "ResultSetMetaData": [
+      "import java.sql.ResultSetMetaData;"
+    ],
+    "OnePredicate": [
+      "import org.apache.commons.collections4.functors.OnePredicate;"
+    ],
+    "AbstractCollectionDecorator": [
+      "import org.apache.commons.collections4.collection.AbstractCollectionDecorator;"
+    ],
+    "PushbackIterator": [
+      "import org.apache.commons.collections4.iterators.PushbackIterator;"
+    ],
+    "SparkApplication": [
+      "import com.apple.spark.operator.SparkApplication;"
+    ],
+    "JsonIOException": [
+      "import com.google.gson.JsonIOException;"
+    ],
+    "CRLF": [
+      "import static org.apache.commons.csv.Constants.CRLF;"
+    ],
+    "isCPFValid": [
+      "import static net.datafaker.idnumbers.pt.br.IdNumberGeneratorPtBrUtil.isCPFValid;"
+    ],
+    "Spliterators": [
+      "import java.util.Spliterators;"
+    ],
+    "NullReader": [
+      "import org.apache.commons.io.input.NullReader;"
+    ],
+    "MetricRegistry": [
+      "import com.codahale.metrics.MetricRegistry;"
+    ],
+    "Generex": [
+      "import com.mifmif.common.regex.Generex;"
+    ],
+    "AbstractStAXEventProcessor": [
+      "import org.jdom2.output.support.AbstractStAXEventProcessor;"
+    ],
+    "SAXNotSupportedException": [
+      "import org.xml.sax.SAXNotSupportedException;"
+    ],
+    "Equator": [
+      "import org.apache.commons.collections4.Equator;"
+    ],
+    "XMLEvent": [
+      "import javax.xml.stream.events.XMLEvent;"
+    ],
+    "AuthDynamicFeature": [
+      "import io.dropwizard.auth.AuthDynamicFeature;"
+    ],
+    "LocalTime": [
+      "import java.time.LocalTime;"
+    ],
+    "CachedRowSet": [
+      "import javax.sql.rowset.CachedRowSet;"
+    ],
+    "Produces": [
+      "import javax.ws.rs.Produces;"
+    ],
+    "CloneTransformer": [
+      "import org.apache.commons.collections4.functors.CloneTransformer;"
+    ],
+    "VALUES": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.VALUES;"
+    ],
+    "TransferManager": [
+      "import com.amazonaws.services.s3.transfer.TransferManager;"
+    ],
+    "Queue": [
+      "import java.util.Queue;"
+    ],
+    "PodDNSConfigOption": [
+      "import io.fabric8.kubernetes.api.model.PodDNSConfigOption;"
+    ],
+    "YUNIKORN_SPARK_DEFAULT_QUEUE": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_SPARK_DEFAULT_QUEUE;"
+    ],
+    "util": [
+      "import java.util.*;"
+    ],
+    "DefaultKubernetesClient": [
+      "import io.fabric8.kubernetes.client.DefaultKubernetesClient;"
+    ],
+    "EnumerationIterator": [
+      "import org.apache.commons.collections4.iterators.EnumerationIterator;"
+    ],
+    "LazySortedMap": [
+      "import org.apache.commons.collections4.map.LazySortedMap;"
+    ],
+    "Content": [
+      "import io.swagger.v3.oas.annotations.media.Content;",
+      "import org.jdom2.Content;"
+    ],
+    "LongPredicate": [
+      "import java.util.function.LongPredicate;"
+    ],
+    "NotNullPredicate": [
+      "import org.apache.commons.collections4.functors.NotNullPredicate;"
+    ],
+    "FileVisitResult": [
+      "import java.nio.file.FileVisitResult;"
+    ],
+    "RestartPolicy": [
+      "import com.apple.spark.operator.RestartPolicy;"
+    ],
+    "SimpleMeterRegistry": [
+      "import io.micrometer.core.instrument.simple.SimpleMeterRegistry;"
+    ],
+    "hasContent": [
+      "import static org.apache.commons.csv.TokenMatchers.hasContent;"
+    ],
+    "KeyAnalyzer": [
+      "import org.apache.commons.collections4.trie.KeyAnalyzer;"
+    ],
+    "Auth": [
+      "import io.dropwizard.auth.Auth;"
+    ],
+    "ArrayIterator": [
+      "import org.apache.commons.collections4.iterators.ArrayIterator;"
+    ],
+    "JUnit4": [
+      "import org.junit.runners.JUnit4;"
+    ],
+    "EscapeStrategy": [
+      "import org.jdom2.output.EscapeStrategy;"
+    ],
+    "Parser": [
+      "import org.apache.commons.cli.Parser;"
+    ],
+    "StandardOpenOption": [
+      "import java.nio.file.StandardOpenOption;"
+    ],
+    "JAXPDOMAdapter": [
+      "import org.jdom2.adapters.JAXPDOMAdapter;"
+    ],
+    "UniquePredicate": [
+      "import org.apache.commons.collections4.functors.UniquePredicate;"
+    ],
+    "SparkApplicationStatus": [
+      "import com.apple.spark.operator.SparkApplicationStatus;"
+    ],
+    "DefaultEquator": [
+      "import org.apache.commons.collections4.functors.DefaultEquator;"
+    ],
+    "comparatorPredicate": [
+      "import static org.apache.commons.collections4.functors.ComparatorPredicate.comparatorPredicate;"
+    ],
+    "GaugeMetricContainer": [
+      "import com.apple.spark.util.GaugeMetricContainer;"
+    ],
+    "Mockito": [
+      "import static org.mockito.Mockito.*;",
+      "import org.mockito.Mockito;"
+    ],
+    "ObjectFieldSelector": [
+      "import com.apple.spark.operator.ObjectFieldSelector;"
+    ],
+    "Filter": [
+      "import org.jdom2.filter.Filter;"
+    ],
+    "ApiResponse": [
+      "import io.swagger.v3.oas.annotations.responses.ApiResponse;"
+    ],
+    "EnvVarSource": [
+      "import com.apple.spark.operator.EnvVarSource;"
+    ],
+    "Person": [
+      "import net.datafaker.annotations.dto.Person;"
+    ],
+    "JsonTransformer": [
+      "import net.datafaker.transformations.JsonTransformer;"
+    ],
+    "InvalidKeyException": [
+      "import java.security.InvalidKeyException;"
+    ],
+    "LogDao": [
+      "import com.apple.spark.core.LogDao;"
+    ],
+    "EN_LOWERCASE": [
+      "import static net.datafaker.providers.base.Text.EN_LOWERCASE;"
+    ],
+    "ComparatorChain": [
+      "import org.apache.commons.collections4.comparators.ComparatorChain;"
+    ],
+    "Superhero": [
+      "import net.datafaker.providers.base.Superhero;"
+    ],
+    "BigDecimal": [
+      "import java.math.BigDecimal;"
+    ],
+    "CacheLoader": [
+      "import com.google.common.cache.CacheLoader;"
+    ],
+    "TransformerPredicate": [
+      "import org.apache.commons.collections4.functors.TransformerPredicate;"
+    ],
+    "JsonNull": [
+      "import com.google.gson.JsonNull;"
+    ],
+    "UnmodifiableSortedMap": [
+      "import org.apache.commons.collections4.map.UnmodifiableSortedMap;"
+    ],
+    "Principal": [
+      "import java.security.Principal;"
+    ],
+    "ConcurrentNavigableMap": [
+      "import java.util.concurrent.ConcurrentNavigableMap;"
+    ],
+    "EmptyListIterator": [
+      "import org.apache.commons.collections4.iterators.EmptyListIterator;"
+    ],
+    "Deterministic": [
+      "import net.datafaker.annotations.Deterministic;"
+    ],
+    "XPathDiagnostic": [
+      "import org.jdom2.xpath.XPathDiagnostic;"
+    ],
+    "CType": [
+      "import org.jdom2.Content.CType;"
+    ],
+    "Logger": [
+      "import org.slf4j.Logger;",
+      "import java.util.logging.Logger;"
+    ],
+    "PreJava9DateFormatProvider": [
+      "import com.google.gson.internal.PreJava9DateFormatProvider;"
+    ],
+    "Resource": [
+      "import io.fabric8.kubernetes.client.dsl.Resource;"
+    ],
+    "Event": [
+      "import io.fabric8.kubernetes.api.model.Event;"
+    ],
+    "FluentIterable": [
+      "import org.apache.commons.collections4.FluentIterable;"
+    ],
+    "DriverSpec": [
+      "import com.apple.spark.operator.DriverSpec;"
+    ],
+    "NoSuchElementException": [
+      "import java.util.NoSuchElementException;"
+    ],
+    "ReferenceQueue": [
+      "import java.lang.ref.ReferenceQueue;"
+    ],
+    "ConstructorConstructor": [
+      "import com.google.gson.internal.ConstructorConstructor;"
+    ],
+    "ObjectMapper": [
+      "import com.fasterxml.jackson.databind.ObjectMapper;"
+    ],
+    "Timestamp": [
+      "import java.sql.Timestamp;"
+    ],
+    "BatchUpdateException": [
+      "import java.sql.BatchUpdateException;"
+    ],
+    "EMPTY_OBJECT": [
+      "import static com.google.gson.stream.JsonScope.EMPTY_OBJECT;"
+    ],
+    "IteratorEnumeration": [
+      "import org.apache.commons.collections4.iterators.IteratorEnumeration;"
+    ],
+    "InvalidPathException": [
+      "import java.nio.file.InvalidPathException;"
+    ],
+    "Tea": [
+      "import net.datafaker.providers.food.Tea;"
+    ],
+    "OffsetDateTime": [
+      "import java.time.OffsetDateTime;"
+    ],
+    "XMLStreamConstants": [
+      "import javax.xml.stream.XMLStreamConstants;",
+      "import static javax.xml.stream.XMLStreamConstants.*;"
+    ],
+    "Supplier": [
+      "import java.util.function.Supplier;"
+    ],
+    "NullIsFalsePredicate": [
+      "import org.apache.commons.collections4.functors.NullIsFalsePredicate;"
+    ],
+    "SwaggerConfiguration": [
+      "import io.swagger.v3.oas.integration.SwaggerConfiguration;"
+    ],
+    "HttpResponse": [
+      "import java.net.http.HttpResponse;"
+    ],
+    "ClientConfiguration": [
+      "import com.amazonaws.ClientConfiguration;"
+    ],
+    "MalformedURLException": [
+      "import java.net.MalformedURLException;"
+    ],
+    "IterableGet": [
+      "import org.apache.commons.collections4.IterableGet;"
+    ],
+    "lazySortedMap": [
+      "import static org.apache.commons.collections4.map.LazySortedMap.lazySortedMap;"
+    ],
+    "FakeCollection": [
+      "import net.datafaker.sequence.FakeCollection;"
+    ],
+    "AbstractStAXStreamProcessor": [
+      "import org.jdom2.output.support.AbstractStAXStreamProcessor;"
+    ],
+    "ForClosure": [
+      "import org.apache.commons.collections4.functors.ForClosure;"
+    ],
+    "Decoder": [
+      "import org.apache.commons.codec.Decoder;"
+    ],
+    "Verifier": [
+      "import org.jdom2.Verifier;"
+    ],
+    "Predicate": [
+      "import java.util.function.Predicate;",
+      "import org.apache.commons.collections4.Predicate;"
+    ],
+    "PredicatedNavigableSet": [
+      "import org.apache.commons.collections4.set.PredicatedNavigableSet;"
+    ],
+    "BuilderErrorHandler": [
+      "import org.jdom2.input.sax.BuilderErrorHandler;"
+    ],
+    "AfterAll": [
+      "import org.junit.jupiter.api.AfterAll;"
+    ],
+    "ExpirationPolicy": [
+      "import org.apache.commons.collections4.map.PassiveExpiringMap.ExpirationPolicy;"
+    ],
+    "TimeZone": [
+      "import java.util.TimeZone;"
+    ],
+    "FunctionCallException": [
+      "import org.jaxen.FunctionCallException;"
+    ],
+    "nullValue": [
+      "import static org.hamcrest.core.IsNull.nullValue;"
+    ],
+    "SingletonLocale": [
+      "import net.datafaker.internal.helper.SingletonLocale;"
+    ],
+    "ParamException": [
+      "import org.glassfish.jersey.server.ParamException;"
+    ],
+    "Setup": [
+      "import org.openjdk.jmh.annotations.Setup;"
+    ],
+    "FormatStack": [
+      "import org.jdom2.output.support.FormatStack;"
+    ],
+    "AndPredicate": [
+      "import org.apache.commons.collections4.functors.AndPredicate;"
+    ],
+    "AbstractIterableMapTest": [
+      "import org.apache.commons.collections4.map.AbstractIterableMapTest;"
+    ],
+    "getImage": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getImage;"
+    ],
+    "CDATA": [
+      "import org.jdom2.CDATA;"
+    ],
+    "LazyIteratorChain": [
+      "import org.apache.commons.collections4.iterators.LazyIteratorChain;"
+    ],
+    "ComparatorUtils": [
+      "import org.apache.commons.collections4.ComparatorUtils;"
+    ],
+    "VariableContext": [
+      "import org.jaxen.VariableContext;"
+    ],
+    "List": [
+      "import java.util.List;"
+    ],
+    "arguments": [
+      "import static org.junit.jupiter.params.provider.Arguments.arguments;"
+    ],
+    "SimpleEntry": [
+      "import java.util.AbstractMap.SimpleEntry;"
+    ],
+    "never": [
+      "import static org.mockito.Mockito.never;"
+    ],
+    "ExceptionMetered": [
+      "import com.codahale.metrics.annotation.ExceptionMetered;"
+    ],
+    "EqualPredicate": [
+      "import org.apache.commons.collections4.functors.EqualPredicate;"
+    ],
+    "ConfigValue": [
+      "import com.apple.spark.core.ConfigValue;"
+    ],
+    "MapDifference": [
+      "import com.google.common.collect.MapDifference;"
+    ],
+    "AfterMethod": [
+      "import org.testng.annotations.AfterMethod;"
+    ],
+    "RequiredDuringSchedulingIgnoredDuringExecutionTerm": [
+      "import com.apple.spark.operator.RequiredDuringSchedulingIgnoredDuringExecutionTerm;"
+    ],
+    "Primitives": [
+      "import com.google.gson.internal.Primitives;"
+    ],
+    "ArrayUtils": [
+      "import org.apache.commons.lang3.ArrayUtils;"
+    ],
+    "TOKEN": [
+      "import static org.apache.commons.csv.Token.Type.TOKEN;"
+    ],
+    "BOOLEAN": [
+      "import static com.google.gson.stream.JsonToken.BOOLEAN;"
+    ],
+    "StringWrapper": [
+      "import com.google.gson.common.TestTypes.StringWrapper;"
+    ],
+    "FieldAttributes": [
+      "import com.google.gson.FieldAttributes;"
+    ],
+    "Scope": [
+      "import org.openjdk.jmh.annotations.Scope;"
+    ],
+    "IfTransformer": [
+      "import org.apache.commons.collections4.functors.IfTransformer;"
+    ],
+    "Tag": [
+      "import io.swagger.v3.oas.annotations.tags.Tag;",
+      "import io.micrometer.core.instrument.Tag;"
+    ],
+    "UnresolvableException": [
+      "import org.jaxen.UnresolvableException;"
+    ],
+    "StAXEventProcessor": [
+      "import org.jdom2.output.support.StAXEventProcessor;"
+    ],
+    "DecoderException": [
+      "import org.apache.commons.codec.DecoderException;"
+    ],
+    "VersionInfo": [
+      "import com.apple.spark.util.VersionInfo;"
+    ],
+    "InvalidPropertiesFormatException": [
+      "import java.util.InvalidPropertiesFormatException;"
+    ],
+    "OutputTimeUnit": [
+      "import org.openjdk.jmh.annotations.OutputTimeUnit;"
+    ],
+    "Document": [
+      "import org.w3c.dom.Document;",
+      "import org.jdom2.Document;"
+    ],
+    "ObjectMetadata": [
+      "import com.amazonaws.services.s3.model.ObjectMetadata;"
+    ],
+    "Callable": [
+      "import java.util.concurrent.Callable;"
+    ],
+    "RestStreamingOutput": [
+      "import com.apple.spark.core.RestStreamingOutput;"
+    ],
+    "compositeField": [
+      "import static net.datafaker.transformations.Field.compositeField;"
+    ],
+    "Reflections": [
+      "import org.reflections.Reflections;"
+    ],
+    "core": [
+      "import com.apple.spark.core.*;"
+    ],
+    "DecodedJWT": [
+      "import com.auth0.jwt.interfaces.DecodedJWT;"
+    ],
+    "DefaultTypeAdaptersTest": [
+      "import com.google.gson.functional.DefaultTypeAdaptersTest;"
+    ],
+    "TransformedMap": [
+      "import org.apache.commons.collections4.map.TransformedMap;"
+    ],
+    "ListIterator": [
+      "import java.util.ListIterator;"
+    ],
+    "DEFAULT_JSON_NON_EXECUTABLE": [
+      "import static com.google.gson.Gson.DEFAULT_JSON_NON_EXECUTABLE;"
+    ],
+    "Namespace": [
+      "import org.jdom2.Namespace;"
+    ],
+    "get": [
+      "import static com.apple.spark.util.HttpUtils.get;"
+    ],
+    "Phonenumber": [
+      "import com.google.i18n.phonenumbers.Phonenumber;"
+    ],
+    "Target": [
+      "import java.lang.annotation.Target;"
+    ],
+    "NOPTransformer": [
+      "import org.apache.commons.collections4.functors.NOPTransformer;"
+    ],
+    "ReflectionAccessFilter": [
+      "import com.google.gson.ReflectionAccessFilter;"
+    ],
+    "StAXStreamProcessor": [
+      "import org.jdom2.output.support.StAXStreamProcessor;"
+    ],
+    "SQLException": [
+      "import java.sql.SQLException;"
+    ],
+    "Hidden": [
+      "import io.swagger.v3.oas.annotations.Hidden;"
+    ],
+    "SwitchTransformer": [
+      "import org.apache.commons.collections4.functors.SwitchTransformer;"
+    ],
+    "DocType": [
+      "import org.jdom2.DocType;"
+    ],
+    "Reference": [
+      "import java.lang.ref.Reference;"
+    ],
+    "SAX_PROPERTY_DECLARATION_HANDLER": [
+      "import static org.jdom2.JDOMConstants.SAX_PROPERTY_DECLARATION_HANDLER;"
+    ],
+    "XMLStreamWriter": [
+      "import javax.xml.stream.XMLStreamWriter;"
+    ],
+    "ElementType": [
+      "import java.lang.annotation.ElementType;"
+    ],
+    "RunWith": [
+      "import org.junit.runner.RunWith;"
+    ],
+    "ListTestSuiteBuilder": [
+      "import com.google.common.collect.testing.ListTestSuiteBuilder;"
+    ],
+    "OrderedIterator": [
+      "import org.apache.commons.collections4.OrderedIterator;"
+    ],
+    "MultiMap": [
+      "import org.apache.commons.collections4.MultiMap;"
+    ],
+    "DEFAULT_ESCAPE_HTML": [
+      "import static com.google.gson.Gson.DEFAULT_ESCAPE_HTML;"
+    ],
+    "ClassWithArray": [
+      "import com.google.gson.common.TestTypes.ClassWithArray;"
+    ],
+    "Gender": [
+      "import net.datafaker.idnumbers.PeselNumber.Gender;"
+    ],
+    "ClassWithTransientFields": [
+      "import com.google.gson.common.TestTypes.ClassWithTransientFields;"
+    ],
+    "ClassWithCustomTypeConverter": [
+      "import com.google.gson.common.TestTypes.ClassWithCustomTypeConverter;"
+    ],
+    "ContentHandler": [
+      "import org.xml.sax.ContentHandler;"
+    ],
+    "CharBuffer": [
+      "import java.nio.CharBuffer;"
+    ],
+    "assertNotEquals": [
+      "import static org.junit.jupiter.api.Assertions.assertNotEquals;",
+      "import static org.junit.Assert.assertNotEquals;"
+    ],
+    "ADMIN_API": [
+      "import static com.apple.spark.core.Constants.ADMIN_API;"
+    ],
+    "FormattedAs": [
+      "import net.datafaker.transformations.JsonTransformer.JsonTransformerBuilder.FormattedAs;"
+    ],
+    "LuhnCheckDigit": [
+      "import org.apache.commons.validator.routines.checkdigit.LuhnCheckDigit;"
+    ],
+    "MONITOR_RUNNING_APPS": [
+      "import static com.apple.spark.core.Constants.MONITOR_RUNNING_APPS;"
+    ],
+    "SharedInformerFactory": [
+      "import io.fabric8.kubernetes.client.informers.SharedInformerFactory;"
+    ],
+    "UnmodifiableSortedSet": [
+      "import org.apache.commons.collections4.set.UnmodifiableSortedSet;"
+    ],
+    "OutputStream": [
+      "import java.io.OutputStream;"
+    ],
+    "Permission": [
+      "import java.security.Permission;"
+    ],
+    "SparkConstants": [
+      "import com.apple.spark.core.SparkConstants;"
+    ],
+    "IllegalNameException": [
+      "import org.jdom2.IllegalNameException;"
+    ],
+    "BPGStatsdConfig": [
+      "import com.apple.spark.core.BPGStatsdConfig;"
+    ],
+    "XPath": [
+      "import org.jaxen.XPath;"
+    ],
+    "BufferedOutputStream": [
+      "import java.io.BufferedOutputStream;"
+    ],
+    "AbstractMapIteratorTest": [
+      "import org.apache.commons.collections4.iterators.AbstractMapIteratorTest;"
+    ],
+    "$Gson$Types": [
+      "import com.google.gson.internal.$Gson$Types;"
+    ],
+    "UnmodifiableIterator": [
+      "import org.apache.commons.collections4.iterators.UnmodifiableIterator;"
+    ],
+    "LazyMap": [
+      "import org.apache.commons.collections4.map.LazyMap;"
+    ],
+    "FilterListIterator": [
+      "import org.apache.commons.collections4.iterators.FilterListIterator;"
+    ],
+    "parseInt": [
+      "import static java.lang.Integer.parseInt;"
+    ],
+    "LoadingCache": [
+      "import com.google.common.cache.LoadingCache;"
+    ],
+    "InstantiateFactory": [
+      "import org.apache.commons.collections4.functors.InstantiateFactory;"
+    ],
+    "Put": [
+      "import org.apache.commons.collections4.Put;"
+    ],
+    "NamespaceContext": [
+      "import org.jaxen.NamespaceContext;"
+    ],
+    "GroupPrincipal": [
+      "import java.nio.file.attribute.GroupPrincipal;"
+    ],
+    "TimerTask": [
+      "import java.util.TimerTask;"
+    ],
+    "RoundingMode": [
+      "import java.math.RoundingMode;"
+    ],
+    "Parameter": [
+      "import io.swagger.v3.oas.annotations.Parameter;",
+      "import org.junit.runners.Parameterized.Parameter;"
+    ],
+    "NUMBER": [
+      "import static com.google.gson.stream.JsonToken.NUMBER;"
+    ],
+    "HealthcheckRest": [
+      "import com.apple.spark.rest.HealthcheckRest;"
+    ],
+    "BigInteger": [
+      "import java.math.BigInteger;"
+    ],
+    "Bootstrap": [
+      "import io.dropwizard.setup.Bootstrap;"
+    ],
+    "TreeTypeAdapter": [
+      "import com.google.gson.internal.bind.TreeTypeAdapter;"
+    ],
+    "KoKrIdNumber": [
+      "import net.datafaker.idnumbers.KoKrIdNumber;"
+    ],
+    "DateFormat": [
+      "import java.text.DateFormat;"
+    ],
+    "AbstractListIteratorDecorator": [
+      "import org.apache.commons.collections4.iterators.AbstractListIteratorDecorator;"
+    ],
+    "SynchronizedQueue": [
+      "import org.apache.commons.collections4.queue.SynchronizedQueue;"
+    ],
+    "TransformerUtils": [
+      "import org.apache.commons.collections4.TransformerUtils;"
+    ],
+    "InputSource": [
+      "import org.xml.sax.InputSource;"
+    ],
+    "BACKSPACE": [
+      "import static org.apache.commons.csv.Constants.BACKSPACE;"
+    ],
+    "PreparedStatement": [
+      "import java.sql.PreparedStatement;"
+    ],
+    "ExtendWith": [
+      "import org.junit.jupiter.api.extension.ExtendWith;"
+    ],
+    "Soundex": [
+      "import org.apache.commons.codec.language.Soundex;"
+    ],
+    "NamespaceAware": [
+      "import org.jdom2.NamespaceAware;"
+    ],
+    "ISO8601Utils": [
+      "import com.google.gson.internal.bind.util.ISO8601Utils;"
+    ],
+    "JsonTreeWriter": [
+      "import com.google.gson.internal.bind.JsonTreeWriter;"
+    ],
+    "ParameterizedType": [
+      "import java.lang.reflect.ParameterizedType;"
+    ],
+    "SetValuedMap": [
+      "import org.apache.commons.collections4.SetValuedMap;"
+    ],
+    "S3_GET_TIMEOUT_MILLISECS": [
+      "import static com.apple.spark.rest.AwsConstants.S3_GET_TIMEOUT_MILLISECS;"
+    ],
+    "DTDHandler": [
+      "import org.xml.sax.DTDHandler;"
+    ],
+    "FilterOutputStream": [
+      "import java.io.FilterOutputStream;"
+    ],
+    "XMLOutputter": [
+      "import org.jdom2.output.XMLOutputter;"
+    ],
+    "ArrayTypeAdapter": [
+      "import com.google.gson.internal.bind.ArrayTypeAdapter;"
+    ],
+    "matches": [
+      "import static org.apache.commons.csv.TokenMatchers.matches;"
+    ],
+    "EMPTY_STRING_ARRAY": [
+      "import static org.apache.commons.cli.Util.EMPTY_STRING_ARRAY;"
+    ],
+    "LongBinaryOperator": [
+      "import java.util.function.LongBinaryOperator;"
+    ],
+    "UnmodifiableTrie": [
+      "import org.apache.commons.collections4.trie.UnmodifiableTrie;"
+    ],
+    "DateType": [
+      "import com.google.gson.internal.bind.DefaultDateTypeAdapter.DateType;"
+    ],
+    "FakeForSchema": [
+      "import net.datafaker.annotations.FakeForSchema;"
+    ],
+    "Arrays": [
+      "import java.util.Arrays;"
+    ],
+    "CharEncoding": [
+      "import org.apache.commons.codec.CharEncoding;"
+    ],
+    "MessageFormat": [
+      "import java.text.MessageFormat;"
+    ],
+    "PrivilegedAction": [
+      "import java.security.PrivilegedAction;"
+    ],
+    "DateTimeFormatter": [
+      "import java.time.format.DateTimeFormatter;"
+    ],
+    "Spliterator": [
+      "import java.util.Spliterator;"
+    ],
+    "JsonArray": [
+      "import com.google.gson.JsonArray;"
+    ],
+    "ZhCnIdNumber": [
+      "import net.datafaker.idnumbers.ZhCnIdNumber;"
+    ],
+    "Period": [
+      "import java.time.Period;"
+    ],
+    "ContainerRequestContext": [
+      "import javax.ws.rs.container.ContainerRequestContext;"
+    ],
+    "CustomResourceDefinitionContext": [
+      "import io.fabric8.kubernetes.client.dsl.base.CustomResourceDefinitionContext;"
+    ],
+    "Transformer": [
+      "import net.datafaker.transformations.Transformer;",
+      "import org.apache.commons.collections4.Transformer;"
+    ],
+    "LOWER_CASE_WITH_UNDERSCORES": [
+      "import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES;"
+    ],
+    "UTF_8": [
+      "import static java.nio.charset.StandardCharsets.UTF_8;"
+    ],
+    "EmptyOrderedIterator": [
+      "import org.apache.commons.collections4.iterators.EmptyOrderedIterator;"
+    ],
+    "AbstractObjectTest": [
+      "import org.apache.commons.collections4.AbstractObjectTest;"
+    ],
+    "DefaultNavigator": [
+      "import org.jaxen.DefaultNavigator;"
+    ],
+    "Paths": [
+      "import java.nio.file.Paths;"
+    ],
+    "GetDriverInfoResponse": [
+      "import com.apple.spark.api.GetDriverInfoResponse;"
+    ],
+    "JsonSyntaxException": [
+      "import com.google.gson.JsonSyntaxException;"
+    ],
+    "Options": [
+      "import org.apache.commons.cli.Options;"
+    ],
+    "INSERT_ALL": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.INSERT_ALL;"
+    ],
+    "ZoneId": [
+      "import java.time.ZoneId;"
+    ],
+    "assertFalse": [
+      "import static org.junit.Assert.assertFalse;",
+      "import static org.junit.jupiter.api.Assertions.assertFalse;"
+    ],
+    "RestSubmissionsStreamingOutput": [
+      "import com.apple.spark.core.RestSubmissionsStreamingOutput;"
+    ],
+    "assertThrows": [
+      "import static org.junit.jupiter.api.Assertions.assertThrows;",
+      "import static org.junit.Assert.assertThrows;"
+    ],
+    "TransformedSet": [
+      "import org.apache.commons.collections4.set.TransformedSet;"
+    ],
+    "KubernetesClient": [
+      "import io.fabric8.kubernetes.client.KubernetesClient;"
+    ],
+    "SecureRandom": [
+      "import java.security.SecureRandom;"
+    ],
+    "S3Object": [
+      "import com.amazonaws.services.s3.model.S3Object;"
+    ],
+    "Date": [
+      "import java.sql.Date;",
+      "import java.util.Date;"
+    ],
+    "ObjectOutputStream": [
+      "import java.io.ObjectOutputStream;"
+    ],
+    "ReverseListIterator": [
+      "import org.apache.commons.collections4.iterators.ReverseListIterator;"
+    ],
+    "AuthValueFactoryProvider": [
+      "import io.dropwizard.auth.AuthValueFactoryProvider;"
+    ],
+    "SqlTransformer": [
+      "import net.datafaker.transformations.sql.SqlTransformer;"
+    ],
+    "Executable": [
+      "import org.junit.jupiter.api.function.Executable;"
+    ],
+    "DEFAULT_USE_JDK_UNSAFE": [
+      "import static com.google.gson.Gson.DEFAULT_USE_JDK_UNSAFE;"
+    ],
+    "IdentityHashMap": [
+      "import java.util.IdentityHashMap;"
+    ],
+    "RandomAccessFile": [
+      "import java.io.RandomAccessFile;"
+    ],
+    "EnumMap": [
+      "import java.util.EnumMap;"
+    ],
+    "MultiSet": [
+      "import org.apache.commons.collections4.MultiSet;"
+    ],
+    "BOMInputStream": [
+      "import org.apache.commons.io.input.BOMInputStream;"
+    ],
+    "SynchronizedSortedBag": [
+      "import org.apache.commons.collections4.bag.SynchronizedSortedBag;"
+    ],
+    "MessageDigestAlgorithms": [
+      "import org.apache.commons.codec.digest.MessageDigestAlgorithms;"
+    ],
+    "ErrorHandler": [
+      "import org.xml.sax.ErrorHandler;"
+    ],
+    "StringKeyAnalyzer": [
+      "import org.apache.commons.collections4.trie.analyzer.StringKeyAnalyzer;"
+    ],
+    "QUEUE_INFO": [
+      "import static com.apple.spark.core.Constants.QUEUE_INFO;"
+    ],
+    "KEY": [
+      "import static org.apache.commons.collections4.bidimap.TreeBidiMap.DataElement.KEY;"
+    ],
+    "JsonDeserializationContext": [
+      "import com.google.gson.JsonDeserializationContext;"
+    ],
+    "WhileClosure": [
+      "import org.apache.commons.collections4.functors.WhileClosure;"
+    ],
+    "Currency": [
+      "import java.util.Currency;"
+    ],
+    "ExecutorService": [
+      "import java.util.concurrent.ExecutorService;"
+    ],
+    "Filters": [
+      "import org.jdom2.filter.Filters;"
+    ],
+    "IdentityPredicate": [
+      "import org.apache.commons.collections4.functors.IdentityPredicate;"
+    ],
+    "TransformedCollection": [
+      "import org.apache.commons.collections4.collection.TransformedCollection;"
+    ],
+    "MapTransformer": [
+      "import org.apache.commons.collections4.functors.MapTransformer;"
+    ],
+    "JsonSerializer": [
+      "import com.google.gson.JsonSerializer;"
+    ],
+    "JsonSerializationContext": [
+      "import com.google.gson.JsonSerializationContext;"
+    ],
+    "ParserConfigurationException": [
+      "import javax.xml.parsers.ParserConfigurationException;"
+    ],
+    "RandomService": [
+      "import net.datafaker.service.RandomService;"
+    ],
+    "Pod": [
+      "import io.fabric8.kubernetes.api.model.Pod;"
+    ],
+    "Group": [
+      "import io.fabric8.kubernetes.model.annotation.Group;"
+    ],
+    "Sub": [
+      "import com.google.gson.common.TestTypes.Sub;"
+    ],
+    "IteratorChain": [
+      "import org.apache.commons.collections4.iterators.IteratorChain;"
+    ],
+    "Comparator": [
+      "import java.util.Comparator;"
+    ],
+    "DRIVER_CORE_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_CORE_DEFAULT;"
+    ],
+    "Closure": [
+      "import org.apache.commons.collections4.Closure;"
+    ],
+    "HttpHeaders": [
+      "import javax.ws.rs.core.HttpHeaders;"
+    ],
+    "NONEMPTY_ARRAY": [
+      "import static com.google.gson.stream.JsonScope.NONEMPTY_ARRAY;"
+    ],
+    "Cleanup": [
+      "import org.apache.commons.collections4.bloomfilter.LayerManager.Cleanup;"
+    ],
+    "ResourceBundle": [
+      "import java.util.ResourceBundle;"
+    ],
+    "DriverManager": [
+      "import java.sql.DriverManager;"
+    ],
+    "ExceptionTransformer": [
+      "import org.apache.commons.collections4.functors.ExceptionTransformer;"
+    ],
+    "TestTypes": [
+      "import com.google.gson.common.TestTypes;"
+    ],
+    "NoSuchAlgorithmException": [
+      "import java.security.NoSuchAlgorithmException;"
+    ],
+    "TypeAdapterFactory": [
+      "import com.google.gson.TypeAdapterFactory;"
+    ],
+    "Member": [
+      "import java.lang.reflect.Member;"
+    ],
+    "OrderedBidiMap": [
+      "import org.apache.commons.collections4.OrderedBidiMap;"
+    ],
+    "CountDownLatch": [
+      "import java.util.concurrent.CountDownLatch;"
+    ],
+    "Jdbi": [
+      "import org.jdbi.v3.core.Jdbi;"
+    ],
+    "GnuParser": [
+      "import org.apache.commons.cli.GnuParser;"
+    ],
+    "S3_API": [
+      "import static com.apple.spark.core.Constants.S3_API;"
+    ],
+    "XMLStreamReader": [
+      "import javax.xml.stream.XMLStreamReader;"
+    ],
+    "BaseFakerTest": [
+      "import net.datafaker.providers.base.BaseFakerTest;"
+    ],
+    "IterableMap": [
+      "import org.apache.commons.collections4.IterableMap;"
+    ],
+    "Blackhole": [
+      "import org.openjdk.jmh.infra.Blackhole;"
+    ],
+    "PrintStream": [
+      "import java.io.PrintStream;"
+    ],
+    "Number": [
+      "import net.datafaker.providers.base.Number;"
+    ],
+    "Option": [
+      "import org.apache.commons.cli.Option;"
+    ],
+    "DELETE": [
+      "import javax.ws.rs.DELETE;"
+    ],
+    "ApplicationMonitor": [
+      "import com.apple.spark.core.ApplicationMonitor;"
+    ],
+    "END_ARRAY": [
+      "import static com.google.gson.stream.JsonToken.END_ARRAY;"
+    ],
+    "LogManager": [
+      "import java.util.logging.LogManager;"
+    ],
+    "PodStatus": [
+      "import io.fabric8.kubernetes.api.model.PodStatus;"
+    ],
+    "OpenAPI": [
+      "import io.swagger.v3.oas.models.OpenAPI;"
+    ],
+    "Expose": [
+      "import com.google.gson.annotations.Expose;"
+    ],
+    "UncheckedIOException": [
+      "import java.io.UncheckedIOException;"
+    ],
+    "YAMLFactory": [
+      "import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;"
+    ],
+    "AbstractMapEntryDecorator": [
+      "import org.apache.commons.collections4.keyvalue.AbstractMapEntryDecorator;"
+    ],
+    "AssertionFailedError": [
+      "import org.opentest4j.AssertionFailedError;"
+    ],
+    "MixedOperation": [
+      "import io.fabric8.kubernetes.client.dsl.MixedOperation;"
+    ],
+    "of": [
+      "import static org.junit.jupiter.params.provider.Arguments.of;"
+    ],
+    "requireNonNull": [
+      "import static java.util.Objects.requireNonNull;"
+    ],
+    "END_OBJECT": [
+      "import static com.google.gson.stream.JsonToken.END_OBJECT;"
+    ],
+    "IteratorIterable": [
+      "import org.jdom2.util.IteratorIterable;",
+      "import org.apache.commons.collections4.iterators.IteratorIterable;"
+    ],
+    "JaxenXPathFactory": [
+      "import org.jdom2.xpath.jaxen.JaxenXPathFactory;"
+    ],
+    "SubmitApplicationResponse": [
+      "import com.apple.spark.api.SubmitApplicationResponse;"
+    ],
+    "mock": [
+      "import static org.mockito.Mockito.mock;"
+    ],
+    "SAXOutputProcessor": [
+      "import org.jdom2.output.support.SAXOutputProcessor;"
+    ],
+    "TransformIterator": [
+      "import org.apache.commons.collections4.iterators.TransformIterator;"
+    ],
+    "NullComparator": [
+      "import org.apache.commons.collections4.comparators.NullComparator;"
+    ],
+    "DynamicTest": [
+      "import org.junit.jupiter.api.DynamicTest;"
+    ],
+    "DocumentType": [
+      "import org.w3c.dom.DocumentType;"
+    ],
+    "URLClassLoader": [
+      "import java.net.URLClassLoader;"
+    ],
+    "Dessert": [
+      "import net.datafaker.providers.food.Dessert;"
+    ],
+    "AbstractFakerTest": [
+      "import net.datafaker.AbstractFakerTest;"
+    ],
+    "IteratorUtils": [
+      "import org.apache.commons.collections4.IteratorUtils;"
+    ],
+    "Name": [
+      "import net.datafaker.providers.base.Name;"
+    ],
+    "ReflectiveTypeAdapterFactory": [
+      "import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;"
+    ],
+    "LinkedMap": [
+      "import org.apache.commons.collections4.map.LinkedMap;"
+    ],
+    "AtomicBoolean": [
+      "import java.util.concurrent.atomic.AtomicBoolean;"
+    ],
+    "Spy": [
+      "import org.mockito.Spy;"
+    ],
+    "ListValuedMap": [
+      "import org.apache.commons.collections4.ListValuedMap;"
+    ],
+    "Before": [
+      "import org.junit.Before;"
+    ],
+    "equalTo": [
+      "import static org.hamcrest.core.IsEqual.equalTo;"
+    ],
+    "SkippingIterator": [
+      "import org.apache.commons.collections4.iterators.SkippingIterator;"
+    ],
+    "DateTypeAdapter": [
+      "import com.google.gson.internal.bind.DateTypeAdapter;"
+    ],
+    "Affinity": [
+      "import com.apple.spark.operator.Affinity;"
+    ],
+    "Operation": [
+      "import io.swagger.v3.oas.annotations.Operation;"
+    ],
+    "Faker": [
+      "import net.datafaker.Faker;"
+    ],
+    "PredicatedSortedMap": [
+      "import org.apache.commons.collections4.map.PredicatedSortedMap;"
+    ],
+    "Parameters": [
+      "import org.junit.runners.Parameterized.Parameters;"
+    ],
+    "OrderedMapIterator": [
+      "import org.apache.commons.collections4.OrderedMapIterator;"
+    ],
+    "LINE_SEPARATOR": [
+      "import static net.datafaker.transformations.Transformer.LINE_SEPARATOR;"
+    ],
+    "EnvVar": [
+      "import com.apple.spark.operator.EnvVar;"
+    ],
+    "LogWatch": [
+      "import io.fabric8.kubernetes.client.dsl.LogWatch;"
+    ],
+    "WordUtils": [
+      "import net.datafaker.internal.helper.WordUtils;",
+      "import org.apache.commons.text.WordUtils;"
+    ],
+    "PrimitiveArray": [
+      "import com.google.gson.common.TestTypes.PrimitiveArray;"
+    ],
+    "DEFAULT_SERIALIZE_NULLS": [
+      "import static com.google.gson.Gson.DEFAULT_SERIALIZE_NULLS;"
+    ],
+    "CLIENT_REGION": [
+      "import static com.apple.spark.rest.AwsConstants.CLIENT_REGION;"
+    ],
+    "GetJobEnvironmentResponse": [
+      "import com.apple.spark.clients.sparkhistory.GetJobEnvironmentResponse;"
+    ],
+    "XMLOutputProcessor": [
+      "import org.jdom2.output.support.XMLOutputProcessor;"
+    ],
+    "UnmodifiableEntrySet": [
+      "import org.apache.commons.collections4.map.UnmodifiableEntrySet;"
+    ],
+    "JsonTreeReader": [
+      "import com.google.gson.internal.bind.JsonTreeReader;"
+    ],
+    "AwsClientBuilder": [
+      "import com.amazonaws.client.builder.AwsClientBuilder;"
+    ],
+    "AbstractProvider": [
+      "import net.datafaker.providers.base.AbstractProvider;"
+    ],
+    "SortedMap": [
+      "import java.util.SortedMap;"
+    ],
+    "TextMode": [
+      "import org.jdom2.output.Format.TextMode;"
+    ],
+    "ApplicationSubmissionHelper": [
+      "import com.apple.spark.core.ApplicationSubmissionHelper;"
+    ],
+    "UPPER_CAMEL_CASE": [
+      "import static com.google.gson.FieldNamingPolicy.UPPER_CAMEL_CASE;"
+    ],
+    "ResultSet": [
+      "import java.sql.ResultSet;"
+    ],
+    "AbstractMapTest": [
+      "import org.apache.commons.collections4.map.AbstractMapTest;"
+    ],
+    "SAXBuilderEngine": [
+      "import org.jdom2.input.sax.SAXBuilderEngine;"
+    ],
+    "EnumSet": [
+      "import java.util.EnumSet;"
+    ],
+    "UnmodifiableMap": [
+      "import org.apache.commons.collections4.map.UnmodifiableMap;"
+    ],
+    "ReflectionHelper": [
+      "import com.google.gson.internal.reflect.ReflectionHelper;"
+    ],
+    "ObjectStreamClass": [
+      "import java.io.ObjectStreamClass;"
+    ],
+    "EORECORD": [
+      "import static org.apache.commons.csv.Token.Type.EORECORD;"
+    ],
+    "EOFException": [
+      "import java.io.EOFException;"
+    ],
+    "SplittableRandom": [
+      "import java.util.SplittableRandom;"
+    ],
+    "Serializable": [
+      "import java.io.Serializable;"
+    ],
+    "PredicateTransformer": [
+      "import org.apache.commons.collections4.functors.PredicateTransformer;"
+    ],
+    "BiPredicate": [
+      "import java.util.function.BiPredicate;"
+    ],
+    "Map": [
+      "import java.util.Map;"
+    ],
+    "ClosureTransformer": [
+      "import org.apache.commons.collections4.functors.ClosureTransformer;"
+    ],
+    "JDOMException": [
+      "import org.jdom2.JDOMException;"
+    ],
+    "EmptyMapIterator": [
+      "import org.apache.commons.collections4.iterators.EmptyMapIterator;"
+    ],
+    "ObjectConstructor": [
+      "import com.google.gson.internal.ObjectConstructor;"
+    ],
+    "LongSerializationPolicy": [
+      "import com.google.gson.LongSerializationPolicy;"
+    ],
+    "FileNotFoundException": [
+      "import java.io.FileNotFoundException;"
+    ],
+    "Mac": [
+      "import javax.crypto.Mac;"
+    ],
+    "storage": [
+      "import com.google.cloud.storage.*;"
+    ],
+    "EsMXIdNumber": [
+      "import net.datafaker.idnumbers.EsMXIdNumber;"
+    ],
+    "checkArgument": [
+      "import static com.google.gson.internal.$Gson$Preconditions.checkArgument;"
+    ],
+    "PodDNSConfig": [
+      "import io.fabric8.kubernetes.api.model.PodDNSConfig;"
+    ],
+    "DEFAULT_OBJECT_TO_NUMBER_STRATEGY": [
+      "import static com.google.gson.Gson.DEFAULT_OBJECT_TO_NUMBER_STRATEGY;"
+    ],
+    "JavaObjectTransformer": [
+      "import net.datafaker.transformations.JavaObjectTransformer;"
+    ],
+    "TimerMetricContainer": [
+      "import com.apple.spark.util.TimerMetricContainer;"
+    ],
+    "AppConfig": [
+      "import com.apple.spark.AppConfig;"
+    ],
+    "TreeMap": [
+      "import java.util.TreeMap;"
+    ],
+    "Month": [
+      "import java.time.Month;"
+    ],
+    "is": [
+      "import static org.hamcrest.core.Is.is;"
+    ],
+    "JsonAdapterAnnotationTypeAdapterFactory": [
+      "import com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory;"
+    ],
+    "io": [
+      "import java.io.*;"
+    ],
+    "JDOMLocator": [
+      "import org.jdom2.output.JDOMLocator;"
+    ],
+    "getDriverSpec": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getDriverSpec;"
+    ],
+    "InvocationTargetException": [
+      "import java.lang.reflect.InvocationTargetException;"
+    ],
+    "SwitchClosure": [
+      "import org.apache.commons.collections4.functors.SwitchClosure;"
+    ],
+    "ConcurrentHashMap": [
+      "import java.util.concurrent.ConcurrentHashMap;"
+    ],
+    "SimpleVariableContext": [
+      "import org.jaxen.SimpleVariableContext;"
+    ],
+    "DefaultSAXHandlerFactory": [
+      "import org.jdom2.input.sax.DefaultSAXHandlerFactory;"
+    ],
+    "verify": [
+      "import static org.mockito.Mockito.verify;",
+      "import static org.easymock.EasyMock.verify;"
+    ],
+    "Constants": [
+      "import com.apple.spark.core.Constants;",
+      "import static com.apple.spark.core.Constants.*;"
+    ],
+    "PodList": [
+      "import io.fabric8.kubernetes.api.model.PodList;"
+    ],
+    "TransformedSortedBag": [
+      "import org.apache.commons.collections4.bag.TransformedSortedBag;"
+    ],
+    "ArrayDeque": [
+      "import java.util.ArrayDeque;"
+    ],
+    "HashBag": [
+      "import org.apache.commons.collections4.bag.HashBag;"
+    ],
+    "CustomResourceList": [
+      "import io.fabric8.kubernetes.client.CustomResourceList;"
+    ],
+    "MultiValuedMap": [
+      "import org.apache.commons.collections4.MultiValuedMap;"
+    ],
+    "GZIPInputStream": [
+      "import java.util.zip.GZIPInputStream;"
+    ],
+    "DNS_CONFIG_OPTION_NDOTS_VALUE": [
+      "import static com.apple.spark.core.Constants.DNS_CONFIG_OPTION_NDOTS_VALUE;"
+    ],
+    "SAXParserFactory": [
+      "import javax.xml.parsers.SAXParserFactory;"
+    ],
+    "ClassOverridingEquals": [
+      "import com.google.gson.common.TestTypes.ClassOverridingEquals;"
+    ],
+    "EAN13CheckDigit": [
+      "import org.apache.commons.validator.routines.checkdigit.EAN13CheckDigit;"
+    ],
+    "GenericArrayType": [
+      "import java.lang.reflect.GenericArrayType;"
+    ],
+    "TransformedList": [
+      "import org.apache.commons.collections4.list.TransformedList;"
+    ],
+    "FilterIterator": [
+      "import org.apache.commons.collections4.iterators.FilterIterator;"
+    ],
+    "Nullable": [
+      "import javax.annotation.Nullable;"
+    ],
+    "Constructor": [
+      "import java.lang.reflect.Constructor;"
+    ],
+    "ArrayListIterator": [
+      "import org.apache.commons.collections4.iterators.ArrayListIterator;"
+    ],
+    "RFC4180": [
+      "import static org.apache.commons.csv.CSVFormat.RFC4180;"
+    ],
+    "HelpFormatter": [
+      "import org.apache.commons.cli.HelpFormatter;"
+    ],
+    "ResettableIterator": [
+      "import org.apache.commons.collections4.ResettableIterator;"
+    ],
+    "field": [
+      "import static net.datafaker.transformations.Field.field;"
+    ],
+    "getAllMethods": [
+      "import static org.reflections.ReflectionUtils.getAllMethods;"
+    ],
+    "Parent": [
+      "import org.jdom2.Parent;"
+    ],
+    "StAXFilter": [
+      "import org.jdom2.input.stax.StAXFilter;"
+    ],
+    "LoggerFactory": [
+      "import org.slf4j.LoggerFactory;"
+    ],
+    "RequestBody": [
+      "import io.swagger.v3.oas.annotations.parameters.RequestBody;"
+    ],
+    "LinkedHashMap": [
+      "import java.util.LinkedHashMap;"
+    ],
+    "PosixParser": [
+      "import org.apache.commons.cli.PosixParser;"
+    ],
+    "NonNullElementWrapperList": [
+      "import com.google.gson.internal.NonNullElementWrapperList;"
+    ],
+    "EntrySetToMapIteratorAdapter": [
+      "import org.apache.commons.collections4.map.EntrySetToMapIteratorAdapter;"
+    ],
+    "SetView": [
+      "import org.apache.commons.collections4.SetUtils.SetView;"
+    ],
+    "PredicatedCollectionTest": [
+      "import org.apache.commons.collections4.collection.PredicatedCollectionTest;"
+    ],
+    "PredicatedMap": [
+      "import org.apache.commons.collections4.map.PredicatedMap;"
+    ],
+    "WebApplicationException": [
+      "import javax.ws.rs.WebApplicationException;"
+    ],
+    "HashSetValuedHashMap": [
+      "import org.apache.commons.collections4.multimap.HashSetValuedHashMap;"
+    ],
+    "BeforeAll": [
+      "import org.junit.jupiter.api.BeforeAll;"
+    ],
+    "Optional": [
+      "import java.util.Optional;"
+    ],
+    "CsvListReader": [
+      "import org.supercsv.io.CsvListReader;"
+    ],
+    "ExtendCheck": [
+      "import org.apache.commons.collections4.bloomfilter.LayerManager.ExtendCheck;"
+    ],
+    "JWT": [
+      "import com.auth0.jwt.JWT;"
+    ],
+    "BinaryDecoder": [
+      "import org.apache.commons.codec.BinaryDecoder;"
+    ],
+    "BeforeClass": [
+      "import org.junit.BeforeClass;"
+    ],
+    "PermitAll": [
+      "import javax.annotation.security.PermitAll;"
+    ],
+    "Since": [
+      "import com.google.gson.annotations.Since;"
+    ],
+    "SynchronizedMultiSet": [
+      "import org.apache.commons.collections4.multiset.SynchronizedMultiSet;"
+    ],
+    "AbstractList": [
+      "import java.util.AbstractList;"
+    ],
+    "Files": [
+      "import java.nio.file.Files;"
+    ],
+    "InvokerTransformer": [
+      "import org.apache.commons.collections4.functors.InvokerTransformer;"
+    ],
+    "PredicatedSortedSet": [
+      "import org.apache.commons.collections4.set.PredicatedSortedSet;"
+    ],
+    "CSVReaderBuilder": [
+      "import com.opencsv.CSVReaderBuilder;"
+    ],
+    "INSERT_INTO": [
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.INSERT_INTO;"
+    ],
+    "PodResource": [
+      "import io.fabric8.kubernetes.client.dsl.PodResource;"
+    ],
+    "Arguments": [
+      "import org.junit.jupiter.params.provider.Arguments;"
+    ],
+    "Method": [
+      "import java.lang.reflect.Method;"
+    ],
+    "ObjectStreamException": [
+      "import java.io.ObjectStreamException;"
+    ],
+    "NOPClosure": [
+      "import org.apache.commons.collections4.functors.NOPClosure;"
+    ],
+    "capitalize": [
+      "import static net.datafaker.internal.helper.WordUtils.capitalize;"
+    ],
+    "DEFAULT_PRETTY_PRINT": [
+      "import static com.google.gson.Gson.DEFAULT_PRETTY_PRINT;"
+    ],
+    "FileSystem": [
+      "import java.nio.file.FileSystem;"
+    ],
+    "SetUtils": [
+      "import org.apache.commons.collections4.SetUtils;"
+    ],
+    "JWTVerificationException": [
+      "import com.auth0.jwt.exceptions.JWTVerificationException;"
+    ],
+    "NULL": [
+      "import static com.google.gson.stream.JsonToken.NULL;",
+      "import static net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords.NULL;"
+    ],
+    "Algorithm": [
+      "import com.auth0.jwt.algorithms.Algorithm;"
+    ],
+    "PredicatedQueue": [
+      "import org.apache.commons.collections4.queue.PredicatedQueue;"
+    ],
+    "YamlTransformer": [
+      "import net.datafaker.transformations.YamlTransformer;"
+    ],
+    "QuoteMode": [
+      "import org.apache.commons.csv.QuoteMode;"
+    ],
+    "SortedSet": [
+      "import java.util.SortedSet;"
+    ],
+    "ErrorMessage": [
+      "import io.dropwizard.jersey.errors.ErrorMessage;"
+    ],
+    "UnmodifiableSet": [
+      "import org.apache.commons.collections4.set.UnmodifiableSet;"
+    ],
+    "getBytesUtf8": [
+      "import static org.apache.commons.codec.binary.StringUtils.getBytesUtf8;"
+    ],
+    "assertEquals": [
+      "import static org.junit.jupiter.api.Assertions.*;"
+    ],
+    "JaxenException": [
+      "import org.jaxen.JaxenException;"
+    ],
+    "File": [
+      "import java.io.File;"
+    ],
+    "AdminRest": [
+      "import com.apple.spark.rest.AdminRest;"
+    ],
+    "Set": [
+      "import java.util.Set;"
+    ],
+    "XMLEventFactory": [
+      "import javax.xml.stream.XMLEventFactory;"
+    ],
+    "DOMImplementation": [
+      "import org.w3c.dom.DOMImplementation;"
+    ],
+    "FoodFaker": [
+      "import net.datafaker.providers.food.FoodFaker;"
+    ],
+    "Locator": [
+      "import org.xml.sax.Locator;"
+    ],
+    "Flat3Map": [
+      "import org.apache.commons.collections4.map.Flat3Map;"
+    ],
+    "assertAll": [
+      "import static org.junit.jupiter.api.Assertions.assertAll;"
+    ],
+    "NodeList": [
+      "import org.w3c.dom.NodeList;"
+    ],
+    "Lock": [
+      "import java.util.concurrent.locks.Lock;"
+    ],
+    "ClassWithObjects": [
+      "import com.google.gson.common.TestTypes.ClassWithObjects;"
+    ],
+    "DateTimeParseException": [
+      "import java.time.format.DateTimeParseException;"
+    ],
+    "Criterion": [
+      "import org.apache.commons.collections4.functors.ComparatorPredicate.Criterion;"
+    ],
+    "FakerIDN": [
+      "import net.datafaker.service.FakerIDN;"
+    ],
+    "TestStringMapGenerator": [
+      "import com.google.common.collect.testing.TestStringMapGenerator;"
+    ],
+    "AbstractSetDecorator": [
+      "import org.apache.commons.collections4.set.AbstractSetDecorator;"
+    ],
+    "DateTimeUtils": [
+      "import com.apple.spark.util.DateTimeUtils;"
+    ],
+    "ReflectionConstructor": [
+      "import org.jdom2.internal.ReflectionConstructor;"
+    ],
+    "InstanceofPredicate": [
+      "import org.apache.commons.collections4.functors.InstanceofPredicate;"
+    ],
+    "LazyList": [
+      "import org.apache.commons.collections4.list.LazyList;"
+    ],
+    "LOWER_CASE_WITH_DASHES": [
+      "import static com.google.gson.FieldNamingPolicy.LOWER_CASE_WITH_DASHES;"
+    ],
+    "XPathExpression": [
+      "import org.jdom2.xpath.XPathExpression;"
+    ],
+    "JsonDeserializer": [
+      "import com.google.gson.JsonDeserializer;"
+    ],
+    "MapFeature": [
+      "import com.google.common.collect.testing.features.MapFeature;"
+    ],
+    "MessageDigest": [
+      "import java.security.MessageDigest;"
+    ],
+    "FilterList": [
+      "import org.jdom2.ContentList.FilterList;"
+    ],
+    "ReverseComparator": [
+      "import org.apache.commons.collections4.comparators.ReverseComparator;"
+    ],
+    "TreeSet": [
+      "import java.util.TreeSet;"
+    ],
+    "QueryParam": [
+      "import javax.ws.rs.QueryParam;"
+    ],
+    "ConcurrentSkipListMap": [
+      "import java.util.concurrent.ConcurrentSkipListMap;"
+    ],
+    "coerce": [
+      "import static org.apache.commons.collections4.functors.FunctorUtils.coerce;"
+    ],
+    "ParameterizedTest": [
+      "import org.junit.jupiter.params.ParameterizedTest;"
+    ],
+    "DoubleMetaphone": [
+      "import org.apache.commons.codec.language.DoubleMetaphone;"
+    ],
+    "TransformedQueue": [
+      "import org.apache.commons.collections4.queue.TransformedQueue;"
+    ],
+    "expect": [
+      "import static org.easymock.EasyMock.expect;"
+    ],
+    "EN_UPPERCASE": [
+      "import static net.datafaker.providers.base.Text.EN_UPPERCASE;"
+    ],
+    "ParameterMetaData": [
+      "import java.sql.ParameterMetaData;"
+    ],
+    "Application": [
+      "import io.dropwizard.Application;"
+    ],
+    "AbstractPredicateTest": [
+      "import org.apache.commons.collections4.functors.AbstractPredicateTest;"
+    ],
+    "AbstractMultiSet": [
+      "import org.apache.commons.collections4.multiset.AbstractMultiSet;"
+    ],
+    "NamespaceStack": [
+      "import org.jdom2.util.NamespaceStack;"
+    ],
+    "MyParameterizedTypeAdapter": [
+      "import com.google.gson.ParameterizedTypeFixtures.MyParameterizedTypeAdapter;"
+    ],
+    "Gauge": [
+      "import io.micrometer.core.instrument.Gauge;"
+    ],
+    "DEFAULT_COMPLEX_MAP_KEYS": [
+      "import static com.google.gson.Gson.DEFAULT_COMPLEX_MAP_KEYS;"
+    ],
+    "sax": [
+      "import org.xml.sax.*;",
+      "import javax.xml.transform.sax.*;"
+    ],
+    "Streams": [
+      "import com.google.gson.internal.Streams;"
+    ],
+    "UnsupportedEncodingException": [
+      "import java.io.UnsupportedEncodingException;"
+    ],
+    "CSVPrinter": [
+      "import org.apache.commons.csv.CSVPrinter;"
+    ],
+    "ExceptionPredicate": [
+      "import org.apache.commons.collections4.functors.ExceptionPredicate;"
+    ],
+    "BoundedIterator": [
+      "import org.apache.commons.collections4.iterators.BoundedIterator;"
+    ]
   }
 }

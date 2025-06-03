@@ -27487,6 +27487,11 @@
                 "return_type": "boolean"
               },
               {
+                "signature": "org.apache.commons.codec.language.bm.Rule.Anonymous-0e7180b6-7544-46f0-8917-842810ec7b4b.Anonymous-0e7180b6-7544-46f0-8917-842810ec7b4b()",
+                "arguments": [],
+                "return_type": "org.apache.commons.codec.language.bm.Rule.Anonymous-0e7180b6-7544-46f0-8917-842810ec7b4b"
+              },
+              {
                 "signature": "java.util.regex.Pattern.matcher(CharSequence)",
                 "arguments": [
                   {
@@ -87769,6 +87774,11 @@
                 "return_type": "char"
               },
               {
+                "signature": "org.apache.commons.codec.language.bm.CacheSubSequencePerformanceTest.Anonymous-56a32759-ab8a-4e16-8a53-94a7395be548.Anonymous-56a32759-ab8a-4e16-8a53-94a7395be548()",
+                "arguments": [],
+                "return_type": "org.apache.commons.codec.language.bm.CacheSubSequencePerformanceTest.Anonymous-56a32759-ab8a-4e16-8a53-94a7395be548"
+              },
+              {
                 "signature": "java.lang.CharSequence.subSequence(int, int)",
                 "arguments": [
                   {
@@ -105101,5 +105111,1364 @@
       "file": "org\\apache\\commons\\codec\\StringEncoderComparatorTest.java",
       "javadoc": "\n * Test cases for the StingEncoderComparator.\n "
     }
+  },
+  "import_dict": {
+    "PreparedStatement": [
+      "import java.sql.PreparedStatement;"
+    ],
+    "Stream": [
+      "import java.util.stream.Stream;"
+    ],
+    "Test": [
+      "import org.junit.jupiter.api.*;",
+      "import org.junit.jupiter.api.Test;"
+    ],
+    "SimpleDateFormat": [
+      "import java.text.SimpleDateFormat;"
+    ],
+    "NodeSelectorRequirement": [
+      "import com.apple.spark.operator.NodeSelectorRequirement;"
+    ],
+    "AmazonS3ClientBuilder": [
+      "import com.amazonaws.services.s3.AmazonS3ClientBuilder;"
+    ],
+    "StandardCharsets": [
+      "import java.nio.charset.StandardCharsets;"
+    ],
+    "getBytesUtf8": [
+      "import static org.apache.commons.codec.binary.StringUtils.getBytesUtf8;"
+    ],
+    "AfterMethod": [
+      "import org.testng.annotations.AfterMethod;"
+    ],
+    "RestSubmissionsStreamingOutput": [
+      "import com.apple.spark.core.RestSubmissionsStreamingOutput;"
+    ],
+    "ExecutionException": [
+      "import java.util.concurrent.ExecutionException;"
+    ],
+    "Mock": [
+      "import org.mockito.*;"
+    ],
+    "ConcurrentLinkedQueue": [
+      "import java.util.concurrent.ConcurrentLinkedQueue;"
+    ],
+    "Soundex": [
+      "import org.apache.commons.codec.language.Soundex;"
+    ],
+    "PathParam": [
+      "import javax.ws.rs.PathParam;"
+    ],
+    "Parser": [
+      "import org.apache.commons.cli.Parser;"
+    ],
+    "DBConnection": [
+      "import com.apple.spark.core.DBConnection;"
+    ],
+    "getVolumes": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getVolumes;"
+    ],
+    "RUNNING_STATE": [
+      "import static com.apple.spark.core.SparkConstants.RUNNING_STATE;"
+    ],
+    "Before": [
+      "import org.junit.Before;"
+    ],
+    "IOUtils": [
+      "import org.h2.util.IOUtils;"
+    ],
+    "PodStatus": [
+      "import io.fabric8.kubernetes.api.model.PodStatus;"
+    ],
+    "ErrorMessage": [
+      "import io.dropwizard.jersey.errors.ErrorMessage;"
+    ],
+    "GetSubmissionStatusResponse": [
+      "import com.apple.spark.api.GetSubmissionStatusResponse;"
+    ],
+    "DNS_CONFIG_OPTION_NDOTS_VALUE": [
+      "import static com.apple.spark.core.Constants.DNS_CONFIG_OPTION_NDOTS_VALUE;"
+    ],
+    "assumeTrue": [
+      "import static org.junit.jupiter.api.Assumptions.assumeTrue;"
+    ],
+    "LOG_API": [
+      "import static com.apple.spark.core.Constants.LOG_API;"
+    ],
+    "DRIVER_CPU_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_CPU_BUFFER_RATIO;"
+    ],
+    "File": [
+      "import java.io.File;"
+    ],
+    "HttpClient": [
+      "import java.net.http.HttpClient;"
+    ],
+    "OpenAPI": [
+      "import io.swagger.v3.oas.models.OpenAPI;"
+    ],
+    "URL": [
+      "import java.net.URL;"
+    ],
+    "UserUnauthorizedHandler": [
+      "import com.apple.spark.security.UserUnauthorizedHandler;"
+    ],
+    "SERVICE_ABBR": [
+      "import static com.apple.spark.core.Constants.SERVICE_ABBR;"
+    ],
+    "EncoderException": [
+      "import org.apache.commons.codec.EncoderException;"
+    ],
+    "DefaultValue": [
+      "import javax.ws.rs.DefaultValue;"
+    ],
+    "URI": [
+      "import java.net.URI;"
+    ],
+    "BeforeAll": [
+      "import org.junit.jupiter.api.BeforeAll;"
+    ],
+    "Timestamp": [
+      "import java.sql.Timestamp;"
+    ],
+    "Timer": [
+      "import io.micrometer.core.instrument.Timer;",
+      "import java.util.Timer;"
+    ],
+    "ValueSource": [
+      "import org.junit.jupiter.params.provider.ValueSource;"
+    ],
+    "JWTVerifier": [
+      "import com.auth0.jwt.interfaces.JWTVerifier;"
+    ],
+    "CustomSerDe": [
+      "import com.apple.spark.util.CustomSerDe;"
+    ],
+    "Timed": [
+      "import com.codahale.metrics.annotation.Timed;"
+    ],
+    "ExceptionUtils": [
+      "import com.apple.spark.util.ExceptionUtils;"
+    ],
+    "Comparator": [
+      "import java.util.Comparator;"
+    ],
+    "StreamingOutput": [
+      "import javax.ws.rs.core.StreamingOutput;"
+    ],
+    "JsonInclude": [
+      "import com.fasterxml.jackson.annotation.JsonInclude;"
+    ],
+    "Schema": [
+      "import io.swagger.v3.oas.annotations.media.Schema;"
+    ],
+    "HealthCheck": [
+      "import com.codahale.metrics.health.HealthCheck;"
+    ],
+    "Context": [
+      "import org.apache.commons.codec.binary.BaseNCodec.Context;"
+    ],
+    "SparkApplicationResourceList": [
+      "import com.apple.spark.operator.SparkApplicationResourceList;"
+    ],
+    "Decoder": [
+      "import org.apache.commons.codec.Decoder;"
+    ],
+    "getSparkConf": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getSparkConf;"
+    ],
+    "LoadingCache": [
+      "import com.google.common.cache.LoadingCache;"
+    ],
+    "getYuniKornSchedulerConfig": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getYuniKornSchedulerConfig;"
+    ],
+    "CacheLoader": [
+      "import com.google.common.cache.CacheLoader;"
+    ],
+    "ExceptionMapper": [
+      "import javax.ws.rs.ext.ExceptionMapper;"
+    ],
+    "GET": [
+      "import javax.ws.rs.GET;"
+    ],
+    "Constants": [
+      "import com.apple.spark.core.Constants;",
+      "import static com.apple.spark.core.Constants.*;"
+    ],
+    "S3_GET_TIMEOUT_MILLISECS": [
+      "import static com.apple.spark.rest.AwsConstants.S3_GET_TIMEOUT_MILLISECS;"
+    ],
+    "IncrementalHash32x86": [
+      "import org.apache.commons.codec.digest.MurmurHash3.IncrementalHash32x86;"
+    ],
+    "Pod": [
+      "import io.fabric8.kubernetes.api.model.Pod;"
+    ],
+    "BufferedInputStream": [
+      "import java.io.BufferedInputStream;"
+    ],
+    "GetMySubmissionsResponse": [
+      "import com.apple.spark.api.GetMySubmissionsResponse;"
+    ],
+    "Principal": [
+      "import java.security.Principal;"
+    ],
+    "DoubleMetaphone": [
+      "import org.apache.commons.codec.language.DoubleMetaphone;"
+    ],
+    "ListIterator": [
+      "import java.util.ListIterator;"
+    ],
+    "BigInteger": [
+      "import java.math.BigInteger;"
+    ],
+    "Matcher": [
+      "import java.util.regex.Matcher;"
+    ],
+    "TreeMap": [
+      "import java.util.TreeMap;"
+    ],
+    "Meter": [
+      "import com.codahale.metrics.Meter;"
+    ],
+    "PodDNSConfig": [
+      "import io.fabric8.kubernetes.api.model.PodDNSConfig;"
+    ],
+    "EnumMap": [
+      "import java.util.EnumMap;"
+    ],
+    "UserNameBasicAuthenticator": [
+      "import com.apple.spark.security.UserNameBasicAuthenticator;"
+    ],
+    "IOException": [
+      "import java.io.IOException;"
+    ],
+    "PosixParser": [
+      "import org.apache.commons.cli.PosixParser;"
+    ],
+    "DNS_CONFIG_OPTION_NDOTS_NAME": [
+      "import static com.apple.spark.core.Constants.DNS_CONFIG_OPTION_NDOTS_NAME;"
+    ],
+    "Objects": [
+      "import java.util.Objects;"
+    ],
+    "RandomAccessFileMode": [
+      "import org.apache.commons.io.RandomAccessFileMode;"
+    ],
+    "ByteBuffer": [
+      "import java.nio.ByteBuffer;"
+    ],
+    "MessageDigestAlgorithms": [
+      "import org.apache.commons.codec.digest.MessageDigestAlgorithms;"
+    ],
+    "Pattern": [
+      "import java.util.regex.Pattern;"
+    ],
+    "User": [
+      "import com.apple.spark.security.User;"
+    ],
+    "Hidden": [
+      "import io.swagger.v3.oas.annotations.Hidden;"
+    ],
+    "ByteArrayInputStream": [
+      "import java.io.ByteArrayInputStream;"
+    ],
+    "BeforeClass": [
+      "import org.junit.BeforeClass;"
+    ],
+    "Secret": [
+      "import io.fabric8.kubernetes.api.model.Secret;"
+    ],
+    "Paths": [
+      "import java.nio.file.Paths;"
+    ],
+    "NodeSelectorOperator": [
+      "import com.apple.spark.operator.NodeSelectorOperator;"
+    ],
+    "MalformedURLException": [
+      "import java.net.MalformedURLException;"
+    ],
+    "Calendar": [
+      "import java.util.Calendar;"
+    ],
+    "CachedRowSet": [
+      "import javax.sql.rowset.CachedRowSet;"
+    ],
+    "CounterMetricContainer": [
+      "import com.apple.spark.util.CounterMetricContainer;"
+    ],
+    "Iterator": [
+      "import java.util.Iterator;"
+    ],
+    "ProgressListener": [
+      "import com.amazonaws.event.ProgressListener;"
+    ],
+    "ArrayList": [
+      "import java.util.ArrayList;"
+    ],
+    "ApplicationSubmissionHelper": [
+      "import com.apple.spark.core.ApplicationSubmissionHelper;"
+    ],
+    "CharEncoding": [
+      "import org.apache.commons.codec.CharEncoding;"
+    ],
+    "ObjectOutputStream": [
+      "import java.io.ObjectOutputStream;"
+    ],
+    "assertNotSame": [
+      "import static org.junit.jupiter.api.Assertions.assertNotSame;",
+      "import static org.junit.Assert.assertNotSame;"
+    ],
+    "EOF": [
+      "import static org.apache.commons.codec.binary.BaseNCodec.EOF;"
+    ],
+    "Application": [
+      "import io.dropwizard.Application;"
+    ],
+    "LoggingMeterRegistry": [
+      "import io.micrometer.core.instrument.logging.LoggingMeterRegistry;"
+    ],
+    "Connection": [
+      "import java.sql.Connection;"
+    ],
+    "MetricRegistry": [
+      "import com.codahale.metrics.MetricRegistry;"
+    ],
+    "EXECUTOR_CPU_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_CPU_BUFFER_RATIO;"
+    ],
+    "SortedSet": [
+      "import java.util.SortedSet;"
+    ],
+    "Group": [
+      "import io.fabric8.kubernetes.model.annotation.Group;"
+    ],
+    "POST": [
+      "import javax.ws.rs.POST;"
+    ],
+    "ArrayBlockingQueue": [
+      "import java.util.concurrent.ArrayBlockingQueue;"
+    ],
+    "DEFAULT_DB_NAME": [
+      "import static com.apple.spark.core.Constants.DEFAULT_DB_NAME;"
+    ],
+    "YAMLGenerator": [
+      "import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;"
+    ],
+    "ISO_INSTANT": [
+      "import static java.time.format.DateTimeFormatter.ISO_INSTANT;"
+    ],
+    "EnumeratedDistribution": [
+      "import org.apache.commons.math3.distribution.EnumeratedDistribution;"
+    ],
+    "ConfigUtil": [
+      "import com.apple.spark.util.ConfigUtil;"
+    ],
+    "AfterAll": [
+      "import org.junit.jupiter.api.AfterAll;"
+    ],
+    "EXECUTOR_CORE_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_CORE_DEFAULT;"
+    ],
+    "PodResource": [
+      "import io.fabric8.kubernetes.client.dsl.PodResource;"
+    ],
+    "fail": [
+      "import static org.junit.jupiter.api.Assertions.fail;",
+      "import static org.junit.Assert.fail;"
+    ],
+    "DateUtils": [
+      "import org.apache.commons.lang3.time.DateUtils;"
+    ],
+    "GetDriverInfoResponse": [
+      "import com.apple.spark.api.GetDriverInfoResponse;"
+    ],
+    "JsonProcessingException": [
+      "import com.fasterxml.jackson.core.JsonProcessingException;"
+    ],
+    "getImage": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getImage;"
+    ],
+    "Files": [
+      "import java.nio.file.Files;"
+    ],
+    "Authenticator": [
+      "import io.dropwizard.auth.Authenticator;"
+    ],
+    "CloudStorageRest": [
+      "import com.apple.spark.rest.CloudStorageRest;"
+    ],
+    "YAMLFactory": [
+      "import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;"
+    ],
+    "SharedIndexInformer": [
+      "import io.fabric8.kubernetes.client.informers.SharedIndexInformer;"
+    ],
+    "SparkUIConfiguration": [
+      "import com.apple.spark.operator.SparkUIConfiguration;"
+    ],
+    "ImmutableMap": [
+      "import com.google.common.collect.ImmutableMap;"
+    ],
+    "S3_API": [
+      "import static com.apple.spark.core.Constants.S3_API;"
+    ],
+    "assertEquals": [
+      "import static org.junit.jupiter.api.Assertions.*;",
+      "import static org.junit.jupiter.api.Assertions.assertEquals;"
+    ],
+    "Bootstrap": [
+      "import io.dropwizard.setup.Bootstrap;"
+    ],
+    "client": [
+      "import io.fabric8.kubernetes.client.*;"
+    ],
+    "ApplicationGetLogRest": [
+      "import com.apple.spark.rest.ApplicationGetLogRest;"
+    ],
+    "IncrementalHash32": [
+      "import org.apache.commons.codec.digest.MurmurHash3.IncrementalHash32;"
+    ],
+    "OptionBuilder": [
+      "import org.apache.commons.cli.OptionBuilder;"
+    ],
+    "Clock": [
+      "import io.micrometer.core.instrument.Clock;"
+    ],
+    "EventList": [
+      "import io.fabric8.kubernetes.api.model.EventList;"
+    ],
+    "BigDecimal": [
+      "import java.math.BigDecimal;"
+    ],
+    "DataProvider": [
+      "import org.testng.annotations.DataProvider;"
+    ],
+    "assertNull": [
+      "import static org.junit.Assert.assertNull;",
+      "import static org.junit.jupiter.api.Assertions.assertNull;"
+    ],
+    "CRC32": [
+      "import java.util.zip.CRC32;"
+    ],
+    "SharedInformerFactory": [
+      "import io.fabric8.kubernetes.client.informers.SharedInformerFactory;"
+    ],
+    "storage": [
+      "import com.google.cloud.storage.*;"
+    ],
+    "StringReader": [
+      "import java.io.StringReader;"
+    ],
+    "Options": [
+      "import org.apache.commons.cli.Options;"
+    ],
+    "SubmissionSummary": [
+      "import com.apple.spark.api.SubmissionSummary;"
+    ],
+    "assertThrows": [
+      "import static org.junit.jupiter.api.Assertions.assertThrows;"
+    ],
+    "Collection": [
+      "import java.util.Collection;"
+    ],
+    "Checksum": [
+      "import java.util.zip.Checksum;"
+    ],
+    "DriverManager": [
+      "import java.sql.DriverManager;"
+    ],
+    "Path": [
+      "import java.nio.file.Path;",
+      "import javax.ws.rs.Path;"
+    ],
+    "Closeable": [
+      "import java.io.Closeable;"
+    ],
+    "ParamException": [
+      "import org.glassfish.jersey.server.ParamException;"
+    ],
+    "OpenAPIDefinition": [
+      "import io.swagger.v3.oas.annotations.OpenAPIDefinition;"
+    ],
+    "Jdbi": [
+      "import org.jdbi.v3.core.Jdbi;"
+    ],
+    "S3Object": [
+      "import com.amazonaws.services.s3.model.S3Object;"
+    ],
+    "YUNIKORN_SPARK_DEFAULT_QUEUE": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_SPARK_DEFAULT_QUEUE;"
+    ],
+    "ResourceEventHandler": [
+      "import io.fabric8.kubernetes.client.informers.ResourceEventHandler;"
+    ],
+    "MissingArgumentException": [
+      "import org.apache.commons.cli.MissingArgumentException;"
+    ],
+    "AmbiguousOptionException": [
+      "import org.apache.commons.cli.AmbiguousOptionException;"
+    ],
+    "ThreadLocalRandom": [
+      "import java.util.concurrent.ThreadLocalRandom;"
+    ],
+    "FileChannel": [
+      "import java.nio.channels.FileChannel;"
+    ],
+    "DecoderException": [
+      "import org.apache.commons.codec.DecoderException;"
+    ],
+    "CommandLine": [
+      "import org.apache.commons.cli.CommandLine;"
+    ],
+    "Algorithm": [
+      "import com.auth0.jwt.algorithms.Algorithm;"
+    ],
+    "Produces": [
+      "import javax.ws.rs.Produces;"
+    ],
+    "ObjectMetadata": [
+      "import com.amazonaws.services.s3.model.ObjectMetadata;"
+    ],
+    "UserNameAuthFilter": [
+      "import com.apple.spark.security.UserNameAuthFilter;"
+    ],
+    "Base64": [
+      "import java.util.Base64;",
+      "import org.apache.commons.codec.binary.Base64;"
+    ],
+    "FilterInputStream": [
+      "import java.io.FilterInputStream;"
+    ],
+    "VersionInfo": [
+      "import com.apple.spark.util.VersionInfo;"
+    ],
+    "SparkApplication": [
+      "import com.apple.spark.operator.SparkApplication;"
+    ],
+    "EnumSource": [
+      "import org.junit.jupiter.params.provider.EnumSource;"
+    ],
+    "ProgressEvent": [
+      "import com.amazonaws.event.ProgressEvent;"
+    ],
+    "PodDNSConfigOption": [
+      "import io.fabric8.kubernetes.api.model.PodDNSConfigOption;"
+    ],
+    "KubernetesHelper": [
+      "import com.apple.spark.core.KubernetesHelper;"
+    ],
+    "IllegalCharsetNameException": [
+      "import java.nio.charset.IllegalCharsetNameException;"
+    ],
+    "assertNotNull": [
+      "import static org.junit.jupiter.api.Assertions.assertNotNull;",
+      "import static org.junit.Assert.assertNotNull;"
+    ],
+    "S3_PUT_TIMEOUT_MILLISECS": [
+      "import static com.apple.spark.rest.AwsConstants.S3_PUT_TIMEOUT_MILLISECS;"
+    ],
+    "Arrays": [
+      "import java.util.Arrays;"
+    ],
+    "getSparkUIConfiguration": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getSparkUIConfiguration;"
+    ],
+    "ClientConfiguration": [
+      "import com.amazonaws.ClientConfiguration;"
+    ],
+    "ChainedAuthFilter": [
+      "import io.dropwizard.auth.chained.ChainedAuthFilter;"
+    ],
+    "EXECUTOR_MEM_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_MEM_BUFFER_RATIO;"
+    ],
+    "ADMIN_API": [
+      "import static com.apple.spark.core.Constants.ADMIN_API;"
+    ],
+    "HashMap": [
+      "import java.util.HashMap;"
+    ],
+    "Map": [
+      "import java.util.Map;"
+    ],
+    "assertFalse": [
+      "import static org.junit.Assert.assertFalse;",
+      "import static org.junit.jupiter.api.Assertions.assertFalse;"
+    ],
+    "Volume": [
+      "import com.apple.spark.operator.Volume;"
+    ],
+    "SubmitApplicationResponse": [
+      "import com.apple.spark.api.SubmitApplicationResponse;"
+    ],
+    "Date": [
+      "import java.util.Date;"
+    ],
+    "HeaderParam": [
+      "import javax.ws.rs.HeaderParam;"
+    ],
+    "RequestBody": [
+      "import io.swagger.v3.oas.annotations.parameters.RequestBody;"
+    ],
+    "InvalidPathException": [
+      "import java.nio.file.InvalidPathException;"
+    ],
+    "RestStreamingOutput": [
+      "import com.apple.spark.core.RestStreamingOutput;"
+    ],
+    "MethodSource": [
+      "import org.junit.jupiter.params.provider.MethodSource;",
+      "org.junit.jupiter.params.provider.MethodSource"
+    ],
+    "RequiredDuringSchedulingIgnoredDuringExecutionTerm": [
+      "import com.apple.spark.operator.RequiredDuringSchedulingIgnoredDuringExecutionTerm;"
+    ],
+    "Mac": [
+      "import javax.crypto.Mac;"
+    ],
+    "Assumptions": [
+      "import org.junit.jupiter.api.Assumptions;"
+    ],
+    "TimeUnit": [
+      "import java.util.concurrent.TimeUnit;"
+    ],
+    "CacheBuilder": [
+      "import com.google.common.cache.CacheBuilder;"
+    ],
+    "JwtUtils": [
+      "import com.apple.spark.util.JwtUtils;"
+    ],
+    "AfterEach": [
+      "import org.junit.jupiter.api.AfterEach;"
+    ],
+    "BinaryDecoder": [
+      "import org.apache.commons.codec.BinaryDecoder;"
+    ],
+    "AuthValueFactoryProvider": [
+      "import io.dropwizard.auth.AuthValueFactoryProvider;"
+    ],
+    "Constructor": [
+      "import java.lang.reflect.Constructor;"
+    ],
+    "LoggerFactory": [
+      "import org.slf4j.LoggerFactory;"
+    ],
+    "FileOutputStream": [
+      "import java.io.FileOutputStream;"
+    ],
+    "NoSuchAlgorithmException": [
+      "import java.security.NoSuchAlgorithmException;"
+    ],
+    "TreeSet": [
+      "import java.util.TreeSet;"
+    ],
+    "DRIVER_MEM_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_MEM_DEFAULT;"
+    ],
+    "Ignore": [
+      "import org.junit.Ignore;"
+    ],
+    "RateLimiter": [
+      "import com.google.common.util.concurrent.RateLimiter;"
+    ],
+    "TimerMetricContainer": [
+      "import com.apple.spark.util.TimerMetricContainer;"
+    ],
+    "ContainerRequestContext": [
+      "import javax.ws.rs.container.ContainerRequestContext;"
+    ],
+    "QueryParam": [
+      "import javax.ws.rs.QueryParam;"
+    ],
+    "ObjectFieldSelector": [
+      "import com.apple.spark.operator.ObjectFieldSelector;"
+    ],
+    "SubmitApplicationRequest": [
+      "import com.apple.spark.api.SubmitApplicationRequest;"
+    ],
+    "Parameter": [
+      "import io.swagger.v3.oas.annotations.Parameter;"
+    ],
+    "HealthcheckResponse": [
+      "import com.apple.spark.api.HealthcheckResponse;"
+    ],
+    "ConfigValue": [
+      "import com.apple.spark.core.ConfigValue;"
+    ],
+    "FileInputStream": [
+      "import java.io.FileInputStream;"
+    ],
+    "CustomResourceList": [
+      "import io.fabric8.kubernetes.client.CustomResourceList;"
+    ],
+    "Resources": [
+      "import org.apache.commons.codec.Resources;"
+    ],
+    "Instant": [
+      "import java.time.Instant;"
+    ],
+    "MixedOperation": [
+      "import io.fabric8.kubernetes.client.dsl.MixedOperation;"
+    ],
+    "BaseNCodec": [
+      "import org.apache.commons.codec.binary.BaseNCodec;"
+    ],
+    "StatsdConfig": [
+      "import io.micrometer.statsd.StatsdConfig;"
+    ],
+    "LogWatch": [
+      "import io.fabric8.kubernetes.client.dsl.LogWatch;"
+    ],
+    "Random": [
+      "import java.util.Random;"
+    ],
+    "Info": [
+      "import io.swagger.v3.oas.annotations.info.Info;"
+    ],
+    "BPGStatsdConfig": [
+      "import com.apple.spark.core.BPGStatsdConfig;"
+    ],
+    "JsonIgnoreProperties": [
+      "import com.fasterxml.jackson.annotation.JsonIgnoreProperties;"
+    ],
+    "BasicCredentialAuthFilter": [
+      "import io.dropwizard.auth.basic.BasicCredentialAuthFilter;"
+    ],
+    "OpenApiResource": [
+      "import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;"
+    ],
+    "PLACEHOLDER_TIMEOUT_IN_SECONDS": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.PLACEHOLDER_TIMEOUT_IN_SECONDS;"
+    ],
+    "DateTimeFormatter": [
+      "import java.time.format.DateTimeFormatter;"
+    ],
+    "PermitAll": [
+      "import javax.annotation.security.PermitAll;"
+    ],
+    "Upload": [
+      "import com.amazonaws.services.s3.transfer.Upload;"
+    ],
+    "Content": [
+      "import io.swagger.v3.oas.annotations.media.Content;"
+    ],
+    "EnvVar": [
+      "import com.apple.spark.operator.EnvVar;"
+    ],
+    "TransferManagerBuilder": [
+      "import com.amazonaws.services.s3.transfer.TransferManagerBuilder;"
+    ],
+    "BeforeEach": [
+      "import org.junit.jupiter.api.BeforeEach;"
+    ],
+    "MediaType": [
+      "import javax.ws.rs.core.MediaType;"
+    ],
+    "Locale": [
+      "import java.util.Locale;"
+    ],
+    "Modifier": [
+      "import java.lang.reflect.Modifier;"
+    ],
+    "Hex": [
+      "import org.apache.commons.codec.binary.Hex;"
+    ],
+    "CLIENT_REGION": [
+      "import static com.apple.spark.rest.AwsConstants.CLIENT_REGION;"
+    ],
+    "SQLException": [
+      "import java.sql.SQLException;"
+    ],
+    "Operation": [
+      "import io.swagger.v3.oas.annotations.Operation;"
+    ],
+    "LinkedList": [
+      "import java.util.LinkedList;"
+    ],
+    "NoSuchElementException": [
+      "import java.util.NoSuchElementException;"
+    ],
+    "PrintStream": [
+      "import java.io.PrintStream;"
+    ],
+    "Resource": [
+      "import io.fabric8.kubernetes.client.dsl.Resource;"
+    ],
+    "AppConfig": [
+      "import com.apple.spark.AppConfig;"
+    ],
+    "YUNIKORN_SCHEDULER": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_SCHEDULER;"
+    ],
+    "FilterOutputStream": [
+      "import java.io.FilterOutputStream;"
+    ],
+    "HEALTH_CHECK_API": [
+      "import static com.apple.spark.core.Constants.HEALTH_CHECK_API;"
+    ],
+    "StringUtils": [
+      "import org.apache.commons.lang3.StringUtils;",
+      "import org.apache.commons.codec.binary.StringUtils;"
+    ],
+    "UnsupportedCharsetException": [
+      "import java.nio.charset.UnsupportedCharsetException;"
+    ],
+    "BitSet": [
+      "import java.util.BitSet;"
+    ],
+    "NodeAffinity": [
+      "import com.apple.spark.operator.NodeAffinity;"
+    ],
+    "AuthDynamicFeature": [
+      "import io.dropwizard.auth.AuthDynamicFeature;"
+    ],
+    "KubernetesClient": [
+      "import io.fabric8.kubernetes.client.KubernetesClient;"
+    ],
+    "Option": [
+      "import org.apache.commons.cli.Option;"
+    ],
+    "UnauthorizedHandler": [
+      "import io.dropwizard.auth.UnauthorizedHandler;"
+    ],
+    "ApiResponse": [
+      "import io.swagger.v3.oas.annotations.responses.ApiResponse;"
+    ],
+    "HttpRequest": [
+      "import java.net.http.HttpRequest;"
+    ],
+    "Scanner": [
+      "import java.util.Scanner;"
+    ],
+    "DeleteSubmissionResponse": [
+      "import com.apple.spark.api.DeleteSubmissionResponse;"
+    ],
+    "AtomicLong": [
+      "import java.util.concurrent.atomic.AtomicLong;"
+    ],
+    "AbstractStringEncoderTest": [
+      "import org.apache.commons.codec.AbstractStringEncoderTest;"
+    ],
+    "Serializable": [
+      "import java.io.Serializable;"
+    ],
+    "ApplicationSubmissionRest": [
+      "import com.apple.spark.rest.ApplicationSubmissionRest;"
+    ],
+    "Claim": [
+      "import com.auth0.jwt.interfaces.Claim;"
+    ],
+    "QUEUE_INFO": [
+      "import static com.apple.spark.core.Constants.QUEUE_INFO;"
+    ],
+    "WebApplicationException": [
+      "import javax.ws.rs.WebApplicationException;"
+    ],
+    "InputStreamReader": [
+      "import java.io.InputStreamReader;"
+    ],
+    "LinkedHashMap": [
+      "import java.util.LinkedHashMap;"
+    ],
+    "DefaultAWSCredentialsProviderChain": [
+      "import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;"
+    ],
+    "Gauge": [
+      "import io.micrometer.core.instrument.Gauge;"
+    ],
+    "JWTVerificationException": [
+      "import com.auth0.jwt.exceptions.JWTVerificationException;"
+    ],
+    "StringDecoder": [
+      "import org.apache.commons.codec.StringDecoder;"
+    ],
+    "ExecutorSpec": [
+      "import com.apple.spark.operator.ExecutorSpec;"
+    ],
+    "RestartPolicy": [
+      "import com.apple.spark.operator.RestartPolicy;"
+    ],
+    "ObjectMapper": [
+      "import com.fasterxml.jackson.databind.ObjectMapper;"
+    ],
+    "ResultSet": [
+      "import java.sql.ResultSet;"
+    ],
+    "JWT": [
+      "import com.auth0.jwt.JWT;"
+    ],
+    "Supplier": [
+      "import java.util.function.Supplier;"
+    ],
+    "GetJobEnvironmentResponse": [
+      "import com.apple.spark.clients.sparkhistory.GetJobEnvironmentResponse;"
+    ],
+    "SparkApplicationSpec": [
+      "import com.apple.spark.operator.SparkApplicationSpec;"
+    ],
+    "StatsdMeterRegistry": [
+      "import io.micrometer.statsd.StatsdMeterRegistry;"
+    ],
+    "Counter": [
+      "import io.micrometer.core.instrument.Counter;"
+    ],
+    "MessageDigest": [
+      "import java.security.MessageDigest;"
+    ],
+    "SecureRandom": [
+      "import java.security.SecureRandom;"
+    ],
+    "OutputStream": [
+      "import java.io.OutputStream;"
+    ],
+    "InvalidKeyException": [
+      "import java.security.InvalidKeyException;"
+    ],
+    "SparkCluster": [
+      "import static com.apple.spark.AppConfig.SparkCluster;",
+      "import com.apple.spark.AppConfig.SparkCluster;"
+    ],
+    "assertTrue": [
+      "import static org.junit.Assert.assertTrue;",
+      "import static org.junit.jupiter.api.Assertions.assertTrue;"
+    ],
+    "AuthFilter": [
+      "import io.dropwizard.auth.AuthFilter;"
+    ],
+    "Tag": [
+      "import io.swagger.v3.oas.annotations.tags.Tag;",
+      "import io.micrometer.core.instrument.Tag;"
+    ],
+    "SUBMITTED_STATE": [
+      "import static com.apple.spark.core.SparkConstants.SUBMITTED_STATE;"
+    ],
+    "BeforeMethod": [
+      "import org.testng.annotations.BeforeMethod;"
+    ],
+    "ExceptionMetered": [
+      "import com.codahale.metrics.annotation.ExceptionMetered;"
+    ],
+    "FileNotFoundException": [
+      "import java.io.FileNotFoundException;"
+    ],
+    "ZoneOffset": [
+      "import java.time.ZoneOffset;"
+    ],
+    "NUM_EXECUTORS_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.NUM_EXECUTORS_DEFAULT;"
+    ],
+    "ThrowableExceptionMapper": [
+      "import com.apple.spark.core.ThrowableExceptionMapper;"
+    ],
+    "Collectors": [
+      "import java.util.stream.Collectors;"
+    ],
+    "DefaultKubernetesClient": [
+      "import io.fabric8.kubernetes.client.DefaultKubernetesClient;"
+    ],
+    "HttpUtils": [
+      "import com.apple.spark.util.HttpUtils;"
+    ],
+    "get": [
+      "import static com.apple.spark.util.HttpUtils.get;"
+    ],
+    "byteStringAsGb": [
+      "import static org.apache.spark.network.util.JavaUtils.byteStringAsGb;"
+    ],
+    "DELETE": [
+      "import javax.ws.rs.DELETE;"
+    ],
+    "CsvSource": [
+      "import org.junit.jupiter.params.provider.CsvSource;"
+    ],
+    "UploadS3Response": [
+      "import com.apple.spark.api.UploadS3Response;"
+    ],
+    "Dependencies": [
+      "import com.apple.spark.operator.Dependencies;"
+    ],
+    "CompletableFuture": [
+      "import java.util.concurrent.CompletableFuture;"
+    ],
+    "SimpleMeterRegistry": [
+      "import io.micrometer.core.instrument.simple.SimpleMeterRegistry;"
+    ],
+    "List": [
+      "import java.util.List;"
+    ],
+    "DateTimeUtils": [
+      "import com.apple.spark.util.DateTimeUtils;"
+    ],
+    "Charsets": [
+      "import org.apache.commons.io.Charsets;"
+    ],
+    "PrintWriter": [
+      "import java.io.PrintWriter;"
+    ],
+    "CustomResource": [
+      "import io.fabric8.kubernetes.client.CustomResource;"
+    ],
+    "GetObjectRequest": [
+      "import com.amazonaws.services.s3.model.GetObjectRequest;"
+    ],
+    "MONITOR_KILLED_APPS": [
+      "import static com.apple.spark.core.Constants.MONITOR_KILLED_APPS;"
+    ],
+    "AuthenticationException": [
+      "import io.dropwizard.auth.AuthenticationException;"
+    ],
+    "UnsupportedEncodingException": [
+      "import java.io.UnsupportedEncodingException;"
+    ],
+    "EXECUTOR_MEM_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.EXECUTOR_MEM_DEFAULT;"
+    ],
+    "AssertionFailedError": [
+      "import org.opentest4j.AssertionFailedError;"
+    ],
+    "assertTimeout": [
+      "import static org.junit.jupiter.api.Assertions.assertTimeout;"
+    ],
+    "Nullable": [
+      "import javax.annotation.Nullable;"
+    ],
+    "Encoder": [
+      "import org.apache.commons.codec.Encoder;"
+    ],
+    "InputStream": [
+      "import java.io.InputStream;"
+    ],
+    "Duration": [
+      "import java.time.Duration;"
+    ],
+    "Environment": [
+      "import io.dropwizard.setup.Environment;"
+    ],
+    "Disabled": [
+      "import org.junit.jupiter.api.Disabled;"
+    ],
+    "OpenOption": [
+      "import java.nio.file.OpenOption;"
+    ],
+    "HashSet": [
+      "import java.util.HashSet;"
+    ],
+    "TransferManager": [
+      "import com.amazonaws.services.s3.transfer.TransferManager;"
+    ],
+    "Set": [
+      "import java.util.Set;"
+    ],
+    "EndAwareInputStream": [
+      "import com.apple.spark.util.EndAwareInputStream;"
+    ],
+    "DriverInfo": [
+      "import com.apple.spark.operator.DriverInfo;"
+    ],
+    "rotateLeft": [
+      "import static java.lang.Integer.rotateLeft;"
+    ],
+    "ObjectInputStream": [
+      "import java.io.ObjectInputStream;"
+    ],
+    "Enumeration": [
+      "import java.util.Enumeration;"
+    ],
+    "AdminRest": [
+      "import com.apple.spark.rest.AdminRest;"
+    ],
+    "Key": [
+      "import java.security.Key;"
+    ],
+    "Consumes": [
+      "import javax.ws.rs.Consumes;"
+    ],
+    "SecretKeySpec": [
+      "import javax.crypto.spec.SecretKeySpec;"
+    ],
+    "BinaryEncoder": [
+      "import org.apache.commons.codec.BinaryEncoder;"
+    ],
+    "ParameterMetaData": [
+      "import java.sql.ParameterMetaData;"
+    ],
+    "Pair": [
+      "import org.apache.commons.math3.util.Pair;"
+    ],
+    "BasicCredentials": [
+      "import io.dropwizard.auth.basic.BasicCredentials;"
+    ],
+    "StandardOpenOption": [
+      "import java.nio.file.StandardOpenOption;"
+    ],
+    "ByteArrayOutputStream": [
+      "import java.io.ByteArrayOutputStream;"
+    ],
+    "Assert": [
+      "import org.testng.Assert;",
+      "import org.junit.Assert;"
+    ],
+    "GaugeMetricContainer": [
+      "import com.apple.spark.util.GaugeMetricContainer;"
+    ],
+    "CustomResourceDefinitionContext": [
+      "import io.fabric8.kubernetes.client.dsl.base.CustomResourceDefinitionContext;"
+    ],
+    "BatchSchedulerConfiguration": [
+      "import com.apple.spark.operator.BatchSchedulerConfiguration;"
+    ],
+    "PutObjectRequest": [
+      "import com.amazonaws.services.s3.model.PutObjectRequest;"
+    ],
+    "AtomicInteger": [
+      "import java.util.concurrent.atomic.AtomicInteger;"
+    ],
+    "SystemUtils": [
+      "import org.apache.commons.lang3.SystemUtils;"
+    ],
+    "Phoneme": [
+      "import org.apache.commons.codec.language.bm.Rule.Phoneme;"
+    ],
+    "HttpResponse": [
+      "import java.net.http.HttpResponse;"
+    ],
+    "HelpFormatter": [
+      "import org.apache.commons.cli.HelpFormatter;"
+    ],
+    "ParameterizedTest": [
+      "import org.junit.jupiter.params.ParameterizedTest;"
+    ],
+    "getProxyUser": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getProxyUser;"
+    ],
+    "LanguageSet": [
+      "import org.apache.commons.codec.language.bm.Languages.LanguageSet;"
+    ],
+    "ConcurrentHashMap": [
+      "import java.util.concurrent.ConcurrentHashMap;"
+    ],
+    "SharedMetricRegistries": [
+      "import com.codahale.metrics.SharedMetricRegistries;"
+    ],
+    "Properties": [
+      "import java.util.Properties;"
+    ],
+    "HealthcheckRest": [
+      "import com.apple.spark.rest.HealthcheckRest;"
+    ],
+    "Field": [
+      "import java.lang.reflect.Field;"
+    ],
+    "Collections": [
+      "import java.util.Collections;"
+    ],
+    "OptionGroup": [
+      "import org.apache.commons.cli.OptionGroup;"
+    ],
+    "KubernetesDeserializer": [
+      "import io.fabric8.kubernetes.internal.KubernetesDeserializer;"
+    ],
+    "BufferedReader": [
+      "import java.io.BufferedReader;"
+    ],
+    "assertNotEquals": [
+      "import static org.junit.jupiter.api.Assertions.assertNotEquals;",
+      "import static org.junit.Assert.assertNotEquals;"
+    ],
+    "TimerTask": [
+      "import java.util.TimerTask;"
+    ],
+    "DecodedJWT": [
+      "import com.auth0.jwt.interfaces.DecodedJWT;"
+    ],
+    "ApplicationState": [
+      "import com.apple.spark.operator.ApplicationState;"
+    ],
+    "AmazonS3": [
+      "import com.amazonaws.services.s3.AmazonS3;"
+    ],
+    "JavaVersion": [
+      "import org.apache.commons.lang3.JavaVersion;"
+    ],
+    "ArrayUtils": [
+      "import org.apache.commons.lang3.ArrayUtils;"
+    ],
+    "Arguments": [
+      "import org.junit.jupiter.params.provider.Arguments;"
+    ],
+    "YUNIKORN_ROOT_QUEUE": [
+      "import static com.apple.spark.core.BatchSchedulerConstants.YUNIKORN_ROOT_QUEUE;"
+    ],
+    "RandomAccessFile": [
+      "import java.io.RandomAccessFile;"
+    ],
+    "SignatureVerificationException": [
+      "import com.auth0.jwt.exceptions.SignatureVerificationException;"
+    ],
+    "Event": [
+      "import io.fabric8.kubernetes.api.model.Event;"
+    ],
+    "MeterRegistry": [
+      "import io.micrometer.core.instrument.MeterRegistry;"
+    ],
+    "GnuParser": [
+      "import org.apache.commons.cli.GnuParser;"
+    ],
+    "RowSetProvider": [
+      "import javax.sql.rowset.RowSetProvider;"
+    ],
+    "ParseException": [
+      "import org.apache.commons.cli.ParseException;"
+    ],
+    "Vector": [
+      "import java.util.Vector;"
+    ],
+    "BPGHealthCheck": [
+      "import com.apple.spark.health.BPGHealthCheck;"
+    ],
+    "DRIVER_CORE_DEFAULT": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_CORE_DEFAULT;"
+    ],
+    "Types": [
+      "import java.sql.Types;"
+    ],
+    "EnvVarSource": [
+      "import com.apple.spark.operator.EnvVarSource;"
+    ],
+    "HttpHeaders": [
+      "import javax.ws.rs.core.HttpHeaders;"
+    ],
+    "Version": [
+      "import io.fabric8.kubernetes.model.annotation.Version;"
+    ],
+    "SwaggerConfiguration": [
+      "import io.swagger.v3.oas.integration.SwaggerConfiguration;"
+    ],
+    "PodList": [
+      "import io.fabric8.kubernetes.api.model.PodList;"
+    ],
+    "Regions": [
+      "import com.amazonaws.regions.Regions;"
+    ],
+    "QueueTokenVerifier": [
+      "import com.apple.spark.core.QueueTokenVerifier;"
+    ],
+    "getExecutorSpec": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getExecutorSpec;"
+    ],
+    "Response": [
+      "import javax.ws.rs.core.Response;"
+    ],
+    "MockitoExtension": [
+      "import org.mockito.junit.jupiter.MockitoExtension;"
+    ],
+    "DefaultParser": [
+      "import org.apache.commons.cli.DefaultParser;"
+    ],
+    "SparkConstants": [
+      "import com.apple.spark.core.SparkConstants;"
+    ],
+    "Method": [
+      "import java.lang.reflect.Method;"
+    ],
+    "CodecPolicy": [
+      "import org.apache.commons.codec.CodecPolicy;"
+    ],
+    "KubernetesClusterAndNamespace": [
+      "import com.apple.spark.util.KubernetesClusterAndNamespace;"
+    ],
+    "Configuration": [
+      "import io.dropwizard.Configuration;"
+    ],
+    "Affinity": [
+      "import com.apple.spark.operator.Affinity;"
+    ],
+    "DriverSpec": [
+      "import com.apple.spark.operator.DriverSpec;"
+    ],
+    "Auth": [
+      "import io.dropwizard.auth.Auth;"
+    ],
+    "HostPathVolumeSource": [
+      "import com.apple.spark.operator.HostPathVolumeSource;"
+    ],
+    "StatsdFlavor": [
+      "import io.micrometer.statsd.StatsdFlavor;"
+    ],
+    "Optional": [
+      "import java.util.Optional;"
+    ],
+    "Logger": [
+      "import org.slf4j.Logger;"
+    ],
+    "core": [
+      "import com.apple.spark.core.*;"
+    ],
+    "CORE_LIMIT_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.CORE_LIMIT_RATIO;"
+    ],
+    "Charset": [
+      "import java.nio.charset.Charset;"
+    ],
+    "ApplicationMonitor": [
+      "import com.apple.spark.core.ApplicationMonitor;"
+    ],
+    "MONITOR_RUNNING_APPS": [
+      "import static com.apple.spark.core.Constants.MONITOR_RUNNING_APPS;"
+    ],
+    "DRIVER_MEM_BUFFER_RATIO": [
+      "import static com.apple.spark.core.SparkConstants.DRIVER_MEM_BUFFER_RATIO;"
+    ],
+    "SparkApplicationStatus": [
+      "import com.apple.spark.operator.SparkApplicationStatus;"
+    ],
+    "LinkedHashSet": [
+      "import java.util.LinkedHashSet;"
+    ],
+    "LogDao": [
+      "import com.apple.spark.core.LogDao;"
+    ],
+    "StringEncoder": [
+      "import org.apache.commons.codec.StringEncoder;"
+    ],
+    "ExtendWith": [
+      "import org.junit.jupiter.api.extension.ExtendWith;"
+    ],
+    "StringWriter": [
+      "import java.io.StringWriter;"
+    ],
+    "assertArrayEquals": [
+      "import static org.junit.jupiter.api.Assertions.assertArrayEquals;",
+      "import static org.junit.Assert.assertArrayEquals;"
+    ],
+    "getType": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getType;"
+    ],
+    "UploadResult": [
+      "import com.amazonaws.services.s3.transfer.model.UploadResult;"
+    ],
+    "DigestUtils": [
+      "import org.apache.commons.codec.digest.DigestUtils;"
+    ],
+    "EMPTY_STRING_ARRAY": [
+      "import static org.apache.commons.cli.Util.EMPTY_STRING_ARRAY;"
+    ],
+    "getDriverSpec": [
+      "import static com.apple.spark.core.ApplicationSubmissionHelper.getDriverSpec;"
+    ],
+    "NodeSelectorTerm": [
+      "import com.apple.spark.operator.NodeSelectorTerm;"
+    ],
+    "UUID": [
+      "import java.util.UUID;"
+    ],
+    "CommandLineParser": [
+      "import org.apache.commons.cli.CommandLineParser;"
+    ],
+    "AwsClientBuilder": [
+      "import com.amazonaws.client.builder.AwsClientBuilder;"
+    ]
   }
 }

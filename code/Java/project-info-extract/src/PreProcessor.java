@@ -66,6 +66,7 @@ public class PreProcessor {
             JsonObject[] codeInfo = codeInfoExtractor.processProject(source_folder, test_folder, jar_folder);
             projectJson.add("source", codeInfo[0]);
             projectJson.add("test", codeInfo[1]);
+            projectJson.add("import_dict", codeInfo[2]);
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }

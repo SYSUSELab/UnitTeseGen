@@ -71,6 +71,9 @@ public class TestClassUpdator {
             mergeImports(existCU, addCU);
             // add fields
             addFields(existClassDecl, addClassDecl);
+            // todo: add inner classes
+            // add inner classes
+            
             // add test methods
             addNewTestMethods(existClassDecl, addClassDecl);
             return existCU.toString();
