@@ -1,5 +1,6 @@
 import re
 import copy
+from tokenize import group
 import jpype
 import logging
 import subprocess
@@ -24,7 +25,7 @@ def check_class_name(init_class:str, tcname:str, pcname:str):
 def insert_test_case(init_class:str, insert_code:str):
     init_class = init_class.strip()
     insert_code = insert_code.lstrip()
-    TestClassEditor = jpype.JClass("TestClassEditor")
+    TestClassEditor = jpype.JClass("editcode.TestClassUpdator")
     added_class = str(TestClassEditor.main([init_class, insert_code]))
     return added_class
 
@@ -32,21 +33,27 @@ def insert_test_case(init_class:str, insert_code:str):
 class CodeRepairer:
     max_tries: int
     url: str
+    testclass_path: str
+    temp_path: str
     cd_cmd: list
+    import_dict: dict
     llm_caller: LLMCaller
     prompt_gen: PromptGenerator
-    logger: logging.Logger
+    parser: ASTParser
     class_editor: jpype.JClass
+    logger: logging.Logger
 
-    def __init__(self, project_url, tc_path:str, fix_tries:int):
+    def __init__(self, project_url, tc_path:str, fix_tries:int, impt_dict:dict):
         self.max_tries = fix_tries
         self.url = project_url
-        self.cd_cmd = ['cd', project_url, '&&']
         self.testclass_path = tc_path
         self.temp_path = f"{self.testclass_path}/temp/"
+        self.cd_cmd = ['cd', project_url, '&&']
+        self.import_dict = impt_dict
         self.llm_caller = LLMCaller()
-        self.class_editor = jpype.JClass("TestClassEditor")
         self.prompt_gen = PromptGenerator('./templates', [])
+        self.parser = ASTParser()
+        self.class_editor = jpype.JClass("editcode.TestClassUpdator") # check
         self.logger = logging.getLogger(__name__)
 
 
@@ -92,7 +99,25 @@ class CodeRepairer:
         1. fix wrong/missing import statements
         2. fix private method access
         '''
-        return
+        self.parser.parse(test_class)
+        remove_imports = []
+        add_imports = []
+        symbol_pattern = r'symbol:   class (.*)'
+        for line, msg in error_infos:
+            if msg.find("cannot find symbol") > -1:
+                group = re.findall(symbol_pattern, msg)
+                if len(group) > 0:
+                    symbol = group[0]
+                    add_import = self.import_dict.get(symbol, [])
+                    add_imports.extend(add_import)
+                if msg.find("import ") > -1:
+                    remove_imports.append(line)
+        if len(remove_imports) > 0:
+            self.parser.remove_lines(remove_imports)
+        if len(add_imports) > 0:
+            self.parser.add_imports(add_imports)
+        new_class = self.parser.get_code()
+        return new_class
 
 
     def repair_by_LLM(self, test_class, feedback, prompt_path, response_path, context):
@@ -115,11 +140,10 @@ class CodeRepairer:
 
     def clean_error_cases(self, error_infos:list, code:str):
         '''
-        Clean the error cases from the test class.
+        Clean/Comment the error test cases from the test class.
         '''
-        parser = ASTParser()
-        parser.parse(code)
-        start, end = parser.get_test_case_position()
+        self.parser.parse(code)
+        start, end = self.parser.get_test_case_position()
         lines = [line for line, _ in error_infos]
         fulL_lines = set(lines)
         for line in lines:
@@ -128,9 +152,8 @@ class CodeRepairer:
                     fulL_lines.update(range(start[i], end[i]+1))
                     break
         self.logger.info(f"clean error cases in lines {fulL_lines}")
-        parser.comment_code(fulL_lines)
-        # TODO: delete error test cases
-        return parser.get_code()
+        self.parser.comment_code(fulL_lines)
+        return self.parser.get_code()
 
 
     def check_test_class(self, ts_info:dict, prompt_path:str, response_path:str, context_path:str):
@@ -151,9 +174,15 @@ class CodeRepairer:
             temp = f"{self.temp_path}/{class_name}".replace(".java", f"_{count}.java")
             io_utils.write_text(temp, fixed_code)
             self.logger.info(f"try to repair test class {class_path}...")
-            prompt = f"{prompt_path}_{count}.md"
-            response = f"{response_path}_{count}.md"
-            fixed_code = self.repair_by_LLM(fixed_code, feedback, prompt, response, context)
+            error_infos = self.parse_feedback(feedback, test_path)
+            rule_fixed = self.repair_by_rules(fixed_code, error_infos[0])
+            cflag, feedback = self.compile_test(test_path)
+            if cflag:
+                fixed_code = rule_fixed
+            else:
+                prompt = f"{prompt_path}_{count}.md"
+                response = f"{response_path}_{count}.md"
+                fixed_code = self.repair_by_LLM(rule_fixed, feedback, prompt, response, context)
             io_utils.write_text(target_path, fixed_code)
             cflag, feedback = self.compile_test(test_path)
             count += 1
@@ -193,7 +222,8 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
         project_prompt = prompt_path.replace("<project>",pj_name)
         project_fix = fix_path.replace("<project>",pj_name)
         project_testclass = testclass_path.replace("<project>",pj_name)
-        code_repair = CodeRepairer(project_path, project_testclass, fix_tries)
+        import_dict = pj_info["import-dict"]
+        code_repair = CodeRepairer(project_path, project_testclass, fix_tries, import_dict)
 
         for ts_info in pj_info["focal-methods"]:
             tid = ts_info["id"]

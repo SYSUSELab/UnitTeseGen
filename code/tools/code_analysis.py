@@ -21,7 +21,6 @@ class ASTParser:
         for i, line in enumerate(self.lines):
             if line.strip().startswith('import'):
                 self.insert_position = i + 1
-        
         return
     
 
@@ -72,6 +71,18 @@ class ASTParser:
     #         if imp not in existing_imports:
     #             additional_imports.append(imp)
     #     return additional_imports
+
+    def remove_lines(self, remove_lines:list[int]):
+        """
+        Remove lines from the source code.
+        param remove_lines: List of line numbers to be removed.
+        """
+        remove_lines.sort(reverse=True)
+        for line in remove_lines:
+            self.lines.pop(line)
+        self._update_code()
+        return
+
 
     def add_imports(self, import_lines:list[str]):
         """
