@@ -1,3 +1,4 @@
+from enum import Enum
 import re
 import copy
 from tokenize import group
@@ -67,6 +68,10 @@ class CodeRepairer:
             return (False, result.stderr)
         return (True, str(""))
 
+    class RuleError(Enum):
+        UNRESLOVE_SYMBOL = 1
+        UNREPORTED_EXCEPTION = 2
+        OTHER = 3
 
     def parse_feedback(self, feedback:str, test_class:str):
         '''
@@ -76,7 +81,6 @@ class CodeRepairer:
         llm_fixes = []
         split_str = test_class.replace("/", "\\")
         errors = feedback.split(f"{split_str}:")
-        print("errors: ",errors)
         for error in errors:
             if str(error).find(": error: ")==-1: continue
             splits = error.split(": error: ")
@@ -84,7 +88,9 @@ class CodeRepairer:
                 line = int(splits[0]) - 1
                 msg = splits[1]
                 if msg.find("cannot find symbol"):
-                    rule_fixes.append([line, msg])    
+                    rule_fixes.append([line, msg, self.RuleError.UNRESLOVE_SYMBOL])
+                elif msg.find("unreported exception"):
+                    rule_fixes.append([line, msg, self.RuleError.UNREPORTED_EXCEPTION])
                 llm_fixes.append([line, msg])
             except:
                 continue
@@ -102,19 +108,28 @@ class CodeRepairer:
         self.parser.parse(test_class)
         remove_imports = []
         add_imports = []
-        symbol_pattern = r'symbol:   class (.*)'
-        for line, msg in error_infos:
-            if msg.find("cannot find symbol") > -1:
+        exception_lines = []
+        symbol_pattern = r'symbol:\s+(class|variable) (.*)'
+        for line, msg, type in error_infos:
+            if type == self.RuleError.UNRESLOVE_SYMBOL:
                 group = re.findall(symbol_pattern, msg)
                 if len(group) > 0:
-                    symbol = group[0]
+                    symbol = group[0][1]
                     add_import = self.import_dict.get(symbol, [])
                     add_imports.extend(add_import)
                 if msg.find("import ") > -1:
                     remove_imports.append(line)
+            elif type == self.RuleError.UNREPORTED_EXCEPTION:
+                exception_lines.append(line)
+                pass
+        if len(exception_lines) > 0:
+            self.logger.info(f"add exception declaration in lines {exception_lines}")
+            self.parser.add_exception(exception_lines)
         if len(remove_imports) > 0:
+            self.logger.info(f"remove imports in lines {remove_imports}")
             self.parser.remove_lines(remove_imports)
         if len(add_imports) > 0:
+            self.logger.info(f"add imports {add_imports}")
             self.parser.add_imports(add_imports)
         new_class = self.parser.get_code()
         return new_class
@@ -205,6 +220,7 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
     If there are compilation errors, fix the test cases through compilation feedback.
     '''
     dataset_dir = file_structure.DATASET_PATH
+    code_info_path = file_structure.CODE_INFO_PATH
     prompt_path = file_structure.PROMPT_PATH
     fix_path = file_structure.FIX_PATH
     testclass_path = file_structure.TESTCLASSS_PATH
@@ -222,7 +238,8 @@ def verify_test_classes(file_structure, task_setting, dataset_info):
         project_prompt = prompt_path.replace("<project>",pj_name)
         project_fix = fix_path.replace("<project>",pj_name)
         project_testclass = testclass_path.replace("<project>",pj_name)
-        import_dict = pj_info["import-dict"]
+        code_info = io_utils.load_json(f"{code_info_path}/json/{pj_name}.json")
+        import_dict = code_info["import_dict"]
         code_repair = CodeRepairer(project_path, project_testclass, fix_tries, import_dict)
 
         for ts_info in pj_info["focal-methods"]:

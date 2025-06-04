@@ -17,12 +17,14 @@ class ASTParser:
     def parse(self, source_code):
         self.lines = source_code.splitlines()
         self._update_code()
-        # get import position
+        self._get_import_position()
+        return
+    
+    def _get_import_position(self):
         for i, line in enumerate(self.lines):
             if line.strip().startswith('import'):
                 self.insert_position = i + 1
         return
-    
 
     def _update_code(self):
         """
@@ -46,7 +48,6 @@ class ASTParser:
                     bfs_queue.put(child)
         return node_list
 
-
     def _get_functions(self):
         functions = []
         # get method_declaration nodes
@@ -60,6 +61,24 @@ class ASTParser:
             function_code = '\n'.join(self.lines[start_line:end_line+1])
             functions.append(function_code)
         return functions
+    
+
+    def get_code(self):
+        return self.source_code
+
+    def get_test_cases(self) -> list:
+        test_cases = []
+        test_annotations = ['@Test', '@ParameterizedTest', '@RepeatedTest']
+        functions = self._get_functions()
+        for func in functions:
+            flag = False
+            for annotation in test_annotations:
+                if func.find(annotation) > -1:
+                    flag = True
+                    break
+            if flag:
+                test_cases.append(func)
+        return test_cases
     
     # def _get_imports(self):
     #     return re.findall(r'import .*;', self.source_code, re.MULTILINE)
@@ -81,6 +100,7 @@ class ASTParser:
         for line in remove_lines:
             self.lines.pop(line)
         self._update_code()
+        self._get_import_position()
         return
 
 
@@ -116,21 +136,6 @@ class ASTParser:
         return test_case_positions
 
 
-    def get_test_cases(self) -> list:
-        test_cases = []
-        test_annotations = ['@Test', '@ParameterizedTest', '@RepeatedTest']
-        functions = self._get_functions()
-        for func in functions:
-            flag = False
-            for annotation in test_annotations:
-                if func.find(annotation) > -1:
-                    flag = True
-                    break
-            if flag:
-                test_cases.append(func)
-        return test_cases
-
-
     def comment_code(self, comment_lines):
         for line in comment_lines:
             self.lines[line] = '// ' + self.lines[line]
@@ -139,8 +144,28 @@ class ASTParser:
         return
 
 
-    def get_code(self):
-        return self.source_code
+    def add_exception(self, lines:list[int]):
+        lines.sort()
+        cur = 0
+        cur_line = lines[cur]
+        function_nodes = self._traverse_get('method_declaration')
+        for node in function_nodes:
+            start_line = node.start_point[0]
+            end_line = node.end_point[0]
+            if start_line<=cur_line and end_line>=cur_line:
+                decl_line = start_line
+                while self.lines[decl_line].lstrip().startswith('@'):
+                    decl_line += 1
+                decl = self.lines[decl_line]
+                decl = re.sub(r'(throws .*Exception)? \{', 'throws Exception {', decl)
+                self.lines[decl_line] = decl
+                while cur<len(lines) and start_line<=cur_line and end_line>=cur_line:
+                    cur += 1
+                    if cur<len(lines): cur_line = lines[cur]
+            if cur >= len(lines): break
+        self._update_code()
+        return
+            
 
 
 #test
