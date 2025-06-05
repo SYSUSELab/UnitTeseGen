@@ -87,9 +87,9 @@ class CodeRepairer:
             try:
                 line = int(splits[0]) - 1
                 msg = splits[1]
-                if msg.find("cannot find symbol"):
+                if msg.find("cannot find symbol") > -1:
                     rule_fixes.append([line, msg, self.RuleError.UNRESLOVE_SYMBOL])
-                elif msg.find("unreported exception"):
+                elif msg.find("unreported exception") > -1:
                     rule_fixes.append([line, msg, self.RuleError.UNREPORTED_EXCEPTION])
                 llm_fixes.append([line, msg])
             except:
@@ -103,20 +103,21 @@ class CodeRepairer:
         Repair the test cases through rules.
         0. check package name and class name
         1. fix wrong/missing import statements
-        2. fix private method access
+        2. fix unreported exception
         '''
         self.parser.parse(test_class)
         remove_imports = []
-        add_imports = []
+        add_imports = set()
         exception_lines = []
         symbol_pattern = r'symbol:\s+(class|variable) (.*)'
         for line, msg, type in error_infos:
             if type == self.RuleError.UNRESLOVE_SYMBOL:
+                # TODO: duplicate imports
                 group = re.findall(symbol_pattern, msg)
                 if len(group) > 0:
                     symbol = group[0][1]
                     add_import = self.import_dict.get(symbol, [])
-                    add_imports.extend(add_import)
+                    add_imports.update(add_import)
                 if msg.find("import ") > -1:
                     remove_imports.append(line)
             elif type == self.RuleError.UNREPORTED_EXCEPTION:
@@ -130,7 +131,7 @@ class CodeRepairer:
             self.parser.remove_lines(remove_imports)
         if len(add_imports) > 0:
             self.logger.info(f"add imports {add_imports}")
-            self.parser.add_imports(add_imports)
+            self.parser.add_imports(list(add_imports))
         new_class = self.parser.get_code()
         return new_class
 
