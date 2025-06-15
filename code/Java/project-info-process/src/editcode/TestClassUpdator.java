@@ -11,6 +11,7 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.printer.YamlPrinter;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Dictionary;
 import java.util.HashSet;
@@ -155,16 +156,19 @@ public class TestClassUpdator {
             String importName = importDecl.getNameAsString();
             if (existingImports.get(importName) == null) {
                 existCU.addImport(importDecl.clone());
-            } else {
-                existingImports.put(importName, true);
             }
+            existingImports.put(importName, true);
         }
         // remove unused imports
+        List<ImportDeclaration> del_imports = new ArrayList<ImportDeclaration>();
         for (ImportDeclaration importDecl : existCU.getImports()) {
             String importName = importDecl.getNameAsString();
             if (existingImports.get(importName) == false) {
-                existCU.remove(importDecl);
+                del_imports.add(importDecl);
             }
+        }
+        for (ImportDeclaration importDecl : del_imports) {
+            existCU.remove(importDecl);
         }
     }
 

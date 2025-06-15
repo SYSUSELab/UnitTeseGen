@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 import tools.io_utils as io_utils
 from procedure.post_process import check_class_name
-from evaluations.coverage_test import ProjrctTestRunner, CoverageExtractor
+from evaluations.coverage_test import ProjectTestRunner, CoverageExtractor
 
 
 def check_method_name(method_name, target):
@@ -145,7 +145,7 @@ def extract_coverage_ChatUniTest(result_folder, dataset_info, fstruct, task_sett
         project_path = f"{dataset_dir}/{info['project-url']}"
         info["project-url"] = project_path
         # run converage test & generate report
-        runner = ProjrctTestRunner(info, dependency_dir, testclass_path, report_path)
+        runner = ProjectTestRunner(info, dependency_dir, testclass_path, report_path)
         test_result = runner.run_project_test(compile_test)
         logger.info(test_result)
         # extract coverage
@@ -157,7 +157,7 @@ def extract_coverage_ChatUniTest(result_folder, dataset_info, fstruct, task_sett
     return
 
 
-class HITSRunner(ProjrctTestRunner):
+class HITSRunner(ProjectTestRunner):
     def __init__(self, project_info, dependency_dir, testclass_path, report_path):
         super().__init__(project_info, dependency_dir, testclass_path, report_path)
         self.check_report_path()

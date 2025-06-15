@@ -17,7 +17,7 @@ class PromptGenerator:
             self.templates[template_name] = self.env.get_template(template)
         self.case_gen_list = cglist
 
-    def generate_singal(self, tmp_name, content) -> str:
+    def generate_single(self, tmp_name, content) -> str:
         return self.templates[tmp_name].render(content)
 
     def generate_group(self, content) -> dict:

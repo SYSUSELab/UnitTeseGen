@@ -1,28 +1,23 @@
 import os
 import re
-import subprocess
 import logging
 
-from evaluation.test import feedback
 import tools.io_utils as utils
 from tools.execute_test import JavaRunner, CoverageExtractor
 from tools.code_analysis import ASTParser
 
 
-class ProjectTestRunner:
+class ProjectTestRunner(JavaRunner):
     project_info: dict
-    # cd_cmd: list
     testclass_path: str
     report_path: str
     test_result: dict
 
     def __init__(self, project_info, dep_fd, tc_path, rpt_path):
-        
         self.project_info = project_info
-        # self.cd_cmd = ['cd', project_info["project-url"], '&&']
-        # self.dependency_fd = dep_fd
         self.testclass_path = tc_path.replace("<project>",project_info["project-name"])
         self.report_path = rpt_path.replace("<project>",project_info["project-name"])
+        super().__init__(project_info["project-url"], dep_fd)
         self.logger = logging.getLogger(__name__)
         return
 
@@ -49,78 +44,30 @@ class ProjectTestRunner:
                 self.test_result[data_id]["passed_cases"] = 0
                 self.test_result[data_id]["note"] = "test class not found"
                 continue
-            # if compile and not self.compile_test(test_path):
-            #     self.test_result[data_id]["error_type"] = "compile error"
-            #     continue
+
             if compile:
                 cflag, _ = self.compile_test(test_path)
                 if not cflag:
                     self.test_result[data_id]["error_type"] = "compile error"
                     continue
             eflag, feedback = self.run_singal_unit_test(test_class)
-            # if not self.run_singal_unit_test(data_id, test_class):
-            #     self.test_result[data_id]["error_type"] = "execution error"
-            #     continue
+            if eflag:
+                self.deal_execution_feedback(data_id, feedback)
+            else:
+                self.test_result[data_id]["error_type"] = "execution error"
+                continue
             html_report = f"{self.report_path}/jacoco-report-html/{testid}/"
             csv_report = f"{self.report_path}/jacoco-report-csv/{testid}.csv"
             if not self.generate_report_single(html_report, csv_report):
                 self.test_result[data_id]["error_type"] = "report error"
         return self.test_result
-
-    # def compile_test(self, class_path):
-    #     compile_cmd = ["javac","-cp","@dependencies.txt","-d","target/test-classes",class_path]
-    #     self.logger.info(" ".join(compile_cmd))
-    #     script = self.cd_cmd + compile_cmd
-    #     result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
-    #     if result.returncode!= 0:
-    #         self.logger.error(f"error occured in compile test class, info:\n{result.stderr}")
-    #         return False
-    #     return True
-
-    # def get_pass_rate(self, test_info):
-    #     cases = int(re.findall(r"([0-9]+) tests started", test_info)[0])
-    #     passed = int(re.findall(r"([0-9]+) tests successful", test_info)[0])
-    #     return (cases, passed)
-
-    # def run_singal_unit_test(self, data_id, testclass):
-    #     self.logger.info(f"Running single unit test, testclass: {testclass}")
-    #     test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
-    #     java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
-    #     test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
-    #     script = self.cd_cmd + test_cmd
-    #     result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
-    #     test_info = result.stdout
-    #     if result.returncode == 0:
-    #         self.logger.info(f"test execution info: {test_info}")
-    #         test_cases, passed_cases = self.get_pass_rate(test_info)
-    #         self.test_result[data_id]["test_cases"] = test_cases
-    #         self.test_result[data_id]["passed_cases"] = passed_cases
-    #         return True
-    #     elif test_info.find("Test run finished")!=-1:
-    #         self.logger.warning(f"return code: {result.returncode}")
-    #         self.logger.warning(f"test case failed in {testclass}, info:\n{result.stderr}\n{test_info}")
-    #         test_cases, passed_cases = self.get_pass_rate(test_info)
-    #         self.test_result[data_id]["test_cases"] = test_cases
-    #         self.test_result[data_id]["passed_cases"] = passed_cases
-    #         if test_cases == 0: return False
-    #         return True
-    #     else:
-    #         self.logger.error(f"error occured in execute test class {testclass}, info:\n{result.stderr}\n{test_info}")
-    #         return False
-
-    # def generate_report_single(self, testid):
-    #     # generate report
-    #     jacoco_cli = f"{self.dependency_fd}/jacococli.jar"
-    #     html_report = f"{self.report_path}/jacoco-report-html/{testid}/"
-    #     csv_report = f"{self.report_path}/jacoco-report-csv/{testid}.csv"
-    #     report_cmd = ['java', '-jar', jacoco_cli, "report", "target/jacoco.exec", '--classfiles', 'target/classes', '--sourcefiles', 'src/main/java', "--html", html_report, "--csv", csv_report]
-    #     script = self.cd_cmd + report_cmd
-
-    #     result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
-    #     if result.returncode!= 0:
-    #         self.logger.error(f"error occured in generate report, info:\n{result.stderr}")
-    #         return False
-    #     return True
+    
+    def deal_execution_feedback(self, data_id, feedback):
+        cases = int(re.findall(r"([0-9]+) tests started", feedback)[0])
+        passed = int(re.findall(r"([0-9]+) tests successful", feedback)[0])
+        self.test_result[data_id]["test_cases"] = cases
+        self.test_result[data_id]["passed_cases"] = passed
+        return
 
 
 class CoverageCalculator(CoverageExtractor):
@@ -135,7 +82,7 @@ class CoverageCalculator(CoverageExtractor):
     def __init__(self, project_info, rpt_path):
         self.project_info = project_info
         self.astparser = ASTParser()
-        super.__init__(rpt_path.replace("<project>",project_info["project-name"]))
+        super().__init__(rpt_path.replace("<project>", self.project_info["project-name"]))
         pass
 
     def generate_project_summary(self, test_result:dict):
@@ -237,8 +184,8 @@ def test_coverage(fstruct, task_setting, dataset_info: dict):
         test_result = runner.run_project_test(compile_test)
         logger.info(test_result)
         # extract coverage
-        # extractor = CoverageExtractor(info, report_path)
-        coverage_data = extractor.generate_project_summary(test_result)
+        calculator = CoverageCalculator(info, report_path)
+        coverage_data = calculator.generate_project_summary(test_result)
         logger.info(f"report data:\n{coverage_data}")
         coverage_file = f"{report_path}/summary.json".replace("<project>", pj_name)
         utils.write_json(coverage_file, coverage_data)

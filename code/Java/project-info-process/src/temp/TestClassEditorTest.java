@@ -35,7 +35,8 @@ public class TestClassEditorTest {
         System.out.println(result);
 
         String existingClass2 = "import org.junit.Test;\n" +
-        "import static org.junit.Assert.*;\n\n" +
+        "import static org.junit.Assert.*;\n" +
+        "import static org.test.Assert.*;\n" +
         "public class StringUtilTest {\n" +
         " @Test\n" +
         " public void testConcat() {\n" +
@@ -68,7 +69,7 @@ public class TestClassEditorTest {
         "}\n";
 
         String result2 = TestClassUpdator.main(new String[] { existingClass2,
-        classToAdd2 });
+        classToAdd2, "true" });
         System.out.println("\n\n===== 带有新导入的合并测试类 =====");
         System.out.println(result2);
         }

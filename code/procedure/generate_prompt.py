@@ -42,7 +42,7 @@ def generate_init_prompts(file_structure, task_setting, dataset_info:dict):
                 "class_name": test_class_name,
                 "context_dict": construct_context,
             }
-            prompt = generator.generate_singal('init', content)
+            prompt = generator.generate_single('init', content)
             # save prompt
             result_path = f"{prompt_dir}/init_prompt.md"
             utils.write_text(result_path, prompt)

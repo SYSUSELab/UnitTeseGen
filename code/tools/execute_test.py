@@ -2,6 +2,7 @@ import os
 import re
 import logging
 import subprocess
+from typing import List, Tuple
 from bs4 import BeautifulSoup
 
 
@@ -10,8 +11,8 @@ class JavaRunner:
     dependency_fd: str
     logger: logging.Logger
     
-    def __init__(prokect_url:str, dep_fd=None):
-        self.cd_cmd = ['cd', prokect_url, '&&']
+    def __init__(self, project_url:str, dep_fd=None):
+        self.cd_cmd = ['cd', project_url, '&&']
         self.dependency_fd = dep_fd
         self.logger = logging.getLogger(__name__)
         return
@@ -44,16 +45,37 @@ class JavaRunner:
             test_info = f"{result.stderr}\n{result.stdout}"
             self.logger.error(f"error occured in execute test class {testclass}, info:\n{test_info}")
             return (False, test_info)
+
+    def coverage_with_correct_test(self, test_class, html_report, csv_report=None):
+        self.logger.info(f"Running coverage for test class: {test_class}")
+        test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
+        test_cmd = ['java', '-cp', test_dependencies, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', test_class]
+        script = self.cd_cmd + test_cmd
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
+        test_info = f"{result.stderr}\n{result.stdout}"
+        if result.returncode == -1:
+            self.logger.error(f"error occured in execute test class {test_class}, info:\n{test_info}")
+            return (False, test_info)
+        passed_tests = re.findall(r"([$\w]+)\(\)\s+\u2714", test_info, re.MULTILINE)
+        if len(passed_tests) == 0:
+            self.logger.error(f"no test case passed in {test_class}, info:\n{test_info}")
+            return (False, test_info)
+        select_method = [f"--select-method {test_class}#{case}" for case in passed_tests]
+        java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
+        coverage_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests'] + select_method
+        script = self.cd_cmd + coverage_cmd
+        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
+        test_info = f"{result.stderr}\n{result.stdout}"
+        self.logger.info(f"Coverage report generated for test class: {test_class}")
+        self.generate_report_single(html_report, csv_report)
+        return (True, test_info)
     
     def generate_report_single(self, html_report, csv_report=None):
-
         # generate report
         jacoco_cli = f"{self.dependency_fd}/jacococli.jar"
         report_cmd = ['java', '-jar', jacoco_cli, "report", "target/jacoco.exec", '--classfiles', 'target/classes', '--sourcefiles', 'src/main/java', "--html", html_report]
         if csv_report is not None:
             report_cmd += ["--csv", csv_report]
-        # html_report = f"{self.report_path}/jacoco-report-html/{testid}/"
-        # csv_report = f"{self.report_path}/jacoco-report-csv/{testid}.csv"
         script = self.cd_cmd + report_cmd
 
         result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
@@ -109,3 +131,31 @@ class CoverageExtractor:
                 coverage_score = {"inst_cov": instruction_cov, "bran_cov": branch_cov}
                 break
         return coverage_score
+
+    def extract_uncovered_line(self):
+        # get html file with function body
+        # get line span
+        # get coverage label
+        return
+
+    def jacoco_missing_lines(report_root, package, class_name) -> Tuple[List[Tuple[int, str]], List[Tuple[int, str]]]:
+        html_path = os.path.join(report_root, package, f"{class_name}.java.html")
+        with open(html_path, "r") as file:
+            soup = BeautifulSoup(file, 'lxml-xml')
+
+        def get_id(_span):
+            return int(_span['id'][1:])  # since the 'id' has format 'L{id}', e.g., 'L15', means line 15
+
+        def _case_filter(_str: str):
+            return re.match(r"case .*:", _str.strip()) is not None
+
+        missing_lines = [(get_id(_span), _span.string)
+                        for _span in soup.find_all("span", class_=re.compile(r"nc(.)*"))]
+        branch_lines = [(get_id(_span), _span.string)
+                        for _span in soup.find_all("span", class_=re.compile(r"pc b[np]c"))]
+        # missing_cases = [get_id(_span) for _span in soup.find_all("span",
+        #                                                           class_=re.compile(r"pc b[np]c"),
+        #                                                           string=_case_filter)]
+        # e.g. for missing cases: case 10: System.out.println("10"); This line will be yellow
+
+        return missing_lines, branch_lines

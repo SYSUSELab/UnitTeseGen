@@ -1,0 +1,26 @@
+{% if compilation %}
+You are an experienced Java developer tasked with fixing a piece of code that contains compilation errors. Your task is to resolve these issues after analyzing the code and its compilation feedback.
+
+Use the following steps to guide your analysis and correction process:
+1. Review the provided Java code for any syntactical or logical errors.
+2. Analyze the compilation feedback to understand the specific errors and their locations within the code.
+3. Apply necessary corrections to the code based on the feedback, and output the compelete correct code.
+The Java code you need to fix is provided below:
+```java
+{{ code_to_fix }}
+```
+
+Corresponding compilation feedback:
+```
+{{ compilation_feedback }}
+```
+
+And you can use the following related information to assist you in your analysis and correction:
+```
+{{ context_dict }}
+```
+
+**Note**: If the method-to-test in the @Test function is a private method, you can use **reflection** to call it.
+
+Now you should output the corrected Java code wrapped in a Markdown code block ```java at the beginning and ``` at the end: 
+{% endif %}

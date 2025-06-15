@@ -74,7 +74,7 @@ class CodeRepairer:
         PRIVATE_ACCESS = 3
         OTHER = 4
 
-    def parse_feedback(self, feedback:str, test_class:str, method_name:str):
+    def parse_feedback(self, feedback:str, test_class:str):#, method_name:str):
         '''
         Parse the compilation feedback to get the error line number and error message.
         '''
@@ -92,8 +92,8 @@ class CodeRepairer:
                     rule_fixes.append([line, msg, self.RuleError.UNRESLOVE_SYMBOL])
                 elif msg.find("unreported exception") > -1:
                     rule_fixes.append([line, msg, self.RuleError.UNREPORTED_EXCEPTION])
-                elif msg.find("private access")>-1 and msg.find(method_name)>-1:
-                    rule_fixes.append([line, msg, self.RuleError.PRIVATE_ACCESS])
+                # elif msg.find("private access")>-1 and msg.find(method_name)>-1:
+                #     rule_fixes.append([line, msg, self.RuleError.PRIVATE_ACCESS])
                 llm_fixes.append([line, msg])
             except:
                 continue
@@ -115,7 +115,6 @@ class CodeRepairer:
         symbol_pattern = r'symbol:\s+(class|variable) (.*)'
         for line, msg, type in error_infos:
             if type == self.RuleError.UNRESLOVE_SYMBOL:
-                # TODO: duplicate imports
                 group = re.findall(symbol_pattern, msg)
                 if len(group) > 0:
                     symbol = group[0][1]
@@ -145,11 +144,12 @@ class CodeRepairer:
         Repair the test cases through LLM.
         '''
         context = {
+            "compilation": True,
             "code_to_fix": test_class,
             "compilation_feedback": feedback,
             "context_dict": context
         }
-        prompt = self.prompt_gen.generate_singal("repair", context)
+        prompt = self.prompt_gen.generate_single("post", context)
         code, response = self.llm_caller.get_response_code(prompt)
         code = str(self.class_editor.main([test_class, code, "true"]))
         io_utils.write_text(prompt_path, prompt)
@@ -190,12 +190,14 @@ class CodeRepairer:
         count = 0
         fixed_code = io_utils.load_text(class_path)
         context = io_utils.load_json(context_path)
+        # TODO: add execution feedback & converage enhancement
         while not cflag and count<self.max_tries:
             temp = f"{self.temp_path}/{class_name}".replace(".java", f"_{count}.java")
             io_utils.write_text(temp, fixed_code)
             self.logger.info(f"try to repair test class {class_path}...")
             error_infos = self.parse_feedback(feedback, test_path)
             rule_fixed = self.repair_by_rules(fixed_code, error_infos[0])
+            io_utils.write_text(target_path, rule_fixed)
             cflag, feedback = self.compile_test(test_path)
             if cflag:
                 fixed_code = rule_fixed
@@ -203,8 +205,8 @@ class CodeRepairer:
                 prompt = f"{prompt_path}_{count}.md"
                 response = f"{response_path}_{count}.md"
                 fixed_code = self.repair_by_LLM(rule_fixed, feedback, prompt, response, context)
-            io_utils.write_text(target_path, fixed_code)
-            cflag, feedback = self.compile_test(test_path)
+                io_utils.write_text(target_path, fixed_code)
+                cflag, feedback = self.compile_test(test_path)
             count += 1
         
         # while cflag==False:
