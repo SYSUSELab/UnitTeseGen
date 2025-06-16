@@ -39,10 +39,12 @@ class ProjectTestRunner(JavaRunner):
             try:
                 utils.copy_file(class_path, f"{project_url}/{test_path}")
             except FileNotFoundError:
-                self.test_result[data_id]["error_type"] = "compile error"
-                self.test_result[data_id]["test_cases"] = 0
-                self.test_result[data_id]["passed_cases"] = 0
-                self.test_result[data_id]["note"] = "test class not found"
+                self.test_result[data_id].update({
+                    "error_type": "compile error",
+                    "test_cases": 0,
+                    "passed_cases": 0,
+                    "note": "test class not found"
+                })
                 continue
 
             if compile:
@@ -52,7 +54,7 @@ class ProjectTestRunner(JavaRunner):
                     continue
             eflag, feedback = self.run_singal_unit_test(test_class)
             if eflag:
-                self.deal_execution_feedback(data_id, feedback)
+                passed_test = self.deal_execution_feedback(data_id, feedback)
             else:
                 self.test_result[data_id]["error_type"] = "execution error"
                 continue
@@ -60,17 +62,27 @@ class ProjectTestRunner(JavaRunner):
             csv_report = f"{self.report_path}/jacoco-report-csv/{testid}.csv"
             if not self.generate_report_single(html_report, csv_report):
                 self.test_result[data_id]["error_type"] = "report error"
+                continue
+            if len(passed_test)>0:
+                if not self.run_selected_mehods(test_class, passed_test): continue
+                correct_html_report = f"{self.report_path}/jacoco-report-html/{testid}_correct/"
+                correct_csv_report = f"{self.report_path}/jacoco-report-csv/{testid}_correct.csv"
+                self.generate_report_single(correct_html_report, correct_csv_report)
+            else:
+                self.test_result[data_id].update({"correct_inst_cov": 0.0, "correct_bran_cov": 0.0})       
         return self.test_result
-    
+
     def deal_execution_feedback(self, data_id, feedback):
         cases = int(re.findall(r"([0-9]+) tests started", feedback)[0])
         passed = int(re.findall(r"([0-9]+) tests successful", feedback)[0])
         self.test_result[data_id]["test_cases"] = cases
         self.test_result[data_id]["passed_cases"] = passed
-        return
+        passed_tests = re.findall(r"([$\w]+)\(\)\s+\u2714", feedback, re.MULTILINE)
+        return passed_tests
 
 
 class CoverageCalculator(CoverageExtractor):
+    report_path: str
     project_info: dict
     astparser: ASTParser
     error_type = {
@@ -80,9 +92,10 @@ class CoverageCalculator(CoverageExtractor):
     }
 
     def __init__(self, project_info, rpt_path):
+        self.report_path = rpt_path.replace("<project>",project_info["project-name"])
         self.project_info = project_info
         self.astparser = ASTParser()
-        super().__init__(rpt_path.replace("<project>", self.project_info["project-name"]))
+        super().__init__()
         pass
 
     def generate_project_summary(self, test_result:dict):
@@ -98,12 +111,16 @@ class CoverageCalculator(CoverageExtractor):
                 "test_cases": number,
                 "passed_cases": number,
                 "inst_cov": <instruction coverage>,
-                "bran_cov": <branch coverage>
+                "bran_cov": <branch coverage>,
+                "correct_inst_cov": <instraction coverage>,
+                "correct_bran_cov": <branch coverage>,
             },
             "compile_pass_rate": compiled/total,
             "execution_pass_rate": successed/total,
             "average_instruction_coverage": <average instruction coverage>,
-            "average_branch_coverage": <average branch coverage>
+            "average_branch_coverage": <average branch coverage>,
+            "average_correct_instruction_coverage": <average instruction coverage>,
+            "average_correct_branch_coverage": <average branch coverage>,
         }
         """
         project_path = self.project_info["project-url"]
@@ -122,12 +139,22 @@ class CoverageCalculator(CoverageExtractor):
             else:
                 package = test["package"]
                 classname = test["class"].split(".")[-1]
-                cov_score = self.extract_single_coverage(testid, package, classname, method)
+                html_path = f"{self.report_path}/jacoco-report-html/{testid}/{package}/{classname}.html"
+                cov_score = self.extract_single_coverage(html_path, method)
+                # cov_score = self.extract_single_coverage(testid, package, classname, method)
                 data_id = f"{test['class']}#{method}"
                 if cov_score: 
-                    summary[data_id].update(cov_score)
+                    # summary[data_id].update(cov_score)
+                    summary[data_id].update({"inst_cov": cov_score[0], "bran_cov": cov_score[1]})
                 else: 
                     summary[data_id].update({"inst_cov": "<missing>", "bran_cov": "<missing>"})
+                if "correct_inst_cov" not in summary[data_id]:
+                    html_path = f"{self.report_path}/jacoco-report-html/{testid}_correct/{package}/{classname}.html"
+                    cov_score = self.extract_single_coverage(html_path, method)
+                    if cov_score:
+                        summary[data_id].update({"correct_inst_cov": cov_score[0], "correct_bran_cov": cov_score[1]})
+                    else:
+                        summary[data_id].update({"correct_inst_cov": "<missing>", "correct_bran_cov": "<missing>"})
         self.count_general_metrics(summary)
         return summary
 
@@ -138,6 +165,9 @@ class CoverageCalculator(CoverageExtractor):
         cov_num  = 0
         inst_cov = 0.0
         bran_cov = 0.0
+        correct_inst_cov = 0.0
+        correct_bran_cov = 0.0
+
         for _, item in summary.items():
             test_cases = item.get("test_cases", 0)
             passed_cases = item.get("passed_cases", 0)
@@ -155,11 +185,16 @@ class CoverageCalculator(CoverageExtractor):
                 if "inst_cov" in item and item["inst_cov"] != "<missing>":
                     inst_cov += item["inst_cov"]
                     bran_cov += item["bran_cov"]
+                if "correct_inst_cov" in item and item["correct_inst_cov"] != "<missing>":
+                    correct_inst_cov += item["correct_inst_cov"]
+                    correct_bran_cov += item["correct_bran_cov"]
         summary.update({
             "compile_pass_rate": compile_num/case_num if case_num > 0 else 0,
             "execution_pass_rate": pass_num/case_num if case_num > 0 else 0,
             "average_instruction_coverage": inst_cov/cov_num if cov_num > 0 else 0.0,
-            "average_branch_coverage": bran_cov/cov_num if cov_num > 0 else 0.0
+            "average_branch_coverage": bran_cov/cov_num if cov_num > 0 else 0.0,
+            "average_correct_instruction_coverage": correct_inst_cov/cov_num if cov_num > 0 else 0.0,
+            "average_correct_branch_coverage": correct_bran_cov/cov_num if cov_num > 0 else 0.0,
         })
         return
 

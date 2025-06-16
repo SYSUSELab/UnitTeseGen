@@ -46,29 +46,19 @@ class JavaRunner:
             self.logger.error(f"error occured in execute test class {testclass}, info:\n{test_info}")
             return (False, test_info)
 
-    def coverage_with_correct_test(self, test_class, html_report, csv_report=None):
-        self.logger.info(f"Running coverage for test class: {test_class}")
+    def run_selected_mehods(self, test_class, methods:list[str]):
         test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
-        test_cmd = ['java', '-cp', test_dependencies, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', test_class]
+        java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
+        test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors']
+        for method in methods:
+            test_cmd += ['--select-method', f"{test_class}#{method}"]
         script = self.cd_cmd + test_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
-        test_info = f"{result.stderr}\n{result.stdout}"
-        if result.returncode == -1:
+        if result.returncode == -1: 
+            test_info = f"{result.stderr}\n{result.stdout}"
             self.logger.error(f"error occured in execute test class {test_class}, info:\n{test_info}")
-            return (False, test_info)
-        passed_tests = re.findall(r"([$\w]+)\(\)\s+\u2714", test_info, re.MULTILINE)
-        if len(passed_tests) == 0:
-            self.logger.error(f"no test case passed in {test_class}, info:\n{test_info}")
-            return (False, test_info)
-        select_method = [f"--select-method {test_class}#{case}" for case in passed_tests]
-        java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
-        coverage_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests'] + select_method
-        script = self.cd_cmd + coverage_cmd
-        result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
-        test_info = f"{result.stderr}\n{result.stdout}"
-        self.logger.info(f"Coverage report generated for test class: {test_class}")
-        self.generate_report_single(html_report, csv_report)
-        return (True, test_info)
+            return False
+        return True
     
     def generate_report_single(self, html_report, csv_report=None):
         # generate report
@@ -86,10 +76,7 @@ class JavaRunner:
 
 
 class CoverageExtractor:
-    report_path: str
-
-    def __init__(self, rpt_path):
-        self.report_path = rpt_path
+    def __init__(self):
         self.logger = logging.getLogger(__name__)
 
     def check_method_name(self, method_name, target):
@@ -109,10 +96,9 @@ class CoverageExtractor:
                 return False
         return True
 
-    def extract_single_coverage(self, testid, package, classname, method):
-        self.logger.info(f"Extracting coverage for class: {classname}, method: {method}")
+    def extract_single_coverage(self, html_path, method):
+        self.logger.info(f"Extracting coverage for class: {html_path}, method: {method}")
         coverage_score = None
-        html_path = f"{self.report_path}/jacoco-report-html/{testid}/{package}/{classname}.html"
         if not os.path.exists(html_path):
             self.logger.exception(f"report file not found: {html_path}")
             return coverage_score
@@ -128,7 +114,8 @@ class CoverageExtractor:
             if self.check_method_name(method_name, method):
                 instruction_cov = float(tds[2].string.replace("%", ""))/100
                 branch_cov = float(tds[4].string.replace("%", ""))/100
-                coverage_score = {"inst_cov": instruction_cov, "bran_cov": branch_cov}
+                # coverage_score = {"inst_cov": instruction_cov, "bran_cov": branch_cov}
+                coverage_score = (instruction_cov, branch_cov)
                 break
         return coverage_score
 

@@ -1,7 +1,6 @@
 from enum import Enum
 import re
 import copy
-from tokenize import group
 import jpype
 import logging
 import subprocess
@@ -190,7 +189,7 @@ class CodeRepairer:
         count = 0
         fixed_code = io_utils.load_text(class_path)
         context = io_utils.load_json(context_path)
-        # TODO: add execution feedback & converage enhancement
+        # TODO: add execution feedback
         while not cflag and count<self.max_tries:
             temp = f"{self.temp_path}/{class_name}".replace(".java", f"_{count}.java")
             io_utils.write_text(temp, fixed_code)

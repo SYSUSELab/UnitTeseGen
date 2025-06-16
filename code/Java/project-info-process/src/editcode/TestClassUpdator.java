@@ -9,6 +9,8 @@ import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.stmt.BlockStmt;
+import com.github.javaparser.ast.stmt.Statement;
 import com.github.javaparser.printer.YamlPrinter;
 
 import java.util.ArrayList;
@@ -87,6 +89,11 @@ public class TestClassUpdator {
             }
             // add test methods
             addNewTestMethods(existClassDecl, addClassDecl);
+            // sort members
+            ClassOrInterfaceDeclaration sorted_decl = sortClassMembers(existClassDecl);
+            existCU.remove(existClassDecl);
+            existCU.addType(sorted_decl);
+
             return existCU.toString();
         } catch (Exception e) {
             e.printStackTrace();
@@ -285,8 +292,8 @@ public class TestClassUpdator {
                              // added is longer
                         int exist_length = existingMethod.getBody().get().toString().length();
                         int add_length = method.getBody().get().toString().length();
-                        System.out.println("exist_length: " + exist_length);
-                        System.out.println("add_length: " + add_length);
+                        // System.out.println("exist_length: " + exist_length);
+                        // System.out.println("add_length: " + add_length);
                         if (add_length > exist_length) {
                             existingMethod.setBody(method.getBody().get().clone());
                         }
@@ -303,5 +310,86 @@ public class TestClassUpdator {
         }
         String yaml = new YamlPrinter(true).output(cu);
         System.out.println(yaml);
+    }
+
+    /**
+     * add statements in source to the end of target method
+     */
+    protected MethodDeclaration addStateMent2Method(MethodDeclaration target, MethodDeclaration source){
+        if (target.getBody().get().getStatements().size() == 0){
+            target = source.clone();
+            return target;
+        }
+        BlockStmt target_body = target.getBody().get();
+        if (source.getBody().isPresent()) {
+            BlockStmt block = source.getBody().get();
+            for (Statement stmt : block.getStatements()) {
+                target_body.addStatement(stmt.clone());
+            }
+        }
+        return target;
+    }
+
+    /**
+     * Sort members of a class in the order: fields, setup/teardown functions, methods, test functions
+     */
+    public ClassOrInterfaceDeclaration sortClassMembers(ClassOrInterfaceDeclaration classDecl) {
+        ClassOrInterfaceDeclaration sorted = new ClassOrInterfaceDeclaration();
+        String class_name = classDecl.getNameAsString();
+        sorted.setName(class_name);
+        // Get all fields
+        List<FieldDeclaration> fields = new ArrayList<>(classDecl.getFields());
+        List<ClassOrInterfaceDeclaration> inner_classes = classDecl.findAll(ClassOrInterfaceDeclaration.class);
+        // Get all methods and separate them by annotation
+        MethodDeclaration before_each = new MethodDeclaration();
+        MethodDeclaration before_all = new MethodDeclaration();
+        MethodDeclaration after_each = new MethodDeclaration();
+        MethodDeclaration after_all = new MethodDeclaration();
+        List<MethodDeclaration> no_anntations = new ArrayList<>();
+        List<MethodDeclaration> test_methods = new ArrayList<>();
+        for (MethodDeclaration method : classDecl.getMethods()) {
+            if (method.getAnnotations().isEmpty()) {
+                no_anntations.add(method.clone());
+            } else {
+                if (method.getAnnotationByName("BeforeEach").isPresent()) {
+                    before_each = addStateMent2Method(before_each, method);
+                } else if (method.getAnnotationByName("BeforeAll").isPresent()) {
+                    before_all = addStateMent2Method(before_all, method);
+                } else if (method.getAnnotationByName("AfterEach").isPresent()) {
+                    after_each = addStateMent2Method(after_each, method);
+                } else if (method.getAnnotationByName("AfterAll").isPresent()) {
+                    after_all = addStateMent2Method(after_all, method);
+                } else {
+                    test_methods.add(method.clone());
+                }
+            }
+        }
+        // Add members back in the desired order
+        for (FieldDeclaration field : fields) {
+            sorted.addMember(field.clone());
+        }
+        for (ClassOrInterfaceDeclaration innerClass : inner_classes) {
+            if (innerClass.getNameAsString().equals(class_name)) continue;
+            sorted.addMember(innerClass.clone());
+        }
+        if (before_all.getBody().isPresent() && before_all.getBody().get().getStatements().size() > 0) {
+            sorted.addMember(before_all);
+        }
+        if (before_each.getBody().isPresent() && before_each.getBody().get().getStatements().size() > 0) {
+            sorted.addMember(before_each);
+        }
+        if (after_each.getBody().isPresent() && after_each.getBody().get().getStatements().size() > 0) {
+            sorted.addMember(after_each);
+        }
+        if (after_all.getBody().isPresent() && after_all.getBody().get().getStatements().size() > 0) {
+            sorted.addMember(after_all);
+        }
+        for (MethodDeclaration method : no_anntations) {
+            sorted.addMember(method.clone());
+        }
+        for (MethodDeclaration method : test_methods) {
+            sorted.addMember(method.clone());
+        }
+        return sorted;
     }
 }
