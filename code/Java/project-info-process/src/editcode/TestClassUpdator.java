@@ -9,6 +9,7 @@ import com.github.javaparser.ast.ImportDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.expr.AnnotationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import com.github.javaparser.printer.YamlPrinter;
@@ -81,6 +82,8 @@ public class TestClassUpdator {
             else mergeImports(existCU, addCU);
             // add fields
             addFields(existClassDecl, addClassDecl);
+            // add annotations
+            addAnnotations(existClassDecl, addClassDecl);
             // add inner classes
             if (addClassDeclList.length > 1) {
                 ClassOrInterfaceDeclaration[] innerClasses = new ClassOrInterfaceDeclaration[addClassDeclList.length - 1];
@@ -193,6 +196,20 @@ public class TestClassUpdator {
             String importName = importDecl.getNameAsString();
             if (!existingImports.contains(importName)) {
                 existCU.addImport(importDecl.clone());
+            }
+        }
+    }
+
+    private void addAnnotations(ClassOrInterfaceDeclaration existClassDecl, ClassOrInterfaceDeclaration addClassDecl){
+        // get all exist Annotations
+        Set<String> exist_annotations = new HashSet<String>();
+        for (AnnotationExpr exist_anntation: existClassDecl.getAnnotations()){
+            exist_annotations.add(exist_anntation.getNameAsString());
+        }
+        for (AnnotationExpr annotation: addClassDecl.getAnnotations()){
+            String anno_name = annotation.getNameAsString();
+            if(!exist_annotations.contains(anno_name)){
+                existClassDecl.addAnnotation(annotation);
             }
         }
     }
@@ -337,9 +354,10 @@ public class TestClassUpdator {
         ClassOrInterfaceDeclaration sorted = new ClassOrInterfaceDeclaration();
         String class_name = classDecl.getNameAsString();
         sorted.setName(class_name);
-        // Get all fields
+        // Get all fields, inner class, and annotatins
         List<FieldDeclaration> fields = new ArrayList<>(classDecl.getFields());
         List<ClassOrInterfaceDeclaration> inner_classes = classDecl.findAll(ClassOrInterfaceDeclaration.class);
+        List<AnnotationExpr> annotations =  classDecl.getAnnotations();
         // Get all methods and separate them by annotation
         MethodDeclaration before_each = new MethodDeclaration();
         MethodDeclaration before_all = new MethodDeclaration();
@@ -365,6 +383,9 @@ public class TestClassUpdator {
             }
         }
         // Add members back in the desired order
+        for (AnnotationExpr anntation: annotations){
+            sorted.addAnnotation(anntation);
+        }
         for (FieldDeclaration field : fields) {
             sorted.addMember(field.clone());
         }

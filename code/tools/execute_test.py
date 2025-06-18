@@ -27,13 +27,24 @@ class JavaRunner:
             return (False, result.stderr)
         return (True, "")
 
-    def run_singal_unit_test(self, testclass):
+    def run_singal_unit_test(self, testclass, coverage:bool=True):
+        """
+        return code of JUnit test:
+        - -1: Execution error occured
+        - 0: All tests passed
+        - 1: Failures occured in test cases
+        - 2: No tests
+        """
         self.logger.info(f"Running single unit test, testclass: {testclass}")
         test_dependencies = f"libs/*;target/test-classes;target/classes;{self.dependency_fd}/*"
         java_agent = f"-javaagent:{self.dependency_fd}/jacocoagent.jar=destfile=target/jacoco.exec"
-        test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
+        if coverage:
+            test_cmd = ['java', '-cp', test_dependencies, java_agent, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
+        else:
+            test_cmd = ['java', '-cp', test_dependencies, 'org.junit.platform.console.ConsoleLauncher', '--disable-banner', '--disable-ansi-colors', '--fail-if-no-tests', '--select-class', testclass]
         script = self.cd_cmd + test_cmd
         result = subprocess.run(script, capture_output=True, text=True, shell=True, encoding="utf-8", errors='ignore')
+        self.logger.info(f"return code: {result.returncode}")
         if result.returncode == 0:
             self.logger.info(f"test execution info: {result.stdout}")
             return (True, result.stdout)
@@ -125,24 +136,24 @@ class CoverageExtractor:
         # get coverage label
         return
 
-    def jacoco_missing_lines(report_root, package, class_name) -> Tuple[List[Tuple[int, str]], List[Tuple[int, str]]]:
-        html_path = os.path.join(report_root, package, f"{class_name}.java.html")
-        with open(html_path, "r") as file:
-            soup = BeautifulSoup(file, 'lxml-xml')
+    # def jacoco_missing_lines(report_root, package, class_name) -> Tuple[List[Tuple[int, str]], List[Tuple[int, str]]]:
+    #     html_path = os.path.join(report_root, package, f"{class_name}.java.html")
+    #     with open(html_path, "r") as file:
+    #         soup = BeautifulSoup(file, 'lxml-xml')
 
-        def get_id(_span):
-            return int(_span['id'][1:])  # since the 'id' has format 'L{id}', e.g., 'L15', means line 15
+    #     def get_id(_span):
+    #         return int(_span['id'][1:])  # since the 'id' has format 'L{id}', e.g., 'L15', means line 15
 
-        def _case_filter(_str: str):
-            return re.match(r"case .*:", _str.strip()) is not None
+    #     def _case_filter(_str: str):
+    #         return re.match(r"case .*:", _str.strip()) is not None
 
-        missing_lines = [(get_id(_span), _span.string)
-                        for _span in soup.find_all("span", class_=re.compile(r"nc(.)*"))]
-        branch_lines = [(get_id(_span), _span.string)
-                        for _span in soup.find_all("span", class_=re.compile(r"pc b[np]c"))]
-        # missing_cases = [get_id(_span) for _span in soup.find_all("span",
-        #                                                           class_=re.compile(r"pc b[np]c"),
-        #                                                           string=_case_filter)]
-        # e.g. for missing cases: case 10: System.out.println("10"); This line will be yellow
+    #     missing_lines = [(get_id(_span), _span.string)
+    #                     for _span in soup.find_all("span", class_=re.compile(r"nc(.)*"))]
+    #     branch_lines = [(get_id(_span), _span.string)
+    #                     for _span in soup.find_all("span", class_=re.compile(r"pc b[np]c"))]
+    #     # missing_cases = [get_id(_span) for _span in soup.find_all("span",
+    #     #                                                           class_=re.compile(r"pc b[np]c"),
+    #     #                                                           string=_case_filter)]
+    #     # e.g. for missing cases: case 10: System.out.println("10"); This line will be yellow
 
-        return missing_lines, branch_lines
+    #     return missing_lines, branch_lines

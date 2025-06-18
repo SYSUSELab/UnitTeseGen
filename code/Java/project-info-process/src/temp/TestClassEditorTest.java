@@ -121,7 +121,7 @@ public class TestClassEditorTest {
         "import org.mockito.*;\n" +
         "import static org.mockito.Mockito.*;\n" +
         "import org.mockito.junit.jupiter.MockitoExtension;\n" +
-        "@ExtendWith(MockitoExtension.class)\n" +
+        "@Timeout(100)\n" +
         "class Flat3Map_equals_Test {\n" +
             "@BeforeEach\n" +
             "void setup() {\n" +
