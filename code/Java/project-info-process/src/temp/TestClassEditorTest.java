@@ -87,7 +87,7 @@ public class TestClassEditorTest {
         "import static org.mockito.Mockito.*;\n" +
         "import org.mockito.junit.jupiter.MockitoExtension;\n" +
         "@ExtendWith(MockitoExtension.class)\n" +
-        "class Flat3Map_equals_Test {\n" +
+        "class Flat3Map_equals_Test implements BaseDict {\n" +
             "private Flat3Map<Integer, String> flat3Map;\n" +
             "@BeforeAll\n" +
             "static void setupBeforeAll() {\n" +
@@ -122,7 +122,7 @@ public class TestClassEditorTest {
         "import static org.mockito.Mockito.*;\n" +
         "import org.mockito.junit.jupiter.MockitoExtension;\n" +
         "@Timeout(100)\n" +
-        "class Flat3Map_equals_Test {\n" +
+        "class Flat3Map_equals_Test extends JavaParserExtractor implements BaseImportDict {\n" +
             "@BeforeEach\n" +
             "void setup() {\n" +
             "    String s = \"abc\";\n" +

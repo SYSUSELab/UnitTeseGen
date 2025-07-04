@@ -6,12 +6,14 @@ import com.github.javaparser.Provider;
 import com.github.javaparser.Providers;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;
+import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.AnnotationExpr;
 import com.github.javaparser.ast.stmt.BlockStmt;
 import com.github.javaparser.ast.stmt.Statement;
+import com.github.javaparser.ast.type.ClassOrInterfaceType;
 import com.github.javaparser.printer.YamlPrinter;
 
 import java.util.ArrayList;
@@ -78,8 +80,9 @@ public class TestClassUpdator {
                 return exist_class;
             }
             // merge imports
-            if (force_update) updateImports(existCU, addCU);
-            else mergeImports(existCU, addCU);
+            updateImports(existCU, addCU);
+            // merge extends and implements
+            mergeExtendsAndImplements(existClassDecl, addClassDecl);
             // add fields
             addFields(existClassDecl, addClassDecl);
             // add annotations
@@ -91,7 +94,7 @@ public class TestClassUpdator {
                 addInnerClasses(existClassDecl, innerClasses);
             }
             // add test methods
-            addNewTestMethods(existClassDecl, addClassDecl);
+            updateTestMethods(existClassDecl, addClassDecl);
             // sort members
             ClassOrInterfaceDeclaration sorted_decl = sortClassMembers(existClassDecl);
             existCU.remove(existClassDecl);
@@ -155,6 +158,10 @@ public class TestClassUpdator {
         return addCU;
     }
 
+    /**
+     * add new imports from new class
+     * if force update, remove unused imports
+     */
     private void updateImports(CompilationUnit existCU, CompilationUnit addCU) {
         // get all imports from existCU
         Dictionary<String,Boolean> existingImports = new Hashtable<String, Boolean>();
@@ -169,33 +176,17 @@ public class TestClassUpdator {
             }
             existingImports.put(importName, true);
         }
-        // remove unused imports
-        List<ImportDeclaration> del_imports = new ArrayList<ImportDeclaration>();
-        for (ImportDeclaration importDecl : existCU.getImports()) {
-            String importName = importDecl.getNameAsString();
-            if (existingImports.get(importName) == false) {
-                del_imports.add(importDecl);
+        if (force_update) {
+            // remove unused imports
+            List<ImportDeclaration> del_imports = new ArrayList<ImportDeclaration>();
+            for (ImportDeclaration importDecl : existCU.getImports()) {
+                String importName = importDecl.getNameAsString();
+                if (existingImports.get(importName) == false) {
+                    del_imports.add(importDecl);
+                }
             }
-        }
-        for (ImportDeclaration importDecl : del_imports) {
-            existCU.remove(importDecl);
-        }
-    }
-
-    /**
-     * merge imports from two CompilationUnit
-     */
-    private void mergeImports(CompilationUnit existCU, CompilationUnit addCU) {
-        // get all imports from existCU
-        Set<String> existingImports = new HashSet<>();
-        for (ImportDeclaration importDecl : existCU.getImports()) {
-            existingImports.add(importDecl.getNameAsString());
-        }
-        // add new imports from addCU
-        for (ImportDeclaration importDecl : addCU.getImports()) {
-            String importName = importDecl.getNameAsString();
-            if (!existingImports.contains(importName)) {
-                existCU.addImport(importDecl.clone());
+            for (ImportDeclaration importDecl : del_imports) {
+                existCU.remove(importDecl);
             }
         }
     }
@@ -210,6 +201,24 @@ public class TestClassUpdator {
             String anno_name = annotation.getNameAsString();
             if(!exist_annotations.contains(anno_name)){
                 existClassDecl.addAnnotation(annotation);
+            }
+        }
+    }
+
+    private void mergeExtendsAndImplements(ClassOrInterfaceDeclaration existClassDecl, ClassOrInterfaceDeclaration addClassDecl) {
+        if (force_update){
+            // remove extends and implements
+            existClassDecl.getExtendedTypes().clear();
+            existClassDecl.getImplementedTypes().clear();
+        }
+        Set<String> exist_implements = new HashSet<>();
+        for (ClassOrInterfaceType exist_implement: existClassDecl.getImplementedTypes()){
+                exist_implements.add(exist_implement.getNameAsString());
+        }
+        existClassDecl.setExtendedTypes(new NodeList<>(addClassDecl.getExtendedTypes()));
+        for (ClassOrInterfaceType add_implement: addClassDecl.getImplementedTypes()){
+            if (!exist_implements.contains(add_implement.getNameAsString())){
+                existClassDecl.addImplementedType(add_implement.clone());
             }
         }
     }
@@ -279,26 +288,22 @@ public class TestClassUpdator {
 
     /**
      * add new test methods to exist class
+     * TODO: remove unhandled methods if force update
      */
-    private void addNewTestMethods(ClassOrInterfaceDeclaration existClassDecl,
+    private void updateTestMethods(ClassOrInterfaceDeclaration existClassDecl,
             ClassOrInterfaceDeclaration addClassDecl) {
         // Get the method names in the existing class for checking duplicates
-        Set<String> existingMethodNames = new HashSet<>();
+        // Set<String> existingMethodNames = new HashSet<>();
+        Dictionary<String, Boolean> existingMethodNames = new Hashtable<String, Boolean>();
         for (MethodDeclaration method : existClassDecl.getMethods()) {
-            existingMethodNames.add(method.getNameAsString());
+            existingMethodNames.put(method.getNameAsString(), false);
         }
         // Iterate over all methods in the class to be added
         for (MethodDeclaration method : addClassDecl.getMethods()) {
             String methodName = method.getNameAsString();
-            // // Check if the method is a test method
-            // if (method.getAnnotationByName("Test").isEmpty()) {
-            // continue;
-            // }
             // If the method does not exist in the existing class, add it
-            if (!existingMethodNames.contains(methodName)) {
-                // Clone the method to avoid modifying the original AST
-                MethodDeclaration clonedMethod = method.clone();
-                existClassDecl.addMember(clonedMethod);
+            if (existingMethodNames.get(methodName)==null) {
+                existClassDecl.addMember(method.clone());
             } else {
                 // update method body
                 MethodDeclaration existingMethod = getMethodByName(existClassDecl, methodName);
@@ -318,6 +323,14 @@ public class TestClassUpdator {
                 }
             }
         }
+        // Enumeration<String> keys = existingMethodNames.keys();
+        // while (keys.hasMoreElements()) {
+        //     String methodName = keys.nextElement();
+        //     if (existingMethodNames.get(methodName) == false){
+        //         MethodDeclaration existingMethod = getMethodByName(existClassDecl, methodName);
+        //         existClassDecl.remove(existingMethod);
+        //     }
+        // }
     }
     
     public void printAST(CompilationUnit cu) {
@@ -354,6 +367,8 @@ public class TestClassUpdator {
         ClassOrInterfaceDeclaration sorted = new ClassOrInterfaceDeclaration();
         String class_name = classDecl.getNameAsString();
         sorted.setName(class_name);
+        sorted.setExtendedTypes(new NodeList<>(classDecl.getExtendedTypes()));
+        sorted.setImplementedTypes(new NodeList<>(classDecl.getImplementedTypes()));
         // Get all fields, inner class, and annotatins
         List<FieldDeclaration> fields = new ArrayList<>(classDecl.getFields());
         List<ClassOrInterfaceDeclaration> inner_classes = classDecl.findAll(ClassOrInterfaceDeclaration.class);

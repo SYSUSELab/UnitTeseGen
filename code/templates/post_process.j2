@@ -42,10 +42,13 @@ Corresponding execution feedback:
 {{ feedback }}
 ```
 
+{% if context_dict | length > 0 %}
 And you can use the following related information to assist you in your analysis and correction:
-```
-{{ context_dict }}
-```
+{% for key, value in context_dict.items() %}
+{{ key }}: 
+{{ value }}
+{% endfor %}
+{% endif %}
 
 Now you should output the corrected Java code wrapped in a Markdown code block ```java at the beginning and ``` at the end: 
 {% endif %}
