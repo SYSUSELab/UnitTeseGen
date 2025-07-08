@@ -54,10 +54,10 @@ public class PreProcessor {
             Path projectDir = project_dir;
             if (project_name.equals("gson")) 
                 projectDir = project_dir.resolve("gson");
-            Path jsonPath = output_dir.resolve("json/" + project_name + ".json");
+            Path json_path = output_dir.resolve("json/" + project_name + ".json");
             Path cfg_path = output_dir.resolve("codegraph/" + project_name + "_controlflow.json");
             System.out.println("process project: " + project_name);
-            extractProjectStructure(project_name, projectDir, jsonPath);
+            // extractProjectStructure(project_name, projectDir, json_path);
             buildControlflowFlowGraph(projectDir, cfg_path);
         });
         long end = System.currentTimeMillis();
@@ -81,9 +81,9 @@ public class PreProcessor {
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-        String json = gson.toJson(projectJson);
+
         try{
-            Files.writeString(json_path, json);
+            Files.writeString(json_path, gson.toJson(projectJson));
         } catch (IOException e) {
             System.out.println("Error: "+e.getMessage());
         }
@@ -92,7 +92,12 @@ public class PreProcessor {
 
     private void buildControlflowFlowGraph(Path project_dir, Path cfg_path){
         String source_path = project_dir.resolve("src/main/java").toString();
-        JsonObject graph_data = new JsonObject();
         ControlFlowGraphBuilder cfgBuilder = new ControlFlowGraphBuilder(source_path);
+        JsonObject graph_data = cfgBuilder.buildGraph4Project();
+        try{
+            Files.writeString(cfg_path, gson.toJson(graph_data));
+        } catch (IOException e) {
+            System.out.println("Error: "+e.getMessage());
+        }
     }
 }

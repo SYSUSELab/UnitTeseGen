@@ -213,7 +213,7 @@ class CodeSearcher:
         return context
 
 
-    # todo: compress overlong context
+    # TODO: compress overlong context
     def collect_usage_context(self, class_name, method_name:str):
         '''
         content in usage context:
@@ -261,9 +261,10 @@ class CodeSearcher:
             context["return type"] = return_type
         # calling methods in focus method
         for cmethod in method_info["call_methods"]:
-            method_sig = cmethod["signature"].split(".")
-            class_name = '.'.join(method_sig[:-1])
-            method_name = method_sig[-1]
+            method_sig = cmethod["signature"]
+            sig_split = method_sig.split(".")
+            class_name = '.'.join(sig_split[:-1])
+            method_name = sig_split[-1]
             cinfo = self._get_class_info(class_name)
             if cinfo is not None:
                 if "javadoc" in cinfo:
@@ -276,7 +277,7 @@ class CodeSearcher:
                     if api_doc is not None: cmtext += f", api document: {api_doc}"
                     depclass.update_list(class_name, "dep_func", cmtext)
                     query_list.append({
-                        "sig": '.'.join(method_sig),
+                        "sig": method_sig,
                         "function": [cm["signature"] for cm in minfo["call_methods"]],
                         "field":[cf["name"] for cf in minfo["external_fields"]],
                     })

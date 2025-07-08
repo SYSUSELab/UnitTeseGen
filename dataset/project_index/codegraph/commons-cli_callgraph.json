@@ -1,0 +1,721 @@
+{
+  "org.apache.commons.cli.AlreadySelectedException": {
+    "getOption()": [],
+    "getOptionGroup()": [],
+    "AlreadySelectedException(OptionGroup, Option)": [
+      "setSelected(Option)"
+    ],
+    "AlreadySelectedException(String)": [],
+    "AlreadySelectedException(String, OptionGroup, Option)": []
+  },
+  "org.apache.commons.cli.AmbiguousOptionException": {
+    "createMessage(String, Collection)": [],
+    "getMatchingOptions()": [],
+    "AmbiguousOptionException(String, Collection)": [
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)"
+    ]
+  },
+  "org.apache.commons.cli.CommandLine": {
+    "addArg(String)": [
+      "addArg(String)",
+      "handleToken(String)",
+      "handleUnknownToken(String)"
+    ],
+    "addOption(Option)": [
+      "addOption(Option)",
+      "handleOption(Option)"
+    ],
+    "getArgList()": [],
+    "getArgs()": [],
+    "getOptionProperties(Option)": [],
+    "getOptionProperties(String)": [],
+    "getOptions()": [],
+    "getOptionValue(char)": [],
+    "getOptionValue(char, String)": [],
+    "getOptionValue(char, Supplier)": [],
+    "getOptionValue(Option)": [
+      "getOptionValue(Option, Supplier<String>)",
+      "getOptionValue(String)",
+      "getParsedOptionValue(Option, Supplier<T>)"
+    ],
+    "getOptionValue(Option, String)": [],
+    "getOptionValue(Option, Supplier)": [
+      "getOptionValue(Option, String)",
+      "getOptionValue(String, String)",
+      "getOptionValue(String, Supplier<String>)"
+    ],
+    "getOptionValue(String)": [
+      "getOptionValue(char)"
+    ],
+    "getOptionValue(String, String)": [],
+    "getOptionValue(String, Supplier)": [
+      "getOptionValue(char, String)",
+      "getOptionValue(char, Supplier<String>)"
+    ],
+    "getOptionValues(char)": [],
+    "getOptionValues(Option)": [
+      "getOptionValue(Option)",
+      "getOptionValues(String)"
+    ],
+    "getOptionValues(String)": [
+      "getOptionValues(char)"
+    ],
+    "getParsedOptionValue(char)": [],
+    "getParsedOptionValue(char, Supplier)": [],
+    "getParsedOptionValue(char, T)": [],
+    "getParsedOptionValue(Option)": [
+      "getParsedOptionValue(String)"
+    ],
+    "getParsedOptionValue(Option, Supplier)": [
+      "getParsedOptionValue(Option)",
+      "getParsedOptionValue(Option, T)",
+      "getParsedOptionValue(String, Supplier<T>)"
+    ],
+    "getParsedOptionValue(Option, T)": [
+      "getParsedOptionValue(String, T)"
+    ],
+    "getParsedOptionValue(String)": [
+      "getParsedOptionValue(char)"
+    ],
+    "getParsedOptionValue(String, Supplier)": [
+      "getParsedOptionValue(char, Supplier<T>)"
+    ],
+    "getParsedOptionValue(String, T)": [
+      "getParsedOptionValue(char, T)"
+    ],
+    "hasOption(char)": [],
+    "hasOption(Option)": [
+      "hasOption(String)"
+    ],
+    "hasOption(String)": [
+      "hasOption(char)",
+      "handleProperties(Properties)"
+    ],
+    "iterator()": [],
+    "processPropertiesFromValues(Properties, List)": [
+      "getOptionProperties(Option)",
+      "getOptionProperties(String)"
+    ],
+    "resolveOption(String)": [
+      "getOptionValue(String)",
+      "getOptionValue(String, String)",
+      "getOptionValue(String, Supplier<String>)",
+      "getOptionValues(String)",
+      "getParsedOptionValue(String)",
+      "getParsedOptionValue(String, Supplier<T>)",
+      "getParsedOptionValue(String, T)",
+      "hasOption(String)"
+    ],
+    "CommandLine()": [
+      "parse(Options, String[], Properties, boolean)"
+    ]
+  },
+  "org.apache.commons.cli.CommandLine.Builder": {
+    "addArg(String)": [],
+    "addOption(Option)": [],
+    "build()": []
+  },
+  "org.apache.commons.cli.CommandLineParser": {
+    "parse(Options, String[])": [],
+    "parse(Options, String[], boolean)": []
+  },
+  "org.apache.commons.cli.Converter": {
+    "apply(String)": [
+      "getParsedOptionValue(Option, Supplier<T>)",
+      "createValue(String, Class<T>)"
+    ]
+  },
+  "org.apache.commons.cli.DefaultParser": {
+    "builder()": [],
+    "checkRequiredArgs()": [
+      "handleOption(Option)",
+      "parse(Options, String[], Properties, boolean)"
+    ],
+    "checkRequiredOptions()": [
+      "parse(Options, String[], Properties, boolean)"
+    ],
+    "getLongPrefix(String)": [
+      "handleShortAndLongOption(String)",
+      "isLongOption(String)"
+    ],
+    "getMatchingLongOptions(String)": [
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)",
+      "handleShortAndLongOption(String)",
+      "isLongOption(String)"
+    ],
+    "handleConcatenatedOptions(String)": [
+      "handleShortAndLongOption(String)"
+    ],
+    "handleLongOption(String)": [
+      "handleToken(String)"
+    ],
+    "handleLongOptionWithEqual(String)": [
+      "handleLongOption(String)",
+      "handleShortAndLongOption(String)"
+    ],
+    "handleLongOptionWithoutEqual(String)": [
+      "handleLongOption(String)",
+      "handleShortAndLongOption(String)"
+    ],
+    "handleOption(Option)": [
+      "handleConcatenatedOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)",
+      "handleProperties(Properties)",
+      "handleShortAndLongOption(String)"
+    ],
+    "handleProperties(Properties)": [
+      "parse(Options, String[], Properties, boolean)"
+    ],
+    "handleShortAndLongOption(String)": [
+      "handleToken(String)"
+    ],
+    "handleToken(String)": [
+      "parse(Options, String[], Properties, boolean)"
+    ],
+    "handleUnknownToken(String)": [
+      "handleConcatenatedOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)",
+      "handleShortAndLongOption(String)",
+      "handleToken(String)"
+    ],
+    "isArgument(String)": [
+      "handleToken(String)"
+    ],
+    "isJavaProperty(String)": [
+      "checkRequiredArgs()",
+      "handleShortAndLongOption(String)"
+    ],
+    "isLongOption(String)": [
+      "isOption(String)"
+    ],
+    "isNegativeNumber(String)": [
+      "isArgument(String)"
+    ],
+    "isOption(String)": [
+      "isArgument(String)"
+    ],
+    "isShortOption(String)": [
+      "isOption(String)"
+    ],
+    "parse(Options, String[])": [],
+    "parse(Options, String[], boolean)": [],
+    "parse(Options, String[], Properties)": [
+      "parse(Options, String[])"
+    ],
+    "parse(Options, String[], Properties, boolean)": [
+      "parse(Options, String[], boolean)",
+      "parse(Options, String[], Properties)"
+    ],
+    "stripLeadingAndTrailingQuotesDefaultOff(String)": [
+      "handleConcatenatedOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleProperties(Properties)",
+      "handleShortAndLongOption(String)"
+    ],
+    "stripLeadingAndTrailingQuotesDefaultOn(String)": [
+      "handleToken(String)"
+    ],
+    "updateRequiredOptions(Option)": [
+      "handleOption(Option)"
+    ],
+    "DefaultParser()": [],
+    "DefaultParser(boolean)": [],
+    "DefaultParser(boolean, Boolean)": [
+      "build()"
+    ]
+  },
+  "org.apache.commons.cli.DefaultParser.Builder": {
+    "build()": [],
+    "setAllowPartialMatching(boolean)": [],
+    "setStripLeadingAndTrailingQuotes(Boolean)": [],
+    "Builder()": [
+      "builder()"
+    ]
+  },
+  "org.apache.commons.cli.HelpFormatter": {
+    "appendOption(StringBuffer, Option, boolean)": [
+      "appendOptionGroup(StringBuffer, OptionGroup)",
+      "printUsage(PrintWriter, int, String, Options)"
+    ],
+    "appendOptionGroup(StringBuffer, OptionGroup)": [
+      "printUsage(PrintWriter, int, String, Options)"
+    ],
+    "createPadding(int)": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "renderWrappedText(StringBuffer, int, int, String)"
+    ],
+    "findWrapPos(String, int, int)": [
+      "renderWrappedText(StringBuffer, int, int, String)"
+    ],
+    "getArgName()": [
+      "appendOption(StringBuffer, Option, boolean)",
+      "renderOptions(StringBuffer, int, Options, int, int)"
+    ],
+    "getDescPadding()": [
+      "printHelp(int, String, String, Options, String, boolean)"
+    ],
+    "getLeftPadding()": [
+      "printHelp(int, String, String, Options, String, boolean)"
+    ],
+    "getLongOptPrefix()": [
+      "renderOptions(StringBuffer, int, Options, int, int)"
+    ],
+    "getLongOptSeparator()": [],
+    "getNewLine()": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "renderWrappedText(StringBuffer, int, int, String)",
+      "renderWrappedTextBlock(StringBuffer, int, int, String)"
+    ],
+    "getOptionComparator()": [
+      "appendOptionGroup(StringBuffer, OptionGroup)",
+      "printUsage(PrintWriter, int, String, Options)",
+      "renderOptions(StringBuffer, int, Options, int, int)"
+    ],
+    "getOptPrefix()": [
+      "renderOptions(StringBuffer, int, Options, int, int)"
+    ],
+    "getSyntaxPrefix()": [
+      "printUsage(PrintWriter, int, String)",
+      "printUsage(PrintWriter, int, String, Options)"
+    ],
+    "getWidth()": [
+      "printHelp(String, Options)",
+      "printHelp(String, Options, boolean)",
+      "printHelp(String, String, Options, String, boolean)"
+    ],
+    "printHelp(int, String, String, Options, String)": [],
+    "printHelp(int, String, String, Options, String, boolean)": [
+      "printHelp(int, String, String, Options, String)",
+      "printHelp(String, Options)",
+      "printHelp(String, Options, boolean)",
+      "printHelp(String, String, Options, String, boolean)"
+    ],
+    "printHelp(PrintWriter, int, String, String, Options, int, int, String)": [],
+    "printHelp(PrintWriter, int, String, String, Options, int, int, String, boolean)": [
+      "printHelp(int, String, String, Options, String, boolean)",
+      "printHelp(PrintWriter, int, String, String, Options, int, int, String)"
+    ],
+    "printHelp(String, Options)": [],
+    "printHelp(String, Options, boolean)": [],
+    "printHelp(String, String, Options, String)": [],
+    "printHelp(String, String, Options, String, boolean)": [
+      "printHelp(String, String, Options, String)"
+    ],
+    "printOptions(PrintWriter, int, Options, int, int)": [
+      "printHelp(PrintWriter, int, String, String, Options, int, int, String, boolean)"
+    ],
+    "printUsage(PrintWriter, int, String)": [
+      "printHelp(PrintWriter, int, String, String, Options, int, int, String, boolean)"
+    ],
+    "printUsage(PrintWriter, int, String, Options)": [
+      "printHelp(PrintWriter, int, String, String, Options, int, int, String, boolean)"
+    ],
+    "printWrapped(PrintWriter, int, int, String)": [
+      "printUsage(PrintWriter, int, String)",
+      "printUsage(PrintWriter, int, String, Options)",
+      "printWrapped(PrintWriter, int, String)"
+    ],
+    "printWrapped(PrintWriter, int, String)": [
+      "printHelp(PrintWriter, int, String, String, Options, int, int, String, boolean)"
+    ],
+    "renderOptions(StringBuffer, int, Options, int, int)": [
+      "printOptions(PrintWriter, int, Options, int, int)"
+    ],
+    "renderWrappedText(StringBuffer, int, int, String)": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "renderWrappedTextBlock(StringBuffer, int, int, String)"
+    ],
+    "renderWrappedTextBlock(StringBuffer, int, int, String)": [
+      "printWrapped(PrintWriter, int, int, String)"
+    ],
+    "rtrim(String)": [
+      "renderWrappedText(StringBuffer, int, int, String)"
+    ],
+    "setArgName(String)": [],
+    "setDescPadding(int)": [],
+    "setLeftPadding(int)": [],
+    "setLongOptPrefix(String)": [],
+    "setLongOptSeparator(String)": [],
+    "setNewLine(String)": [],
+    "setOptionComparator(Comparator)": [],
+    "setOptPrefix(String)": [],
+    "setSyntaxPrefix(String)": [],
+    "setWidth(int)": []
+  },
+  "org.apache.commons.cli.HelpFormatter.OptionComparator": {
+    "compare(Option, Option)": []
+  },
+  "org.apache.commons.cli.MissingArgumentException": {
+    "getOption()": [],
+    "MissingArgumentException(Option)": [
+      "checkRequiredArgs()"
+    ],
+    "MissingArgumentException(String)": []
+  },
+  "org.apache.commons.cli.MissingOptionException": {
+    "createMessage(List)": [],
+    "getMissingOptions()": [],
+    "MissingOptionException(List)": [
+      "checkRequiredOptions()"
+    ],
+    "MissingOptionException(String)": []
+  },
+  "org.apache.commons.cli.Option": {
+    "builder()": [],
+    "builder(String)": [
+      "builder()",
+      "parsePattern(String)"
+    ],
+    "acceptsArg()": [
+      "handleLongOptionWithEqual(String)",
+      "handleShortAndLongOption(String)",
+      "handleToken(String)",
+      "add(String)",
+      "requiresArg()"
+    ],
+    "add(String)": [
+      "processValue(String)"
+    ],
+    "addValueForProcessing(String)": [
+      "handleConcatenatedOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleProperties(Properties)",
+      "handleShortAndLongOption(String)",
+      "handleToken(String)"
+    ],
+    "clearValues()": [],
+    "clone()": [
+      "handleOption(Option)"
+    ],
+    "equals(Object)": [
+      "getOptionProperties(Option)",
+      "getOptionValues(Option)"
+    ],
+    "getArgName()": [
+      "appendOption(StringBuffer, Option, boolean)",
+      "renderOptions(StringBuffer, int, Options, int, int)"
+    ],
+    "getArgs()": [
+      "isJavaProperty(String)"
+    ],
+    "getConverter()": [
+      "getParsedOptionValue(Option, Supplier<T>)"
+    ],
+    "getDescription()": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "toString()"
+    ],
+    "getId()": [],
+    "getKey()": [
+      "checkRequiredArgs()",
+      "updateRequiredOptions(Option)",
+      "compare(Option, Option)",
+      "getId()",
+      "addOption(Option)",
+      "setSelected(Option)",
+      "addOption(Option)",
+      "addOptionGroup(OptionGroup)",
+      "addOptions(Options)",
+      "getOptionGroup(Option)"
+    ],
+    "getLongOpt()": [
+      "getOptionProperties(String)",
+      "resolveOption(String)",
+      "getMatchingLongOptions(String)",
+      "appendOption(StringBuffer, Option, boolean)",
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "toString()",
+      "addOption(Option)"
+    ],
+    "getOpt()": [
+      "getOptionProperties(String)",
+      "resolveOption(String)",
+      "appendOption(StringBuffer, Option, boolean)",
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "toString()"
+    ],
+    "getType()": [],
+    "getValue()": [
+      "getValue(String)"
+    ],
+    "getValue(int)": [],
+    "getValue(String)": [],
+    "getValues()": [
+      "handleProperties(Properties)"
+    ],
+    "getValueSeparator()": [
+      "processValue(String)"
+    ],
+    "getValuesList()": [
+      "getOptionProperties(Option)",
+      "getOptionProperties(String)",
+      "getOptionValues(Option)",
+      "checkRequiredArgs()"
+    ],
+    "hasArg()": [
+      "handleOption(Option)",
+      "handleProperties(Properties)",
+      "appendOption(StringBuffer, Option, boolean)",
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "acceptsArg()",
+      "toString()"
+    ],
+    "hasArgName()": [],
+    "hasArgs()": [
+      "acceptsArg()",
+      "toString()"
+    ],
+    "hashCode()": [],
+    "hasLongOpt()": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "addOption(Option)"
+    ],
+    "hasNoValues()": [
+      "getValue()",
+      "getValue(int)",
+      "getValues()"
+    ],
+    "hasOptionalArg()": [
+      "acceptsArg()"
+    ],
+    "hasValueSeparator()": [
+      "processValue(String)"
+    ],
+    "isRequired()": [
+      "updateRequiredOptions(Option)",
+      "printUsage(PrintWriter, int, String, Options)",
+      "addOption(Option)"
+    ],
+    "processValue(String)": [
+      "addValueForProcessing(String)"
+    ],
+    "requiresArg()": [
+      "checkRequiredArgs()"
+    ],
+    "setArgName(String)": [],
+    "setArgs(int)": [],
+    "setConverter(Converter)": [],
+    "setDescription(String)": [],
+    "setLongOpt(String)": [],
+    "setOptionalArg(boolean)": [],
+    "setRequired(boolean)": [
+      "addOptionGroup(OptionGroup)",
+      "addRequiredOption(String, String, boolean, String)"
+    ],
+    "setType(Class)": [],
+    "setValueSeparator(char)": [],
+    "toString()": [],
+    "Option(Builder)": [
+      "build()"
+    ],
+    "Option(String, boolean, String)": [],
+    "Option(String, String)": [],
+    "Option(String, String, boolean, String)": [
+      "addOption(String, String, boolean, String)",
+      "addRequiredOption(String, String, boolean, String)"
+    ]
+  },
+  "org.apache.commons.cli.Option.Builder": {
+    "argName(String)": [],
+    "build()": [
+      "parsePattern(String)"
+    ],
+    "converter(Converter)": [
+      "parsePattern(String)"
+    ],
+    "desc(String)": [],
+    "hasArg()": [],
+    "hasArg(boolean)": [
+      "hasArg()",
+      "parsePattern(String)"
+    ],
+    "hasArgs()": [],
+    "longOpt(String)": [],
+    "numberOfArgs(int)": [],
+    "option(String)": [],
+    "optionalArg(boolean)": [],
+    "required()": [],
+    "required(boolean)": [
+      "required()",
+      "parsePattern(String)"
+    ],
+    "type(Class)": [
+      "parsePattern(String)"
+    ],
+    "valueSeparator()": [],
+    "valueSeparator(char)": [
+      "valueSeparator()"
+    ],
+    "Builder(String)": [
+      "builder(String)"
+    ]
+  },
+  "org.apache.commons.cli.OptionGroup": {
+    "addOption(Option)": [],
+    "getNames()": [],
+    "getOptions()": [
+      "appendOptionGroup(StringBuffer, OptionGroup)",
+      "toString()",
+      "addOptionGroup(OptionGroup)"
+    ],
+    "getSelected()": [
+      "handleProperties(Properties)"
+    ],
+    "isRequired()": [
+      "updateRequiredOptions(Option)",
+      "appendOptionGroup(StringBuffer, OptionGroup)",
+      "addOptionGroup(OptionGroup)"
+    ],
+    "setRequired(boolean)": [],
+    "setSelected(Option)": [
+      "parse(Options, String[], Properties, boolean)",
+      "updateRequiredOptions(Option)"
+    ],
+    "toString()": []
+  },
+  "org.apache.commons.cli.Options": {
+    "addOption(Option)": [
+      "addOption(String, String, boolean, String)",
+      "addOptionGroup(OptionGroup)",
+      "addOptions(Options)",
+      "addRequiredOption(String, String, boolean, String)",
+      "parsePattern(String)"
+    ],
+    "addOption(String, boolean, String)": [],
+    "addOption(String, String)": [],
+    "addOption(String, String, boolean, String)": [
+      "addOption(String, boolean, String)",
+      "addOption(String, String)"
+    ],
+    "addOptionGroup(OptionGroup)": [],
+    "addOptions(Options)": [],
+    "addRequiredOption(String, String, boolean, String)": [],
+    "getMatchingOptions(String)": [
+      "getMatchingLongOptions(String)"
+    ],
+    "getOption(String)": [
+      "getMatchingLongOptions(String)",
+      "handleConcatenatedOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)",
+      "handleProperties(Properties)",
+      "handleShortAndLongOption(String)",
+      "isJavaProperty(String)"
+    ],
+    "getOptionGroup(Option)": [
+      "handleProperties(Properties)",
+      "updateRequiredOptions(Option)",
+      "printUsage(PrintWriter, int, String, Options)"
+    ],
+    "getOptionGroups()": [
+      "parse(Options, String[], Properties, boolean)",
+      "addOptions(Options)"
+    ],
+    "getOptions()": [
+      "printUsage(PrintWriter, int, String, Options)",
+      "addOptions(Options)"
+    ],
+    "getRequiredOptions()": [
+      "parse(Options, String[], Properties, boolean)"
+    ],
+    "hasLongOption(String)": [
+      "getLongPrefix(String)",
+      "getMatchingLongOptions(String)",
+      "handleLongOptionWithEqual(String)",
+      "handleLongOptionWithoutEqual(String)"
+    ],
+    "hasOption(String)": [
+      "handleConcatenatedOptions(String)",
+      "addOptions(Options)"
+    ],
+    "hasShortOption(String)": [
+      "handleShortAndLongOption(String)",
+      "isShortOption(String)"
+    ],
+    "helpOptions()": [
+      "renderOptions(StringBuffer, int, Options, int, int)",
+      "getOptions()"
+    ],
+    "toString()": []
+  },
+  "org.apache.commons.cli.OptionValidator": {
+    "isValidChar(char)": [
+      "validate(String)"
+    ],
+    "isValidOpt(char)": [
+      "validate(String)"
+    ],
+    "search(char[], char)": [
+      "isValidChar(char)",
+      "isValidOpt(char)"
+    ],
+    "validate(String)": [
+      "option(String)"
+    ]
+  },
+  "org.apache.commons.cli.ParseException": {
+    "wrap(Throwable)": [
+      "getParsedOptionValue(Option, Supplier<T>)",
+      "createValue(String, Class<T>)"
+    ],
+    "ParseException(String)": [],
+    "ParseException(Throwable)": [
+      "wrap(Throwable)"
+    ]
+  },
+  "org.apache.commons.cli.PatternOptionBuilder": {
+    "getValueType(char)": [
+      "parsePattern(String)"
+    ],
+    "isValueCode(char)": [
+      "parsePattern(String)"
+    ],
+    "parsePattern(String)": [],
+    "registerTypes()": []
+  },
+  "org.apache.commons.cli.TypeHandler": {
+    "createValue(String, Class)": [],
+    "getConverter(Class)": [
+      "getConverter()",
+      "parsePattern(String)",
+      "createValue(String, Class<T>)"
+    ],
+    "noConverters()": [],
+    "register(Class, Converter)": [
+      "registerTypes()"
+    ],
+    "resetConverters()": []
+  },
+  "org.apache.commons.cli.UnrecognizedOptionException": {
+    "getOption()": [],
+    "UnrecognizedOptionException(String)": [],
+    "UnrecognizedOptionException(String, String)": [
+      "handleProperties(Properties)",
+      "handleUnknownToken(String)"
+    ]
+  },
+  "org.apache.commons.cli.Util": {
+    "isEmpty(String)": [
+      "stripLeadingAndTrailingQuotes(String)",
+      "stripLeadingHyphens(String)"
+    ],
+    "stripLeadingAndTrailingQuotes(String)": [
+      "stripLeadingAndTrailingQuotesDefaultOff(String)",
+      "stripLeadingAndTrailingQuotesDefaultOn(String)"
+    ],
+    "stripLeadingHyphens(String)": [
+      "resolveOption(String)",
+      "getLongPrefix(String)",
+      "handleShortAndLongOption(String)",
+      "getMatchingOptions(String)",
+      "getOption(String)",
+      "hasLongOption(String)",
+      "hasOption(String)",
+      "hasShortOption(String)"
+    ]
+  }
+}

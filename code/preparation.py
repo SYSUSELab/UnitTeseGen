@@ -7,6 +7,7 @@ import argparse
 from settings import FileStructure as FS
 import tools.io_utils as utils
 import procedure.workspace_preparation as WSP
+import procedure.preprocess_project as PreProcess
 
 
 def get_args():
@@ -79,10 +80,12 @@ def run(args):
     #     DatasetProcessor.main([dataset_abs])
     if args.project_index:
         logger.info("Constructing project index ...")
-        ProjectPreprocessor = jpype.JClass("PreProcessor")
-        ProjectPreprocessor.main([dataset_abs, f"{code_info_path}/json"])
-        IndexBuilder = jpype.JClass("IndexBuilder")
-        IndexBuilder.main(["group", f"{code_info_path}/json", f"{code_info_path}/lucene"])
+        # ProjectPreprocessor = jpype.JClass("PreProcessor")
+        # ProjectPreprocessor.main([dataset_abs, f"{code_info_path}/json"])
+        # TODO: add code graph
+        PreProcess.build_calling_graph(FS)
+        # IndexBuilder = jpype.JClass("IndexBuilder")
+        # IndexBuilder.main(["group", f"{code_info_path}/json", f"{code_info_path}/lucene"])
     
     logger.info("preparation completed.")
     return

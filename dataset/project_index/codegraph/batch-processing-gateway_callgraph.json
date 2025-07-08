@@ -1,0 +1,2118 @@
+{
+  "com.apple.spark.api.DeleteSubmissionResponse": {
+    "getSubmissionId()": [],
+    "setSubmissionId(String)": [
+      "deleteSubmission(String, String, User)"
+    ]
+  },
+  "com.apple.spark.api.GetDriverInfoResponse": {
+    "getPodName()": [],
+    "setPodName(String)": [
+      "getDriverInfo(String, String, User)"
+    ],
+    "getStartTime()": [
+      "main(String[])"
+    ],
+    "setStartTime(Long)": [
+      "getDriverInfo(String, String, User)"
+    ]
+  },
+  "com.apple.spark.api.GetMySubmissionsResponse": {
+    "getSubmissions()": [
+      "main(String[])"
+    ],
+    "setSubmissions(List)": [
+      "getSubmissions(String, User)"
+    ]
+  },
+  "com.apple.spark.api.GetSubmissionStatusResponse": {
+    "getSparkUIUrl()": [],
+    "setSparkUIUrl(String)": [
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ]
+  },
+  "com.apple.spark.api.HealthcheckResponse": {
+    "getStatus()": [],
+    "setStatus(String)": [
+      "healthcheckStatus(User)"
+    ]
+  },
+  "com.apple.spark.api.SubmissionStatus": {
+    "copyFrom(SparkApplication)": [
+      "copyFrom(SparkApplication)",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ],
+    "getCreationTime()": [
+      "getDuration()",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ],
+    "setCreationTime(Long)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getSparkApplicationId()": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)"
+    ],
+    "setSparkApplicationId(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getExecutionAttempts()": [],
+    "setExecutionAttempts(Integer)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getTerminationTime()": [
+      "getDuration()",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)",
+      "main(String[])"
+    ],
+    "setTerminationTime(Long)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getApplicationState()": [
+      "copyFrom(SparkApplication)",
+      "getDuration()",
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)",
+      "main(String[])"
+    ],
+    "setApplicationState(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getApplicationErrorMessage()": [
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ],
+    "setApplicationErrorMessage(String)": [
+      "copyFrom(SparkApplication)",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ],
+    "getDuration()": [],
+    "setDuration(Long)": []
+  },
+  "com.apple.spark.api.SubmissionSummary": {
+    "getSubmissionId()": [
+      "main(String[])"
+    ],
+    "setSubmissionId(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getUser()": [],
+    "setUser(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getSparkVersion()": [],
+    "setSparkVersion(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getApplicationName()": [],
+    "setApplicationName(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)": [],
+    "copyFrom(SparkApplication)": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)"
+    ],
+    "getDagName()": [],
+    "setDagName(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getQueue()": [],
+    "setQueue(String)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getExecutorInstances()": [],
+    "setExecutorInstances(int)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getExecutorCores()": [],
+    "setExecutorCores(int)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getExecutorMemoryGB()": [],
+    "setExecutorMemoryGB(Long)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getDriverCores()": [],
+    "setDriverCores(int)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getTotalCores()": [],
+    "setTotalCores(int)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getDriverMemoryGB()": [],
+    "setDriverMemoryGB(Long)": [
+      "copyFrom(SparkApplication)"
+    ],
+    "getTotalMemoryGB()": [],
+    "setTotalMemoryGB(Long)": [],
+    "getSparkUIUrl()": [],
+    "setSparkUIUrl(String)": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)"
+    ],
+    "getApplicationArguments()": [],
+    "setApplicationArguments(List)": [
+      "copyFrom(SparkApplication)"
+    ]
+  },
+  "com.apple.spark.api.SubmitApplicationRequest": {
+    "getDriverOverheadFactor()": [],
+    "setDriverOverheadFactor(Double)": [],
+    "getExecutorOverheadFactor()": [],
+    "setExecutorOverheadFactor(Double)": [],
+    "getOverheadFactor()": [],
+    "setOverheadFactor(Double)": [],
+    "getClusterId()": [
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "setClusterId(String)": [],
+    "getApplicationName()": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)",
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ],
+    "setApplicationName(String)": [],
+    "getSubmissionIdSuffix()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setSubmissionIdSuffix(String)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getType()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setType(String)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getMode()": [],
+    "setMode(String)": [],
+    "getImage()": [
+      "applyFeatureGate(SubmitApplicationRequest, Map<String, String>)",
+      "getImage(AppConfig, SubmitApplicationRequest, String, String, String)"
+    ],
+    "setImage(String)": [],
+    "getSpotInstance()": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setSpotInstance(boolean)": [],
+    "getSparkVersion()": [
+      "logApplicationSubmissionImpl(String, String, SubmitApplicationRequest, String)",
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)",
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setSparkVersion(String)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getMainClass()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setMainClass(String)": [],
+    "getMainApplicationFile()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setMainApplicationFile(String)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getArguments()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setArguments(List)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getSparkConf()": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)",
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)",
+      "validateSubmissionRequest(SubmitApplicationRequest, String)"
+    ],
+    "setSparkConf(Map)": [],
+    "getVolumes()": [
+      "getVolumes(SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setVolumes(List)": [],
+    "getDriver()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitRequestToNonSensitiveJson(SubmitApplicationRequest)"
+    ],
+    "setDriver(DriverSpec)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getExecutor()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "validateSubmissionRequest(SubmitApplicationRequest, String)",
+      "submitRequestToNonSensitiveJson(SubmitApplicationRequest)"
+    ],
+    "setExecutor(ExecutorSpec)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getDeps()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setDeps(Dependencies)": [],
+    "getPythonVersion()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setPythonVersion(String)": [],
+    "getImagePullPolicy()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setImagePullPolicy(String)": [],
+    "getRestartPolicy()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setRestartPolicy(RestartPolicy)": [],
+    "getQueue()": [
+      "logApplicationSubmissionImpl(String, String, SubmitApplicationRequest, String)",
+      "getQueue(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "setQueue(String)": [],
+    "getQueueToken()": [
+      "getQueue(AppConfig, SubmitApplicationRequest, String)",
+      "submitRequestToNonSensitiveJson(SubmitApplicationRequest)"
+    ],
+    "setQueueToken(String)": [
+      "submitRequestToNonSensitiveJson(SubmitApplicationRequest)"
+    ]
+  },
+  "com.apple.spark.api.SubmitApplicationResponse": {
+    "getSubmissionId()": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "setSubmissionId(String)": [
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ]
+  },
+  "com.apple.spark.api.UploadS3Response": {
+    "getUrl()": [],
+    "setUrl(String)": [
+      "uploadStreamS3(InputStream, Long, String, String)",
+      "uploadStreamGcs(InputStream, String, String)"
+    ]
+  },
+  "com.apple.spark.AppConfig": {
+    "getApplicationContextPath()": [
+      "run(AppConfig, Environment)"
+    ],
+    "setApplicationContextPath(String)": [],
+    "getDefaultSparkConf()": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)"
+    ],
+    "setDefaultSparkConf(Map)": [],
+    "setFixedSparkConf(Map)": [],
+    "getFixedSparkConf()": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)"
+    ],
+    "getSparkClusters()": [
+      "run(AppConfig, Environment)",
+      "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)",
+      "start()",
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)",
+      "getSparkClusters()",
+      "getSparkCluster(String)",
+      "mergeConfig(AppConfig)"
+    ],
+    "setSparkClusters(List)": [
+      "mergeConfig(AppConfig)"
+    ],
+    "getSparkImages()": [],
+    "setSparkImages(List)": [],
+    "getS3Bucket()": [
+      "uploadStream(String, InputStream, Long, String, String, String, User)"
+    ],
+    "setS3Bucket(String)": [],
+    "getSparkLogS3Bucket()": [
+      "getLog(String, String, String, String, String, User)"
+    ],
+    "setSparkLogS3Bucket(String)": [],
+    "getSparkLogIndex()": [],
+    "setSparkLogIndex(String)": [],
+    "getBatchFileLimit()": [],
+    "getSparkHistoryUrl()": [
+      "getPodNamePrefixFromAppId(String)"
+    ],
+    "getSparkHistoryDns()": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)",
+      "getPodNamePrefixFromAppId(String)"
+    ],
+    "getS3Folder()": [
+      "generateS3Key(String, String)"
+    ],
+    "setS3Folder(String)": [],
+    "getAllowedUsers()": [
+      "run(AppConfig, Environment)"
+    ],
+    "setAllowedUsers(List)": [],
+    "getBlockedUsers()": [
+      "run(AppConfig, Environment)"
+    ],
+    "setBlockedUsers(List)": [],
+    "getAdminUsers()": [],
+    "setAdminUsers(List)": [],
+    "getQueues()": [
+      "validateQueueToken(String, String, AppConfig)",
+      "getDriverCPUBufferForQueue(AppConfig, String)",
+      "getDriverMemBufferForQueue(AppConfig, String)",
+      "getDriverNodeLabelKeyForQueue(AppConfig, String)",
+      "getDriverNodeLabelValuesForQueue(AppConfig, String)",
+      "getExecutorMemBufferForQueue(AppConfig, String)",
+      "getExecutorCPUBufferForQueue(AppConfig, String)",
+      "getExecutorSpotNodeLabelValuesForQueue(AppConfig, String)",
+      "getExecutorNodeLabelKeyForQueue(AppConfig, String)",
+      "getExecutorNodeLabelValuesForQueue(AppConfig, String)",
+      "getQueue(AppConfig, SubmitApplicationRequest, String)",
+      "getMaxRunningMillisForQueue(String)",
+      "getMaxExecutorInstanceForQueue(String)"
+    ],
+    "setQueues(List)": [],
+    "getQueueTokenSOPS()": [
+      "validateQueueToken(String, String, AppConfig)"
+    ],
+    "setQueueTokenSOPS(QueueTokenConfig)": [],
+    "getDbStorageSOPS()": [
+      "getConfFromDB(AppConfig)"
+    ],
+    "setDbStorageSOPS(DBStorage)": [],
+    "getStatusCacheExpireMillis()": [],
+    "setStatusCacheExpireMillis(Long)": [],
+    "resolveImage(String, String)": [
+      "getImage(AppConfig, SubmitApplicationRequest, String, String, String)"
+    ],
+    "typeMatch(List, String)": [
+      "resolveImage(String, String)"
+    ],
+    "getEksCluster()": [],
+    "setEksCluster(String)": [],
+    "getGatewayDns()": [],
+    "setGatewayDns(String)": [],
+    "getMemoryMbSecondCost()": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "getvCoreSecondCost()": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "AppConfig()": []
+  },
+  "com.apple.spark.AppConfig.SparkCluster": {
+    "getWeight()": [
+      "start()",
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "setWeight(int)": [],
+    "getId()": [
+      "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)",
+      "start(AppConfig.SparkCluster, Timer)",
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)",
+      "submitApplicationImpl(String, String, User, String)",
+      "getSparkCluster(String)",
+      "getConfFromDB(AppConfig)"
+    ],
+    "setId(String)": [],
+    "getBatchScheduler()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setBatchScheduler(String)": [],
+    "getMasterUrl()": [
+      "start()",
+      "getK8sConfig(AppConfig.SparkCluster)",
+      "main(String[])"
+    ],
+    "setMasterUrl(String)": [
+      "main(String[])"
+    ],
+    "getCaCertDataSOPS()": [],
+    "setCaCertDataSOPS(String)": [
+      "main(String[])"
+    ],
+    "getUserName()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ],
+    "setUserName(String)": [
+      "main(String[])"
+    ],
+    "getUserTokenSOPS()": [],
+    "setUserTokenSOPS(String)": [
+      "main(String[])"
+    ],
+    "getTimeoutMillis()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ],
+    "setTimeoutMillis(Long)": [],
+    "getHttpProxy()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ],
+    "setHttpProxy(String)": [
+      "main(String[])"
+    ],
+    "getHttpsProxy()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ],
+    "setHttpsProxy(String)": [
+      "main(String[])"
+    ],
+    "getSparkApplicationNamespace()": [
+      "start()",
+      "start(AppConfig.SparkCluster, Timer)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "getK8sConfig(AppConfig.SparkCluster)",
+      "getLog(SparkApplication, String)",
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)",
+      "deleteSubmission(String, String, User)",
+      "getEvents(AppConfig.SparkCluster, String)",
+      "getSparkApplicationResource(String)",
+      "getSparkApplicationResourcesByLabel(AppConfig.SparkCluster, String, String)",
+      "getSparkApplicationResources(AppConfig.SparkCluster)",
+      "getPod(String, AppConfig.SparkCluster)",
+      "main(String[])",
+      "getSparkUIUrl(SparkCluster, String)"
+    ],
+    "setSparkApplicationNamespace(String)": [
+      "main(String[])"
+    ],
+    "getSparkServiceAccount()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setSparkServiceAccount(String)": [],
+    "getSparkVersions()": [
+      "matchSparkVersion(String)",
+      "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)"
+    ],
+    "setSparkVersions(List)": [],
+    "getQueues()": [
+      "matchQueue(String)",
+      "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)"
+    ],
+    "setQueues(List)": [],
+    "getTtlSeconds()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "setTtlSeconds(Long)": [],
+    "getSparkUIUrl()": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)",
+      "getSparkUIUrl(SparkCluster, String)"
+    ],
+    "setSparkUIUrl(String)": [],
+    "getSparkConf()": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)"
+    ],
+    "setSparkConf(Map)": [],
+    "getSparkUIOptions()": [
+      "getSparkUIConfiguration(String, AppConfig.SparkCluster)"
+    ],
+    "setSparkUIOptions(SparkUIConfiguration)": [],
+    "getVolumes()": [
+      "getVolumes(SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setVolumes(List)": [],
+    "getDriver()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setDriver(DriverSpec)": [],
+    "getExecutor()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setExecutor(ExecutorSpec)": [],
+    "matchSparkVersion(String)": [
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "matchQueue(String)": [
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "getEksCluster()": [
+      "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)",
+      "start(AppConfig.SparkCluster, Timer)",
+      "killApplication(String, String)"
+    ],
+    "setEksCluster(String)": [],
+    "getCaCertDataSOPSDecoded()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ],
+    "getUserTokenSOPSDecoded()": [
+      "getK8sConfig(AppConfig.SparkCluster)"
+    ]
+  },
+  "com.apple.spark.AppConfig.SparkImage": {
+    "getName()": [
+      "getImage(AppConfig, SubmitApplicationRequest, String, String, String)"
+    ],
+    "setName(String)": [],
+    "getTypes()": [],
+    "setTypes(List)": [],
+    "getVersion()": [],
+    "setVersion(String)": []
+  },
+  "com.apple.spark.AppConfig.QueueConfig": {
+    "getName()": [
+      "validateQueueToken(String, String, AppConfig)",
+      "getDriverCPUBufferForQueue(AppConfig, String)",
+      "getDriverMemBufferForQueue(AppConfig, String)",
+      "getDriverNodeLabelKeyForQueue(AppConfig, String)",
+      "getDriverNodeLabelValuesForQueue(AppConfig, String)",
+      "getExecutorMemBufferForQueue(AppConfig, String)",
+      "getExecutorCPUBufferForQueue(AppConfig, String)",
+      "getExecutorSpotNodeLabelValuesForQueue(AppConfig, String)",
+      "getExecutorNodeLabelKeyForQueue(AppConfig, String)",
+      "getExecutorNodeLabelValuesForQueue(AppConfig, String)",
+      "getQueue(AppConfig, SubmitApplicationRequest, String)",
+      "getMaxRunningMillisForQueue(String)",
+      "getMaxExecutorInstanceForQueue(String)"
+    ],
+    "setName(String)": [],
+    "getSecure()": [
+      "validateQueueToken(String, String, AppConfig)"
+    ],
+    "setSecure(Boolean)": [],
+    "getUsers()": [],
+    "setUsers(List)": [],
+    "getMaxRunningMillis()": [
+      "getMaxRunningMillisForQueue(String)"
+    ],
+    "setMaxRunningMillis(Long)": [],
+    "containUser(String)": [
+      "getQueue(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "getDriverNodeLabelKey()": [
+      "getDriverNodeLabelKeyForQueue(AppConfig, String)"
+    ],
+    "setDriverNodeLabelKey(String)": [],
+    "getExecutorNodeLabelKey()": [
+      "getExecutorNodeLabelKeyForQueue(AppConfig, String)"
+    ],
+    "setExecutorNodeLabelKey(String)": [],
+    "getDriverNodeLabelValues()": [
+      "getDriverNodeLabelValuesForQueue(AppConfig, String)"
+    ],
+    "setDriverNodeLabelValues(List)": [],
+    "getExecutorNodeLabelValues()": [
+      "getExecutorNodeLabelValuesForQueue(AppConfig, String)"
+    ],
+    "setExecutorNodeLabelValues(List)": [],
+    "getExecutorSpotNodeLabelValues()": [
+      "getExecutorSpotNodeLabelValuesForQueue(AppConfig, String)"
+    ],
+    "setExecutorSpotNodeLabelValues(List)": [],
+    "getDriverCPUBufferRatio()": [
+      "getDriverCPUBufferForQueue(AppConfig, String)"
+    ],
+    "setDriverCPUBufferRatio(String)": [],
+    "getExecutorCPUBufferRatio()": [
+      "getExecutorCPUBufferForQueue(AppConfig, String)"
+    ],
+    "setExecutorCPUBufferRatio(String)": [],
+    "getDriverMemBufferRatio()": [
+      "getDriverMemBufferForQueue(AppConfig, String)"
+    ],
+    "setDriverMemBufferRatio(String)": [],
+    "getExecutorMemBufferRatio()": [
+      "getExecutorMemBufferForQueue(AppConfig, String)"
+    ],
+    "setExecutorMemBufferRatio(String)": [],
+    "getMaxExecutorInstances()": [
+      "getMaxExecutorInstanceForQueue(String)"
+    ],
+    "setMaxExecutorInstances(Integer)": []
+  },
+  "com.apple.spark.AppConfig.QueueTokenConfig": {
+    "getSecrets()": [
+      "validateQueueToken(String, String, AppConfig)"
+    ],
+    "setSecrets(List)": []
+  },
+  "com.apple.spark.AppConfig.DBStorage": {
+    "getConnectionString()": [
+      "getConfFromDB(AppConfig)"
+    ],
+    "setConnectionString(String)": [],
+    "getUser()": [
+      "getConfFromDB(AppConfig)"
+    ],
+    "setUser(String)": [],
+    "getPassword()": [],
+    "setPassword(String)": [],
+    "getDbName()": [],
+    "setDbName(String)": [],
+    "getPasswordDecodedValue()": [
+      "getConfFromDB(AppConfig)"
+    ]
+  },
+  "com.apple.spark.BPGApplication": {
+    "main(String[])": [],
+    "getName()": [],
+    "initialize(Bootstrap)": [],
+    "run(AppConfig, Environment)": [],
+    "sendPeriodicMetrics(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ],
+    "sendQueueInfoMetrics(AppConfig, CounterMetricContainer)": [
+      "sendPeriodicMetrics(AppConfig, MeterRegistry)"
+    ],
+    "BPGApplication()": [],
+    "BPGApplication(boolean)": [
+      "main(String[])"
+    ]
+  },
+  "com.apple.spark.BuildInfo": {},
+  "com.apple.spark.clients.sparkhistory.GetJobEnvironmentResponse": {
+    "getSparkProperties()": [],
+    "setSparkProperties(List)": [],
+    "getRuntime()": [],
+    "setRuntime(Map)": [],
+    "getPodNamePrefix()": [
+      "getPodNamePrefixFromAppId(String)"
+    ]
+  },
+  "com.apple.spark.core.ApplicationMonitor": {
+    "start()": [
+      "run(AppConfig, Environment)"
+    ],
+    "start(AppConfig.SparkCluster, Timer)": [],
+    "close()": [],
+    "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)": [],
+    "ApplicationMonitor(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.core.ApplicationSubmissionHelper": {
+    "parseSubmitRequest(String, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getProxyUser(String, String)": [
+      "submitApplication(String, String, String, String, User)",
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "looksLikeFilePath(String)": [
+      "parseSubmitRequest(String, String)"
+    ],
+    "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)": [],
+    "getSparkUIConfiguration(String, AppConfig.SparkCluster)": [],
+    "getVolumes(SubmitApplicationRequest, AppConfig.SparkCluster)": [],
+    "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)": [],
+    "generateSubmissionId(String)": [
+      "generateSubmissionId(String, String)"
+    ],
+    "generateSubmissionId(String, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getClusterIdFromSubmissionId(String)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "getSparkCluster(String)"
+    ],
+    "validateQueueToken(String, String, AppConfig)": [
+      "getQueue(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "substitutionSparkConfigValue(String, String)": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)"
+    ],
+    "applyFeatureGate(SubmitApplicationRequest, Map)": [
+      "getSparkConf(String, SubmitApplicationRequest, AppConfig, AppConfig.SparkCluster)"
+    ],
+    "getYuniKornSchedulerConfig(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getDriverCPUBufferForQueue(AppConfig, String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getDriverMemBufferForQueue(AppConfig, String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getDriverNodeLabelKeyForQueue(AppConfig, String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getDriverNodeLabelValuesForQueue(AppConfig, String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getExecutorMemBufferForQueue(AppConfig, String)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getExecutorCPUBufferForQueue(AppConfig, String)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getExecutorSpotNodeLabelValuesForQueue(AppConfig, String)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getExecutorNodeLabelKeyForQueue(AppConfig, String)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getExecutorNodeLabelValuesForQueue(AppConfig, String)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getMemNumFromRequestStr(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getMemUnitFromRequestStr(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getMemUnitIndexFromRequestStr(String)": [
+      "getMemNumFromRequestStr(String)",
+      "getMemUnitFromRequestStr(String)"
+    ],
+    "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getType(String, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "getImage(AppConfig, SubmitApplicationRequest, String, String, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ]
+  },
+  "com.apple.spark.core.ApplicationUpdateEvent": {
+    "getPrevCRDState()": [
+      "start()"
+    ],
+    "getNewCRDState()": [
+      "start()"
+    ],
+    "getSparkCluster()": [
+      "start()"
+    ],
+    "getRunningApplicationMonitor()": [
+      "start()"
+    ],
+    "ApplicationUpdateEvent(AppConfig.SparkCluster, SparkApplication, SparkApplication, RunningApplicationMonitor)": []
+  },
+  "com.apple.spark.core.BatchSchedulerConstants": {},
+  "com.apple.spark.core.BPGStatsdConfig": {
+    "createMeterRegistry()": [
+      "run(AppConfig, Environment)"
+    ],
+    "get(String)": [],
+    "enabled()": [
+      "createMeterRegistry()"
+    ],
+    "flavor()": [],
+    "host()": [
+      "enabled()"
+    ],
+    "port()": [
+      "enabled()"
+    ]
+  },
+  "com.apple.spark.core.ConfigValue": {
+    "tryGetEncodedSecretValue(String)": [
+      "getCaCertDataSOPSDecoded()",
+      "getUserTokenSOPSDecoded()",
+      "getPasswordDecodedValue()"
+    ],
+    "tryGetEncodedSecretValueFromEnvVar(String)": [
+      "tryGetEncodedSecretValue(String)"
+    ],
+    "tryGetEncodedSecretValueFromK8sSecret(String)": [
+      "tryGetEncodedSecretValue(String)"
+    ],
+    "ConfigValue()": []
+  },
+  "com.apple.spark.core.Constants": {},
+  "com.apple.spark.core.DBConnection": {
+    "getConnection()": [
+      "executeSql(String)",
+      "getSubmissionIdFromAppIdImpl(String)",
+      "logApplicationSubmissionImpl(String, String, SubmitApplicationRequest, String)",
+      "logApplicationIdImpl(String, String)",
+      "logApplicationStatusImpl(String, String)",
+      "logApplicationFinishedImpl(String, String, Timestamp, Double, Double)",
+      "updateJobInfoImpl(String, Timestamp, int, int, int, String, String, String)",
+      "getJobInfoQueryImpl(String, String, int, int)",
+      "updateExecutorInfoImpl(String, int, int)",
+      "getKeyListImpl(String, String)",
+      "dbQueryImpl(String)",
+      "getConfFromDB(AppConfig)"
+    ],
+    "executeSql(String)": [
+      "createDatabase()",
+      "createApplicationSubmissionTable()",
+      "createLogIndexTable()"
+    ],
+    "close()": [],
+    "DBConnection(String)": [],
+    "DBConnection(String, String, String)": [
+      "getConfFromDB(AppConfig)"
+    ]
+  },
+  "com.apple.spark.core.InvalidSubmissionIdException": {
+    "InvalidSubmissionIdException(String)": [
+      "getClusterIdFromSubmissionId(String)"
+    ],
+    "InvalidSubmissionIdException(String, Throwable)": []
+  },
+  "com.apple.spark.core.KubernetesHelper": {
+    "tryGetServiceAccountNamespace()": [
+      "tryGetEncodedSecretValueFromK8sSecret(String)"
+    ],
+    "tryGetServiceAccountCACertFile()": [
+      "getLocalK8sClient()"
+    ],
+    "tryGetServiceAccountToken()": [
+      "getLocalK8sClient()"
+    ],
+    "getLocalK8sClient()": [
+      "tryGetEncodedSecretValueFromK8sSecret(String)"
+    ],
+    "getK8sClient(AppConfig.SparkCluster)": [],
+    "getSparkApplicationCrdContext()": [],
+    "tryGetLogStream(DefaultKubernetesClient, String, String)": [
+      "getLog(SparkApplication, String)"
+    ],
+    "closeQuietly(Closeable)": [
+      "close()",
+      "tryGetLogStream(DefaultKubernetesClient, String, String)"
+    ],
+    "normalizeLabelValue(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "listSubmissions(String, String, User)",
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ],
+    "getK8sConfig(AppConfig.SparkCluster)": [],
+    "isLabelValueAlphanumericChar(char)": [
+      "normalizeLabelValue(String)",
+      "isLabelValueChar(char)"
+    ],
+    "isLabelValueChar(char)": [
+      "normalizeLabelValue(String)"
+    ]
+  },
+  "com.apple.spark.core.LogDao": {
+    "verifyDBName(String)": [],
+    "getSubmissionIdFromAppId(String)": [
+      "getSubmissionIdFromAppIdFromDB(String)"
+    ],
+    "getSubmissionIdFromAppIdImpl(String)": [
+      "getSubmissionIdFromAppId(String)"
+    ],
+    "logApplicationSubmission(String, String, SubmitApplicationRequest)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "logApplicationSubmissionImpl(String, String, SubmitApplicationRequest, String)": [
+      "logApplicationSubmission(String, String, SubmitApplicationRequest)"
+    ],
+    "logApplicationId(String, String)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "logApplicationIdImpl(String, String)": [
+      "logApplicationId(String, String)"
+    ],
+    "logApplicationStatus(String, String)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "logApplicationStatusImpl(String, String)": [
+      "logApplicationStatus(String, String)"
+    ],
+    "logApplicationFinished(String, String, Timestamp, Double, Double)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "logApplicationFinishedImpl(String, String, Timestamp, Double, Double)": [
+      "logApplicationFinished(String, String, Timestamp, Double, Double)"
+    ],
+    "createDatabase()": [],
+    "updateJobInfo(String, Timestamp, int, int, int, String, String, String)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "updateJobInfoImpl(String, Timestamp, int, int, int, String, String, String)": [
+      "updateJobInfo(String, Timestamp, int, int, int, String, String, String)"
+    ],
+    "createApplicationSubmissionTable()": [],
+    "createLogIndexTable()": [],
+    "getJobInfoQuery(String, String, int, int)": [],
+    "getJobInfoQueryImpl(String, String, int, int)": [
+      "getJobInfoQuery(String, String, int, int)"
+    ],
+    "updateExecutorInfo(String, int, int)": [],
+    "updateExecutorInfoImpl(String, int, int)": [
+      "updateExecutorInfo(String, int, int)"
+    ],
+    "getKeyList(String, String)": [
+      "getLog(String, String, String, String, String, User)"
+    ],
+    "getKeyListImpl(String, String)": [
+      "getKeyList(String, String)"
+    ],
+    "dbQuery(String)": [],
+    "dbQueryImpl(String)": [
+      "dbQuery(String)"
+    ],
+    "LogDao(String, String, String, String)": [],
+    "LogDao(String, String, String, String, MeterRegistry)": []
+  },
+  "com.apple.spark.core.NamespaceAndName": {
+    "getNamespace()": [
+      "deleteLongRunningApplications()"
+    ],
+    "setNamespace(String)": [],
+    "getName()": [
+      "deleteLongRunningApplications()"
+    ],
+    "setName(String)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "NamespaceAndName()": [],
+    "NamespaceAndName(String, String)": [
+      "onUpdate(SparkApplication, SparkApplication)"
+    ]
+  },
+  "com.apple.spark.core.QueueTokenVerifier": {
+    "verify(String, List, String)": [
+      "validateQueueToken(String, String, AppConfig)"
+    ]
+  },
+  "com.apple.spark.core.RestStreamingOutput": {
+    "writeLine(OutputStream, String)": [
+      "writeSubmissions(OutputStream, SparkApplicationResourceList, AppConfig.SparkCluster, AppConfig)",
+      "version()",
+      "describe(String, String, User)"
+    ]
+  },
+  "com.apple.spark.core.RestSubmissionsStreamingOutput": {
+    "writeSubmissions(OutputStream, SparkApplicationResourceList, AppConfig.SparkCluster, AppConfig)": []
+  },
+  "com.apple.spark.core.RunningApplicationMonitor": {
+    "getMaxRunningMillis(SparkApplication)": [
+      "onUpdate(SparkApplication, SparkApplication)"
+    ],
+    "onUpdate(SparkApplication, SparkApplication)": [
+      "start()"
+    ],
+    "deleteLongRunningApplications()": [],
+    "getApplicationCount()": [],
+    "killApplication(String, String)": [
+      "deleteLongRunningApplications()"
+    ],
+    "RunningApplicationMonitor(AppConfig.SparkCluster, Timer, MeterRegistry)": [],
+    "RunningApplicationMonitor(AppConfig.SparkCluster, Timer, long, MeterRegistry)": []
+  },
+  "com.apple.spark.core.RunningApplicationMonitor.RunningAppInfo": {
+    "getCreationTimeMillis()": [
+      "deleteLongRunningApplications()"
+    ],
+    "getMaxRunningMillis()": [],
+    "toString()": [],
+    "exceedMaxRunningTime()": [
+      "deleteLongRunningApplications()"
+    ],
+    "RunningAppInfo(long, long)": [
+      "onUpdate(SparkApplication, SparkApplication)"
+    ]
+  },
+  "com.apple.spark.core.SparkApplicationResourceHelper": {
+    "getState(SparkApplication)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "onUpdate(SparkApplication, SparkApplication)"
+    ]
+  },
+  "com.apple.spark.core.SparkClusterHelper": {
+    "getQueue(AppConfig, SubmitApplicationRequest, String)": [
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)",
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "normalizeQueue(String)": [
+      "getQueue(AppConfig, SubmitApplicationRequest, String)"
+    ],
+    "getParentQueue(String)": [
+      "chooseSparkCluster(AppConfig, SubmitApplicationRequest, String)",
+      "submitApplicationImpl(String, String, User, String)"
+    ]
+  },
+  "com.apple.spark.core.SparkConstants": {
+    "isApplicationStopped(String)": [
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "onUpdate(SparkApplication, SparkApplication)",
+      "main(String[])"
+    ]
+  },
+  "com.apple.spark.core.SparkSpecHelper": {
+    "copyEnv(List, List)": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)"
+    ]
+  },
+  "com.apple.spark.core.ThrowableExceptionMapper": {
+    "toResponse(Throwable)": [],
+    "ThrowableExceptionMapper(MetricRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.health.BPGHealthCheck": {
+    "check()": [],
+    "BPGHealthCheck(List)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.operator.Affinity": {
+    "getNodeAffinity()": [],
+    "setNodeAffinity(NodeAffinity)": [],
+    "Affinity()": [],
+    "Affinity(NodeAffinity)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.ApplicationState": {
+    "getState()": [
+      "copyFrom(SparkApplication)",
+      "getState(SparkApplication)"
+    ],
+    "setState(String)": [],
+    "getErrorMessage()": [
+      "copyFrom(SparkApplication)"
+    ],
+    "setErrorMessage(String)": []
+  },
+  "com.apple.spark.operator.BatchSchedulerConfiguration": {
+    "getQueue()": [],
+    "setQueue(String)": [
+      "getYuniKornSchedulerConfig(String)"
+    ],
+    "getGang()": [],
+    "setGang(boolean)": [
+      "getYuniKornSchedulerConfig(String)"
+    ],
+    "getReservationTimeoutInSeconds()": [],
+    "setReservationTimeoutInSeconds(int)": [
+      "getYuniKornSchedulerConfig(String)"
+    ]
+  },
+  "com.apple.spark.operator.ConfigMapVolumeSource": {
+    "getName()": [],
+    "setName(String)": []
+  },
+  "com.apple.spark.operator.Dependencies": {
+    "getJars()": [],
+    "setJars(List)": [],
+    "getFiles()": [],
+    "setFiles(List)": [],
+    "getPyFiles()": [],
+    "setPyFiles(List)": [],
+    "getPackages()": [],
+    "setPackages(List)": [],
+    "getExcludePackages()": [],
+    "setExcludePackages(List)": [],
+    "getRepositories()": [],
+    "setRepositories(List)": [],
+    "getArchives()": [],
+    "setArchives(List)": []
+  },
+  "com.apple.spark.operator.DriverInfo": {
+    "getPodName()": [
+      "killApplication(String, String)",
+      "getLog(SparkApplication, String)",
+      "getDriverInfo(String, String, User)"
+    ],
+    "setPodName(String)": []
+  },
+  "com.apple.spark.operator.DriverSpec": {
+    "copyFrom(DriverSpec)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getPodName()": [],
+    "setPodName(String)": [],
+    "getKubernetesMaster()": [],
+    "setKubernetesMaster(String)": [],
+    "DriverSpec()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitApplication(int, int, int, int)"
+    ]
+  },
+  "com.apple.spark.operator.DynamicAllocation": {
+    "isEnabled()": [],
+    "setEnabled(boolean)": [],
+    "getInitialExecutors()": [],
+    "setInitialExecutors(Integer)": [],
+    "getMinExecutors()": [],
+    "setMinExecutors(Integer)": [],
+    "getMaxExecutors()": [],
+    "setMaxExecutors(Integer)": [],
+    "getShuffleTrackingTimeout()": [],
+    "setShuffleTrackingTimeout(Long)": []
+  },
+  "com.apple.spark.operator.EnvVar": {
+    "getName()": [
+      "copyEnv(List<EnvVar>, List<EnvVar>)"
+    ],
+    "setName(String)": [],
+    "getValue()": [],
+    "setValue(String)": [],
+    "getValueFrom()": [],
+    "setValueFrom(EnvVarSource)": [],
+    "EnvVar()": [],
+    "EnvVar(String, String)": [],
+    "EnvVar(String, String, EnvVarSource)": []
+  },
+  "com.apple.spark.operator.EnvVarSource": {
+    "getFieldRef()": [],
+    "setFieldRef(ObjectFieldSelector)": [],
+    "EnvVarSource()": [],
+    "EnvVarSource(ObjectFieldSelector)": []
+  },
+  "com.apple.spark.operator.ExecutorSpec": {
+    "copyFrom(ExecutorSpec)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getInstances()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "validateSubmissionRequest(SubmitApplicationRequest, String)"
+    ],
+    "setInstances(Integer)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getDeleteOnTermination()": [],
+    "setDeleteOnTermination(Boolean)": [],
+    "ExecutorSpec()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitApplication(int, int, int, int)"
+    ]
+  },
+  "com.apple.spark.operator.HostPathVolumeSource": {
+    "getPath()": [],
+    "setPath(String)": [],
+    "getType()": [],
+    "setType(String)": [],
+    "HostPathVolumeSource()": [],
+    "HostPathVolumeSource(String, String)": []
+  },
+  "com.apple.spark.operator.IngressTLS": {
+    "getHosts()": [],
+    "setHosts(List)": [],
+    "getSecretName()": [],
+    "setSecretName(String)": [],
+    "IngressTLS()": [],
+    "IngressTLS(IngressTLS)": []
+  },
+  "com.apple.spark.operator.MonitoringSpec": {
+    "getExposeDriverMetrics()": [],
+    "setExposeDriverMetrics(Boolean)": [],
+    "getExposeExecutorMetrics()": [],
+    "setExposeExecutorMetrics(Boolean)": [],
+    "getMetricsProperties()": [],
+    "setMetricsProperties(String)": [],
+    "getMetricsPropertiesFile()": [],
+    "setMetricsPropertiesFile(String)": [],
+    "getPrometheus()": [],
+    "setPrometheus(PrometheusSpec)": []
+  },
+  "com.apple.spark.operator.NodeAffinity": {
+    "getPreferredDuringSchedulingIgnoredDuringExecution()": [],
+    "setPreferredDuringSchedulingIgnoredDuringExecution(PreferredSchedulingTerm[])": [],
+    "getRequiredDuringSchedulingIgnoredDuringExecution()": [],
+    "setRequiredDuringSchedulingIgnoredDuringExecution(RequiredDuringSchedulingIgnoredDuringExecutionTerm)": [],
+    "NodeAffinity()": [],
+    "NodeAffinity(PreferredSchedulingTerm[])": [],
+    "NodeAffinity(PreferredSchedulingTerm[], RequiredDuringSchedulingIgnoredDuringExecutionTerm)": [],
+    "NodeAffinity(RequiredDuringSchedulingIgnoredDuringExecutionTerm)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.NodeSelectorOperator": {
+    "toString()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "NodeSelectorOperator(String)": []
+  },
+  "com.apple.spark.operator.NodeSelectorRequirement": {
+    "getKey()": [],
+    "setKey(String)": [],
+    "getOperator()": [],
+    "setOperator(String)": [],
+    "getValues()": [],
+    "setValues(String[])": [],
+    "NodeSelectorRequirement()": [],
+    "NodeSelectorRequirement(String, String, String[])": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.NodeSelectorTerm": {
+    "getMatchExpressions()": [],
+    "setMatchExpressions(NodeSelectorRequirement[])": [],
+    "NodeSelectorTerm()": [],
+    "NodeSelectorTerm(NodeSelectorRequirement[])": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.ObjectFieldSelector": {
+    "getFieldPath()": [],
+    "setFieldPath(String)": [],
+    "ObjectFieldSelector()": [],
+    "ObjectFieldSelector(String)": []
+  },
+  "com.apple.spark.operator.PreferredSchedulingTerm": {
+    "getWeight()": [],
+    "setWeight(int)": [],
+    "getPreference()": [],
+    "setPreference(NodeSelectorTerm)": [],
+    "PreferredSchedulingTerm()": [],
+    "PreferredSchedulingTerm(int, NodeSelectorTerm)": []
+  },
+  "com.apple.spark.operator.PrometheusSpec": {
+    "getJmxExporterJar()": [],
+    "setJmxExporterJar(String)": [],
+    "getPort()": [],
+    "setPort(Integer)": [],
+    "getConfigFile()": [],
+    "setConfigFile(String)": [],
+    "getConfiguration()": [],
+    "setConfiguration(String)": []
+  },
+  "com.apple.spark.operator.RequiredDuringSchedulingIgnoredDuringExecutionTerm": {
+    "getNodeSelectorTerms()": [],
+    "setNodeSelectorTerms(NodeSelectorTerm[])": [],
+    "RequiredDuringSchedulingIgnoredDuringExecutionTerm()": [],
+    "RequiredDuringSchedulingIgnoredDuringExecutionTerm(NodeSelectorTerm[])": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.RestartPolicy": {
+    "getType()": [],
+    "setType(String)": [],
+    "getOnSubmissionFailureRetries()": [],
+    "setOnSubmissionFailureRetries(Integer)": [],
+    "getOnFailureRetries()": [],
+    "setOnFailureRetries(Integer)": [],
+    "getOnSubmissionFailureRetryInterval()": [],
+    "setOnSubmissionFailureRetryInterval(Long)": [],
+    "getOnFailureRetryInterval()": [],
+    "setOnFailureRetryInterval(Long)": []
+  },
+  "com.apple.spark.operator.SecurityContext": {
+    "getPrivileged()": [],
+    "setPrivileged(Boolean)": [],
+    "getRunAsUser()": [],
+    "setRunAsUser(Long)": [],
+    "getAllowPrivilegeEscalation()": [],
+    "setAllowPrivilegeEscalation(Boolean)": []
+  },
+  "com.apple.spark.operator.SparkApplication": {
+    "getSpec()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "getSparkSpec(String, String, User)",
+      "describe(String, String, User)"
+    ],
+    "setSpec(SparkApplicationSpec)": [
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ],
+    "getStatus()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "killApplication(String, String)",
+      "getState(SparkApplication)",
+      "getLog(SparkApplication, String)",
+      "getDriverInfo(String, String, User)"
+    ],
+    "setStatus(SparkApplicationStatus)": []
+  },
+  "com.apple.spark.operator.SparkApplicationResourceList": {},
+  "com.apple.spark.operator.SparkApplicationSpec": {
+    "getType()": [],
+    "setType(String)": [],
+    "getSparkVersion()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "setSparkVersion(String)": [],
+    "getMode()": [],
+    "setMode(String)": [],
+    "getOriginalUser()": [],
+    "setOriginalUser(String)": [],
+    "getProxyUser()": [
+      "submitApplicationImpl(String, String, User, String)",
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ],
+    "setProxyUser(String)": [],
+    "getImage()": [],
+    "setImage(String)": [],
+    "getImagePullPolicy()": [],
+    "setImagePullPolicy(String)": [],
+    "getImagePullSecrets()": [],
+    "setImagePullSecrets(String)": [],
+    "getMainClass()": [],
+    "setMainClass(String)": [],
+    "getMainApplicationFile()": [],
+    "setMainApplicationFile(String)": [],
+    "getArguments()": [
+      "copyFrom(SparkApplication)"
+    ],
+    "setArguments(List)": [],
+    "getSparkConf()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "setSparkConf(Map)": [],
+    "getSparkConfigMap()": [],
+    "setSparkConfigMap(String)": [],
+    "getVolumes()": [],
+    "setVolumes(List)": [],
+    "getBatchScheduler()": [],
+    "setBatchScheduler(String)": [],
+    "getBatchSchedulerOptions()": [],
+    "setBatchSchedulerOptions(BatchSchedulerConfiguration)": [],
+    "getDriver()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "removeEnvFromSpec(SparkApplicationSpec)",
+      "sparkSpecToNonSensitiveJson(SparkApplicationSpec)"
+    ],
+    "setDriver(DriverSpec)": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)"
+    ],
+    "getExecutor()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "removeEnvFromSpec(SparkApplicationSpec)",
+      "sparkSpecToNonSensitiveJson(SparkApplicationSpec)"
+    ],
+    "setExecutor(ExecutorSpec)": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)"
+    ],
+    "getDeps()": [],
+    "setDeps(Dependencies)": [],
+    "getRestartPolicy()": [],
+    "setRestartPolicy(RestartPolicy)": [],
+    "getPythonVersion()": [],
+    "setPythonVersion(String)": [],
+    "getMemoryOverheadFactor()": [],
+    "setMemoryOverheadFactor(String)": [],
+    "getMonitoring()": [],
+    "setMonitoring(MonitoringSpec)": [],
+    "getTimeToLiveSeconds()": [],
+    "setTimeToLiveSeconds(Long)": [],
+    "getSparkUIOptions()": [],
+    "setSparkUIOptions(SparkUIConfiguration)": [],
+    "getDynamicAllocation()": [],
+    "setDynamicAllocation(DynamicAllocation)": []
+  },
+  "com.apple.spark.operator.SparkApplicationSpec.Builder": {
+    "withOriginalUser(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withProxyUser(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withMode(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withType(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withImage(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withSparkVersion(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withMainClass(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withMainApplicationFile(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withArguments(List)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withImagePullPolicy(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withRestartPolicy(RestartPolicy)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withVolumes(List)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withBatchScheduler(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withBatchSchedulerOptions(BatchSchedulerConfiguration)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withDriver(DriverSpec)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withExecutor(ExecutorSpec)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withDeps(Dependencies)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withPythonVersion(String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withTimeToLiveSeconds(Long)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "extendSparkConf(Map)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "withSparkUIConfiguration(SparkUIConfiguration)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "extendVolumes(List)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "build()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "Builder()": [
+      "submitApplicationImpl(String, String, User, String)"
+    ]
+  },
+  "com.apple.spark.operator.SparkApplicationStatus": {
+    "getSparkApplicationId()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "setSparkApplicationId(String)": [],
+    "getTerminationTime()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)"
+    ],
+    "setTerminationTime(String)": [],
+    "getApplicationState()": [
+      "copyFrom(SparkApplication)",
+      "getState(SparkApplication)"
+    ],
+    "setApplicationState(ApplicationState)": [],
+    "getExecutionAttempts()": [
+      "copyFrom(SparkApplication)"
+    ],
+    "setExecutionAttempts(Integer)": [],
+    "getDriverInfo()": [
+      "killApplication(String, String)",
+      "getLog(SparkApplication, String)",
+      "getDriverInfo(String, String, User)"
+    ],
+    "setDriverInfo(DriverInfo)": [],
+    "getExecutorState()": [
+      "getLog(SparkApplication, String)"
+    ],
+    "setExecutorState(Map)": []
+  },
+  "com.apple.spark.operator.SparkPodSpec": {
+    "copyFrom(SparkPodSpec)": [
+      "copyFrom(DriverSpec)",
+      "copyFrom(ExecutorSpec)"
+    ],
+    "getCores()": [
+      "copyFrom(SparkApplication)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setCores(Integer)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitApplication(int, int, int, int)"
+    ],
+    "getCoreLimit()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setCoreLimit(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getMemory()": [
+      "copyFrom(SparkApplication)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setMemory(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "submitApplication(int, int, int, int)"
+    ],
+    "getMemoryOverhead()": [],
+    "setMemoryOverhead(String)": [],
+    "getImage()": [],
+    "setImage(String)": [],
+    "getEnv()": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "removeEnvFromSpec(SparkApplicationSpec)"
+    ],
+    "setEnv(List)": [
+      "populateEnv(SparkApplicationSpec, SubmitApplicationRequest, AppConfig.SparkCluster)",
+      "removeEnvFromSpec(SparkApplicationSpec)",
+      "submitRequestToNonSensitiveJson(SubmitApplicationRequest)",
+      "sparkSpecToNonSensitiveJson(SparkApplicationSpec)"
+    ],
+    "getLabels()": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setLabels(Map)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getAnnotations()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setAnnotations(Map)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getTerminationGracePeriodSeconds()": [],
+    "setTerminationGracePeriodSeconds(Long)": [],
+    "getDnsConfig()": [],
+    "setDnsConfig(PodDNSConfig)": [
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getServiceAccount()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setServiceAccount(String)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getVolumeMounts()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setVolumeMounts(List)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getSecurityContext()": [],
+    "setSecurityContext(SecurityContext)": [],
+    "getAffinity()": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "setAffinity(Affinity)": [
+      "getDriverSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)",
+      "getExecutorSpec(SubmitApplicationRequest, AppConfig, String, SparkCluster)"
+    ],
+    "getCoreRequest()": [],
+    "setCoreRequest(String)": [],
+    "getJavaOptions()": [],
+    "setJavaOptions(String)": []
+  },
+  "com.apple.spark.operator.SparkUIConfiguration": {
+    "getServicePort()": [],
+    "setServicePort(Integer)": [],
+    "getIngressAnnotations()": [
+      "getSparkUIConfiguration(String, AppConfig.SparkCluster)"
+    ],
+    "setIngressAnnotations(Map)": [
+      "getSparkUIConfiguration(String, AppConfig.SparkCluster)"
+    ],
+    "getIngressTLS()": [],
+    "setIngressTLS(List)": [],
+    "SparkUIConfiguration()": [],
+    "SparkUIConfiguration(SparkUIConfiguration)": [
+      "getSparkUIConfiguration(String, AppConfig.SparkCluster)"
+    ]
+  },
+  "com.apple.spark.operator.Volume": {
+    "getName()": [],
+    "setName(String)": [],
+    "getHostPath()": [],
+    "setHostPath(HostPathVolumeSource)": [],
+    "getConfigMap()": [],
+    "setConfigMap(ConfigMapVolumeSource)": [],
+    "Volume()": [],
+    "Volume(String, HostPathVolumeSource)": []
+  },
+  "com.apple.spark.operator.VolumeMount": {
+    "getName()": [],
+    "setName(String)": [],
+    "getReadOnly()": [],
+    "setReadOnly(Boolean)": [],
+    "getMountPath()": [],
+    "setMountPath(String)": [],
+    "getSubPath()": [],
+    "setSubPath(String)": [],
+    "VolumeMount()": [],
+    "VolumeMount(String, String)": []
+  },
+  "com.apple.spark.rest.AdminRest": {
+    "listSubmissions(String, String, User)": [],
+    "listAllSubmissions(User)": [
+      "listSubmissions(String, String, User)"
+    ],
+    "listSubmissionsByApplicationName(String, User)": [
+      "listSubmissions(String, String, User)"
+    ],
+    "version()": [],
+    "AdminRest(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.rest.ApplicationGetLogRest": {
+    "getLog(String, String, String, String, String, User)": [],
+    "getLog(SparkApplication, String)": [
+      "getLog(String, String, String, String, String, User)"
+    ],
+    "getS3Client()": [],
+    "getPodNamePrefixFromAppId(String)": [
+      "getLog(String, String, String, String, String, User)"
+    ],
+    "getSubmissionIdFromAppIdFromDB(String)": [
+      "getLog(String, String, String, String, String, User)"
+    ],
+    "ApplicationGetLogRest(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.rest.ApplicationSubmissionRest": {
+    "submitApplication(String, String, String, String, User)": [],
+    "submitApplicationImpl(String, String, User, String)": [
+      "submitApplication(String, String, String, String, User)"
+    ],
+    "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "deleteSubmission(String, String, User)": [],
+    "getSparkSpec(String, String, User)": [],
+    "getStatus(String, String, User)": [],
+    "getStatusImpl(String, User)": [
+      "getStatus(String, String, User)"
+    ],
+    "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)": [],
+    "getDriverInfo(String, String, User)": [],
+    "describe(String, String, User)": [],
+    "getSubmissions(String, User)": [],
+    "getEvents(AppConfig.SparkCluster, String)": [],
+    "removeEnvFromSpec(SparkApplicationSpec)": [
+      "getSparkSpec(String, String, User)",
+      "describe(String, String, User)"
+    ],
+    "getUserTagValue(User)": [
+      "submitApplication(String, String, String, String, User)",
+      "getStatus(String, String, User)"
+    ],
+    "getMaxRunningMillisForQueue(String)": [
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ],
+    "getMaxExecutorInstanceForQueue(String)": [
+      "validateSubmissionRequest(SubmitApplicationRequest, String)"
+    ],
+    "validateSubmissionRequest(SubmitApplicationRequest, String)": [
+      "submitApplicationImpl(String, String, User, String)"
+    ],
+    "ApplicationSubmissionRest(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.rest.AwsConstants": {},
+  "com.apple.spark.rest.CloudStorageRest": {
+    "uploadStream(String, InputStream, Long, String, String, String, User)": [],
+    "uploadStreamS3(InputStream, Long, String, String)": [
+      "uploadStream(String, InputStream, Long, String, String, String, User)"
+    ],
+    "uploadStreamGcs(InputStream, String, String)": [
+      "uploadStream(String, InputStream, Long, String, String, String, User)"
+    ],
+    "generateS3Key(String, String)": [
+      "uploadStream(String, InputStream, Long, String, String, String, User)"
+    ],
+    "CloudStorageRest(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.rest.GetSubmissionStatusResponseCacheValue": {
+    "getResponse()": [
+      "getStatusImpl(String, User)"
+    ],
+    "getException()": [
+      "getStatusImpl(String, User)"
+    ],
+    "getCreatedTimeMillis()": [
+      "getStatusImpl(String, User)"
+    ],
+    "GetSubmissionStatusResponseCacheValue(GetSubmissionStatusResponse)": [],
+    "GetSubmissionStatusResponseCacheValue(Throwable)": []
+  },
+  "com.apple.spark.rest.HealthcheckRest": {
+    "healthcheckStatus(User)": [],
+    "HealthcheckRest(AppConfig, MeterRegistry)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.rest.RestBase": {
+    "getAppConfig()": [
+      "listAllSubmissions(User)",
+      "listSubmissionsByApplicationName(String, User)",
+      "getLog(String, String, String, String, String, User)",
+      "getPodNamePrefixFromAppId(String)",
+      "submitApplicationImpl(String, String, User, String)",
+      "getSubmissions(String, User)"
+    ],
+    "getSparkClusters()": [
+      "listAllSubmissions(User)",
+      "listSubmissionsByApplicationName(String, User)",
+      "getSubmissions(String, User)"
+    ],
+    "getSparkCluster(String)": [
+      "getLog(SparkApplication, String)",
+      "deleteSubmission(String, String, User)",
+      "getStatusImpl(String, User)",
+      "getDriverInfo(String, String, User)",
+      "describe(String, String, User)",
+      "getSparkApplicationResource(String)"
+    ],
+    "getSparkApplicationResource(String)": [
+      "getLog(String, String, String, String, String, User)",
+      "getSparkSpec(String, String, User)",
+      "getStatusImpl(String, User)",
+      "getDriverInfo(String, String, User)",
+      "describe(String, String, User)"
+    ],
+    "getSparkApplicationResourcesByUser(AppConfig.SparkCluster, String)": [],
+    "getSparkApplicationResourcesByLabel(AppConfig.SparkCluster, String, String)": [],
+    "getSparkApplicationResources(AppConfig.SparkCluster)": [],
+    "getPod(String, AppConfig.SparkCluster)": [],
+    "checkRateForListSubmissions(String)": [
+      "listSubmissions(String, String, User)",
+      "getSubmissions(String, User)"
+    ],
+    "RestBase(AppConfig, MeterRegistry)": []
+  },
+  "com.apple.spark.security.User": {
+    "getName()": [
+      "listSubmissions(String, String, User)",
+      "listAllSubmissions(User)",
+      "listSubmissionsByApplicationName(String, User)",
+      "getLog(String, String, String, String, String, User)",
+      "submitApplication(String, String, String, String, User)",
+      "submitApplicationImpl(String, String, User, String)",
+      "deleteSubmission(String, String, User)",
+      "getSparkSpec(String, String, User)",
+      "getStatus(String, String, User)",
+      "getStatusImpl(String, User)",
+      "getDriverInfo(String, String, User)",
+      "describe(String, String, User)",
+      "getSubmissions(String, User)",
+      "getUserTagValue(User)",
+      "uploadStream(String, InputStream, Long, String, String, String, User)",
+      "healthcheckStatus(User)"
+    ],
+    "User(String)": [
+      "authenticate(BasicCredentials)"
+    ]
+  },
+  "com.apple.spark.security.UserNameAuthFilter": {
+    "filter(ContainerRequestContext)": [],
+    "getCredentials(String)": [
+      "filter(ContainerRequestContext)"
+    ],
+    "UserNameAuthFilter()": [
+      "newInstance()"
+    ]
+  },
+  "com.apple.spark.security.UserNameAuthFilter.Builder": {
+    "newInstance()": [],
+    "Builder()": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.security.UserNameBasicAuthenticator": {
+    "authenticate(BasicCredentials)": [],
+    "UserNameBasicAuthenticator(Collection, Collection)": [
+      "run(AppConfig, Environment)"
+    ]
+  },
+  "com.apple.spark.security.UserUnauthorizedHandler": {
+    "buildResponse(String, String)": []
+  },
+  "com.apple.spark.tools.DeleteApplications": {
+    "main(String[])": []
+  },
+  "com.apple.spark.tools.LoadTest": {
+    "main(String[])": [],
+    "submitApplication(int, int, int, int)": [
+      "main(String[])"
+    ]
+  },
+  "com.apple.spark.tools.LoadTest.TestApplicationInfo": {
+    "getSubmissionId()": [
+      "main(String[])"
+    ],
+    "getSubmitTime()": [],
+    "setSubmitTime(long)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getSubmitLatency()": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "setSubmitLatency(long)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "getState()": [],
+    "setState(String)": [
+      "main(String[])"
+    ],
+    "getDriverStartTime()": [],
+    "setDriverStartTime(Long)": [
+      "main(String[])"
+    ],
+    "getCompletedTime()": [],
+    "setCompletedTime(Long)": [
+      "main(String[])"
+    ],
+    "getDriverStartLatencySeconds()": [
+      "toString()"
+    ],
+    "getApplicationFinishLatency()": [
+      "toString()"
+    ],
+    "toString()": [],
+    "TestApplicationInfo(String)": [
+      "submitApplication(int, int, int, int)"
+    ]
+  },
+  "com.apple.spark.tools.QueueTokenGenerator": {
+    "main(String[])": [],
+    "printArgumentExample()": [
+      "main(String[])"
+    ]
+  },
+  "com.apple.spark.tools.SparkClusterTest": {
+    "main(String[])": []
+  },
+  "com.apple.spark.util.ConfigUtil": {
+    "mergeConfig(AppConfig)": [],
+    "getSparkUIUrl(SparkCluster, String)": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)",
+      "getStatusImplWithoutCache(SparkApplication, String, AppConfig.SparkCluster)"
+    ],
+    "getSparkHistoryUrl(String, String)": [
+      "copyFrom(SparkApplication, AppConfig.SparkCluster, AppConfig)"
+    ],
+    "merge(List, List)": [
+      "mergeConfig(AppConfig)"
+    ],
+    "getConfFromDB(AppConfig)": [
+      "mergeConfig(AppConfig)"
+    ],
+    "readVersion()": [
+      "version()"
+    ]
+  },
+  "com.apple.spark.util.CounterMetricContainer": {
+    "increment(String, Tag...)": [],
+    "increment(String, Collection)": [
+      "increment(String, Tag...)"
+    ],
+    "CounterMetricContainer(MeterRegistry)": [
+      "sendPeriodicMetrics(AppConfig, MeterRegistry)"
+    ]
+  },
+  "com.apple.spark.util.CustomSerDe": {
+    "submitRequestToNonSensitiveJson(SubmitApplicationRequest)": [
+      "logApplicationSubmission(String, String, SubmitApplicationRequest)"
+    ],
+    "sparkSpecToNonSensitiveJson(SparkApplicationSpec)": [
+      "submitSparkCRD(SparkCluster, String, SparkApplicationSpec, SubmitApplicationRequest, String, String)"
+    ]
+  },
+  "com.apple.spark.util.DateTimeUtils": {
+    "parseOrNull(String)": [
+      "copyFrom(SparkApplication)",
+      "onUpdateImpl_logApplication(AppConfig.SparkCluster, SparkApplication, SparkApplication)",
+      "onUpdate(SparkApplication, SparkApplication)",
+      "getDriverInfo(String, String, User)"
+    ],
+    "format(Instant)": []
+  },
+  "com.apple.spark.util.EndAwareInputStream": {
+    "read()": [],
+    "read(byte[])": [],
+    "read(byte[], int, int)": [],
+    "skip(long)": [],
+    "available()": [],
+    "close()": [],
+    "mark(int)": [],
+    "reset()": [],
+    "markSupported()": [],
+    "executeWithResultValue(CallableWithIOException)": [
+      "read()",
+      "read(byte[])",
+      "read(byte[], int, int)",
+      "skip(long)",
+      "available()"
+    ],
+    "executeWithoutResultValue(RunnableWithIOException)": [
+      "close()",
+      "reset()"
+    ],
+    "executeEndingAction()": [
+      "read()",
+      "read(byte[])",
+      "read(byte[], int, int)",
+      "executeWithResultValue(CallableWithIOException<T>)",
+      "executeWithoutResultValue(RunnableWithIOException)"
+    ],
+    "EndAwareInputStream(InputStream, Runnable)": [
+      "tryGetLogStream(DefaultKubernetesClient, String, String)"
+    ]
+  },
+  "com.apple.spark.util.EndAwareInputStream.CallableWithIOException": {
+    "call()": [
+      "executeWithResultValue(CallableWithIOException<T>)"
+    ]
+  },
+  "com.apple.spark.util.EndAwareInputStream.RunnableWithIOException": {
+    "run()": [
+      "executeWithoutResultValue(RunnableWithIOException)"
+    ]
+  },
+  "com.apple.spark.util.ExceptionUtils": {
+    "getExceptionNameAndMessage(Throwable)": [
+      "parseSubmitRequest(String, String)",
+      "toResponse(Throwable)",
+      "getStatusImpl(String, User)",
+      "uploadStreamS3(InputStream, Long, String, String)",
+      "uploadStreamGcs(InputStream, String, String)",
+      "checkResponseOK(String, HttpResponse<?>)"
+    ],
+    "isTooManyRequest(Throwable)": [],
+    "meterJsonProcessingException()": [
+      "describe(String, String, User)"
+    ],
+    "meterException()": [
+      "listAllSubmissions(User)",
+      "listSubmissionsByApplicationName(String, User)",
+      "version()",
+      "getLog(String, String, String, String, String, User)",
+      "describe(String, String, User)"
+    ],
+    "meterIOException()": [],
+    "meterRuntimeException()": [
+      "uploadStreamS3(InputStream, Long, String, String)"
+    ]
+  },
+  "com.apple.spark.util.GaugeMetricContainer": {
+    "register(String, Supplier, Tag...)": [],
+    "register(String, Supplier, Collection)": [
+      "register(String, Supplier<Number>, Tag...)"
+    ],
+    "GaugeMetricContainer(MeterRegistry)": []
+  },
+  "com.apple.spark.util.HttpUtils": {
+    "post(String, String, String, String, Class)": [
+      "submitApplication(int, int, int, int)"
+    ],
+    "post(String, String, String, String, String, Class)": [
+      "post(String, String, String, String, Class<T>)"
+    ],
+    "post(String, String, String, String)": [],
+    "post(String, String, String, String, String)": [
+      "post(String, String, String, String, String, Class<T>)",
+      "post(String, String, String, String)"
+    ],
+    "post(String, InputStream, String, String, Class)": [],
+    "post(String, InputStream, String, String, long, Class)": [],
+    "post(String, InputStream, String, String)": [
+      "post(String, InputStream, String, String, Class<T>)"
+    ],
+    "post(String, InputStream, String, String, long)": [
+      "post(String, InputStream, String, String, long, Class<T>)",
+      "post(String, InputStream, String, String)"
+    ],
+    "get(String, String, String, Class)": [
+      "main(String[])",
+      "main(String[])"
+    ],
+    "get(String, String, String)": [
+      "getPodNamePrefixFromAppId(String)",
+      "get(String, String, String, Class<T>)",
+      "get(String)"
+    ],
+    "get(String)": [],
+    "delete(String, String, String, Class)": [],
+    "delete(String, String, String)": [
+      "main(String[])",
+      "main(String[])",
+      "delete(String, String, String, Class<T>)"
+    ],
+    "checkResponseOK(String, HttpResponse)": [
+      "getHttpResponse(String, String, String)",
+      "executeHttpRequest(String, HttpRequest, HttpResponse.BodyHandler<String>)"
+    ],
+    "parseJson(String, Class)": [
+      "post(String, String, String, String, String, Class<T>)",
+      "post(String, InputStream, String, String, Class<T>)",
+      "post(String, InputStream, String, String, long, Class<T>)",
+      "get(String, String, String, Class<T>)",
+      "delete(String, String, String, Class<T>)"
+    ],
+    "getHttpResponse(String, String, String)": [],
+    "executeHttpRequest(String, HttpRequest, HttpResponse.BodyHandler)": []
+  },
+  "com.apple.spark.util.JwtUtils": {
+    "createToken(String, String, String, String, String[])": [
+      "main(String[])"
+    ],
+    "createToken(String, String, String, String, List)": [],
+    "verifyToken(String, String)": [
+      "verify(String, List<String>, String)"
+    ]
+  },
+  "com.apple.spark.util.KubernetesClusterAndNamespace": {
+    "getMasterUrl()": [],
+    "getNamespace()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "KubernetesClusterAndNamespace(String, String)": [
+      "start()"
+    ]
+  },
+  "com.apple.spark.util.MetricId": {
+    "getMetricName()": [],
+    "getValues()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "MetricId(String, Collection)": [
+      "increment(String, Collection<Tag>)",
+      "register(String, Supplier<Number>, Collection<Tag>)",
+      "getTimer(String, Collection<Tag>)"
+    ]
+  },
+  "com.apple.spark.util.TimerMetricContainer": {
+    "record(Runnable, String, Tag...)": [],
+    "record(Runnable, String, Collection)": [
+      "record(Runnable, String, Tag...)"
+    ],
+    "record(Supplier, String, Tag...)": [],
+    "record(Supplier, String, Collection)": [
+      "record(Supplier<T>, String, Tag...)"
+    ],
+    "getTimer(String, Collection)": [
+      "record(Runnable, String, Collection<Tag>)",
+      "record(Supplier<T>, String, Collection<Tag>)"
+    ],
+    "TimerMetricContainer(MeterRegistry)": []
+  },
+  "com.apple.spark.util.VersionInfo": {
+    "getVersion()": [],
+    "setVersion(String)": [],
+    "getGitCommit()": [],
+    "setGitCommit(String)": [],
+    "getBuildTime()": [],
+    "setBuildTime(String)": [],
+    "toString()": []
+  }
+}

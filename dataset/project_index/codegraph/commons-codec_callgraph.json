@@ -1,0 +1,2405 @@
+{
+  "org.apache.commons.codec.binary.Base16": {
+    "decode(byte[], int, int, Context)": [],
+    "decodeOctet(byte)": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "encode(byte[], int, int, Context)": [],
+    "isInAlphabet(byte)": [],
+    "validateTrailingCharacter()": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "Base16()": [],
+    "Base16(boolean)": [],
+    "Base16(boolean, byte[], CodecPolicy)": [],
+    "Base16(boolean, CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base16InputStream": {
+    "Base16InputStream(InputStream)": [],
+    "Base16InputStream(InputStream, boolean)": [],
+    "Base16InputStream(InputStream, boolean, boolean)": [],
+    "Base16InputStream(InputStream, boolean, boolean, CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base16OutputStream": {
+    "Base16OutputStream(OutputStream)": [],
+    "Base16OutputStream(OutputStream, boolean)": [],
+    "Base16OutputStream(OutputStream, boolean, boolean)": [],
+    "Base16OutputStream(OutputStream, boolean, boolean, CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base32": {
+    "builder()": [],
+    "decode(byte[], int, int, Context)": [],
+    "encode(byte[], int, int, Context)": [],
+    "getLineSeparator()": [],
+    "isInAlphabet(byte)": [],
+    "validateCharacter(long, Context)": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "validateTrailingCharacters()": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "Base32()": [],
+    "Base32(boolean)": [],
+    "Base32(boolean, byte)": [],
+    "Base32(byte)": [],
+    "Base32(int)": [],
+    "Base32(int, byte[])": [],
+    "Base32(int, byte[], boolean)": [],
+    "Base32(int, byte[], boolean, byte)": [],
+    "Base32(int, byte[], boolean, byte, CodecPolicy)": [],
+    "Base32(int, byte[], byte[], byte, CodecPolicy)": [
+      "get()"
+    ]
+  },
+  "org.apache.commons.codec.binary.Base32.Builder": {
+    "get()": [],
+    "Builder()": [
+      "builder()"
+    ]
+  },
+  "org.apache.commons.codec.binary.Base32InputStream": {
+    "Base32InputStream(InputStream)": [],
+    "Base32InputStream(InputStream, boolean)": [],
+    "Base32InputStream(InputStream, boolean, int, byte[])": [],
+    "Base32InputStream(InputStream, boolean, int, byte[], CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base32OutputStream": {
+    "Base32OutputStream(OutputStream)": [],
+    "Base32OutputStream(OutputStream, boolean)": [],
+    "Base32OutputStream(OutputStream, boolean, int, byte[])": [],
+    "Base32OutputStream(OutputStream, boolean, int, byte[], CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base64": {
+    "builder()": [],
+    "decodeBase64(byte[])": [
+      "decodeInteger(byte[])"
+    ],
+    "decodeBase64(String)": [],
+    "decodeInteger(byte[])": [],
+    "encodeBase64(byte[])": [
+      "doEncoding(byte[])"
+    ],
+    "encodeBase64(byte[], boolean)": [
+      "encodeBase64(byte[])",
+      "encodeBase64Chunked(byte[])",
+      "encodeBase64String(byte[])",
+      "encodeInteger(BigInteger)"
+    ],
+    "encodeBase64(byte[], boolean, boolean)": [
+      "encodeBase64(byte[], boolean)",
+      "encodeBase64URLSafe(byte[])",
+      "encodeBase64URLSafeString(byte[])"
+    ],
+    "encodeBase64(byte[], boolean, boolean, int)": [
+      "encodeBase64(byte[], boolean, boolean)"
+    ],
+    "encodeBase64Chunked(byte[])": [],
+    "encodeBase64String(byte[])": [],
+    "encodeBase64URLSafe(byte[])": [],
+    "encodeBase64URLSafeString(byte[])": [],
+    "encodeInteger(BigInteger)": [],
+    "isBase64(byte)": [
+      "isBase64(byte[])"
+    ],
+    "isBase64(byte[])": [
+      "isBase64(String)"
+    ],
+    "isBase64(String)": [],
+    "toIntegerBytes(BigInteger)": [
+      "encodeInteger(BigInteger)"
+    ],
+    "toUrlSafeEncodeTable(boolean)": [
+      "setUrlSafe(boolean)"
+    ],
+    "calculateDecodeTable(byte[])": [],
+    "decode(byte[], int, int, Context)": [],
+    "encode(byte[], int, int, Context)": [],
+    "getLineSeparator()": [],
+    "isInAlphabet(byte)": [],
+    "isUrlSafe()": [],
+    "validateCharacter(int, Context)": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "validateTrailingCharacter()": [
+      "decode(byte[], int, int, Context)"
+    ],
+    "Base64()": [
+      "decodeBase64(byte[])",
+      "decodeBase64(String)"
+    ],
+    "Base64(boolean)": [
+      "encodeBase64(byte[], boolean, boolean, int)"
+    ],
+    "Base64(int)": [],
+    "Base64(int, byte[])": [],
+    "Base64(int, byte[], boolean)": [
+      "encodeBase64(byte[], boolean, boolean, int)"
+    ],
+    "Base64(int, byte[], boolean, CodecPolicy)": [
+      "doDecoding(byte[])"
+    ],
+    "Base64(int, byte[], byte, byte[], CodecPolicy)": [
+      "get()"
+    ]
+  },
+  "org.apache.commons.codec.binary.Base64.Builder": {
+    "get()": [],
+    "setUrlSafe(boolean)": [],
+    "Builder()": [
+      "builder()"
+    ]
+  },
+  "org.apache.commons.codec.binary.Base64InputStream": {
+    "Base64InputStream(InputStream)": [],
+    "Base64InputStream(InputStream, boolean)": [],
+    "Base64InputStream(InputStream, boolean, int, byte[])": [],
+    "Base64InputStream(InputStream, boolean, int, byte[], CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.Base64OutputStream": {
+    "Base64OutputStream(OutputStream)": [],
+    "Base64OutputStream(OutputStream, boolean)": [],
+    "Base64OutputStream(OutputStream, boolean, int, byte[])": [],
+    "Base64OutputStream(OutputStream, boolean, int, byte[], CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.BaseNCodec": {
+    "createPositiveCapacity(int)": [
+      "resizeBuffer(Context, int)"
+    ],
+    "getChunkSeparator()": [
+      "doDecoding(byte[])"
+    ],
+    "resizeBuffer(Context, int)": [
+      "ensureBufferSize(int, Context)"
+    ],
+    "toLength(byte[])": [],
+    "available(Context)": [
+      "readResults(byte[], int, int, Context)",
+      "flush(boolean)"
+    ],
+    "containsAlphabetOrPad(byte[])": [],
+    "decode(byte[])": [
+      "decodeBase64(byte[])",
+      "decode(Object)",
+      "decode(String)",
+      "doDecoding(byte[])"
+    ],
+    "decode(byte[], int, int, Context)": [
+      "decode(byte[])",
+      "read(byte[], int, int)",
+      "eof()",
+      "write(byte[], int, int)"
+    ],
+    "decode(Object)": [],
+    "decode(String)": [
+      "decodeBase64(String)",
+      "decode(Object)"
+    ],
+    "encode(byte[])": [
+      "encodeBase64(byte[], boolean, boolean, int)",
+      "encode(Object)",
+      "encodeAsString(byte[])",
+      "encodeToString(byte[])"
+    ],
+    "encode(byte[], int, int)": [
+      "encode(byte[])"
+    ],
+    "encode(byte[], int, int, Context)": [
+      "encode(byte[], int, int)",
+      "read(byte[], int, int)",
+      "eof()",
+      "write(byte[], int, int)"
+    ],
+    "encode(Object)": [],
+    "encodeAsString(byte[])": [],
+    "encodeToString(byte[])": [],
+    "ensureBufferSize(int, Context)": [
+      "decode(byte[], int, int, Context)",
+      "encode(byte[], int, int, Context)",
+      "decode(byte[], int, int, Context)",
+      "encode(byte[], int, int, Context)",
+      "decode(byte[], int, int, Context)",
+      "encode(byte[], int, int, Context)"
+    ],
+    "getCodecPolicy()": [],
+    "getDefaultBufferSize()": [
+      "ensureBufferSize(int, Context)"
+    ],
+    "getEncodedLength(byte[])": [
+      "encodeBase64(byte[], boolean, boolean, int)"
+    ],
+    "hasData(Context)": [
+      "available(Context)",
+      "readResults(byte[], int, int, Context)",
+      "read(byte[], int, int)"
+    ],
+    "isInAlphabet(byte)": [
+      "containsAlphabetOrPad(byte[])",
+      "isInAlphabet(byte[], boolean)"
+    ],
+    "isInAlphabet(byte[], boolean)": [
+      "isInAlphabet(String)"
+    ],
+    "isInAlphabet(String)": [],
+    "isStrictDecoding()": [
+      "validateTrailingCharacter()",
+      "validateCharacter(long, Context)",
+      "validateTrailingCharacters()",
+      "validateCharacter(int, Context)",
+      "validateTrailingCharacter()",
+      "isStrictDecoding()",
+      "isStrictDecoding()"
+    ],
+    "readResults(byte[], int, int, Context)": [
+      "decode(byte[])",
+      "encode(byte[], int, int)",
+      "read(byte[], int, int)",
+      "flush(boolean)"
+    ],
+    "BaseNCodec(int, int, int, int)": [],
+    "BaseNCodec(int, int, int, int, byte)": [],
+    "BaseNCodec(int, int, int, int, byte, CodecPolicy)": []
+  },
+  "org.apache.commons.codec.binary.BaseNCodec.AbstractBuilder": {
+    "asThis()": [
+      "setDecodingPolicy(CodecPolicy)",
+      "setEncodeTable(byte...)",
+      "setLineLength(int)",
+      "setLineSeparator(byte...)",
+      "setPadding(byte)"
+    ],
+    "getDecodingPolicy()": [
+      "get()",
+      "get()"
+    ],
+    "getEncodeTable()": [
+      "get()",
+      "get()"
+    ],
+    "getLineLength()": [
+      "get()",
+      "get()"
+    ],
+    "getLineSeparator()": [
+      "get()",
+      "get()"
+    ],
+    "getPadding()": [
+      "get()",
+      "get()"
+    ],
+    "setDecodingPolicy(CodecPolicy)": [],
+    "setEncodeTable(byte...)": [],
+    "setLineLength(int)": [],
+    "setLineSeparator(byte...)": [],
+    "setPadding(byte)": [],
+    "AbstractBuilder(byte[])": []
+  },
+  "org.apache.commons.codec.binary.BaseNCodec.Context": {
+    "toString()": []
+  },
+  "org.apache.commons.codec.binary.BaseNCodecInputStream": {
+    "available()": [],
+    "isStrictDecoding()": [],
+    "mark(int)": [],
+    "markSupported()": [],
+    "read()": [],
+    "read(byte[], int, int)": [
+      "read()",
+      "skip(long)"
+    ],
+    "reset()": [],
+    "skip(long)": [],
+    "BaseNCodecInputStream(InputStream, BaseNCodec, boolean)": []
+  },
+  "org.apache.commons.codec.binary.BaseNCodecOutputStream": {
+    "close()": [],
+    "eof()": [
+      "close()"
+    ],
+    "flush()": [
+      "close()"
+    ],
+    "flush(boolean)": [
+      "flush()",
+      "write(byte[], int, int)"
+    ],
+    "isStrictDecoding()": [],
+    "write(byte[], int, int)": [
+      "write(int)"
+    ],
+    "write(int)": [],
+    "BaseNCodecOutputStream(OutputStream, BaseNCodec, boolean)": []
+  },
+  "org.apache.commons.codec.binary.BinaryCodec": {
+    "fromAscii(byte[])": [
+      "decode(byte[])",
+      "decode(Object)"
+    ],
+    "fromAscii(char[])": [
+      "decode(Object)",
+      "toByteArray(String)"
+    ],
+    "isEmpty(byte[])": [
+      "encodeBase64(byte[], boolean, boolean, int)",
+      "decode(byte[])",
+      "encode(byte[])",
+      "encode(byte[], int, int)",
+      "fromAscii(byte[])",
+      "toAsciiBytes(byte[])",
+      "toAsciiChars(byte[])"
+    ],
+    "toAsciiBytes(byte[])": [
+      "encode(byte[])"
+    ],
+    "toAsciiChars(byte[])": [
+      "toAsciiString(byte[])",
+      "encode(Object)"
+    ],
+    "toAsciiString(byte[])": [],
+    "decode(byte[])": [],
+    "decode(Object)": [],
+    "encode(byte[])": [],
+    "encode(Object)": [],
+    "toByteArray(String)": []
+  },
+  "org.apache.commons.codec.binary.CharSequenceUtils": {
+    "regionMatches(CharSequence, boolean, int, CharSequence, int, int)": [
+      "equals(CharSequence, CharSequence)"
+    ]
+  },
+  "org.apache.commons.codec.binary.Hex": {
+    "decodeHex(char[])": [
+      "decodeHex(String)",
+      "decode(byte[])",
+      "decode(ByteBuffer)",
+      "decode(Object)"
+    ],
+    "decodeHex(char[], byte[], int)": [
+      "decodeHex(char[])"
+    ],
+    "decodeHex(String)": [],
+    "encodeHex(byte[])": [
+      "encodeHexString(byte[])",
+      "encode(Object)"
+    ],
+    "encodeHex(byte[], boolean)": [
+      "encodeHex(byte[])",
+      "encodeHexString(byte[], boolean)"
+    ],
+    "encodeHex(byte[], char[])": [
+      "encodeHex(byte[], boolean)",
+      "encodeHex(ByteBuffer, char[])"
+    ],
+    "encodeHex(byte[], int, int, boolean)": [],
+    "encodeHex(byte[], int, int, boolean, char[], int)": [],
+    "encodeHex(byte[], int, int, char[], char[], int)": [
+      "encodeHex(byte[], char[])",
+      "encodeHex(byte[], int, int, boolean)",
+      "encodeHex(byte[], int, int, boolean, char[], int)"
+    ],
+    "encodeHex(ByteBuffer)": [
+      "encodeHexString(ByteBuffer)"
+    ],
+    "encodeHex(ByteBuffer, boolean)": [
+      "encodeHex(ByteBuffer)",
+      "encodeHexString(ByteBuffer, boolean)"
+    ],
+    "encodeHex(ByteBuffer, char[])": [
+      "encodeHex(ByteBuffer, boolean)"
+    ],
+    "encodeHexString(byte[])": [
+      "encode(byte[])",
+      "println(String, byte[], String)",
+      "md2Hex(byte[])",
+      "md2Hex(InputStream)",
+      "md2Hex(String)",
+      "md5Hex(byte[])",
+      "md5Hex(InputStream)",
+      "md5Hex(String)",
+      "sha1Hex(byte[])",
+      "sha1Hex(InputStream)",
+      "sha1Hex(String)",
+      "sha256Hex(byte[])",
+      "sha256Hex(InputStream)",
+      "sha256Hex(String)",
+      "sha3_224Hex(byte[])",
+      "sha3_224Hex(InputStream)",
+      "sha3_224Hex(String)",
+      "sha3_256Hex(byte[])",
+      "sha3_256Hex(InputStream)",
+      "sha3_256Hex(String)",
+      "sha3_384Hex(byte[])",
+      "sha3_384Hex(InputStream)",
+      "sha3_384Hex(String)",
+      "sha3_512Hex(byte[])",
+      "sha3_512Hex(InputStream)",
+      "sha3_512Hex(String)",
+      "sha384Hex(byte[])",
+      "sha384Hex(InputStream)",
+      "sha384Hex(String)",
+      "sha512_224Hex(byte[])",
+      "sha512_224Hex(InputStream)",
+      "sha512_224Hex(String)",
+      "sha512_256Hex(byte[])",
+      "sha512_256Hex(InputStream)",
+      "sha512_256Hex(String)",
+      "sha512Hex(byte[])",
+      "sha512Hex(InputStream)",
+      "sha512Hex(String)",
+      "digestAsHex(byte[])",
+      "digestAsHex(ByteBuffer)",
+      "digestAsHex(File)",
+      "digestAsHex(InputStream)",
+      "digestAsHex(Path, OpenOption...)",
+      "digestAsHex(String)",
+      "hmacHex(byte[])",
+      "hmacHex(ByteBuffer)",
+      "hmacHex(File)",
+      "hmacHex(InputStream)",
+      "hmacHex(String)"
+    ],
+    "encodeHexString(byte[], boolean)": [],
+    "encodeHexString(ByteBuffer)": [
+      "encode(ByteBuffer)"
+    ],
+    "encodeHexString(ByteBuffer, boolean)": [],
+    "toAlphabet(boolean)": [
+      "encodeHex(byte[], boolean)",
+      "encodeHex(byte[], int, int, boolean)",
+      "encodeHex(byte[], int, int, boolean, char[], int)",
+      "encodeHex(ByteBuffer, boolean)"
+    ],
+    "toByteArray(ByteBuffer)": [
+      "encodeHex(ByteBuffer, char[])",
+      "decode(ByteBuffer)",
+      "encode(Object)"
+    ],
+    "toDigit(char, int)": [
+      "decodeHex(char[], byte[], int)"
+    ],
+    "decode(byte[])": [
+      "decode(Object)"
+    ],
+    "decode(ByteBuffer)": [
+      "decode(Object)"
+    ],
+    "decode(Object)": [
+      "decode(Object)"
+    ],
+    "encode(byte[])": [],
+    "encode(ByteBuffer)": [],
+    "encode(Object)": [],
+    "getCharset()": [
+      "decode(byte[])",
+      "decode(ByteBuffer)",
+      "encode(byte[])",
+      "encode(ByteBuffer)",
+      "encode(Object)"
+    ],
+    "getCharsetName()": [],
+    "toString()": [],
+    "Hex()": [],
+    "Hex(Charset)": [],
+    "Hex(String)": []
+  },
+  "org.apache.commons.codec.binary.StringUtils": {
+    "equals(CharSequence, CharSequence)": [
+      "isDoubleMetaphoneEqual(String, String, boolean)"
+    ],
+    "getByteBuffer(String, Charset)": [
+      "getByteBufferUtf8(String)"
+    ],
+    "getByteBufferUtf8(String)": [],
+    "getBytes(String, Charset)": [
+      "getBytesIso8859_1(String)",
+      "getBytesUsAscii(String)",
+      "getBytesUtf16(String)",
+      "getBytesUtf16Be(String)",
+      "getBytesUtf16Le(String)",
+      "getBytesUtf8(String)"
+    ],
+    "getBytesIso8859_1(String)": [],
+    "getBytesUnchecked(String, String)": [],
+    "getBytesUsAscii(String)": [
+      "decode(String, Charset)",
+      "decode(String, String)",
+      "decodeText(String)",
+      "decode(String, String)"
+    ],
+    "getBytesUtf16(String)": [],
+    "getBytesUtf16Be(String)": [],
+    "getBytesUtf16Le(String)": [],
+    "getBytesUtf8(String)": [
+      "isBase64(String)",
+      "decode(String)",
+      "isInAlphabet(String)",
+      "md2(String)",
+      "md5(String)",
+      "sha1(String)",
+      "sha256(String)",
+      "sha3_224(String)",
+      "sha3_256(String)",
+      "sha3_384(String)",
+      "sha3_512(String)",
+      "sha384(String)",
+      "sha512(String)",
+      "sha512_224(String)",
+      "sha512_256(String)",
+      "updateDigest(MessageDigest, String)",
+      "updateHmac(Mac, String)",
+      "hmac(String)",
+      "hash32(String)",
+      "hash64(String)"
+    ],
+    "newIllegalStateException(String, UnsupportedEncodingException)": [
+      "getBytesUnchecked(String, String)",
+      "newString(byte[], String)"
+    ],
+    "newString(byte[], Charset)": [
+      "newStringIso8859_1(byte[])",
+      "newStringUsAscii(byte[])",
+      "newStringUtf16(byte[])",
+      "newStringUtf16Be(byte[])",
+      "newStringUtf16Le(byte[])",
+      "newStringUtf8(byte[])"
+    ],
+    "newString(byte[], String)": [],
+    "newStringIso8859_1(byte[])": [],
+    "newStringUsAscii(byte[])": [
+      "encodeBase64String(byte[])",
+      "encodeBase64URLSafeString(byte[])",
+      "encode(String, Charset)",
+      "encode(String, String)",
+      "encodeText(String, Charset)",
+      "encode(String, String)"
+    ],
+    "newStringUtf16(byte[])": [],
+    "newStringUtf16Be(byte[])": [],
+    "newStringUtf16Le(byte[])": [],
+    "newStringUtf8(byte[])": [
+      "encodeAsString(byte[])",
+      "encodeToString(byte[])"
+    ]
+  },
+  "org.apache.commons.codec.BinaryDecoder": {
+    "decode(byte[])": []
+  },
+  "org.apache.commons.codec.BinaryEncoder": {
+    "encode(byte[])": []
+  },
+  "org.apache.commons.codec.CharEncoding": {},
+  "org.apache.commons.codec.Charsets": {
+    "toCharset(Charset)": [],
+    "toCharset(String)": []
+  },
+  "org.apache.commons.codec.cli.Digest": {
+    "main(String[])": [],
+    "println(String, byte[])": [
+      "run(String, MessageDigest)"
+    ],
+    "println(String, byte[], String)": [
+      "println(String, byte[])",
+      "run(String, MessageDigest)",
+      "run(String, MessageDigest, File[])"
+    ],
+    "run()": [
+      "main(String[])"
+    ],
+    "run(String, MessageDigest)": [
+      "run()",
+      "run(String, String)"
+    ],
+    "run(String, MessageDigest, File[])": [
+      "run(String, MessageDigest)"
+    ],
+    "run(String, String)": [
+      "run(String[])"
+    ],
+    "run(String[])": [
+      "run()"
+    ],
+    "toString()": [],
+    "Digest(String[])": [
+      "main(String[])"
+    ]
+  },
+  "org.apache.commons.codec.CodecPolicy": {},
+  "org.apache.commons.codec.Decoder": {
+    "decode(Object)": []
+  },
+  "org.apache.commons.codec.DecoderException": {
+    "DecoderException()": [],
+    "DecoderException(String)": [
+      "decode(Object)",
+      "decode(Object)",
+      "decodeHex(char[], byte[], int)",
+      "toDigit(char, int)",
+      "decode(Object)",
+      "decode(Object)",
+      "decode(Object)",
+      "decode(Object)",
+      "decodeText(String)",
+      "decode(Object)",
+      "digit16(byte)"
+    ],
+    "DecoderException(String, Throwable)": [
+      "decode(Object)",
+      "decode(String)",
+      "decode(byte[])",
+      "decode(String)",
+      "decodeQuotedPrintable(byte[])",
+      "decodeUrl(byte[])",
+      "decode(String)"
+    ],
+    "DecoderException(Throwable)": []
+  },
+  "org.apache.commons.codec.digest.B64": {
+    "b64from24bit(byte, byte, byte, int, StringBuilder)": [
+      "md5Crypt(byte[], String, String, Random)",
+      "sha2Crypt(byte[], String, String, int, String)"
+    ],
+    "getRandomSalt(int)": [
+      "apr1Crypt(byte[])",
+      "md5Crypt(byte[])",
+      "sha256Crypt(byte[], String)",
+      "sha512Crypt(byte[], String)"
+    ],
+    "getRandomSalt(int, Random)": [
+      "getRandomSalt(int)",
+      "apr1Crypt(byte[], Random)",
+      "md5Crypt(byte[], Random)",
+      "md5Crypt(byte[], String, String, Random)",
+      "sha256Crypt(byte[], String, Random)",
+      "sha512Crypt(byte[], String, Random)"
+    ]
+  },
+  "org.apache.commons.codec.digest.Blake3": {
+    "checkBufferArgs(byte[], int, int)": [
+      "doFinalize(byte[], int, int)",
+      "update(byte[], int, int)"
+    ],
+    "compress(int[], int[], int, long, int)": [
+      "update(byte[], int, int)",
+      "chainingValue()",
+      "rootOutputBytes(byte[], int, int)"
+    ],
+    "g(int[], int, int, int, int, int, int)": [
+      "round(int[], int[], byte[])"
+    ],
+    "hash(byte[])": [],
+    "initHash()": [
+      "hash(byte[])"
+    ],
+    "initKeyDerivationFunction(byte[])": [],
+    "initKeyedHash(byte[])": [
+      "keyedHash(byte[], byte[])"
+    ],
+    "keyedHash(byte[], byte[])": [],
+    "packInt(int, byte[], int, int)": [
+      "rootOutputBytes(byte[], int, int)"
+    ],
+    "parentChainingValue(int[], int[], int[], int)": [
+      "addChunkCV(int[], long)"
+    ],
+    "parentOutput(int[], int[], int[], int)": [
+      "parentChainingValue(int[], int[], int[], int)",
+      "outputHash(byte[], int, int)"
+    ],
+    "round(int[], int[], byte[])": [
+      "compress(int[], int[], int, long, int)"
+    ],
+    "unpackInt(byte[], int)": [
+      "unpackInts(byte[], int)"
+    ],
+    "unpackInts(byte[], int)": [
+      "initKeyDerivationFunction(byte[])",
+      "initKeyedHash(byte[])",
+      "output()",
+      "update(byte[], int, int)"
+    ],
+    "doFinalize(byte[])": [
+      "doFinalize(int)"
+    ],
+    "doFinalize(byte[], int, int)": [
+      "doFinalize(byte[])"
+    ],
+    "doFinalize(int)": [
+      "hash(byte[])",
+      "keyedHash(byte[], byte[])"
+    ],
+    "reset()": [],
+    "update(byte[])": [
+      "hash(byte[])",
+      "keyedHash(byte[], byte[])"
+    ],
+    "update(byte[], int, int)": [
+      "update(byte[])"
+    ],
+    "Blake3(int[], int)": [
+      "initHash()",
+      "initKeyDerivationFunction(byte[])",
+      "initKeyedHash(byte[])"
+    ]
+  },
+  "org.apache.commons.codec.digest.Blake3.ChunkState": {
+    "length()": [
+      "inputData(byte[], int, int)"
+    ],
+    "output()": [
+      "inputData(byte[], int, int)",
+      "outputHash(byte[], int, int)"
+    ],
+    "startFlag()": [
+      "output()",
+      "update(byte[], int, int)"
+    ],
+    "update(byte[], int, int)": [
+      "inputData(byte[], int, int)"
+    ],
+    "ChunkState(int[], long, int)": [
+      "inputData(byte[], int, int)",
+      "reset()"
+    ]
+  },
+  "org.apache.commons.codec.digest.Blake3.EngineState": {
+    "addChunkCV(int[], long)": [
+      "inputData(byte[], int, int)"
+    ],
+    "inputData(byte[], int, int)": [
+      "initKeyDerivationFunction(byte[])",
+      "update(byte[], int, int)"
+    ],
+    "outputHash(byte[], int, int)": [
+      "initKeyDerivationFunction(byte[])",
+      "doFinalize(byte[], int, int)"
+    ],
+    "popCV()": [
+      "addChunkCV(int[], long)"
+    ],
+    "pushCV(int[])": [
+      "addChunkCV(int[], long)"
+    ],
+    "reset()": [
+      "reset()"
+    ],
+    "EngineState(int[], int)": [
+      "initKeyDerivationFunction(byte[])"
+    ]
+  },
+  "org.apache.commons.codec.digest.Blake3.Output": {
+    "chainingValue()": [
+      "parentChainingValue(int[], int[], int[], int)",
+      "inputData(byte[], int, int)",
+      "outputHash(byte[], int, int)"
+    ],
+    "rootOutputBytes(byte[], int, int)": [
+      "outputHash(byte[], int, int)"
+    ],
+    "Output(int[], int[], long, int, int)": [
+      "output()"
+    ]
+  },
+  "org.apache.commons.codec.digest.Crypt": {
+    "crypt(byte[])": [],
+    "crypt(byte[], String)": [
+      "crypt(byte[])",
+      "crypt(String, String)"
+    ],
+    "crypt(String)": [],
+    "crypt(String, String)": [
+      "crypt(String)"
+    ]
+  },
+  "org.apache.commons.codec.digest.DigestUtils": {
+    "digest(MessageDigest, byte[])": [
+      "run(String, MessageDigest)"
+    ],
+    "digest(MessageDigest, ByteBuffer)": [],
+    "digest(MessageDigest, File)": [
+      "run(String, MessageDigest)",
+      "run(String, MessageDigest, File[])"
+    ],
+    "digest(MessageDigest, InputStream)": [
+      "run(String, MessageDigest)",
+      "md2(InputStream)",
+      "md5(InputStream)",
+      "sha1(InputStream)",
+      "sha256(InputStream)",
+      "sha3_224(InputStream)",
+      "sha3_256(InputStream)",
+      "sha3_384(InputStream)",
+      "sha3_512(InputStream)",
+      "sha384(InputStream)",
+      "sha512(InputStream)",
+      "sha512_224(InputStream)",
+      "sha512_256(InputStream)"
+    ],
+    "digest(MessageDigest, Path, OpenOption...)": [],
+    "digest(MessageDigest, RandomAccessFile)": [],
+    "digest(byte[])": [
+      "digestAsHex(byte[])"
+    ],
+    "digest(ByteBuffer)": [
+      "digestAsHex(ByteBuffer)"
+    ],
+    "digest(File)": [
+      "digestAsHex(File)"
+    ],
+    "digest(InputStream)": [
+      "digestAsHex(InputStream)"
+    ],
+    "digest(Path, OpenOption...)": [],
+    "digest(String)": [
+      "digestAsHex(String)"
+    ],
+    "getDigest(String)": [
+      "run()",
+      "run(String, String)",
+      "getMd2Digest()",
+      "getMd5Digest()",
+      "getSha1Digest()",
+      "getSha256Digest()",
+      "getSha3_224Digest()",
+      "getSha3_256Digest()",
+      "getSha3_384Digest()",
+      "getSha3_512Digest()",
+      "getSha384Digest()",
+      "getSha512_224Digest()",
+      "getSha512_256Digest()",
+      "getSha512Digest()",
+      "sha2Crypt(byte[], String, String, int, String)"
+    ],
+    "getDigest(String, MessageDigest)": [
+      "run()",
+      "isAvailable(String)"
+    ],
+    "getMd2Digest()": [
+      "md2(byte[])",
+      "md2(InputStream)"
+    ],
+    "getMd5Digest()": [
+      "md5(byte[])",
+      "md5(InputStream)",
+      "md5Crypt(byte[], String, String, Random)"
+    ],
+    "getMessageDigest(String)": [
+      "getDigest(String)",
+      "getDigest(String, MessageDigest)"
+    ],
+    "getMessageDigest()": [],
+    "getSha1Digest()": [
+      "sha1(byte[])",
+      "sha1(InputStream)"
+    ],
+    "getSha256Digest()": [
+      "sha256(byte[])",
+      "sha256(InputStream)"
+    ],
+    "getSha3_224Digest()": [
+      "sha3_224(byte[])",
+      "sha3_224(InputStream)"
+    ],
+    "getSha3_256Digest()": [
+      "sha3_256(byte[])",
+      "sha3_256(InputStream)"
+    ],
+    "getSha3_384Digest()": [
+      "sha3_384(byte[])",
+      "sha3_384(InputStream)"
+    ],
+    "getSha3_512Digest()": [
+      "sha3_512(byte[])",
+      "sha3_512(InputStream)"
+    ],
+    "getSha384Digest()": [
+      "sha384(byte[])",
+      "sha384(InputStream)"
+    ],
+    "getSha512_224Digest()": [
+      "sha512_224(byte[])",
+      "sha512_224(InputStream)"
+    ],
+    "getSha512_256Digest()": [
+      "sha512_256(byte[])",
+      "sha512_256(InputStream)"
+    ],
+    "getSha512Digest()": [
+      "sha512(byte[])",
+      "sha512(InputStream)"
+    ],
+    "isAvailable(String)": [
+      "run(String[])"
+    ],
+    "md2(byte[])": [
+      "md2(String)",
+      "md2Hex(byte[])"
+    ],
+    "md2(InputStream)": [
+      "md2Hex(InputStream)"
+    ],
+    "md2(String)": [
+      "md2Hex(String)"
+    ],
+    "md2Hex(byte[])": [],
+    "md2Hex(InputStream)": [],
+    "md2Hex(String)": [],
+    "md5(byte[])": [
+      "md5(String)",
+      "md5Hex(byte[])"
+    ],
+    "md5(InputStream)": [
+      "md5Hex(InputStream)"
+    ],
+    "md5(String)": [
+      "md5Hex(String)"
+    ],
+    "md5Hex(byte[])": [],
+    "md5Hex(InputStream)": [],
+    "md5Hex(String)": [],
+    "sha1(byte[])": [
+      "sha1(String)",
+      "sha1Hex(byte[])"
+    ],
+    "sha1(InputStream)": [
+      "sha1Hex(InputStream)"
+    ],
+    "sha1(String)": [
+      "sha1Hex(String)"
+    ],
+    "sha1Hex(byte[])": [],
+    "sha1Hex(InputStream)": [],
+    "sha1Hex(String)": [],
+    "sha256(byte[])": [
+      "sha256(String)",
+      "sha256Hex(byte[])"
+    ],
+    "sha256(InputStream)": [
+      "sha256Hex(InputStream)"
+    ],
+    "sha256(String)": [
+      "sha256Hex(String)"
+    ],
+    "sha256Hex(byte[])": [],
+    "sha256Hex(InputStream)": [],
+    "sha256Hex(String)": [],
+    "sha3_224(byte[])": [
+      "sha3_224(String)",
+      "sha3_224Hex(byte[])"
+    ],
+    "sha3_224(InputStream)": [
+      "sha3_224Hex(InputStream)"
+    ],
+    "sha3_224(String)": [
+      "sha3_224Hex(String)"
+    ],
+    "sha3_224Hex(byte[])": [],
+    "sha3_224Hex(InputStream)": [],
+    "sha3_224Hex(String)": [],
+    "sha3_256(byte[])": [
+      "sha3_256(String)",
+      "sha3_256Hex(byte[])"
+    ],
+    "sha3_256(InputStream)": [
+      "sha3_256Hex(InputStream)"
+    ],
+    "sha3_256(String)": [
+      "sha3_256Hex(String)"
+    ],
+    "sha3_256Hex(byte[])": [],
+    "sha3_256Hex(InputStream)": [],
+    "sha3_256Hex(String)": [],
+    "sha3_384(byte[])": [
+      "sha3_384(String)",
+      "sha3_384Hex(byte[])"
+    ],
+    "sha3_384(InputStream)": [
+      "sha3_384Hex(InputStream)"
+    ],
+    "sha3_384(String)": [
+      "sha3_384Hex(String)"
+    ],
+    "sha3_384Hex(byte[])": [],
+    "sha3_384Hex(InputStream)": [],
+    "sha3_384Hex(String)": [],
+    "sha3_512(byte[])": [
+      "sha3_512(String)",
+      "sha3_512Hex(byte[])"
+    ],
+    "sha3_512(InputStream)": [
+      "sha3_512Hex(InputStream)"
+    ],
+    "sha3_512(String)": [
+      "sha3_512Hex(String)"
+    ],
+    "sha3_512Hex(byte[])": [],
+    "sha3_512Hex(InputStream)": [],
+    "sha3_512Hex(String)": [],
+    "sha384(byte[])": [
+      "sha384(String)",
+      "sha384Hex(byte[])"
+    ],
+    "sha384(InputStream)": [
+      "sha384Hex(InputStream)"
+    ],
+    "sha384(String)": [
+      "sha384Hex(String)"
+    ],
+    "sha384Hex(byte[])": [],
+    "sha384Hex(InputStream)": [],
+    "sha384Hex(String)": [],
+    "sha512(byte[])": [
+      "sha512(String)",
+      "sha512Hex(byte[])"
+    ],
+    "sha512(InputStream)": [
+      "sha512Hex(InputStream)"
+    ],
+    "sha512(String)": [
+      "sha512Hex(String)"
+    ],
+    "sha512_224(byte[])": [
+      "sha512_224(String)",
+      "sha512_224Hex(byte[])"
+    ],
+    "sha512_224(InputStream)": [
+      "sha512_224Hex(InputStream)"
+    ],
+    "sha512_224(String)": [
+      "sha512_224Hex(String)"
+    ],
+    "sha512_224Hex(byte[])": [],
+    "sha512_224Hex(InputStream)": [],
+    "sha512_224Hex(String)": [],
+    "sha512_256(byte[])": [
+      "sha512_256(String)",
+      "sha512_256Hex(byte[])"
+    ],
+    "sha512_256(InputStream)": [
+      "sha512_256Hex(InputStream)"
+    ],
+    "sha512_256(String)": [
+      "sha512_256Hex(String)"
+    ],
+    "sha512_256Hex(byte[])": [],
+    "sha512_256Hex(InputStream)": [],
+    "sha512_256Hex(String)": [],
+    "sha512Hex(byte[])": [],
+    "sha512Hex(InputStream)": [],
+    "sha512Hex(String)": [],
+    "updateDigest(MessageDigest, byte[])": [
+      "digest(byte[])"
+    ],
+    "updateDigest(MessageDigest, ByteBuffer)": [
+      "digest(ByteBuffer)"
+    ],
+    "updateDigest(MessageDigest, File)": [
+      "digest(MessageDigest, File)",
+      "digest(File)"
+    ],
+    "updateDigest(MessageDigest, FileChannel)": [
+      "updateDigest(MessageDigest, RandomAccessFile)"
+    ],
+    "updateDigest(MessageDigest, InputStream)": [
+      "digest(MessageDigest, InputStream)",
+      "digest(InputStream)",
+      "updateDigest(MessageDigest, File)",
+      "updateDigest(MessageDigest, Path, OpenOption...)"
+    ],
+    "updateDigest(MessageDigest, Path, OpenOption...)": [],
+    "updateDigest(MessageDigest, RandomAccessFile)": [
+      "digest(MessageDigest, RandomAccessFile)"
+    ],
+    "updateDigest(MessageDigest, String)": [
+      "digest(String)"
+    ],
+    "digestAsHex(byte[])": [],
+    "digestAsHex(ByteBuffer)": [],
+    "digestAsHex(File)": [],
+    "digestAsHex(InputStream)": [],
+    "digestAsHex(Path, OpenOption...)": [],
+    "digestAsHex(String)": [],
+    "DigestUtils(MessageDigest)": [],
+    "DigestUtils(String)": []
+  },
+  "org.apache.commons.codec.digest.HmacAlgorithms": {
+    "getName()": [
+      "getInitializedMac(HmacAlgorithms, byte[])",
+      "isAvailable(HmacAlgorithms)"
+    ],
+    "toString()": [],
+    "HmacAlgorithms(String)": []
+  },
+  "org.apache.commons.codec.digest.HmacUtils": {
+    "getInitializedMac(HmacAlgorithms, byte[])": [],
+    "getInitializedMac(String, byte[])": [
+      "getInitializedMac(HmacAlgorithms, byte[])"
+    ],
+    "isAvailable(HmacAlgorithms)": [],
+    "isAvailable(String)": [],
+    "updateHmac(Mac, byte[])": [],
+    "updateHmac(Mac, InputStream)": [],
+    "updateHmac(Mac, String)": [],
+    "hmac(byte[])": [
+      "hmacHex(byte[])"
+    ],
+    "hmac(ByteBuffer)": [
+      "hmacHex(ByteBuffer)"
+    ],
+    "hmac(File)": [
+      "hmacHex(File)"
+    ],
+    "hmac(InputStream)": [
+      "hmac(File)",
+      "hmacHex(InputStream)"
+    ],
+    "hmac(String)": [
+      "hmacHex(String)"
+    ],
+    "hmacHex(byte[])": [],
+    "hmacHex(ByteBuffer)": [],
+    "hmacHex(File)": [],
+    "hmacHex(InputStream)": [],
+    "hmacHex(String)": [],
+    "HmacUtils(HmacAlgorithms, byte[])": [],
+    "HmacUtils(HmacAlgorithms, String)": [],
+    "HmacUtils(Mac)": [],
+    "HmacUtils(String, byte[])": [],
+    "HmacUtils(String, String)": []
+  },
+  "org.apache.commons.codec.digest.Md5Crypt": {
+    "apr1Crypt(byte[])": [
+      "apr1Crypt(String)"
+    ],
+    "apr1Crypt(byte[], Random)": [],
+    "apr1Crypt(byte[], String)": [
+      "apr1Crypt(byte[])",
+      "apr1Crypt(byte[], Random)",
+      "apr1Crypt(String, String)"
+    ],
+    "apr1Crypt(String)": [],
+    "apr1Crypt(String, String)": [],
+    "md5Crypt(byte[])": [],
+    "md5Crypt(byte[], Random)": [],
+    "md5Crypt(byte[], String)": [
+      "crypt(byte[], String)",
+      "md5Crypt(byte[])",
+      "md5Crypt(byte[], Random)"
+    ],
+    "md5Crypt(byte[], String, String)": [
+      "apr1Crypt(byte[], String)",
+      "md5Crypt(byte[], String)"
+    ],
+    "md5Crypt(byte[], String, String, Random)": [
+      "md5Crypt(byte[], String, String)"
+    ]
+  },
+  "org.apache.commons.codec.digest.MessageDigestAlgorithms": {
+    "values()": [
+      "run()"
+    ],
+    "MessageDigestAlgorithms()": []
+  },
+  "org.apache.commons.codec.digest.MurmurHash2": {
+    "getLittleEndianInt(byte[], int)": [
+      "hash32(byte[], int, int)"
+    ],
+    "getLittleEndianLong(byte[], int)": [
+      "hash64(byte[], int, int)"
+    ],
+    "hash32(byte[], int)": [
+      "hash32(String)"
+    ],
+    "hash32(byte[], int, int)": [
+      "hash32(byte[], int)"
+    ],
+    "hash32(String)": [
+      "hash32(String, int, int)"
+    ],
+    "hash32(String, int, int)": [],
+    "hash64(byte[], int)": [
+      "hash64(String)"
+    ],
+    "hash64(byte[], int, int)": [
+      "hash64(byte[], int)"
+    ],
+    "hash64(String)": [
+      "hash64(String, int, int)"
+    ],
+    "hash64(String, int, int)": [],
+    "MurmurHash2()": []
+  },
+  "org.apache.commons.codec.digest.MurmurHash3": {
+    "fmix32(int)": [
+      "hash32(long, int)",
+      "hash32(long, long, int)",
+      "hash32x86(byte[], int, int, int)",
+      "finalise(int, int, byte[], int)"
+    ],
+    "fmix64(long)": [
+      "hash128x64Internal(byte[], int, int, long)"
+    ],
+    "getLittleEndianInt(byte[], int)": [
+      "hash32x86(byte[], int, int, int)",
+      "add(byte[], int, int)"
+    ],
+    "getLittleEndianLong(byte[], int)": [
+      "hash128x64Internal(byte[], int, int, long)"
+    ],
+    "hash128(byte[])": [],
+    "hash128x64(byte[])": [],
+    "hash128x64(byte[], int, int, int)": [
+      "hash128x64(byte[])"
+    ],
+    "hash128x64Internal(byte[], int, int, long)": [
+      "hash128x64(byte[], int, int, int)"
+    ],
+    "hash32(long)": [],
+    "hash32(long, int)": [
+      "hash32(long)"
+    ],
+    "hash32(long, long)": [],
+    "hash32(long, long, int)": [
+      "hash32(long, long)"
+    ],
+    "hash32x86(byte[])": [],
+    "hash32x86(byte[], int, int, int)": [
+      "hash32x86(byte[])"
+    ],
+    "mix32(int, int)": [
+      "hash32(long, int)",
+      "hash32(long, long, int)",
+      "hash32x86(byte[], int, int, int)",
+      "add(byte[], int, int)"
+    ],
+    "MurmurHash3()": []
+  },
+  "org.apache.commons.codec.digest.MurmurHash3.IncrementalHash32x86": {
+    "orBytes(byte, byte, byte, byte)": [
+      "add(byte[], int, int)"
+    ],
+    "add(byte[], int, int)": [],
+    "end()": [],
+    "finalise(int, int, byte[], int)": [
+      "end()"
+    ],
+    "start(int)": []
+  },
+  "org.apache.commons.codec.digest.PureJavaCrc32": {
+    "getValue()": [],
+    "reset()": [],
+    "resetCrc()": [
+      "reset()"
+    ],
+    "update(byte[], int, int)": [],
+    "update(int)": [],
+    "PureJavaCrc32()": []
+  },
+  "org.apache.commons.codec.digest.PureJavaCrc32C": {
+    "getValue()": [],
+    "reset()": [],
+    "update(byte[], int, int)": [],
+    "update(int)": [],
+    "PureJavaCrc32C()": []
+  },
+  "org.apache.commons.codec.digest.Sha2Crypt": {
+    "sha256Crypt(byte[])": [],
+    "sha256Crypt(byte[], String)": [
+      "crypt(byte[], String)",
+      "sha256Crypt(byte[])"
+    ],
+    "sha256Crypt(byte[], String, Random)": [],
+    "sha2Crypt(byte[], String, String, int, String)": [
+      "sha256Crypt(byte[], String)",
+      "sha256Crypt(byte[], String, Random)",
+      "sha512Crypt(byte[], String)",
+      "sha512Crypt(byte[], String, Random)"
+    ],
+    "sha512Crypt(byte[])": [
+      "crypt(byte[], String)"
+    ],
+    "sha512Crypt(byte[], String)": [
+      "crypt(byte[], String)",
+      "sha512Crypt(byte[])"
+    ],
+    "sha512Crypt(byte[], String, Random)": []
+  },
+  "org.apache.commons.codec.digest.UnixCrypt": {
+    "body(int[], int, int)": [
+      "crypt(byte[], String)"
+    ],
+    "byteToUnsigned(byte)": [
+      "fourBytesToInt(byte[], int)"
+    ],
+    "crypt(byte[])": [
+      "crypt(String)"
+    ],
+    "crypt(byte[], String)": [
+      "crypt(byte[], String)",
+      "crypt(byte[])",
+      "crypt(String, String)"
+    ],
+    "crypt(String)": [],
+    "crypt(String, String)": [],
+    "dEncrypt(int, int, int, int, int, int[])": [
+      "body(int[], int, int)"
+    ],
+    "desSetKey(byte[])": [
+      "crypt(byte[], String)"
+    ],
+    "fourBytesToInt(byte[], int)": [
+      "desSetKey(byte[])"
+    ],
+    "hPermOp(int, int, int)": [
+      "desSetKey(byte[])"
+    ],
+    "intToFourBytes(int, byte[], int)": [
+      "crypt(byte[], String)"
+    ],
+    "permOp(int, int, int, int, int[])": [
+      "body(int[], int, int)",
+      "desSetKey(byte[])"
+    ]
+  },
+  "org.apache.commons.codec.digest.XXHash32": {
+    "getInt(byte[], int)": [
+      "getValue()",
+      "process(byte[], int)"
+    ],
+    "getValue()": [],
+    "initializeState()": [
+      "reset()"
+    ],
+    "process(byte[], int)": [
+      "update(byte[], int, int)"
+    ],
+    "reset()": [],
+    "update(byte[], int, int)": [
+      "update(int)"
+    ],
+    "update(int)": [],
+    "XXHash32()": [],
+    "XXHash32(int)": []
+  },
+  "org.apache.commons.codec.Encoder": {
+    "encode(Object)": [
+      "compare(Object, Object)"
+    ]
+  },
+  "org.apache.commons.codec.EncoderException": {
+    "EncoderException()": [],
+    "EncoderException(String)": [
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)",
+      "encode(Object)"
+    ],
+    "EncoderException(String, Throwable)": [
+      "encode(Object)",
+      "encode(String, String)",
+      "encode(String, String)",
+      "encode(String)"
+    ],
+    "EncoderException(Throwable)": []
+  },
+  "org.apache.commons.codec.language.AbstractCaverphone": {
+    "encode(Object)": [],
+    "isEncodeEqual(String, String)": []
+  },
+  "org.apache.commons.codec.language.bm.BeiderMorseEncoder": {
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "getNameType()": [],
+    "getRuleType()": [],
+    "isConcat()": [],
+    "setConcat(boolean)": [],
+    "setMaxPhonemes(int)": [],
+    "setNameType(NameType)": [],
+    "setRuleType(RuleType)": []
+  },
+  "org.apache.commons.codec.language.bm.Lang": {
+    "instance(NameType)": [],
+    "loadFromResource(String, Languages)": [],
+    "guessLanguage(String)": [],
+    "guessLanguages(String)": [
+      "guessLanguage(String)",
+      "encode(String)"
+    ],
+    "Lang(List, Languages)": [
+      "loadFromResource(String, Languages)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Lang.LangRule": {
+    "matches(String)": [
+      "guessLanguages(String)"
+    ],
+    "LangRule(Pattern, Set, boolean)": [
+      "loadFromResource(String, Languages)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Languages": {
+    "getInstance(NameType)": [],
+    "getInstance(String)": [],
+    "langResourceName(NameType)": [],
+    "getLanguages()": [
+      "guessLanguages(String)"
+    ],
+    "Languages(Set)": [
+      "getInstance(String)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Languages.LanguageSet": {
+    "from(Set)": [
+      "guessLanguages(String)",
+      "merge(LanguageSet)",
+      "restrictTo(LanguageSet)",
+      "getInstance(NameType, RuleType, String)",
+      "parsePhoneme(String)"
+    ],
+    "contains(String)": [],
+    "getAny()": [
+      "guessLanguage(String)",
+      "getInstanceMap(NameType, RuleType, Languages.LanguageSet)"
+    ],
+    "isEmpty()": [
+      "apply(Rule.PhonemeExpr, int)"
+    ],
+    "isSingleton()": [
+      "guessLanguage(String)",
+      "getInstanceMap(NameType, RuleType, Languages.LanguageSet)"
+    ],
+    "merge(LanguageSet)": [
+      "mergeWithLanguage(LanguageSet)"
+    ],
+    "restrictTo(LanguageSet)": [
+      "apply(Rule.PhonemeExpr, int)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Languages.SomeLanguages": {
+    "contains(String)": [],
+    "getAny()": [],
+    "getLanguages()": [],
+    "isEmpty()": [],
+    "isSingleton()": [],
+    "merge(LanguageSet)": [],
+    "restrictTo(LanguageSet)": [],
+    "toString()": [],
+    "SomeLanguages(Set)": [
+      "from(Set<String>)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.NameType": {
+    "getName()": [
+      "langResourceName(NameType)",
+      "createResourceName(NameType, RuleType, String)",
+      "getInstanceMap(NameType, RuleType, String)"
+    ],
+    "NameType(String)": []
+  },
+  "org.apache.commons.codec.language.bm.PhoneticEngine": {
+    "join(List, String)": [
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "applyFinalRules(PhonemeBuilder, Map)": [
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "encode(String)": [
+      "encode(String)",
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "encode(String, Languages.LanguageSet)": [],
+    "getLang()": [],
+    "getMaxPhonemes()": [
+      "setConcat(boolean)",
+      "setNameType(NameType)",
+      "setRuleType(RuleType)"
+    ],
+    "getNameType()": [
+      "getNameType()",
+      "setConcat(boolean)",
+      "setMaxPhonemes(int)",
+      "setRuleType(RuleType)"
+    ],
+    "getRuleType()": [
+      "getRuleType()",
+      "setConcat(boolean)",
+      "setMaxPhonemes(int)",
+      "setNameType(NameType)"
+    ],
+    "isConcat()": [
+      "isConcat()",
+      "setMaxPhonemes(int)",
+      "setNameType(NameType)",
+      "setRuleType(RuleType)"
+    ],
+    "PhoneticEngine(NameType, RuleType, boolean)": [],
+    "PhoneticEngine(NameType, RuleType, boolean, int)": [
+      "setConcat(boolean)",
+      "setMaxPhonemes(int)",
+      "setNameType(NameType)",
+      "setRuleType(RuleType)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.PhoneticEngine.PhonemeBuilder": {
+    "empty(Languages.LanguageSet)": [],
+    "append(CharSequence)": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ],
+    "apply(Rule.PhonemeExpr, int)": [],
+    "getPhonemes()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ],
+    "makeString()": [
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "PhonemeBuilder(Rule.Phoneme)": [],
+    "PhonemeBuilder(Set)": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.PhoneticEngine.RulesApplication": {
+    "getI()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)",
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "getPhonemeBuilder()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)",
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "invoke()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)",
+      "encode(String, Languages.LanguageSet)"
+    ],
+    "isFound()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ],
+    "RulesApplication(Map, CharSequence, PhonemeBuilder, int, int)": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)",
+      "encode(String, Languages.LanguageSet)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.ResourceConstants": {},
+  "org.apache.commons.codec.language.bm.Rule": {
+    "contains(CharSequence, char)": [
+      "pattern(String)"
+    ],
+    "createResourceName(NameType, RuleType, String)": [
+      "createScanner(NameType, RuleType, String)"
+    ],
+    "createScanner(NameType, RuleType, String)": [],
+    "createScanner(String)": [
+      "parseRules(Scanner, String)"
+    ],
+    "endsWith(CharSequence, CharSequence)": [
+      "pattern(String)"
+    ],
+    "getInstance(NameType, RuleType, Languages.LanguageSet)": [],
+    "getInstance(NameType, RuleType, String)": [],
+    "getInstanceMap(NameType, RuleType, Languages.LanguageSet)": [],
+    "getInstanceMap(NameType, RuleType, String)": [
+      "encode(String, Languages.LanguageSet)",
+      "getInstanceMap(NameType, RuleType, Languages.LanguageSet)"
+    ],
+    "parsePhoneme(String)": [
+      "parsePhonemeExpr(String)"
+    ],
+    "parsePhonemeExpr(String)": [
+      "parseRules(Scanner, String)"
+    ],
+    "parseRules(Scanner, String)": [
+      "parseRules(Scanner, String)"
+    ],
+    "pattern(String)": [],
+    "startsWith(CharSequence, CharSequence)": [
+      "pattern(String)"
+    ],
+    "stripQuotes(String)": [
+      "parseRules(Scanner, String)"
+    ],
+    "getLContext()": [],
+    "getPattern()": [
+      "invoke()"
+    ],
+    "getPhoneme()": [
+      "invoke()"
+    ],
+    "getRContext()": [],
+    "patternAndContextMatches(CharSequence, int)": [
+      "invoke()"
+    ],
+    "Rule(String, String, String, PhonemeExpr)": [
+      "parseRules(Scanner, String)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Rule.Phoneme": {
+    "append(CharSequence)": [
+      "append(CharSequence)"
+    ],
+    "getLanguages()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)",
+      "apply(Rule.PhonemeExpr, int)"
+    ],
+    "getPhonemes()": [],
+    "getPhonemeText()": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ],
+    "mergeWithLanguage(LanguageSet)": [
+      "applyFinalRules(PhonemeBuilder, Map<String, List<Rule>>)"
+    ],
+    "size()": [],
+    "toString()": [],
+    "Phoneme(CharSequence, Languages.LanguageSet)": [],
+    "Phoneme(Phoneme, Phoneme)": [],
+    "Phoneme(Phoneme, Phoneme, Languages.LanguageSet)": []
+  },
+  "org.apache.commons.codec.language.bm.Rule.PhonemeExpr": {
+    "getPhonemes()": [
+      "apply(Rule.PhonemeExpr, int)",
+      "size()"
+    ],
+    "size()": [
+      "apply(Rule.PhonemeExpr, int)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Rule.PhonemeList": {
+    "getPhonemes()": [],
+    "size()": [],
+    "PhonemeList(List)": [
+      "parsePhonemeExpr(String)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.Rule.RPattern": {
+    "isMatch(CharSequence)": [
+      "patternAndContextMatches(CharSequence, int)"
+    ]
+  },
+  "org.apache.commons.codec.language.bm.RuleType": {
+    "getName()": [
+      "createResourceName(NameType, RuleType, String)",
+      "getInstanceMap(NameType, RuleType, String)"
+    ],
+    "RuleType(String)": []
+  },
+  "org.apache.commons.codec.language.Caverphone1": {
+    "encode(String)": []
+  },
+  "org.apache.commons.codec.language.Caverphone2": {
+    "encode(String)": []
+  },
+  "org.apache.commons.codec.language.ColognePhonetic": {
+    "arrayContains(char[], char)": [
+      "colognePhonetic(String)"
+    ],
+    "colognePhonetic(String)": [
+      "encode(String)",
+      "isEncodeEqual(String, String)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "isEncodeEqual(String, String)": [],
+    "preprocess(String)": [
+      "colognePhonetic(String)"
+    ]
+  },
+  "org.apache.commons.codec.language.ColognePhonetic.CologneBuffer": {
+    "copyData(int, int)": [
+      "toString()"
+    ],
+    "isEmpty()": [
+      "colognePhonetic(String)"
+    ],
+    "length()": [
+      "colognePhonetic(String)",
+      "isEmpty()"
+    ],
+    "toString()": [
+      "colognePhonetic(String)"
+    ],
+    "CologneBuffer(char[])": [],
+    "CologneBuffer(int)": []
+  },
+  "org.apache.commons.codec.language.ColognePhonetic.CologneInputBuffer": {
+    "copyData(int, int)": [],
+    "getNextChar()": [
+      "colognePhonetic(String)",
+      "removeNext()"
+    ],
+    "getNextPos()": [
+      "getNextChar()"
+    ],
+    "removeNext()": [
+      "colognePhonetic(String)"
+    ],
+    "CologneInputBuffer(char[])": [
+      "colognePhonetic(String)"
+    ]
+  },
+  "org.apache.commons.codec.language.ColognePhonetic.CologneOutputBuffer": {
+    "copyData(int, int)": [],
+    "put(char)": [
+      "colognePhonetic(String)"
+    ],
+    "CologneOutputBuffer(int)": [
+      "colognePhonetic(String)"
+    ]
+  },
+  "org.apache.commons.codec.language.DaitchMokotoffSoundex": {
+    "parseRules(Scanner, String, Map, Map)": [],
+    "stripQuotes(String)": [
+      "parseRules(Scanner, String, Map<Character, List<Rule>>, Map<Character, Character>)"
+    ],
+    "cleanup(String)": [
+      "soundex(String, boolean)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "soundex(String)": [],
+    "soundex(String, boolean)": [
+      "encode(String)",
+      "soundex(String)"
+    ],
+    "DaitchMokotoffSoundex()": [],
+    "DaitchMokotoffSoundex(boolean)": []
+  },
+  "org.apache.commons.codec.language.DaitchMokotoffSoundex.Branch": {
+    "createBranch()": [
+      "soundex(String, boolean)"
+    ],
+    "equals(Object)": [],
+    "finish()": [
+      "soundex(String, boolean)"
+    ],
+    "hashCode()": [],
+    "processNextReplacement(String, boolean)": [
+      "soundex(String, boolean)"
+    ],
+    "toString()": [
+      "soundex(String, boolean)",
+      "createBranch()",
+      "equals(Object)",
+      "hashCode()"
+    ],
+    "Branch()": [
+      "soundex(String, boolean)",
+      "createBranch()"
+    ]
+  },
+  "org.apache.commons.codec.language.DaitchMokotoffSoundex.Rule": {
+    "getPatternLength()": [
+      "soundex(String, boolean)",
+      "getReplacements(String, boolean)"
+    ],
+    "getReplacements(String, boolean)": [
+      "soundex(String, boolean)"
+    ],
+    "isVowel(char)": [
+      "getReplacements(String, boolean)"
+    ],
+    "matches(String)": [
+      "soundex(String, boolean)"
+    ],
+    "toString()": [],
+    "Rule(String, String, String, String)": [
+      "parseRules(Scanner, String, Map<Character, List<Rule>>, Map<Character, Character>)"
+    ]
+  },
+  "org.apache.commons.codec.language.DoubleMetaphone": {
+    "contains(String, int, int, String...)": [],
+    "charAt(String, int)": [
+      "conditionC0(String, int)",
+      "conditionM0(String, int)",
+      "doubleMetaphone(String, boolean)",
+      "handleC(String, DoubleMetaphoneResult, int)",
+      "handleCC(String, DoubleMetaphoneResult, int)",
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleGH(String, DoubleMetaphoneResult, int)",
+      "handleH(String, DoubleMetaphoneResult, int)",
+      "handleJ(String, DoubleMetaphoneResult, int, boolean)",
+      "handleL(String, DoubleMetaphoneResult, int)",
+      "handleP(String, DoubleMetaphoneResult, int)",
+      "handleR(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleW(String, DoubleMetaphoneResult, int)",
+      "handleZ(String, DoubleMetaphoneResult, int, boolean)"
+    ],
+    "cleanInput(String)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "conditionC0(String, int)": [
+      "handleC(String, DoubleMetaphoneResult, int)"
+    ],
+    "conditionCH0(String, int)": [
+      "handleCH(String, DoubleMetaphoneResult, int)"
+    ],
+    "conditionCH1(String, int)": [
+      "handleCH(String, DoubleMetaphoneResult, int)"
+    ],
+    "conditionL0(String, int)": [
+      "handleL(String, DoubleMetaphoneResult, int)"
+    ],
+    "conditionM0(String, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "doubleMetaphone(String)": [
+      "encode(Object)",
+      "encode(String)"
+    ],
+    "doubleMetaphone(String, boolean)": [
+      "doubleMetaphone(String)",
+      "isDoubleMetaphoneEqual(String, String, boolean)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [],
+    "getMaxCodeLen()": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleAEIOUY(DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleC(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleCC(String, DoubleMetaphoneResult, int)": [
+      "handleC(String, DoubleMetaphoneResult, int)"
+    ],
+    "handleCH(String, DoubleMetaphoneResult, int)": [
+      "handleC(String, DoubleMetaphoneResult, int)"
+    ],
+    "handleD(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleG(String, DoubleMetaphoneResult, int, boolean)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleGH(String, DoubleMetaphoneResult, int)": [
+      "handleG(String, DoubleMetaphoneResult, int, boolean)"
+    ],
+    "handleH(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleJ(String, DoubleMetaphoneResult, int, boolean)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleL(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleP(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleR(String, DoubleMetaphoneResult, int, boolean)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleS(String, DoubleMetaphoneResult, int, boolean)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleSC(String, DoubleMetaphoneResult, int)": [
+      "handleS(String, DoubleMetaphoneResult, int, boolean)"
+    ],
+    "handleT(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleW(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleX(String, DoubleMetaphoneResult, int)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "handleZ(String, DoubleMetaphoneResult, int, boolean)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "isDoubleMetaphoneEqual(String, String)": [],
+    "isDoubleMetaphoneEqual(String, String, boolean)": [
+      "isDoubleMetaphoneEqual(String, String)"
+    ],
+    "isSilentStart(String)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "isSlavoGermanic(String)": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "isVowel(char)": [
+      "conditionC0(String, int)",
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleGH(String, DoubleMetaphoneResult, int)",
+      "handleH(String, DoubleMetaphoneResult, int)",
+      "handleJ(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleW(String, DoubleMetaphoneResult, int)"
+    ],
+    "setMaxCodeLen(int)": []
+  },
+  "org.apache.commons.codec.language.DoubleMetaphone.DoubleMetaphoneResult": {
+    "append(char)": [
+      "doubleMetaphone(String, boolean)",
+      "handleAEIOUY(DoubleMetaphoneResult, int)",
+      "handleC(String, DoubleMetaphoneResult, int)",
+      "handleCC(String, DoubleMetaphoneResult, int)",
+      "handleCH(String, DoubleMetaphoneResult, int)",
+      "handleD(String, DoubleMetaphoneResult, int)",
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleGH(String, DoubleMetaphoneResult, int)",
+      "handleH(String, DoubleMetaphoneResult, int)",
+      "handleJ(String, DoubleMetaphoneResult, int, boolean)",
+      "handleL(String, DoubleMetaphoneResult, int)",
+      "handleP(String, DoubleMetaphoneResult, int)",
+      "handleR(String, DoubleMetaphoneResult, int, boolean)",
+      "handleS(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleT(String, DoubleMetaphoneResult, int)",
+      "handleW(String, DoubleMetaphoneResult, int)",
+      "handleX(String, DoubleMetaphoneResult, int)",
+      "handleZ(String, DoubleMetaphoneResult, int, boolean)"
+    ],
+    "append(char, char)": [
+      "handleC(String, DoubleMetaphoneResult, int)",
+      "handleCH(String, DoubleMetaphoneResult, int)",
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleJ(String, DoubleMetaphoneResult, int, boolean)",
+      "handleS(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleT(String, DoubleMetaphoneResult, int)",
+      "handleW(String, DoubleMetaphoneResult, int)"
+    ],
+    "append(String)": [
+      "handleCC(String, DoubleMetaphoneResult, int)",
+      "handleD(String, DoubleMetaphoneResult, int)",
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleX(String, DoubleMetaphoneResult, int)"
+    ],
+    "append(String, String)": [
+      "handleG(String, DoubleMetaphoneResult, int, boolean)",
+      "handleSC(String, DoubleMetaphoneResult, int)",
+      "handleW(String, DoubleMetaphoneResult, int)",
+      "handleZ(String, DoubleMetaphoneResult, int, boolean)"
+    ],
+    "appendAlternate(char)": [
+      "handleR(String, DoubleMetaphoneResult, int, boolean)",
+      "handleS(String, DoubleMetaphoneResult, int, boolean)",
+      "handleW(String, DoubleMetaphoneResult, int)",
+      "append(char)",
+      "append(char, char)"
+    ],
+    "appendAlternate(String)": [
+      "append(String)",
+      "append(String, String)"
+    ],
+    "appendPrimary(char)": [
+      "handleL(String, DoubleMetaphoneResult, int)",
+      "append(char)",
+      "append(char, char)"
+    ],
+    "appendPrimary(String)": [
+      "append(String)",
+      "append(String, String)"
+    ],
+    "getAlternate()": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "getPrimary()": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "isComplete()": [
+      "doubleMetaphone(String, boolean)"
+    ],
+    "DoubleMetaphoneResult(int)": [
+      "doubleMetaphone(String, boolean)"
+    ]
+  },
+  "org.apache.commons.codec.language.MatchRatingApproachEncoder": {
+    "cleanName(String)": [
+      "encode(String)",
+      "isEncodeEquals(String, String)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "getFirst3Last3(String)": [
+      "encode(String)",
+      "isEncodeEquals(String, String)"
+    ],
+    "getMinRating(int)": [
+      "isEncodeEquals(String, String)"
+    ],
+    "isEncodeEquals(String, String)": [],
+    "isVowel(String)": [
+      "removeVowels(String)"
+    ],
+    "leftToRightThenRightToLeftProcessing(String, String)": [
+      "isEncodeEquals(String, String)"
+    ],
+    "removeAccents(String)": [
+      "cleanName(String)"
+    ],
+    "removeDoubleConsonants(String)": [
+      "encode(String)",
+      "isEncodeEquals(String, String)"
+    ],
+    "removeVowels(String)": [
+      "encode(String)",
+      "isEncodeEquals(String, String)"
+    ]
+  },
+  "org.apache.commons.codec.language.Metaphone": {
+    "encode(Object)": [],
+    "encode(String)": [],
+    "getMaxCodeLen()": [
+      "metaphone(String)"
+    ],
+    "isLastChar(int, int)": [
+      "metaphone(String)"
+    ],
+    "isMetaphoneEqual(String, String)": [],
+    "isNextChar(StringBuilder, int, char)": [
+      "metaphone(String)"
+    ],
+    "isPreviousChar(StringBuilder, int, char)": [
+      "metaphone(String)"
+    ],
+    "isVowel(StringBuilder, int)": [
+      "metaphone(String)"
+    ],
+    "metaphone(String)": [
+      "encode(Object)",
+      "encode(String)",
+      "isMetaphoneEqual(String, String)"
+    ],
+    "regionMatch(StringBuilder, int, String)": [
+      "metaphone(String)"
+    ],
+    "setMaxCodeLen(int)": []
+  },
+  "org.apache.commons.codec.language.Nysiis": {
+    "isVowel(char)": [
+      "transcodeRemaining(char, char, char, char)"
+    ],
+    "transcodeRemaining(char, char, char, char)": [
+      "nysiis(String)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [],
+    "isStrict()": [
+      "nysiis(String)"
+    ],
+    "nysiis(String)": [
+      "encode(Object)",
+      "encode(String)"
+    ],
+    "Nysiis()": [],
+    "Nysiis(boolean)": []
+  },
+  "org.apache.commons.codec.language.RefinedSoundex": {
+    "difference(String, String)": [],
+    "encode(Object)": [],
+    "encode(String)": [],
+    "getMappingCode(char)": [
+      "soundex(String)"
+    ],
+    "soundex(String)": [
+      "encode(Object)",
+      "encode(String)"
+    ],
+    "RefinedSoundex()": [],
+    "RefinedSoundex(char[])": [],
+    "RefinedSoundex(String)": []
+  },
+  "org.apache.commons.codec.language.Soundex": {
+    "difference(String, String)": [],
+    "encode(Object)": [],
+    "encode(String)": [],
+    "hasMarker(char[])": [],
+    "map(char)": [
+      "soundex(String)"
+    ],
+    "soundex(String)": [
+      "encode(Object)",
+      "encode(String)"
+    ],
+    "Soundex()": [],
+    "Soundex(char[])": [],
+    "Soundex(String)": [],
+    "Soundex(String, boolean)": []
+  },
+  "org.apache.commons.codec.language.SoundexUtils": {
+    "clean(String)": [
+      "nysiis(String)",
+      "soundex(String)",
+      "soundex(String)"
+    ],
+    "difference(StringEncoder, String, String)": [
+      "difference(String, String)",
+      "difference(String, String)"
+    ],
+    "differenceEncoded(String, String)": [
+      "difference(StringEncoder, String, String)"
+    ],
+    "isEmpty(CharSequence)": [
+      "encode(String)",
+      "clean(String)"
+    ]
+  },
+  "org.apache.commons.codec.net.BCodec": {
+    "decode(Object)": [],
+    "decode(String)": [
+      "decode(Object)"
+    ],
+    "doDecoding(byte[])": [],
+    "doEncoding(byte[])": [],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "encode(String, Charset)": [
+      "encode(String)"
+    ],
+    "encode(String, String)": [],
+    "getEncoding()": [],
+    "isStrictDecoding()": [],
+    "BCodec()": [],
+    "BCodec(Charset)": [],
+    "BCodec(Charset, CodecPolicy)": [],
+    "BCodec(String)": []
+  },
+  "org.apache.commons.codec.net.PercentCodec": {
+    "canEncode(byte)": [
+      "doEncode(byte[], int, boolean)",
+      "expectedEncodingBytes(byte[])"
+    ],
+    "containsSpace(byte[])": [
+      "encode(byte[])"
+    ],
+    "decode(byte[])": [
+      "decode(Object)"
+    ],
+    "decode(Object)": [],
+    "doEncode(byte[], int, boolean)": [
+      "encode(byte[])"
+    ],
+    "encode(byte[])": [
+      "encode(Object)"
+    ],
+    "encode(Object)": [],
+    "expectedDecodingBytes(byte[])": [
+      "decode(byte[])"
+    ],
+    "expectedEncodingBytes(byte[])": [
+      "encode(byte[])"
+    ],
+    "inAlwaysEncodeCharsRange(byte)": [
+      "canEncode(byte)"
+    ],
+    "insertAlwaysEncodeChar(byte)": [
+      "insertAlwaysEncodeChars(byte[])"
+    ],
+    "insertAlwaysEncodeChars(byte[])": [],
+    "isAsciiChar(byte)": [
+      "canEncode(byte)"
+    ],
+    "PercentCodec()": [],
+    "PercentCodec(byte[], boolean)": []
+  },
+  "org.apache.commons.codec.net.QCodec": {
+    "decode(Object)": [],
+    "decode(String)": [
+      "decode(Object)"
+    ],
+    "doDecoding(byte[])": [],
+    "doEncoding(byte[])": [],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "encode(String, Charset)": [
+      "encode(String)"
+    ],
+    "encode(String, String)": [],
+    "getEncoding()": [],
+    "isEncodeBlanks()": [],
+    "setEncodeBlanks(boolean)": [],
+    "QCodec()": [],
+    "QCodec(Charset)": [],
+    "QCodec(String)": []
+  },
+  "org.apache.commons.codec.net.QuotedPrintableCodec": {
+    "decodeQuotedPrintable(byte[])": [
+      "doDecoding(byte[])",
+      "decode(byte[])"
+    ],
+    "encodeByte(int, boolean, ByteArrayOutputStream)": [
+      "encodeQuotedPrintable(BitSet, byte[], boolean)"
+    ],
+    "encodeQuotedPrintable(BitSet, byte[])": [
+      "doEncoding(byte[])"
+    ],
+    "encodeQuotedPrintable(BitSet, byte[], boolean)": [
+      "encodeQuotedPrintable(BitSet, byte[])",
+      "encode(byte[])"
+    ],
+    "encodeQuotedPrintable(int, ByteArrayOutputStream)": [
+      "encodeByte(int, boolean, ByteArrayOutputStream)",
+      "encodeQuotedPrintable(BitSet, byte[], boolean)"
+    ],
+    "getUnsignedOctet(int, byte[])": [
+      "encodeQuotedPrintable(BitSet, byte[], boolean)"
+    ],
+    "isWhitespace(int)": [
+      "encodeQuotedPrintable(BitSet, byte[], boolean)"
+    ],
+    "decode(byte[])": [
+      "decode(Object)",
+      "decode(String, Charset)",
+      "decode(String, String)"
+    ],
+    "decode(Object)": [],
+    "decode(String)": [
+      "decode(Object)"
+    ],
+    "decode(String, Charset)": [
+      "decode(String)"
+    ],
+    "decode(String, String)": [],
+    "encode(byte[])": [
+      "encode(Object)",
+      "encode(String, Charset)",
+      "encode(String, String)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "encode(String, Charset)": [
+      "encode(String)"
+    ],
+    "encode(String, String)": [],
+    "getCharset()": [
+      "decode(String)",
+      "encode(String)"
+    ],
+    "getDefaultCharset()": [],
+    "QuotedPrintableCodec()": [],
+    "QuotedPrintableCodec(boolean)": [],
+    "QuotedPrintableCodec(Charset)": [],
+    "QuotedPrintableCodec(Charset, boolean)": [],
+    "QuotedPrintableCodec(String)": []
+  },
+  "org.apache.commons.codec.net.RFC1522Codec": {
+    "decodeText(String)": [
+      "decode(String)",
+      "decode(String)"
+    ],
+    "doDecoding(byte[])": [
+      "decodeText(String)"
+    ],
+    "doEncoding(byte[])": [
+      "encodeText(String, Charset)"
+    ],
+    "encodeText(String, Charset)": [
+      "encode(String, Charset)",
+      "encode(String, Charset)",
+      "encodeText(String, String)"
+    ],
+    "encodeText(String, String)": [
+      "encode(String, String)",
+      "encode(String, String)"
+    ],
+    "getCharset()": [
+      "encode(String)",
+      "encode(String)"
+    ],
+    "getDefaultCharset()": [],
+    "getEncoding()": [
+      "decodeText(String)",
+      "encodeText(String, Charset)"
+    ],
+    "RFC1522Codec(Charset)": []
+  },
+  "org.apache.commons.codec.net.URLCodec": {
+    "decodeUrl(byte[])": [
+      "decode(byte[])"
+    ],
+    "encodeUrl(BitSet, byte[])": [
+      "encode(byte[])"
+    ],
+    "decode(byte[])": [
+      "decode(Object)",
+      "decode(String, String)"
+    ],
+    "decode(Object)": [],
+    "decode(String)": [
+      "decode(Object)"
+    ],
+    "decode(String, String)": [
+      "decode(String)"
+    ],
+    "encode(byte[])": [
+      "encode(Object)",
+      "encode(String, String)"
+    ],
+    "encode(Object)": [],
+    "encode(String)": [
+      "encode(Object)"
+    ],
+    "encode(String, String)": [
+      "encode(String)"
+    ],
+    "getDefaultCharset()": [
+      "decode(String)",
+      "encode(String)"
+    ],
+    "URLCodec()": [],
+    "URLCodec(String)": []
+  },
+  "org.apache.commons.codec.net.Utils": {
+    "digit16(byte)": [
+      "decode(byte[])",
+      "decodeQuotedPrintable(byte[])",
+      "decodeUrl(byte[])"
+    ],
+    "hexDigit(int)": [
+      "doEncode(byte[], int, boolean)",
+      "encodeQuotedPrintable(int, ByteArrayOutputStream)",
+      "encodeUrl(BitSet, byte[])"
+    ]
+  },
+  "org.apache.commons.codec.Resources": {
+    "getInputStream(String)": [
+      "loadFromResource(String, Languages)",
+      "getInstance(String)",
+      "createScanner(NameType, RuleType, String)",
+      "createScanner(String)"
+    ]
+  },
+  "org.apache.commons.codec.StringDecoder": {
+    "decode(String)": []
+  },
+  "org.apache.commons.codec.StringEncoder": {
+    "encode(String)": [
+      "encode(Object)",
+      "isEncodeEqual(String, String)",
+      "difference(StringEncoder, String, String)"
+    ]
+  },
+  "org.apache.commons.codec.StringEncoderComparator": {
+    "compare(Object, Object)": [],
+    "StringEncoderComparator(StringEncoder)": []
+  }
+}

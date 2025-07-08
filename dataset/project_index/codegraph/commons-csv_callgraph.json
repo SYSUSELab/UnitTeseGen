@@ -1,0 +1,576 @@
+{
+  "org.apache.commons.csv.Constants": {
+    "Constants()": []
+  },
+  "org.apache.commons.csv.CSVFormat": {
+    "clone(T...)": [],
+    "contains(String, char)": [
+      "containsLineBreak(String)",
+      "validate()"
+    ],
+    "containsLineBreak(String)": [
+      "validate()",
+      "setDelimiter(String)"
+    ],
+    "isBlank(String)": [
+      "validate()",
+      "createHeaders()"
+    ],
+    "isLineBreak(char)": [
+      "isLineBreak(Character)"
+    ],
+    "isLineBreak(Character)": [
+      "setCommentMarker(Character)",
+      "setEscape(Character)",
+      "setQuote(Character)"
+    ],
+    "isTrimChar(char)": [
+      "isTrimChar(CharSequence, int)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)"
+    ],
+    "isTrimChar(CharSequence, int)": [
+      "trim(CharSequence)"
+    ],
+    "newFormat(char)": [],
+    "toStringArray(Object[])": [
+      "setHeaderComments(Object...)"
+    ],
+    "trim(CharSequence)": [
+      "print(Object, Appendable, boolean)"
+    ],
+    "trim(String)": [
+      "addRecordValue(boolean)"
+    ],
+    "valueOf(String)": [],
+    "append(char, Appendable)": [
+      "printWithEscapes(Reader, Appendable)",
+      "printWithQuotes(Reader, Appendable)"
+    ],
+    "append(CharSequence, Appendable)": [
+      "print(Reader, Appendable, boolean)",
+      "println(Appendable)",
+      "printWithEscapes(Reader, Appendable)",
+      "printWithQuotes(Reader, Appendable)"
+    ],
+    "builder()": [
+      "copy()",
+      "printHeaders(ResultSet)"
+    ],
+    "copy()": [],
+    "equals(Object)": [],
+    "format(Object...)": [],
+    "getAllowMissingColumnNames()": [
+      "createHeaders()"
+    ],
+    "getAutoFlush()": [
+      "close(boolean)"
+    ],
+    "getCommentMarker()": [
+      "printComment(String)"
+    ],
+    "getDelimiterString()": [
+      "print(Object, CharSequence, Appendable, boolean)",
+      "print(Reader, Appendable, boolean)",
+      "println(Appendable)",
+      "printWithEscapes(CharSequence, Appendable)",
+      "printWithEscapes(Reader, Appendable)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)"
+    ],
+    "getDuplicateHeaderMode()": [
+      "createHeaders()"
+    ],
+    "getEscapeCharacter()": [
+      "printWithEscapes(CharSequence, Appendable)",
+      "printWithEscapes(Reader, Appendable)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)"
+    ],
+    "getHeader()": [
+      "createHeaders()",
+      "printHeaders(ResultSet)"
+    ],
+    "getHeaderComments()": [],
+    "getIgnoreEmptyLines()": [
+      "toString()"
+    ],
+    "getIgnoreHeaderCase()": [
+      "toString()",
+      "createEmptyHeaderMap()"
+    ],
+    "getIgnoreSurroundingSpaces()": [
+      "toString()"
+    ],
+    "getNullString()": [
+      "handleNull(String)"
+    ],
+    "getQuoteCharacter()": [
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)",
+      "printWithQuotes(Reader, Appendable)"
+    ],
+    "getQuoteMode()": [
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)",
+      "printWithQuotes(Reader, Appendable)",
+      "isStrictQuoteMode()"
+    ],
+    "getRecordSeparator()": [],
+    "getSkipHeaderRecord()": [
+      "createHeaders()"
+    ],
+    "getTrailingDelimiter()": [
+      "println(Appendable)",
+      "addRecordValue(boolean)"
+    ],
+    "getTrim()": [
+      "trim(String)",
+      "print(Object, Appendable, boolean)"
+    ],
+    "hashCode()": [],
+    "isCommentMarkerSet()": [
+      "toString()",
+      "printComment(String)"
+    ],
+    "isDelimiter(char, CharSequence, int, char[], int)": [
+      "printWithEscapes(CharSequence, Appendable)",
+      "printWithEscapes(Reader, Appendable)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)"
+    ],
+    "isEscapeCharacterSet()": [
+      "print(Object, CharSequence, Appendable, boolean)",
+      "print(Reader, Appendable, boolean)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)",
+      "toString()"
+    ],
+    "isNullStringSet()": [
+      "toString()"
+    ],
+    "isQuoteCharacterSet()": [
+      "print(Object, CharSequence, Appendable, boolean)",
+      "print(Reader, Appendable, boolean)",
+      "toString()"
+    ],
+    "parse(Reader)": [],
+    "print(Appendable)": [
+      "print(Path, Charset)"
+    ],
+    "print(File, Charset)": [],
+    "print(Object, Appendable, boolean)": [
+      "printRecord(Appendable, Object...)",
+      "print(Object)"
+    ],
+    "print(Object, CharSequence, Appendable, boolean)": [
+      "print(Object, Appendable, boolean)"
+    ],
+    "print(Path, Charset)": [],
+    "print(Reader, Appendable, boolean)": [
+      "print(Object, Appendable, boolean)"
+    ],
+    "printer()": [],
+    "println(Appendable)": [
+      "printRecord(Appendable, Object...)",
+      "println()"
+    ],
+    "printRecord(Appendable, Object...)": [],
+    "printWithEscapes(CharSequence, Appendable)": [
+      "print(Object, CharSequence, Appendable, boolean)",
+      "printWithQuotes(Object, CharSequence, Appendable, boolean)"
+    ],
+    "printWithEscapes(Reader, Appendable)": [
+      "print(Reader, Appendable, boolean)",
+      "printWithQuotes(Reader, Appendable)"
+    ],
+    "printWithQuotes(Object, CharSequence, Appendable, boolean)": [
+      "print(Object, CharSequence, Appendable, boolean)"
+    ],
+    "printWithQuotes(Reader, Appendable)": [
+      "print(Reader, Appendable, boolean)"
+    ],
+    "toString()": [],
+    "validate()": [],
+    "CSVFormat(Builder)": [
+      "build()"
+    ],
+    "CSVFormat(String, Character, QuoteMode, Character, Character, boolean, boolean, String, String, Object[], String[], boolean, boolean, boolean, boolean, boolean, boolean, DuplicateHeaderMode)": [
+      "newFormat(char)"
+    ]
+  },
+  "org.apache.commons.csv.CSVFormat.Builder": {
+    "create()": [],
+    "create(CSVFormat)": [
+      "builder()"
+    ],
+    "build()": [
+      "copy()",
+      "printHeaders(ResultSet)"
+    ],
+    "setAllowMissingColumnNames(boolean)": [],
+    "setAutoFlush(boolean)": [],
+    "setCommentMarker(char)": [],
+    "setCommentMarker(Character)": [
+      "setCommentMarker(char)"
+    ],
+    "setDelimiter(char)": [],
+    "setDelimiter(String)": [
+      "setDelimiter(char)"
+    ],
+    "setDuplicateHeaderMode(DuplicateHeaderMode)": [],
+    "setEscape(char)": [],
+    "setEscape(Character)": [
+      "setEscape(char)"
+    ],
+    "setHeader(Class)": [],
+    "setHeader(ResultSet)": [
+      "printHeaders(ResultSet)"
+    ],
+    "setHeader(ResultSetMetaData)": [
+      "setHeader(ResultSet)"
+    ],
+    "setHeader(String...)": [],
+    "setHeaderComments(Object...)": [],
+    "setHeaderComments(String...)": [],
+    "setIgnoreEmptyLines(boolean)": [],
+    "setIgnoreHeaderCase(boolean)": [],
+    "setIgnoreSurroundingSpaces(boolean)": [],
+    "setNullString(String)": [],
+    "setQuote(char)": [],
+    "setQuote(Character)": [
+      "setQuote(char)"
+    ],
+    "setQuoteMode(QuoteMode)": [],
+    "setRecordSeparator(char)": [],
+    "setRecordSeparator(String)": [],
+    "setSkipHeaderRecord(boolean)": [],
+    "setTrailingDelimiter(boolean)": [],
+    "setTrim(boolean)": [],
+    "Builder(CSVFormat)": [
+      "create()",
+      "create(CSVFormat)"
+    ]
+  },
+  "org.apache.commons.csv.CSVFormat.Predefined": {
+    "getFormat()": [],
+    "Predefined(CSVFormat)": []
+  },
+  "org.apache.commons.csv.CSVParser": {
+    "parse(File, Charset, CSVFormat)": [],
+    "parse(InputStream, Charset, CSVFormat)": [
+      "parse(Path, Charset, CSVFormat)"
+    ],
+    "parse(Path, Charset, CSVFormat)": [
+      "parse(File, Charset, CSVFormat)"
+    ],
+    "parse(Reader, CSVFormat)": [
+      "parse(InputStream, Charset, CSVFormat)"
+    ],
+    "parse(String, CSVFormat)": [],
+    "parse(URL, Charset, CSVFormat)": [],
+    "addRecordValue(boolean)": [
+      "nextRecord()"
+    ],
+    "close()": [],
+    "createEmptyHeaderMap()": [
+      "createHeaders()",
+      "getHeaderMap()"
+    ],
+    "createHeaders()": [],
+    "getCurrentLineNumber()": [
+      "nextRecord()"
+    ],
+    "getFirstEndOfLine()": [],
+    "getHeaderComment()": [],
+    "getHeaderMap()": [],
+    "getHeaderMapRaw()": [
+      "getHeaderMapRaw()"
+    ],
+    "getHeaderNames()": [],
+    "getRecordNumber()": [],
+    "getRecords()": [],
+    "getTrailerComment()": [],
+    "handleNull(String)": [
+      "addRecordValue(boolean)"
+    ],
+    "hasHeaderComment()": [],
+    "hasTrailerComment()": [],
+    "isClosed()": [
+      "hasNext()",
+      "next()"
+    ],
+    "isStrictQuoteMode()": [
+      "handleNull(String)"
+    ],
+    "iterator()": [
+      "stream()"
+    ],
+    "nextRecord()": [
+      "createHeaders()",
+      "getNextRecord()"
+    ],
+    "stream()": [
+      "getRecords()"
+    ],
+    "CSVParser(Reader, CSVFormat)": [
+      "parse(Reader)",
+      "parse(Reader, CSVFormat)",
+      "parse(String, CSVFormat)",
+      "parse(URL, Charset, CSVFormat)"
+    ],
+    "CSVParser(Reader, CSVFormat, long, long)": []
+  },
+  "org.apache.commons.csv.CSVParser.CSVRecordIterator": {
+    "getNextRecord()": [
+      "hasNext()",
+      "next()"
+    ],
+    "hasNext()": [],
+    "next()": [],
+    "remove()": []
+  },
+  "org.apache.commons.csv.CSVParser.Headers": {
+    "Headers(Map, List)": [
+      "createHeaders()"
+    ]
+  },
+  "org.apache.commons.csv.CSVPrinter": {
+    "close()": [],
+    "close(boolean)": [
+      "close()"
+    ],
+    "flush()": [
+      "close(boolean)"
+    ],
+    "getOut()": [],
+    "print(Object)": [
+      "printRecord(Iterable<?>)",
+      "printRecords(ResultSet)"
+    ],
+    "printComment(String)": [],
+    "printHeaders(ResultSet)": [
+      "printRecords(ResultSet, boolean)"
+    ],
+    "println()": [
+      "printComment(String)",
+      "printRecord(Iterable<?>)",
+      "printRecord(Stream<?>)",
+      "printRecords(ResultSet)"
+    ],
+    "printRecord(Iterable)": [
+      "printRecord(Object...)",
+      "printRecordObject(Object)"
+    ],
+    "printRecord(Object...)": [],
+    "printRecord(Stream)": [],
+    "printRecordObject(Object)": [
+      "printRecords(Iterable<?>)"
+    ],
+    "printRecords(Iterable)": [
+      "printRecords(Object...)"
+    ],
+    "printRecords(Object...)": [],
+    "printRecords(ResultSet)": [
+      "printRecords(ResultSet, boolean)"
+    ],
+    "printRecords(ResultSet, boolean)": [],
+    "printRecords(Stream)": [],
+    "CSVPrinter(Appendable, CSVFormat)": [
+      "format(Object...)",
+      "print(Appendable)",
+      "print(File, Charset)",
+      "printer()"
+    ]
+  },
+  "org.apache.commons.csv.CSVRecord": {
+    "get(Enum)": [],
+    "get(int)": [],
+    "get(String)": [
+      "get(Enum<?>)"
+    ],
+    "getCharacterPosition()": [],
+    "getComment()": [
+      "createHeaders()"
+    ],
+    "getHeaderMapRaw()": [
+      "get(String)",
+      "isConsistent()",
+      "isMapped(String)",
+      "isSet(String)",
+      "putIn(M)"
+    ],
+    "getParser()": [],
+    "getRecordNumber()": [],
+    "hasComment()": [],
+    "isConsistent()": [],
+    "isMapped(String)": [
+      "isSet(String)"
+    ],
+    "isSet(int)": [],
+    "isSet(String)": [],
+    "iterator()": [],
+    "putIn(M)": [
+      "toMap()"
+    ],
+    "size()": [],
+    "stream()": [
+      "toList()"
+    ],
+    "toList()": [
+      "iterator()"
+    ],
+    "toMap()": [],
+    "toString()": [],
+    "values()": [
+      "createHeaders()"
+    ],
+    "CSVRecord(CSVParser, String[], String, long, long)": [
+      "nextRecord()"
+    ]
+  },
+  "org.apache.commons.csv.DuplicateHeaderMode": {},
+  "org.apache.commons.csv.ExtendedBufferedReader": {
+    "close()": [
+      "close()"
+    ],
+    "getCurrentLineNumber()": [
+      "getCurrentLineNumber()"
+    ],
+    "getLastChar()": [
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "getPosition()": [
+      "getCharacterPosition()"
+    ],
+    "isClosed()": [
+      "isClosed()"
+    ],
+    "lookAhead()": [
+      "readLine()",
+      "parseEncapsulatedToken(Token)",
+      "readEndOfLine(int)"
+    ],
+    "lookAhead(char[])": [
+      "lookAhead(int)",
+      "isDelimiter(int)",
+      "isEscapeDelimiter()"
+    ],
+    "lookAhead(int)": [
+      "printWithEscapes(Reader, Appendable)"
+    ],
+    "read()": [
+      "printWithEscapes(Reader, Appendable)",
+      "readLine()",
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)",
+      "readEndOfLine(int)",
+      "readEscape()"
+    ],
+    "read(char[], int, int)": [
+      "isDelimiter(int)",
+      "isEscapeDelimiter()"
+    ],
+    "readLine()": [
+      "nextToken(Token)"
+    ],
+    "ExtendedBufferedReader(Reader)": [
+      "printWithEscapes(Reader, Appendable)"
+    ]
+  },
+  "org.apache.commons.csv.IOUtils": {
+    "copy(Reader, Appendable)": [
+      "print(Reader, Appendable, boolean)"
+    ],
+    "copy(Reader, Appendable, CharBuffer)": [
+      "copy(Reader, Appendable)"
+    ],
+    "copyLarge(Reader, Writer)": [
+      "print(Reader, Appendable, boolean)"
+    ],
+    "copyLarge(Reader, Writer, char[])": [
+      "copyLarge(Reader, Writer)"
+    ],
+    "rethrow(Throwable)": [
+      "printRecord(Stream<?>)",
+      "printRecords(Stream<?>)"
+    ],
+    "IOUtils()": []
+  },
+  "org.apache.commons.csv.Lexer": {
+    "close()": [
+      "close()"
+    ],
+    "getCharacterPosition()": [
+      "nextRecord()"
+    ],
+    "getCurrentLineNumber()": [
+      "getCurrentLineNumber()",
+      "parseEncapsulatedToken(Token)"
+    ],
+    "getFirstEol()": [
+      "getFirstEndOfLine()"
+    ],
+    "isClosed()": [
+      "isClosed()"
+    ],
+    "isCommentStart(int)": [
+      "nextToken(Token)"
+    ],
+    "isDelimiter(int)": [
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "isEndOfFile(int)": [
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "isEscape(int)": [
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "isEscapeDelimiter()": [
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "isMetaChar(int)": [
+      "readEscape()"
+    ],
+    "isQuoteChar(int)": [
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)"
+    ],
+    "isStartOfLine(int)": [
+      "nextToken(Token)"
+    ],
+    "mapNullToDisabled(Character)": [],
+    "nextToken(Token)": [
+      "nextRecord()"
+    ],
+    "parseEncapsulatedToken(Token)": [
+      "nextToken(Token)"
+    ],
+    "parseSimpleToken(Token, int)": [
+      "nextToken(Token)"
+    ],
+    "readEndOfLine(int)": [
+      "nextToken(Token)",
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "readEscape()": [
+      "parseEncapsulatedToken(Token)",
+      "parseSimpleToken(Token, int)"
+    ],
+    "trimTrailingSpaces(StringBuilder)": [
+      "parseSimpleToken(Token, int)"
+    ],
+    "Lexer(CSVFormat, ExtendedBufferedReader)": []
+  },
+  "org.apache.commons.csv.QuoteMode": {},
+  "org.apache.commons.csv.Token": {
+    "reset()": [
+      "nextRecord()"
+    ],
+    "toString()": []
+  },
+  "org.apache.commons.csv.Token.Type": {}
+}

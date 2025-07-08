@@ -1,0 +1,5251 @@
+{
+  "net.datafaker.annotations.FakeResolver": {
+    "generate(Schema)": [
+      "populate(Class<T>)",
+      "populate(Class<T>, Schema<Object, ?>)"
+    ],
+    "getSchema(Schema, String[])": [],
+    "checkFakeAnnotation(Class)": [
+      "generate(Schema<Object, ?>)"
+    ],
+    "FakeResolver(Class)": [
+      "populate(Class<T>)",
+      "populate(Class<T>, Schema<Object, ?>)"
+    ]
+  },
+  "net.datafaker.Faker": {
+    "Faker()": [],
+    "Faker(Locale)": [],
+    "Faker(Random)": [],
+    "Faker(Locale, Random)": [],
+    "Faker(Locale, RandomService)": [],
+    "Faker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.formats.Json.JsonBuilder": {
+    "set(String, Supplier)": [],
+    "set(Supplier, Supplier)": [],
+    "build()": []
+  },
+  "net.datafaker.formats.Json.JsonFromCollectionBuilder": {
+    "set(String, Function)": [],
+    "set(Function, Function)": [],
+    "set(String, Json)": [],
+    "set(String, JsonForFakeCollection)": [],
+    "build()": [],
+    "JsonFromCollectionBuilder(FakeSequence)": []
+  },
+  "net.datafaker.formats.Json.JsonForFakeCollection": {
+    "generate()": [
+      "generate(T, Map<Function<T, String>, Function<T, Object>>)"
+    ],
+    "generate(T, Map)": [
+      "generate()",
+      "value2String(T, Object, StringBuilder)"
+    ],
+    "value2String(T, Object, StringBuilder)": [
+      "generate(T, Map<Function<T, String>, Function<T, Object>>)"
+    ],
+    "getValuesFrom(FakeSequence)": [
+      "generate()"
+    ],
+    "JsonForFakeCollection(FakeSequence, Map)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.formats.Xml.XmlNode": {
+    "XmlNode(String, Collection)": [],
+    "XmlNode(String, Map, Collection)": [],
+    "XmlNode(String, Map, String)": [],
+    "XmlNode(String, String)": []
+  },
+  "net.datafaker.idnumbers.EnIdNumber": {
+    "getValidSsn(BaseProviders)": [
+      "getValidSsn(BaseProviders)",
+      "ssnValid()"
+    ]
+  },
+  "net.datafaker.idnumbers.EnZAIdNumber": {
+    "getValidSsn(BaseProviders)": [
+      "validEnZaSsn()"
+    ],
+    "getInValidSsn(BaseProviders)": [
+      "inValidEnZaSsn()"
+    ],
+    "getPattern(BaseProviders)": [
+      "getValidSsn(BaseProviders)",
+      "getInValidSsn(BaseProviders)"
+    ],
+    "validSsn(String)": [
+      "getValidSsn(BaseProviders)",
+      "getInValidSsn(BaseProviders)"
+    ],
+    "parseDate(String)": [
+      "validSsn(String)"
+    ],
+    "calculateChecksum(String)": [
+      "validSsn(String)"
+    ],
+    "calculate(int)": [
+      "calculateChecksum(String)"
+    ]
+  },
+  "net.datafaker.idnumbers.EsMXIdNumber": {
+    "get(BaseProviders)": [
+      "validEsMXSsn()"
+    ],
+    "getWrong(BaseProviders)": [
+      "invalidEsMXSsn()"
+    ],
+    "getBirthday(BaseProviders)": [
+      "get(BaseProviders)"
+    ],
+    "validDay(int, int, BaseProviders)": [
+      "getBirthday(BaseProviders)"
+    ],
+    "getChecksum(String)": [
+      "get(BaseProviders)"
+    ]
+  },
+  "net.datafaker.idnumbers.IdNumbers": {},
+  "net.datafaker.idnumbers.KoKrIdNumber": {
+    "getValidRrn(BaseProviders)": [
+      "validKoKrRrn()"
+    ],
+    "get7thDigit(int, String, String)": [
+      "getValidRrn(BaseProviders)"
+    ]
+  },
+  "net.datafaker.idnumbers.NricNumber": {
+    "getValidFIN(BaseProviders, Type)": [
+      "singaporeanFin()",
+      "singaporeanFinBefore2000()",
+      "singaporeanUin()",
+      "singaporeanUinBefore2000()"
+    ]
+  },
+  "net.datafaker.idnumbers.NricNumber.NricType": {
+    "format(int[])": [
+      "getValidFIN(BaseProviders, Type)"
+    ],
+    "NricType(char, String, int[], int)": []
+  },
+  "net.datafaker.idnumbers.NricNumber.Type": {},
+  "net.datafaker.idnumbers.PeselNumber": {
+    "get(LocalDate, Gender)": [
+      "peselNumber(LocalDate, Gender)"
+    ],
+    "getInternal(LocalDate, Gender)": [
+      "get(LocalDate, Gender)"
+    ],
+    "randomDigit()": [
+      "getInternal(LocalDate, Gender)",
+      "getGenderDigit(Gender)"
+    ],
+    "getControlDigit(int[])": [
+      "getInternal(LocalDate, Gender)"
+    ],
+    "getGenderDigit(Gender)": [
+      "getInternal(LocalDate, Gender)"
+    ],
+    "getMonthEncoded(int, int)": [
+      "getInternal(LocalDate, Gender)"
+    ],
+    "PeselNumber(BaseProviders)": [
+      "peselNumber(LocalDate, Gender)"
+    ]
+  },
+  "net.datafaker.idnumbers.PeselNumber.Gender": {},
+  "net.datafaker.idnumbers.pt.br.DocumentFormatterUtil": {
+    "cnpj(String)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)"
+    ],
+    "cpf(String)": [
+      "cpf(BaseProviders, boolean, boolean)"
+    ],
+    "unmask(String)": [
+      "isCNPJValid(String)",
+      "isCPFValid(String)"
+    ],
+    "DocumentFormatterUtil()": []
+  },
+  "net.datafaker.idnumbers.pt.br.IdNumberGeneratorPtBrUtil": {
+    "cnpj(BaseProviders, boolean, boolean, boolean)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "valid()",
+      "valid(boolean)",
+      "valid(boolean, boolean)",
+      "invalid()",
+      "invalid(boolean)",
+      "invalid(boolean, boolean)"
+    ],
+    "cpf(BaseProviders, boolean, boolean)": [
+      "cpf(BaseProviders, boolean, boolean)",
+      "valid()",
+      "valid(boolean)",
+      "invalid()",
+      "invalid(boolean)"
+    ],
+    "isCNPJValid(String)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)"
+    ],
+    "isCPFValid(String)": [
+      "cpf(BaseProviders, boolean, boolean)"
+    ],
+    "calculateWeight(String, int)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "cpf(BaseProviders, boolean, boolean)",
+      "isCNPJValid(String)",
+      "isCPFValid(String)"
+    ],
+    "digit(int)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "cpf(BaseProviders, boolean, boolean)",
+      "isCNPJValid(String)",
+      "isCPFValid(String)"
+    ],
+    "leftPad(char, int, String)": [
+      "cnpj(BaseProviders, boolean, boolean, boolean)"
+    ],
+    "IdNumberGeneratorPtBrUtil()": []
+  },
+  "net.datafaker.idnumbers.PtNifIdNumber": {
+    "getInvalid(BaseProviders)": [
+      "invalidPtNif()"
+    ],
+    "getValid(BaseProviders)": [
+      "validPtNif()"
+    ],
+    "calculateDigitSum(String)": [
+      "getInvalid(BaseProviders)",
+      "getValid(BaseProviders)"
+    ]
+  },
+  "net.datafaker.idnumbers.SvSEIdNumber": {
+    "getValidSsn(BaseProviders)": [
+      "validSvSeSsn()"
+    ],
+    "getInvalidSsn(BaseProviders)": [
+      "invalidSvSeSsn()"
+    ],
+    "getPattern(BaseProviders)": [
+      "getValidSsn(BaseProviders)",
+      "getInvalidSsn(BaseProviders)"
+    ],
+    "validSwedishSsn(String)": [
+      "getValidSsn(BaseProviders)",
+      "getInvalidSsn(BaseProviders)"
+    ],
+    "parseDate(String)": [
+      "validSwedishSsn(String)"
+    ],
+    "calculateChecksum(String)": [
+      "validSwedishSsn(String)"
+    ],
+    "calculateDigits(String)": [
+      "calculateChecksum(String)"
+    ],
+    "calculateDigitSum(String)": [
+      "calculateChecksum(String)"
+    ]
+  },
+  "net.datafaker.idnumbers.ZhCnIdNumber": {
+    "getValidSsn(BaseProviders)": [
+      "validZhCNSsn()"
+    ]
+  },
+  "net.datafaker.internal.helper.SingletonLocale": {
+    "get(Locale)": [
+      "setLocale(Locale)",
+      "normalizeLocale(SingletonLocale)",
+      "setCurrentLocale(Locale)",
+      "localeChain(Locale)",
+      "localeChain()",
+      "addUrl(Locale, URL)"
+    ],
+    "getLocale()": [
+      "getLocale()",
+      "normalizeLocale(SingletonLocale)",
+      "localeChain(Locale)",
+      "localeChain()",
+      "loadValues()",
+      "readFromStream(InputStream)",
+      "getLocale()",
+      "getCachedFakeValue(SingletonLocale)"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "SingletonLocale(Locale)": [
+      "get(Locale)"
+    ]
+  },
+  "net.datafaker.internal.helper.WordUtils": {
+    "capitalize(String)": [
+      "genus()",
+      "sentence(int, int)"
+    ]
+  },
+  "net.datafaker.providers.base.AbstractProvider": {
+    "getFaker()": [
+      "resolve(String, AbstractProvider<?>, FakerContext)"
+    ],
+    "resolve(String)": [
+      "streetName()",
+      "streetAddress()",
+      "streetAddress(boolean)",
+      "secondaryAddress()",
+      "zipCode()",
+      "postcode()",
+      "zipCodePlus4()",
+      "zipCodeByState(String)",
+      "streetSuffix()",
+      "streetPrefix()",
+      "citySuffix()",
+      "cityPrefix()",
+      "city()",
+      "cityName()",
+      "state()",
+      "stateAbbr()",
+      "timeZone()",
+      "country()",
+      "countryCode()",
+      "buildingNumber()",
+      "fullAddress()",
+      "mailBox()",
+      "god()",
+      "primordial()",
+      "titan()",
+      "hero()",
+      "name()",
+      "species()",
+      "name()",
+      "author()",
+      "brand()",
+      "equipment()",
+      "name()",
+      "locations()",
+      "animals()",
+      "states()",
+      "aircraft()",
+      "airport()",
+      "METAR()",
+      "flight(String)",
+      "airline()",
+      "region()",
+      "region()",
+      "type()",
+      "aboTypes()",
+      "rhTypes()",
+      "pTypes()",
+      "bloodGroup()",
+      "author()",
+      "title()",
+      "publisher()",
+      "genre()",
+      "sport()",
+      "car()",
+      "watch()",
+      "creditCardNumber()",
+      "creditCardType()",
+      "securityCode()",
+      "brand()",
+      "model()",
+      "brandWithModel()",
+      "strains()",
+      "cannabinoidAbbreviations()",
+      "cannabinoids()",
+      "terpenes()",
+      "medicalUses()",
+      "healthBenefits()",
+      "categories()",
+      "types()",
+      "buzzwords()",
+      "brands()",
+      "name()",
+      "breed()",
+      "registry()",
+      "expressions()",
+      "terms()",
+      "sentences()",
+      "jokes()",
+      "asin()",
+      "flip()",
+      "name()",
+      "productName()",
+      "material()",
+      "brand()",
+      "vendor()",
+      "promotionCode(int)",
+      "character()",
+      "quote()",
+      "name()",
+      "suffix()",
+      "industry()",
+      "profession()",
+      "domainSuffix()",
+      "word()",
+      "abbreviation()",
+      "azimuth()",
+      "type()",
+      "platform()",
+      "operatingSystem()",
+      "linux()",
+      "macos()",
+      "windows()",
+      "brand()",
+      "heavyEquipment()",
+      "materials()",
+      "subcontractCategories()",
+      "roles()",
+      "trades()",
+      "standardCostCodes()",
+      "aons()",
+      "shardWorlds()",
+      "shards()",
+      "surges()",
+      "knightsRadiant()",
+      "metals()",
+      "allomancers()",
+      "feruchemists()",
+      "heralds()",
+      "sprens()",
+      "flag()",
+      "countryCode2()",
+      "countryCode3()",
+      "capital()",
+      "currency()",
+      "currencyCode()",
+      "name()",
+      "coin()",
+      "books()",
+      "cultureShips()",
+      "cultureShipClasses()",
+      "cultureShipClassAbvs()",
+      "civs()",
+      "planets()",
+      "name()",
+      "code()",
+      "hero()",
+      "heroine()",
+      "villain()",
+      "name()",
+      "title()",
+      "race()",
+      "educationalAttainment()",
+      "demonym()",
+      "sex()",
+      "maritalStatus()",
+      "modelName()",
+      "platform()",
+      "manufacturer()",
+      "serial()",
+      "internalDisease()",
+      "neurology()",
+      "surgery()",
+      "paediatrics()",
+      "gynecologyAndObstetrics()",
+      "ophthalmologyAndOtorhinolaryngology()",
+      "dermatology()",
+      "name()",
+      "breed()",
+      "sound()",
+      "memePhrase()",
+      "age()",
+      "coatLength()",
+      "gender()",
+      "size()",
+      "firstLevelDomain(String)",
+      "secondLevelDomain(String)",
+      "fullDomain(String)",
+      "validDomain(String)",
+      "name()",
+      "weight()",
+      "maxAscentSpeed()",
+      "maxDescentSpeed()",
+      "flightTime()",
+      "maxAltitude()",
+      "maxFlightDistance()",
+      "maxSpeed()",
+      "maxWindResistance()",
+      "maxAngularVelocity()",
+      "maxTiltAngle()",
+      "operatingTemperature()",
+      "batteryCapacity()",
+      "batteryVoltage()",
+      "batteryType()",
+      "batteryWeight()",
+      "chargingTemperature()",
+      "maxChargingPower()",
+      "iso()",
+      "maxResolution()",
+      "photoFormat()",
+      "videoFormat()",
+      "maxShutterSpeed()",
+      "minShutterSpeed()",
+      "shutterSpeedUnits()",
+      "alignments()",
+      "backgrounds()",
+      "cities()",
+      "klasses()",
+      "languages()",
+      "meleeWeapons()",
+      "monsters()",
+      "races()",
+      "rangedWeapons()",
+      "university()",
+      "course()",
+      "subjectWithNumber()",
+      "secondarySchool()",
+      "campus()",
+      "active()",
+      "passive()",
+      "electromechanical()",
+      "smiley()",
+      "cat()",
+      "lastWords()",
+      "extension()",
+      "mimeType()",
+      "nasdaqTicker()",
+      "nyseTicker()",
+      "stockMarket()",
+      "creditCard(CreditCardType)",
+      "name()",
+      "size()",
+      "types()",
+      "binaryTypes()",
+      "shortBinaryTypes()",
+      "name()",
+      "quote()",
+      "abbreviation()",
+      "adjective()",
+      "noun()",
+      "verb()",
+      "ingverb()",
+      "word()",
+      "activity()",
+      "talent()",
+      "name()",
+      "breed()",
+      "furniture()",
+      "room()",
+      "valid()",
+      "industry()",
+      "superSector()",
+      "sector()",
+      "subSector()",
+      "domainSuffix()",
+      "image()",
+      "httpMethod()",
+      "userAgent(UserAgent)",
+      "botUserAgent(BotUserAgent)",
+      "field()",
+      "seniority()",
+      "position()",
+      "keySkills()",
+      "title()",
+      "iGroups()",
+      "iiGroups()",
+      "iiiGroups()",
+      "girlGroups()",
+      "boyBands()",
+      "solo()",
+      "word()",
+      "buzzwords()",
+      "quote()",
+      "type()",
+      "name()",
+      "characteristic()",
+      "personage()",
+      "merit()",
+      "weakness()",
+      "height()",
+      "length()",
+      "volume()",
+      "weight()",
+      "metricHeight()",
+      "metricLength()",
+      "metricVolume()",
+      "metricWeight()",
+      "medicineName()",
+      "diseaseName()",
+      "hospitalName()",
+      "symptoms()",
+      "diagnosisCode()",
+      "procedureCode()",
+      "armyRank()",
+      "marinesRank()",
+      "navyRank()",
+      "airForceRank()",
+      "dodPaygrade()",
+      "currency()",
+      "currencyCode()",
+      "feeling()",
+      "emotion()",
+      "tone()",
+      "name()",
+      "range()",
+      "mountaineer()",
+      "instrument()",
+      "genre()",
+      "name()",
+      "nameWithMiddle()",
+      "firstName()",
+      "lastName()",
+      "prefix()",
+      "suffix()",
+      "title()",
+      "nationality()",
+      "language()",
+      "capitalCity()",
+      "codeWord()",
+      "places()",
+      "name()",
+      "food()",
+      "schools()",
+      "celebrities()",
+      "summerOlympics()",
+      "winterOlympics()",
+      "summerParalympics()",
+      "winterParalympics()",
+      "ancientOlympics()",
+      "unusual()",
+      "cellPhone()",
+      "phoneNumberInternational()",
+      "phoneNumberNational()",
+      "term()",
+      "brand()",
+      "camera()",
+      "lens()",
+      "genre()",
+      "imageTag()",
+      "aperture()",
+      "shutter()",
+      "iso()",
+      "name()",
+      "creator()",
+      "direct()",
+      "extended()",
+      "inLaw()",
+      "spouse()",
+      "parent()",
+      "sibling()",
+      "namePrefix()",
+      "nameSuffix()",
+      "name()",
+      "type()",
+      "description()",
+      "review()",
+      "quote()",
+      "name()",
+      "element()",
+      "elementSymbol()",
+      "unit()",
+      "scientist()",
+      "tool()",
+      "quark()",
+      "leptons()",
+      "bosons()",
+      "method()",
+      "contentType()",
+      "provisionalResponsePhrase()",
+      "successResponsePhrase()",
+      "redirectResponsePhrase()",
+      "clientErrorResponsePhrase()",
+      "serverErrorResponsePhrase()",
+      "globalErrorResponsePhrase()",
+      "adjective()",
+      "people()",
+      "nature()",
+      "foodAndDrink()",
+      "celebration()",
+      "activity()",
+      "travelAndPlaces()",
+      "objectsAndSymbols()",
+      "custom()",
+      "emoji()",
+      "planet()",
+      "moon()",
+      "galaxy()",
+      "nebula()",
+      "starCluster()",
+      "constellation()",
+      "star()",
+      "agency()",
+      "agencyAbbreviation()",
+      "nasaSpaceCraft()",
+      "company()",
+      "distanceMeasurement()",
+      "meteorite()",
+      "nsdqSymbol()",
+      "nyseSymbol()",
+      "plans()",
+      "statuses()",
+      "paymentMethods()",
+      "subscriptionTerms()",
+      "paymentTerms()",
+      "name()",
+      "prefix()",
+      "suffix()",
+      "power()",
+      "descriptor()",
+      "name()",
+      "creature()",
+      "state()",
+      "sport()",
+      "userName()",
+      "userId()",
+      "name()",
+      "prefix()",
+      "suffix()",
+      "manufacturer()",
+      "make()",
+      "model(String)",
+      "style()",
+      "color()",
+      "upholsteryColor()",
+      "upholsteryFabric()",
+      "upholstery()",
+      "transmission()",
+      "driveType()",
+      "fuelType()",
+      "carType()",
+      "engine()",
+      "doors()",
+      "licensePlate(String)",
+      "base()",
+      "past()",
+      "pastParticiple()",
+      "simplePresent()",
+      "ingForm()",
+      "description()",
+      "temperature(int, int, String)",
+      "quote()",
+      "sign()",
+      "character()",
+      "character()",
+      "quote()",
+      "character()",
+      "date()",
+      "quote()",
+      "character()",
+      "quote()",
+      "characters()",
+      "quotes()",
+      "tongueTwisters()",
+      "artist()",
+      "song()",
+      "character()",
+      "episode()",
+      "characters()",
+      "quotes()",
+      "characters()",
+      "quotes()",
+      "celebrities()",
+      "bigBads()",
+      "episodes()",
+      "fact()",
+      "character()",
+      "episode()",
+      "song()",
+      "quote()",
+      "actor()",
+      "character()",
+      "quote()",
+      "characters()",
+      "gadgets()",
+      "vehicles()",
+      "character()",
+      "doctor()",
+      "actor()",
+      "catchPhrase()",
+      "quote()",
+      "villain()",
+      "species()",
+      "character()",
+      "gadget()",
+      "location()",
+      "character()",
+      "actor()",
+      "character()",
+      "quote()",
+      "character()",
+      "title()",
+      "planet()",
+      "quote(Quote)",
+      "saying(Saying)",
+      "character()",
+      "location()",
+      "quote()",
+      "character()",
+      "vehicle()",
+      "quote()",
+      "characters()",
+      "celebrities()",
+      "quotes()",
+      "character()",
+      "location()",
+      "quote()",
+      "character()",
+      "city()",
+      "country()",
+      "character()",
+      "location()",
+      "quote()",
+      "hermesCatchPhrase()",
+      "character()",
+      "house()",
+      "city()",
+      "dragon()",
+      "quote()",
+      "actor()",
+      "character()",
+      "quote()",
+      "players()",
+      "songs()",
+      "character()",
+      "location()",
+      "quote()",
+      "book()",
+      "house()",
+      "spell()",
+      "characters()",
+      "locations()",
+      "quotes()",
+      "character()",
+      "location()",
+      "marvinQuote()",
+      "planet()",
+      "quote()",
+      "species()",
+      "starship()",
+      "character()",
+      "thorinsCompany()",
+      "quote()",
+      "location()",
+      "character()",
+      "catchPhrase()",
+      "highFive()",
+      "quote()",
+      "characters()",
+      "dragons()",
+      "locations()",
+      "character()",
+      "quote()",
+      "actor()",
+      "character()",
+      "quote()",
+      "character()",
+      "location()",
+      "character()",
+      "heist()",
+      "quote()",
+      "quote()",
+      "character()",
+      "village()",
+      "eye()",
+      "demon()",
+      "characters()",
+      "quotes()",
+      "character()",
+      "sea()",
+      "island()",
+      "location()",
+      "quote()",
+      "akumasNoMi()",
+      "actor()",
+      "movieName()",
+      "quote()",
+      "character()",
+      "releaseDate()",
+      "name()",
+      "location()",
+      "move()",
+      "type()",
+      "character()",
+      "quote()",
+      "character()",
+      "biologicalAgent()",
+      "equipment()",
+      "location()",
+      "creature()",
+      "character()",
+      "location()",
+      "quote()",
+      "queen()",
+      "quote()",
+      "character()",
+      "quote()",
+      "business()",
+      "adultMusical()",
+      "play()",
+      "kidsMusical()",
+      "character()",
+      "location()",
+      "quote()",
+      "characters()",
+      "quotes()",
+      "characters()",
+      "quotes()",
+      "episodes()",
+      "characters()",
+      "planets()",
+      "quotes()",
+      "character()",
+      "location()",
+      "species()",
+      "villain()",
+      "klingon()",
+      "character()",
+      "callSign()",
+      "quotes()",
+      "vehicles()",
+      "droids()",
+      "planets()",
+      "species()",
+      "wookieWords()",
+      "alternateCharacterSpelling()",
+      "character()",
+      "quote()",
+      "character()",
+      "quote()",
+      "movie()",
+      "characters()",
+      "quotes()",
+      "character()",
+      "creature()",
+      "weapon()",
+      "realName()",
+      "gameName()",
+      "location()",
+      "item()",
+      "characters()",
+      "locations()",
+      "ships()",
+      "quotes()",
+      "actors()",
+      "characters()",
+      "emails()",
+      "quotes()",
+      "book()",
+      "character()",
+      "creature()",
+      "location()",
+      "actors()",
+      "characters()",
+      "locations()",
+      "quotes()",
+      "characters()",
+      "positions()",
+      "departments()",
+      "character()",
+      "organization()",
+      "vehicle()",
+      "quote()",
+      "character(Character)",
+      "game()",
+      "location()",
+      "quote(Tron.Quote)",
+      "tagline()",
+      "vehicle()",
+      "alternateCharacterSpelling(AlternateCharacterSpelling)",
+      "character()",
+      "location()",
+      "quote()",
+      "characters()",
+      "speeches()",
+      "quotes()",
+      "character()",
+      "witcher()",
+      "school()",
+      "location()",
+      "quote()",
+      "monster()",
+      "sign()",
+      "potion()",
+      "book()",
+      "brand()",
+      "name()",
+      "style()",
+      "hop()",
+      "yeast()",
+      "malt()",
+      "country()",
+      "region(Coffee.Country)",
+      "variety()",
+      "intensifier()",
+      "body()",
+      "descriptor()",
+      "notes()",
+      "name1()",
+      "name2()",
+      "blendName()",
+      "variety()",
+      "topping()",
+      "flavor()",
+      "ingredient()",
+      "spice()",
+      "dish()",
+      "fruit()",
+      "vegetable()",
+      "sushi()",
+      "measurement()",
+      "variety()",
+      "type()",
+      "teams()",
+      "coaches()",
+      "positions()",
+      "players()",
+      "teams()",
+      "coaches()",
+      "positions()",
+      "players()",
+      "player()",
+      "tournament()",
+      "opening()",
+      "title()",
+      "teams()",
+      "players()",
+      "formats()",
+      "tournaments()",
+      "league()",
+      "team()",
+      "teams()",
+      "players()",
+      "coaches()",
+      "competitions()",
+      "positions()",
+      "driver()",
+      "team()",
+      "circuit()",
+      "grandPrix()",
+      "team()",
+      "player()",
+      "coach()",
+      "position()",
+      "formation()",
+      "classes()",
+      "weapon()",
+      "vehicle()",
+      "map()",
+      "faction()",
+      "troop()",
+      "rank()",
+      "defensiveBuilding()",
+      "character()",
+      "location()",
+      "objectOfPower()",
+      "alteredItem()",
+      "alteredWorldEvent()",
+      "hiss()",
+      "theBoard()",
+      "quote()",
+      "stats()",
+      "covenants()",
+      "classes()",
+      "shield()",
+      "location()",
+      "weapon()",
+      "skill()",
+      "spell()",
+      "npc()",
+      "race()",
+      "creature()",
+      "region()",
+      "dragon()",
+      "city()",
+      "firstName()",
+      "lastName()",
+      "quote()",
+      "player()",
+      "team()",
+      "event()",
+      "league()",
+      "game()",
+      "character()",
+      "faction()",
+      "location()",
+      "quote()",
+      "character()",
+      "enemy()",
+      "location()",
+      "mainProfession()",
+      "mainCharacter()",
+      "mainPattern()",
+      "standardRank()",
+      "battleground()",
+      "heroClass()",
+      "hero()",
+      "quote()",
+      "champion()",
+      "location()",
+      "quote()",
+      "summonerSpell()",
+      "masteries()",
+      "rank()",
+      "character()",
+      "zone()",
+      "event()",
+      "rank()",
+      "character()",
+      "specie()",
+      "cluster()",
+      "planet()",
+      "quote()",
+      "itemName()",
+      "tileName()",
+      "entityName()",
+      "monsterName()",
+      "animalName()",
+      "games()",
+      "creatures()",
+      "characters()",
+      "ages()",
+      "quotes()",
+      "hero()",
+      "location()",
+      "quote()",
+      "zone()",
+      "character()",
+      "game()",
+      "characters()",
+      "buffs()",
+      "statues()",
+      "weapons()",
+      "bosses()",
+      "enemies()",
+      "unit()",
+      "building()",
+      "character()",
+      "planet()",
+      "characters()",
+      "stages()",
+      "quotes()",
+      "moves()",
+      "characters()",
+      "games()",
+      "locations()",
+      "fighter()",
+      "stage()",
+      "characterName()",
+      "characterFirstName()",
+      "characterLastName()",
+      "trackName()",
+      "gameName()",
+      "title()",
+      "genre()",
+      "platform()",
+      "heros()",
+      "quotes()",
+      "locations()",
+      "factions()",
+      "creatures()",
+      "hero()",
+      "quotes()",
+      "game()",
+      "character()"
+    ],
+    "resolve(String, Supplier)": [
+      "countyByZipCode(String)"
+    ],
+    "AbstractProvider(T)": []
+  },
+  "net.datafaker.providers.base.Address": {
+    "streetName()": [],
+    "streetAddressNumber()": [],
+    "streetAddress()": [],
+    "streetAddress(boolean)": [],
+    "secondaryAddress()": [
+      "streetAddress(boolean)"
+    ],
+    "zipCode()": [],
+    "postcode()": [],
+    "zipCodePlus4()": [],
+    "zipCodeByState(String)": [],
+    "countyByZipCode(String)": [],
+    "streetSuffix()": [],
+    "streetPrefix()": [],
+    "citySuffix()": [],
+    "cityPrefix()": [],
+    "city()": [],
+    "cityName()": [],
+    "state()": [],
+    "stateAbbr()": [],
+    "latitude()": [
+      "latLon(String)",
+      "lonLat(String)"
+    ],
+    "longitude()": [
+      "latLon(String)",
+      "lonLat(String)"
+    ],
+    "latLon()": [],
+    "latLon(String)": [
+      "latLon()"
+    ],
+    "lonLat()": [],
+    "lonLat(String)": [
+      "lonLat()"
+    ],
+    "timeZone()": [],
+    "country()": [],
+    "countryCode()": [],
+    "buildingNumber()": [],
+    "fullAddress()": [],
+    "mailBox()": [],
+    "Address(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Ancient": {
+    "god()": [],
+    "primordial()": [],
+    "titan()": [],
+    "hero()": [],
+    "Ancient(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Animal": {
+    "name()": [],
+    "scientificName()": [],
+    "genus()": [
+      "scientificName()"
+    ],
+    "species()": [
+      "scientificName()"
+    ],
+    "Animal(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.App": {
+    "name()": [
+      "appName()"
+    ],
+    "version()": [],
+    "author()": [],
+    "App(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Appliance": {
+    "brand()": [],
+    "equipment()": [],
+    "Appliance(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Artist": {
+    "name()": [],
+    "Artist(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Australia": {
+    "locations()": [],
+    "animals()": [],
+    "states()": [],
+    "Australia(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Aviation": {
+    "aircraft()": [],
+    "airport()": [],
+    "METAR()": [],
+    "flight(String)": [
+      "flight()"
+    ],
+    "flight()": [],
+    "airline()": [],
+    "Aviation(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Aws": {
+    "region()": [
+      "acmARN()",
+      "albARN()",
+      "albTargetGroupARN()"
+    ],
+    "accountId()": [
+      "acmARN()",
+      "albARN()",
+      "albTargetGroupARN()"
+    ],
+    "acmARN()": [],
+    "albARN()": [],
+    "albTargetGroupARN()": [],
+    "route53ZoneId()": [],
+    "securityGroupId()": [],
+    "subnetId()": [],
+    "vpcId()": [],
+    "appName()": [
+      "albARN()",
+      "albTargetGroupARN()"
+    ],
+    "randHex()": [
+      "albARN()",
+      "albTargetGroupARN()",
+      "securityGroupId()",
+      "subnetId()",
+      "vpcId()"
+    ],
+    "Aws(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Azure": {
+    "region()": [],
+    "subscriptionId()": [
+      "tenantId()"
+    ],
+    "tenantId()": [],
+    "resourceGroup()": [],
+    "managementGroup()": [],
+    "applicationGateway()": [],
+    "bastionHost()": [],
+    "firewall()": [],
+    "loadBalancer()": [],
+    "networkSecurityGroup()": [],
+    "virtualNetwork()": [],
+    "virtualWan()": [],
+    "appServiceEnvironment()": [],
+    "appServicePlan()": [],
+    "loadTesting()": [],
+    "staticWebApp()": [],
+    "virtualMachine()": [],
+    "storageAccount()": [],
+    "containerRegistry()": [],
+    "containerApps()": [],
+    "containerAppsEnvironment()": [],
+    "containerInstance()": [],
+    "cosmosDBDatabase()": [],
+    "sqlDatabase()": [],
+    "mysqlDatabase()": [],
+    "postgreSQLDatabase()": [],
+    "serviceBus()": [],
+    "serviceBusQueue()": [],
+    "serviceBusTopic()": [],
+    "keyVault()": [],
+    "logAnalytics()": [],
+    "randHex()": [
+      "resourceGroup()",
+      "managementGroup()",
+      "applicationGateway()",
+      "bastionHost()",
+      "firewall()",
+      "loadBalancer()",
+      "networkSecurityGroup()",
+      "virtualNetwork()",
+      "virtualWan()",
+      "appServiceEnvironment()",
+      "appServicePlan()",
+      "loadTesting()",
+      "staticWebApp()",
+      "virtualMachine()",
+      "storageAccount()",
+      "containerRegistry()",
+      "containerApps()",
+      "containerAppsEnvironment()",
+      "containerInstance()",
+      "cosmosDBDatabase()",
+      "sqlDatabase()",
+      "mysqlDatabase()",
+      "postgreSQLDatabase()",
+      "serviceBus()",
+      "serviceBusQueue()",
+      "serviceBusTopic()",
+      "keyVault()",
+      "logAnalytics()"
+    ],
+    "Azure(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Barcode": {
+    "ean13()": [
+      "gtin13()"
+    ],
+    "ean8()": [
+      "gtin8()"
+    ],
+    "gtin14()": [],
+    "gtin12()": [],
+    "gtin13()": [],
+    "gtin8()": [],
+    "roundToHighestMultiplyOfTen(int)": [
+      "ean(int)"
+    ],
+    "ean(int)": [
+      "ean13()",
+      "ean8()",
+      "gtin14()",
+      "gtin12()"
+    ],
+    "type()": [],
+    "Barcode(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.BaseFaker": {
+    "getContext()": [
+      "expression(String)"
+    ],
+    "doWith(Callable, Locale)": [],
+    "doWith(Callable, long)": [],
+    "doWith(Callable, Locale, long)": [],
+    "numerify(String)": [],
+    "letterify(String)": [],
+    "letterify(String, boolean)": [],
+    "bothify(String)": [],
+    "bothify(String, boolean)": [],
+    "regexify(String)": [],
+    "examplify(String)": [],
+    "templatify(String, char, String...)": [],
+    "templatify(String, Map)": [],
+    "csv(int, String...)": [],
+    "csv(String, char, boolean, int, String...)": [],
+    "json(String...)": [],
+    "jsona(String...)": [],
+    "random()": [],
+    "fakeValuesService()": [
+      "templatify(String, char, String...)",
+      "templatify(String, Map<Character, String[]>)",
+      "csv(int, String...)",
+      "csv(String, char, boolean, int, String...)",
+      "json(String...)",
+      "jsona(String...)",
+      "addPath(Locale, Path)",
+      "addUrl(Locale, URL)"
+    ],
+    "addPath(Locale, Path)": [],
+    "populate(Class)": [],
+    "populate(Class, Schema)": [],
+    "addUrl(Locale, URL)": [],
+    "getProvider(Class, Function, PR)": [
+      "getProvider(Class<AP>, Function<PR, AP>)"
+    ],
+    "getProvider(String, FakerContext)": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "collection()": [],
+    "collection(Supplier...)": [],
+    "collection(List)": [],
+    "stream()": [],
+    "stream(Supplier...)": [],
+    "stream(List)": [],
+    "resolve(String)": [],
+    "resolve(String, Supplier)": [],
+    "expression(String)": [],
+    "getFaker()": [],
+    "getMethod(AbstractProvider, String)": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "BaseFaker()": [],
+    "BaseFaker(Locale)": [],
+    "BaseFaker(Random)": [],
+    "BaseFaker(Locale, Random)": [],
+    "BaseFaker(Locale, RandomService)": [],
+    "BaseFaker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.providers.base.BaseProviders": {
+    "address()": [],
+    "ancient()": [],
+    "animal()": [],
+    "app()": [
+      "appName()"
+    ],
+    "appliance()": [],
+    "artist()": [],
+    "australia()": [],
+    "aviation()": [],
+    "aws()": [],
+    "azure()": [],
+    "barcode()": [],
+    "bloodtype()": [],
+    "book()": [],
+    "bool()": [],
+    "brand()": [],
+    "business()": [],
+    "camera()": [],
+    "cannabis()": [],
+    "cat()": [],
+    "chiquito()": [],
+    "cnpj()": [],
+    "code()": [],
+    "coin()": [],
+    "color()": [],
+    "commerce()": [],
+    "community()": [],
+    "company()": [],
+    "compass()": [],
+    "computer()": [],
+    "construction()": [],
+    "cosmere()": [],
+    "country()": [],
+    "cpf()": [],
+    "cryptoCoin()": [],
+    "currency()": [],
+    "cultureSeries()": [],
+    "date()": [
+      "getValidRrn(BaseProviders)",
+      "creditCardExpiry()",
+      "peselNumber()"
+    ],
+    "disease()": [],
+    "demographic()": [],
+    "dcComics()": [],
+    "device()": [],
+    "dog()": [],
+    "domain()": [],
+    "drone()": [],
+    "drivingLicense()": [],
+    "dungeonsAndDragons()": [],
+    "educator()": [],
+    "electricalComponents()": [],
+    "emoji()": [],
+    "duration()": [],
+    "famousLastWords()": [],
+    "file()": [],
+    "finance()": [],
+    "funnyName()": [],
+    "garmentSize()": [],
+    "gender()": [
+      "getValidRrn(BaseProviders)"
+    ],
+    "greekPhilosopher()": [],
+    "hacker()": [],
+    "hashing()": [],
+    "hipster()": [],
+    "hobby()": [],
+    "hololive()": [],
+    "horse()": [],
+    "house()": [],
+    "idNumber()": [],
+    "industrySegments()": [],
+    "internet()": [
+      "acmARN()",
+      "fileName(String, String, String, String)",
+      "characters(int, boolean)",
+      "characters(int, int, boolean, boolean, boolean)",
+      "characters(int, boolean, boolean, boolean)",
+      "bodyString()",
+      "nameAddress()"
+    ],
+    "job()": [],
+    "kpop()": [],
+    "locality()": [],
+    "lorem()": [
+      "fileName(String, String, String, String)",
+      "generateString(String, String)",
+      "slug()",
+      "slug(List<String>, String)"
+    ],
+    "marketing()": [],
+    "matz()": [],
+    "mbti()": [],
+    "measurement()": [],
+    "medical()": [],
+    "military()": [],
+    "money()": [],
+    "mood()": [],
+    "mountain()": [],
+    "mountaineering()": [],
+    "music()": [],
+    "name()": [
+      "emailAddress()",
+      "safeEmailAddress()",
+      "domainWord()",
+      "url()",
+      "bodyString()",
+      "nameAddress()"
+    ],
+    "nation()": [
+      "getValidRrn(BaseProviders)"
+    ],
+    "natoPhoneticAlphabet()": [],
+    "nigeria()": [],
+    "number()": [
+      "getInvalid(BaseProviders)",
+      "getValid(BaseProviders)",
+      "flight(String)",
+      "ean(int)",
+      "creditCardExpiry()",
+      "isbnRegistrant()",
+      "imei()",
+      "promotionCode(int)",
+      "distanceMeasurement()",
+      "text(int, int, boolean, boolean, boolean)",
+      "future(int, ChronoUnit)",
+      "future(int, int, ChronoUnit)",
+      "past(int, ChronoUnit)",
+      "past(int, int, ChronoUnit)",
+      "between(LocalTime, LocalTime)",
+      "carOptions(int, int)",
+      "standardSpecs(int, int)"
+    ],
+    "olympicSport()": [],
+    "passport()": [],
+    "text()": [
+      "route53ZoneId()",
+      "password(int, int, boolean, boolean, boolean)",
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "phoneNumber()": [],
+    "photography()": [],
+    "programmingLanguage()": [],
+    "relationships()": [],
+    "restaurant()": [],
+    "robin()": [],
+    "rockBand()": [],
+    "science()": [],
+    "slackEmoji()": [],
+    "shakespeare()": [],
+    "sip()": [],
+    "size()": [],
+    "space()": [],
+    "stock()": [],
+    "subscription()": [],
+    "superhero()": [],
+    "team()": [],
+    "time()": [],
+    "twitter()": [],
+    "unique()": [],
+    "university()": [],
+    "vehicle()": [
+      "car()"
+    ],
+    "verb()": [],
+    "weather()": [],
+    "yoda()": [],
+    "zodiac()": []
+  },
+  "net.datafaker.providers.base.BloodType": {
+    "aboTypes()": [],
+    "rhTypes()": [],
+    "pTypes()": [],
+    "bloodGroup()": [],
+    "BloodType(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Book": {
+    "author()": [],
+    "title()": [],
+    "publisher()": [],
+    "genre()": [],
+    "Book(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Bool": {
+    "bool()": [],
+    "Bool(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Brand": {
+    "sport()": [],
+    "car()": [],
+    "watch()": [],
+    "Brand(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Business": {
+    "creditCardNumber()": [],
+    "creditCardType()": [],
+    "creditCardExpiry()": [],
+    "securityCode()": [],
+    "Business(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Camera": {
+    "brand()": [],
+    "model()": [],
+    "brandWithModel()": [],
+    "Camera(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Cannabis": {
+    "strains()": [],
+    "cannabinoidAbbreviations()": [],
+    "cannabinoids()": [],
+    "terpenes()": [],
+    "medicalUses()": [],
+    "healthBenefits()": [],
+    "categories()": [],
+    "types()": [],
+    "buzzwords()": [],
+    "brands()": [],
+    "Cannabis(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Cat": {
+    "name()": [],
+    "breed()": [],
+    "registry()": [],
+    "Cat(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Chiquito": {
+    "expressions()": [],
+    "terms()": [],
+    "sentences()": [],
+    "jokes()": [],
+    "Chiquito(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.CNPJ": {
+    "valid()": [],
+    "valid(boolean)": [],
+    "valid(boolean, boolean)": [],
+    "invalid()": [],
+    "invalid(boolean)": [],
+    "invalid(boolean, boolean)": [],
+    "CNPJ(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Code": {
+    "isbnGs1()": [],
+    "isbnGroup()": [],
+    "isbnRegistrant()": [],
+    "isbn10()": [],
+    "isbn10(boolean)": [
+      "isbn10()"
+    ],
+    "isbn13()": [],
+    "isbn13(boolean)": [
+      "isbn13()"
+    ],
+    "isbn10CheckDigit(CharSequence)": [
+      "isbn10(boolean)"
+    ],
+    "isbn13CheckDigit(CharSequence)": [
+      "isbn13(boolean)"
+    ],
+    "stripIsbnSeparator(CharSequence)": [
+      "isbn10(boolean)",
+      "isbn13(boolean)",
+      "isbn10CheckDigit(CharSequence)",
+      "isbn13CheckDigit(CharSequence)"
+    ],
+    "asin()": [],
+    "imei()": [],
+    "ean8()": [],
+    "gtin8()": [
+      "ean8()"
+    ],
+    "gtin13()": [
+      "ean13()"
+    ],
+    "ean13()": [],
+    "gtin(String, int[])": [
+      "gtin8()",
+      "gtin13()"
+    ],
+    "Code(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Coin": {
+    "flip()": [],
+    "Coin(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Color": {
+    "name()": [],
+    "hex()": [],
+    "hex(boolean)": [
+      "hex()"
+    ],
+    "Color(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Commerce": {
+    "department()": [],
+    "productName()": [],
+    "material()": [],
+    "brand()": [],
+    "vendor()": [],
+    "price()": [],
+    "price(double, double)": [
+      "price()"
+    ],
+    "promotionCode()": [],
+    "promotionCode(int)": [
+      "promotionCode()"
+    ],
+    "Commerce(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Community": {
+    "character()": [],
+    "quote()": [],
+    "Community(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Company": {
+    "name()": [
+      "domainName()"
+    ],
+    "suffix()": [],
+    "industry()": [],
+    "profession()": [],
+    "buzzword()": [],
+    "catchPhrase()": [],
+    "bs()": [],
+    "logo()": [],
+    "url()": [],
+    "domainName()": [
+      "url()"
+    ],
+    "domainSuffix()": [
+      "url()"
+    ],
+    "joinSampleOfEachList(List)": [
+      "catchPhrase()",
+      "bs()"
+    ],
+    "Company(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Compass": {
+    "compassPoint(CompassPoint)": [],
+    "word()": [],
+    "abbreviation()": [],
+    "azimuth()": [],
+    "Compass(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Compass.CompassPoint": {
+    "CompassPoint(String)": []
+  },
+  "net.datafaker.providers.base.Computer": {
+    "type()": [],
+    "platform()": [],
+    "operatingSystem()": [],
+    "linux()": [],
+    "macos()": [],
+    "windows()": [],
+    "brand()": [],
+    "Computer(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Construction": {
+    "heavyEquipment()": [],
+    "materials()": [],
+    "subcontractCategories()": [],
+    "roles()": [],
+    "trades()": [],
+    "standardCostCodes()": [],
+    "Construction(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Cosmere": {
+    "aons()": [],
+    "shardWorlds()": [],
+    "shards()": [],
+    "surges()": [],
+    "knightsRadiant()": [],
+    "metals()": [],
+    "allomancers()": [],
+    "feruchemists()": [],
+    "heralds()": [],
+    "sprens()": [],
+    "Cosmere(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Country": {
+    "flag()": [],
+    "countryCode2()": [],
+    "countryCode3()": [],
+    "capital()": [],
+    "currency()": [],
+    "currencyCode()": [],
+    "name()": [],
+    "Country(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.CPF": {
+    "valid()": [],
+    "valid(boolean)": [],
+    "invalid()": [],
+    "invalid(boolean)": [],
+    "CPF(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.CreditCardType": {},
+  "net.datafaker.providers.base.CryptoCoin": {
+    "coin()": [],
+    "CryptoCoin(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.CultureSeries": {
+    "books()": [],
+    "cultureShips()": [],
+    "cultureShipClasses()": [],
+    "cultureShipClassAbvs()": [],
+    "civs()": [],
+    "planets()": [],
+    "CultureSeries(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Currency": {
+    "name()": [],
+    "code()": [],
+    "Currency(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.DateAndTime": {
+    "future(int, TimeUnit)": [
+      "future(int, TimeUnit, String)"
+    ],
+    "future(int, TimeUnit, String)": [
+      "creditCardExpiry()"
+    ],
+    "future(int, int, TimeUnit)": [
+      "future(int, int, TimeUnit, String)"
+    ],
+    "future(int, int, TimeUnit, String)": [],
+    "future(int, TimeUnit, T)": [
+      "future(int, TimeUnit)",
+      "future(int, int, TimeUnit)",
+      "future(int, TimeUnit, T, String)"
+    ],
+    "future(int, TimeUnit, T, String)": [],
+    "past(int, TimeUnit)": [
+      "past(int, TimeUnit, String)"
+    ],
+    "past(int, TimeUnit, String)": [],
+    "past(int, int, TimeUnit)": [
+      "past(int, int, TimeUnit, String)"
+    ],
+    "past(int, int, TimeUnit, String)": [],
+    "past(int, TimeUnit, T)": [
+      "past(int, TimeUnit)",
+      "past(int, int, TimeUnit)",
+      "past(int, TimeUnit, Date, String)"
+    ],
+    "past(int, TimeUnit, Date, String)": [],
+    "between(T, T)": [
+      "between(T, T, String)"
+    ],
+    "between(T, T, String)": [],
+    "birthday()": [
+      "getValidRrn(BaseProviders)"
+    ],
+    "birthday(String)": [],
+    "birthday(int, int)": [
+      "birthday()",
+      "birthday(String)",
+      "birthday(int, int, String)",
+      "peselNumber()"
+    ],
+    "birthday(int, int, String)": [],
+    "duration(long, ChronoUnit)": [],
+    "duration(long, long, ChronoUnit)": [
+      "duration(long, ChronoUnit)",
+      "duration(long, String)"
+    ],
+    "duration(long, String)": [],
+    "duration(long, long, String)": [],
+    "period(Period, Period)": [],
+    "str2durationUnit(String)": [
+      "duration(long, String)",
+      "duration(long, long, String)"
+    ],
+    "generateDuration(long, ChronoUnit)": [
+      "duration(long, long, ChronoUnit)",
+      "duration(long, long, String)"
+    ],
+    "toString(Date, String)": [
+      "future(int, TimeUnit, String)",
+      "future(int, int, TimeUnit, String)",
+      "future(int, TimeUnit, T, String)",
+      "past(int, TimeUnit, String)",
+      "past(int, int, TimeUnit, String)",
+      "past(int, TimeUnit, Date, String)",
+      "between(T, T, String)",
+      "birthday(String)",
+      "birthday(int, int, String)"
+    ],
+    "DateAndTime(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.DcComics": {
+    "hero()": [],
+    "heroine()": [],
+    "villain()": [],
+    "name()": [],
+    "title()": [],
+    "DcComics(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Demographic": {
+    "race()": [],
+    "educationalAttainment()": [],
+    "demonym()": [],
+    "sex()": [],
+    "maritalStatus()": [],
+    "Demographic(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Device": {
+    "modelName()": [],
+    "platform()": [],
+    "manufacturer()": [],
+    "serial()": [],
+    "Device(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Disease": {
+    "internalDisease()": [],
+    "neurology()": [],
+    "surgery()": [],
+    "paediatrics()": [],
+    "gynecologyAndObstetrics()": [],
+    "ophthalmologyAndOtorhinolaryngology()": [],
+    "dermatology()": [],
+    "Disease(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Dog": {
+    "name()": [],
+    "breed()": [],
+    "sound()": [],
+    "memePhrase()": [],
+    "age()": [],
+    "coatLength()": [],
+    "gender()": [],
+    "size()": [],
+    "Dog(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Domain": {
+    "firstLevelDomain(String)": [],
+    "secondLevelDomain(String)": [],
+    "fullDomain(String)": [],
+    "validDomain(String)": [],
+    "Domain(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.DrivingLicense": {
+    "drivingLicense(String)": [],
+    "DrivingLicense(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Drone": {
+    "name()": [],
+    "weight()": [],
+    "maxAscentSpeed()": [],
+    "maxDescentSpeed()": [],
+    "flightTime()": [],
+    "maxAltitude()": [],
+    "maxFlightDistance()": [],
+    "maxSpeed()": [],
+    "maxWindResistance()": [],
+    "maxAngularVelocity()": [],
+    "maxTiltAngle()": [],
+    "operatingTemperature()": [],
+    "batteryCapacity()": [],
+    "batteryVoltage()": [],
+    "batteryType()": [],
+    "batteryWeight()": [],
+    "chargingTemperature()": [],
+    "maxChargingPower()": [],
+    "iso()": [],
+    "maxResolution()": [],
+    "photoFormat()": [],
+    "videoFormat()": [],
+    "maxShutterSpeed()": [],
+    "minShutterSpeed()": [],
+    "shutterSpeedUnits()": [],
+    "Drone(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.DungeonsAndDragons": {
+    "alignments()": [],
+    "backgrounds()": [],
+    "cities()": [],
+    "klasses()": [],
+    "languages()": [],
+    "meleeWeapons()": [],
+    "monsters()": [],
+    "races()": [],
+    "rangedWeapons()": [],
+    "DungeonsAndDragons(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Educator": {
+    "university()": [],
+    "course()": [],
+    "subjectWithNumber()": [],
+    "secondarySchool()": [],
+    "campus()": [],
+    "Educator(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.ElectricalComponents": {
+    "active()": [],
+    "passive()": [],
+    "electromechanical()": [],
+    "ElectricalComponents(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Emoji": {
+    "smiley()": [],
+    "cat()": [],
+    "Emoji(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.FakeDuration": {
+    "getNumberBetween(long)": [
+      "atMostMinutes(long)",
+      "atMostHours(long)",
+      "atMostDays(long)",
+      "atMostSeconds(long)"
+    ],
+    "atMostMinutes(long)": [],
+    "atMostHours(long)": [],
+    "atMostDays(long)": [],
+    "atMostSeconds(long)": [],
+    "FakeDuration(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.FamousLastWords": {
+    "lastWords()": [],
+    "FamousLastWords(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.File": {
+    "extension()": [
+      "fileName(String, String, String, String)"
+    ],
+    "mimeType()": [],
+    "fileName()": [],
+    "fileName(String, String, String, String)": [
+      "fileName()"
+    ],
+    "File(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Finance": {
+    "nasdaqTicker()": [],
+    "nyseTicker()": [],
+    "stockMarket()": [],
+    "creditCard(CreditCardType)": [
+      "creditCard()"
+    ],
+    "creditCard()": [],
+    "bic()": [],
+    "iban()": [],
+    "iban(String)": [
+      "iban()"
+    ],
+    "randomCreditCardType()": [
+      "creditCard()"
+    ],
+    "sum(String[])": [
+      "creditCard(CreditCardType)"
+    ],
+    "calculateIbanChecksum(String, String)": [
+      "iban(String)"
+    ],
+    "padLeftZeros(String, int)": [
+      "calculateIbanChecksum(String, String)"
+    ],
+    "createCountryCodeToBasicBankAccountNumberPatternMap()": [],
+    "Finance(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.FunnyName": {
+    "name()": [],
+    "FunnyName(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.GarmentSize": {
+    "size()": [],
+    "GarmentSize(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Gender": {
+    "types()": [],
+    "binaryTypes()": [],
+    "shortBinaryTypes()": [
+      "getValidRrn(BaseProviders)"
+    ],
+    "Gender(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.GreekPhilosopher": {
+    "name()": [],
+    "quote()": [],
+    "GreekPhilosopher(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Hacker": {
+    "abbreviation()": [],
+    "adjective()": [],
+    "noun()": [],
+    "verb()": [],
+    "ingverb()": [],
+    "Hacker(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Hashing": {
+    "md2()": [],
+    "md5()": [],
+    "sha1()": [],
+    "sha384()": [],
+    "sha256()": [],
+    "sha512()": [],
+    "generateString(String, String)": [
+      "md2()",
+      "md5()",
+      "sha1()",
+      "sha384()",
+      "sha256()",
+      "sha512()"
+    ],
+    "Hashing(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Hipster": {
+    "word()": [],
+    "Hipster(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Hobby": {
+    "activity()": [],
+    "Hobby(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Hololive": {
+    "talent()": [],
+    "Hololive(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Horse": {
+    "name()": [],
+    "breed()": [],
+    "Horse(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.House": {
+    "furniture()": [],
+    "room()": [],
+    "House(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.IdNumber": {
+    "valid()": [],
+    "invalid()": [],
+    "ssnValid()": [],
+    "validSvSeSsn()": [],
+    "validEnZaSsn()": [],
+    "inValidEnZaSsn()": [],
+    "invalidSvSeSsn()": [],
+    "singaporeanFin()": [],
+    "singaporeanFinBefore2000()": [],
+    "singaporeanUin()": [],
+    "singaporeanUinBefore2000()": [],
+    "validZhCNSsn()": [],
+    "validPtNif()": [],
+    "invalidPtNif()": [],
+    "validEsMXSsn()": [],
+    "invalidEsMXSsn()": [],
+    "peselNumber()": [],
+    "peselNumber(LocalDate, Gender)": [
+      "peselNumber()"
+    ],
+    "validKoKrRrn()": [],
+    "IdNumber(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.IndustrySegments": {
+    "industry()": [],
+    "superSector()": [],
+    "sector()": [],
+    "subSector()": [],
+    "IndustrySegments(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Internet": {
+    "emailAddress()": [],
+    "emailAddress(String)": [
+      "emailAddress()"
+    ],
+    "emailAddress(String, String)": [
+      "emailAddress(String)",
+      "safeEmailAddress(String)"
+    ],
+    "safeEmailAddress()": [],
+    "safeEmailAddress(String)": [
+      "safeEmailAddress()"
+    ],
+    "stripAccents(String)": [
+      "emailAddress(String, String)"
+    ],
+    "domainName()": [
+      "bodyString()"
+    ],
+    "domainWord()": [
+      "domainName()",
+      "url()"
+    ],
+    "domainSuffix()": [
+      "domainName()",
+      "url()"
+    ],
+    "url()": [],
+    "image()": [],
+    "image(int, int)": [
+      "image()"
+    ],
+    "image(int, int, String)": [],
+    "httpMethod()": [],
+    "password()": [],
+    "password(boolean)": [],
+    "password(int, int)": [
+      "password()"
+    ],
+    "password(int, int, boolean)": [
+      "password(int, int)",
+      "characters(int, boolean)"
+    ],
+    "password(int, int, boolean, boolean)": [
+      "password(int, int, boolean)"
+    ],
+    "password(int, int, boolean, boolean, boolean)": [
+      "password(boolean)",
+      "password(int, int, boolean, boolean)",
+      "characters(int, int, boolean, boolean, boolean)",
+      "characters(int, boolean, boolean, boolean)"
+    ],
+    "port()": [],
+    "macAddress(String)": [
+      "macAddress()"
+    ],
+    "macAddress()": [],
+    "ipV4Address()": [
+      "ipV4Cidr()",
+      "bodyString()",
+      "nameAddress()"
+    ],
+    "getIpV4Address()": [
+      "ipV4Address()"
+    ],
+    "privateIpV4Address()": [],
+    "getPrivateIpV4Address()": [
+      "privateIpV4Address()"
+    ],
+    "publicIpV4Address()": [],
+    "getPublicIpV4Address()": [
+      "publicIpV4Address()"
+    ],
+    "ipV4Cidr()": [],
+    "ipV6Address()": [
+      "ipV6Cidr()"
+    ],
+    "getIpV6Address()": [
+      "ipV6Address()"
+    ],
+    "ipV6Cidr()": [],
+    "slug()": [
+      "fileName(String, String, String, String)"
+    ],
+    "slug(List, String)": [
+      "slug()"
+    ],
+    "uuidv3()": [
+      "uuid()"
+    ],
+    "uuid()": [
+      "acmARN()",
+      "bodyString()"
+    ],
+    "random(T[])": [
+      "getPrivateIpV4Address()"
+    ],
+    "userAgent(UserAgent)": [
+      "userAgent()"
+    ],
+    "userAgent()": [],
+    "botUserAgent(BotUserAgent)": [
+      "botUserAgentAny()"
+    ],
+    "botUserAgentAny()": [],
+    "Internet(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Internet.UserAgent": {
+    "any(BaseProviders)": [
+      "userAgent(UserAgent)"
+    ],
+    "toString()": [
+      "userAgent(UserAgent)"
+    ],
+    "UserAgent(String)": []
+  },
+  "net.datafaker.providers.base.Internet.BotUserAgent": {
+    "any(BaseProviders)": [
+      "botUserAgent(BotUserAgent)"
+    ],
+    "toString()": [
+      "botUserAgent(BotUserAgent)"
+    ],
+    "BotUserAgent(String)": []
+  },
+  "net.datafaker.providers.base.Job": {
+    "field()": [],
+    "seniority()": [],
+    "position()": [],
+    "keySkills()": [],
+    "title()": [],
+    "Job(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Kpop": {
+    "iGroups()": [],
+    "iiGroups()": [],
+    "iiiGroups()": [],
+    "girlGroups()": [],
+    "boyBands()": [],
+    "solo()": [],
+    "Kpop(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Locality": {
+    "allSupportedLocales()": [],
+    "allSupportedLocales(Set)": [
+      "allSupportedLocales()"
+    ],
+    "displayName()": [],
+    "localeString()": [],
+    "localeStringWithRandom(Random)": [
+      "localeString()"
+    ],
+    "localeStringWithoutReplacement()": [],
+    "localeStringWithoutReplacement(Random)": [
+      "localeStringWithoutReplacement()"
+    ],
+    "Locality(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Lorem": {
+    "character()": [],
+    "character(boolean)": [
+      "character()"
+    ],
+    "characters()": [
+      "generateString(String, String)"
+    ],
+    "characters(boolean)": [],
+    "characters(int, int)": [],
+    "characters(int, int, boolean)": [],
+    "characters(int, int, boolean, boolean)": [
+      "characters(int, int, boolean)"
+    ],
+    "characters(int)": [],
+    "characters(int, boolean)": [
+      "character(boolean)",
+      "characters()",
+      "characters(boolean)",
+      "characters(int, int)",
+      "characters(int)"
+    ],
+    "characters(int, int, boolean, boolean, boolean)": [
+      "characters(int, int, boolean, boolean)"
+    ],
+    "characters(int, boolean, boolean)": [],
+    "characters(int, boolean, boolean, boolean)": [
+      "characters(int, boolean, boolean)"
+    ],
+    "words(int)": [
+      "slug()",
+      "slug(List<String>, String)",
+      "words()",
+      "sentence(int, int)"
+    ],
+    "words()": [],
+    "word()": [
+      "fileName(String, String, String, String)",
+      "words(int)"
+    ],
+    "sentence()": [
+      "sentences(int)",
+      "fixedString(int)"
+    ],
+    "sentence(int)": [
+      "sentence()",
+      "maxLengthSentence(int)"
+    ],
+    "sentence(int, int)": [
+      "sentence(int)"
+    ],
+    "sentences(int)": [
+      "paragraph(int)"
+    ],
+    "paragraph(int)": [
+      "paragraph()"
+    ],
+    "paragraph()": [
+      "paragraphs(int)"
+    ],
+    "paragraphs(int)": [],
+    "fixedString(int)": [],
+    "maxLengthSentence(int)": [],
+    "Lorem(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Marketing": {
+    "buzzwords()": [],
+    "Marketing(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Matz": {
+    "quote()": [],
+    "Matz(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Mbti": {
+    "type()": [],
+    "name()": [],
+    "characteristic()": [],
+    "personage()": [],
+    "merit()": [],
+    "weakness()": [],
+    "Mbti(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Measurement": {
+    "height()": [],
+    "length()": [],
+    "volume()": [],
+    "weight()": [],
+    "metricHeight()": [],
+    "metricLength()": [],
+    "metricVolume()": [],
+    "metricWeight()": [],
+    "Measurement(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Medical": {
+    "medicineName()": [],
+    "diseaseName()": [],
+    "hospitalName()": [],
+    "symptoms()": [],
+    "diagnosisCode()": [],
+    "procedureCode()": [],
+    "Medical(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Military": {
+    "armyRank()": [],
+    "marinesRank()": [],
+    "navyRank()": [],
+    "airForceRank()": [],
+    "dodPaygrade()": [],
+    "Military(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Money": {
+    "currency()": [],
+    "currencyCode()": [],
+    "Money(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Mood": {
+    "feeling()": [],
+    "emotion()": [],
+    "tone()": [],
+    "Mood(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Mountain": {
+    "name()": [],
+    "range()": [],
+    "Mountain(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Mountaineering": {
+    "mountaineer()": [],
+    "Mountaineering(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Music": {
+    "instrument()": [],
+    "key()": [
+      "chord()"
+    ],
+    "chord()": [],
+    "genre()": [],
+    "Music(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Name": {
+    "name()": [
+      "fullName()"
+    ],
+    "nameWithMiddle()": [],
+    "fullName()": [],
+    "firstName()": [
+      "url()",
+      "username()",
+      "bodyString()",
+      "nameAddress()"
+    ],
+    "lastName()": [
+      "domainWord()",
+      "username()"
+    ],
+    "prefix()": [],
+    "suffix()": [],
+    "title()": [],
+    "username()": [
+      "emailAddress()",
+      "safeEmailAddress()"
+    ],
+    "Name(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Nation": {
+    "nationality()": [],
+    "language()": [],
+    "capitalCity()": [],
+    "flag()": [],
+    "isoLanguage()": [],
+    "isoCountry()": [
+      "getValidRrn(BaseProviders)"
+    ],
+    "Nation(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.NatoPhoneticAlphabet": {
+    "codeWord()": [],
+    "NatoPhoneticAlphabet(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Nigeria": {
+    "places()": [],
+    "name()": [],
+    "food()": [],
+    "schools()": [],
+    "celebrities()": [],
+    "Nigeria(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Number": {
+    "randomDigit()": [],
+    "randomDigitNotZero()": [],
+    "positive()": [],
+    "negative()": [],
+    "numberBetween(int, int)": [
+      "flight(String)",
+      "creditCardExpiry()",
+      "isbnRegistrant()",
+      "imei()",
+      "positive()",
+      "negative()",
+      "distanceMeasurement()",
+      "text(int, int, boolean, boolean, boolean)",
+      "carOptions(int, int)",
+      "standardSpecs(int, int)"
+    ],
+    "numberBetween(long, long)": [
+      "future(int, ChronoUnit)",
+      "future(int, int, ChronoUnit)",
+      "past(int, ChronoUnit)",
+      "past(int, int, ChronoUnit)",
+      "between(LocalTime, LocalTime)"
+    ],
+    "randomNumber(int, boolean)": [
+      "ean(int)",
+      "randomNumber()"
+    ],
+    "randomNumber()": [],
+    "randomDouble(int, int, int)": [],
+    "randomDouble(int, long, long)": [
+      "randomDouble(int, int, int)"
+    ],
+    "decimalBetween(long, long)": [
+      "numberBetween(int, int)",
+      "numberBetween(long, long)",
+      "randomDouble(int, long, long)"
+    ],
+    "digits(int)": [
+      "getInvalid(BaseProviders)",
+      "getValid(BaseProviders)",
+      "isbnRegistrant()",
+      "promotionCode(int)",
+      "digit()"
+    ],
+    "digit()": [
+      "isbnRegistrant()"
+    ],
+    "Number(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.OlympicSport": {
+    "summerOlympics()": [],
+    "winterOlympics()": [],
+    "summerParalympics()": [],
+    "winterParalympics()": [],
+    "ancientOlympics()": [],
+    "unusual()": [],
+    "OlympicSport(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Options": {
+    "option(E...)": [],
+    "option(String...)": [],
+    "option(Class)": [
+      "quote()",
+      "saying()",
+      "character()",
+      "quote()",
+      "alternateCharacterSpelling()",
+      "region()"
+    ],
+    "subset(int, E...)": [],
+    "subset(int, String...)": [],
+    "nextElement(E[])": [],
+    "nextElement(List)": [],
+    "Options(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Passport": {
+    "valid()": [],
+    "Passport(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.PhoneNumber": {
+    "cellPhone()": [],
+    "phoneNumber()": [],
+    "phoneNumberInternational()": [],
+    "phoneNumberNational()": [
+      "phoneNumber()"
+    ],
+    "extension()": [],
+    "subscriberNumber(int)": [
+      "subscriberNumber()"
+    ],
+    "subscriberNumber()": [
+      "extension()"
+    ],
+    "PhoneNumber(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Photography": {
+    "term()": [],
+    "brand()": [],
+    "camera()": [],
+    "lens()": [],
+    "genre()": [],
+    "imageTag()": [],
+    "aperture()": [],
+    "shutter()": [],
+    "iso()": [],
+    "Photography(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.ProgrammingLanguage": {
+    "name()": [],
+    "creator()": [],
+    "ProgrammingLanguage(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.ProviderRegistration": {
+    "getFaker()": [
+      "getProvider(Class<AP>, Function<PR, AP>)"
+    ],
+    "getContext()": [
+      "resolve(String)",
+      "resolve(String, Supplier<String>)",
+      "latitude()",
+      "longitude()",
+      "getProvider(Class<AP>, Function<PR, AP>, PR)",
+      "buzzword()",
+      "catchPhrase()",
+      "bs()",
+      "domainName()",
+      "fileName(String, String, String, String)",
+      "username()",
+      "flag()",
+      "uppercaseCharacter()",
+      "fetchFromYaml(String)",
+      "fetchValues(String)"
+    ],
+    "getProvider(Class, Function)": [
+      "address()",
+      "ancient()",
+      "animal()",
+      "app()",
+      "appliance()",
+      "artist()",
+      "australia()",
+      "aviation()",
+      "aws()",
+      "azure()",
+      "barcode()",
+      "bloodtype()",
+      "book()",
+      "bool()",
+      "brand()",
+      "business()",
+      "camera()",
+      "cannabis()",
+      "cat()",
+      "chiquito()",
+      "cnpj()",
+      "code()",
+      "coin()",
+      "color()",
+      "commerce()",
+      "community()",
+      "company()",
+      "compass()",
+      "computer()",
+      "construction()",
+      "cosmere()",
+      "country()",
+      "cpf()",
+      "cryptoCoin()",
+      "currency()",
+      "cultureSeries()",
+      "date()",
+      "disease()",
+      "demographic()",
+      "dcComics()",
+      "device()",
+      "dog()",
+      "domain()",
+      "drone()",
+      "drivingLicense()",
+      "dungeonsAndDragons()",
+      "educator()",
+      "electricalComponents()",
+      "emoji()",
+      "duration()",
+      "famousLastWords()",
+      "file()",
+      "finance()",
+      "funnyName()",
+      "garmentSize()",
+      "gender()",
+      "greekPhilosopher()",
+      "hacker()",
+      "hashing()",
+      "hipster()",
+      "hobby()",
+      "hololive()",
+      "horse()",
+      "house()",
+      "idNumber()",
+      "industrySegments()",
+      "internet()",
+      "job()",
+      "kpop()",
+      "locality()",
+      "lorem()",
+      "marketing()",
+      "matz()",
+      "mbti()",
+      "measurement()",
+      "medical()",
+      "military()",
+      "money()",
+      "mood()",
+      "mountain()",
+      "mountaineering()",
+      "music()",
+      "name()",
+      "nation()",
+      "natoPhoneticAlphabet()",
+      "nigeria()",
+      "number()",
+      "olympicSport()",
+      "passport()",
+      "text()",
+      "phoneNumber()",
+      "photography()",
+      "programmingLanguage()",
+      "relationships()",
+      "restaurant()",
+      "robin()",
+      "rockBand()",
+      "science()",
+      "slackEmoji()",
+      "shakespeare()",
+      "sip()",
+      "size()",
+      "space()",
+      "stock()",
+      "subscription()",
+      "superhero()",
+      "team()",
+      "time()",
+      "twitter()",
+      "unique()",
+      "university()",
+      "vehicle()",
+      "verb()",
+      "weather()",
+      "yoda()",
+      "zodiac()",
+      "options()",
+      "aquaTeenHungerForce()",
+      "avatar()",
+      "backToTheFuture()",
+      "babylon5()",
+      "bigBangTheory()",
+      "bojackHorseman()",
+      "bossaNova()",
+      "breakingBad()",
+      "brooklynNineNine()",
+      "buffy()",
+      "chuckNorris()",
+      "cowboyBebop()",
+      "departed()",
+      "detectiveConan()",
+      "doctorWho()",
+      "doraemon()",
+      "dragonBall()",
+      "dumbAndDumber()",
+      "dune()",
+      "familyGuy()",
+      "finalSpace()",
+      "freshPrinceOfBelAir()",
+      "friends()",
+      "fullMetalAlchemist()",
+      "futurama()",
+      "gameOfThrones()",
+      "ghostbusters()",
+      "gratefulDead()",
+      "harryPotter()",
+      "heyArnold()",
+      "hitchhikersGuideToTheGalaxy()",
+      "hobbit()",
+      "howIMetYourMother()",
+      "howToTrainYourDragon()",
+      "kaamelott()",
+      "lebowski()",
+      "lordOfTheRings()",
+      "moneyHeist()",
+      "movie()",
+      "naruto()",
+      "newGirl()",
+      "onePiece()",
+      "oscarMovie()",
+      "pokemon()",
+      "princessBride()",
+      "residentEvil()",
+      "rickAndMorty()",
+      "ruPaulDragRace()",
+      "seinfeld()",
+      "show()",
+      "siliconValley()",
+      "simpsons()",
+      "southPark()",
+      "spongebob()",
+      "stargate()",
+      "starTrek()",
+      "starWars()",
+      "strangerThings()",
+      "studioGhibli()",
+      "suits()",
+      "supernatural()",
+      "swordArtOnline()",
+      "theExpanse()",
+      "theItCrowd()",
+      "theKingkillerChronicle()",
+      "theRoom()",
+      "theThickOfIt()",
+      "theVentureBros()",
+      "tron()",
+      "twinPeaks()",
+      "vForVendetta()",
+      "witcher()",
+      "beer()",
+      "coffee()",
+      "dessert()",
+      "food()",
+      "tea()",
+      "baseball()",
+      "basketball()",
+      "chess()",
+      "cricket()",
+      "englandfootball()",
+      "football()",
+      "formula1()",
+      "volleyball()",
+      "battlefield1()",
+      "clashOfClans()",
+      "control()",
+      "darkSouls()",
+      "eldenRing()",
+      "elderScrolls()",
+      "esports()",
+      "fallout()",
+      "halfLife()",
+      "hearthstone()",
+      "heroesOfTheStorm()",
+      "leagueOfLegends()",
+      "marvelSnap()",
+      "massEffect()",
+      "minecraft()",
+      "myst()",
+      "overwatch()",
+      "sonicTheHedgehog()",
+      "soulKnight()",
+      "starCraft()",
+      "streetFighter()",
+      "superMario()",
+      "superSmashBros()",
+      "touhou()",
+      "videoGame()",
+      "warhammerFantasy()",
+      "worldOfWarcraft()",
+      "zelda()"
+    ],
+    "resolve(String)": [
+      "genus()",
+      "version()",
+      "department()",
+      "promotionCode(int)",
+      "drivingLicense(String)",
+      "invalid()",
+      "emailAddress(String)",
+      "safeEmailAddress(String)",
+      "valid()",
+      "provisionalResponseCode()",
+      "successResponseCode()",
+      "redirectResponseCode()",
+      "clientErrorResponseCode()",
+      "serverErrorResponseCode()",
+      "globalErrorResponseCode()",
+      "carOptions(int, int)",
+      "standardSpecs(int, int)",
+      "licensePlate()",
+      "character()",
+      "company()",
+      "quote()",
+      "app()",
+      "invention()",
+      "motto()",
+      "url()",
+      "email()"
+    ],
+    "resolve(String, Supplier)": [],
+    "numerify(String)": [
+      "getValidSsn(BaseProviders)",
+      "getInValidSsn(BaseProviders)",
+      "getValidRrn(BaseProviders)",
+      "getValidSsn(BaseProviders)",
+      "getInvalidSsn(BaseProviders)",
+      "secondaryAddress()",
+      "buildingNumber()",
+      "mailBox()",
+      "version()",
+      "accountId()",
+      "creditCardNumber()",
+      "securityCode()",
+      "weight()",
+      "maxAscentSpeed()",
+      "maxDescentSpeed()",
+      "flightTime()",
+      "maxAltitude()",
+      "maxFlightDistance()",
+      "maxSpeed()",
+      "maxWindResistance()",
+      "maxAngularVelocity()",
+      "maxTiltAngle()",
+      "operatingTemperature()",
+      "batteryCapacity()",
+      "batteryVoltage()",
+      "batteryWeight()",
+      "chargingTemperature()",
+      "maxChargingPower()",
+      "maxResolution()",
+      "subjectWithNumber()",
+      "creditCard(CreditCardType)",
+      "invalid()",
+      "cellPhone()",
+      "phoneNumberInternational()",
+      "phoneNumberNational()",
+      "subscriberNumber(int)",
+      "callSign()"
+    ],
+    "letterify(String)": [],
+    "letterify(String, boolean)": [],
+    "bothify(String)": [
+      "zipCode()",
+      "postcode()",
+      "zipCodePlus4()",
+      "drivingLicense(String)",
+      "licensePlate()",
+      "licensePlate(String)"
+    ],
+    "bothify(String, boolean)": [
+      "namePrefix()"
+    ],
+    "regexify(String)": [
+      "getValidSsn(BaseProviders)",
+      "gtin(String, int[])",
+      "drivingLicense(String)",
+      "bic()",
+      "iban(String)",
+      "diagnosisCode()",
+      "procedureCode()",
+      "valid()",
+      "vin()",
+      "image()"
+    ],
+    "examplify(String)": [],
+    "templatify(String, char, String...)": [],
+    "templatify(String, Map)": [],
+    "csv(int, String...)": [],
+    "csv(String, char, boolean, int, String...)": [],
+    "json(String...)": [],
+    "jsona(String...)": [],
+    "random()": [
+      "get(BaseProviders)",
+      "getBirthday(BaseProviders)",
+      "validDay(int, int, BaseProviders)",
+      "getValidFIN(BaseProviders, Type)",
+      "randomDigit()",
+      "getGenderDigit(Gender)",
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "cpf(BaseProviders, boolean, boolean)",
+      "getValid(BaseProviders)",
+      "getValidSsn(BaseProviders)",
+      "streetAddressNumber()",
+      "latitude()",
+      "longitude()",
+      "randHex()",
+      "subscriptionId()",
+      "randHex()",
+      "bool()",
+      "isbnRegistrant()",
+      "hex(boolean)",
+      "department()",
+      "price(double, double)",
+      "buzzword()",
+      "logo()",
+      "joinSampleOfEachList(List<List<String>>)",
+      "future(int, TimeUnit, T)",
+      "past(int, TimeUnit, T)",
+      "between(T, T)",
+      "birthday(int, int)",
+      "duration(long, long, ChronoUnit)",
+      "duration(long, long, String)",
+      "period(Period, Period)",
+      "validDomain(String)",
+      "getNumberBetween(long)",
+      "iban()",
+      "randomCreditCardType()",
+      "port()",
+      "macAddress(String)",
+      "getIpV4Address()",
+      "getPrivateIpV4Address()",
+      "getPublicIpV4Address()",
+      "ipV4Cidr()",
+      "getIpV6Address()",
+      "ipV6Cidr()",
+      "uuidv3()",
+      "random(T[])",
+      "any(BaseProviders)",
+      "any(BaseProviders)",
+      "displayName()",
+      "localeString()",
+      "localeStringWithoutReplacement()",
+      "characters(int, int)",
+      "sentence(int, int)",
+      "paragraph(int)",
+      "isoLanguage()",
+      "isoCountry()",
+      "randomDigit()",
+      "randomDigitNotZero()",
+      "numberBetween(int, int)",
+      "numberBetween(long, long)",
+      "randomNumber(int, boolean)",
+      "randomNumber()",
+      "decimalBetween(long, long)",
+      "digits(int)",
+      "option(E...)",
+      "option(String...)",
+      "option(Class<E>)",
+      "subset(int, E...)",
+      "subset(int, String...)",
+      "nextElement(E[])",
+      "nextElement(List<E>)",
+      "any()",
+      "randomElement(String[])",
+      "messagingPort()",
+      "rtpPort()",
+      "text(TextRuleConfig)",
+      "createdTime(boolean, Date, Date)",
+      "twitterId(int)",
+      "text(String[], int, int)",
+      "getLink(String, int)",
+      "fetchFromYaml(String)",
+      "temperature(int, int, String)",
+      "quotes()",
+      "alternateCharacterSpelling()",
+      "battlegroundsScore()",
+      "standardRank()",
+      "tileItemName()",
+      "build()",
+      "build()"
+    ],
+    "expression(String)": [
+      "isbn10(boolean)",
+      "isbn13(boolean)"
+    ],
+    "fakeValuesService()": [
+      "resolve(String)",
+      "resolve(String, Supplier<String>)",
+      "buzzword()",
+      "catchPhrase()",
+      "bs()",
+      "flag()",
+      "fetchValues(String)"
+    ],
+    "options()": [
+      "getInValidSsn(BaseProviders)",
+      "getPattern(BaseProviders)",
+      "get(BaseProviders)",
+      "getWrong(BaseProviders)",
+      "getValid(BaseProviders)",
+      "getPattern(BaseProviders)",
+      "getValidSsn(BaseProviders)",
+      "isbnGs1()",
+      "isbnGroup()",
+      "imei()",
+      "operatingSystem()",
+      "key()",
+      "chord()",
+      "quote()",
+      "saying()",
+      "character()",
+      "quote()",
+      "alternateCharacterSpelling()",
+      "region()"
+    ],
+    "addPath(Locale, Path)": [],
+    "addUrl(Locale, URL)": []
+  },
+  "net.datafaker.providers.base.Relationship": {
+    "direct()": [],
+    "extended()": [],
+    "inLaw()": [],
+    "spouse()": [],
+    "parent()": [],
+    "sibling()": [],
+    "any()": [],
+    "Relationship(BaseProviders)": [
+      "any()"
+    ]
+  },
+  "net.datafaker.providers.base.Restaurant": {
+    "namePrefix()": [],
+    "nameSuffix()": [],
+    "name()": [],
+    "type()": [],
+    "description()": [],
+    "review()": [],
+    "Restaurant(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Robin": {
+    "quote()": [],
+    "Robin(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.RockBand": {
+    "name()": [],
+    "RockBand(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Science": {
+    "element()": [],
+    "elementSymbol()": [],
+    "unit()": [],
+    "scientist()": [],
+    "tool()": [],
+    "quark()": [],
+    "leptons()": [],
+    "bosons()": [],
+    "Science(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Shakespeare": {
+    "hamletQuote()": [],
+    "asYouLikeItQuote()": [],
+    "kingRichardIIIQuote()": [],
+    "romeoAndJulietQuote()": [],
+    "randomElement(String[])": [
+      "hamletQuote()",
+      "asYouLikeItQuote()",
+      "kingRichardIIIQuote()",
+      "romeoAndJulietQuote()"
+    ],
+    "Shakespeare(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Sip": {
+    "method()": [],
+    "contentType()": [],
+    "messagingPort()": [
+      "nameAddress()"
+    ],
+    "rtpPort()": [
+      "bodyString()"
+    ],
+    "provisionalResponseCode()": [],
+    "successResponseCode()": [],
+    "redirectResponseCode()": [],
+    "clientErrorResponseCode()": [],
+    "serverErrorResponseCode()": [],
+    "globalErrorResponseCode()": [],
+    "provisionalResponsePhrase()": [],
+    "successResponsePhrase()": [],
+    "redirectResponsePhrase()": [],
+    "clientErrorResponsePhrase()": [],
+    "serverErrorResponsePhrase()": [],
+    "globalErrorResponsePhrase()": [],
+    "bodyString()": [
+      "bodyBytes()"
+    ],
+    "bodyBytes()": [],
+    "nameAddress()": [],
+    "Sip(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Size": {
+    "adjective()": [],
+    "Size(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.SlackEmoji": {
+    "people()": [],
+    "nature()": [],
+    "foodAndDrink()": [],
+    "celebration()": [],
+    "activity()": [],
+    "travelAndPlaces()": [],
+    "objectsAndSymbols()": [],
+    "custom()": [],
+    "emoji()": [],
+    "SlackEmoji(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Space": {
+    "planet()": [],
+    "moon()": [],
+    "galaxy()": [],
+    "nebula()": [],
+    "starCluster()": [],
+    "constellation()": [],
+    "star()": [],
+    "agency()": [],
+    "agencyAbbreviation()": [],
+    "nasaSpaceCraft()": [],
+    "company()": [],
+    "distanceMeasurement()": [],
+    "meteorite()": [],
+    "Space(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Stock": {
+    "nsdqSymbol()": [],
+    "nyseSymbol()": [],
+    "Stock(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Subscription": {
+    "plans()": [],
+    "statuses()": [],
+    "paymentMethods()": [],
+    "subscriptionTerms()": [],
+    "paymentTerms()": [],
+    "Subscription(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Superhero": {
+    "name()": [],
+    "prefix()": [],
+    "suffix()": [],
+    "power()": [],
+    "descriptor()": [],
+    "Superhero(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Team": {
+    "name()": [],
+    "creature()": [],
+    "state()": [],
+    "sport()": [],
+    "Team(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Text": {
+    "character()": [],
+    "uppercaseCharacter()": [],
+    "lowercaseCharacter()": [],
+    "text()": [],
+    "text(boolean)": [
+      "text()"
+    ],
+    "text(int)": [],
+    "text(int, int)": [
+      "uppercaseCharacter()"
+    ],
+    "text(int, int, boolean)": [
+      "character()",
+      "lowercaseCharacter()",
+      "text(int)",
+      "text(int, int)"
+    ],
+    "text(int, int, boolean, boolean)": [
+      "text(int, int, boolean)"
+    ],
+    "text(int, int, boolean, boolean, boolean)": [
+      "password(int, int, boolean, boolean, boolean)",
+      "text(boolean)",
+      "text(int, int, boolean, boolean)"
+    ],
+    "text(TextRuleConfig)": [
+      "route53ZoneId()",
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "textWithNotMoreThan256DiffSymbols(TextRuleConfig, byte[], int, int)": [
+      "text(TextRuleConfig)"
+    ],
+    "Text(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Text.TextRuleConfig": {
+    "getFixedNumberOfCharacters()": [
+      "text(TextRuleConfig)"
+    ],
+    "getNumberOfRequiredSymbols()": [
+      "text(TextRuleConfig)"
+    ],
+    "TextRuleConfig(int, Map, int)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.providers.base.Text.TextSymbolsBuilder": {
+    "builder()": [
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "with(String, int)": [
+      "text(int, int, boolean, boolean, boolean)",
+      "with(String)"
+    ],
+    "with(String)": [
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "len(int)": [
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "throwIfLengthSmall(boolean)": [],
+    "build()": [
+      "text(int, int, boolean, boolean, boolean)"
+    ],
+    "TextSymbolsBuilder()": [
+      "builder()"
+    ]
+  },
+  "net.datafaker.providers.base.Text.TextConfigPojo": {
+    "equals(Object)": [],
+    "hashCode()": [],
+    "TextConfigPojo(int, boolean, boolean, boolean)": [
+      "text(int, int, boolean, boolean, boolean)"
+    ]
+  },
+  "net.datafaker.providers.base.Time": {
+    "future(int, ChronoUnit)": [
+      "future(int, ChronoUnit, String)"
+    ],
+    "future(int, ChronoUnit, String)": [],
+    "future(int, int, ChronoUnit)": [
+      "future(int, int, ChronoUnit, String)"
+    ],
+    "future(int, int, ChronoUnit, String)": [],
+    "past(int, ChronoUnit)": [
+      "past(int, ChronoUnit, String)"
+    ],
+    "past(int, ChronoUnit, String)": [],
+    "past(int, int, ChronoUnit)": [
+      "past(int, int, ChronoUnit, String)"
+    ],
+    "past(int, int, ChronoUnit, String)": [],
+    "between(LocalTime, LocalTime)": [
+      "between(LocalTime, LocalTime, String)"
+    ],
+    "between(LocalTime, LocalTime, String)": [],
+    "Time(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Twitter": {
+    "createdTime(boolean, Date, Date)": [],
+    "twitterId(int)": [],
+    "text(String[], int, int)": [],
+    "userName()": [],
+    "userId()": [],
+    "getLink(String, int)": [],
+    "Twitter(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Unique": {
+    "fetchFromYaml(String)": [],
+    "removeAtIndex(List, int)": [
+      "fetchFromYaml(String)"
+    ],
+    "fetchValues(String)": [
+      "fetchFromYaml(String)"
+    ],
+    "noValuesFoundException(String)": [
+      "fetchValues(String)"
+    ],
+    "Unique(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.University": {
+    "name()": [],
+    "prefix()": [],
+    "suffix()": [],
+    "University(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Vehicle": {
+    "vin()": [],
+    "manufacturer()": [],
+    "make()": [
+      "model()",
+      "makeAndModel()"
+    ],
+    "model()": [],
+    "model(String)": [
+      "model()",
+      "makeAndModel()"
+    ],
+    "makeAndModel()": [],
+    "style()": [],
+    "color()": [],
+    "upholsteryColor()": [],
+    "upholsteryFabric()": [],
+    "upholstery()": [],
+    "transmission()": [],
+    "driveType()": [],
+    "fuelType()": [],
+    "carType()": [],
+    "engine()": [],
+    "carOptions()": [],
+    "carOptions(int, int)": [
+      "carOptions()"
+    ],
+    "standardSpecs()": [],
+    "standardSpecs(int, int)": [
+      "standardSpecs()"
+    ],
+    "doors()": [],
+    "licensePlate()": [],
+    "licensePlate(String)": [],
+    "Vehicle(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Verb": {
+    "base()": [],
+    "past()": [],
+    "pastParticiple()": [],
+    "simplePresent()": [],
+    "ingForm()": [],
+    "Verb(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Weather": {
+    "description()": [],
+    "temperatureCelsius()": [],
+    "temperatureCelsius(int, int)": [],
+    "temperatureFahrenheit()": [],
+    "temperatureFahrenheit(int, int)": [],
+    "temperature(int, int, String)": [
+      "temperatureCelsius()",
+      "temperatureCelsius(int, int)",
+      "temperatureFahrenheit()",
+      "temperatureFahrenheit(int, int)"
+    ],
+    "Weather(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Yoda": {
+    "quote()": [],
+    "Yoda(BaseProviders)": []
+  },
+  "net.datafaker.providers.base.Zodiac": {
+    "sign()": [],
+    "Zodiac(BaseProviders)": []
+  },
+  "net.datafaker.providers.entertainment.AquaTeenHungerForce": {
+    "character()": [],
+    "AquaTeenHungerForce(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Avatar": {
+    "image()": [],
+    "Avatar(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Babylon5": {
+    "character()": [],
+    "quote()": [],
+    "Babylon5(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BackToTheFuture": {
+    "character()": [],
+    "date()": [],
+    "quote()": [],
+    "BackToTheFuture(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BigBangTheory": {
+    "character()": [],
+    "quote()": [],
+    "BigBangTheory(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BojackHorseman": {
+    "characters()": [],
+    "quotes()": [],
+    "tongueTwisters()": [],
+    "BojackHorseman(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BossaNova": {
+    "artist()": [],
+    "song()": [],
+    "BossaNova(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BreakingBad": {
+    "character()": [],
+    "episode()": [],
+    "BreakingBad(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.BrooklynNineNine": {
+    "characters()": [],
+    "quotes()": [],
+    "BrooklynNineNine(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Buffy": {
+    "characters()": [],
+    "quotes()": [],
+    "celebrities()": [],
+    "bigBads()": [],
+    "episodes()": [],
+    "Buffy(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.ChuckNorris": {
+    "fact()": [],
+    "ChuckNorris(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.CowboyBebop": {
+    "character()": [],
+    "episode()": [],
+    "song()": [],
+    "quote()": [],
+    "CowboyBebop(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Departed": {
+    "actor()": [],
+    "character()": [],
+    "quote()": [],
+    "Departed(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.DetectiveConan": {
+    "characters()": [],
+    "gadgets()": [],
+    "vehicles()": [],
+    "DetectiveConan(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.DoctorWho": {
+    "character()": [],
+    "doctor()": [],
+    "actor()": [],
+    "catchPhrase()": [],
+    "quote()": [],
+    "villain()": [],
+    "species()": [],
+    "DoctorWho(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Doraemon": {
+    "character()": [],
+    "gadget()": [],
+    "location()": [],
+    "Doraemon(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.DragonBall": {
+    "character()": [],
+    "DragonBall(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.DumbAndDumber": {
+    "actor()": [],
+    "character()": [],
+    "quote()": [],
+    "DumbAndDumber(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Dune": {
+    "character()": [],
+    "title()": [],
+    "planet()": [],
+    "quote()": [],
+    "quote(Quote)": [
+      "quote()"
+    ],
+    "saying()": [],
+    "saying(Saying)": [
+      "saying()"
+    ],
+    "Dune(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Dune.Quote": {
+    "Quote(String)": []
+  },
+  "net.datafaker.providers.entertainment.Dune.Saying": {
+    "Saying(String)": []
+  },
+  "net.datafaker.providers.entertainment.EntertainmentFaker": {
+    "EntertainmentFaker()": [],
+    "EntertainmentFaker(Locale)": [],
+    "EntertainmentFaker(Random)": [],
+    "EntertainmentFaker(Locale, Random)": [],
+    "EntertainmentFaker(Locale, RandomService)": [],
+    "EntertainmentFaker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.providers.entertainment.EntertainmentProviders": {
+    "aquaTeenHungerForce()": [],
+    "avatar()": [],
+    "backToTheFuture()": [],
+    "babylon5()": [],
+    "bigBangTheory()": [],
+    "bojackHorseman()": [],
+    "bossaNova()": [],
+    "breakingBad()": [],
+    "brooklynNineNine()": [],
+    "buffy()": [],
+    "chuckNorris()": [],
+    "cowboyBebop()": [],
+    "departed()": [],
+    "detectiveConan()": [],
+    "doctorWho()": [],
+    "doraemon()": [],
+    "dragonBall()": [],
+    "dumbAndDumber()": [],
+    "dune()": [],
+    "familyGuy()": [],
+    "finalSpace()": [],
+    "freshPrinceOfBelAir()": [],
+    "friends()": [],
+    "fullMetalAlchemist()": [],
+    "futurama()": [],
+    "gameOfThrones()": [],
+    "ghostbusters()": [],
+    "gratefulDead()": [],
+    "harryPotter()": [],
+    "heyArnold()": [],
+    "hitchhikersGuideToTheGalaxy()": [],
+    "hobbit()": [],
+    "howIMetYourMother()": [],
+    "howToTrainYourDragon()": [],
+    "kaamelott()": [],
+    "lebowski()": [],
+    "lordOfTheRings()": [],
+    "moneyHeist()": [],
+    "movie()": [],
+    "naruto()": [],
+    "newGirl()": [],
+    "onePiece()": [],
+    "oscarMovie()": [],
+    "pokemon()": [],
+    "princessBride()": [],
+    "residentEvil()": [],
+    "rickAndMorty()": [],
+    "ruPaulDragRace()": [],
+    "seinfeld()": [],
+    "show()": [],
+    "siliconValley()": [],
+    "simpsons()": [],
+    "southPark()": [],
+    "spongebob()": [],
+    "stargate()": [],
+    "starTrek()": [],
+    "starWars()": [],
+    "strangerThings()": [],
+    "studioGhibli()": [],
+    "suits()": [],
+    "supernatural()": [],
+    "swordArtOnline()": [],
+    "theExpanse()": [],
+    "theItCrowd()": [],
+    "theKingkillerChronicle()": [],
+    "theRoom()": [],
+    "theThickOfIt()": [],
+    "theVentureBros()": [],
+    "tron()": [],
+    "twinPeaks()": [],
+    "vForVendetta()": [],
+    "witcher()": []
+  },
+  "net.datafaker.providers.entertainment.FamilyGuy": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "FamilyGuy(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.FinalSpace": {
+    "character()": [],
+    "vehicle()": [],
+    "quote()": [],
+    "FinalSpace(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.FreshPrinceOfBelAir": {
+    "characters()": [],
+    "celebrities()": [],
+    "quotes()": [],
+    "FreshPrinceOfBelAir(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Friends": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "Friends(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.FullmetalAlchemist": {
+    "character()": [],
+    "city()": [],
+    "country()": [],
+    "FullmetalAlchemist(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Futurama": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "hermesCatchPhrase()": [],
+    "Futurama(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.GameOfThrones": {
+    "character()": [],
+    "house()": [],
+    "city()": [],
+    "dragon()": [],
+    "quote()": [],
+    "GameOfThrones(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Ghostbusters": {
+    "actor()": [],
+    "character()": [],
+    "quote()": [],
+    "Ghostbusters(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.GratefulDead": {
+    "players()": [],
+    "songs()": [],
+    "GratefulDead(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.HarryPotter": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "book()": [],
+    "house()": [],
+    "spell()": [],
+    "HarryPotter(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.HeyArnold": {
+    "characters()": [],
+    "locations()": [],
+    "quotes()": [],
+    "HeyArnold(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.HitchhikersGuideToTheGalaxy": {
+    "character()": [],
+    "location()": [],
+    "marvinQuote()": [],
+    "planet()": [],
+    "quote()": [],
+    "species()": [],
+    "starship()": [],
+    "HitchhikersGuideToTheGalaxy(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Hobbit": {
+    "character()": [],
+    "thorinsCompany()": [],
+    "quote()": [],
+    "location()": [],
+    "Hobbit(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.HowIMetYourMother": {
+    "character()": [],
+    "catchPhrase()": [],
+    "highFive()": [],
+    "quote()": [],
+    "HowIMetYourMother(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.HowToTrainYourDragon": {
+    "characters()": [],
+    "dragons()": [],
+    "locations()": [],
+    "HowToTrainYourDragon(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Kaamelott": {
+    "character()": [],
+    "quote()": [],
+    "Kaamelott(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Lebowski": {
+    "actor()": [],
+    "character()": [],
+    "quote()": [],
+    "Lebowski(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.LordOfTheRings": {
+    "character()": [],
+    "location()": [],
+    "LordOfTheRings(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.MoneyHeist": {
+    "character()": [],
+    "heist()": [],
+    "quote()": [],
+    "MoneyHeist(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Movie": {
+    "quote()": [],
+    "Movie(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Naruto": {
+    "character()": [],
+    "village()": [],
+    "eye()": [],
+    "demon()": [],
+    "Naruto(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.NewGirl": {
+    "characters()": [],
+    "quotes()": [],
+    "NewGirl(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.OnePiece": {
+    "character()": [],
+    "sea()": [],
+    "island()": [],
+    "location()": [],
+    "quote()": [],
+    "akumasNoMi()": [],
+    "OnePiece(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.OscarMovie": {
+    "getYear()": [],
+    "getChoice()": [],
+    "actor()": [],
+    "movieName()": [],
+    "quote()": [],
+    "character()": [],
+    "releaseDate()": [],
+    "OscarMovie(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Pokemon": {
+    "name()": [],
+    "location()": [],
+    "move()": [],
+    "type()": [],
+    "Pokemon(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.PrincessBride": {
+    "character()": [],
+    "quote()": [],
+    "PrincessBride(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.ResidentEvil": {
+    "character()": [],
+    "biologicalAgent()": [],
+    "equipment()": [],
+    "location()": [],
+    "creature()": [],
+    "ResidentEvil(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.RickAndMorty": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "RickAndMorty(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.RuPaulDragRace": {
+    "queen()": [],
+    "quote()": [],
+    "RuPaulDragRace(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Seinfeld": {
+    "character()": [],
+    "quote()": [],
+    "business()": [],
+    "Seinfeld(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Show": {
+    "adultMusical()": [],
+    "play()": [],
+    "kidsMusical()": [],
+    "Show(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.SiliconValley": {
+    "character()": [],
+    "company()": [],
+    "quote()": [],
+    "app()": [],
+    "invention()": [],
+    "motto()": [],
+    "url()": [],
+    "email()": [],
+    "SiliconValley(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Simpsons": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "Simpsons(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.SouthPark": {
+    "characters()": [],
+    "quotes()": [],
+    "SouthPark(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Spongebob": {
+    "characters()": [],
+    "quotes()": [],
+    "episodes()": [],
+    "Spongebob(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Stargate": {
+    "characters()": [],
+    "planets()": [],
+    "quotes()": [],
+    "Stargate(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.StarTrek": {
+    "character()": [],
+    "location()": [],
+    "species()": [],
+    "villain()": [],
+    "klingon()": [],
+    "StarTrek(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.StarWars": {
+    "character()": [],
+    "callSign()": [],
+    "quotes()": [],
+    "vehicles()": [],
+    "droids()": [],
+    "planets()": [],
+    "species()": [],
+    "wookieWords()": [],
+    "alternateCharacterSpelling()": [],
+    "StarWars(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.StrangerThings": {
+    "character()": [],
+    "quote()": [],
+    "StrangerThings(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.StudioGhibli": {
+    "character()": [],
+    "quote()": [],
+    "movie()": [],
+    "StudioGhibli(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Suits": {
+    "characters()": [],
+    "quotes()": [],
+    "Suits(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Supernatural": {
+    "character()": [],
+    "creature()": [],
+    "weapon()": [],
+    "Supernatural(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.SwordArtOnline": {
+    "realName()": [],
+    "gameName()": [],
+    "location()": [],
+    "item()": [],
+    "SwordArtOnline(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheExpanse": {
+    "characters()": [],
+    "locations()": [],
+    "ships()": [],
+    "quotes()": [],
+    "TheExpanse(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheItCrowd": {
+    "actors()": [],
+    "characters()": [],
+    "emails()": [],
+    "quotes()": [],
+    "TheItCrowd(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheKingkillerChronicle": {
+    "book()": [],
+    "character()": [],
+    "creature()": [],
+    "location()": [],
+    "TheKingkillerChronicle(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheRoom": {
+    "actors()": [],
+    "characters()": [],
+    "locations()": [],
+    "quotes()": [],
+    "TheRoom(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheThickOfIt": {
+    "characters()": [],
+    "positions()": [],
+    "departments()": [],
+    "TheThickOfIt(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.TheVentureBros": {
+    "character()": [],
+    "organization()": [],
+    "vehicle()": [],
+    "quote()": [],
+    "TheVentureBros(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Tron": {
+    "character()": [],
+    "character(Character)": [
+      "character()"
+    ],
+    "game()": [],
+    "location()": [],
+    "quote()": [],
+    "quote(Tron.Quote)": [],
+    "tagline()": [],
+    "vehicle()": [],
+    "alternateCharacterSpelling()": [],
+    "alternateCharacterSpelling(AlternateCharacterSpelling)": [
+      "alternateCharacterSpelling()"
+    ],
+    "Tron(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Tron.AlternateCharacterSpelling": {
+    "AlternateCharacterSpelling(String)": []
+  },
+  "net.datafaker.providers.entertainment.Tron.Quote": {
+    "Quote(String)": []
+  },
+  "net.datafaker.providers.entertainment.Tron.Character": {
+    "Character(String)": []
+  },
+  "net.datafaker.providers.entertainment.TwinPeaks": {
+    "character()": [],
+    "location()": [],
+    "quote()": [],
+    "TwinPeaks(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.VForVendetta": {
+    "characters()": [],
+    "speeches()": [],
+    "quotes()": [],
+    "VForVendetta(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.entertainment.Witcher": {
+    "character()": [],
+    "witcher()": [],
+    "school()": [],
+    "location()": [],
+    "quote()": [],
+    "monster()": [],
+    "sign()": [],
+    "potion()": [],
+    "book()": [],
+    "Witcher(EntertainmentProviders)": []
+  },
+  "net.datafaker.providers.food.Beer": {
+    "brand()": [],
+    "name()": [],
+    "style()": [],
+    "hop()": [],
+    "yeast()": [],
+    "malt()": [],
+    "Beer(FoodProviders)": []
+  },
+  "net.datafaker.providers.food.Coffee": {
+    "country()": [],
+    "region()": [],
+    "region(Coffee.Country)": [],
+    "variety()": [],
+    "intensifier()": [],
+    "body()": [],
+    "descriptor()": [],
+    "notes()": [],
+    "name1()": [],
+    "name2()": [],
+    "blendName()": [],
+    "Coffee(FoodProviders)": []
+  },
+  "net.datafaker.providers.food.Coffee.Country": {},
+  "net.datafaker.providers.food.Dessert": {
+    "variety()": [],
+    "topping()": [],
+    "flavor()": [],
+    "Dessert(FoodProviders)": []
+  },
+  "net.datafaker.providers.food.Food": {
+    "ingredient()": [],
+    "spice()": [],
+    "dish()": [],
+    "fruit()": [],
+    "vegetable()": [],
+    "sushi()": [],
+    "measurement()": [],
+    "Food(FoodProviders)": []
+  },
+  "net.datafaker.providers.food.FoodFaker": {
+    "FoodFaker()": [],
+    "FoodFaker(Locale)": [],
+    "FoodFaker(Random)": [],
+    "FoodFaker(Locale, Random)": [],
+    "FoodFaker(Locale, RandomService)": [],
+    "FoodFaker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.providers.food.FoodProviders": {
+    "beer()": [],
+    "coffee()": [],
+    "dessert()": [],
+    "food()": [],
+    "tea()": []
+  },
+  "net.datafaker.providers.food.Tea": {
+    "variety()": [],
+    "type()": [
+      "variety()"
+    ],
+    "Tea(FoodProviders)": []
+  },
+  "net.datafaker.providers.sport.Baseball": {
+    "teams()": [],
+    "coaches()": [],
+    "positions()": [],
+    "players()": [],
+    "Baseball(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.Basketball": {
+    "teams()": [],
+    "coaches()": [],
+    "positions()": [],
+    "players()": [],
+    "Basketball(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.Chess": {
+    "player()": [],
+    "tournament()": [],
+    "opening()": [],
+    "title()": [],
+    "Chess(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.Cricket": {
+    "teams()": [],
+    "players()": [],
+    "formats()": [],
+    "tournaments()": [],
+    "Cricket(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.EnglandFootBall": {
+    "league()": [],
+    "team()": [],
+    "EnglandFootBall(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.Football": {
+    "teams()": [],
+    "players()": [],
+    "coaches()": [],
+    "competitions()": [],
+    "positions()": [],
+    "Football(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.Formula1": {
+    "driver()": [],
+    "team()": [],
+    "circuit()": [],
+    "grandPrix()": [],
+    "Formula1(SportProviders)": []
+  },
+  "net.datafaker.providers.sport.SportFaker": {
+    "SportFaker()": [],
+    "SportFaker(Locale)": [],
+    "SportFaker(Random)": [],
+    "SportFaker(Locale, Random)": [],
+    "SportFaker(Locale, RandomService)": [],
+    "SportFaker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.providers.sport.SportProviders": {
+    "baseball()": [],
+    "basketball()": [],
+    "chess()": [],
+    "cricket()": [],
+    "englandfootball()": [],
+    "football()": [],
+    "formula1()": [],
+    "volleyball()": []
+  },
+  "net.datafaker.providers.sport.Volleyball": {
+    "team()": [],
+    "player()": [],
+    "coach()": [],
+    "position()": [],
+    "formation()": [],
+    "Volleyball(SportProviders)": []
+  },
+  "net.datafaker.providers.videogame.Battlefield1": {
+    "classes()": [],
+    "weapon()": [],
+    "vehicle()": [],
+    "map()": [],
+    "faction()": [],
+    "Battlefield1(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.ClashOfClans": {
+    "troop()": [],
+    "rank()": [],
+    "defensiveBuilding()": [],
+    "ClashOfClans(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Control": {
+    "character()": [],
+    "location()": [],
+    "objectOfPower()": [],
+    "alteredItem()": [],
+    "alteredWorldEvent()": [],
+    "hiss()": [],
+    "theBoard()": [],
+    "quote()": [],
+    "Control(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.DarkSouls": {
+    "stats()": [],
+    "covenants()": [],
+    "classes()": [],
+    "shield()": [],
+    "DarkSouls(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.EldenRing": {
+    "location()": [],
+    "weapon()": [],
+    "skill()": [],
+    "spell()": [],
+    "npc()": [],
+    "EldenRing(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.ElderScrolls": {
+    "race()": [],
+    "creature()": [],
+    "region()": [],
+    "dragon()": [],
+    "city()": [],
+    "firstName()": [],
+    "lastName()": [],
+    "quote()": [],
+    "ElderScrolls(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Esports": {
+    "player()": [],
+    "team()": [],
+    "event()": [],
+    "league()": [],
+    "game()": [],
+    "Esports(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Fallout": {
+    "character()": [],
+    "faction()": [],
+    "location()": [],
+    "quote()": [],
+    "Fallout(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.HalfLife": {
+    "character()": [],
+    "enemy()": [],
+    "location()": [],
+    "HalfLife(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Hearthstone": {
+    "mainProfession()": [],
+    "mainCharacter()": [],
+    "mainPattern()": [],
+    "battlegroundsScore()": [],
+    "standardRank()": [
+      "wildRank()"
+    ],
+    "wildRank()": [],
+    "Hearthstone(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.HeroesOfTheStorm": {
+    "battleground()": [],
+    "heroClass()": [],
+    "hero()": [],
+    "quote()": [],
+    "HeroesOfTheStorm(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.LeagueOfLegends": {
+    "champion()": [],
+    "location()": [],
+    "quote()": [],
+    "summonerSpell()": [],
+    "masteries()": [],
+    "rank()": [],
+    "LeagueOfLegends(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.MarvelSnap": {
+    "character()": [],
+    "zone()": [],
+    "event()": [],
+    "rank()": [],
+    "MarvelSnap(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.MassEffect": {
+    "character()": [],
+    "specie()": [],
+    "cluster()": [],
+    "planet()": [],
+    "quote()": [],
+    "MassEffect(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Minecraft": {
+    "itemName()": [
+      "tileItemName()"
+    ],
+    "tileName()": [
+      "tileItemName()"
+    ],
+    "entityName()": [],
+    "monsterName()": [],
+    "animalName()": [],
+    "tileItemName()": [],
+    "Minecraft(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Myst": {
+    "games()": [],
+    "creatures()": [],
+    "characters()": [],
+    "ages()": [],
+    "quotes()": [],
+    "Myst(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Overwatch": {
+    "hero()": [],
+    "location()": [],
+    "quote()": [],
+    "Overwatch(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.SonicTheHedgehog": {
+    "zone()": [],
+    "character()": [],
+    "game()": [],
+    "SonicTheHedgehog(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.SoulKnight": {
+    "characters()": [],
+    "buffs()": [],
+    "statues()": [],
+    "weapons()": [],
+    "bosses()": [],
+    "enemies()": [],
+    "SoulKnight(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.StarCraft": {
+    "unit()": [],
+    "building()": [],
+    "character()": [],
+    "planet()": [],
+    "StarCraft(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.StreetFighter": {
+    "characters()": [],
+    "stages()": [],
+    "quotes()": [],
+    "moves()": [],
+    "StreetFighter(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.SuperMario": {
+    "characters()": [],
+    "games()": [],
+    "locations()": [],
+    "SuperMario(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.SuperSmashBros": {
+    "fighter()": [],
+    "stage()": [],
+    "SuperSmashBros(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Touhou": {
+    "characterName()": [],
+    "characterFirstName()": [],
+    "characterLastName()": [],
+    "trackName()": [],
+    "gameName()": [],
+    "Touhou(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.VideoGame": {
+    "title()": [],
+    "genre()": [],
+    "platform()": [],
+    "VideoGame(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.VideoGameFaker": {
+    "VideoGameFaker()": [],
+    "VideoGameFaker(Locale)": [],
+    "VideoGameFaker(Random)": [],
+    "VideoGameFaker(Locale, Random)": [],
+    "VideoGameFaker(Locale, RandomService)": [],
+    "VideoGameFaker(FakeValuesService, FakerContext)": []
+  },
+  "net.datafaker.providers.videogame.VideoGameProviders": {
+    "battlefield1()": [],
+    "clashOfClans()": [],
+    "control()": [],
+    "darkSouls()": [],
+    "eldenRing()": [],
+    "elderScrolls()": [],
+    "esports()": [],
+    "fallout()": [],
+    "halfLife()": [],
+    "hearthstone()": [],
+    "heroesOfTheStorm()": [],
+    "leagueOfLegends()": [],
+    "marvelSnap()": [],
+    "massEffect()": [],
+    "minecraft()": [],
+    "myst()": [],
+    "overwatch()": [],
+    "sonicTheHedgehog()": [],
+    "soulKnight()": [],
+    "starCraft()": [],
+    "streetFighter()": [],
+    "superMario()": [],
+    "superSmashBros()": [],
+    "touhou()": [],
+    "videoGame()": [],
+    "warhammerFantasy()": [],
+    "worldOfWarcraft()": [],
+    "zelda()": []
+  },
+  "net.datafaker.providers.videogame.WarhammerFantasy": {
+    "heros()": [],
+    "quotes()": [],
+    "locations()": [],
+    "factions()": [],
+    "creatures()": [],
+    "WarhammerFantasy(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.WorldOfWarcraft": {
+    "hero()": [],
+    "quotes()": [],
+    "WorldOfWarcraft(VideoGameProviders)": []
+  },
+  "net.datafaker.providers.videogame.Zelda": {
+    "game()": [],
+    "character()": [],
+    "Zelda(VideoGameProviders)": []
+  },
+  "net.datafaker.sequence.FakeCollection": {
+    "get()": [
+      "iterator()"
+    ],
+    "iterator()": [],
+    "FakeCollection(List, int, int, RandomService, double)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.sequence.FakeCollection.Builder": {
+    "build()": [],
+    "Builder()": [
+      "collection()"
+    ],
+    "Builder(List)": [
+      "collection(List<Supplier<T>>)"
+    ],
+    "Builder(Supplier<T>[])": []
+  },
+  "net.datafaker.sequence.FakeSequence": {
+    "get()": [
+      "getValuesFrom(FakeSequence<T>)",
+      "generate()",
+      "generate(Iterable<Object>, Schema<Object, ?>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)"
+    ],
+    "isInfinite()": [
+      "getValuesFrom(FakeSequence<T>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Iterable<Object>, Schema<Object, ?>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Iterable<IN>, Schema<IN, ?>)"
+    ],
+    "singleton()": [
+      "get()"
+    ],
+    "FakeSequence(List, int, int, RandomService, double)": []
+  },
+  "net.datafaker.sequence.FakeSequence.Builder": {
+    "faker(BaseProviders)": [
+      "collection()",
+      "collection(Supplier<T>...)",
+      "collection(List<Supplier<T>>)",
+      "stream()",
+      "stream(Supplier<T>...)",
+      "stream(List<Supplier<T>>)"
+    ],
+    "minLen(int)": [],
+    "maxLen(int)": [
+      "build()"
+    ],
+    "len(int)": [],
+    "len(int, int)": [
+      "len(int)"
+    ],
+    "nullRate(double)": [],
+    "suppliers(Supplier...)": [],
+    "build()": [
+      "generate()"
+    ],
+    "generate()": [],
+    "Builder()": [],
+    "Builder(List)": [],
+    "Builder(Supplier<T>[])": []
+  },
+  "net.datafaker.sequence.FakeStream": {
+    "get()": [
+      "iterator()",
+      "generate(Iterable<IN>, Schema<IN, ?>)"
+    ],
+    "isInfinite()": [
+      "get()"
+    ],
+    "iterator()": [],
+    "FakeStream(List, int, int, RandomService, double)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.sequence.FakeStream.Builder": {
+    "build()": [],
+    "Builder()": [
+      "stream()"
+    ],
+    "Builder(List)": [
+      "stream(List<Supplier<T>>)"
+    ],
+    "Builder(Supplier<T>[])": []
+  },
+  "net.datafaker.service.FakerContext": {
+    "setLocale(Locale)": [],
+    "setRandomService(RandomService)": [
+      "doWith(Callable<T>, long)",
+      "doWith(Callable<T>, Locale, long)"
+    ],
+    "getLocale()": [
+      "latitude()",
+      "longitude()",
+      "doWith(Callable<T>, Locale)",
+      "doWith(Callable<T>, Locale, long)",
+      "domainName()",
+      "fileName(String, String, String, String)",
+      "username()",
+      "uppercaseCharacter()",
+      "fetchFromYaml(String)"
+    ],
+    "getSingletonLocale()": [
+      "resolve(String, Object, ProviderRegistration, Supplier<String>, FakerContext)"
+    ],
+    "getRandomService()": [
+      "doWith(Callable<T>, long)",
+      "doWith(Callable<T>, Locale, long)",
+      "random()",
+      "fetch(String, FakerContext)",
+      "safeFetch(String, FakerContext, String)",
+      "bothify(String, FakerContext, boolean, boolean, boolean)",
+      "regexify(String, FakerContext)",
+      "examplify(String, FakerContext)",
+      "templatify(String, Map<Character, String[]>, FakerContext)"
+    ],
+    "getLocaleChain()": [
+      "doWith(Callable<T>, Locale)",
+      "fetchObject(String, FakerContext)"
+    ],
+    "normalizeLocale(SingletonLocale)": [
+      "setCurrentLocale(Locale)",
+      "localeChain(Locale)"
+    ],
+    "setCurrentLocale(Locale)": [
+      "doWith(Callable<T>, Locale)",
+      "doWith(Callable<T>, Locale, long)"
+    ],
+    "localeChain(Locale)": [],
+    "localeChain()": [
+      "setCurrentLocale(Locale)"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "FakerContext(Locale, RandomService)": []
+  },
+  "net.datafaker.service.FakerIDN": {
+    "toASCII(String)": [
+      "url()",
+      "emailAddress(String)",
+      "safeEmailAddress(String)",
+      "domainWord()",
+      "url()"
+    ]
+  },
+  "net.datafaker.service.FakeValues": {
+    "getFilename(Locale)": [],
+    "language(Locale)": [
+      "getFilename(Locale)"
+    ],
+    "get(String)": [],
+    "loadFromUrl()": [
+      "loadValues()"
+    ],
+    "loadValues()": [
+      "get(String)"
+    ],
+    "enrichMapWithJavaNames(Map)": [
+      "loadValues()"
+    ],
+    "toJavaNames(String, boolean)": [
+      "enrichMapWithJavaNames(Map<String, Object>)"
+    ],
+    "readFromStream(InputStream)": [
+      "loadFromUrl()",
+      "loadValues()"
+    ],
+    "supportsPath(String)": [],
+    "getPath()": [
+      "add(FakeValuesInterface)"
+    ],
+    "getLocale()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "FakeValues(Locale)": [
+      "getCachedFakeValue(SingletonLocale)"
+    ],
+    "FakeValues(Locale, URL)": [
+      "addUrl(Locale, URL)"
+    ],
+    "FakeValues(Locale, String, String)": [],
+    "FakeValues(Locale, String, String, URL)": []
+  },
+  "net.datafaker.service.FakeValuesGrouping": {
+    "add(FakeValuesInterface)": [
+      "addUrl(Locale, URL)"
+    ],
+    "get(String)": [],
+    "getEnglishFakeValueGrouping()": [
+      "getCachedFakeValue(SingletonLocale)"
+    ]
+  },
+  "net.datafaker.service.FakeValuesInterface": {
+    "get(String)": [
+      "get(String)",
+      "fetchObject(String, FakerContext)"
+    ]
+  },
+  "net.datafaker.service.FakeValuesService": {
+    "updateFakeValuesInterfaceMap(List)": [
+      "doWith(Callable<T>, Locale)"
+    ],
+    "getCachedFakeValue(SingletonLocale)": [],
+    "addPath(Locale, Path)": [
+      "addPath(Locale, Path)"
+    ],
+    "addUrl(Locale, URL)": [
+      "addUrl(Locale, URL)",
+      "addPath(Locale, Path)"
+    ],
+    "fetch(String, FakerContext)": [
+      "flag()",
+      "fetchString(String, FakerContext)"
+    ],
+    "fetchString(String, FakerContext)": [],
+    "safeFetch(String, FakerContext, String)": [
+      "resolve(String, Object, ProviderRegistration, Supplier<String>, FakerContext)",
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "fetchObject(String, FakerContext)": [
+      "buzzword()",
+      "catchPhrase()",
+      "bs()",
+      "fetchValues(String)",
+      "fetch(String, FakerContext)",
+      "safeFetch(String, FakerContext, String)"
+    ],
+    "split(String)": [
+      "fetchObject(String, FakerContext)"
+    ],
+    "numerify(String, FakerContext)": [
+      "numerify(String)"
+    ],
+    "bothify(String, FakerContext)": [
+      "bothify(String)"
+    ],
+    "bothify(String, FakerContext, boolean)": [
+      "bothify(String, boolean)",
+      "bothify(String, FakerContext)"
+    ],
+    "bothify(String, FakerContext, boolean, boolean, boolean)": [
+      "numerify(String, FakerContext)",
+      "bothify(String, FakerContext, boolean)",
+      "letterify(String, FakerContext, boolean)"
+    ],
+    "regexify(String, FakerContext)": [
+      "regexify(String)"
+    ],
+    "examplify(String, FakerContext)": [
+      "examplify(String)"
+    ],
+    "letterify(String, FakerContext)": [
+      "letterify(String)"
+    ],
+    "letterify(String, FakerContext, boolean)": [
+      "letterify(String, boolean)",
+      "examplify(String, FakerContext)",
+      "letterify(String, FakerContext)"
+    ],
+    "templatify(String, char, FakerContext, String...)": [],
+    "templatify(String, Map, FakerContext)": [
+      "templatify(String, Map<Character, String[]>)",
+      "templatify(String, char, FakerContext, String...)"
+    ],
+    "resolve(String, Object, BaseFaker, FakerContext)": [
+      "resolve(String)"
+    ],
+    "resolve(String, AbstractProvider, FakerContext)": [
+      "resolve(String)"
+    ],
+    "resolve(String, Object, ProviderRegistration, Supplier, FakerContext)": [
+      "resolve(String, Supplier<String>)",
+      "resolve(String, Supplier<String>)",
+      "resolve(String, Object, BaseFaker, FakerContext)",
+      "resolve(String, AbstractProvider<?>, FakerContext)"
+    ],
+    "expression(String, BaseFaker, FakerContext)": [
+      "expression(String)",
+      "fileExpression(Path, BaseFaker, FakerContext)"
+    ],
+    "fileExpression(Path, BaseFaker, FakerContext)": [],
+    "csv(int, String...)": [],
+    "csv(String, char, boolean, int, String...)": [],
+    "json(String...)": [],
+    "jsona(String...)": [],
+    "resolveExpression(String, Object, ProviderRegistration, FakerContext)": [
+      "resolve(String, Object, ProviderRegistration, Supplier<String>, FakerContext)",
+      "expression(String, BaseFaker, FakerContext)",
+      "resolveExpression(String, Object, ProviderRegistration, FakerContext)"
+    ],
+    "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)": [
+      "resolveExpression(String, Object, ProviderRegistration, FakerContext)"
+    ],
+    "splitArguments(String)": [
+      "resolveExpression(String, Object, ProviderRegistration, FakerContext)"
+    ],
+    "splitExpressions(String, int, int)": [
+      "resolveExpression(String, Object, ProviderRegistration, FakerContext)"
+    ],
+    "isSlashDelimitedRegex(String)": [
+      "safeFetch(String, FakerContext, String)"
+    ],
+    "trimRegexSlashes(String)": [
+      "safeFetch(String, FakerContext, String)"
+    ],
+    "getDotIndex(String)": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "classNameToYamlName(Object)": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "javaNameToYamlName(String)": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)",
+      "classNameToYamlName(Object)"
+    ],
+    "resolveFromMethodOn(Object, String, String[])": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "resolveFakerObjectAndMethod(ProviderRegistration, String, int, String[])": [
+      "resolveExpression(String, String[], Object, ProviderRegistration, FakerContext)"
+    ],
+    "retrieveMethodAccessor(Object, String, String[])": [
+      "resolveFromMethodOn(Object, String, String[])",
+      "resolveFakerObjectAndMethod(ProviderRegistration, String, int, String[])"
+    ],
+    "invokeAndToString(MethodAndCoercedArgs, Object)": [
+      "resolveFromMethodOn(Object, String, String[])",
+      "resolveFakerObjectAndMethod(ProviderRegistration, String, int, String[])"
+    ],
+    "accessor(Class, String, String[])": [
+      "retrieveMethodAccessor(Object, String, String[])"
+    ],
+    "removeUnderscoreChars(String)": [
+      "resolveFakerObjectAndMethod(ProviderRegistration, String, int, String[])",
+      "accessor(Class<?>, String, String[])"
+    ],
+    "coerceArguments(Method, String[])": [
+      "accessor(Class<?>, String, String[])"
+    ],
+    "primitiveToWrapper(Class)": [
+      "coerceArguments(Method, String[])"
+    ],
+    "FakeValuesService()": []
+  },
+  "net.datafaker.service.FakeValuesService.MethodAndCoercedArgs": {
+    "invoke(Object)": [
+      "resolveFakerObjectAndMethod(ProviderRegistration, String, int, String[])",
+      "invokeAndToString(MethodAndCoercedArgs, Object)"
+    ],
+    "MethodAndCoercedArgs(Method, Object[])": [
+      "accessor(Class<?>, String, String[])"
+    ]
+  },
+  "net.datafaker.service.files.EnFile": {
+    "getFile()": [],
+    "getPath()": [],
+    "getFiles()": [],
+    "EnFile(String)": [],
+    "EnFile(String, String)": []
+  },
+  "net.datafaker.service.RandomService": {
+    "nextInt()": [],
+    "nextInt(int)": [
+      "get(BaseProviders)",
+      "randomDigit()",
+      "getGenderDigit(Gender)",
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "cpf(BaseProviders, boolean, boolean)",
+      "getValidSsn(BaseProviders)",
+      "streetAddressNumber()",
+      "isbnRegistrant()",
+      "department()",
+      "buzzword()",
+      "logo()",
+      "joinSampleOfEachList(List<List<String>>)",
+      "validDomain(String)",
+      "iban()",
+      "randomCreditCardType()",
+      "macAddress(String)",
+      "getIpV4Address()",
+      "getPrivateIpV4Address()",
+      "getPublicIpV4Address()",
+      "ipV4Cidr()",
+      "getIpV6Address()",
+      "ipV6Cidr()",
+      "random(T[])",
+      "displayName()",
+      "sentence(int, int)",
+      "paragraph(int)",
+      "isoLanguage()",
+      "isoCountry()",
+      "numberBetween(int, int)",
+      "option(E...)",
+      "option(String...)",
+      "option(Class<E>)",
+      "subset(int, E...)",
+      "subset(int, String...)",
+      "nextElement(E[])",
+      "nextElement(List<E>)",
+      "any()",
+      "randomElement(String[])",
+      "rtpPort()",
+      "text(TextRuleConfig)",
+      "twitterId(int)",
+      "text(String[], int, int)",
+      "getLink(String, int)",
+      "quotes()",
+      "alternateCharacterSpelling()",
+      "singleton()",
+      "fetch(String, FakerContext)",
+      "safeFetch(String, FakerContext, String)",
+      "bothify(String, FakerContext, boolean, boolean, boolean)",
+      "examplify(String, FakerContext)",
+      "templatify(String, Map<Character, String[]>, FakerContext)"
+    ],
+    "nextInt(int, int)": [
+      "getBirthday(BaseProviders)",
+      "validDay(int, int, BaseProviders)",
+      "getValidFIN(BaseProviders, Type)",
+      "cnpj(BaseProviders, boolean, boolean, boolean)",
+      "period(Period, Period)",
+      "port()",
+      "characters(int, int)",
+      "randomDigit()",
+      "randomDigitNotZero()",
+      "randomNumber()",
+      "messagingPort()",
+      "text(String[], int, int)",
+      "fetchFromYaml(String)",
+      "temperature(int, int, String)",
+      "battlegroundsScore()",
+      "standardRank()",
+      "get()",
+      "get()",
+      "bothify(String, FakerContext, boolean, boolean, boolean)"
+    ],
+    "nextFloat()": [],
+    "nextLong()": [
+      "regexify(String, FakerContext)"
+    ],
+    "nextLong(long)": [
+      "future(int, TimeUnit, T)",
+      "past(int, TimeUnit, T)",
+      "between(T, T)",
+      "birthday(int, int)",
+      "getNumberBetween(long)",
+      "numberBetween(long, long)",
+      "randomNumber(int, boolean)"
+    ],
+    "nextLong(long, long)": [
+      "duration(long, long, ChronoUnit)",
+      "duration(long, long, String)"
+    ],
+    "nextDouble()": [
+      "getValidSsn(BaseProviders)",
+      "latitude()",
+      "longitude()",
+      "price(double, double)",
+      "any(BaseProviders)",
+      "any(BaseProviders)",
+      "decimalBetween(long, long)",
+      "createdTime(boolean, Date, Date)",
+      "singleton()",
+      "nextLong(long, long)",
+      "nextDouble(double, double)"
+    ],
+    "nextDouble(double, double)": [],
+    "nextBoolean()": [
+      "getValid(BaseProviders)",
+      "bool()",
+      "tileItemName()"
+    ],
+    "nextRandomBytes(int)": [
+      "uuidv3()",
+      "digits(int)",
+      "text(TextRuleConfig)",
+      "hex(int, boolean)"
+    ],
+    "hex()": [],
+    "hex(int)": [
+      "hex(boolean)",
+      "hex()"
+    ],
+    "hex(int, boolean)": [
+      "randHex()",
+      "subscriptionId()",
+      "randHex()",
+      "hex(int)"
+    ],
+    "getRandomInternal()": [
+      "localeString()",
+      "localeStringWithoutReplacement()"
+    ],
+    "RandomService()": [
+      "build()",
+      "build()"
+    ],
+    "RandomService(Random)": [
+      "doWith(Callable<T>, long)",
+      "doWith(Callable<T>, Locale, long)"
+    ]
+  },
+  "net.datafaker.transformations.CompositeField": {
+    "getName()": [],
+    "transform(MyObject)": [],
+    "CompositeField(String, Field<MyObject,MyType>[])": []
+  },
+  "net.datafaker.transformations.CsvTransformer": {
+    "builder()": [
+      "csv(String, char, boolean, int, String...)"
+    ],
+    "apply(IN, Schema)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": [
+      "csv(String, char, boolean, int, String...)"
+    ],
+    "addLine(StringBuilder, Object)": [
+      "apply(IN, Schema<IN, ?>)",
+      "generateHeader(Schema<?, ?>, StringBuilder)"
+    ],
+    "addCharSequence(StringBuilder, CharSequence)": [
+      "addLine(StringBuilder, Object)"
+    ],
+    "generateHeader(Schema, StringBuilder)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "CsvTransformer(String, char, boolean)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.transformations.CsvTransformer.CsvTransformerBuilder": {
+    "quote(char)": [
+      "csv(String, char, boolean, int, String...)"
+    ],
+    "separator(String)": [
+      "csv(String, char, boolean, int, String...)"
+    ],
+    "header(boolean)": [
+      "csv(String, char, boolean, int, String...)"
+    ],
+    "build()": [
+      "csv(String, char, boolean, int, String...)"
+    ]
+  },
+  "net.datafaker.transformations.Field": {
+    "getName()": [
+      "generateHeader(Schema<?, ?>, StringBuilder)",
+      "apply(Object, Schema<Object, ?>)",
+      "apply(IN, Schema<IN, ?>)",
+      "appendTableInfo(Field<?, ? extends CharSequence>[])",
+      "apply(IN, StringBuilder, Field<IN, ?>)",
+      "applyAttributes(IN, StringBuilder, Field<IN, ?>[])",
+      "apply(StringBuilder, IN, Field<IN, ?>[], String)"
+    ],
+    "transform(IN)": [
+      "apply(Object, Schema<Object, ?>)",
+      "applyTag(IN, StringBuilder, Field<IN, ?>, String)",
+      "applyAttributes(IN, StringBuilder, Field<IN, ?>[])",
+      "apply(StringBuilder, IN, Field<IN, ?>[], String)"
+    ],
+    "field(String, Function)": [],
+    "field(String, Supplier)": [],
+    "compositeField(String, Field[])": []
+  },
+  "net.datafaker.transformations.JavaObjectTransformer": {
+    "apply(Object, Schema)": [],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": []
+  },
+  "net.datafaker.transformations.JsonTransformer": {
+    "builder()": [],
+    "apply(IN, Schema)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": [
+      "json(String...)",
+      "jsona(String...)"
+    ],
+    "generate(Collection)": [
+      "value2String(Object, StringBuilder)"
+    ],
+    "value2String(Object, StringBuilder)": [
+      "apply(IN, Schema<IN, ?>)",
+      "generate(Collection<Object>)"
+    ],
+    "createEscapeMap()": [],
+    "JsonTransformer(char[], boolean)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.transformations.JsonTransformer.JsonTransformerBuilder": {
+    "formattedAs(FormattedAs)": [],
+    "withCommaBetweenObjects(boolean)": [],
+    "build()": [],
+    "JsonTransformerBuilder()": [
+      "builder()"
+    ]
+  },
+  "net.datafaker.transformations.JsonTransformer.JsonTransformerBuilder.FormattedAs": {
+    "FormattedAs(String)": []
+  },
+  "net.datafaker.transformations.Schema": {
+    "getFields()": [
+      "apply(IN, Schema<IN, ?>)",
+      "generateHeader(Schema<?, ?>, StringBuilder)",
+      "apply(Object, Schema<Object, ?>)",
+      "apply(IN, Schema<IN, ?>)",
+      "apply(IN, Schema<IN, ?>, int)",
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)",
+      "apply(IN, Schema<IN, ?>)",
+      "apply(IN, StringBuilder, Field<IN, ?>)",
+      "apply(IN, Schema<IN, ?>)",
+      "value2String(Object, StringBuilder, String)"
+    ],
+    "of(Field...)": [],
+    "Schema(Field<IN,OUT>[])": []
+  },
+  "net.datafaker.transformations.Schema.SchemaBuilder": {
+    "of(SimpleField)": [],
+    "of(Field...)": [],
+    "build()": []
+  },
+  "net.datafaker.transformations.SimpleField": {
+    "getName()": [],
+    "transform(MyObject)": [
+      "apply(IN, Schema<IN, ?>)",
+      "apply(IN, Schema<IN, ?>)",
+      "addValues(IN, Field<?, ? extends CharSequence>[])"
+    ],
+    "getTransform()": [],
+    "getSupplier()": [],
+    "SimpleField(String, Function)": [
+      "field(String, Function<MyObject, MyType>)"
+    ],
+    "SimpleField(String, Supplier)": [
+      "field(String, Supplier<MyType>)"
+    ],
+    "SimpleField(String, Function, Supplier)": []
+  },
+  "net.datafaker.transformations.sql.Casing": {},
+  "net.datafaker.transformations.sql.SqlDialect.AuxiliaryConstants": {},
+  "net.datafaker.transformations.sql.SqlDialect": {
+    "getSqlQuoteIdentifier()": [
+      "build()"
+    ],
+    "getUnquotedCasing()": [
+      "build()"
+    ],
+    "getFirstRow(SqlDialect, Supplier, Supplier, SqlTransformer.Case)": [],
+    "getOtherRow(SqlDialect, Supplier, Supplier, SqlTransformer.Case)": [],
+    "getLastRowSuffix(SqlDialect, SqlTransformer.Case)": [],
+    "SqlDialect(String, Casing, TriFunction, TriFunction, Function)": [],
+    "SqlDialect(String, TriFunction, TriFunction, Function)": [],
+    "SqlDialect(String, Casing)": [],
+    "SqlDialect(String)": []
+  },
+  "net.datafaker.transformations.sql.SqlTransformer": {
+    "builder()": [],
+    "isSqlQuoteIdentifierRequiredFor(String)": [
+      "appendTableInfo(Field<?, ? extends CharSequence>[])",
+      "appendNameToQuery(StringBuilder, String)"
+    ],
+    "apply(IN, Schema)": [
+      "generateSeparatedStatements(Schema<IN, ?>, List<IN>, int)"
+    ],
+    "apply(IN, Schema, int)": [
+      "apply(IN, Schema<IN, ?>)",
+      "generateBatchModeStatements(Schema<IN, ?>, List<IN>, int)"
+    ],
+    "addValues(IN, Field[])": [
+      "apply(IN, Schema<IN, ?>, int)"
+    ],
+    "handleObjectInArray(Object)": [
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "handleObject(Object)"
+    ],
+    "handleObjectInCollection(Object)": [
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "handleObject(Object)"
+    ],
+    "handleObject(Object)": [
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "handleObjectInArray(Object)",
+      "handleObjectInCollection(Object)"
+    ],
+    "handlePrimitivesInArray(Class, Object)": [
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "handleObject(Object)"
+    ],
+    "appendTableInfo(Field[])": [
+      "apply(IN, Schema<IN, ?>, int)"
+    ],
+    "appendNameToQuery(StringBuilder, String)": [
+      "appendTableInfo(Field<?, ? extends CharSequence>[])"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": [],
+    "generateBatchModeStatements(Schema, List, int)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "generateSeparatedStatements(Schema, List, int)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "SqlTransformer(String, String, char, SqlDialect, String, Casing, boolean, int, Case, boolean)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.transformations.sql.SqlTransformer.SqlTransformerBuilder": {
+    "dialect(SqlDialect)": [],
+    "casing(Casing)": [],
+    "quote(char)": [],
+    "sqlQuoteIdentifier(String)": [],
+    "tableName(String)": [],
+    "schemaName(String)": [],
+    "batch()": [],
+    "batch(int)": [],
+    "keywordCase(Case)": [],
+    "forceUseSqlQuoteIdentifier()": [],
+    "build()": []
+  },
+  "net.datafaker.transformations.sql.SqlTransformer.Case": {},
+  "net.datafaker.transformations.sql.SqlTransformer.SQLKeyWords": {
+    "getValue(Case)": [
+      "apply(IN, Schema<IN, ?>, int)",
+      "addValues(IN, Field<?, ? extends CharSequence>[])",
+      "handleObject(Object)"
+    ],
+    "SQLKeyWords(String, String, String)": []
+  },
+  "net.datafaker.transformations.sql.TriFunction": {
+    "apply(A, B, C)": [
+      "getFirstRow(SqlDialect, Supplier<String>, Supplier<String>, SqlTransformer.Case)",
+      "getOtherRow(SqlDialect, Supplier<String>, Supplier<String>, SqlTransformer.Case)"
+    ]
+  },
+  "net.datafaker.transformations.Transformer": {
+    "apply(IN, Schema)": [
+      "generate(Schema<Object, ?>)",
+      "generate(Iterable<Object>, Schema<Object, ?>)",
+      "apply(IN, Schema<IN, ?>, int)"
+    ],
+    "apply(IN, Schema, int)": [
+      "generate(Schema<IN, ?>, int)",
+      "apply(IN, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": []
+  },
+  "net.datafaker.transformations.XmlTransformer": {
+    "apply(IN, Schema)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "apply(IN, StringBuilder, Field)": [
+      "applyTag(IN, StringBuilder, Field<IN, ?>, String)"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": [],
+    "applyTag(IN, StringBuilder, Field, String)": [
+      "apply(IN, StringBuilder, Field<IN, ?>)"
+    ],
+    "isAttribute(String)": [
+      "apply(IN, StringBuilder, Field<IN, ?>)",
+      "applyAttributes(IN, StringBuilder, Field<IN, ?>[])"
+    ],
+    "applyAttributes(IN, StringBuilder, Field[])": [
+      "apply(IN, StringBuilder, Field<IN, ?>)"
+    ],
+    "applyValue(StringBuilder, String, String)": [
+      "applyTag(IN, StringBuilder, Field<IN, ?>, String)"
+    ],
+    "offset(int)": [
+      "apply(IN, StringBuilder, Field<IN, ?>)",
+      "applyTag(IN, StringBuilder, Field<IN, ?>, String)"
+    ],
+    "escape(String)": [
+      "applyAttributes(IN, StringBuilder, Field<IN, ?>[])",
+      "applyValue(StringBuilder, String, String)"
+    ],
+    "createEscapeMap()": [],
+    "XmlTransformer(boolean)": [
+      "build()"
+    ]
+  },
+  "net.datafaker.transformations.XmlTransformer.XmlTransformerBuilder": {
+    "pretty(boolean)": [],
+    "build()": []
+  },
+  "net.datafaker.transformations.YamlTransformer": {
+    "apply(IN, Schema)": [
+      "generate(Iterable<IN>, Schema<IN, ?>)",
+      "generate(Schema<IN, ?>, int)"
+    ],
+    "apply(StringBuilder, IN, Field[], String)": [
+      "apply(IN, Schema<IN, ?>)",
+      "value2String(Object, StringBuilder, String)"
+    ],
+    "generate(Iterable, Schema)": [],
+    "generate(Schema, int)": [],
+    "addCollection(StringBuilder, Collection, String)": [
+      "value2String(Object, StringBuilder, String)"
+    ],
+    "value2String(Object, StringBuilder, String)": [
+      "apply(StringBuilder, IN, Field<IN, ?>[], String)",
+      "addCollection(StringBuilder, Collection<Object>, String)"
+    ]
+  }
+}

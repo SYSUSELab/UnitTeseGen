@@ -1,0 +1,1827 @@
+{
+  "software.amazon.event.ruler.ACFinder": {
+    "matchRules(Event, GenericMachine)": [
+      "rulesForJSONEvent(String)",
+      "rulesForJSONEvent(JsonNode)"
+    ],
+    "find(ACTask)": [
+      "matchRules(Event, GenericMachine<?>)"
+    ],
+    "tryStep(ACTask, ACStep)": [
+      "moveFrom(NameState, int, ACTask, ArrayMembership)"
+    ],
+    "tryMustNotExistMatch(NameState, ACTask, int, ArrayMembership)": [
+      "moveFrom(NameState, int, ACTask, ArrayMembership)"
+    ],
+    "moveFrom(NameState, int, ACTask, ArrayMembership)": [
+      "find(ACTask)",
+      "tryStep(ACTask, ACStep)",
+      "addNameState(NameState, ACTask, int, ArrayMembership)"
+    ],
+    "addNameState(NameState, ACTask, int, ArrayMembership)": [
+      "tryMustNotExistMatch(NameState, ACTask, int, ArrayMembership)"
+    ],
+    "ACFinder()": []
+  },
+  "software.amazon.event.ruler.ACStep": {
+    "ACStep(int, NameState, ArrayMembership)": [
+      "moveFrom(NameState, int, ACTask, ArrayMembership)"
+    ]
+  },
+  "software.amazon.event.ruler.ACTask": {
+    "startState()": [
+      "find(ACTask)"
+    ],
+    "getMatchedRules()": [
+      "find(ACTask)"
+    ],
+    "collectRules(NameState)": [
+      "tryStep(ACTask, ACStep)",
+      "addNameState(NameState, ACTask, int, ArrayMembership)"
+    ],
+    "ACTask(Event, GenericMachine)": [
+      "matchRules(Event, GenericMachine<?>)"
+    ]
+  },
+  "software.amazon.event.ruler.AnythingBut": {
+    "anythingButMatch(Set, boolean)": [
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)",
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)"
+    ],
+    "getValues()": [
+      "deleteAnythingButPattern(AnythingBut)",
+      "addAnythingButPattern(AnythingBut)",
+      "findAnythingButPattern(AnythingBut)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "isNumeric()": [
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addMatchReferences(ByteMatch)",
+      "updateMatchReferences(ByteMatch)"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "AnythingBut(Set, boolean)": [
+      "anythingButMatch(Set<String>, boolean)",
+      "anythingButMatch(String)",
+      "anythingButMatch(double)",
+      "anythingButMatch(Set<String>)",
+      "anythingButNumberMatch(Set<Double>)"
+    ]
+  },
+  "software.amazon.event.ruler.AnythingButEqualsIgnoreCase": {
+    "getValues()": [
+      "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "addAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "AnythingButEqualsIgnoreCase(Set)": [
+      "anythingButIgnoreCaseMatch(String)",
+      "anythingButIgnoreCaseMatch(Set<String>)"
+    ]
+  },
+  "software.amazon.event.ruler.ArrayMembership": {
+    "putMembership(int, int)": [
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)",
+      "traverseArray(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadArray(JsonNode, Map<String, List<Value>>, Progress)"
+    ],
+    "deleteMembership(int)": [
+      "traverseArray(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadArray(JsonNode, Map<String, List<Value>>, Progress)"
+    ],
+    "getMembership(int)": [
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ],
+    "isEmpty()": [
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ],
+    "size()": [],
+    "toString()": [],
+    "checkArrayConsistency(ArrayMembership, ArrayMembership)": [
+      "tryStep(ACTask, ACStep)",
+      "getNameTransitions(Event, ArrayMembership)"
+    ],
+    "ArrayMembership()": [
+      "find(ACTask)"
+    ],
+    "ArrayMembership(ArrayMembership)": [
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ]
+  },
+  "software.amazon.event.ruler.ByteMachine": {
+    "transitionOn(String)": [
+      "tryStep(ACTask, ACStep)",
+      "tryValueMatching(Task, Step)"
+    ],
+    "isEmpty()": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "deletePattern(Patterns)": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "deleteExistencePattern(Patterns)": [
+      "deletePattern(Patterns)"
+    ],
+    "deleteAnythingButPattern(AnythingBut)": [
+      "deletePattern(Patterns)"
+    ],
+    "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)": [
+      "deletePattern(Patterns)"
+    ],
+    "deleteMatchPattern(ValuePatterns)": [
+      "deletePattern(Patterns)"
+    ],
+    "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])": [
+      "deleteExistencePattern(Patterns)",
+      "deleteAnythingButPattern(AnythingBut)",
+      "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "deleteMatchPattern(ValuePatterns)",
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])"
+    ],
+    "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])"
+    ],
+    "deleteRangePattern(Range)": [
+      "deletePattern(Patterns)"
+    ],
+    "checkAndDeleteStateAlongTraversedPath(ArrayDeque)": [
+      "deleteRangePattern(Range)"
+    ],
+    "doTransitionOn(String, Set, boolean)": [
+      "transitionOn(String)"
+    ],
+    "addExistenceMatch(Set)": [
+      "doTransitionOn(String, Set<NameState>, boolean)"
+    ],
+    "addSuffixMatch(byte[], Set, Set)": [
+      "doTransitionOn(String, Set<NameState>, boolean)"
+    ],
+    "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set)": [
+      "doTransitionOn(String, Set<NameState>, boolean)"
+    ],
+    "addPattern(Patterns)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "addExistencePattern(Patterns)": [
+      "addPattern(Patterns)"
+    ],
+    "addAnythingButPattern(AnythingBut)": [
+      "addPattern(Patterns)"
+    ],
+    "addAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)": [
+      "addPattern(Patterns)"
+    ],
+    "addMatchValue(Patterns, String, NameState)": [
+      "addExistencePattern(Patterns)",
+      "addAnythingButPattern(AnythingBut)",
+      "addAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "addMatchPattern(ValuePatterns)"
+    ],
+    "canReuseNextByteState(ByteState, ByteState, InputCharacter[], int)": [
+      "addMatchValue(Patterns, String, NameState)"
+    ],
+    "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)": [
+      "canReuseNextByteState(ByteState, ByteState, InputCharacter[], int)"
+    ],
+    "isNextCharacterFirstByteOfMultiByte(InputCharacter[], int)": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)"
+    ],
+    "extractNextJavaCharacterFromInputCharacters(InputCharacter[], int)": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)"
+    ],
+    "findPattern(Patterns)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "findAnythingButPattern(AnythingBut)": [
+      "findPattern(Patterns)"
+    ],
+    "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)": [
+      "findPattern(Patterns)"
+    ],
+    "findMatchPattern(ValuePatterns)": [
+      "findPattern(Patterns)"
+    ],
+    "findMatchPattern(InputCharacter[], Patterns)": [
+      "findPattern(Patterns)",
+      "findAnythingButPattern(AnythingBut)",
+      "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "findMatchPattern(ValuePatterns)"
+    ],
+    "findRangePattern(Range)": [
+      "deleteRangePattern(Range)",
+      "findPattern(Patterns)"
+    ],
+    "addRangePattern(Range)": [
+      "addPattern(Patterns)"
+    ],
+    "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)": [
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)"
+    ],
+    "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)": [
+      "addRangePattern(Range)"
+    ],
+    "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "findNextByteStateForRangePattern(ByteTransition, byte)": [
+      "deleteRangePattern(Range)",
+      "findRangePattern(Range)"
+    ],
+    "addMatchPattern(ValuePatterns)": [
+      "addPattern(Patterns)"
+    ],
+    "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)": [
+      "addMatchValue(Patterns, String, NameState)"
+    ],
+    "insertMatchForRangePattern(byte, ByteState, NameState, Patterns)": [
+      "addRangePattern(Range)"
+    ],
+    "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatchForRangePattern(byte, ByteState, NameState, Patterns)"
+    ],
+    "getTransitionHavingNextByteState(SingleByteTransition, SingleByteTransition, InputCharacter)": [
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)"
+    ],
+    "addMatchReferences(ByteMatch)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)"
+    ],
+    "findMatchForRangePattern(byte, ByteTransition, Patterns)": [
+      "findRangePattern(Range)"
+    ],
+    "deleteMatches(InputCharacter, ByteTransition, Patterns)": [
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "deleteRangePattern(Range)"
+    ],
+    "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "deleteMatches(InputCharacter, ByteTransition, Patterns)"
+    ],
+    "updateMatchReferences(ByteMatch)": [
+      "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)"
+    ],
+    "getTransition(ByteTransition, byte)": [
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "findNextByteStateForRangePattern(ByteTransition, byte)",
+      "findMatchForRangePattern(byte, ByteTransition, Patterns)",
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)"
+    ],
+    "getTransition(SingleByteTransition, InputCharacter)": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "addMatchValue(Patterns, String, NameState)",
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "getTransitionHavingNextByteState(SingleByteTransition, SingleByteTransition, InputCharacter)",
+      "deleteMatches(InputCharacter, ByteTransition, Patterns)"
+    ],
+    "getTransitionForMultiBytes(SingleByteTransition, Set)": [
+      "getTransition(SingleByteTransition, InputCharacter)"
+    ],
+    "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)": [
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)"
+    ],
+    "addTransitionNextStateForWildcard(ByteState, ByteState)": [
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)"
+    ],
+    "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)": [
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)"
+    ],
+    "removeTransition(ByteState, InputCharacter, SingleByteTransition)": [
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)",
+      "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)"
+    ],
+    "removeTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)": [
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)": [
+      "removeTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)"
+    ],
+    "addTransition(ByteState, InputCharacter, SingleByteTransition)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)",
+      "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)",
+      "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)"
+    ],
+    "addTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)": [
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "findMatch(Set, Patterns)": [
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "findMatchForRangePattern(byte, ByteTransition, Patterns)"
+    ],
+    "isByte(InputCharacter)": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)"
+    ],
+    "isWildcard(InputCharacter)": [
+      "deleteMatchPattern(ValuePatterns)",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "canReuseNextByteState(ByteState, ByteState, InputCharacter[], int)",
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "isMultiByteSet(InputCharacter)": [
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "evaluateComplexity(MachineComplexityEvaluator)": [
+      "evaluateComplexity(MachineComplexityEvaluator)"
+    ],
+    "gatherObjects(Set)": [
+      "gatherObjects(Set<Object>)"
+    ],
+    "toString()": []
+  },
+  "software.amazon.event.ruler.ByteMachine.EmptyByteTransition": {
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "getTransition(byte)": [],
+    "getTransitionForAllBytes()": [],
+    "getTransitions()": [],
+    "getMatch()": [],
+    "getShortcuts()": [],
+    "setMatch(ByteMatch)": [],
+    "gatherObjects(Set)": []
+  },
+  "software.amazon.event.ruler.ByteMap": {
+    "putTransition(byte, SingleByteTransition)": [
+      "putTransition(byte, SingleByteTransition)"
+    ],
+    "putTransitionForAllBytes(SingleByteTransition)": [
+      "putTransitionForAllBytes(SingleByteTransition)"
+    ],
+    "addTransition(byte, SingleByteTransition)": [
+      "addTransition(byte, SingleByteTransition)"
+    ],
+    "addTransitionForAllBytes(SingleByteTransition)": [
+      "addTransitionForAllBytes(SingleByteTransition)"
+    ],
+    "removeTransition(byte, SingleByteTransition)": [
+      "removeTransition(byte, SingleByteTransition)"
+    ],
+    "removeTransitionForAllBytes(SingleByteTransition)": [
+      "removeTransitionForAllBytes(SingleByteTransition)"
+    ],
+    "updateTransition(byte, SingleByteTransition, Operation)": [
+      "putTransition(byte, SingleByteTransition)",
+      "addTransition(byte, SingleByteTransition)",
+      "removeTransition(byte, SingleByteTransition)"
+    ],
+    "mergeAdjacentInMapIfNeeded(NavigableMap)": [
+      "updateTransition(byte, SingleByteTransition, Operation)"
+    ],
+    "isEmpty()": [
+      "hasNoTransitions()"
+    ],
+    "numberOfTransitions()": [
+      "isEmpty()",
+      "hasOnlySelfReferentialTransition()"
+    ],
+    "hasTransition(ByteTransition)": [
+      "hasOnlySelfReferentialTransition()"
+    ],
+    "getTransition(byte)": [
+      "getTransition(byte)"
+    ],
+    "getTransitionForAllBytes()": [
+      "getTransitionForAllBytes()"
+    ],
+    "getTransitions()": [
+      "getTransitions()"
+    ],
+    "getCeilings()": [
+      "getCeilings()"
+    ],
+    "getSingleByteTransitions()": [
+      "numberOfTransitions()",
+      "hasTransition(ByteTransition)"
+    ],
+    "expand(ByteTransition)": [
+      "addTransitionForAllBytes(SingleByteTransition)",
+      "removeTransitionForAllBytes(SingleByteTransition)",
+      "updateTransition(byte, SingleByteTransition, Operation)",
+      "mergeAdjacentInMapIfNeeded(NavigableMap<Integer, ByteTransition>)",
+      "getSingleByteTransitions()",
+      "toString()"
+    ],
+    "getMap()": [],
+    "toString()": [],
+    "ByteMap()": []
+  },
+  "software.amazon.event.ruler.ByteMap.Operation": {},
+  "software.amazon.event.ruler.ByteMatch": {
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "getTransition(byte)": [],
+    "getTransitionForAllBytes()": [],
+    "getTransitions()": [],
+    "getMatch()": [],
+    "setMatch(ByteMatch)": [],
+    "getShortcuts()": [],
+    "getPattern()": [
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "addMatchReferences(ByteMatch)",
+      "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)",
+      "updateMatchReferences(ByteMatch)",
+      "findMatch(Set<ByteMatch>, Patterns)",
+      "getWildcardPatterns(Set<ByteMatch>)"
+    ],
+    "getNextNameState()": [
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addMatchReferences(ByteMatch)",
+      "findMatchForRangePattern(byte, ByteTransition, Patterns)",
+      "updateMatchReferences(ByteMatch)",
+      "evaluate(ByteState)"
+    ],
+    "isMatchTrans()": [],
+    "gatherObjects(Set)": [
+      "gatherObjects(Set<Object>)"
+    ],
+    "toString()": [],
+    "ByteMatch(Patterns, NameState)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)"
+    ]
+  },
+  "software.amazon.event.ruler.ByteState": {
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "getMatch()": [],
+    "setMatch(ByteMatch)": [
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)"
+    ],
+    "getShortcuts()": [],
+    "hasNoTransitions()": [
+      "isEmpty()",
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)"
+    ],
+    "getTransition(byte)": [],
+    "getTransitionForAllBytes()": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "evaluate(ByteState)"
+    ],
+    "getTransitions()": [
+      "evaluate(ByteState)",
+      "getMatchesAccessibleFromEachTransition(ByteState)"
+    ],
+    "putTransition(byte, SingleByteTransition)": [],
+    "putTransitionForAllBytes(SingleByteTransition)": [
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "addTransition(byte, SingleByteTransition)": [
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)"
+    ],
+    "addTransitionForAllBytes(SingleByteTransition)": [
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextStateForWildcard(ByteState, ByteState)"
+    ],
+    "removeTransition(byte, SingleByteTransition)": [
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)"
+    ],
+    "removeTransitionForAllBytes(SingleByteTransition)": [
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "hasIndeterminatePrefix()": [
+      "canReuseNextByteState(ByteState, ByteState, InputCharacter[], int)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "hasIndeterminatePrefix()",
+      "getNextByteState()"
+    ],
+    "setIndeterminatePrefix(boolean)": [
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "addTransitionNextState(ByteState, InputCharacter, InputCharacter[], int, ByteState, Patterns, ByteState)",
+      "addTransitionNextStateForWildcard(ByteState, ByteState)",
+      "addTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)"
+    ],
+    "hasOnlySelfReferentialTransition()": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)"
+    ],
+    "getCeilings()": [
+      "getTransitions()"
+    ],
+    "toString()": []
+  },
+  "software.amazon.event.ruler.ByteTransition": {
+    "getNextByteState()": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "addMatchValue(Patterns, String, NameState)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "findOrMakeNextByteState(ByteState, ByteState, InputCharacter[], int, Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "getTransitionHavingNextByteState(SingleByteTransition, SingleByteTransition, InputCharacter)",
+      "deleteMatches(InputCharacter, ByteTransition, Patterns)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)",
+      "isEmpty()",
+      "gatherObjects(Set<Object>)",
+      "getNextByteState()",
+      "getTransitions()",
+      "evaluate(ByteState)",
+      "getMatchesAccessibleFromEachTransition(ByteState)",
+      "getTransitionForNextByteStates()"
+    ],
+    "setNextByteState(ByteState)": [
+      "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)"
+    ],
+    "getTransition(byte)": [
+      "getTransition(ByteTransition, byte)",
+      "getTransitionForMultiBytes(SingleByteTransition, Set<MultiByte>)",
+      "getTransition(byte)",
+      "getTransitions()"
+    ],
+    "getTransitions()": [
+      "gatherObjects(Set<Object>)",
+      "evaluate(ByteState)",
+      "gatherObjects(Set<Object>)"
+    ],
+    "getMatches()": [
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "findMatchForRangePattern(byte, ByteTransition, Patterns)",
+      "isEmpty()"
+    ],
+    "getShortcuts()": [
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)"
+    ],
+    "expand()": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "addMatchValue(Patterns, String, NameState)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "getTransitionHavingNextByteState(SingleByteTransition, SingleByteTransition, InputCharacter)",
+      "deleteMatches(InputCharacter, ByteTransition, Patterns)",
+      "getTransitionForMultiBytes(SingleByteTransition, Set<MultiByte>)",
+      "removeTransitionForBytes(ByteState, byte[], int, SingleByteTransition)",
+      "getTransitionForAllBytes()",
+      "expand(ByteTransition)",
+      "getNextByteState()",
+      "getTransition(byte)",
+      "getTransitions()",
+      "evaluate(ByteState)",
+      "getMatchesAccessibleFromEachTransition(ByteState)"
+    ],
+    "getTransitionForNextByteStates()": [
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "findNextByteStateForRangePattern(ByteTransition, byte)",
+      "evaluate(ByteState)"
+    ],
+    "isShortcutTrans()": [
+      "deleteMatchStep(ByteState, int, Patterns, InputCharacter[])",
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "isMatchTrans()": [],
+    "isEmpty()": [
+      "addMatchValue(Patterns, String, NameState)",
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)",
+      "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)"
+    ],
+    "hasIndeterminatePrefix()": [],
+    "gatherObjects(Set)": [
+      "gatherObjects(Set<Object>)",
+      "gatherObjects(Set<Object>)"
+    ],
+    "clone()": [
+      "insertMatch(InputCharacter[], int, ByteState, NameState, Patterns, ByteState)",
+      "putTransitionNextState(ByteState, InputCharacter, SingleByteTransition, ByteState)",
+      "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)"
+    ]
+  },
+  "software.amazon.event.ruler.CIDR": {
+    "isIPv4OrIPv6(String)": [
+      "ipToBytes(String)",
+      "ipToStringIfPossible(String)",
+      "ipToRangeIfPossible(String)"
+    ],
+    "ipToBytes(String)": [
+      "ipToString(String)",
+      "ipToRangeIfPossible(String)",
+      "cidr(String)"
+    ],
+    "ipToString(String)": [
+      "transitionOn(String)",
+      "ipToStringIfPossible(String)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "ipToStringIfPossible(String)": [],
+    "ipToRangeIfPossible(String)": [
+      "writeRules(List<Map<String, List<Patterns>>>, String, JsonParser, boolean)",
+      "writeRules(Map<String, List<Patterns>>, String, JsonParser, boolean)"
+    ],
+    "toHexDigits(byte[])": [
+      "ipToString(String)",
+      "ipToRangeIfPossible(String)",
+      "cidr(String)"
+    ],
+    "cidr(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "computeTopBytes(byte[], int)": [
+      "cidr(String)"
+    ],
+    "barf(String)": [
+      "ipToBytes(String)",
+      "cidr(String)"
+    ],
+    "CIDR()": []
+  },
+  "software.amazon.event.ruler.ComparableNumber": {
+    "generate(double)": [
+      "transitionOn(String)",
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)",
+      "anythingButMatch(double)",
+      "anythingButNumberMatch(Set<Double>)",
+      "numericEquals(double)",
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "byteToHexChars(byte)": [
+      "toHexStringSkippingFirstByte(long)"
+    ],
+    "longToByteBuffer(long)": [
+      "toHexStringSkippingFirstByte(long)"
+    ],
+    "toHexStringSkippingFirstByte(long)": [
+      "generate(double)"
+    ],
+    "ComparableNumber()": []
+  },
+  "software.amazon.event.ruler.CompositeByteTransition": {
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "getTransition(byte)": [],
+    "getTransitionForAllBytes()": [],
+    "getTransitions()": [],
+    "getMatch()": [],
+    "setMatch(ByteMatch)": [],
+    "getShortcuts()": [],
+    "hasIndeterminatePrefix()": [],
+    "isMatchTrans()": [],
+    "CompositeByteTransition(ByteState, ByteMatch)": [
+      "setNextByteState(ByteState)",
+      "setMatch(ByteMatch)"
+    ]
+  },
+  "software.amazon.event.ruler.CompoundByteTransition": {
+    "coalesce(Set)": [
+      "getTransitionForMultiBytes(SingleByteTransition, Set<MultiByte>)",
+      "addTransitionForAllBytes(SingleByteTransition)",
+      "removeTransitionForAllBytes(SingleByteTransition)",
+      "updateTransition(byte, SingleByteTransition, Operation)",
+      "getTransitionForAllBytes()",
+      "getTransition(byte)",
+      "getTransitions()"
+    ],
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "expand()": [],
+    "getTransitionForNextByteStates()": [],
+    "getMatches()": [],
+    "getShortcuts()": [],
+    "getTransition(byte)": [],
+    "getTransitions()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "CompoundByteTransition(Set)": [
+      "coalesce(Set<SingleByteTransition>)"
+    ]
+  },
+  "software.amazon.event.ruler.Constants": {
+    "Constants()": []
+  },
+  "software.amazon.event.ruler.Event": {
+    "traverseObject(JsonParser, TreeMap, Progress)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "traverseArray(JsonParser, TreeMap<String, List<Value>>, Progress)"
+    ],
+    "traverseArray(JsonParser, TreeMap, Progress)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "traverseArray(JsonParser, TreeMap<String, List<Value>>, Progress)"
+    ],
+    "flatten(String)": [],
+    "flatten(JsonNode)": [],
+    "doFlatten(JsonNode)": [
+      "flatten(String)",
+      "flatten(JsonNode)"
+    ],
+    "loadObject(JsonNode, Map, Progress)": [
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "loadArray(JsonNode, Map<String, List<Value>>, Progress)"
+    ],
+    "flattenObject(JsonNode, Map, Stack)": [
+      "doFlatten(JsonNode)",
+      "flattenObject(JsonNode, Map<String, List<String>>, Stack<String>)",
+      "flattenArray(JsonNode, Map<String, List<String>>, Stack<String>)"
+    ],
+    "loadArray(JsonNode, Map, Progress)": [
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "loadArray(JsonNode, Map<String, List<Value>>, Progress)"
+    ],
+    "flattenArray(JsonNode, Map, Stack)": [
+      "flattenObject(JsonNode, Map<String, List<String>>, Stack<String>)",
+      "flattenArray(JsonNode, Map<String, List<String>>, Stack<String>)"
+    ],
+    "addField(Map, Progress, String)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "traverseArray(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "loadArray(JsonNode, Map<String, List<Value>>, Progress)"
+    ],
+    "recordNameVal(Map, Stack, String)": [
+      "flattenObject(JsonNode, Map<String, List<String>>, Stack<String>)",
+      "flattenArray(JsonNode, Map<String, List<String>>, Stack<String>)"
+    ],
+    "pathName(Stack)": [
+      "recordNameVal(Map<String, List<String>>, Stack<String>, String)"
+    ],
+    "ignoreCurrentStep(JsonParser)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)"
+    ],
+    "advanceToClosingToken(JsonParser, JsonToken, JsonToken)": [
+      "ignoreCurrentStep(JsonParser)"
+    ],
+    "Event(String, GenericMachine)": [
+      "rulesForJSONEvent(String)"
+    ],
+    "Event(JsonNode, GenericMachine)": [
+      "rulesForJSONEvent(JsonNode)"
+    ]
+  },
+  "software.amazon.event.ruler.Event.Progress": {
+    "Progress(GenericMachine)": []
+  },
+  "software.amazon.event.ruler.Event.Value": {
+    "Value(String, ArrayMembership)": [
+      "addField(Map<String, List<Value>>, Progress, String)"
+    ]
+  },
+  "software.amazon.event.ruler.Field": {
+    "Field(String, String, ArrayMembership)": []
+  },
+  "software.amazon.event.ruler.Finder": {
+    "rulesForEvent(String[], GenericMachine)": [
+      "rulesForEvent(String[])"
+    ],
+    "rulesForEvent(List, GenericMachine)": [
+      "rulesForEvent(List<String>)"
+    ],
+    "find(Task)": [
+      "rulesForEvent(String[], GenericMachine<?>)",
+      "rulesForEvent(List<String>, GenericMachine<?>)"
+    ],
+    "moveFrom(NameState, int, Task)": [
+      "find(Task)",
+      "addNameState(NameState, Task, int)"
+    ],
+    "tryStep(Task)": [
+      "find(Task)"
+    ],
+    "tryValueMatching(Task, Step)": [
+      "tryStep(Task)"
+    ],
+    "tryNameMatching(NameState, Task, int)": [
+      "moveFrom(NameState, int, Task)"
+    ],
+    "addNameState(NameState, Task, int)": [
+      "tryValueMatching(Task, Step)",
+      "tryNameMatching(NameState, Task, int)"
+    ],
+    "Finder()": []
+  },
+  "software.amazon.event.ruler.GenericMachine": {
+    "rulesForJSONEvent(String)": [
+      "matchesRule(String, String)"
+    ],
+    "rulesForJSONEvent(JsonNode)": [],
+    "rulesForEvent(List)": [],
+    "rulesForEvent(String[])": [],
+    "getStartState()": [
+      "startState()",
+      "addPatternRule(T, Map<String, List<Patterns>>)",
+      "deletePatternRule(T, Map<String, List<Patterns>>)",
+      "startState()"
+    ],
+    "isFieldStepUsed(String)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "isFieldUsed(String)"
+    ],
+    "addRule(T, Map)": [],
+    "addRule(T, String)": [
+      "matchesRule(String, String)"
+    ],
+    "addRule(T, Reader)": [],
+    "addRule(T, InputStream)": [],
+    "addRule(T, byte[])": [],
+    "addPatternRule(T, Map)": [
+      "addRule(T, Map<String, List<String>>)",
+      "addRule(T, String)",
+      "addRule(T, Reader)",
+      "addRule(T, InputStream)",
+      "addRule(T, byte[])"
+    ],
+    "deletePatternRule(T, Map)": [
+      "deleteRule(T, Map<String, List<String>>)",
+      "deleteRule(T, String)",
+      "deleteRule(T, Reader)",
+      "deleteRule(T, InputStream)"
+    ],
+    "deleteRule(T, Map)": [],
+    "deleteRule(T, String)": [],
+    "deleteRule(T, Reader)": [],
+    "deleteRule(T, InputStream)": [],
+    "deleteStep(NameState, List, int, Map, T, List)": [
+      "deletePatternRule(T, Map<String, List<Patterns>>)",
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "checkAndDeleteNameState(NameState, NameState, String, Patterns)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "addStep(NameState, List, int, Map, T, List)": [
+      "addPatternRule(T, Map<String, List<Patterns>>)",
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "hasValuePatterns(List)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "hasKeyPatterns(List)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "isNamePattern(Patterns)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)",
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)",
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)",
+      "hasValuePatterns(List<Patterns>)"
+    ],
+    "addIntoUsedFields(List)": [
+      "addPatternRule(T, Map<String, List<Patterns>>)"
+    ],
+    "checkAndDeleteUsedFields(List)": [
+      "deletePatternRule(T, Map<String, List<Patterns>>)"
+    ],
+    "isEmpty()": [],
+    "createNameMatcher()": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "recordFieldStep(String)": [
+      "addIntoUsedFields(List<String>)"
+    ],
+    "eraseFieldStep(String)": [
+      "checkAndDeleteUsedFields(List<String>)"
+    ],
+    "evaluateComplexity(MachineComplexityEvaluator)": [],
+    "approximateObjectCount()": [],
+    "toString()": [],
+    "GenericMachine()": []
+  },
+  "software.amazon.event.ruler.input.ByteParser": {
+    "parse(byte)": []
+  },
+  "software.amazon.event.ruler.input.DefaultParser": {
+    "getParser()": [
+      "deleteExistencePattern(Patterns)",
+      "deleteAnythingButPattern(AnythingBut)",
+      "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "deleteMatchPattern(ValuePatterns)",
+      "deleteRangePattern(Range)",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "addMatchValue(Patterns, String, NameState)",
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "findPattern(Patterns)",
+      "findAnythingButPattern(AnythingBut)",
+      "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "findMatchPattern(ValuePatterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "insertMatchForRangePattern(byte, ByteState, NameState, Patterns)"
+    ],
+    "parse(MatchType, String)": [
+      "deleteExistencePattern(Patterns)",
+      "deleteAnythingButPattern(AnythingBut)",
+      "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "deleteMatchPattern(ValuePatterns)",
+      "addMatchValue(Patterns, String, NameState)",
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "findPattern(Patterns)",
+      "findAnythingButPattern(AnythingBut)",
+      "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "findMatchPattern(ValuePatterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "parse(byte)": [
+      "deleteRangePattern(Range)",
+      "checkAndDeleteStateAlongTraversedPath(ArrayDeque<AbstractMap.SimpleImmutableEntry<Byte, ByteTransition>>)",
+      "findOrMakeNextByteStateForRangePattern(ByteState, byte[], int)",
+      "insertMatchForRangePattern(byte, ByteState, NameState, Patterns)"
+    ],
+    "DefaultParser()": [],
+    "DefaultParser(WildcardParser, EqualsIgnoreCaseParser, SuffixParser)": []
+  },
+  "software.amazon.event.ruler.input.EqualsIgnoreCaseParser": {
+    "parse(String)": [
+      "parse(MatchType, String)"
+    ],
+    "EqualsIgnoreCaseParser()": []
+  },
+  "software.amazon.event.ruler.input.InputByte": {
+    "cast(InputCharacter)": [
+      "isNextCharacterFirstByteOfMultiByte(InputCharacter[], int)",
+      "extractNextJavaCharacterFromInputCharacters(InputCharacter[], int)",
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "getByte()": [
+      "isNextCharacterFirstByteOfMultiByte(InputCharacter[], int)",
+      "extractNextJavaCharacterFromInputCharacters(InputCharacter[], int)",
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "equals(Object)",
+      "toString()"
+    ],
+    "getType()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "InputByte(byte)": [
+      "parse(MatchType, String)",
+      "parse(byte)",
+      "parse(String)",
+      "parse(String)"
+    ]
+  },
+  "software.amazon.event.ruler.input.InputCharacter": {
+    "getType()": [
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "isByte(InputCharacter)",
+      "isWildcard(InputCharacter)",
+      "isMultiByteSet(InputCharacter)"
+    ]
+  },
+  "software.amazon.event.ruler.input.InputCharacterType": {},
+  "software.amazon.event.ruler.input.InputMultiByteSet": {
+    "cast(InputCharacter)": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "removeTransition(ByteState, InputCharacter, SingleByteTransition)",
+      "addTransition(ByteState, InputCharacter, SingleByteTransition)"
+    ],
+    "getMultiBytes()": [
+      "doMultipleTransitionsConvergeForInputByte(ByteState, InputCharacter[], int)",
+      "getTransition(SingleByteTransition, InputCharacter)",
+      "removeTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)",
+      "addTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)",
+      "equals(Object)",
+      "hashCode()",
+      "toString()"
+    ],
+    "getType()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "InputMultiByteSet(Set)": [
+      "parse(String)"
+    ]
+  },
+  "software.amazon.event.ruler.input.InputWildcard": {
+    "getType()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "InputWildcard()": [
+      "parse(String)"
+    ]
+  },
+  "software.amazon.event.ruler.input.MatchTypeParser": {
+    "parse(MatchType, String)": []
+  },
+  "software.amazon.event.ruler.input.MultiByte": {
+    "getBytes()": [
+      "getTransitionForMultiBytes(SingleByteTransition, Set<MultiByte>)",
+      "removeTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)",
+      "addTransitionForMultiByteSet(ByteState, InputMultiByteSet, SingleByteTransition)",
+      "isLessThan(MultiByte, boolean)",
+      "equals(Object)",
+      "hashCode()",
+      "toString()"
+    ],
+    "singular()": [],
+    "is(byte...)": [],
+    "isNumeric()": [],
+    "isLessThan(MultiByte)": [
+      "isGreaterThanOrEqualTo(MultiByte)"
+    ],
+    "isLessThan(MultiByte, boolean)": [
+      "isLessThan(MultiByte)",
+      "isLessThanOrEqualTo(MultiByte)"
+    ],
+    "isLessThanOrEqualTo(MultiByte)": [
+      "isGreaterThan(MultiByte)"
+    ],
+    "isGreaterThan(MultiByte)": [],
+    "isGreaterThanOrEqualTo(MultiByte)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "MultiByte(byte[])": []
+  },
+  "software.amazon.event.ruler.input.ParseException": {
+    "ParseException(String)": [
+      "parse(String)"
+    ]
+  },
+  "software.amazon.event.ruler.input.StringValueParser": {
+    "parse(String)": []
+  },
+  "software.amazon.event.ruler.input.SuffixParser": {
+    "parse(String)": [
+      "parse(MatchType, String)"
+    ],
+    "SuffixParser()": []
+  },
+  "software.amazon.event.ruler.input.WildcardParser": {
+    "parse(String)": [
+      "parse(MatchType, String)"
+    ],
+    "WildcardParser()": []
+  },
+  "software.amazon.event.ruler.IntIntMap": {
+    "get(int)": [
+      "getMembership(int)"
+    ],
+    "put(int, int)": [
+      "putMembership(int, int)",
+      "rehash(int)"
+    ],
+    "remove(int)": [
+      "putMembership(int, int)",
+      "deleteMembership(int)"
+    ],
+    "size()": [
+      "size()"
+    ],
+    "isEmpty()": [
+      "isEmpty()"
+    ],
+    "entries()": [
+      "toString()",
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ],
+    "clone()": [],
+    "shiftKeys(int)": [
+      "remove(int)"
+    ],
+    "rehash(int)": [
+      "put(int, int)"
+    ],
+    "makeTable(int)": [
+      "rehash(int)"
+    ],
+    "getStartIndex(int)": [
+      "get(int)",
+      "put(int, int)",
+      "remove(int)",
+      "shiftKeys(int)"
+    ],
+    "getNextIndex(int)": [
+      "get(int)",
+      "put(int, int)",
+      "remove(int)"
+    ],
+    "phiMix(int)": [
+      "getStartIndex(int)"
+    ],
+    "IntIntMap()": [],
+    "IntIntMap(int)": [],
+    "IntIntMap(int, float)": []
+  },
+  "software.amazon.event.ruler.IntIntMap.Entry": {
+    "getKey()": [
+      "toString()",
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ],
+    "getValue()": [
+      "toString()",
+      "checkArrayConsistency(ArrayMembership, ArrayMembership)"
+    ],
+    "Entry(int, int)": [
+      "next()"
+    ]
+  },
+  "software.amazon.event.ruler.IntIntMap.EntryIterator": {
+    "hasNext()": [],
+    "next()": [],
+    "findNextIndex(int)": [
+      "next()"
+    ]
+  },
+  "software.amazon.event.ruler.JsonRuleCompiler": {
+    "check(Reader)": [],
+    "check(String)": [],
+    "check(byte[])": [],
+    "check(InputStream)": [],
+    "compile(Reader)": [
+      "addRule(T, Reader)",
+      "deleteRule(T, Reader)"
+    ],
+    "compile(String)": [
+      "addRule(T, String)",
+      "deleteRule(T, String)"
+    ],
+    "compile(byte[])": [
+      "addRule(T, byte[])"
+    ],
+    "compile(InputStream)": [
+      "addRule(T, InputStream)",
+      "deleteRule(T, InputStream)"
+    ],
+    "doCompile(JsonParser)": [
+      "check(Reader)",
+      "check(String)",
+      "check(byte[])",
+      "check(InputStream)",
+      "compile(Reader)",
+      "compile(String)",
+      "compile(byte[])",
+      "compile(InputStream)"
+    ],
+    "parseObject(List, Path, JsonParser, boolean)": [
+      "doCompile(JsonParser)",
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)"
+    ],
+    "parseObjectInsideOrRelationship(List, Path, JsonParser, boolean)": [
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseIntoOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)"
+    ],
+    "parseIntoOrRelationship(List, Path, JsonParser, boolean)": [
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)"
+    ],
+    "deepCopyRules(List)": [
+      "parseIntoOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)"
+    ],
+    "writeRules(List, String, JsonParser, boolean)": [
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)"
+    ],
+    "processMatchExpression(JsonParser)": [
+      "writeRules(List<Map<String, List<Patterns>>>, String, JsonParser, boolean)"
+    ],
+    "processAnythingButListMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButMatchExpression(JsonParser, JsonToken)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processNumericMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "completeNumericRange(JsonParser, JsonToken, double, boolean)": [
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "processExistsExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "tooManyElements(JsonParser)": [
+      "processMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "barf(JsonParser, String)": [
+      "doCompile(JsonParser)",
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseIntoOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "writeRules(List<Map<String, List<Patterns>>>, String, JsonParser, boolean)",
+      "processMatchExpression(JsonParser)",
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)",
+      "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)",
+      "processNumericMatchExpression(JsonParser)",
+      "completeNumericRange(JsonParser, JsonToken, double, boolean)",
+      "processExistsExpression(JsonParser)",
+      "tooManyElements(JsonParser)"
+    ],
+    "JsonRuleCompiler()": []
+  },
+  "software.amazon.event.ruler.Machine": {
+    "Machine()": [
+      "matchesRule(String, String)"
+    ]
+  },
+  "software.amazon.event.ruler.MachineComplexityEvaluator": {
+    "getMaxComplexity()": [
+      "evaluateComplexity(MachineComplexityEvaluator)"
+    ],
+    "evaluate(ByteState)": [
+      "evaluateComplexity(MachineComplexityEvaluator)"
+    ],
+    "getMatchesAccessibleFromEachTransition(ByteState)": [
+      "evaluate(ByteState)"
+    ],
+    "getWildcardPatterns(Set)": [
+      "evaluate(ByteState)"
+    ],
+    "MachineComplexityEvaluator(int)": []
+  },
+  "software.amazon.event.ruler.MatchType": {},
+  "software.amazon.event.ruler.NameMatcher": {
+    "isEmpty()": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "addPattern(Patterns, Supplier)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "deletePattern(Patterns)": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "findPattern(Patterns)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "getNextState()": [
+      "getNameTransitions(String[])",
+      "getNameTransitions(Event, ArrayMembership)",
+      "gatherObjects(Set<Object>)"
+    ]
+  },
+  "software.amazon.event.ruler.NameState": {
+    "getTransitionOn(String)": [
+      "tryStep(ACTask, ACStep)",
+      "tryValueMatching(Task, Step)",
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)",
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)",
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "getRules()": [
+      "collectRules(NameState)",
+      "collectRules(NameState)"
+    ],
+    "hasRule(Object)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "deleteRule(Object)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "removeTransition(String)": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "removeKeyTransition(String)": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)"
+    ],
+    "isEmpty()": [
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)",
+      "isEmpty()"
+    ],
+    "addRule(Object)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "addTransition(String, ByteMachine)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "addKeyTransition(String, NameMatcher)": [
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "getKeyTransitionOn(String)": [
+      "deleteStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)",
+      "checkAndDeleteNameState(NameState, NameState, String, Patterns)",
+      "addStep(NameState, List<String>, int, Map<String, List<Patterns>>, T, List<String>)"
+    ],
+    "hasKeyTransitions()": [
+      "tryMustNotExistMatch(NameState, ACTask, int, ArrayMembership)",
+      "tryNameMatching(NameState, Task, int)"
+    ],
+    "getNameTransitions(String[])": [
+      "tryNameMatching(NameState, Task, int)"
+    ],
+    "getNameTransitions(Event, ArrayMembership)": [
+      "tryMustNotExistMatch(NameState, ACTask, int, ArrayMembership)"
+    ],
+    "evaluateComplexity(MachineComplexityEvaluator)": [
+      "evaluateComplexity(MachineComplexityEvaluator)",
+      "evaluate(ByteState)"
+    ],
+    "gatherObjects(Set)": [
+      "gatherObjects(Set<Object>)",
+      "gatherObjects(Set<Object>)",
+      "approximateObjectCount()",
+      "gatherObjects(Set<Object>)"
+    ],
+    "toString()": []
+  },
+  "software.amazon.event.ruler.Path": {
+    "push(String)": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)"
+    ],
+    "pop()": [
+      "traverseObject(JsonParser, TreeMap<String, List<Value>>, Progress)",
+      "loadObject(JsonNode, Map<String, List<Value>>, Progress)",
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)"
+    ],
+    "name()": [
+      "addField(Map<String, List<Value>>, Progress, String)",
+      "extendedName(String)"
+    ],
+    "extendedName(String)": [
+      "parseObject(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObjectInsideOrRelationship(List<Map<String, List<Patterns>>>, Path, JsonParser, boolean)",
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)"
+    ]
+  },
+  "software.amazon.event.ruler.Patterns": {
+    "type()": [
+      "deletePattern(Patterns)",
+      "deleteExistencePattern(Patterns)",
+      "deleteAnythingButPattern(AnythingBut)",
+      "deleteAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "deleteMatchPattern(ValuePatterns)",
+      "doTransitionOn(String, Set<NameState>, boolean)",
+      "addExistenceMatch(Set<NameState>)",
+      "addSuffixMatch(byte[], Set<NameState>, Set<NameState>)",
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)",
+      "addPattern(Patterns)",
+      "addMatchValue(Patterns, String, NameState)",
+      "findPattern(Patterns)",
+      "findAnythingButPattern(AnythingBut)",
+      "findAnythingButEqualsIgnoreCasePattern(AnythingButEqualsIgnoreCase)",
+      "findMatchPattern(ValuePatterns)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "addMatchReferences(ByteMatch)",
+      "updateMatchReferences(ByteMatch)",
+      "isNamePattern(Patterns)",
+      "getWildcardPatterns(Set<ByteMatch>)",
+      "matchesOneOf(JsonNode, List<Patterns>)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "exactMatch(String)": [
+      "writeRules(List<Map<String, List<Patterns>>>, String, JsonParser, boolean)",
+      "processMatchExpression(JsonParser)",
+      "writeRules(Map<String, List<Patterns>>, String, JsonParser, boolean)",
+      "processMatchExpression(JsonParser)",
+      "writeRules(Map<List<String>, List<Patterns>>, List<String>, JsonParser, boolean)"
+    ],
+    "prefixMatch(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "suffixMatch(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "anythingButMatch(String)": [],
+    "anythingButMatch(double)": [],
+    "anythingButMatch(Set)": [],
+    "anythingButIgnoreCaseMatch(String)": [],
+    "anythingButIgnoreCaseMatch(Set)": [
+      "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)",
+      "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)",
+      "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)",
+      "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)"
+    ],
+    "anythingButNumberMatch(Set)": [],
+    "anythingButPrefix(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "anythingButSuffix(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "numericEquals(double)": [
+      "writeRules(List<Map<String, List<Patterns>>>, String, JsonParser, boolean)",
+      "processNumericMatchExpression(JsonParser)",
+      "writeRules(Map<String, List<Patterns>>, String, JsonParser, boolean)",
+      "processNumericMatchExpression(JsonParser)",
+      "writeRules(Map<List<String>, List<Patterns>>, List<String>, JsonParser, boolean)"
+    ],
+    "existencePatterns()": [
+      "processExistsExpression(JsonParser)",
+      "processExistsExpression(JsonParser)"
+    ],
+    "absencePatterns()": [
+      "processExistsExpression(JsonParser)",
+      "processExistsExpression(JsonParser)"
+    ],
+    "equalsIgnoreCaseMatch(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "wildcardMatch(String)": [
+      "processMatchExpression(JsonParser)",
+      "processMatchExpression(JsonParser)"
+    ],
+    "clone()": [
+      "addPatternRule(T, Map<String, List<Patterns>>)",
+      "clone()"
+    ],
+    "equals(Object)": [
+      "equals(Object)",
+      "equals(Object)",
+      "findMatchPattern(InputCharacter[], Patterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)",
+      "findMatch(Set<ByteMatch>, Patterns)",
+      "equals(Object)",
+      "equals(Object)"
+    ],
+    "hashCode()": [
+      "hashCode()",
+      "hashCode()",
+      "hashCode()",
+      "hashCode()"
+    ],
+    "toString()": [
+      "toString()",
+      "toString()",
+      "toString()",
+      "toString()"
+    ],
+    "Patterns(MatchType)": [
+      "existencePatterns()",
+      "absencePatterns()",
+      "clone()"
+    ]
+  },
+  "software.amazon.event.ruler.Range": {
+    "lessThan(double)": [
+      "processNumericMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "lessThanOrEqualTo(double)": [
+      "processNumericMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "greaterThan(double)": [
+      "processNumericMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "greaterThanOrEqualTo(double)": [
+      "processNumericMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "between(double, boolean, double, boolean)": [
+      "completeNumericRange(JsonParser, JsonToken, double, boolean)",
+      "completeNumericRange(JsonParser, JsonToken, double, boolean)"
+    ],
+    "deepCopy(Range)": [
+      "clone()"
+    ],
+    "digitSequence(byte, byte, boolean, boolean)": [
+      "deleteRangePattern(Range)",
+      "findRangePattern(Range)",
+      "addRangePattern(Range)"
+    ],
+    "getHexByteIndex(byte)": [
+      "digitSequence(byte, byte, boolean, boolean)"
+    ],
+    "clone()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "Range(double, boolean, double, boolean)": [
+      "lessThan(double)",
+      "lessThanOrEqualTo(double)",
+      "greaterThan(double)",
+      "greaterThanOrEqualTo(double)",
+      "between(double, boolean, double, boolean)"
+    ],
+    "Range(byte[], boolean, byte[], boolean, boolean)": [
+      "ipToRangeIfPossible(String)",
+      "cidr(String)"
+    ],
+    "Range(Range)": [
+      "deepCopy(Range)"
+    ]
+  },
+  "software.amazon.event.ruler.RuleCompiler": {
+    "check(Reader)": [],
+    "check(String)": [],
+    "check(byte[])": [],
+    "check(InputStream)": [],
+    "compile(Reader)": [
+      "addRule(T, Reader)",
+      "deleteRule(T, Reader)"
+    ],
+    "compile(String)": [
+      "addRule(T, String)",
+      "deleteRule(T, String)"
+    ],
+    "compile(byte[])": [
+      "addRule(T, byte[])"
+    ],
+    "compile(InputStream)": [
+      "addRule(T, InputStream)",
+      "deleteRule(T, InputStream)"
+    ],
+    "doCompile(JsonParser)": [
+      "check(Reader)",
+      "check(String)",
+      "check(byte[])",
+      "check(InputStream)",
+      "compile(Reader)",
+      "compile(String)",
+      "compile(byte[])",
+      "compile(InputStream)"
+    ],
+    "parseObject(Map, Path, JsonParser, boolean)": [
+      "doCompile(JsonParser)",
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)"
+    ],
+    "writeRules(Map, String, JsonParser, boolean)": [
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)"
+    ],
+    "processMatchExpression(JsonParser)": [
+      "writeRules(Map<String, List<Patterns>>, String, JsonParser, boolean)",
+      "writeRules(Map<List<String>, List<Patterns>>, List<String>, JsonParser, boolean)"
+    ],
+    "processAnythingButListMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButMatchExpression(JsonParser, JsonToken)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "processNumericMatchExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "completeNumericRange(JsonParser, JsonToken, double, boolean)": [
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "processExistsExpression(JsonParser)": [
+      "processMatchExpression(JsonParser)"
+    ],
+    "tooManyElements(JsonParser)": [
+      "processMatchExpression(JsonParser)",
+      "processNumericMatchExpression(JsonParser)"
+    ],
+    "barf(JsonParser, String)": [
+      "doCompile(JsonParser)",
+      "parseObject(Map<String, List<Patterns>>, Path, JsonParser, boolean)",
+      "writeRules(Map<String, List<Patterns>>, String, JsonParser, boolean)",
+      "processMatchExpression(JsonParser)",
+      "processAnythingButListMatchExpression(JsonParser)",
+      "processAnythingButEqualsIgnoreCaseListMatchExpression(JsonParser)",
+      "processAnythingButMatchExpression(JsonParser, JsonToken)",
+      "processAnythingButEqualsIgnoreCaseMatchExpression(JsonParser, JsonToken)",
+      "processNumericMatchExpression(JsonParser)",
+      "completeNumericRange(JsonParser, JsonToken, double, boolean)",
+      "processExistsExpression(JsonParser)",
+      "tooManyElements(JsonParser)",
+      "doFlattenRule(JsonParser)",
+      "parseRuleObject(Map<List<String>, List<Patterns>>, Deque<String>, JsonParser, boolean)",
+      "writeRules(Map<List<String>, List<Patterns>>, List<String>, JsonParser, boolean)"
+    ],
+    "RuleCompiler()": []
+  },
+  "software.amazon.event.ruler.RuleCompiler.ListBasedRuleCompiler": {
+    "flattenRule(String)": [],
+    "doFlattenRule(JsonParser)": [
+      "flattenRule(String)"
+    ],
+    "parseRuleObject(Map, Deque, JsonParser, boolean)": [
+      "doFlattenRule(JsonParser)",
+      "parseRuleObject(Map<List<String>, List<Patterns>>, Deque<String>, JsonParser, boolean)"
+    ],
+    "writeRules(Map, List, JsonParser, boolean)": [
+      "parseRuleObject(Map<List<String>, List<Patterns>>, Deque<String>, JsonParser, boolean)"
+    ],
+    "rulePathname(Deque, String)": [
+      "parseRuleObject(Map<List<String>, List<Patterns>>, Deque<String>, JsonParser, boolean)"
+    ]
+  },
+  "software.amazon.event.ruler.Ruler": {
+    "matchesRule(String, String)": [],
+    "matchesAllFields(JsonNode, Map)": [],
+    "matchesOneOf(JsonNode, List)": [
+      "matchesAllFields(JsonNode, Map<List<String>, List<Patterns>>)"
+    ],
+    "matches(JsonNode, Patterns)": [
+      "matchesOneOf(JsonNode, List<Patterns>)"
+    ],
+    "tryToRetrievePath(JsonNode, List)": [
+      "matchesAllFields(JsonNode, Map<List<String>, List<Patterns>>)"
+    ],
+    "compare(byte[], byte[])": [
+      "matches(JsonNode, Patterns)"
+    ],
+    "Ruler()": []
+  },
+  "software.amazon.event.ruler.ShortcutTransition": {
+    "getNextByteState()": [],
+    "setNextByteState(ByteState)": [],
+    "getTransition(byte)": [],
+    "getTransitionForAllBytes()": [],
+    "getTransitions()": [],
+    "getMatch()": [
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "setMatch(ByteMatch)": [
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)"
+    ],
+    "getShortcuts()": [],
+    "isShortcutTrans()": []
+  },
+  "software.amazon.event.ruler.SingleByteTransition": {
+    "getMatch()": [
+      "deleteMatch(InputCharacter, ByteState, Patterns, SingleByteTransition)",
+      "getMatches()",
+      "gatherObjects(Set<Object>)"
+    ],
+    "setMatch(ByteMatch)": [
+      "putTransitionMatch(ByteState, InputCharacter, SingleByteTransition, ByteMatch)"
+    ],
+    "getTransitionForAllBytes()": [
+      "getTransition(SingleByteTransition, InputCharacter)"
+    ],
+    "getMatches()": [
+      "deleteMatchStepForWildcard(ByteState, int, Patterns, InputCharacter[], SingleByteTransition, ByteState)",
+      "getMatches()",
+      "getMatchesAccessibleFromEachTransition(ByteState)"
+    ],
+    "expand()": [],
+    "getTransitionForNextByteStates()": [
+      "gatherObjects(Set<Object>)"
+    ],
+    "gatherObjects(Set)": [
+      "gatherObjects(Set<Object>)",
+      "gatherObjects(Set<Object>)"
+    ]
+  },
+  "software.amazon.event.ruler.SingleStateNameMatcher": {
+    "isEmpty()": [],
+    "addPattern(Patterns, Supplier)": [],
+    "deletePattern(Patterns)": [],
+    "findPattern(Patterns)": [],
+    "getNextState()": []
+  },
+  "software.amazon.event.ruler.Step": {
+    "equals(Object)": [],
+    "hashCode()": [],
+    "Step(int, NameState)": [
+      "moveFrom(NameState, int, Task)"
+    ]
+  },
+  "software.amazon.event.ruler.Task": {
+    "startState()": [
+      "find(Task)"
+    ],
+    "isFieldUsed(String)": [
+      "moveFrom(NameState, int, Task)",
+      "tryValueMatching(Task, Step)"
+    ],
+    "nextStep()": [
+      "tryStep(Task)"
+    ],
+    "addStep(Step)": [
+      "moveFrom(NameState, int, Task)"
+    ],
+    "stepsRemain()": [
+      "find(Task)"
+    ],
+    "getMatchedRules()": [
+      "find(Task)"
+    ],
+    "collectRules(NameState)": [
+      "addNameState(NameState, Task, int)"
+    ],
+    "Task(List, GenericMachine)": [
+      "rulesForEvent(List<String>, GenericMachine<?>)"
+    ],
+    "Task(String[], GenericMachine)": [
+      "rulesForEvent(String[], GenericMachine<?>)"
+    ]
+  },
+  "software.amazon.event.ruler.ValuePatterns": {
+    "pattern()": [
+      "deleteMatchPattern(ValuePatterns)",
+      "attemptAddShortcutTransitionMatch(ByteTransition, String, MatchType, Set<NameState>)",
+      "findMatchPattern(ValuePatterns)",
+      "extendShortcutTransition(ByteState, ByteTransition, InputCharacter, int)",
+      "addMatchPattern(ValuePatterns)",
+      "addEndOfMatch(ByteState, ByteState, InputCharacter[], int, Patterns, NameState)",
+      "matches(JsonNode, Patterns)"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "ValuePatterns(MatchType, String)": [
+      "exactMatch(String)",
+      "prefixMatch(String)",
+      "suffixMatch(String)",
+      "anythingButPrefix(String)",
+      "anythingButSuffix(String)",
+      "numericEquals(double)",
+      "equalsIgnoreCaseMatch(String)",
+      "wildcardMatch(String)"
+    ]
+  }
+}

@@ -1,0 +1,1100 @@
+{
+  "org.flmelody.core.AbstractRouterGroup": {
+    "setGroupPath(String)": [],
+    "end()": [],
+    "get(String, Supplier)": [],
+    "get(String, Consumer)": [],
+    "get(String, EnhancedFunction)": [],
+    "put(String, Supplier)": [],
+    "put(String, Consumer)": [],
+    "put(String, EnhancedFunction)": [],
+    "post(String, Supplier)": [],
+    "post(String, Consumer)": [],
+    "post(String, EnhancedFunction)": [],
+    "delete(String, Supplier)": [],
+    "delete(String, Consumer)": [],
+    "delete(String, EnhancedFunction)": [],
+    "sse(String, EnhancedFunction)": [],
+    "ws(String, Consumer)": [],
+    "resources(String, String...)": [],
+    "http(HttpMethod, String, Supplier)": [],
+    "http(HttpMethod, String, Consumer)": [],
+    "http(HttpMethod, String, EnhancedFunction)": [
+      "get(String, EnhancedFunction<C, ?>)",
+      "put(String, EnhancedFunction<C, ?>)",
+      "post(String, EnhancedFunction<C, ?>)",
+      "delete(String, EnhancedFunction<C, ?>)",
+      "sse(String, EnhancedFunction<SseWindwardContext, SseEjector>)"
+    ],
+    "matchRouter(String, String)": [
+      "findRouter(String, String)"
+    ],
+    "registerRouter(String, String, I, Class)": [
+      "ws(String, Consumer<WebSocketWindwardContext>)",
+      "resources(String, String...)",
+      "http(HttpMethod, String, Supplier<R>)",
+      "http(HttpMethod, String, Consumer<SimpleWindwardContext>)",
+      "http(HttpMethod, String, EnhancedFunction<C, ?>)"
+    ],
+    "checkPlaceholder(String)": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "AbstractRouterGroup(M)": [],
+    "AbstractRouterGroup(M, String)": []
+  },
+  "org.flmelody.core.context.AbstractHttpWindwardContext": {
+    "readJson(Class)": [],
+    "readJson(Type)": [],
+    "bindJson(Class, Class...)": [],
+    "bindJson(Type, Class...)": [],
+    "redirect(String)": [],
+    "redirect(int, String)": [
+      "redirect(String)"
+    ],
+    "html(String, M)": [
+      "doOnResponse(R)"
+    ],
+    "AbstractHttpWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.AbstractWindwardContext": {
+    "getRequestParameter(String)": [],
+    "getRequestParameters(String)": [],
+    "getPathVariables()": [],
+    "getRequestBody()": [],
+    "windwardRequest()": [
+      "accept(WindwardContext)"
+    ],
+    "close()": [],
+    "isClosed()": [],
+    "writeJson(T)": [
+      "doOnResponse(R)"
+    ],
+    "writeJson(int, T)": [
+      "writeJson(T)"
+    ],
+    "writeString(String)": [],
+    "writeString(int, String)": [
+      "writeString(String)"
+    ],
+    "write(String, T)": [],
+    "write(int, String, T)": [
+      "writeJson(int, T)",
+      "writeString(int, String)",
+      "write(String, T)",
+      "accept(WindwardContext)",
+      "write(int, String, T)"
+    ],
+    "AbstractWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.EmptyWindwardContext": {
+    "getRequestParameter(String)": [],
+    "getRequestParameters(String)": [],
+    "getPathVariables()": [],
+    "getRequestBody()": [],
+    "windwardRequest()": [],
+    "close()": [],
+    "isClosed()": [],
+    "write(int, String, T)": [],
+    "writeJson(int, T)": [],
+    "writeString(int, String)": []
+  },
+  "org.flmelody.core.context.EnhancedWindwardContext": {
+    "execute(EnhancedFunction)": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "doOnRequest()": [
+      "execute(EnhancedFunction<C, ?>)"
+    ],
+    "doOnResponse(R)": [
+      "execute(EnhancedFunction<C, ?>)"
+    ],
+    "EnhancedWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.HttpBasicWindwardContext": {
+    "readJson(Class)": [],
+    "readJson(Type)": [],
+    "bindJson(Class, Class...)": [],
+    "bindJson(Type, Class...)": [],
+    "redirect(String)": [],
+    "redirect(int, String)": [],
+    "html(String, M)": []
+  },
+  "org.flmelody.core.context.ResourceWindwardContext": {
+    "getMatchedPath()": [
+      "accept(WindwardContext)"
+    ],
+    "ResourceWindwardContext(WindwardRequest, WindwardResponse, String)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ]
+  },
+  "org.flmelody.core.context.SimpleWindwardContext": {
+    "SimpleWindwardContext(WindwardRequest, WindwardResponse)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ]
+  },
+  "org.flmelody.core.context.support.HttpKind": {},
+  "org.flmelody.core.context.support.JsonWindwardContext": {
+    "doOnRequest()": [],
+    "doOnResponse(R)": [],
+    "JsonWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.support.SseWindwardContext": {
+    "doOnRequest()": [],
+    "doOnResponse(R)": [],
+    "SseWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.support.ViewWindwardContext": {
+    "doOnRequest()": [],
+    "doOnResponse(R)": [],
+    "ViewWindwardContext(WindwardRequest, WindwardResponse)": []
+  },
+  "org.flmelody.core.context.WindwardContext": {
+    "getRequestParameter(String)": [],
+    "getRequestParameters(String)": [],
+    "getPathVariables()": [],
+    "getRequestBody()": [],
+    "windwardRequest()": [
+      "filter(WindwardContext)"
+    ],
+    "close()": [
+      "handle(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "isClosed()": [
+      "handle(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "isCacheable()": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ],
+    "write(String, T)": [],
+    "write(int, String, T)": [
+      "write(String, T)",
+      "accept(WindwardContext)"
+    ],
+    "writeJson(T)": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "writeJson(int, T)": [
+      "writeJson(T)"
+    ],
+    "writeString(String)": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "writeString(int, String)": [
+      "writeString(String)",
+      "handle(WindwardContext)",
+      "handle(FunctionMetaInfo<?>, WindwardContext)",
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ]
+  },
+  "org.flmelody.core.DefaultNotFoundHandler": {
+    "handle(WindwardContext)": [],
+    "supported(Exception)": [],
+    "getOrder()": []
+  },
+  "org.flmelody.core.DefaultRequestReader": {
+    "readJson(String, Class)": [],
+    "readJson(String, Type)": [],
+    "bindJson(String, Class, Class...)": [],
+    "bindJson(String, Type, Class...)": []
+  },
+  "org.flmelody.core.DefaultRouterGroup": {
+    "isResourceGroup()": [],
+    "DefaultRouterGroup(Windward)": [],
+    "DefaultRouterGroup(Windward, String)": [
+      "group(String)"
+    ],
+    "DefaultRouterGroup(Windward, String, boolean)": [
+      "resourceGroup(String)"
+    ]
+  },
+  "org.flmelody.core.exception.HandlerNotFoundException": {
+    "HandlerNotFoundException(String)": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ]
+  },
+  "org.flmelody.core.exception.JsonDeserializeException": {
+    "JsonDeserializeException(Throwable)": [
+      "toObject(String, Class<O>)",
+      "toObject(String, Class<O>)",
+      "toObject(I, Type)",
+      "toObject(String, Class<O>)",
+      "toObject(String, Class<O>)"
+    ],
+    "JsonDeserializeException(String)": []
+  },
+  "org.flmelody.core.exception.JsonException": {
+    "JsonException(Throwable)": [],
+    "JsonException(String)": []
+  },
+  "org.flmelody.core.exception.JsonSerializeException": {
+    "JsonSerializeException(Throwable)": [
+      "toJson(I)",
+      "toJson(I)",
+      "toJson(I)",
+      "toJson(I)"
+    ],
+    "JsonSerializeException(String)": []
+  },
+  "org.flmelody.core.exception.NoRequestBodyException": {},
+  "org.flmelody.core.exception.PluginMissException": {
+    "PluginMissException(Throwable)": [],
+    "PluginMissException(String)": [
+      "plugin(Class<T>)"
+    ]
+  },
+  "org.flmelody.core.exception.ResourceNotFoundException": {
+    "ResourceNotFoundException(String)": [
+      "doOnResponse(R)",
+      "findResource(String, StaticResource)",
+      "findResource(String, StaticResource)"
+    ]
+  },
+  "org.flmelody.core.exception.RouterMappingException": {
+    "RouterMappingException(String)": [
+      "checkPlaceholder(String)"
+    ]
+  },
+  "org.flmelody.core.exception.ServerException": {
+    "ServerException(String)": [
+      "run()"
+    ]
+  },
+  "org.flmelody.core.exception.ValidationException": {
+    "ValidationException(String)": [
+      "doOnRequest()",
+      "bindJson(String, Class<I>, Class<?>...)",
+      "bindJson(String, Type, Class<?>...)",
+      "validate(T, Class<?>...)"
+    ]
+  },
+  "org.flmelody.core.exception.WindwardException": {
+    "WindwardException(Throwable)": [
+      "accept(WindwardContext)",
+      "findResource(String, StaticResource)",
+      "findLambdaFunction(F)"
+    ],
+    "WindwardException(String)": [
+      "resources(String, String...)",
+      "redirect(int, String)",
+      "html(String, M)"
+    ]
+  },
+  "org.flmelody.core.ExceptionHandler": {
+    "handle(WindwardContext)": [
+      "handleException(WindwardContext, Exception)"
+    ],
+    "supported(Exception)": [
+      "handleException(WindwardContext, Exception)"
+    ]
+  },
+  "org.flmelody.core.Filter": {
+    "filter(WindwardContext)": [
+      "handle(FunctionMetaInfo<?>, WindwardContext)"
+    ]
+  },
+  "org.flmelody.core.FunctionMetaInfo": {
+    "getPath()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "getFunction()": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "getContext()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "getParameterType()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "getResultType()": [],
+    "getPathVariables()": [
+      "matchRouter(String, String)",
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "getFunctionDefinition()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "FunctionMetaInfo(String, I, Class, Map)": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ]
+  },
+  "org.flmelody.core.Handler": {},
+  "org.flmelody.core.HttpHeader": {},
+  "org.flmelody.core.HttpMethod": {},
+  "org.flmelody.core.HttpServer": {
+    "run()": [
+      "run()"
+    ]
+  },
+  "org.flmelody.core.HttpStatus": {
+    "value()": [
+      "redirect(String)",
+      "redirect(int, String)",
+      "html(String, M)",
+      "writeJson(T)",
+      "writeString(String)",
+      "write(String, T)",
+      "write(String, T)",
+      "writeJson(T)",
+      "writeString(String)",
+      "handle(WindwardContext)",
+      "handle(FunctionMetaInfo<?>, WindwardContext)",
+      "execute(FunctionMetaInfo<?>, WindwardContext)",
+      "accept(WindwardContext)",
+      "writeBinaryData(T)"
+    ],
+    "reasonPhrase()": [
+      "handle(WindwardContext)",
+      "handle(FunctionMetaInfo<?>, WindwardContext)",
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "HttpStatus(int, String)": []
+  },
+  "org.flmelody.core.LoggingFilter": {
+    "filter(WindwardContext)": []
+  },
+  "org.flmelody.core.MediaType": {
+    "detectMediaType(String)": [
+      "doOnRequest()",
+      "accept(WindwardContext)"
+    ],
+    "MediaType(String, String, String)": []
+  },
+  "org.flmelody.core.netty.handler.HttpResponseEncoder": {
+    "encode(ChannelHandlerContext, FullHttpResponse, List)": []
+  },
+  "org.flmelody.core.netty.handler.HttpServerHandler": {
+    "channelRead0(ChannelHandlerContext, Object)": [],
+    "userEventTriggered(ChannelHandlerContext, Object)": [],
+    "exceptionCaught(ChannelHandlerContext, Throwable)": [],
+    "extractHandlers(ChannelHandlerContext, String)": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ],
+    "prepareHeaders(HttpHeaders)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo)": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ],
+    "handle(FunctionMetaInfo, WindwardContext)": [
+      "channelRead0(ChannelHandlerContext, Object)",
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)"
+    ],
+    "execute(FunctionMetaInfo, WindwardContext)": [
+      "handle(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "handleException(WindwardContext, Exception)": [
+      "execute(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "isWebsocketUpgrade(HttpHeaders)": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ]
+  },
+  "org.flmelody.core.netty.handler.SocketTailHandler": {
+    "userEventTriggered(ChannelHandlerContext, Object)": [],
+    "exceptionCaught(ChannelHandlerContext, Throwable)": []
+  },
+  "org.flmelody.core.netty.handler.WebSocketHandler": {
+    "channelRead(ChannelHandlerContext, Object)": []
+  },
+  "org.flmelody.core.netty.NettyHttpServer": {
+    "run()": [],
+    "NettyHttpServer(int)": [
+      "setup(int, String, String, String, Filter...)"
+    ]
+  },
+  "org.flmelody.core.netty.NettyResponseWriter": {
+    "write(int, T)": [],
+    "write(int, String, T)": [
+      "write(int, T)"
+    ],
+    "write(int, String, Map, T)": [],
+    "write(int, String, T, boolean)": [
+      "write(int, String, T)",
+      "writeAndClose(int, String, T)"
+    ],
+    "write(int, String, Map, T, boolean)": [
+      "write(int, String, Map<String, Object>, T)",
+      "write(int, String, T, boolean)"
+    ],
+    "writeAndClose(int, String, T)": [],
+    "close()": [
+      "write(int, String, Map<String, Object>, T, boolean)"
+    ],
+    "NettyResponseWriter(ChannelHandlerContext, boolean)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ]
+  },
+  "org.flmelody.core.Order": {
+    "getOrder()": []
+  },
+  "org.flmelody.core.plugin.json.AutoJsonBinder": {},
+  "org.flmelody.core.plugin.json.GsonPlugin": {
+    "toJson(I)": [
+      "toObject(I, Type)"
+    ],
+    "toObject(String, Class)": [],
+    "toObject(I, Type)": []
+  },
+  "org.flmelody.core.plugin.json.JacksonPlugin": {
+    "toJson(I)": [
+      "toObject(I, Type)"
+    ],
+    "toObject(String, Class)": [],
+    "toObject(I, Type)": []
+  },
+  "org.flmelody.core.plugin.json.JsonPlugin": {
+    "toJson(I)": [
+      "write(int, String, Map<String, Object>, T, boolean)"
+    ],
+    "toObject(String, Class)": [
+      "readJson(String, Class<I>)",
+      "validate(JsonPlugin, String, Class<T>, Class<?>...)"
+    ],
+    "toObject(I, Type)": [
+      "html(String, M)",
+      "readJson(String, Type)",
+      "validate(JsonPlugin, String, Type, Class<?>...)"
+    ]
+  },
+  "org.flmelody.core.plugin.Plugin": {},
+  "org.flmelody.core.plugin.PluginSlot": {
+    "slot(Class)": [
+      "registerPlugin(Class<? extends Plugin>, Plugin)"
+    ],
+    "PluginSlot(Class)": []
+  },
+  "org.flmelody.core.plugin.resolver.CompositePluginResolver": {
+    "resolve(Windward, Plugin)": [],
+    "registerResolver(PluginResolver)": [],
+    "CompositePluginResolver()": []
+  },
+  "org.flmelody.core.plugin.resolver.PluginResolver": {
+    "resolve(Windward, Plugin)": [
+      "resolve(Windward, Plugin)",
+      "registerPlugin(Class<? extends Plugin>, Plugin)"
+    ]
+  },
+  "org.flmelody.core.plugin.resolver.ViewPluginResolver": {
+    "resolve(Windward, Plugin)": []
+  },
+  "org.flmelody.core.plugin.resource.BaseStaticResourcePlugin": {
+    "accept(WindwardContext)": [
+      "accept(WindwardContext)"
+    ],
+    "findResource(String, StaticResource)": [
+      "accept(WindwardContext)",
+      "findResource(String, StaticResource)"
+    ],
+    "mappingResource(String, String...)": []
+  },
+  "org.flmelody.core.plugin.resource.FixedStaticResourcePlugin": {
+    "appendPages(String...)": [],
+    "findResource(String, StaticResource)": [],
+    "FixedStaticResourcePlugin()": [],
+    "FixedStaticResourcePlugin(boolean)": []
+  },
+  "org.flmelody.core.plugin.resource.ResourcePlugin": {
+    "mappingResource(String, String...)": []
+  },
+  "org.flmelody.core.plugin.resource.ResourcePluginProxy": {
+    "current()": [
+      "resources(String, String...)"
+    ],
+    "accept(WindwardContext)": [],
+    "ResourcePluginProxy()": []
+  },
+  "org.flmelody.core.plugin.resource.StaticResource": {
+    "newBuilder()": [
+      "accept(WindwardContext)"
+    ],
+    "newBuilder(StaticResource)": [
+      "findResource(String, StaticResource)",
+      "findResource(String, StaticResource)",
+      "newBuilder()"
+    ],
+    "getFileUri()": [
+      "accept(WindwardContext)",
+      "findResource(String, StaticResource)",
+      "findResource(String, StaticResource)"
+    ],
+    "StaticResource()": [
+      "newBuilder()"
+    ]
+  },
+  "org.flmelody.core.plugin.resource.StaticResource.StaticResourceBuilder": {
+    "fileUri(String)": [
+      "accept(WindwardContext)",
+      "findResource(String, StaticResource)",
+      "findResource(String, StaticResource)"
+    ],
+    "build()": [
+      "accept(WindwardContext)",
+      "findResource(String, StaticResource)"
+    ],
+    "StaticResourceBuilder(StaticResource)": [
+      "newBuilder(StaticResource)"
+    ]
+  },
+  "org.flmelody.core.plugin.view.AbstractViewPlugin": {
+    "setTemplateLocationPrefix(String)": [
+      "resolve(Windward, Plugin)"
+    ],
+    "supportedExtension(String)": [
+      "html(String, M)"
+    ],
+    "resolveView(String, Map)": [],
+    "AbstractViewPlugin()": [],
+    "AbstractViewPlugin(String, String)": []
+  },
+  "org.flmelody.core.plugin.view.freemarker.FreemarkerView": {
+    "render(String, Map)": [],
+    "FreemarkerView()": [
+      "prepareDefault(Windward)"
+    ],
+    "FreemarkerView(String, String)": []
+  },
+  "org.flmelody.core.plugin.view.groovy.GroovyView": {
+    "render(String, Map)": [],
+    "GroovyView()": [
+      "prepareDefault(Windward)"
+    ],
+    "GroovyView(String, String)": []
+  },
+  "org.flmelody.core.plugin.view.thymeleaf.ThymeleafView": {
+    "render(String, Map)": [],
+    "ThymeleafView()": [
+      "prepareDefault(Windward)"
+    ],
+    "ThymeleafView(String, String)": []
+  },
+  "org.flmelody.core.plugin.view.ViewEngineDetector": {},
+  "org.flmelody.core.plugin.view.ViewPlugin": {
+    "supportedExtension(String)": [],
+    "render(String, Map)": [
+      "resolveView(String, Map<String, Object>)"
+    ]
+  },
+  "org.flmelody.core.plugin.ws.ExtensionalWebSocketPlugin": {
+    "isMatch(String)": [
+      "extractHandlers(ChannelHandlerContext, String)"
+    ],
+    "getWebSocketCodecs()": [
+      "extractHandlers(ChannelHandlerContext, String)"
+    ],
+    "getWebSocketParsers()": [
+      "extractHandlers(ChannelHandlerContext, String)"
+    ],
+    "ExtensionalWebSocketPlugin()": [],
+    "ExtensionalWebSocketPlugin(List, List)": [],
+    "ExtensionalWebSocketPlugin(String, List, List)": []
+  },
+  "org.flmelody.core.plugin.ws.WebSocketPlugin": {},
+  "org.flmelody.core.RequestReader": {
+    "readJson(String, Class)": [
+      "readJson(String, Class<I>)"
+    ],
+    "readJson(String, Type)": [
+      "readJson(String, Type)"
+    ],
+    "bindJson(String, Class, Class...)": [],
+    "bindJson(String, Type, Class...)": []
+  },
+  "org.flmelody.core.ResponseWriter": {
+    "write(int, T)": [
+      "write(int, T)"
+    ],
+    "write(int, String, T)": [
+      "write(int, String, T)"
+    ],
+    "write(int, String, Map, T)": [
+      "write(int, String, Map<String, Object>, T)"
+    ],
+    "write(int, String, T, boolean)": [],
+    "write(int, String, Map, T, boolean)": [],
+    "writeAndClose(int, String, T)": [],
+    "close()": [
+      "close()"
+    ]
+  },
+  "org.flmelody.core.Router": {
+    "http(HttpMethod, String, Supplier)": [],
+    "http(HttpMethod, String, Consumer)": [],
+    "http(HttpMethod, String, EnhancedFunction)": [
+      "http(HttpMethod, String, EnhancedFunction<C, ?>)"
+    ],
+    "get(String, Supplier)": [],
+    "get(String, Consumer)": [],
+    "get(String, EnhancedFunction)": [
+      "get(String, EnhancedFunction<C, ?>)"
+    ],
+    "put(String, Supplier)": [],
+    "put(String, Consumer)": [],
+    "put(String, EnhancedFunction)": [
+      "put(String, EnhancedFunction<C, ?>)"
+    ],
+    "post(String, Supplier)": [],
+    "post(String, Consumer)": [],
+    "post(String, EnhancedFunction)": [
+      "post(String, EnhancedFunction<C, ?>)"
+    ],
+    "delete(String, Supplier)": [],
+    "delete(String, Consumer)": [],
+    "delete(String, EnhancedFunction)": [
+      "delete(String, EnhancedFunction<C, ?>)"
+    ],
+    "sse(String, EnhancedFunction)": [
+      "sse(String, EnhancedFunction<SseWindwardContext, SseEjector>)"
+    ],
+    "ws(String, Consumer)": [
+      "ws(String, Consumer<WebSocketWindwardContext>)"
+    ],
+    "resource(String...)": [],
+    "resources(String, String...)": []
+  },
+  "org.flmelody.core.RouterGroup": {
+    "matchRouter(String, String)": [],
+    "end()": []
+  },
+  "org.flmelody.core.SseEjector": {},
+  "org.flmelody.core.wind.AbstractWindManager": {
+    "join(Listener)": [],
+    "loadEvent(Event)": [],
+    "triggerEvent()": [],
+    "AbstractWindManager(Windward)": []
+  },
+  "org.flmelody.core.wind.DefaultWindManager": {
+    "DefaultWindManager(Windward)": []
+  },
+  "org.flmelody.core.wind.event.Event": {},
+  "org.flmelody.core.wind.event.RouterBindEvent": {
+    "builder()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "getRequestUrl()": [],
+    "getClassname()": [],
+    "getMethod()": [],
+    "RouterBindEvent()": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.core.wind.event.RouterBindEvent.RouterBindEventBuilder": {
+    "requestUrl(String)": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "classname(String)": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "method(String)": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "build()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "RouterBindEventBuilder(RouterBindEvent)": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.core.wind.listener.Listener": {
+    "cope(Windward, Event)": [
+      "triggerEvent()"
+    ]
+  },
+  "org.flmelody.core.wind.WindManager": {
+    "join(Listener)": [
+      "registerListener(Listener...)"
+    ],
+    "loadEvent(Event)": [
+      "publishEvent(Event...)"
+    ],
+    "triggerEvent()": [
+      "beforeStart()"
+    ]
+  },
+  "org.flmelody.core.Windward": {
+    "setup()": [],
+    "setup(int, Filter...)": [],
+    "setup(int, String, Filter...)": [],
+    "setup(int, String, String, String, Filter...)": [],
+    "prepareDefault(Windward)": [
+      "setup(int, String, String, String, Filter...)"
+    ],
+    "beforeStart()": [
+      "run()"
+    ],
+    "run()": [],
+    "group(String)": [
+      "http(HttpMethod, String, Supplier<R>)",
+      "http(HttpMethod, String, Consumer<SimpleWindwardContext>)",
+      "http(HttpMethod, String, EnhancedFunction<C, ?>)",
+      "get(String, Supplier<R>)",
+      "get(String, Consumer<SimpleWindwardContext>)",
+      "get(String, EnhancedFunction<C, ?>)",
+      "put(String, Supplier<R>)",
+      "put(String, Consumer<SimpleWindwardContext>)",
+      "put(String, EnhancedFunction<C, ?>)",
+      "post(String, Supplier<R>)",
+      "post(String, Consumer<SimpleWindwardContext>)",
+      "post(String, EnhancedFunction<C, ?>)",
+      "delete(String, Supplier<R>)",
+      "delete(String, Consumer<SimpleWindwardContext>)",
+      "delete(String, EnhancedFunction<C, ?>)",
+      "sse(String, EnhancedFunction<SseWindwardContext, SseEjector>)",
+      "ws(String, Consumer<WebSocketWindwardContext>)"
+    ],
+    "resourceGroup(String)": [
+      "resources(String, String...)"
+    ],
+    "registerFilter(Filter...)": [],
+    "registerExceptionHandler(ExceptionHandler...)": [],
+    "registerListener(Listener...)": [],
+    "registerPlugin(PluginSlot, Plugin)": [
+      "setup(int, String, String, String, Filter...)",
+      "prepareDefault(Windward)"
+    ],
+    "registerPlugin(Class, Plugin)": [
+      "registerPlugin(PluginSlot, Plugin)"
+    ],
+    "publishEvent(Event...)": [],
+    "findRouter(String, String)": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ],
+    "filters()": [
+      "handle(FunctionMetaInfo<?>, WindwardContext)"
+    ],
+    "exceptionHandlers()": [
+      "handleException(WindwardContext, Exception)"
+    ],
+    "plugin(Class)": [
+      "html(String, M)",
+      "readJson(String, Class<I>)",
+      "readJson(String, Type)",
+      "bindJson(String, Class<I>, Class<?>...)",
+      "bindJson(String, Type, Class<?>...)",
+      "write(int, String, Map<String, Object>, T, boolean)",
+      "accept(WindwardContext)"
+    ],
+    "plugins(Class)": [
+      "html(String, M)",
+      "extractHandlers(ChannelHandlerContext, String)"
+    ],
+    "getContextPath()": [],
+    "getTemplateRoot()": [
+      "resolve(Windward, Plugin)"
+    ],
+    "getStaticResourceLocation()": [],
+    "then()": [],
+    "http(HttpMethod, String, Supplier)": [],
+    "http(HttpMethod, String, Consumer)": [],
+    "http(HttpMethod, String, EnhancedFunction)": [],
+    "get(String, Supplier)": [],
+    "get(String, Consumer)": [],
+    "get(String, EnhancedFunction)": [],
+    "put(String, Supplier)": [],
+    "put(String, Consumer)": [],
+    "put(String, EnhancedFunction)": [],
+    "post(String, Supplier)": [],
+    "post(String, Consumer)": [],
+    "post(String, EnhancedFunction)": [],
+    "delete(String, Supplier)": [],
+    "delete(String, Consumer)": [],
+    "delete(String, EnhancedFunction)": [],
+    "sse(String, EnhancedFunction)": [],
+    "ws(String, Consumer)": [],
+    "resource(String...)": [],
+    "resources(String, String...)": [],
+    "Windward(String, String, String)": [
+      "setup(int, String, String, String, Filter...)"
+    ]
+  },
+  "org.flmelody.core.WindwardRequest": {
+    "newBuild()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "getMethod()": [],
+    "getHeader(String)": [
+      "doOnRequest()"
+    ],
+    "getHeaders()": [],
+    "getUri()": [
+      "filter(WindwardContext)",
+      "accept(WindwardContext)"
+    ],
+    "getQuerystring()": [
+      "getRequestParameter(String)",
+      "getRequestParameters(String)"
+    ],
+    "getPathVariables()": [
+      "getPathVariables()"
+    ],
+    "getRequestBody()": [
+      "readJson(Class<I>)",
+      "readJson(Type)",
+      "bindJson(Class<I>, Class<?>...)",
+      "bindJson(Type, Class<?>...)",
+      "getRequestBody()"
+    ],
+    "readJson(String, Class)": [
+      "readJson(Class<I>)"
+    ],
+    "readJson(String, Type)": [
+      "readJson(Type)"
+    ],
+    "bindJson(String, Class, Class...)": [],
+    "bindJson(String, Type, Class...)": [],
+    "WindwardRequest()": [
+      "newBuild()"
+    ]
+  },
+  "org.flmelody.core.WindwardRequest.WindwardRequestBuilder": {
+    "method(String)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "uri(String)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "keepAlive(Boolean)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "headers(Map)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "querystring(Map)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "pathVariables(Map)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "requestBody(String)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "build()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "WindwardRequestBuilder(WindwardRequest)": [
+      "newBuild()"
+    ]
+  },
+  "org.flmelody.core.WindwardResponse": {
+    "write(int, T)": [],
+    "write(int, String, T)": [
+      "write(int, String, T)",
+      "writeBinaryData(T)"
+    ],
+    "write(int, String, Map, T)": [
+      "redirect(int, String)",
+      "html(String, M)"
+    ],
+    "close()": [
+      "close()"
+    ],
+    "newBuilder()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "WindwardResponse()": [
+      "newBuilder()"
+    ]
+  },
+  "org.flmelody.core.WindwardResponse.WindwardResponseBuild": {
+    "responseWriter(ResponseWriter)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "build()": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ],
+    "WindwardResponseBuild(WindwardResponse)": [
+      "newBuilder()"
+    ]
+  },
+  "org.flmelody.core.ws.codec.WebSocketCodec": {},
+  "org.flmelody.core.ws.codec.WebSocketDecoder": {},
+  "org.flmelody.core.ws.codec.WebSocketEncoder": {},
+  "org.flmelody.core.ws.WebSocketEvent": {},
+  "org.flmelody.core.ws.WebSocketFireEvent": {
+    "getEvent()": [
+      "userEventTriggered(ChannelHandlerContext, Object)"
+    ],
+    "getData()": [
+      "userEventTriggered(ChannelHandlerContext, Object)"
+    ],
+    "builder()": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)",
+      "channelRead(ChannelHandlerContext, Object)"
+    ],
+    "WebSocketFireEvent()": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.core.ws.WebSocketFireEvent.WebSocketFireEventBuilder": {
+    "build()": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)",
+      "channelRead(ChannelHandlerContext, Object)"
+    ],
+    "reset()": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)",
+      "channelRead(ChannelHandlerContext, Object)"
+    ],
+    "event(WebSocketEvent)": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)",
+      "channelRead(ChannelHandlerContext, Object)"
+    ],
+    "data(Object)": [
+      "channelRead(ChannelHandlerContext, Object)"
+    ],
+    "WebSocketFireEventBuilder(WebSocketFireEvent)": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.core.ws.WebSocketParser": {},
+  "org.flmelody.core.ws.WebSocketWindwardContext": {
+    "setWebSocketEvent(WebSocketEvent)": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)"
+    ],
+    "setWebSocketData(Object)": [
+      "userEventTriggered(ChannelHandlerContext, Object)",
+      "exceptionCaught(ChannelHandlerContext, Throwable)"
+    ],
+    "setHttpResponse(boolean)": [
+      "channelRead0(ChannelHandlerContext, Object)"
+    ],
+    "getWebSocketEvent()": [],
+    "getWebSocketData()": [],
+    "isUpgradedContext()": [],
+    "upgradeContext()": [
+      "setWebSocketEvent(WebSocketEvent)"
+    ],
+    "write(int, String, T)": [],
+    "writeBinaryData(T)": [],
+    "processCheck()": [
+      "write(int, String, T)",
+      "writeBinaryData(T)"
+    ],
+    "isCacheable()": [],
+    "WebSocketWindwardContext(WindwardRequest, WindwardResponse)": [
+      "initContext(ChannelHandlerContext, FullHttpRequest, FunctionMetaInfo<I>)"
+    ]
+  },
+  "org.flmelody.support.EnhancedFunction": {},
+  "org.flmelody.support.FunctionDefinition": {
+    "empty()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)",
+      "findFunctionSmartly(F)"
+    ],
+    "builder()": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "getClassname()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "getMethod()": [
+      "registerRouter(String, String, I, Class<? extends WindwardContext>)"
+    ],
+    "getParameterTypes()": [],
+    "getReturnType()": [],
+    "FunctionDefinition()": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.support.FunctionDefinition.FunctionDefinitionBuilder": {
+    "classname(String)": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "method(String)": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "parameterType(Class)": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "returnType(Class)": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "build()": [
+      "findRegularFunction(F)",
+      "findLambdaFunction(F)"
+    ],
+    "FunctionDefinitionBuilder(FunctionDefinition)": [
+      "builder()"
+    ]
+  },
+  "org.flmelody.support.FunctionHelper": {
+    "resolveFunction(F)": [],
+    "findFunctionSmartly(F)": [
+      "resolveFunction(F)"
+    ],
+    "findRegularFunction(F)": [
+      "findFunctionSmartly(F)"
+    ],
+    "findLambdaFunction(F)": [
+      "findFunctionSmartly(F)"
+    ],
+    "getSerializedLambda(F)": [
+      "findLambdaFunction(F)"
+    ],
+    "writeReplace(F)": [
+      "getSerializedLambda(F)"
+    ],
+    "FunctionHelper()": []
+  },
+  "org.flmelody.util.AntPathMatcher": {
+    "isMatch(String, String)": [
+      "matchRouter(String, String)",
+      "isMatch(String)",
+      "isMatch(String, String)",
+      "doubleAsteriskMatch(String, String)"
+    ],
+    "doubleAsteriskMatch(String, String)": [
+      "isMatch(String, String)"
+    ],
+    "newBuild()": [],
+    "skipBlanks(String)": [
+      "isMatch(String, String)"
+    ],
+    "compareChar(char, char)": [
+      "isMatch(String, String)"
+    ],
+    "AntPathMatcher(char, boolean, boolean, boolean)": [
+      "build()"
+    ]
+  },
+  "org.flmelody.util.AntPathMatcher.Builder": {
+    "withPathSeparator(char)": [],
+    "withIgnoreCase()": [],
+    "withMatchStart()": [],
+    "withTrimTokens()": [],
+    "build()": [],
+    "Builder()": [
+      "newBuild()"
+    ]
+  },
+  "org.flmelody.util.GsonUtil": {
+    "toJson(I)": [],
+    "toObject(String, Class)": [],
+    "GsonUtil()": []
+  },
+  "org.flmelody.util.JacksonUtil": {
+    "toJson(I)": [],
+    "toObject(String, Class)": [],
+    "toMap(I)": [],
+    "JacksonUtil()": []
+  },
+  "org.flmelody.util.UrlUtil": {
+    "buildUrl(String...)": [],
+    "UrlUtil()": []
+  },
+  "org.flmelody.util.ValidationUtil": {
+    "validate(JsonPlugin, String, Class, Class...)": [],
+    "validate(JsonPlugin, String, Type, Class...)": [],
+    "validate(T, Class...)": [],
+    "ValidationUtil()": []
+  }
+}

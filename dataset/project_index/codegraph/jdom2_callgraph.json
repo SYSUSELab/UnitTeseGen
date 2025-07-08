@@ -1,0 +1,4798 @@
+{
+  "org.jdom2.adapters.AbstractDOMAdapter": {
+    "createDocument(DocType)": [],
+    "setInternalSubset(DocumentType, String)": [
+      "createDocument(DocType)"
+    ]
+  },
+  "org.jdom2.adapters.DOMAdapter": {
+    "createDocument()": [
+      "createDocument(DocType)",
+      "output(Element)",
+      "output(Text)",
+      "output(CDATA)",
+      "output(ProcessingInstruction)",
+      "output(Comment)",
+      "output(EntityRef)",
+      "output(Attribute)",
+      "output(List<? extends Content>)"
+    ],
+    "createDocument(DocType)": [
+      "output(Document)",
+      "output(DocType)"
+    ]
+  },
+  "org.jdom2.adapters.JAXPDOMAdapter": {
+    "createDocument()": []
+  },
+  "org.jdom2.Attribute": {
+    "getParent()": [
+      "getNamespacesInScope()",
+      "getNamespacesIntroduced()",
+      "getNamespacesInherited()",
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "set(int, Attribute)",
+      "getParentNode(Object)",
+      "getParentAxisIterator(Object)",
+      "getRelativePath(Content, Attribute)",
+      "getRelativePath(Attribute, Attribute)",
+      "getRelativePath(Attribute, Content)",
+      "getAbsolutePath(Attribute)"
+    ],
+    "getDocument()": [
+      "getDocumentNode(Object)"
+    ],
+    "getName()": [
+      "getQualifiedName()",
+      "indexOf(String, Namespace)",
+      "indexOfDuplicate(Attribute)",
+      "filter(Object)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "next()",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "getAttributeQName(Object)",
+      "getAttributeName(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "setName(String)": [],
+    "getQualifiedName()": [
+      "toString()",
+      "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printAttribute(Writer, FormatStack, Attribute)"
+    ],
+    "getNamespacePrefix()": [
+      "getNamespace(String)",
+      "getAttributeQName(Object)"
+    ],
+    "getNamespaceURI()": [
+      "indexOf(String, Namespace)",
+      "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "getAttributeNamespaceUri(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getNamespace()": [
+      "getNamespacesInScope()",
+      "getNamespacesIntroduced()",
+      "getNamespacesInherited()",
+      "indexOfDuplicate(Attribute)",
+      "getNamespace(String)",
+      "getNamespacesInScope()",
+      "filter(Object)",
+      "next()",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "push(Element)",
+      "push(Attribute)",
+      "checkNamespaceCollision(Attribute, Element, int)",
+      "checkNamespaceCollision(Namespace, Attribute)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "setNamespace(Namespace)": [],
+    "getValue()": [
+      "getAttributeValue(String, Namespace, String)",
+      "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "next()",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "printAttribute(Writer, FormatStack, Attribute)",
+      "getAttributeStringValue(Object)"
+    ],
+    "setValue(String)": [
+      "setAttribute(String, String)",
+      "setAttribute(String, String, Namespace)"
+    ],
+    "getAttributeType()": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "setAttributeType(AttributeType)": [],
+    "isSpecified()": [
+      "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "specified(Iterator<Attribute>)",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "printAttribute(Writer, FormatStack, Attribute)"
+    ],
+    "setSpecified(boolean)": [
+      "startElement(String, String, String, Attributes)"
+    ],
+    "toString()": [],
+    "clone()": [
+      "clone()"
+    ],
+    "detach()": [],
+    "setParent(Element)": [
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "clear()",
+      "clearAndSet(Collection<? extends Attribute>)",
+      "remove(int)",
+      "set(int, Attribute)"
+    ],
+    "getIntValue()": [],
+    "getLongValue()": [],
+    "getFloatValue()": [],
+    "getDoubleValue()": [],
+    "getBooleanValue()": [],
+    "getNamespacesInScope()": [],
+    "getNamespacesIntroduced()": [],
+    "getNamespacesInherited()": [],
+    "orderFirst(Namespace, List)": [
+      "getNamespacesInScope()",
+      "getNamespacesInherited()"
+    ],
+    "Attribute()": [
+      "attribute(String, String, Namespace)",
+      "attribute(String, String, AttributeType, Namespace)",
+      "attribute(String, String)",
+      "attribute(String, String, AttributeType)"
+    ],
+    "Attribute(String, String, Namespace)": [
+      "attribute(String, String, Namespace)",
+      "setAttribute(String, String, Namespace)"
+    ],
+    "Attribute(String, String, AttributeType, Namespace)": [
+      "attribute(String, String, AttributeType, Namespace)"
+    ],
+    "Attribute(String, String)": [
+      "attribute(String, String)",
+      "setAttribute(String, String)"
+    ],
+    "Attribute(String, String, AttributeType)": [
+      "attribute(String, String, AttributeType)"
+    ]
+  },
+  "org.jdom2.AttributeList": {
+    "uncheckedAddAttribute(Attribute)": [
+      "setAttribute(Element, Attribute)"
+    ],
+    "add(Attribute)": [
+      "setAttribute(Attribute)",
+      "clone()"
+    ],
+    "add(int, Attribute)": [
+      "addAll(int, Collection<? extends Attribute>)"
+    ],
+    "addAll(Collection)": [],
+    "addAll(int, Collection)": [
+      "addAll(Collection<? extends Attribute>)",
+      "clearAndSet(Collection<? extends Attribute>)"
+    ],
+    "clear()": [
+      "clearAndSet(Collection<? extends Attribute>)"
+    ],
+    "clearAndSet(Collection)": [
+      "setAttributes(Collection<? extends Attribute>)"
+    ],
+    "ensureCapacity(int)": [
+      "uncheckedAddAttribute(Attribute)",
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "addAll(int, Collection<? extends Attribute>)"
+    ],
+    "get(int)": [
+      "clone()",
+      "writeObject(ObjectOutputStream)"
+    ],
+    "get(String, Namespace)": [
+      "getAttribute(String, Namespace)",
+      "getAttributeValue(String, Namespace, String)"
+    ],
+    "indexOf(String, Namespace)": [
+      "get(String, Namespace)",
+      "indexOf(String, Namespace)",
+      "remove(String, Namespace)",
+      "indexOfDuplicate(Attribute)"
+    ],
+    "remove(int)": [
+      "addAll(int, Collection<? extends Attribute>)",
+      "remove(String, Namespace)",
+      "remove()"
+    ],
+    "remove(String, Namespace)": [
+      "removeAttribute(String, Namespace)"
+    ],
+    "set(int, Attribute)": [],
+    "indexOfDuplicate(Attribute)": [
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "set(int, Attribute)"
+    ],
+    "iterator()": [],
+    "size()": [
+      "add(int, Attribute)",
+      "addAll(Collection<? extends Attribute>)",
+      "addAll(int, Collection<? extends Attribute>)",
+      "get(int)",
+      "remove(int)",
+      "set(int, Attribute)",
+      "clone()",
+      "writeObject(ObjectOutputStream)"
+    ],
+    "isEmpty()": [
+      "hasAttributes()"
+    ],
+    "toString()": [],
+    "binarySearch(int[], int, int, Comparator)": [
+      "sort(Comparator<? super Attribute>)"
+    ],
+    "sortInPlace(int[])": [
+      "sort(Comparator<? super Attribute>)"
+    ],
+    "sort(Comparator)": [],
+    "AttributeList(Element)": [
+      "getAttributeList()",
+      "clone()"
+    ]
+  },
+  "org.jdom2.AttributeList.ALIterator": {
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "ALIterator()": [
+      "iterator()"
+    ]
+  },
+  "org.jdom2.AttributeType": {
+    "byIndex(int)": [],
+    "getAttributeType(String)": [
+      "startElement(String, String, String, Attributes)",
+      "processElement(JDOMFactory, StartElement)",
+      "processElement(JDOMFactory, XMLStreamReader)"
+    ]
+  },
+  "org.jdom2.CDATA": {
+    "setText(String)": [],
+    "append(String)": [
+      "append(Text)"
+    ],
+    "append(Text)": [],
+    "toString()": [],
+    "clone()": [],
+    "detach()": [],
+    "setParent(Parent)": [],
+    "CDATA()": [
+      "cdata(int, int, String)"
+    ],
+    "CDATA(String)": [
+      "cdata(int, int, String)",
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ]
+  },
+  "org.jdom2.CloneBase": {
+    "clone()": [
+      "clone()",
+      "clone()",
+      "clone()"
+    ],
+    "CloneBase()": []
+  },
+  "org.jdom2.Comment": {
+    "getValue()": [
+      "getCommentStringValue(Object)"
+    ],
+    "getText()": [
+      "printComment(FormatStack, org.w3c.dom.Document, Comment)",
+      "printComment(SAXTarget, FormatStack, Comment)",
+      "printComment(XMLEventConsumer, FormatStack, XMLEventFactory, Comment)",
+      "printComment(XMLStreamWriter, FormatStack, Comment)",
+      "printComment(Writer, FormatStack, Comment)"
+    ],
+    "setText(String)": [],
+    "clone()": [
+      "clone()"
+    ],
+    "detach()": [],
+    "setParent(Parent)": [],
+    "toString()": [],
+    "Comment()": [
+      "comment(int, int, String)"
+    ],
+    "Comment(String)": [
+      "comment(int, int, String)"
+    ]
+  },
+  "org.jdom2.Content": {
+    "getCType()": [
+      "coalesceText(boolean)",
+      "filter(Object)",
+      "outputFragment(Content)",
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printDocument(FormatStack, NamespaceStack, org.w3c.dom.Document, Document)",
+      "helperContentDispatcher(FormatStack, NamespaceStack, org.w3c.dom.Document, Content)",
+      "isTextLike(Content)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "detach()": [
+      "detach()",
+      "detach()",
+      "detach()",
+      "detach()",
+      "detach()",
+      "detach()"
+    ],
+    "getParent()": [
+      "getParentElement()",
+      "checkPreConditions(Content, int, boolean)",
+      "getParent()",
+      "isAncestor(Element)",
+      "getParent()",
+      "endElement(String, String, String)",
+      "getParent()",
+      "getParentNode(Object)",
+      "getParentAxisIterator(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)",
+      "getRelativePath(Content, Content)",
+      "getAbsolutePath(Content)"
+    ],
+    "getParentElement()": [
+      "getNamespacesInScope()",
+      "getNamespacesInScope()",
+      "getNamespacesInherited()",
+      "getNamespacesIntroduced()",
+      "process(JDOMFactory, XMLEventReader)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)",
+      "getRelativePath(Content, Content)",
+      "getAbsolutePath(Content)",
+      "getAbsolutePath(Attribute)"
+    ],
+    "setParent(Parent)": [
+      "setParent(Parent)",
+      "add(int, Content)",
+      "clearAndSet(Collection<? extends Content>)",
+      "removeParent(Content)",
+      "set(int, Content)",
+      "setParent(Parent)",
+      "setParent(Parent)",
+      "setParent(Parent)",
+      "setParent(Parent)"
+    ],
+    "getDocument()": [
+      "getDocument()",
+      "getDocumentNode(Object)"
+    ],
+    "getValue()": [
+      "getValue()",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "clone()": [
+      "clone()",
+      "clone()",
+      "cloneContent()",
+      "cloneContent()",
+      "clone()",
+      "clone()",
+      "clone()",
+      "clone()"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "getNamespacesInScope()": [
+      "getNamespacesInherited()"
+    ],
+    "getNamespacesIntroduced()": [],
+    "getNamespacesInherited()": [],
+    "Content(CType)": []
+  },
+  "org.jdom2.Content.CType": {},
+  "org.jdom2.ContentList": {
+    "uncheckedAddContent(Content)": [
+      "addContent(Parent, Content)",
+      "setRoot(Document, Element)"
+    ],
+    "setModCount(int, int)": [
+      "addAll(int, Collection<? extends Content>)",
+      "clearAndSet(Collection<? extends Content>)",
+      "addAll(int, Collection<? extends F>)"
+    ],
+    "getModCount()": [
+      "addAll(int, Collection<? extends Content>)",
+      "clearAndSet(Collection<? extends Content>)",
+      "next()",
+      "remove()",
+      "checkConcurrent()",
+      "add(Content)",
+      "remove()",
+      "set(Content)",
+      "addAll(int, Collection<? extends F>)",
+      "checkConcurrent()",
+      "add(Content)",
+      "remove()",
+      "set(F)"
+    ],
+    "incModCount()": [
+      "uncheckedAddContent(Content)",
+      "add(int, Content)",
+      "clear()",
+      "remove(int)"
+    ],
+    "incDataModOnly()": [
+      "set(int, Content)"
+    ],
+    "getDataModCount()": [
+      "addAll(int, Collection<? extends Content>)",
+      "clearAndSet(Collection<? extends Content>)",
+      "resync(int)",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "remove(int)",
+      "set(int, F)"
+    ],
+    "checkIndex(int, boolean)": [
+      "checkPreConditions(Content, int, boolean)",
+      "addAll(int, Collection<? extends Content>)",
+      "get(int)",
+      "remove(int)"
+    ],
+    "checkPreConditions(Content, int, boolean)": [
+      "add(int, Content)",
+      "set(int, Content)"
+    ],
+    "add(int, Content)": [
+      "addAll(int, Collection<? extends Content>)",
+      "add(Content)",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "setDocType(DocType)",
+      "addContent(int, Content)",
+      "addContent(int, Content)"
+    ],
+    "addAll(Collection)": [
+      "addContent(Collection<? extends Content>)",
+      "addContent(Collection<? extends Content>)"
+    ],
+    "addAll(int, Collection)": [
+      "addAll(Collection<? extends Content>)",
+      "clearAndSet(Collection<? extends Content>)",
+      "addContent(int, Collection<? extends Content>)",
+      "setContent(int, Collection<? extends Content>)",
+      "setContent(int, Collection<? extends Content>)",
+      "addContent(int, Collection<? extends Content>)"
+    ],
+    "clear()": [
+      "clearAndSet(Collection<? extends Content>)",
+      "removeContent()",
+      "setContent(Content)",
+      "setText(String)",
+      "removeContent()",
+      "setContent(Content)"
+    ],
+    "clearAndSet(Collection)": [
+      "setContent(Collection<? extends Content>)",
+      "setContent(Collection<? extends Content>)"
+    ],
+    "ensureCapacity(int)": [
+      "uncheckedAddContent(Content)",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends Content>)",
+      "addAll(int, Collection<? extends F>)"
+    ],
+    "get(int)": [
+      "get(int)",
+      "getRootElement()",
+      "getDocType()",
+      "getContent(int)",
+      "clone()",
+      "getText()",
+      "getContent(int)",
+      "clone()",
+      "writeObject(ObjectOutputStream)"
+    ],
+    "getView(Filter)": [
+      "getContent(Filter<F>)",
+      "removeContent(Filter<F>)",
+      "getContent(Filter<E>)",
+      "removeContent(Filter<F>)",
+      "getChildren()",
+      "getChildren(String, Namespace)",
+      "getChild(String, Namespace)",
+      "removeChild(String, Namespace)",
+      "removeChildren(String, Namespace)"
+    ],
+    "indexOfFirstElement()": [
+      "hasRootElement()",
+      "getRootElement()",
+      "setRootElement(Element)",
+      "detachRootElement()",
+      "canContainContent(Content, int, boolean)"
+    ],
+    "indexOfDocType()": [
+      "getDocType()",
+      "setDocType(DocType)",
+      "canContainContent(Content, int, boolean)"
+    ],
+    "remove(int)": [
+      "addAll(int, Collection<? extends Content>)",
+      "remove()",
+      "remove()",
+      "addAll(int, Collection<? extends F>)",
+      "remove(int)",
+      "setDocType(DocType)",
+      "removeContent(int)",
+      "setContent(int, Collection<? extends Content>)",
+      "removeContent(int)",
+      "setContent(int, Collection<? extends Content>)"
+    ],
+    "removeParent(Content)": [
+      "clear()",
+      "remove(int)",
+      "set(int, Content)"
+    ],
+    "set(int, Content)": [
+      "set(Content)",
+      "set(int, F)",
+      "setRootElement(Element)",
+      "setDocType(DocType)",
+      "setContent(int, Content)",
+      "setContent(int, Content)"
+    ],
+    "size()": [
+      "addAll(int, Collection<? extends Content>)",
+      "addAll(int, Collection<? extends F>)",
+      "getContentSize()",
+      "clone()",
+      "writeObject(ObjectOutputStream)",
+      "getContentSize()",
+      "getText()",
+      "clone()",
+      "writeObject(ObjectOutputStream)"
+    ],
+    "iterator()": [
+      "coalesceText(boolean)"
+    ],
+    "listIterator()": [],
+    "listIterator(int)": [],
+    "toString()": [],
+    "sortInPlace(int[])": [
+      "sort(Comparator<? super Content>)",
+      "sort(Comparator<? super F>)"
+    ],
+    "binarySearch(int[], int, int, Comparator)": [
+      "sort(Comparator<? super Content>)"
+    ],
+    "sort(Comparator)": [],
+    "ContentList(Parent)": [
+      "clone()",
+      "readObject(ObjectInputStream)",
+      "clone()",
+      "readObject(ObjectInputStream)"
+    ]
+  },
+  "org.jdom2.ContentList.CLIterator": {
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "CLIterator()": [
+      "iterator()"
+    ]
+  },
+  "org.jdom2.ContentList.CLListIterator": {
+    "checkConcurrent()": [
+      "next()",
+      "previous()",
+      "add(Content)",
+      "remove()",
+      "set(Content)"
+    ],
+    "hasNext()": [],
+    "hasPrevious()": [],
+    "nextIndex()": [],
+    "previousIndex()": [],
+    "next()": [],
+    "previous()": [],
+    "add(Content)": [],
+    "remove()": [],
+    "set(Content)": [],
+    "CLListIterator(int)": [
+      "listIterator()",
+      "listIterator(int)"
+    ]
+  },
+  "org.jdom2.ContentList.FilterList": {
+    "isEmpty()": [],
+    "resync(int)": [
+      "isEmpty()",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "get(int)",
+      "remove(int)",
+      "set(int, F)",
+      "size()",
+      "hasNext()",
+      "next()"
+    ],
+    "add(int, Content)": [
+      "add(Content)"
+    ],
+    "addAll(int, Collection)": [],
+    "get(int)": [
+      "next()",
+      "previous()"
+    ],
+    "iterator()": [],
+    "listIterator()": [],
+    "listIterator(int)": [],
+    "remove(int)": [
+      "remove()"
+    ],
+    "set(int, F)": [
+      "set(F)"
+    ],
+    "size()": [
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "get(int)",
+      "remove(int)",
+      "set(int, F)",
+      "sort(Comparator<? super F>)"
+    ],
+    "fbinarySearch(int[], int, int, Comparator)": [
+      "sort(Comparator<? super F>)"
+    ],
+    "sort(Comparator)": [],
+    "FilterList(Filter)": [
+      "getView(Filter<E>)"
+    ]
+  },
+  "org.jdom2.ContentList.FilterListIterator": {
+    "checkConcurrent()": [
+      "next()",
+      "previous()",
+      "add(Content)",
+      "remove()",
+      "set(F)"
+    ],
+    "hasNext()": [],
+    "hasPrevious()": [],
+    "nextIndex()": [],
+    "previousIndex()": [],
+    "next()": [],
+    "previous()": [],
+    "add(Content)": [],
+    "remove()": [],
+    "set(F)": [],
+    "FilterListIterator(FilterList, int)": [
+      "iterator()",
+      "listIterator()",
+      "listIterator(int)"
+    ]
+  },
+  "org.jdom2.DataConversionException": {
+    "DataConversionException(String, String)": [
+      "getIntValue()",
+      "getLongValue()",
+      "getFloatValue()",
+      "getDoubleValue()",
+      "getBooleanValue()"
+    ]
+  },
+  "org.jdom2.DefaultJDOMFactory": {
+    "attribute(String, String, Namespace)": [
+      "attribute(String, String, Namespace)"
+    ],
+    "attribute(String, String, AttributeType, Namespace)": [
+      "attribute(String, String, AttributeType, Namespace)"
+    ],
+    "attribute(String, String)": [
+      "attribute(String, String)"
+    ],
+    "attribute(String, String, AttributeType)": [
+      "attribute(String, String, AttributeType)"
+    ],
+    "cdata(String)": [],
+    "cdata(int, int, String)": [
+      "cdata(String)",
+      "cdata(int, int, String)"
+    ],
+    "text(String)": [],
+    "text(int, int, String)": [
+      "text(String)",
+      "text(int, int, String)"
+    ],
+    "comment(String)": [],
+    "comment(int, int, String)": [
+      "comment(String)",
+      "comment(int, int, String)"
+    ],
+    "docType(String, String, String)": [
+      "docType(int, int, String, String)",
+      "docType(int, int, String)"
+    ],
+    "docType(int, int, String, String, String)": [
+      "docType(String, String, String)",
+      "docType(int, int, String, String, String)"
+    ],
+    "docType(String, String)": [],
+    "docType(int, int, String, String)": [
+      "docType(String, String)",
+      "docType(int, int, String, String)"
+    ],
+    "docType(String)": [],
+    "docType(int, int, String)": [
+      "docType(String)",
+      "docType(int, int, String)"
+    ],
+    "document(Element, DocType)": [],
+    "document(Element, DocType, String)": [],
+    "document(Element)": [],
+    "element(String, Namespace)": [
+      "element(int, int, String, String)",
+      "element(int, int, String, String, String)"
+    ],
+    "element(int, int, String, Namespace)": [
+      "element(String, Namespace)",
+      "element(int, int, String, Namespace)"
+    ],
+    "element(String)": [],
+    "element(int, int, String)": [
+      "element(String)",
+      "element(int, int, String)"
+    ],
+    "element(String, String)": [],
+    "element(int, int, String, String)": [
+      "element(String, String)",
+      "element(int, int, String, String)"
+    ],
+    "element(String, String, String)": [],
+    "element(int, int, String, String, String)": [
+      "element(String, String, String)",
+      "element(int, int, String, String, String)"
+    ],
+    "processingInstruction(String)": [],
+    "processingInstruction(int, int, String)": [
+      "processingInstruction(String)",
+      "processingInstruction(int, int, String)"
+    ],
+    "processingInstruction(String, Map)": [],
+    "processingInstruction(int, int, String, Map)": [
+      "processingInstruction(String, Map<String, String>)",
+      "processingInstruction(int, int, String, Map<String, String>)"
+    ],
+    "processingInstruction(String, String)": [],
+    "processingInstruction(int, int, String, String)": [
+      "processingInstruction(String, String)",
+      "processingInstruction(int, int, String, String)"
+    ],
+    "entityRef(String)": [],
+    "entityRef(int, int, String)": [
+      "entityRef(String)",
+      "entityRef(int, int, String)"
+    ],
+    "entityRef(String, String, String)": [],
+    "entityRef(int, int, String, String, String)": [
+      "entityRef(String, String, String)",
+      "entityRef(int, int, String, String, String)"
+    ],
+    "entityRef(String, String)": [],
+    "entityRef(int, int, String, String)": [
+      "entityRef(String, String)",
+      "entityRef(int, int, String, String)"
+    ],
+    "addContent(Parent, Content)": [],
+    "setAttribute(Element, Attribute)": [],
+    "addNamespaceDeclaration(Element, Namespace)": [],
+    "setRoot(Document, Element)": [],
+    "DefaultJDOMFactory()": [
+      "getDocument()"
+    ]
+  },
+  "org.jdom2.DescendantIterator": {
+    "iterator()": [
+      "iterator()"
+    ],
+    "hasNext()": [
+      "hasNext()"
+    ],
+    "next()": [
+      "hasNext()"
+    ],
+    "remove()": [
+      "remove()"
+    ],
+    "DescendantIterator(Parent)": [
+      "iterator()",
+      "getDescendants()",
+      "getDescendants(Filter<F>)",
+      "getDescendants()",
+      "getDescendants(Filter<F>)"
+    ]
+  },
+  "org.jdom2.DocType": {
+    "getElementName()": [
+      "createDocument(DocType)",
+      "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)",
+      "printDocType(XMLStreamWriter, FormatStack, DocType)",
+      "printDocType(Writer, FormatStack, DocType)"
+    ],
+    "setElementName(String)": [
+      "process(JDOMFactory, XMLEventReader)"
+    ],
+    "getPublicID()": [
+      "createDocument(DocType)",
+      "buildTarget(Document)",
+      "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)",
+      "printDocType(XMLStreamWriter, FormatStack, DocType)",
+      "printDocType(Writer, FormatStack, DocType)"
+    ],
+    "setPublicID(String)": [
+      "build(org.w3c.dom.DocumentType)"
+    ],
+    "getSystemID()": [
+      "createDocument(DocType)",
+      "buildTarget(Document)",
+      "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)",
+      "printDocType(XMLStreamWriter, FormatStack, DocType)",
+      "printDocType(Writer, FormatStack, DocType)"
+    ],
+    "setSystemID(String)": [
+      "build(org.w3c.dom.DocumentType)"
+    ],
+    "getValue()": [],
+    "setInternalSubset(String)": [
+      "build(org.w3c.dom.DocumentType)",
+      "endDTD()",
+      "parse(String, JDOMFactory)"
+    ],
+    "getInternalSubset()": [
+      "createDocument(DocType)",
+      "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)",
+      "printDocType(XMLStreamWriter, FormatStack, DocType)",
+      "printDocType(Writer, FormatStack, DocType)"
+    ],
+    "toString()": [
+      "toString()"
+    ],
+    "clone()": [
+      "clone()"
+    ],
+    "detach()": [],
+    "setParent(Parent)": [],
+    "getParent()": [
+      "setDocType(DocType)"
+    ],
+    "DocType()": [
+      "docType(int, int, String, String, String)"
+    ],
+    "DocType(String, String, String)": [
+      "docType(int, int, String, String, String)"
+    ],
+    "DocType(String, String)": [
+      "docType(int, int, String, String)"
+    ],
+    "DocType(String)": [
+      "docType(int, int, String)"
+    ]
+  },
+  "org.jdom2.Document": {
+    "getContentSize()": [
+      "cloneContent()",
+      "printDocument(FormatStack, NamespaceStack, org.w3c.dom.Document, Document)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)"
+    ],
+    "indexOf(Content)": [],
+    "hasRootElement()": [
+      "getContent()",
+      "getContent(Filter<F>)",
+      "toString()",
+      "build(InputSource)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)"
+    ],
+    "getRootElement()": [
+      "toString()",
+      "build(org.w3c.dom.Element)"
+    ],
+    "setRootElement(Element)": [
+      "setRoot(Document, Element)",
+      "pushElement(Element)",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)"
+    ],
+    "detachRootElement()": [],
+    "getDocType()": [
+      "toString()",
+      "endDTD()",
+      "process(JDOMFactory, XMLEventReader)",
+      "output(Document)",
+      "buildTarget(Document)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)"
+    ],
+    "setDocType(DocType)": [
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)"
+    ],
+    "addContent(Content)": [
+      "addContent(Parent, Content)",
+      "readObject(ObjectInputStream)",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)"
+    ],
+    "addContent(Collection)": [],
+    "addContent(int, Content)": [],
+    "addContent(int, Collection)": [],
+    "cloneContent()": [],
+    "getContent(int)": [
+      "cloneContent()",
+      "writeObject(ObjectOutputStream)",
+      "printDocument(FormatStack, NamespaceStack, org.w3c.dom.Document, Document)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)"
+    ],
+    "getContent()": [
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "getResult()"
+    ],
+    "getContent(Filter)": [],
+    "removeContent()": [],
+    "removeContent(Filter)": [],
+    "removeContent(Content)": [],
+    "removeContent(int)": [
+      "detachRootElement()"
+    ],
+    "setContent(Collection)": [
+      "getDocument()"
+    ],
+    "setContent(int, Content)": [],
+    "setContent(int, Collection)": [],
+    "setContent(Content)": [],
+    "setBaseURI(String)": [
+      "startDocument()",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)"
+    ],
+    "getBaseURI()": [
+      "getXMLBaseURI()"
+    ],
+    "toString()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "clone()": [],
+    "getDescendants()": [],
+    "getDescendants(Filter)": [],
+    "getParent()": [],
+    "getDocument()": [],
+    "setProperty(String, Object)": [
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)"
+    ],
+    "getProperty(String)": [],
+    "canContainContent(Content, int, boolean)": [],
+    "getNamespacesInScope()": [],
+    "getNamespacesIntroduced()": [],
+    "getNamespacesInherited()": [],
+    "writeObject(ObjectOutputStream)": [],
+    "readObject(ObjectInputStream)": [],
+    "Document()": [
+      "document(Element, DocType, String)"
+    ],
+    "Document(Element, DocType, String)": [
+      "document(Element, DocType, String)"
+    ],
+    "Document(Element, DocType)": [
+      "document(Element, DocType)"
+    ],
+    "Document(Element)": [
+      "document(Element)"
+    ],
+    "Document(List)": []
+  },
+  "org.jdom2.Element": {
+    "getName()": [
+      "getQualifiedName()",
+      "filter(Object)",
+      "process(JDOMFactory, XMLEventReader)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "getElementQName(Object)",
+      "getElementName(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "setName(String)": [],
+    "getNamespace()": [
+      "getNamespace(String)",
+      "getNamespacesInScope()",
+      "filter(Object)",
+      "transferNamespaces(Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "push(Element)",
+      "checkNamespaceCollision(Namespace, Element, int)",
+      "getElementQName(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getNamespace(String)": [
+      "getNamespace(String)",
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)"
+    ],
+    "setNamespace(Namespace)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)"
+    ],
+    "getNamespacePrefix()": [
+      "getNamespace(String)",
+      "getNamespacesInScope()",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "getElementQName(Object)"
+    ],
+    "getNamespaceURI()": [
+      "toString()",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "getElementNamespaceUri(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getQualifiedName()": [
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "set(int, Attribute)",
+      "checkPreConditions(Content, int, boolean)",
+      "toString()",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "addNamespaceDeclaration(Namespace)": [
+      "addNamespaceDeclaration(Element, Namespace)",
+      "readObject(ObjectInputStream)",
+      "transferNamespaces(Element)",
+      "processElement(JDOMFactory, StartElement)",
+      "processElement(JDOMFactory, XMLStreamReader)"
+    ],
+    "removeNamespaceDeclaration(Namespace)": [],
+    "getAdditionalNamespaces()": [
+      "setNamespace(Namespace)",
+      "getNamespacesInScope()",
+      "push(Element)",
+      "checkNamespaceCollision(Namespace, Element, int)"
+    ],
+    "getValue()": [],
+    "isRootElement()": [],
+    "getContentSize()": [
+      "next()",
+      "cloneContent()"
+    ],
+    "indexOf(Content)": [],
+    "getText()": [
+      "getTextTrim()",
+      "getTextNormalize()",
+      "getChildText(String)",
+      "getChildText(String, Namespace)"
+    ],
+    "getTextTrim()": [
+      "getChildTextTrim(String)",
+      "getChildTextTrim(String, Namespace)"
+    ],
+    "getTextNormalize()": [
+      "getChildTextNormalize(String)",
+      "getChildTextNormalize(String, Namespace)"
+    ],
+    "getChildText(String)": [],
+    "getChildText(String, Namespace)": [],
+    "getChildTextTrim(String)": [],
+    "getChildTextTrim(String, Namespace)": [],
+    "getChildTextNormalize(String)": [],
+    "getChildTextNormalize(String, Namespace)": [],
+    "setText(String)": [],
+    "coalesceText(boolean)": [],
+    "getContent()": [
+      "next()",
+      "getValue()",
+      "outputElementContent(Element, XMLEventConsumer)",
+      "outputElementContent(Element, XMLStreamWriter)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "outputElementContent(Element, Writer)",
+      "getDetachedContent(Element)",
+      "recurseElementText(Element, StringBuilder)"
+    ],
+    "getContent(Filter)": [
+      "sortContent(Filter<E>, Comparator<? super E>)"
+    ],
+    "getContent(int)": [
+      "cloneContent()"
+    ],
+    "removeContent()": [],
+    "removeContent(Filter)": [],
+    "removeContent(Content)": [],
+    "removeContent(int)": [],
+    "setContent(Collection)": [],
+    "setContent(int, Content)": [],
+    "setContent(int, Collection)": [],
+    "setContent(Content)": [],
+    "addContent(String)": [],
+    "addContent(Content)": [
+      "addContent(Parent, Content)",
+      "setText(String)",
+      "addContent(String)",
+      "readObject(ObjectInputStream)",
+      "process(JDOMFactory, XMLEventReader)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "addContent(Collection)": [],
+    "addContent(int, Content)": [],
+    "addContent(int, Collection)": [],
+    "cloneContent()": [],
+    "isAncestor(Element)": [
+      "checkPreConditions(Content, int, boolean)"
+    ],
+    "hasAttributes()": [
+      "setNamespace(Namespace)",
+      "writeObject(ObjectOutputStream)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "push(Element)",
+      "checkNamespaceCollision(Namespace, Element, int)",
+      "getAttributeAxisIterator(Object)"
+    ],
+    "hasAdditionalNamespaces()": [
+      "writeObject(ObjectOutputStream)",
+      "push(Element)",
+      "checkNamespaceCollision(Namespace, Element, int)"
+    ],
+    "getAttributeList()": [
+      "getAttributes()",
+      "getAttribute(String, Namespace)",
+      "getAttributeValue(String, Namespace, String)",
+      "setAttributes(Collection<? extends Attribute>)",
+      "setAttribute(Attribute)",
+      "removeAttribute(String, Namespace)",
+      "removeAttribute(Attribute)",
+      "setAttribute(Element, Attribute)"
+    ],
+    "getAttributes()": [
+      "setNamespace(Namespace)",
+      "getNamespacesInScope()",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "push(Element)",
+      "checkNamespaceCollision(Namespace, Element, int)",
+      "getAttributeAxisIterator(Object)"
+    ],
+    "getAttribute(String)": [
+      "setAttribute(String, String)"
+    ],
+    "getAttribute(String, Namespace)": [
+      "getAttribute(String)",
+      "setAttribute(String, String, Namespace)"
+    ],
+    "getAttributeValue(String)": [],
+    "getAttributeValue(String, String)": [],
+    "getAttributeValue(String, Namespace)": [
+      "getAttributeValue(String)",
+      "getXMLBaseURI()",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "getAttributeValue(String, Namespace, String)": [
+      "getAttributeValue(String, String)",
+      "getAttributeValue(String, Namespace)"
+    ],
+    "setAttributes(Collection)": [],
+    "setAttribute(String, String)": [],
+    "setAttribute(String, String, Namespace)": [],
+    "setAttribute(Attribute)": [
+      "setAttribute(Element, Attribute)",
+      "setAttribute(String, String)",
+      "setAttribute(String, String, Namespace)",
+      "readObject(ObjectInputStream)"
+    ],
+    "removeAttribute(String)": [],
+    "removeAttribute(String, Namespace)": [
+      "removeAttribute(String)"
+    ],
+    "removeAttribute(Attribute)": [
+      "detach()"
+    ],
+    "toString()": [
+      "toString()"
+    ],
+    "clone()": [
+      "clone()"
+    ],
+    "getDescendants()": [
+      "coalesceText(boolean)"
+    ],
+    "getDescendants(Filter)": [],
+    "getChildren()": [
+      "sortChildren(Comparator<? super Element>)"
+    ],
+    "getChildren(String)": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getChildren(String, Namespace)": [
+      "getChildren(String)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getChild(String, Namespace)": [
+      "getChildText(String, Namespace)",
+      "getChildTextTrim(String, Namespace)",
+      "getChildTextNormalize(String, Namespace)",
+      "getChild(String)"
+    ],
+    "getChild(String)": [
+      "getChildText(String)",
+      "getChildTextTrim(String)",
+      "getChildTextNormalize(String)"
+    ],
+    "removeChild(String)": [],
+    "removeChild(String, Namespace)": [
+      "removeChild(String)"
+    ],
+    "removeChildren(String)": [],
+    "removeChildren(String, Namespace)": [
+      "removeChildren(String)"
+    ],
+    "getNamespacesInScope()": [
+      "getNamespacesInScope()",
+      "getNamespacesInherited()",
+      "getNamespacesInScope()",
+      "getNamespacesInScope()",
+      "getNamespacesInherited()",
+      "getNamespacesIntroduced()",
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)",
+      "getNamespaceAxisIterator(Object)",
+      "setContext(Object)"
+    ],
+    "getNamespacesInherited()": [],
+    "getNamespacesIntroduced()": [],
+    "detach()": [],
+    "canContainContent(Content, int, boolean)": [],
+    "sortContent(Comparator)": [],
+    "sortContent(Filter, Comparator)": [],
+    "sortChildren(Comparator)": [],
+    "sortAttributes(Comparator)": [],
+    "resolve(String, URI)": [
+      "getXMLBaseURI()"
+    ],
+    "getXMLBaseURI()": [],
+    "writeObject(ObjectOutputStream)": [],
+    "readObject(ObjectInputStream)": [],
+    "Element()": [
+      "element(int, int, String, Namespace)",
+      "element(int, int, String)"
+    ],
+    "Element(String, Namespace)": [
+      "element(int, int, String, Namespace)"
+    ],
+    "Element(String)": [
+      "element(int, int, String)"
+    ],
+    "Element(String, String)": [
+      "element(int, int, String, String)"
+    ],
+    "Element(String, String, String)": [
+      "element(int, int, String, String, String)"
+    ]
+  },
+  "org.jdom2.EntityRef": {
+    "getName()": [
+      "printEntityRef(FormatStack, org.w3c.dom.Document, EntityRef)",
+      "printEntityRef(SAXTarget, FormatStack, EntityRef)",
+      "printEntityRef(XMLEventConsumer, FormatStack, XMLEventFactory, EntityRef)",
+      "printEntityRef(XMLStreamWriter, FormatStack, EntityRef)",
+      "printEntityRef(Writer, FormatStack, EntityRef)"
+    ],
+    "getValue()": [],
+    "getPublicID()": [],
+    "getSystemID()": [],
+    "setName(String)": [],
+    "setPublicID(String)": [],
+    "setSystemID(String)": [],
+    "toString()": [],
+    "detach()": [],
+    "setParent(Parent)": [],
+    "getParent()": [],
+    "clone()": [],
+    "EntityRef()": [
+      "entityRef(int, int, String)",
+      "entityRef(int, int, String, String)",
+      "entityRef(int, int, String, String, String)"
+    ],
+    "EntityRef(String)": [
+      "entityRef(int, int, String)"
+    ],
+    "EntityRef(String, String)": [
+      "entityRef(int, int, String, String)"
+    ],
+    "EntityRef(String, String, String)": [
+      "entityRef(int, int, String, String, String)"
+    ]
+  },
+  "org.jdom2.filter.AbstractFilter": {
+    "matches(Object)": [],
+    "filter(List)": [],
+    "negate()": [],
+    "or(Filter)": [],
+    "and(Filter)": [],
+    "refine(Filter)": []
+  },
+  "org.jdom2.filter.AndFilter": {
+    "filter(Object)": [],
+    "hashCode()": [],
+    "equals(Object)": [],
+    "toString()": [],
+    "AndFilter(Filter, Filter)": [
+      "and(Filter<?>)",
+      "refine(Filter<R>)"
+    ]
+  },
+  "org.jdom2.filter.AttributeFilter": {
+    "filter(Object)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "AttributeFilter()": [],
+    "AttributeFilter(String)": [
+      "attribute(String)"
+    ],
+    "AttributeFilter(Namespace)": [
+      "attribute(Namespace)"
+    ],
+    "AttributeFilter(String, Namespace)": [
+      "attribute(String, Namespace)"
+    ]
+  },
+  "org.jdom2.filter.ClassFilter": {
+    "filter(Object)": [],
+    "toString()": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "ClassFilter(Class)": [
+      "fclass(Class<F>)"
+    ]
+  },
+  "org.jdom2.filter.ContentFilter": {
+    "getFilterMask()": [],
+    "setFilterMask(int)": [],
+    "setDefaultMask()": [
+      "setFilterMask(int)"
+    ],
+    "setDocumentContent()": [],
+    "setElementContent()": [],
+    "setElementVisible(boolean)": [],
+    "setCDATAVisible(boolean)": [],
+    "setTextVisible(boolean)": [],
+    "setCommentVisible(boolean)": [],
+    "setPIVisible(boolean)": [],
+    "setEntityRefVisible(boolean)": [],
+    "setDocTypeVisible(boolean)": [],
+    "filter(Object)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "ContentFilter()": [],
+    "ContentFilter(boolean)": [],
+    "ContentFilter(int)": []
+  },
+  "org.jdom2.filter.ElementFilter": {
+    "filter(Object)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "ElementFilter()": [
+      "getChildren()"
+    ],
+    "ElementFilter(String)": [],
+    "ElementFilter(Namespace)": [],
+    "ElementFilter(String, Namespace)": [
+      "getChildren(String, Namespace)",
+      "getChild(String, Namespace)",
+      "removeChild(String, Namespace)",
+      "removeChildren(String, Namespace)",
+      "element(String)",
+      "element(String, Namespace)",
+      "element(Namespace)"
+    ]
+  },
+  "org.jdom2.filter.Filter": {
+    "filter(List)": [
+      "evaluate(Object)"
+    ],
+    "filter(Object)": [
+      "resync(int)",
+      "get(int)",
+      "remove(int)",
+      "set(int, F)",
+      "matches(Object)",
+      "filter(List<?>)",
+      "filter(Object)",
+      "hasNext()",
+      "evaluateFirst(Object)"
+    ],
+    "matches(Object)": [
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "filter(Object)",
+      "filter(Object)"
+    ],
+    "negate()": [],
+    "or(Filter)": [],
+    "and(Filter)": [],
+    "refine(Filter)": []
+  },
+  "org.jdom2.filter.Filters": {
+    "content()": [],
+    "attribute()": [],
+    "attribute(String)": [],
+    "attribute(String, Namespace)": [],
+    "attribute(Namespace)": [],
+    "comment()": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "cdata()": [],
+    "doctype()": [],
+    "entityref()": [],
+    "element()": [],
+    "element(String)": [],
+    "element(String, Namespace)": [],
+    "element(Namespace)": [],
+    "document()": [],
+    "processinginstruction()": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "text()": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "textOnly()": [],
+    "fboolean()": [],
+    "fstring()": [],
+    "fdouble()": [],
+    "fclass(Class)": [],
+    "fpassthrough()": [
+      "compile(String)"
+    ],
+    "Filters()": []
+  },
+  "org.jdom2.filter.NegateFilter": {
+    "filter(Object)": [],
+    "getBaseFilter()": [
+      "negate()"
+    ],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "NegateFilter(Filter)": [
+      "negate()"
+    ]
+  },
+  "org.jdom2.filter.OrFilter": {
+    "filter(Object)": [],
+    "equals(Object)": [],
+    "hashCode()": [],
+    "toString()": [],
+    "OrFilter(Filter, Filter)": [
+      "or(Filter<?>)"
+    ]
+  },
+  "org.jdom2.filter.PassThroughFilter": {
+    "filter(Object)": [],
+    "filter(List)": []
+  },
+  "org.jdom2.filter.TextOnlyFilter": {
+    "filter(Object)": [],
+    "hashCode()": [],
+    "equals(Object)": []
+  },
+  "org.jdom2.FilterIterator": {
+    "iterator()": [],
+    "hasNext()": [
+      "next()"
+    ],
+    "next()": [],
+    "remove()": [],
+    "FilterIterator(DescendantIterator, Filter)": [
+      "getDescendants(Filter<F>)",
+      "getDescendants(Filter<F>)",
+      "iterator()"
+    ]
+  },
+  "org.jdom2.IllegalAddException": {
+    "IllegalAddException(Element, Attribute, String)": [
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "set(int, Attribute)"
+    ],
+    "IllegalAddException(Element, Element, String)": [],
+    "IllegalAddException(Element, String)": [
+      "checkPreConditions(Content, int, boolean)"
+    ],
+    "IllegalAddException(Element, ProcessingInstruction, String)": [],
+    "IllegalAddException(ProcessingInstruction, String)": [],
+    "IllegalAddException(Element, Comment, String)": [],
+    "IllegalAddException(Element, CDATA, String)": [],
+    "IllegalAddException(Element, Text, String)": [],
+    "IllegalAddException(Comment, String)": [],
+    "IllegalAddException(Element, EntityRef, String)": [],
+    "IllegalAddException(Element, Namespace, String)": [
+      "setNamespace(Namespace)",
+      "addNamespaceDeclaration(Namespace)"
+    ],
+    "IllegalAddException(DocType, String)": [
+      "setDocType(DocType)"
+    ],
+    "IllegalAddException(String)": [
+      "add(Attribute)",
+      "add(int, Attribute)",
+      "set(int, Attribute)",
+      "checkPreConditions(Content, int, boolean)",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)",
+      "set(int, F)",
+      "canContainContent(Content, int, boolean)",
+      "canContainContent(Content, int, boolean)"
+    ]
+  },
+  "org.jdom2.IllegalDataException": {
+    "IllegalDataException(String, String, String)": [
+      "setValue(String)",
+      "setText(String)",
+      "append(String)",
+      "setText(String)",
+      "setPublicID(String)",
+      "setSystemID(String)",
+      "setPublicID(String)",
+      "setSystemID(String)",
+      "setText(String)",
+      "append(String)"
+    ],
+    "IllegalDataException(String, String)": [
+      "setData(String)",
+      "setData(Map<String, String>)",
+      "setPseudoAttribute(String, String)"
+    ],
+    "IllegalDataException(String)": [
+      "byIndex(int)",
+      "escapeAttribute(EscapeStrategy, String)",
+      "escapeText(EscapeStrategy, String, String)"
+    ]
+  },
+  "org.jdom2.IllegalNameException": {
+    "IllegalNameException(String, String, String)": [
+      "setName(String)",
+      "setNamespace(Namespace)",
+      "setElementName(String)",
+      "setName(String)",
+      "setName(String)",
+      "getNamespace(String, String)"
+    ],
+    "IllegalNameException(String, String)": [],
+    "IllegalNameException(String)": []
+  },
+  "org.jdom2.IllegalTargetException": {
+    "IllegalTargetException(String, String)": [
+      "setTarget(String)"
+    ],
+    "IllegalTargetException(String)": []
+  },
+  "org.jdom2.input.DOMBuilder": {
+    "setFactory(JDOMFactory)": [],
+    "getFactory()": [],
+    "build(org.w3c.dom.Document)": [],
+    "build(org.w3c.dom.Element)": [],
+    "build(org.w3c.dom.CDATASection)": [],
+    "build(org.w3c.dom.Text)": [],
+    "build(org.w3c.dom.Comment)": [],
+    "build(org.w3c.dom.ProcessingInstruction)": [],
+    "build(org.w3c.dom.EntityReference)": [],
+    "build(org.w3c.dom.DocumentType)": [],
+    "buildTree(org.w3c.dom.Node, Document, Element, boolean)": [],
+    "DOMBuilder()": []
+  },
+  "org.jdom2.input.JDOMParseException": {
+    "getPartialDocument()": [],
+    "getPublicId()": [],
+    "getSystemId()": [],
+    "getLineNumber()": [],
+    "getColumnNumber()": [],
+    "JDOMParseException(String, Throwable)": [],
+    "JDOMParseException(String, Throwable, Document)": [
+      "build(InputSource)"
+    ]
+  },
+  "org.jdom2.input.sax.AbstractReaderSchemaFactory": {
+    "createXMLReader()": [],
+    "isValidating()": [],
+    "AbstractReaderSchemaFactory(SAXParserFactory, Schema)": []
+  },
+  "org.jdom2.input.sax.AbstractReaderXSDFactory": {
+    "getSchemaFromString(SchemaFactoryProvider, String...)": [],
+    "getSchemaFromFile(SchemaFactoryProvider, File...)": [],
+    "getSchemaFromURL(SchemaFactoryProvider, URL...)": [],
+    "getSchemaFromSource(SchemaFactoryProvider, Source...)": [],
+    "AbstractReaderXSDFactory(SAXParserFactory, SchemaFactoryProvider, String[])": [],
+    "AbstractReaderXSDFactory(SAXParserFactory, SchemaFactoryProvider, URL[])": [],
+    "AbstractReaderXSDFactory(SAXParserFactory, SchemaFactoryProvider, File[])": [],
+    "AbstractReaderXSDFactory(SAXParserFactory, SchemaFactoryProvider, Source[])": []
+  },
+  "org.jdom2.input.sax.AbstractReaderXSDFactory.SchemaFactoryProvider": {
+    "getSchemaFactory()": [
+      "getSchemaFromSource(SchemaFactoryProvider, Source...)"
+    ]
+  },
+  "org.jdom2.input.sax.BuilderErrorHandler": {
+    "warning(SAXParseException)": [],
+    "error(SAXParseException)": [],
+    "fatalError(SAXParseException)": []
+  },
+  "org.jdom2.input.sax.DefaultSAXHandlerFactory": {
+    "createSAXHandler(JDOMFactory)": []
+  },
+  "org.jdom2.input.sax.DefaultSAXHandlerFactory.DefaultSAXHandler": {
+    "DefaultSAXHandler(JDOMFactory)": [
+      "createSAXHandler(JDOMFactory)"
+    ]
+  },
+  "org.jdom2.input.sax.SAXBuilderEngine": {
+    "getJDOMFactory()": [],
+    "isValidating()": [],
+    "getErrorHandler()": [],
+    "getEntityResolver()": [],
+    "getDTDHandler()": [],
+    "getIgnoringElementContentWhitespace()": [],
+    "getIgnoringBoundaryWhitespace()": [],
+    "getExpandEntities()": [],
+    "build(InputSource)": [
+      "build(InputStream)",
+      "build(URL)",
+      "build(InputStream, String)",
+      "build(Reader)",
+      "build(Reader, String)",
+      "build(String)"
+    ],
+    "build(InputStream)": [],
+    "build(File)": [],
+    "build(URL)": [
+      "build(File)"
+    ],
+    "build(InputStream, String)": [],
+    "build(Reader)": [],
+    "build(Reader, String)": [],
+    "build(String)": [],
+    "fileToURL(File)": [
+      "build(File)"
+    ],
+    "SAXBuilderEngine(XMLReader, SAXHandler, boolean)": [
+      "buildEngine()"
+    ]
+  },
+  "org.jdom2.input.sax.SAXEngine": {
+    "getJDOMFactory()": [],
+    "isValidating()": [],
+    "getErrorHandler()": [],
+    "getEntityResolver()": [],
+    "getDTDHandler()": [],
+    "getIgnoringElementContentWhitespace()": [],
+    "getIgnoringBoundaryWhitespace()": [],
+    "getExpandEntities()": [],
+    "build(InputSource)": [
+      "build(InputSource)"
+    ],
+    "build(InputStream)": [
+      "build(InputStream)"
+    ],
+    "build(File)": [
+      "build(File)"
+    ],
+    "build(URL)": [
+      "build(URL)"
+    ],
+    "build(InputStream, String)": [
+      "build(InputStream, String)"
+    ],
+    "build(Reader)": [
+      "build(Reader)"
+    ],
+    "build(Reader, String)": [
+      "build(Reader, String)"
+    ],
+    "build(String)": [
+      "build(String)"
+    ]
+  },
+  "org.jdom2.input.sax.SAXHandler": {
+    "resetSubCLass()": [
+      "reset()"
+    ],
+    "reset()": [
+      "build(InputSource)"
+    ],
+    "pushElement(Element)": [],
+    "getDocument()": [
+      "build(InputSource)"
+    ],
+    "getFactory()": [
+      "getJDOMFactory()"
+    ],
+    "setExpandEntities(boolean)": [
+      "buildEngine()"
+    ],
+    "getExpandEntities()": [
+      "getExpandEntities()"
+    ],
+    "setIgnoringElementContentWhitespace(boolean)": [
+      "buildEngine()"
+    ],
+    "setIgnoringBoundaryWhitespace(boolean)": [
+      "buildEngine()"
+    ],
+    "getIgnoringBoundaryWhitespace()": [
+      "getIgnoringBoundaryWhitespace()"
+    ],
+    "getIgnoringElementContentWhitespace()": [
+      "getIgnoringElementContentWhitespace()"
+    ],
+    "startDocument()": [],
+    "externalEntityDecl(String, String, String)": [],
+    "attributeDecl(String, String, String, String, String)": [],
+    "elementDecl(String, String)": [],
+    "internalEntityDecl(String, String)": [],
+    "processingInstruction(String, String)": [],
+    "skippedEntity(String)": [],
+    "startPrefixMapping(String, String)": [],
+    "startElement(String, String, String, Attributes)": [],
+    "transferNamespaces(Element)": [
+      "startElement(String, String, String, Attributes)"
+    ],
+    "characters(char[], int, int)": [
+      "ignorableWhitespace(char[], int, int)"
+    ],
+    "ignorableWhitespace(char[], int, int)": [],
+    "flushCharacters()": [
+      "processingInstruction(String, String)",
+      "skippedEntity(String)",
+      "startElement(String, String, String, Attributes)",
+      "characters(char[], int, int)",
+      "endElement(String, String, String)",
+      "startDTD(String, String, String)",
+      "startEntity(String)",
+      "endCDATA()",
+      "comment(char[], int, int)",
+      "getResult()"
+    ],
+    "flushCharacters(String)": [
+      "flushCharacters()"
+    ],
+    "endElement(String, String, String)": [],
+    "startDTD(String, String, String)": [
+      "startDTD(String, String, String)"
+    ],
+    "endDTD()": [
+      "endDTD()"
+    ],
+    "startEntity(String)": [
+      "startEntity(String)"
+    ],
+    "endEntity(String)": [
+      "endEntity(String)"
+    ],
+    "startCDATA()": [
+      "startCDATA()"
+    ],
+    "endCDATA()": [
+      "endCDATA()"
+    ],
+    "comment(char[], int, int)": [
+      "comment(char[], int, int)"
+    ],
+    "notationDecl(String, String, String)": [],
+    "unparsedEntityDecl(String, String, String, String)": [],
+    "appendExternalId(String, String)": [
+      "externalEntityDecl(String, String, String)",
+      "notationDecl(String, String, String)",
+      "unparsedEntityDecl(String, String, String, String)"
+    ],
+    "getCurrentElement()": [
+      "processingInstruction(String, String)",
+      "skippedEntity(String)",
+      "startElement(String, String, String, Attributes)",
+      "flushCharacters(String)",
+      "startEntity(String)",
+      "comment(char[], int, int)"
+    ],
+    "setDocumentLocator(Locator)": [],
+    "getDocumentLocator()": [],
+    "SAXHandler()": [],
+    "SAXHandler(JDOMFactory)": []
+  },
+  "org.jdom2.input.sax.SAXHandlerFactory": {
+    "createSAXHandler(JDOMFactory)": [
+      "buildEngine()"
+    ]
+  },
+  "org.jdom2.input.sax.TextBuffer": {
+    "append(char[], int, int)": [
+      "characters(char[], int, int)"
+    ],
+    "clear()": [
+      "reset()",
+      "flushCharacters()"
+    ],
+    "isAllWhitespace()": [
+      "flushCharacters()"
+    ],
+    "toString()": [
+      "flushCharacters()"
+    ],
+    "TextBuffer()": []
+  },
+  "org.jdom2.input.sax.XMLReaderJAXPFactory": {
+    "createXMLReader()": [],
+    "isValidating()": [],
+    "XMLReaderJAXPFactory(String, ClassLoader, boolean)": []
+  },
+  "org.jdom2.input.sax.XMLReaderJDOMFactory": {
+    "createXMLReader()": [
+      "createParser()"
+    ],
+    "isValidating()": [
+      "isValidating()",
+      "buildEngine()"
+    ]
+  },
+  "org.jdom2.input.sax.XMLReaders.FactorySupplier": {
+    "supply()": [
+      "createXMLReader()"
+    ],
+    "validates()": [
+      "isValidating()"
+    ]
+  },
+  "org.jdom2.input.sax.XMLReaders": {
+    "getSupplier()": [
+      "createXMLReader()",
+      "isValidating()"
+    ],
+    "createXMLReader()": [],
+    "isValidating()": [],
+    "XMLReaders(int)": []
+  },
+  "org.jdom2.input.sax.XMLReaders.NONSingleton": {
+    "supply()": [],
+    "validates()": [],
+    "NONSingleton()": []
+  },
+  "org.jdom2.input.sax.XMLReaders.DTDSingleton": {
+    "supply()": [],
+    "validates()": [],
+    "DTDSingleton()": []
+  },
+  "org.jdom2.input.sax.XMLReaders.XSDSingleton": {
+    "supply()": [],
+    "validates()": [],
+    "XSDSingleton()": []
+  },
+  "org.jdom2.input.sax.XMLReaderSAX2Factory": {
+    "createXMLReader()": [],
+    "getDriverClassName()": [],
+    "isValidating()": [],
+    "XMLReaderSAX2Factory(boolean)": [],
+    "XMLReaderSAX2Factory(boolean, String)": []
+  },
+  "org.jdom2.input.sax.XMLReaderSchemaFactory": {
+    "XMLReaderSchemaFactory(Schema)": [],
+    "XMLReaderSchemaFactory(String, ClassLoader, Schema)": []
+  },
+  "org.jdom2.input.sax.XMLReaderXSDFactory": {
+    "XMLReaderXSDFactory(String[])": [],
+    "XMLReaderXSDFactory(String, ClassLoader, String[])": [],
+    "XMLReaderXSDFactory(URL[])": [],
+    "XMLReaderXSDFactory(String, ClassLoader, URL[])": [],
+    "XMLReaderXSDFactory(File[])": [],
+    "XMLReaderXSDFactory(String, ClassLoader, File[])": [],
+    "XMLReaderXSDFactory(Source[])": [],
+    "XMLReaderXSDFactory(String, ClassLoader, Source[])": []
+  },
+  "org.jdom2.input.SAXBuilder": {
+    "getJDOMFactory()": [],
+    "setJDOMFactory(JDOMFactory)": [],
+    "getXMLReaderFactory()": [],
+    "setXMLReaderFactory(XMLReaderJDOMFactory)": [],
+    "getSAXHandlerFactory()": [],
+    "setSAXHandlerFactory(SAXHandlerFactory)": [],
+    "isValidating()": [],
+    "getErrorHandler()": [],
+    "setErrorHandler(ErrorHandler)": [],
+    "getEntityResolver()": [],
+    "setEntityResolver(EntityResolver)": [],
+    "getDTDHandler()": [],
+    "setDTDHandler(DTDHandler)": [],
+    "getXMLFilter()": [],
+    "setXMLFilter(XMLFilter)": [],
+    "getIgnoringElementContentWhitespace()": [],
+    "setIgnoringElementContentWhitespace(boolean)": [],
+    "getIgnoringBoundaryWhitespace()": [],
+    "setIgnoringBoundaryWhitespace(boolean)": [],
+    "getExpandEntities()": [],
+    "setExpandEntities(boolean)": [],
+    "getReuseParser()": [],
+    "setReuseParser(boolean)": [],
+    "setFeature(String, boolean)": [],
+    "setProperty(String, Object)": [],
+    "buildEngine()": [
+      "getEngine()"
+    ],
+    "createParser()": [
+      "buildEngine()"
+    ],
+    "getEngine()": [
+      "build(InputSource)",
+      "build(InputStream)",
+      "build(File)",
+      "build(URL)",
+      "build(InputStream, String)",
+      "build(Reader)",
+      "build(Reader, String)",
+      "build(String)"
+    ],
+    "configureParser(XMLReader, SAXHandler)": [
+      "buildEngine()"
+    ],
+    "internalSetFeature(XMLReader, String, boolean, String)": [
+      "configureParser(XMLReader, SAXHandler)"
+    ],
+    "internalSetProperty(XMLReader, String, Object, String)": [
+      "configureParser(XMLReader, SAXHandler)"
+    ],
+    "build(InputSource)": [],
+    "build(InputStream)": [],
+    "build(File)": [],
+    "build(URL)": [],
+    "build(InputStream, String)": [],
+    "build(Reader)": [],
+    "build(Reader, String)": [],
+    "build(String)": [
+      "getDocument(String)"
+    ],
+    "SAXBuilder()": [
+      "getDocument(String)"
+    ],
+    "SAXBuilder(XMLReaderJDOMFactory)": [],
+    "SAXBuilder(XMLReaderJDOMFactory, SAXHandlerFactory, JDOMFactory)": []
+  },
+  "org.jdom2.input.stax.DefaultStAXFilter": {
+    "includeDocType()": [],
+    "includeElement(int, String, Namespace)": [],
+    "includeComment(int, String)": [],
+    "includeEntityRef(int, String)": [],
+    "includeCDATA(int, String)": [],
+    "includeText(int, String)": [],
+    "includeProcessingInstruction(int, String)": [],
+    "pruneElement(int, String, Namespace)": [],
+    "pruneComment(int, String)": [],
+    "pruneEntityRef(int, String)": [],
+    "pruneCDATA(int, String)": [],
+    "pruneText(int, String)": [],
+    "pruneProcessingInstruction(int, String)": []
+  },
+  "org.jdom2.input.stax.DTDParser": {
+    "populatePatterns()": [],
+    "buildPattern(HashMap, String)": [],
+    "getGroup(Matcher, int...)": [],
+    "isWhite(char)": [
+      "formatInternal(String)"
+    ],
+    "formatInternal(String)": [
+      "parse(String, JDOMFactory)"
+    ],
+    "parse(String, JDOMFactory)": [
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "DTDParser()": []
+  },
+  "org.jdom2.input.stax.StAXFilter": {
+    "includeDocType()": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeElement(int, String, Namespace)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeComment(int, String)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeEntityRef(int, String)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeCDATA(int, String)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeText(int, String)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "includeProcessingInstruction(int, String)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "pruneElement(int, String, Namespace)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ],
+    "pruneComment(int, String)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ],
+    "pruneEntityRef(int, String)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ],
+    "pruneCDATA(int, String)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ],
+    "pruneText(int, String)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ],
+    "pruneProcessingInstruction(int, String)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)"
+    ]
+  },
+  "org.jdom2.input.StAXEventBuilder": {
+    "process(JDOMFactory, XMLEventReader)": [
+      "build(XMLEventReader)"
+    ],
+    "processElement(JDOMFactory, StartElement)": [
+      "process(JDOMFactory, XMLEventReader)"
+    ],
+    "getFactory()": [],
+    "setFactory(JDOMFactory)": [],
+    "build(XMLEventReader)": []
+  },
+  "org.jdom2.input.StAXStreamBuilder": {
+    "process(JDOMFactory, XMLStreamReader)": [
+      "build(XMLStreamReader)"
+    ],
+    "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)": [
+      "buildFragments(XMLStreamReader, StAXFilter)"
+    ],
+    "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)": [
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)"
+    ],
+    "processFragment(JDOMFactory, XMLStreamReader)": [
+      "fragment(XMLStreamReader)"
+    ],
+    "processElementFragment(JDOMFactory, XMLStreamReader)": [
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "processElement(JDOMFactory, XMLStreamReader)": [
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "getFactory()": [],
+    "setFactory(JDOMFactory)": [],
+    "build(XMLStreamReader)": [],
+    "buildFragments(XMLStreamReader, StAXFilter)": [],
+    "fragment(XMLStreamReader)": []
+  },
+  "org.jdom2.internal.ArrayCopy": {
+    "copyOf(E[], int)": [
+      "ensureCapacity(int)",
+      "ensureCapacity(int)",
+      "next()",
+      "buildMultiText(boolean)",
+      "ensurespace()",
+      "push()",
+      "reuse(String)",
+      "rehash()",
+      "checkNamespace(List<Namespace>, Namespace, Namespace[])",
+      "pushStack(Namespace, Namespace[], List<Namespace>)",
+      "getScope()"
+    ],
+    "copyOf(char[], int)": [
+      "append(char[], int, int)"
+    ],
+    "copyOf(int[], int)": [
+      "sortInPlace(int[])",
+      "sortInPlace(int[])",
+      "add(int, Content)",
+      "addAll(int, Collection<? extends F>)"
+    ],
+    "copyOf(boolean[], int)": [
+      "push()"
+    ],
+    "copyOfRange(E[], int, int)": [],
+    "ArrayCopy()": []
+  },
+  "org.jdom2.internal.ReflectionConstructor": {
+    "construct(String, Class)": [
+      "newInstance(String)"
+    ]
+  },
+  "org.jdom2.internal.SystemProperty": {
+    "get(String, String)": [
+      "getDefaultLineSeparator()"
+    ]
+  },
+  "org.jdom2.JDOMConstants": {
+    "JDOMConstants()": []
+  },
+  "org.jdom2.JDOMException": {
+    "JDOMException()": [],
+    "JDOMException(String)": [
+      "createXMLReader()",
+      "getSchemaFromSource(SchemaFactoryProvider, Source...)",
+      "internalSetFeature(XMLReader, String, boolean, String)",
+      "internalSetProperty(XMLReader, String, Object, String)",
+      "parse(String, JDOMFactory)",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)",
+      "outputFragment(Content)"
+    ],
+    "JDOMException(String, Throwable)": [
+      "createDocument()",
+      "createXMLReader()",
+      "getSchemaFromURL(SchemaFactoryProvider, URL...)",
+      "getSchemaFromSource(SchemaFactoryProvider, Source...)",
+      "build(File)",
+      "createXMLReader()",
+      "createXMLReader()",
+      "createXMLReader()",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "handleError(JDOMException)",
+      "process(SAXTarget, Format, Document)",
+      "process(SAXTarget, Format, DocType)",
+      "process(SAXTarget, Format, Element)",
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "process(SAXTarget, Format, Comment)",
+      "process(SAXTarget, Format, ProcessingInstruction)",
+      "process(SAXTarget, Format, EntityRef)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "processAsDocument(SAXTarget, Format, Element)"
+    ]
+  },
+  "org.jdom2.JDOMFactory": {
+    "attribute(String, String, Namespace)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)"
+    ],
+    "attribute(String, String, AttributeType, Namespace)": [
+      "startElement(String, String, String, Attributes)",
+      "processElement(JDOMFactory, StartElement)",
+      "processElement(JDOMFactory, XMLStreamReader)"
+    ],
+    "attribute(String, String)": [],
+    "attribute(String, String, AttributeType)": [],
+    "cdata(String)": [
+      "build(org.w3c.dom.CDATASection)",
+      "flushCharacters(String)",
+      "process(JDOMFactory, XMLEventReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "cdata(int, int, String)": [
+      "flushCharacters(String)"
+    ],
+    "text(int, int, String)": [
+      "flushCharacters(String)"
+    ],
+    "text(String)": [
+      "build(org.w3c.dom.Text)",
+      "flushCharacters(String)",
+      "process(JDOMFactory, XMLEventReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "comment(String)": [
+      "build(org.w3c.dom.Comment)",
+      "comment(char[], int, int)",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "comment(int, int, String)": [
+      "comment(char[], int, int)"
+    ],
+    "docType(String, String, String)": [
+      "startDTD(String, String, String)",
+      "parse(String, JDOMFactory)"
+    ],
+    "docType(String, String)": [
+      "parse(String, JDOMFactory)"
+    ],
+    "docType(String)": [
+      "build(org.w3c.dom.DocumentType)",
+      "parse(String, JDOMFactory)"
+    ],
+    "docType(int, int, String, String, String)": [
+      "startDTD(String, String, String)"
+    ],
+    "docType(int, int, String, String)": [],
+    "docType(int, int, String)": [],
+    "document(Element, DocType)": [],
+    "document(Element, DocType, String)": [],
+    "document(Element)": [
+      "build(org.w3c.dom.Document)",
+      "build(org.w3c.dom.Element)",
+      "reset()",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "getDocument()"
+    ],
+    "element(String, Namespace)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)",
+      "processElement(JDOMFactory, StartElement)",
+      "processElement(JDOMFactory, XMLStreamReader)"
+    ],
+    "element(String)": [],
+    "element(String, String)": [],
+    "element(String, String, String)": [],
+    "element(int, int, String, Namespace)": [
+      "startElement(String, String, String, Attributes)"
+    ],
+    "element(int, int, String)": [],
+    "element(int, int, String, String)": [],
+    "element(int, int, String, String, String)": [],
+    "processingInstruction(String, Map)": [],
+    "processingInstruction(String, String)": [
+      "build(org.w3c.dom.ProcessingInstruction)",
+      "processingInstruction(String, String)",
+      "process(JDOMFactory, XMLEventReader)",
+      "process(JDOMFactory, XMLStreamReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "processingInstruction(String)": [],
+    "processingInstruction(int, int, String, Map)": [],
+    "processingInstruction(int, int, String, String)": [
+      "processingInstruction(String, String)"
+    ],
+    "processingInstruction(int, int, String)": [],
+    "entityRef(String)": [
+      "build(org.w3c.dom.EntityReference)",
+      "skippedEntity(String)",
+      "process(JDOMFactory, XMLEventReader)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processFragment(JDOMFactory, XMLStreamReader)",
+      "processElementFragment(JDOMFactory, XMLStreamReader)"
+    ],
+    "entityRef(String, String, String)": [
+      "startEntity(String)"
+    ],
+    "entityRef(String, String)": [],
+    "entityRef(int, int, String)": [
+      "skippedEntity(String)"
+    ],
+    "entityRef(int, int, String, String, String)": [
+      "startEntity(String)"
+    ],
+    "entityRef(int, int, String, String)": [],
+    "addContent(Parent, Content)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "pushElement(Element)",
+      "processingInstruction(String, String)",
+      "skippedEntity(String)",
+      "startElement(String, String, String, Attributes)",
+      "flushCharacters(String)",
+      "startDTD(String, String, String)",
+      "startEntity(String)",
+      "comment(char[], int, int)"
+    ],
+    "setAttribute(Element, Attribute)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)",
+      "processElement(JDOMFactory, StartElement)",
+      "processElement(JDOMFactory, XMLStreamReader)"
+    ],
+    "addNamespaceDeclaration(Element, Namespace)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)"
+    ],
+    "setRoot(Document, Element)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)"
+    ]
+  },
+  "org.jdom2.located.Located": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [],
+    "setColumn(int)": []
+  },
+  "org.jdom2.located.LocatedCDATA": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "cdata(int, int, String)"
+    ],
+    "setColumn(int)": [
+      "cdata(int, int, String)"
+    ],
+    "LocatedCDATA(String)": [
+      "cdata(int, int, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedComment": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "comment(int, int, String)"
+    ],
+    "setColumn(int)": [
+      "comment(int, int, String)"
+    ],
+    "LocatedComment(String)": [
+      "comment(int, int, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedDocType": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "docType(int, int, String, String, String)",
+      "docType(int, int, String, String)",
+      "docType(int, int, String)"
+    ],
+    "setColumn(int)": [
+      "docType(int, int, String, String, String)",
+      "docType(int, int, String, String)",
+      "docType(int, int, String)"
+    ],
+    "LocatedDocType(String, String, String)": [
+      "docType(int, int, String, String, String)"
+    ],
+    "LocatedDocType(String, String)": [
+      "docType(int, int, String, String)"
+    ],
+    "LocatedDocType(String)": [
+      "docType(int, int, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedElement": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "element(int, int, String, Namespace)",
+      "element(int, int, String)",
+      "element(int, int, String, String)",
+      "element(int, int, String, String, String)"
+    ],
+    "setColumn(int)": [
+      "element(int, int, String, Namespace)",
+      "element(int, int, String)",
+      "element(int, int, String, String)",
+      "element(int, int, String, String, String)"
+    ],
+    "LocatedElement(String, Namespace)": [
+      "element(int, int, String, Namespace)"
+    ],
+    "LocatedElement(String)": [
+      "element(int, int, String)"
+    ],
+    "LocatedElement(String, String)": [
+      "element(int, int, String, String)"
+    ],
+    "LocatedElement(String, String, String)": [
+      "element(int, int, String, String, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedEntityRef": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "entityRef(int, int, String)",
+      "entityRef(int, int, String, String, String)",
+      "entityRef(int, int, String, String)"
+    ],
+    "setColumn(int)": [
+      "entityRef(int, int, String)",
+      "entityRef(int, int, String, String, String)",
+      "entityRef(int, int, String, String)"
+    ],
+    "LocatedEntityRef(String)": [
+      "entityRef(int, int, String)"
+    ],
+    "LocatedEntityRef(String, String)": [
+      "entityRef(int, int, String, String)"
+    ],
+    "LocatedEntityRef(String, String, String)": [
+      "entityRef(int, int, String, String, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedJDOMFactory": {
+    "cdata(int, int, String)": [],
+    "text(int, int, String)": [],
+    "comment(int, int, String)": [],
+    "docType(int, int, String, String, String)": [],
+    "docType(int, int, String, String)": [],
+    "docType(int, int, String)": [],
+    "element(int, int, String, Namespace)": [],
+    "element(int, int, String)": [],
+    "element(int, int, String, String)": [],
+    "element(int, int, String, String, String)": [],
+    "processingInstruction(int, int, String)": [],
+    "processingInstruction(int, int, String, Map)": [],
+    "processingInstruction(int, int, String, String)": [],
+    "entityRef(int, int, String)": [],
+    "entityRef(int, int, String, String, String)": [],
+    "entityRef(int, int, String, String)": []
+  },
+  "org.jdom2.located.LocatedProcessingInstruction": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "processingInstruction(int, int, String)",
+      "processingInstruction(int, int, String, Map<String, String>)",
+      "processingInstruction(int, int, String, String)"
+    ],
+    "setColumn(int)": [
+      "processingInstruction(int, int, String)",
+      "processingInstruction(int, int, String, Map<String, String>)",
+      "processingInstruction(int, int, String, String)"
+    ],
+    "LocatedProcessingInstruction(String)": [
+      "processingInstruction(int, int, String)"
+    ],
+    "LocatedProcessingInstruction(String, Map)": [
+      "processingInstruction(int, int, String, Map<String, String>)"
+    ],
+    "LocatedProcessingInstruction(String, String)": [
+      "processingInstruction(int, int, String, String)"
+    ]
+  },
+  "org.jdom2.located.LocatedText": {
+    "getLine()": [],
+    "getColumn()": [],
+    "setLine(int)": [
+      "text(int, int, String)"
+    ],
+    "setColumn(int)": [
+      "text(int, int, String)"
+    ],
+    "LocatedText(String)": [
+      "text(int, int, String)"
+    ]
+  },
+  "org.jdom2.Namespace": {
+    "getNamespace(String, String)": [
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startPrefixMapping(String, String)",
+      "startElement(String, String, String, Attributes)",
+      "processElement(JDOMFactory, StartElement)",
+      "processFragments(JDOMFactory, XMLStreamReader, StAXFilter)",
+      "processPrunableElement(JDOMFactory, XMLStreamReader, int, StAXFilter)",
+      "processElement(JDOMFactory, XMLStreamReader)",
+      "getNamespace(String)",
+      "readResolve()",
+      "element(int, int, String, String)",
+      "element(int, int, String, String, String)",
+      "setNamespace(String, String)"
+    ],
+    "getNamespace(String)": [
+      "getVariableValue(String, String, String)"
+    ],
+    "getPrefix()": [
+      "getQualifiedName()",
+      "getNamespacePrefix()",
+      "setNamespace(Namespace)",
+      "orderFirst(Namespace, List<Namespace>)",
+      "getNamespace(String)",
+      "getNamespacePrefix()",
+      "getQualifiedName()",
+      "getNamespacesInScope()",
+      "getNamespacesInherited()",
+      "getNamespacesIntroduced()",
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)",
+      "getXmlnsTagFor(Namespace)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "next()",
+      "next()",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printNamespace(XMLStreamWriter, FormatStack, Namespace)",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "printNamespace(Writer, FormatStack, Namespace)",
+      "checkNamespace(List<Namespace>, Namespace, Namespace[])",
+      "checkNamespaceCollision(Namespace, Namespace)",
+      "checkNamespaceCollision(Attribute, Element, int)",
+      "getNamespacePrefix(Object)",
+      "getElementQName(Object)",
+      "setContext(Object)",
+      "includeNamespace(Namespace)",
+      "toString()",
+      "getPrefixForURI(String, Namespace[])",
+      "compare(Namespace, Namespace)",
+      "setNamespace(Namespace)"
+    ],
+    "getURI()": [
+      "getNamespaceURI()",
+      "indexOf(String, Namespace)",
+      "getNamespaceURI()",
+      "buildTree(org.w3c.dom.Node, Document, Element, boolean)",
+      "startElement(String, String, String, Attributes)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "next()",
+      "next()",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printNamespace(XMLStreamWriter, FormatStack, Namespace)",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "printNamespace(Writer, FormatStack, Namespace)",
+      "checkNamespaceCollision(Namespace, Namespace)",
+      "translateNamespacePrefixToUri(String)",
+      "getVariableValue(String, String, String)",
+      "getNamespaceStringValue(Object)",
+      "setContext(Object)",
+      "includeNamespace(Namespace)",
+      "toString()",
+      "getPrefixForURI(String, Namespace[])",
+      "getVariable(String, Namespace)",
+      "setVariable(String, Namespace, Object)"
+    ],
+    "equals(Object)": [
+      "filter(Object)",
+      "equals(Object)",
+      "filter(Object)",
+      "equals(Object)",
+      "checkNamespaceCollision(Namespace, Attribute)"
+    ],
+    "toString()": [],
+    "hashCode()": [
+      "hashCode()",
+      "hashCode()"
+    ],
+    "writeReplace()": [],
+    "readResolve()": [],
+    "Namespace(String, String)": [
+      "getNamespace(String, String)"
+    ]
+  },
+  "org.jdom2.Namespace.NamespaceSerializationProxy": {
+    "readResolve()": [],
+    "NamespaceSerializationProxy(String, String)": [
+      "writeReplace()"
+    ]
+  },
+  "org.jdom2.NamespaceAware": {
+    "getNamespacesInScope()": [
+      "setContext(Object)"
+    ],
+    "getNamespacesIntroduced()": [],
+    "getNamespacesInherited()": []
+  },
+  "org.jdom2.output.DOMOutputter": {
+    "getDOMAdapter()": [],
+    "setDOMAdapter(DOMAdapter)": [],
+    "getFormat()": [],
+    "setFormat(Format)": [],
+    "getDOMOutputProcessor()": [],
+    "setDOMOutputProcessor(DOMOutputProcessor)": [],
+    "output(Document)": [],
+    "output(DocType)": [],
+    "output(Element)": [],
+    "output(Text)": [],
+    "output(CDATA)": [],
+    "output(ProcessingInstruction)": [],
+    "output(Comment)": [],
+    "output(EntityRef)": [],
+    "output(Attribute)": [],
+    "output(List)": [],
+    "output(org.w3c.dom.Document, Element)": [],
+    "output(org.w3c.dom.Document, Text)": [],
+    "output(org.w3c.dom.Document, CDATA)": [],
+    "output(org.w3c.dom.Document, ProcessingInstruction)": [],
+    "output(org.w3c.dom.Document, Comment)": [],
+    "output(org.w3c.dom.Document, EntityRef)": [],
+    "output(org.w3c.dom.Document, Attribute)": [],
+    "output(org.w3c.dom.Document, List)": [],
+    "DOMOutputter()": [],
+    "DOMOutputter(DOMOutputProcessor)": [],
+    "DOMOutputter(DOMAdapter, Format, DOMOutputProcessor)": [],
+    "DOMOutputter(DOMAdapter)": []
+  },
+  "org.jdom2.output.DOMOutputter.DefaultDOMOutputProcessor": {},
+  "org.jdom2.output.EscapeStrategy": {
+    "shouldEscape(char)": [
+      "escapeAttribute(EscapeStrategy, String)",
+      "escapeText(EscapeStrategy, String, String)"
+    ]
+  },
+  "org.jdom2.output.Format": {
+    "getRawFormat()": [
+      "setFormat(Format)",
+      "setFormat(Format)"
+    ],
+    "getPrettyFormat()": [],
+    "getCompactFormat()": [],
+    "compact(String)": [
+      "appendText(Trim, String)",
+      "appendCDATA(Trim, String)",
+      "normalizeString(String)"
+    ],
+    "trimRight(String)": [
+      "appendText(Trim, String)",
+      "appendCDATA(Trim, String)"
+    ],
+    "trimLeft(String)": [
+      "appendText(Trim, String)",
+      "appendCDATA(Trim, String)"
+    ],
+    "trimBoth(String)": [
+      "appendText(Trim, String)",
+      "appendCDATA(Trim, String)",
+      "getTextTrim()"
+    ],
+    "escapeAttribute(EscapeStrategy, String)": [
+      "attributeEscapedEntitiesFilter(Writer, FormatStack, String)"
+    ],
+    "escapeText(EscapeStrategy, String, String)": [
+      "escapeText(String)",
+      "printText(Writer, FormatStack, Text)",
+      "escapeElementEntities(String, Format)"
+    ],
+    "chooseStrategy(String)": [
+      "setEncoding(String)"
+    ],
+    "setEscapeStrategy(EscapeStrategy)": [],
+    "getEscapeStrategy()": [
+      "escapeElementEntities(String, Format)"
+    ],
+    "setLineSeparator(String)": [
+      "setLineSeparator(LineSeparator)"
+    ],
+    "setLineSeparator(LineSeparator)": [],
+    "getLineSeparator()": [
+      "escapeElementEntities(String, Format)"
+    ],
+    "setOmitEncoding(boolean)": [],
+    "getOmitEncoding()": [],
+    "setOmitDeclaration(boolean)": [],
+    "getOmitDeclaration()": [],
+    "setExpandEmptyElements(boolean)": [],
+    "getExpandEmptyElements()": [],
+    "setIgnoreTrAXEscapingPIs(boolean)": [],
+    "getIgnoreTrAXEscapingPIs()": [],
+    "setTextMode(Format.TextMode)": [],
+    "getTextMode()": [],
+    "setIndent(String)": [
+      "getPrettyFormat()"
+    ],
+    "getIndent()": [],
+    "setEncoding(String)": [],
+    "getEncoding()": [
+      "makeWriter(OutputStream, Format)"
+    ],
+    "isSpecifiedAttributesOnly()": [],
+    "setSpecifiedAttributesOnly(boolean)": [],
+    "clone()": [
+      "setFormat(Format)",
+      "setFormat(Format)",
+      "setFormat(Format)"
+    ],
+    "Format()": [
+      "getRawFormat()",
+      "getPrettyFormat()",
+      "getCompactFormat()"
+    ]
+  },
+  "org.jdom2.output.Format.EscapeStrategyUTF": {
+    "shouldEscape(char)": []
+  },
+  "org.jdom2.output.Format.EscapeStrategy8Bits": {
+    "shouldEscape(char)": []
+  },
+  "org.jdom2.output.Format.EscapeStrategy7Bits": {
+    "shouldEscape(char)": []
+  },
+  "org.jdom2.output.Format.DefaultCharsetEscapeStrategy": {
+    "shouldEscape(char)": [],
+    "DefaultCharsetEscapeStrategy(CharsetEncoder)": [
+      "chooseStrategy(String)"
+    ]
+  },
+  "org.jdom2.output.Format.TextMode": {},
+  "org.jdom2.output.JDOMLocator": {
+    "getNode()": []
+  },
+  "org.jdom2.output.LineSeparator": {
+    "getDefaultLineSeparator()": [],
+    "value()": [
+      "setLineSeparator(LineSeparator)"
+    ],
+    "LineSeparator(String)": []
+  },
+  "org.jdom2.output.SAXOutputter": {
+    "setContentHandler(ContentHandler)": [],
+    "getContentHandler()": [],
+    "setErrorHandler(ErrorHandler)": [],
+    "getErrorHandler()": [],
+    "setDTDHandler(DTDHandler)": [],
+    "getDTDHandler()": [],
+    "setEntityResolver(EntityResolver)": [
+      "buildDocumentReader()"
+    ],
+    "getEntityResolver()": [],
+    "setLexicalHandler(LexicalHandler)": [
+      "setProperty(String, Object)"
+    ],
+    "getLexicalHandler()": [
+      "getProperty(String)"
+    ],
+    "setDeclHandler(DeclHandler)": [
+      "setProperty(String, Object)"
+    ],
+    "getDeclHandler()": [
+      "getProperty(String)"
+    ],
+    "getReportNamespaceDeclarations()": [],
+    "setReportNamespaceDeclarations(boolean)": [
+      "setFeature(String, boolean)"
+    ],
+    "getReportDTDEvents()": [],
+    "setReportDTDEvents(boolean)": [
+      "setFeature(String, boolean)"
+    ],
+    "setFeature(String, boolean)": [],
+    "getFeature(String)": [],
+    "setProperty(String, Object)": [],
+    "getProperty(String)": [],
+    "getSAXOutputProcessor()": [],
+    "setSAXOutputProcessor(SAXOutputProcessor)": [],
+    "getFormat()": [],
+    "setFormat(Format)": [],
+    "buildTarget(Document)": [
+      "output(Document)",
+      "output(List<? extends Content>)",
+      "output(Element)",
+      "outputFragment(List<? extends Content>)",
+      "outputFragment(Content)"
+    ],
+    "output(Document)": [
+      "parse(InputSource)"
+    ],
+    "output(List)": [
+      "parse(InputSource)"
+    ],
+    "output(Element)": [],
+    "outputFragment(List)": [],
+    "outputFragment(Content)": [],
+    "handleError(JDOMException)": [
+      "outputFragment(Content)"
+    ],
+    "SAXOutputter()": [],
+    "SAXOutputter(ContentHandler)": [],
+    "SAXOutputter(ContentHandler, ErrorHandler, DTDHandler, EntityResolver)": [],
+    "SAXOutputter(ContentHandler, ErrorHandler, DTDHandler, EntityResolver, LexicalHandler)": [],
+    "SAXOutputter(SAXOutputProcessor, Format, ContentHandler, ErrorHandler, DTDHandler, EntityResolver, LexicalHandler)": []
+  },
+  "org.jdom2.output.SAXOutputter.DefaultSAXOutputProcessor": {},
+  "org.jdom2.output.StAXEventOutputter": {
+    "setFormat(Format)": [],
+    "getFormat()": [],
+    "getStAXStream()": [],
+    "setStAXEventProcessor(StAXEventProcessor)": [],
+    "getEventFactory()": [],
+    "setEventFactory(XMLEventFactory)": [],
+    "output(Document, XMLEventConsumer)": [],
+    "output(DocType, XMLEventConsumer)": [],
+    "output(Element, XMLEventConsumer)": [],
+    "output(List, XMLEventConsumer)": [],
+    "output(CDATA, XMLEventConsumer)": [],
+    "output(Text, XMLEventConsumer)": [],
+    "output(Comment, XMLEventConsumer)": [],
+    "output(ProcessingInstruction, XMLEventConsumer)": [],
+    "output(EntityRef, XMLEventConsumer)": [],
+    "outputElementContent(Element, XMLEventConsumer)": [],
+    "clone()": [],
+    "toString()": [],
+    "StAXEventOutputter(Format, StAXEventProcessor, XMLEventFactory)": [],
+    "StAXEventOutputter()": [],
+    "StAXEventOutputter(Format)": [],
+    "StAXEventOutputter(StAXEventProcessor)": [],
+    "StAXEventOutputter(XMLEventFactory)": []
+  },
+  "org.jdom2.output.StAXEventOutputter.DefaultStAXEventProcessor": {},
+  "org.jdom2.output.StAXStreamOutputter": {
+    "setFormat(Format)": [],
+    "getFormat()": [],
+    "getStAXStream()": [],
+    "setStAXStreamProcessor(StAXStreamProcessor)": [],
+    "output(Document, XMLStreamWriter)": [],
+    "output(DocType, XMLStreamWriter)": [],
+    "output(Element, XMLStreamWriter)": [],
+    "output(List, XMLStreamWriter)": [],
+    "output(CDATA, XMLStreamWriter)": [],
+    "output(Text, XMLStreamWriter)": [],
+    "output(Comment, XMLStreamWriter)": [],
+    "output(ProcessingInstruction, XMLStreamWriter)": [],
+    "output(EntityRef, XMLStreamWriter)": [],
+    "outputElementContent(Element, XMLStreamWriter)": [],
+    "clone()": [],
+    "toString()": [],
+    "StAXStreamOutputter(Format, StAXStreamProcessor)": [],
+    "StAXStreamOutputter()": [],
+    "StAXStreamOutputter(Format)": [],
+    "StAXStreamOutputter(StAXStreamProcessor)": []
+  },
+  "org.jdom2.output.StAXStreamOutputter.DefaultStAXStreamProcessor": {},
+  "org.jdom2.output.support.AbstractDOMOutputProcessor": {
+    "getXmlnsTagFor(Namespace)": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)"
+    ],
+    "process(org.w3c.dom.Document, Format, Document)": [],
+    "process(org.w3c.dom.Document, Format, Element)": [],
+    "process(org.w3c.dom.Document, Format, List)": [],
+    "process(org.w3c.dom.Document, Format, CDATA)": [],
+    "process(org.w3c.dom.Document, Format, Text)": [],
+    "process(org.w3c.dom.Document, Format, Comment)": [],
+    "process(org.w3c.dom.Document, Format, ProcessingInstruction)": [],
+    "process(org.w3c.dom.Document, Format, EntityRef)": [],
+    "process(org.w3c.dom.Document, Format, Attribute)": [],
+    "printDocument(FormatStack, NamespaceStack, org.w3c.dom.Document, Document)": [],
+    "printProcessingInstruction(FormatStack, org.w3c.dom.Document, ProcessingInstruction)": [],
+    "printComment(FormatStack, org.w3c.dom.Document, Comment)": [],
+    "printEntityRef(FormatStack, org.w3c.dom.Document, EntityRef)": [],
+    "printCDATA(FormatStack, org.w3c.dom.Document, CDATA)": [],
+    "printText(FormatStack, org.w3c.dom.Document, Text)": [],
+    "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)": [],
+    "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)": [],
+    "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)": [],
+    "helperContentDispatcher(FormatStack, NamespaceStack, org.w3c.dom.Document, Content)": []
+  },
+  "org.jdom2.output.support.AbstractFormattedWalker": {
+    "next()": [],
+    "resetMultiText()": [
+      "next()"
+    ],
+    "analyzeMultiText(MultiText, int, int)": [
+      "next()"
+    ],
+    "get(int)": [
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "isAllText()": [],
+    "hasNext()": [],
+    "buildMultiText(boolean)": [
+      "next()"
+    ],
+    "text()": [],
+    "isCDATA()": [],
+    "isAllWhitespace()": [],
+    "isTextLike(Content)": [
+      "next()",
+      "buildMultiText(boolean)"
+    ],
+    "AbstractFormattedWalker(List, FormatStack, boolean)": []
+  },
+  "org.jdom2.output.support.AbstractFormattedWalker.MultiText": {
+    "ensurespace()": [
+      "closeText()",
+      "appendCDATA(Trim, String)",
+      "appendRaw(Content)"
+    ],
+    "closeText()": [
+      "appendCDATA(Trim, String)",
+      "appendRaw(Content)",
+      "done()"
+    ],
+    "appendText(Trim, String)": [
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "escapeText(String)": [
+      "appendText(Trim, String)"
+    ],
+    "escapeCDATA(String)": [
+      "appendCDATA(Trim, String)"
+    ],
+    "appendCDATA(Trim, String)": [
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "forceAppend(String)": [
+      "next()"
+    ],
+    "appendRaw(Content)": [
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "done()": [
+      "next()"
+    ],
+    "MultiText()": []
+  },
+  "org.jdom2.output.support.AbstractFormattedWalker.Trim": {},
+  "org.jdom2.output.support.AbstractOutputProcessor": {
+    "buildWalker(FormatStack, List, boolean)": [
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, List<? extends Content>)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "process(XMLStreamWriter, Format, List<? extends Content>)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "process(Writer, Format, List<? extends Content>)",
+      "process(Writer, Format, CDATA)",
+      "process(Writer, Format, Text)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractSAXOutputProcessor": {
+    "locate(SAXTarget)": [
+      "process(SAXTarget, Format, Document)",
+      "process(SAXTarget, Format, DocType)",
+      "process(SAXTarget, Format, Element)",
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "process(SAXTarget, Format, Comment)",
+      "process(SAXTarget, Format, ProcessingInstruction)",
+      "process(SAXTarget, Format, EntityRef)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "processAsDocument(SAXTarget, Format, Element)"
+    ],
+    "process(SAXTarget, Format, Document)": [],
+    "process(SAXTarget, Format, DocType)": [],
+    "process(SAXTarget, Format, Element)": [],
+    "process(SAXTarget, Format, List)": [],
+    "process(SAXTarget, Format, CDATA)": [],
+    "process(SAXTarget, Format, Text)": [],
+    "process(SAXTarget, Format, Comment)": [],
+    "process(SAXTarget, Format, ProcessingInstruction)": [],
+    "process(SAXTarget, Format, EntityRef)": [],
+    "processAsDocument(SAXTarget, Format, List)": [],
+    "processAsDocument(SAXTarget, Format, Element)": [],
+    "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)": [
+      "process(SAXTarget, Format, Document)"
+    ],
+    "printDocType(SAXTarget, FormatStack, DocType)": [
+      "process(SAXTarget, Format, DocType)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)"
+    ],
+    "printProcessingInstruction(SAXTarget, FormatStack, ProcessingInstruction)": [
+      "process(SAXTarget, Format, ProcessingInstruction)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printComment(SAXTarget, FormatStack, Comment)": [
+      "process(SAXTarget, Format, Comment)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printEntityRef(SAXTarget, FormatStack, EntityRef)": [
+      "process(SAXTarget, Format, EntityRef)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printCDATA(SAXTarget, FormatStack, CDATA)": [
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printText(SAXTarget, FormatStack, Text)": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printElement(SAXTarget, FormatStack, NamespaceStack, Element)": [
+      "process(SAXTarget, Format, Element)",
+      "processAsDocument(SAXTarget, Format, Element)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)": [
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "getAttributeTypeName(AttributeType)": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "createParser()": [
+      "createDTDParser(SAXTarget)"
+    ],
+    "createDTDParser(SAXTarget)": [
+      "printDocType(SAXTarget, FormatStack, DocType)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractStAXEventProcessor": {
+    "process(XMLEventConsumer, Format, XMLEventFactory, Document)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, DocType)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Element)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, List)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Text)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Comment)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, ProcessingInstruction)": [],
+    "process(XMLEventConsumer, Format, XMLEventFactory, EntityRef)": [],
+    "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, Document)"
+    ],
+    "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, DocType)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printProcessingInstruction(XMLEventConsumer, FormatStack, XMLEventFactory, ProcessingInstruction)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, ProcessingInstruction)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printComment(XMLEventConsumer, FormatStack, XMLEventFactory, Comment)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, Comment)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printEntityRef(XMLEventConsumer, FormatStack, XMLEventFactory, EntityRef)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, EntityRef)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printCDATA(XMLEventConsumer, FormatStack, XMLEventFactory, CDATA)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printText(XMLEventConsumer, FormatStack, XMLEventFactory, Text)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, Element)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)"
+    ],
+    "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, List<? extends Content>)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractStAXEventProcessor.NSIterator": {
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "NSIterator(Iterator, XMLEventFactory)": [
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractStAXEventProcessor.AttIterator": {
+    "specified(Iterator)": [],
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "AttIterator(Iterator, XMLEventFactory, boolean)": [
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractStAXStreamProcessor": {
+    "process(XMLStreamWriter, Format, Document)": [],
+    "process(XMLStreamWriter, Format, DocType)": [],
+    "process(XMLStreamWriter, Format, Element)": [],
+    "process(XMLStreamWriter, Format, List)": [],
+    "process(XMLStreamWriter, Format, CDATA)": [],
+    "process(XMLStreamWriter, Format, Text)": [],
+    "process(XMLStreamWriter, Format, Comment)": [],
+    "process(XMLStreamWriter, Format, ProcessingInstruction)": [],
+    "process(XMLStreamWriter, Format, EntityRef)": [],
+    "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)": [
+      "process(XMLStreamWriter, Format, Document)"
+    ],
+    "printDocType(XMLStreamWriter, FormatStack, DocType)": [
+      "process(XMLStreamWriter, Format, DocType)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printProcessingInstruction(XMLStreamWriter, FormatStack, ProcessingInstruction)": [
+      "process(XMLStreamWriter, Format, ProcessingInstruction)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printComment(XMLStreamWriter, FormatStack, Comment)": [
+      "process(XMLStreamWriter, Format, Comment)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printEntityRef(XMLStreamWriter, FormatStack, EntityRef)": [
+      "process(XMLStreamWriter, Format, EntityRef)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printCDATA(XMLStreamWriter, FormatStack, CDATA)": [
+      "process(XMLStreamWriter, Format, CDATA)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printText(XMLStreamWriter, FormatStack, Text)": [
+      "process(XMLStreamWriter, Format, Text)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)": [
+      "process(XMLStreamWriter, Format, Element)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)": [
+      "process(XMLStreamWriter, Format, List<? extends Content>)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)"
+    ],
+    "printNamespace(XMLStreamWriter, FormatStack, Namespace)": [
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)"
+    ],
+    "printAttribute(XMLStreamWriter, FormatStack, Attribute)": [
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)"
+    ]
+  },
+  "org.jdom2.output.support.AbstractXMLOutputProcessor": {
+    "process(Writer, Format, Document)": [],
+    "process(Writer, Format, DocType)": [],
+    "process(Writer, Format, Element)": [],
+    "process(Writer, Format, List)": [],
+    "process(Writer, Format, CDATA)": [],
+    "process(Writer, Format, Text)": [],
+    "process(Writer, Format, Comment)": [],
+    "process(Writer, Format, ProcessingInstruction)": [],
+    "process(Writer, Format, EntityRef)": [],
+    "write(Writer, String)": [
+      "attributeEscapedEntitiesFilter(Writer, FormatStack, String)",
+      "textRaw(Writer, String)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printDeclaration(Writer, FormatStack)",
+      "printDocType(Writer, FormatStack, DocType)",
+      "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)",
+      "printComment(Writer, FormatStack, Comment)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "printNamespace(Writer, FormatStack, Namespace)",
+      "printAttribute(Writer, FormatStack, Attribute)"
+    ],
+    "write(Writer, char)": [
+      "textRaw(Writer, char)"
+    ],
+    "attributeEscapedEntitiesFilter(Writer, FormatStack, String)": [
+      "printNamespace(Writer, FormatStack, Namespace)",
+      "printAttribute(Writer, FormatStack, Attribute)",
+      "escapeAttributeEntities(String, Format)"
+    ],
+    "textRaw(Writer, String)": [
+      "textEntityRef(Writer, String)",
+      "textCDATA(Writer, String)",
+      "printText(Writer, FormatStack, Text)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "textRaw(Writer, char)": [
+      "textEntityRef(Writer, String)"
+    ],
+    "textEntityRef(Writer, String)": [
+      "printEntityRef(Writer, FormatStack, EntityRef)"
+    ],
+    "textCDATA(Writer, String)": [
+      "printCDATA(Writer, FormatStack, CDATA)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printDocument(Writer, FormatStack, NamespaceStack, Document)": [
+      "process(Writer, Format, Document)"
+    ],
+    "printDeclaration(Writer, FormatStack)": [
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)"
+    ],
+    "printDocType(Writer, FormatStack, DocType)": [
+      "process(Writer, Format, DocType)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)": [
+      "process(Writer, Format, ProcessingInstruction)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printComment(Writer, FormatStack, Comment)": [
+      "process(Writer, Format, Comment)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printEntityRef(Writer, FormatStack, EntityRef)": [
+      "process(Writer, Format, EntityRef)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printCDATA(Writer, FormatStack, CDATA)": [
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printText(Writer, FormatStack, Text)": [
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printElement(Writer, FormatStack, NamespaceStack, Element)": [
+      "process(Writer, Format, Element)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "printContent(Writer, FormatStack, NamespaceStack, Walker)": [
+      "process(Writer, Format, List<? extends Content>)",
+      "process(Writer, Format, CDATA)",
+      "process(Writer, Format, Text)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "printNamespace(Writer, FormatStack, Namespace)": [
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "printAttribute(Writer, FormatStack, Attribute)": [
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ]
+  },
+  "org.jdom2.output.support.DOMOutputProcessor": {
+    "process(org.w3c.dom.Document, Format, Document)": [],
+    "process(org.w3c.dom.Document, Format, Element)": [],
+    "process(org.w3c.dom.Document, Format, List)": [],
+    "process(org.w3c.dom.Document, Format, CDATA)": [],
+    "process(org.w3c.dom.Document, Format, Text)": [],
+    "process(org.w3c.dom.Document, Format, Comment)": [],
+    "process(org.w3c.dom.Document, Format, ProcessingInstruction)": [],
+    "process(org.w3c.dom.Document, Format, EntityRef)": [],
+    "process(org.w3c.dom.Document, Format, Attribute)": []
+  },
+  "org.jdom2.output.support.FormatStack": {
+    "resetReusableIndents()": [
+      "setLevelIndent(String)",
+      "setLevelEOL(String)",
+      "setTextMode(TextMode)"
+    ],
+    "getIndent()": [],
+    "getLineSeparator()": [
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocType(XMLEventConsumer, FormatStack, XMLEventFactory, DocType)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocType(XMLStreamWriter, FormatStack, DocType)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printDeclaration(Writer, FormatStack)",
+      "printDocType(Writer, FormatStack, DocType)",
+      "printText(Writer, FormatStack, Text)"
+    ],
+    "getEncoding()": [
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDeclaration(Writer, FormatStack)"
+    ],
+    "isOmitDeclaration()": [
+      "printDocument(FormatStack, NamespaceStack, org.w3c.dom.Document, Document)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDeclaration(Writer, FormatStack)"
+    ],
+    "isSpecifiedAttributesOnly()": [
+      "printAttribute(FormatStack, org.w3c.dom.Document, Attribute)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printAttribute(XMLStreamWriter, FormatStack, Attribute)",
+      "printAttribute(Writer, FormatStack, Attribute)"
+    ],
+    "isOmitEncoding()": [
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDeclaration(Writer, FormatStack)"
+    ],
+    "isExpandEmptyElements()": [
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "getEscapeStrategy()": [
+      "attributeEscapedEntitiesFilter(Writer, FormatStack, String)",
+      "printText(Writer, FormatStack, Text)"
+    ],
+    "isIgnoreTrAXEscapingPIs()": [
+      "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)"
+    ],
+    "setIgnoreTrAXEscapingPIs(boolean)": [
+      "process(XMLEventConsumer, Format, XMLEventFactory, ProcessingInstruction)",
+      "process(XMLStreamWriter, Format, ProcessingInstruction)",
+      "process(Writer, Format, ProcessingInstruction)"
+    ],
+    "getEscapeOutput()": [
+      "next()",
+      "buildMultiText(boolean)",
+      "escapeText(String)",
+      "attributeEscapedEntitiesFilter(Writer, FormatStack, String)",
+      "printText(Writer, FormatStack, Text)"
+    ],
+    "setEscapeOutput(boolean)": [
+      "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)"
+    ],
+    "getDefaultMode()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "getLevelIndent()": [],
+    "getPadBetween()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "getPadLast()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "setLevelIndent(String)": [],
+    "getLevelEOL()": [],
+    "setLevelEOL(String)": [],
+    "getTextMode()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "buildWalker(FormatStack, List<? extends Content>, boolean)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)"
+    ],
+    "setTextMode(TextMode)": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "push()": [
+      "process(org.w3c.dom.Document, Format, List<? extends Content>)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "pop()": [
+      "process(org.w3c.dom.Document, Format, List<? extends Content>)",
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "FormatStack(Format)": [
+      "process(org.w3c.dom.Document, Format, Document)",
+      "process(org.w3c.dom.Document, Format, Element)",
+      "process(org.w3c.dom.Document, Format, List<? extends Content>)",
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "process(org.w3c.dom.Document, Format, Comment)",
+      "process(org.w3c.dom.Document, Format, ProcessingInstruction)",
+      "process(org.w3c.dom.Document, Format, EntityRef)",
+      "process(org.w3c.dom.Document, Format, Attribute)",
+      "process(SAXTarget, Format, Document)",
+      "process(SAXTarget, Format, DocType)",
+      "process(SAXTarget, Format, Element)",
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "process(SAXTarget, Format, Comment)",
+      "process(SAXTarget, Format, ProcessingInstruction)",
+      "process(SAXTarget, Format, EntityRef)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "processAsDocument(SAXTarget, Format, Element)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Document)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, DocType)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Element)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, List<? extends Content>)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Comment)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, ProcessingInstruction)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, EntityRef)",
+      "process(XMLStreamWriter, Format, Document)",
+      "process(XMLStreamWriter, Format, DocType)",
+      "process(XMLStreamWriter, Format, Element)",
+      "process(XMLStreamWriter, Format, List<? extends Content>)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "process(XMLStreamWriter, Format, Comment)",
+      "process(XMLStreamWriter, Format, ProcessingInstruction)",
+      "process(XMLStreamWriter, Format, EntityRef)",
+      "process(Writer, Format, Document)",
+      "process(Writer, Format, DocType)",
+      "process(Writer, Format, Element)",
+      "process(Writer, Format, List<? extends Content>)",
+      "process(Writer, Format, CDATA)",
+      "process(Writer, Format, Text)",
+      "process(Writer, Format, Comment)",
+      "process(Writer, Format, ProcessingInstruction)",
+      "process(Writer, Format, EntityRef)",
+      "escapeAttributeEntities(String, Format)"
+    ]
+  },
+  "org.jdom2.output.support.SAXOutputProcessor": {
+    "process(SAXTarget, Format, Document)": [
+      "output(Document)"
+    ],
+    "process(SAXTarget, Format, DocType)": [],
+    "process(SAXTarget, Format, Element)": [
+      "outputFragment(Content)"
+    ],
+    "process(SAXTarget, Format, List)": [
+      "outputFragment(List<? extends Content>)"
+    ],
+    "process(SAXTarget, Format, CDATA)": [
+      "outputFragment(Content)"
+    ],
+    "process(SAXTarget, Format, Text)": [
+      "outputFragment(Content)"
+    ],
+    "process(SAXTarget, Format, Comment)": [
+      "outputFragment(Content)"
+    ],
+    "process(SAXTarget, Format, ProcessingInstruction)": [
+      "outputFragment(Content)"
+    ],
+    "process(SAXTarget, Format, EntityRef)": [
+      "outputFragment(Content)"
+    ],
+    "processAsDocument(SAXTarget, Format, Element)": [
+      "output(Element)"
+    ],
+    "processAsDocument(SAXTarget, Format, List)": [
+      "output(List<? extends Content>)"
+    ]
+  },
+  "org.jdom2.output.support.SAXTarget": {
+    "getContentHandler()": [
+      "locate(SAXTarget)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "processAsDocument(SAXTarget, Format, Element)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printProcessingInstruction(SAXTarget, FormatStack, ProcessingInstruction)",
+      "printEntityRef(SAXTarget, FormatStack, EntityRef)",
+      "printCDATA(SAXTarget, FormatStack, CDATA)",
+      "printText(SAXTarget, FormatStack, Text)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "getErrorHandler()": [],
+    "getDTDHandler()": [
+      "printDocType(SAXTarget, FormatStack, DocType)",
+      "createDTDParser(SAXTarget)"
+    ],
+    "getEntityResolver()": [
+      "createDTDParser(SAXTarget)"
+    ],
+    "getLexicalHandler()": [
+      "printComment(SAXTarget, FormatStack, Comment)",
+      "printCDATA(SAXTarget, FormatStack, CDATA)",
+      "createDTDParser(SAXTarget)"
+    ],
+    "getDeclHandler()": [
+      "printDocType(SAXTarget, FormatStack, DocType)",
+      "createDTDParser(SAXTarget)"
+    ],
+    "isDeclareNamespaces()": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "isReportDTDEvents()": [
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)"
+    ],
+    "getLocator()": [
+      "locate(SAXTarget)",
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "SAXTarget(ContentHandler, ErrorHandler, DTDHandler, EntityResolver, LexicalHandler, DeclHandler, boolean, boolean, String, String)": [
+      "buildTarget(Document)"
+    ]
+  },
+  "org.jdom2.output.support.SAXTarget.SAXLocator": {
+    "getColumnNumber()": [],
+    "getLineNumber()": [],
+    "getPublicId()": [],
+    "getSystemId()": [],
+    "getNode()": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "setNode(Object)": [
+      "printDocument(SAXTarget, FormatStack, NamespaceStack, Document)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)"
+    ],
+    "SAXLocator(String, String)": []
+  },
+  "org.jdom2.output.support.StAXEventProcessor": {
+    "process(XMLEventConsumer, Format, XMLEventFactory, Document)": [
+      "output(Document, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, DocType)": [
+      "output(DocType, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Element)": [
+      "output(Element, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, List)": [
+      "output(List<? extends Content>, XMLEventConsumer)",
+      "outputElementContent(Element, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)": [
+      "output(CDATA, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Text)": [
+      "output(Text, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, Comment)": [
+      "output(Comment, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, ProcessingInstruction)": [
+      "output(ProcessingInstruction, XMLEventConsumer)"
+    ],
+    "process(XMLEventConsumer, Format, XMLEventFactory, EntityRef)": [
+      "output(EntityRef, XMLEventConsumer)"
+    ]
+  },
+  "org.jdom2.output.support.StAXStreamProcessor": {
+    "process(XMLStreamWriter, Format, Document)": [
+      "output(Document, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, DocType)": [
+      "output(DocType, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, Element)": [
+      "output(Element, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, List)": [
+      "output(List<? extends Content>, XMLStreamWriter)",
+      "outputElementContent(Element, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, CDATA)": [
+      "output(CDATA, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, Text)": [
+      "output(Text, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, Comment)": [
+      "output(Comment, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, ProcessingInstruction)": [
+      "output(ProcessingInstruction, XMLStreamWriter)"
+    ],
+    "process(XMLStreamWriter, Format, EntityRef)": [
+      "output(EntityRef, XMLStreamWriter)"
+    ]
+  },
+  "org.jdom2.output.support.Walker": {
+    "isAllText()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "isAllWhitespace()": [],
+    "hasNext()": [
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)",
+      "process(Writer, Format, CDATA)",
+      "process(Writer, Format, Text)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "next()": [
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "text()": [
+      "process(org.w3c.dom.Document, Format, CDATA)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, CDATA)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, CDATA)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ],
+    "isCDATA()": [
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printContent(Writer, FormatStack, NamespaceStack, Walker)"
+    ]
+  },
+  "org.jdom2.output.support.WalkerNORMALIZE": {
+    "isSpaceFirst(String)": [
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "isSpaceLast(String)": [
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "analyzeMultiText(MultiText, int, int)": [],
+    "WalkerNORMALIZE(List, FormatStack, boolean)": [
+      "buildWalker(FormatStack, List<? extends Content>, boolean)"
+    ]
+  },
+  "org.jdom2.output.support.WalkerPRESERVE": {
+    "isAllText()": [],
+    "hasNext()": [],
+    "next()": [],
+    "text()": [],
+    "isCDATA()": [],
+    "isAllWhitespace()": [],
+    "WalkerPRESERVE(List)": [
+      "buildWalker(FormatStack, List<? extends Content>, boolean)"
+    ]
+  },
+  "org.jdom2.output.support.WalkerTRIM": {
+    "analyzeMultiText(MultiText, int, int)": [],
+    "WalkerTRIM(List, FormatStack, boolean)": [
+      "buildWalker(FormatStack, List<? extends Content>, boolean)"
+    ]
+  },
+  "org.jdom2.output.support.WalkerTRIM_FULL_WHITE": {
+    "analyzeMultiText(MultiText, int, int)": [],
+    "WalkerTRIM_FULL_WHITE(List, FormatStack, boolean)": [
+      "buildWalker(FormatStack, List<? extends Content>, boolean)"
+    ]
+  },
+  "org.jdom2.output.support.XMLOutputProcessor": {
+    "process(Writer, Format, Document)": [
+      "output(Document, Writer)"
+    ],
+    "process(Writer, Format, DocType)": [
+      "output(DocType, Writer)"
+    ],
+    "process(Writer, Format, Element)": [
+      "output(Element, Writer)"
+    ],
+    "process(Writer, Format, List)": [
+      "output(List<? extends Content>, Writer)",
+      "outputElementContent(Element, Writer)"
+    ],
+    "process(Writer, Format, CDATA)": [
+      "output(CDATA, Writer)"
+    ],
+    "process(Writer, Format, Text)": [
+      "output(Text, Writer)"
+    ],
+    "process(Writer, Format, Comment)": [
+      "output(Comment, Writer)"
+    ],
+    "process(Writer, Format, ProcessingInstruction)": [
+      "output(ProcessingInstruction, Writer)"
+    ],
+    "process(Writer, Format, EntityRef)": [
+      "output(EntityRef, Writer)"
+    ]
+  },
+  "org.jdom2.output.XMLOutputter": {
+    "makeWriter(OutputStream, Format)": [
+      "output(Document, OutputStream)",
+      "output(DocType, OutputStream)",
+      "output(Element, OutputStream)",
+      "output(List<? extends Content>, OutputStream)",
+      "output(CDATA, OutputStream)",
+      "output(Text, OutputStream)",
+      "output(Comment, OutputStream)",
+      "output(ProcessingInstruction, OutputStream)",
+      "output(EntityRef, OutputStream)",
+      "outputElementContent(Element, OutputStream)"
+    ],
+    "setFormat(Format)": [],
+    "getFormat()": [],
+    "getXMLOutputProcessor()": [],
+    "setXMLOutputProcessor(XMLOutputProcessor)": [],
+    "output(Document, OutputStream)": [],
+    "output(DocType, OutputStream)": [],
+    "output(Element, OutputStream)": [],
+    "output(List, OutputStream)": [],
+    "output(CDATA, OutputStream)": [],
+    "output(Text, OutputStream)": [],
+    "output(Comment, OutputStream)": [],
+    "output(ProcessingInstruction, OutputStream)": [],
+    "output(EntityRef, OutputStream)": [],
+    "output(Document, Writer)": [
+      "output(Document, OutputStream)",
+      "outputString(Document)"
+    ],
+    "output(DocType, Writer)": [
+      "output(DocType, OutputStream)",
+      "outputString(DocType)"
+    ],
+    "output(Element, Writer)": [
+      "output(Element, OutputStream)",
+      "outputString(Element)"
+    ],
+    "output(List, Writer)": [
+      "output(List<? extends Content>, OutputStream)",
+      "outputString(List<? extends Content>)"
+    ],
+    "output(CDATA, Writer)": [
+      "output(CDATA, OutputStream)",
+      "outputString(CDATA)"
+    ],
+    "output(Text, Writer)": [
+      "output(Text, OutputStream)",
+      "outputString(Text)"
+    ],
+    "output(Comment, Writer)": [
+      "output(Comment, OutputStream)",
+      "outputString(Comment)"
+    ],
+    "output(ProcessingInstruction, Writer)": [
+      "output(ProcessingInstruction, OutputStream)",
+      "outputString(ProcessingInstruction)"
+    ],
+    "output(EntityRef, Writer)": [
+      "output(EntityRef, OutputStream)",
+      "outputString(EntityRef)"
+    ],
+    "outputElementContent(Element, OutputStream)": [],
+    "outputElementContent(Element, Writer)": [
+      "outputElementContent(Element, OutputStream)",
+      "outputElementContentString(Element)"
+    ],
+    "outputString(Document)": [
+      "getCharacterStream()"
+    ],
+    "outputString(DocType)": [
+      "toString()",
+      "printDocType(SAXTarget, FormatStack, DocType)"
+    ],
+    "outputString(Element)": [],
+    "outputString(List)": [
+      "getCharacterStream()"
+    ],
+    "outputString(CDATA)": [],
+    "outputString(Text)": [],
+    "outputString(Comment)": [
+      "toString()"
+    ],
+    "outputString(ProcessingInstruction)": [
+      "toString()"
+    ],
+    "outputString(EntityRef)": [],
+    "outputElementContentString(Element)": [],
+    "escapeAttributeEntities(String)": [],
+    "escapeElementEntities(String)": [],
+    "clone()": [],
+    "toString()": [],
+    "XMLOutputter(Format, XMLOutputProcessor)": [],
+    "XMLOutputter()": [
+      "toString()",
+      "toString()",
+      "printDocType(SAXTarget, FormatStack, DocType)",
+      "toString()",
+      "getCharacterStream()"
+    ],
+    "XMLOutputter(XMLOutputter)": [],
+    "XMLOutputter(Format)": [],
+    "XMLOutputter(XMLOutputProcessor)": []
+  },
+  "org.jdom2.output.XMLOutputter.DefaultXMLProcessor": {
+    "escapeAttributeEntities(String, Format)": [
+      "escapeAttributeEntities(String)"
+    ],
+    "escapeElementEntities(String, Format)": [
+      "escapeElementEntities(String)"
+    ]
+  },
+  "org.jdom2.Parent": {
+    "getContentSize()": [],
+    "indexOf(Content)": [],
+    "cloneContent()": [],
+    "getContent(int)": [],
+    "getContent()": [
+      "getChildAxisIterator(Object)",
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getContent(Filter)": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "removeContent()": [],
+    "removeContent(Filter)": [],
+    "removeContent(Content)": [
+      "detach()"
+    ],
+    "removeContent(int)": [],
+    "clone()": [],
+    "getDescendants()": [],
+    "getDescendants(Filter)": [],
+    "getParent()": [
+      "isAncestor(Element)",
+      "getXMLBaseURI()",
+      "getRelativeElementPath(Element, Parent, StringBuilder)"
+    ],
+    "getDocument()": [
+      "getDocument()"
+    ],
+    "canContainContent(Content, int, boolean)": [
+      "add(int, Content)",
+      "set(int, Content)"
+    ],
+    "addContent(Content)": [],
+    "addContent(Collection)": [],
+    "addContent(int, Content)": [],
+    "addContent(int, Collection)": []
+  },
+  "org.jdom2.ProcessingInstruction": {
+    "setTarget(String)": [],
+    "getValue()": [],
+    "getTarget()": [
+      "printProcessingInstruction(FormatStack, org.w3c.dom.Document, ProcessingInstruction)",
+      "printProcessingInstruction(SAXTarget, FormatStack, ProcessingInstruction)",
+      "printProcessingInstruction(XMLEventConsumer, FormatStack, XMLEventFactory, ProcessingInstruction)",
+      "printProcessingInstruction(XMLStreamWriter, FormatStack, ProcessingInstruction)",
+      "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)",
+      "getProcessingInstructionTarget(Object)"
+    ],
+    "getData()": [
+      "printProcessingInstruction(FormatStack, org.w3c.dom.Document, ProcessingInstruction)",
+      "printProcessingInstruction(SAXTarget, FormatStack, ProcessingInstruction)",
+      "printProcessingInstruction(XMLEventConsumer, FormatStack, XMLEventFactory, ProcessingInstruction)",
+      "printProcessingInstruction(XMLStreamWriter, FormatStack, ProcessingInstruction)",
+      "printProcessingInstruction(Writer, FormatStack, ProcessingInstruction)",
+      "getProcessingInstructionData(Object)"
+    ],
+    "getPseudoAttributeNames()": [],
+    "setData(String)": [
+      "processingInstruction(int, int, String, String)"
+    ],
+    "setData(Map)": [
+      "processingInstruction(int, int, String, Map<String, String>)"
+    ],
+    "getPseudoAttributeValue(String)": [],
+    "setPseudoAttribute(String, String)": [],
+    "removePseudoAttribute(String)": [],
+    "toString(Map)": [
+      "setData(Map<String, String>)",
+      "setPseudoAttribute(String, String)",
+      "removePseudoAttribute(String)"
+    ],
+    "toString()": [],
+    "parseData(String)": [
+      "setData(String)",
+      "clone()"
+    ],
+    "extractQuotedString(String)": [
+      "parseData(String)"
+    ],
+    "clone()": [
+      "clone()"
+    ],
+    "detach()": [],
+    "setParent(Parent)": [],
+    "ProcessingInstruction()": [
+      "processingInstruction(int, int, String, Map<String, String>)",
+      "processingInstruction(int, int, String, String)",
+      "processingInstruction(int, int, String)"
+    ],
+    "ProcessingInstruction(String)": [
+      "processingInstruction(int, int, String)"
+    ],
+    "ProcessingInstruction(String, Map)": [
+      "processingInstruction(int, int, String, Map<String, String>)"
+    ],
+    "ProcessingInstruction(String, String)": [
+      "processingInstruction(int, int, String, String)"
+    ]
+  },
+  "org.jdom2.SlimJDOMFactory": {
+    "clearCache()": [],
+    "attribute(String, String, Namespace)": [],
+    "attribute(String, String, AttributeType, Namespace)": [],
+    "attribute(String, String)": [],
+    "attribute(String, String, AttributeType)": [],
+    "cdata(int, int, String)": [],
+    "text(int, int, String)": [],
+    "comment(int, int, String)": [],
+    "docType(int, int, String, String, String)": [],
+    "docType(int, int, String, String)": [],
+    "docType(int, int, String)": [],
+    "element(int, int, String, Namespace)": [],
+    "element(int, int, String)": [],
+    "element(int, int, String, String)": [],
+    "element(int, int, String, String, String)": [],
+    "processingInstruction(int, int, String, Map)": [],
+    "processingInstruction(int, int, String, String)": [],
+    "processingInstruction(int, int, String)": [],
+    "entityRef(int, int, String)": [],
+    "entityRef(int, int, String, String, String)": [],
+    "entityRef(int, int, String, String)": [],
+    "SlimJDOMFactory()": [],
+    "SlimJDOMFactory(boolean)": []
+  },
+  "org.jdom2.StringBin": {
+    "locate(int, String, String[], int)": [
+      "reuse(String)"
+    ],
+    "reuse(String)": [
+      "attribute(String, String, Namespace)",
+      "attribute(String, String, AttributeType, Namespace)",
+      "attribute(String, String)",
+      "attribute(String, String, AttributeType)",
+      "cdata(int, int, String)",
+      "text(int, int, String)",
+      "comment(int, int, String)",
+      "docType(int, int, String, String, String)",
+      "docType(int, int, String, String)",
+      "docType(int, int, String)",
+      "element(int, int, String, Namespace)",
+      "element(int, int, String)",
+      "element(int, int, String, String)",
+      "element(int, int, String, String, String)",
+      "processingInstruction(int, int, String, Map<String, String>)",
+      "processingInstruction(int, int, String, String)",
+      "processingInstruction(int, int, String)",
+      "entityRef(int, int, String)",
+      "entityRef(int, int, String, String, String)",
+      "entityRef(int, int, String, String)",
+      "reuse(String)"
+    ],
+    "rehash()": [
+      "reuse(String)"
+    ],
+    "compact(String)": [
+      "reuse(String)"
+    ],
+    "size()": [],
+    "StringBin()": [
+      "clearCache()"
+    ],
+    "StringBin(int)": []
+  },
+  "org.jdom2.Text": {
+    "getText()": [
+      "append(Text)",
+      "toString()",
+      "getText()",
+      "printCDATA(FormatStack, org.w3c.dom.Document, CDATA)",
+      "printText(FormatStack, org.w3c.dom.Document, Text)",
+      "printCDATA(SAXTarget, FormatStack, CDATA)",
+      "printText(SAXTarget, FormatStack, Text)",
+      "printCDATA(XMLEventConsumer, FormatStack, XMLEventFactory, CDATA)",
+      "printText(XMLEventConsumer, FormatStack, XMLEventFactory, Text)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printCDATA(XMLStreamWriter, FormatStack, CDATA)",
+      "printText(XMLStreamWriter, FormatStack, Text)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "printCDATA(Writer, FormatStack, CDATA)",
+      "printText(Writer, FormatStack, Text)",
+      "getTextTrim()",
+      "getTextNormalize()",
+      "append(Text)",
+      "toString()",
+      "getTextStringValue(Object)",
+      "recurseElementText(Element, StringBuilder)"
+    ],
+    "getTextTrim()": [],
+    "getTextNormalize()": [],
+    "normalizeString(String)": [
+      "getTextNormalize()",
+      "getTextNormalize()"
+    ],
+    "setText(String)": [],
+    "append(String)": [
+      "coalesceText(boolean)"
+    ],
+    "append(Text)": [],
+    "getValue()": [
+      "coalesceText(boolean)"
+    ],
+    "toString()": [],
+    "clone()": [
+      "clone()"
+    ],
+    "detach()": [
+      "detach()"
+    ],
+    "setParent(Parent)": [
+      "setParent(Parent)"
+    ],
+    "getParent()": [
+      "coalesceText(boolean)"
+    ],
+    "Text(CType)": [],
+    "Text()": [
+      "text(int, int, String)"
+    ],
+    "Text(String)": [
+      "text(int, int, String)",
+      "setText(String)",
+      "addContent(String)",
+      "process(org.w3c.dom.Document, Format, Text)",
+      "printContent(FormatStack, NamespaceStack, org.w3c.dom.Document, org.w3c.dom.Node, Walker)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printContent(SAXTarget, FormatStack, NamespaceStack, Walker)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Text)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printContent(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Walker)",
+      "process(XMLStreamWriter, Format, Text)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printContent(XMLStreamWriter, FormatStack, NamespaceStack, Walker)"
+    ]
+  },
+  "org.jdom2.transform.JDOMResult": {
+    "setResult(List)": [
+      "retrieveResult()",
+      "startDocument()"
+    ],
+    "getResult()": [
+      "transform(List<Content>)"
+    ],
+    "setDocument(Document)": [],
+    "getDocument()": [
+      "transform(Document, EntityResolver)"
+    ],
+    "setFactory(JDOMFactory)": [
+      "transform(List<Content>)",
+      "transform(Document, EntityResolver)"
+    ],
+    "getFactory()": [
+      "getDocument()",
+      "startDocument()"
+    ],
+    "retrieveResult()": [
+      "getResult()",
+      "getDocument()"
+    ],
+    "setHandler(ContentHandler)": [],
+    "setLexicalHandler(LexicalHandler)": [],
+    "JDOMResult()": [
+      "transform(List<Content>)",
+      "transform(Document, EntityResolver)"
+    ]
+  },
+  "org.jdom2.transform.JDOMResult.FragmentHandler": {
+    "getResult()": [
+      "getResult()"
+    ],
+    "getDetachedContent(Element)": [
+      "getResult()"
+    ],
+    "FragmentHandler(JDOMFactory)": [
+      "startDocument()"
+    ]
+  },
+  "org.jdom2.transform.JDOMResult.DocumentBuilder": {
+    "getResult()": [
+      "retrieveResult()"
+    ],
+    "ensureInitialization()": [
+      "startElement(String, String, String, Attributes)",
+      "startPrefixMapping(String, String)",
+      "characters(char[], int, int)",
+      "ignorableWhitespace(char[], int, int)",
+      "processingInstruction(String, String)",
+      "skippedEntity(String)",
+      "startDTD(String, String, String)",
+      "startEntity(String)",
+      "startCDATA()",
+      "comment(char[], int, int)"
+    ],
+    "startDocument()": [
+      "ensureInitialization()"
+    ],
+    "startElement(String, String, String, Attributes)": [],
+    "startPrefixMapping(String, String)": [],
+    "characters(char[], int, int)": [],
+    "ignorableWhitespace(char[], int, int)": [],
+    "processingInstruction(String, String)": [],
+    "skippedEntity(String)": [],
+    "startDTD(String, String, String)": [],
+    "endDTD()": [],
+    "startEntity(String)": [],
+    "endEntity(String)": [],
+    "startCDATA()": [],
+    "endCDATA()": [],
+    "comment(char[], int, int)": [],
+    "DocumentBuilder()": []
+  },
+  "org.jdom2.transform.JDOMSource": {
+    "setDocument(Document)": [],
+    "getDocument()": [],
+    "setNodes(List)": [],
+    "getNodes()": [],
+    "setInputSource(InputSource)": [],
+    "setXMLReader(XMLReader)": [],
+    "getXMLReader()": [],
+    "buildDocumentReader()": [
+      "setXMLReader(XMLReader)",
+      "getXMLReader()"
+    ],
+    "JDOMSource(Document)": [],
+    "JDOMSource(List)": [
+      "transform(List<Content>)"
+    ],
+    "JDOMSource(Element)": [],
+    "JDOMSource(Document, EntityResolver)": [
+      "transform(Document, EntityResolver)"
+    ]
+  },
+  "org.jdom2.transform.JDOMSource.JDOMInputSource": {
+    "getSource()": [
+      "getDocument()"
+    ],
+    "setCharacterStream(Reader)": [],
+    "getCharacterStream()": [],
+    "setByteStream(InputStream)": [],
+    "getDocumentSource()": [
+      "parse(InputSource)"
+    ],
+    "getListSource()": [
+      "getNodes()",
+      "parse(InputSource)"
+    ],
+    "JDOMInputSource(Document)": [
+      "setDocument(Document)"
+    ],
+    "JDOMInputSource(List)": [
+      "setNodes(List<? extends Content>)"
+    ]
+  },
+  "org.jdom2.transform.JDOMSource.DocumentReader": {
+    "parse(String)": [],
+    "parse(InputSource)": [],
+    "DocumentReader()": [
+      "buildDocumentReader()"
+    ]
+  },
+  "org.jdom2.transform.XSLTransformer": {
+    "transform(List)": [],
+    "transform(Document)": [],
+    "transform(Document, EntityResolver)": [
+      "transform(Document)"
+    ],
+    "setFactory(JDOMFactory)": [],
+    "getFactory()": [],
+    "XSLTransformer(Source)": [],
+    "XSLTransformer(String)": [],
+    "XSLTransformer(InputStream)": [],
+    "XSLTransformer(Reader)": [],
+    "XSLTransformer(File)": [],
+    "XSLTransformer(Document)": []
+  },
+  "org.jdom2.transform.XSLTransformException": {
+    "XSLTransformException()": [],
+    "XSLTransformException(String)": [],
+    "XSLTransformException(String, Exception)": [
+      "transform(List<Content>)",
+      "transform(Document, EntityResolver)"
+    ]
+  },
+  "org.jdom2.UncheckedJDOMFactory": {
+    "element(int, int, String, Namespace)": [],
+    "element(int, int, String)": [],
+    "element(int, int, String, String)": [],
+    "element(int, int, String, String, String)": [],
+    "attribute(String, String, Namespace)": [],
+    "attribute(String, String, AttributeType, Namespace)": [],
+    "attribute(String, String)": [],
+    "attribute(String, String, AttributeType)": [],
+    "text(int, int, String)": [],
+    "cdata(int, int, String)": [],
+    "comment(int, int, String)": [],
+    "processingInstruction(int, int, String, Map)": [],
+    "processingInstruction(int, int, String, String)": [],
+    "processingInstruction(int, int, String)": [],
+    "entityRef(int, int, String)": [],
+    "entityRef(int, int, String, String)": [],
+    "entityRef(int, int, String, String, String)": [],
+    "docType(int, int, String, String, String)": [],
+    "docType(int, int, String, String)": [],
+    "docType(int, int, String)": [],
+    "document(Element, DocType, String)": [
+      "document(Element, DocType)",
+      "document(Element)"
+    ],
+    "document(Element, DocType)": [],
+    "document(Element)": [],
+    "addContent(Parent, Content)": [
+      "document(Element, DocType, String)"
+    ],
+    "setAttribute(Element, Attribute)": [],
+    "addNamespaceDeclaration(Element, Namespace)": [],
+    "setRoot(Document, Element)": []
+  },
+  "org.jdom2.util.IteratorIterable": {},
+  "org.jdom2.util.NamespaceStack": {
+    "binarySearch(Namespace[], int, int, Namespace)": [
+      "checkNamespace(List<Namespace>, Namespace, Namespace[])",
+      "pushStack(Namespace, Namespace[], List<Namespace>)",
+      "isInScope(Namespace)"
+    ],
+    "checkNamespace(List, Namespace, Namespace[])": [
+      "push(Element)",
+      "push(Attribute)"
+    ],
+    "push(Element)": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "push(Attribute)": [],
+    "pushStack(Namespace, Namespace[], List)": [
+      "push(Element)",
+      "push(Attribute)"
+    ],
+    "pop()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "addedForward()": [
+      "printElement(FormatStack, NamespaceStack, org.w3c.dom.Document, Element)",
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)",
+      "printElement(XMLStreamWriter, FormatStack, NamespaceStack, Element)",
+      "printElement(Writer, FormatStack, NamespaceStack, Element)"
+    ],
+    "addedReverse()": [
+      "printElement(SAXTarget, FormatStack, NamespaceStack, Element)",
+      "printElement(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Element)"
+    ],
+    "iterator()": [],
+    "getScope()": [],
+    "isInScope(Namespace)": [],
+    "NamespaceStack()": [
+      "process(org.w3c.dom.Document, Format, Document)",
+      "process(org.w3c.dom.Document, Format, Element)",
+      "process(org.w3c.dom.Document, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, Document)",
+      "process(SAXTarget, Format, Element)",
+      "process(SAXTarget, Format, List<? extends Content>)",
+      "process(SAXTarget, Format, CDATA)",
+      "process(SAXTarget, Format, Text)",
+      "processAsDocument(SAXTarget, Format, List<? extends Content>)",
+      "processAsDocument(SAXTarget, Format, Element)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Document)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, Element)",
+      "process(XMLEventConsumer, Format, XMLEventFactory, List<? extends Content>)",
+      "process(XMLStreamWriter, Format, Document)",
+      "process(XMLStreamWriter, Format, Element)",
+      "process(XMLStreamWriter, Format, List<? extends Content>)",
+      "process(Writer, Format, Document)",
+      "process(Writer, Format, Element)",
+      "process(Writer, Format, List<? extends Content>)",
+      "process(Writer, Format, CDATA)",
+      "process(Writer, Format, Text)"
+    ],
+    "NamespaceStack(Namespace[])": []
+  },
+  "org.jdom2.util.NamespaceStack.ForwardWalker": {
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "ForwardWalker(Namespace[])": [
+      "iterator()",
+      "iterator()"
+    ]
+  },
+  "org.jdom2.util.NamespaceStack.BackwardWalker": {
+    "hasNext()": [],
+    "next()": [],
+    "remove()": [],
+    "BackwardWalker(Namespace[])": [
+      "iterator()"
+    ]
+  },
+  "org.jdom2.util.NamespaceStack.NamespaceIterable": {
+    "iterator()": [],
+    "NamespaceIterable(Namespace[], boolean)": [
+      "addedForward()",
+      "addedReverse()"
+    ]
+  },
+  "org.jdom2.util.NamespaceStack.EmptyIterable": {
+    "iterator()": [],
+    "hasNext()": [],
+    "next()": [],
+    "remove()": []
+  },
+  "org.jdom2.Verifier": {
+    "buildBitFlags()": [],
+    "checkJDOMName(String)": [
+      "checkElementName(String)",
+      "checkAttributeName(String)",
+      "checkNamespacePrefix(String)"
+    ],
+    "checkElementName(String)": [
+      "setName(String)"
+    ],
+    "checkAttributeName(String)": [
+      "setName(String)"
+    ],
+    "checkCharacterData(String)": [
+      "setValue(String)",
+      "setText(String)",
+      "append(String)",
+      "checkCDATASection(String)",
+      "checkProcessingInstructionData(String)",
+      "checkCommentData(String)",
+      "checkSystemLiteral(String)"
+    ],
+    "checkCDATASection(String)": [
+      "setText(String)",
+      "append(String)"
+    ],
+    "checkNamespacePrefix(String)": [
+      "getNamespace(String, String)"
+    ],
+    "checkNamespaceURI(String)": [
+      "getNamespace(String, String)"
+    ],
+    "checkNamespaceCollision(Namespace, Namespace)": [
+      "checkNamespaceCollision(Namespace, Element, int)",
+      "checkNamespaceCollision(Namespace, Attribute)",
+      "checkNamespaceCollision(Namespace, List<?>, int)"
+    ],
+    "checkNamespaceCollision(Attribute, Element)": [
+      "add(Attribute)",
+      "add(int, Attribute)"
+    ],
+    "checkNamespaceCollision(Attribute, Element, int)": [
+      "set(int, Attribute)",
+      "checkNamespaceCollision(Attribute, Element)"
+    ],
+    "checkNamespaceCollision(Namespace, Element)": [
+      "addNamespaceDeclaration(Namespace)",
+      "checkNamespaceCollision(Namespace, List<?>, int)"
+    ],
+    "checkNamespaceCollision(Namespace, Element, int)": [
+      "checkNamespaceCollision(Attribute, Element, int)",
+      "checkNamespaceCollision(Namespace, Element)"
+    ],
+    "checkNamespaceCollision(Namespace, Attribute)": [
+      "setNamespace(Namespace)",
+      "checkNamespaceCollision(Namespace, List<?>, int)"
+    ],
+    "checkNamespaceCollision(Namespace, List)": [
+      "setNamespace(Namespace)",
+      "checkNamespaceCollision(Namespace, Element, int)"
+    ],
+    "checkNamespaceCollision(Namespace, List, int)": [
+      "checkNamespaceCollision(Namespace, Element, int)",
+      "checkNamespaceCollision(Namespace, List<?>)"
+    ],
+    "checkProcessingInstructionTarget(String)": [
+      "setTarget(String)"
+    ],
+    "checkProcessingInstructionData(String)": [
+      "setData(String)",
+      "setData(Map<String, String>)",
+      "setPseudoAttribute(String, String)"
+    ],
+    "checkCommentData(String)": [
+      "setText(String)"
+    ],
+    "decodeSurrogatePair(char, char)": [
+      "escapeAttribute(EscapeStrategy, String)",
+      "escapeText(EscapeStrategy, String, String)",
+      "checkCharacterData(String)"
+    ],
+    "isXMLPublicIDCharacter(char)": [
+      "checkPublicID(String)"
+    ],
+    "checkPublicID(String)": [
+      "setPublicID(String)",
+      "setPublicID(String)"
+    ],
+    "checkSystemLiteral(String)": [
+      "setSystemID(String)",
+      "setSystemID(String)"
+    ],
+    "checkXMLName(String)": [
+      "setElementName(String)",
+      "setName(String)",
+      "checkProcessingInstructionTarget(String)"
+    ],
+    "checkURI(String)": [],
+    "isHexDigit(char)": [
+      "checkURI(String)"
+    ],
+    "isHighSurrogate(char)": [
+      "escapeAttribute(EscapeStrategy, String)",
+      "escapeText(EscapeStrategy, String, String)",
+      "shouldEscape(char)",
+      "shouldEscape(char)",
+      "checkCharacterData(String)"
+    ],
+    "isLowSurrogate(char)": [
+      "escapeAttribute(EscapeStrategy, String)",
+      "escapeText(EscapeStrategy, String, String)",
+      "checkCharacterData(String)"
+    ],
+    "isURICharacter(char)": [
+      "checkURI(String)"
+    ],
+    "isXMLCharacter(int)": [
+      "checkCharacterData(String)"
+    ],
+    "isXMLNameCharacter(char)": [
+      "checkXMLName(String)"
+    ],
+    "isXMLNameStartCharacter(char)": [
+      "checkXMLName(String)"
+    ],
+    "isXMLLetterOrDigit(char)": [],
+    "isXMLLetter(char)": [],
+    "isXMLCombiningChar(char)": [],
+    "isXMLExtender(char)": [],
+    "isXMLDigit(char)": [],
+    "isXMLWhitespace(char)": [
+      "isAllWhitespace()",
+      "build(String)",
+      "compact(String)",
+      "trimRight(String)",
+      "trimLeft(String)",
+      "trimBoth(String)",
+      "isSpaceFirst(String)",
+      "isSpaceLast(String)",
+      "checkNamespaceURI(String)",
+      "isAllXMLWhitespace(String)"
+    ],
+    "isAllXMLWhitespace(String)": [
+      "process(JDOMFactory, XMLStreamReader)",
+      "printDocument(XMLEventConsumer, FormatStack, NamespaceStack, XMLEventFactory, Document)",
+      "printDocument(XMLStreamWriter, FormatStack, NamespaceStack, Document)",
+      "printDocument(Writer, FormatStack, NamespaceStack, Document)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)",
+      "analyzeMultiText(MultiText, int, int)"
+    ],
+    "Verifier()": []
+  },
+  "org.jdom2.xpath.jaxen.JaxenCompiled": {
+    "unWrapNS(Object)": [
+      "unWrap(List<?>)",
+      "evaluateRawFirst(Object)"
+    ],
+    "unWrap(List)": [
+      "evaluateRawAll(Object)"
+    ],
+    "translateNamespacePrefixToUri(String)": [],
+    "getVariableValue(String, String, String)": [],
+    "evaluateRawAll(Object)": [],
+    "evaluateRawFirst(Object)": [],
+    "clone()": [],
+    "JaxenCompiled(String, Filter, Map, Namespace[])": [
+      "compile(String, Filter<T>, Map<String, Object>, Namespace...)"
+    ],
+    "JaxenCompiled(JaxenCompiled)": [
+      "clone()"
+    ]
+  },
+  "org.jdom2.xpath.jaxen.JaxenXPathFactory": {
+    "compile(String, Filter, Map, Namespace...)": [],
+    "JaxenXPathFactory()": [
+      "instance()"
+    ]
+  },
+  "org.jdom2.xpath.jaxen.JDOM2Navigator": {},
+  "org.jdom2.xpath.jaxen.JDOMCoreNavigator": {
+    "reset()": [
+      "reset()"
+    ],
+    "parseXPath(String)": [],
+    "getDocument(String)": [],
+    "isText(Object)": [],
+    "isProcessingInstruction(Object)": [],
+    "isNamespace(Object)": [],
+    "isElement(Object)": [
+      "getAttributeAxisIterator(Object)",
+      "getNamespaceAxisIterator(Object)"
+    ],
+    "isDocument(Object)": [],
+    "isComment(Object)": [],
+    "isAttribute(Object)": [],
+    "getTextStringValue(Object)": [],
+    "getNamespaceStringValue(Object)": [],
+    "getNamespacePrefix(Object)": [],
+    "recurseElementText(Element, StringBuilder)": [
+      "recurseElementText(Element, StringBuilder)",
+      "getElementStringValue(Object)"
+    ],
+    "getElementStringValue(Object)": [],
+    "getElementQName(Object)": [],
+    "getElementNamespaceUri(Object)": [],
+    "getElementName(Object)": [],
+    "getCommentStringValue(Object)": [],
+    "getAttributeStringValue(Object)": [],
+    "getAttributeQName(Object)": [],
+    "getAttributeNamespaceUri(Object)": [],
+    "getAttributeName(Object)": [],
+    "getProcessingInstructionTarget(Object)": [],
+    "getProcessingInstructionData(Object)": [],
+    "getDocumentNode(Object)": [],
+    "getParentNode(Object)": [],
+    "getAttributeAxisIterator(Object)": [],
+    "getChildAxisIterator(Object)": [],
+    "getNamespaceAxisIterator(Object)": [],
+    "getParentAxisIterator(Object)": [],
+    "readObject(java.io.ObjectInputStream)": [],
+    "writeObject(java.io.ObjectOutputStream)": []
+  },
+  "org.jdom2.xpath.jaxen.JDOMNavigator": {
+    "reset()": [],
+    "setContext(Object)": [],
+    "includeNamespace(Namespace)": [],
+    "translateNamespacePrefixToUri(String)": []
+  },
+  "org.jdom2.xpath.jaxen.NamespaceContainer": {
+    "getNamespace()": [
+      "unWrapNS(Object)",
+      "getNamespaceStringValue(Object)",
+      "getNamespacePrefix(Object)"
+    ],
+    "getParentElement()": [
+      "getDocumentNode(Object)",
+      "getParentNode(Object)",
+      "getParentAxisIterator(Object)",
+      "setContext(Object)"
+    ],
+    "toString()": [],
+    "NamespaceContainer(Namespace, Element)": [
+      "getNamespaceAxisIterator(Object)"
+    ]
+  },
+  "org.jdom2.xpath.util.AbstractXPathCompiled": {
+    "getPrefixForURI(String, Namespace[])": [
+      "getVariables()"
+    ],
+    "clone()": [],
+    "getExpression()": [
+      "toString()"
+    ],
+    "getNamespace(String)": [
+      "translateNamespacePrefixToUri(String)",
+      "getVariableValue(String, String, String)",
+      "getVariable(String)",
+      "setVariable(String, Object)"
+    ],
+    "getNamespaces()": [
+      "getVariables()"
+    ],
+    "getVariable(String, Namespace)": [
+      "getVariableValue(String, String, String)",
+      "getVariable(String)",
+      "setVariable(String, Namespace, Object)"
+    ],
+    "getVariable(String)": [],
+    "setVariable(String, Namespace, Object)": [
+      "setVariable(String, Object)"
+    ],
+    "setVariable(String, Object)": [],
+    "getVariables()": [],
+    "getFilter()": [],
+    "evaluate(Object)": [],
+    "evaluateFirst(Object)": [],
+    "diagnose(Object, boolean)": [],
+    "toString()": [],
+    "evaluateRawAll(Object)": [
+      "evaluate(Object)",
+      "diagnose(Object, boolean)"
+    ],
+    "evaluateRawFirst(Object)": [
+      "evaluateFirst(Object)",
+      "diagnose(Object, boolean)"
+    ],
+    "AbstractXPathCompiled(String, Filter, Map, Namespace[])": []
+  },
+  "org.jdom2.xpath.util.AbstractXPathCompiled.NamespaceComparator": {
+    "compare(Namespace, Namespace)": []
+  },
+  "org.jdom2.xpath.util.XPathDiagnosticImpl": {
+    "getContext()": [],
+    "getXPathExpression()": [],
+    "getResult()": [],
+    "getFilteredResults()": [],
+    "getRawResults()": [],
+    "isFirstOnly()": [],
+    "toString()": [],
+    "XPathDiagnosticImpl(Object, XPathExpression, List, boolean)": [
+      "diagnose(Object, boolean)"
+    ]
+  },
+  "org.jdom2.xpath.XPath.XPathString": {
+    "readResolve()": [],
+    "XPathString(String)": []
+  },
+  "org.jdom2.xpath.XPathBuilder": {
+    "setVariable(String, Object)": [],
+    "setNamespace(String, String)": [],
+    "setNamespace(Namespace)": [
+      "setNamespace(String, String)",
+      "setNamespaces(Collection<Namespace>)"
+    ],
+    "setNamespaces(Collection)": [],
+    "getVariable(String)": [],
+    "getNamespace(String)": [],
+    "getFilter()": [],
+    "getExpression()": [],
+    "compileWith(XPathFactory)": [],
+    "XPathBuilder(String, Filter)": []
+  },
+  "org.jdom2.xpath.XPathDiagnostic": {
+    "getContext()": [],
+    "getXPathExpression()": [],
+    "getResult()": [],
+    "getFilteredResults()": [],
+    "getRawResults()": [],
+    "isFirstOnly()": []
+  },
+  "org.jdom2.xpath.XPathExpression": {
+    "clone()": [],
+    "getExpression()": [
+      "toString()"
+    ],
+    "getNamespace(String)": [],
+    "getNamespaces()": [],
+    "setVariable(String, Namespace, Object)": [],
+    "setVariable(String, Object)": [],
+    "getVariable(String, Namespace)": [],
+    "getVariable(String)": [],
+    "getFilter()": [],
+    "evaluate(Object)": [],
+    "evaluateFirst(Object)": [],
+    "diagnose(Object, boolean)": []
+  },
+  "org.jdom2.xpath.XPathFactory": {
+    "instance()": [],
+    "newInstance(String)": [
+      "instance()"
+    ],
+    "compile(String, Filter, Map, Namespace...)": [],
+    "compile(String, Filter, Map, Collection)": [],
+    "compile(String, Filter)": [],
+    "compile(String)": []
+  },
+  "org.jdom2.xpath.XPathHelper": {
+    "getPositionPath(Object, List, String, StringBuilder)": [
+      "getSingleStep(NamespaceAware, StringBuilder)"
+    ],
+    "getSingleStep(NamespaceAware, StringBuilder)": [
+      "getRelativeElementPath(Element, Parent, StringBuilder)",
+      "getRelativePath(Content, Content)",
+      "getRelativePath(Content, Attribute)",
+      "getAbsolutePath(Content)",
+      "getAbsolutePath(Attribute)"
+    ],
+    "getRelativeElementPath(Element, Parent, StringBuilder)": [
+      "getRelativePath(Content, Content)",
+      "getAbsolutePath(Content)",
+      "getAbsolutePath(Attribute)"
+    ],
+    "locate(Parent, List)": [
+      "getRelativeElementPath(Element, Parent, StringBuilder)"
+    ],
+    "getRelativePath(Content, Content)": [
+      "getRelativePath(Content, Attribute)",
+      "getRelativePath(Attribute, Content)"
+    ],
+    "getRelativePath(Content, Attribute)": [
+      "getRelativePath(Attribute, Attribute)"
+    ],
+    "getRelativePath(Attribute, Attribute)": [],
+    "getRelativePath(Attribute, Content)": [],
+    "getAbsolutePath(Content)": [],
+    "getAbsolutePath(Attribute)": [],
+    "XPathHelper()": []
+  }
+}

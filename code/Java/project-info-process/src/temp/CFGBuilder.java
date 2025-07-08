@@ -15,19 +15,19 @@ import fr.inria.controlflow.ControlFlowGraph;
 public class CFGBuilder {
     public void buildCFG() {
         Launcher launcher = new Launcher();
-        launcher.addInputResource("src");
+        launcher.addInputResource("D:/Study/myevaluation/UnitTeseGen/dataset/projects/ruler/src/main/java");
         CtModel model = launcher.buildModel();
         CtClass<?> ctClass = model.getElements((Filter<CtClass<?>>) element -> true)
                 .stream()
-                .filter(c -> c.getQualifiedName().equals("extractor.JavaParserExtractor"))
+                .filter(c -> c.getQualifiedName().equals("software.amazon.event.ruler.ByteMachine"))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Class CodeInfoExtractor not found"));
-        CtClass<?> ctClass2 = model.getElements((Filter<CtClass<?>>) element -> true)
-                .stream()
-                .filter(c -> c.getQualifiedName().equals("extractor.JavaParserExtractor"))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Class CodeInfoExtractor not found"));
-        CtMethod<?> method = ctClass.getMethodsByName("extractJavadoc").get(0); // Changed to getMethodsByName
+        // CtClass<?> ctClass2 = model.getElements((Filter<CtClass<?>>) element -> true)
+        //         .stream()
+        //         .filter(c -> c.getQualifiedName().equals("extractor.JavaParserExtractor"))
+        //         .findFirst()
+        //         .orElseThrow(() -> new RuntimeException("Class CodeInfoExtractor not found"));
+        CtMethod<?> method = ctClass.getMethodsByName("findPattern").get(0); // Changed to getMethodsByName
         // CtMethod<?> method2 = ctClass.getMethodsByName("extractClassInfo").get(0); //
         // Changed to getMethodsByName
         ControlFlowBuilder builder = new ControlFlowBuilder();
