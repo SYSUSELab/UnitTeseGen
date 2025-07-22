@@ -151,7 +151,7 @@ class HITSRunner(ProjectTestRunner):
         super().__init__(project_info, dependency_dir, testclass_path, report_path)
 
     def check_testclass_name(self):
-        # 遍历 testclass_path下的所有文�?
+        # 遍历 testclass_path下的所有文�?
         dir_list = queue.Queue()
         dir_list.put(self.testclass_path)
         while not dir_list.empty():
@@ -354,7 +354,7 @@ def exract_baseline_coverage(file_structure, task_setting, benchmark, dataset_in
         # extract_coverage_HITS(HITS_result, dataset_info, dataset_meta, HITS_save)
 
         # run HITS coverage test
-        HITS_result = f"{baseline_path}/HITS/gpt4o"
+        HITS_result = f"{baseline_path}/HITS"
         run_HITS_coverage(file_structure, task_setting, HITS_result, dataset_info)
     
     # extract ChatUniTest coverage

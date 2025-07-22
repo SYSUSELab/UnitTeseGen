@@ -101,7 +101,7 @@ class CoverageCalculator(CoverageExtractor):
         super().__init__()
         pass
 
-    def generate_project_summary(self, test_result:dict):
+    def generate_project_summary(self, test_result:dict, filter=False):
         """
         result format:
         {   
@@ -154,6 +154,11 @@ class CoverageCalculator(CoverageExtractor):
                     cov_score = self.extract_single_coverage(html_path, method)
                     if cov_score:
                         summary[data_id].update({"correct_inst_cov": cov_score[0], "correct_bran_cov": cov_score[1]})
+                        if filter:
+                            inst_cov = summary[data_id]["inst_cov"]
+                            bran_cov = summary[data_id]["bran_cov"]
+                            if inst_cov>0 and cov_score[0]==inst_cov and cov_score[1]==bran_cov:
+                                summary[data_id]["passed_cases"] = summary[data_id]["test_cases"]
                     else:
                         summary[data_id].update({"correct_inst_cov": "<missing>", "correct_bran_cov": "<missing>"})
         self.count_general_metrics(summary)
@@ -237,7 +242,7 @@ def test_coverage(fstruct, task_setting, dataset_info: dict):
         logger.info(test_result)
         # extract coverage
         calculator = CoverageCalculator(info, report_path)
-        coverage_data = calculator.generate_project_summary(test_result)
+        coverage_data = calculator.generate_project_summary(test_result, filter=True)
         total_result.update(coverage_data)
         logger.info(f"report data:\n{coverage_data}")
         coverage_file = f"{report_path}/summary.json".replace("<project>", pj_name)
