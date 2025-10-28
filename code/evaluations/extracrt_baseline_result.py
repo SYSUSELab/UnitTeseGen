@@ -151,7 +151,7 @@ class HITSRunner(ProjectTestRunner):
         super().__init__(project_info, dependency_dir, testclass_path, report_path)
 
     def check_testclass_name(self):
-        # 遍历 testclass_path下的所有文�?
+        # Traverse all files under testclass_path
         dir_list = queue.Queue()
         dir_list.put(self.testclass_path)
         while not dir_list.empty():
@@ -368,4 +368,9 @@ def exract_baseline_coverage(file_structure, task_setting, benchmark, dataset_in
         logger.info("Extracting ChatTester coverage...")
         chattester_result = f"{baseline_path}/ChatTester"
         extract_coverage_ChatUniTest(chattester_result, dataset_info, file_structure, task_setting)
+
+    if "UTGen" in selected_baselines:
+        logger.info("Extracting UTGen coverage...")
+        utgen_result = f"{baseline_path}/UTGen"
+        extract_coverage_ChatUniTest(utgen_result, dataset_info, file_structure, task_setting)
     return

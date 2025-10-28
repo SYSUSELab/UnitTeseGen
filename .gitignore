@@ -4,7 +4,7 @@ code/test.py
 code/java/spoon-control-flow
 code/java/sootup
 code/evaluations/check_empty_class.py
-code/evaluations/fill_template.py
+code/evaluations/fill_questionare_template.py
 data/projects
 data/project_index/lucene
 evaluation/
