@@ -1,17 +1,58 @@
+import concurrent
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+import time
+import logging
+import subprocess
+import concurrent.futures
+from venv import logger
+# sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import tools.io_utils as io_utils
 
 class ChatUniTestRunner():
-    def __init__(self):
-        pass
+    # project_url = ""
+    cd_cmd: list
+    gen_folder: str
+    phase_type: str
+    logger: logging.Logger
 
-    def generate_test_class(self):
+    def __init__(self, phs_tp):
+        # self.project_url = prj_url
+        self.gen_folder = "/tmp/" + phs_tp + "-test"
+        self.phase_type = phs_tp.upper()
+        self.logger = logging.getLogger(__name__)
+        return
+    
+    def running_task(self, project_info):
+        prj_url = project_info["project-url"]
+        self.cd_cmd = ["cd", prj_url, '&&']
+        task_ids = set()
+        time_record = {}
+
+        for test_info in project_info["focal-methods"]:
+            task_ids.add(test_info["task-id"].replace("_", "#").replace("#2", ""))
+        for task_id in task_ids:
+            start_time = time.time()
+            self.generate_test4method(task_id)
+            end_time = time.time()
+            time_record[task_id] = end_time - start_time
+        return time_record
+
+    def generate_test4method(self, select_method:str):
         # mvn chatunitest:method -DphaseType <method> -D testOutput /tmp/<method>-test -DselectMethod <class>#<method>
-        pass
-
+        gen_cmd = ["mvn", "chatunitest:method", "-DtestOutput", self.gen_folder, "-DselectMethod", select_method]
+        if self.phase_type != "CHATUNITEST":
+            gen_cmd.extend(["-DphaseType", self.phase_type])
+            if self.phase_type == "HITS":
+                gen_cmd.append("-DtestNumber=3")
+        script = self.cd_cmd + gen_cmd
+        self.logger.info("Command: " + " ".join(script))
+        result = subprocess.run(script, shell=True, capture_output=True, text=True)
+        self.logger.info("Output: " + result.stdout)
+        if result.returncode != 0:
+            self.logger.error(f"Error occurred at {select_method}, info:\n{result.stderr}")
+        return
 
 class UTGenRunner():
     data_folder = ""
@@ -36,6 +77,68 @@ class UTGenRunner():
     
     def process_test_classes(self):
         pass
+
+
+def running_chatunitest(dataset_info, phase_type, result_folder):
+    mworkers = len(dataset_info)
+    logger = logging.getLogger(__name__)
+    time_file = f"{result_folder}/time_record.json"
+    if os.path.exists(time_file):
+        time_record_sum = io_utils.load_json(time_file)
+    else:
+        time_record_sum = {"details": {}}
+
+    def run4project(project_info):
+        pname = project_info["project-name"]
+        logger.info(f"Processing project: {pname}")
+        chatunitest_runner = ChatUniTestRunner(phase_type)
+        time_record = chatunitest_runner.running_task(project_info)
+        logger.info(f"finished processing project: {pname}")
+        return time_record
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=mworkers) as executor:
+        futures = []
+        for _, p_info in dataset_info.items():
+            future = executor.submit(run4project, p_info)
+            futures.append(future)
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                record = future.result()
+                time_record_sum["details"].update(record)
+            except Exception as e:
+                logger.error(f"Error processing test case: {e}")
+    pass
+
+
+def running_baselines(file_structure, benchmark, dataset_info):
+    dataset_path = file_structure.DATASET_PATH
+    baseline_path = benchmark.BASELINE_PATH
+    selected_baselines = benchmark.BASELINES
+    logger = logging.getLogger(__name__)
+
+    root_path = os.getcwd().replace("\\", "/")
+    dataset_dir = f"{root_path}/{dataset_path}"
+    
+    for _, info in dataset_info.items():
+        project_path = f"{dataset_dir}/{info['project-url']}"
+        info["project-url"] = project_path
+    
+    # HITS script
+    if "HITS" in selected_baselines:
+        hits_result = f"{baseline_path}/HITS"
+        running_chatunitest(dataset_info, "HITS", hits_result)
+
+    # ChatUniTest script
+    if "ChatUniTest" in selected_baselines:
+        chatunitest_result = f"{baseline_path}/ChatUniTest"
+        running_chatunitest(dataset_info, "ChatUniTest", chatunitest_result)
+    
+    # ChatTester script
+    if "ChatTester" in selected_baselines:
+        chattester_result = f"{baseline_path}/ChatTester"
+        running_chatunitest(dataset_info, "ChatTester", chattester_result)
+
+    pass
 
 
 if __name__ == "__main__":
