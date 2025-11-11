@@ -36,6 +36,7 @@ class RuleError(Enum):
     UNRESLOVE_SYMBOL = 1
     UNREPORTED_EXCEPTION = 2
     PRIVATE_ACCESS = 3
+    DUPLICATE_INNER_CLASS = 4
     OTHER = 4
 
 
@@ -168,6 +169,7 @@ class CodeRepairer(JavaRunner):
         code = str(self.class_editor.main([test_class, code, "true"]))
         io_utils.write_text(prompt_path, prompt)
         io_utils.write_text(response_path, response)
+        ## todo: transform to code diff
         return code
 
     def clean_error_cases(self, error_infos:list, code:str):

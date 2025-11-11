@@ -5,23 +5,25 @@ from openai import  OpenAI, Omit, omit
 from openai.types.chat.completion_create_params import ResponseFormat
 from tenacity import retry, wait_random_exponential, stop_after_attempt
 
+from settings import LLMSettings as ST
+
 class LLMCaller:
     account_num = 0
     cur_account_num = 0
     accounts = []
     gpt:OpenAI
-    system_prompt = None
     base_message = []
+    temperature:float = 0.5
     
-    def __init__(self) -> None:
-        from settings import LLMSettings as ST
+    def __init__(self, sysprompt = None) -> None:
         self.model = ST.MODEL
         self.accounts = ST.API_ACCOUNTS
         self.account_num = len(ST.API_ACCOUNTS)
         account = self.accounts[self.cur_account_num]
+        self.temperature = ST.TEMPERATURE
         self.gpt = OpenAI(api_key=account["api_key"],base_url=account["base_url"])
-        if self.system_prompt:
-            self.base_message.append({"role": "system", "content": self.system_prompt})
+        if sysprompt is not None:
+            self.base_message.append({"role": "system", "content": sysprompt})
         self.logger = logging.getLogger(__name__)
         self.logger.info(f"LLM API initialized, model name: {self.model}.")
         pass
@@ -44,6 +46,7 @@ class LLMCaller:
             model=self.model,
             messages=messages,
             response_format = rps_format,  # pyright: ignore[reportArgumentType]
+            temperature=self.temperature,
             # add more parameters
         )
         if response.choices[0].message.content:

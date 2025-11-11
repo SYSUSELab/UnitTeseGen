@@ -5,8 +5,8 @@ import editcode.TestClassUpdator;
 public class TestClassEditorTest {
     public static void main(String[] args) {
         // test1();
-        // test2();
-        testMemberOrder();
+        test2();
+        // testMemberOrder();
     }
     static void test1() {
         String existingClass = "import org.junit.Test;\n" +
@@ -48,7 +48,10 @@ public class TestClassEditorTest {
         " public void testConcat() {\n" +
         " assertEquals(\"HelloWorld\", \"Hello\" + \"World\");\n" +
         " }\n" +
-        " class Myclass { }" +
+        " class Myclass { " +
+        "     void test() {}" +
+        "     public float b; " +
+        " }" +
         "}\n";
 
         String classToAdd2 = "import org.junit.Test;\n" +
@@ -75,7 +78,7 @@ public class TestClassEditorTest {
         "}\n";
 
         String result2 = TestClassUpdator.main(new String[] { existingClass2,
-        classToAdd2, "true" });
+        classToAdd2});
         System.out.println("\n\n===== 带有新导入的合并测试类 =====");
         System.out.println(result2);
     }

@@ -1,13 +1,11 @@
 import os
 import re
-# import queue
 import shutil
 import logging
 import subprocess
 
 
 import tools.io_utils as io_utils
-from procedure.post_process import check_class_name
 from evaluations.coverage_test import ProjectTestRunner, CoverageCalculator
 
 
@@ -152,11 +150,6 @@ class UTGenRunner(ProjectTestRunner):
             "--add-opens", "java.base/java.lang=ALL-UNNAMED",
             "--add-opens", "java.base/java.net=ALL-UNNAMED",
             "--add-opens", "java.desktop/java.awt=ALL-UNNAMED",
-            # "--add-opens", "java.base/java.util=ALL-UNNAMED",
-            # "--add-opens", "java.base/java.lang.reflect=ALL-UNNAMED",
-            # "--add-opens", "java.base/sun.reflect.annotation=ALL-UNNAMED",
-            # "--add-opens", "java.base/java.text=ALL-UNNAMED",
-            # "--add-opens", "java.desktop/java.awt.font=ALL-UNNAMED",
             '-cp', test_dependencies, 
             'org.junit.platform.console.ConsoleLauncher', 
             '--disable-banner', 

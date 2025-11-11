@@ -58,7 +58,7 @@ public class PreProcessor {
             Path cfg_path = output_dir.resolve("codegraph/" + project_name + "_controlflow.json");
             System.out.println("process project: " + project_name);
             extractProjectStructure(project_name, projectDir, json_path);
-            // buildControlflowFlowGraph(projectDir, cfg_path);
+            buildControlflowFlowGraph(projectDir, cfg_path);
         });
         long end = System.currentTimeMillis();
         System.out.println("Time Cost:" + (end - start) + "ms");
